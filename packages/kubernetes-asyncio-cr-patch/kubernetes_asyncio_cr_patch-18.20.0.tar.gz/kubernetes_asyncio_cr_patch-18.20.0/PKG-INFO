@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: kubernetes_asyncio_cr_patch
+Version: 18.20.0
+Summary: Kubernetes asynchronous python client with patched custom resource API client
+Home-page: https://github.com/opsani/kubernetes_asyncio
+Author: Kubernetes
+Author-email: 
+License: Apache License Version 2.0
+Keywords: Swagger,OpenAPI,Kubernetes
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Utilities
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+
+    NOTE: this is a repackaged version of the kubernetes_asyncio library with
+    modified generated code that changes the content type used by the custom
+    resource API for patch operations. It is recommended that you use the
+    upstream library as this package is meant to be a temporary workaround
+    https://pypi.org/project/kubernetes_asyncio/
+    
+
