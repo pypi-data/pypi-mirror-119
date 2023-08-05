@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+dictionary/__init__.py
+dictionary/__main__.py
+dictionary/app.py
+dictionary/data.json
+simple_dictionary.egg-info/PKG-INFO
+simple_dictionary.egg-info/SOURCES.txt
+simple_dictionary.egg-info/dependency_links.txt
+simple_dictionary.egg-info/entry_points.txt
+simple_dictionary.egg-info/top_level.txt
