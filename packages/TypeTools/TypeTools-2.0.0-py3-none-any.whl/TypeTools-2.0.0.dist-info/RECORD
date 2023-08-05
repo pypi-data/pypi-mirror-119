@@ -1,0 +1,14 @@
+typetools/__init__.py,sha256=pzegE4PukHRnYzDxvRblJ6UmTDynh5UgDICjGtYi2Ko,446
+typetools/_broadtypes.py,sha256=9pIbeDv_1GmFworFoTEbO-Q7C6Edka06erWIZZaIX4k,2201
+typetools/_descriptor.py,sha256=ilMP9Dx7uprMhKXyMWjohE0CwGdbQ1A4yXFW8eMbY4w,262
+typetools/_test_typetools.py,sha256=BgbIUrzDvrcb-KlFPGAwBmLu53W62uXen7nLGniI5ic,3138
+typetools/_typed.py,sha256=86zg_ov9F6KBS9GY4TMlfv9qj-jVC1OiKypKymMmYi8,323
+typetools/_types.py,sha256=BvpZKme07TPg4abjO-exdBxqImlYR632EVH9OWSBoFo,449
+typetools/broadtypes.py,sha256=A7EpIaXP5NvP-4c8UcqjXLLQHkAieCrvl5ZWuJvG7Pk,2200
+typetools/descriptor.py,sha256=ilMP9Dx7uprMhKXyMWjohE0CwGdbQ1A4yXFW8eMbY4w,262
+typetools/typed.py,sha256=FlD3vI3LHR2h9UoVBKNPg0gjXUB0eTlh7mt26lWui1Q,828
+typetools/types.py,sha256=KoSy6YArB_Rv8v2SantwdMZ_uKikSzbul-4QWwzX7UM,388
+TypeTools-2.0.0.dist-info/METADATA,sha256=D0fXjynf_uSxp444XXELQrlSqejwSCy9X6IqjOb4v2M,229
+TypeTools-2.0.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+TypeTools-2.0.0.dist-info/top_level.txt,sha256=KMT-vuinmk0oTqnkTdlstW16PIWUX3aiQCpPxyO4L4U,10
+TypeTools-2.0.0.dist-info/RECORD,,
