@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pysecretserver
+Version: 0.4.2
+Summary: A Python library for interacting with the SecretServer REST API.
+Home-page: https://gitlab.com/dcs-tech/devops/pysecretserver
+Author: Christopher Kay
+Author-email: christopher.kay@dcs.tech
+License: Apache2
+Keywords: secretserver
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+Requires-Dist: requests
+
+UNKNOWN
+
