@@ -1,0 +1,10 @@
+designer/Animation.py,sha256=3H0ACs_k6EUfj3ViMj0aGdcurq-Gcwx10W72pp49GKY,6685
+designer/DesignerObject.py,sha256=1lZuEyRqkqRUmrSxKEeMRQBKbzoAcrldTBi7IDLaKAI,18624
+designer/Director.py,sha256=BZc-U4JD26VfsteYKk4f8XwC2YR-u82ZyakcdEdHsYM,3812
+designer/__init__.py,sha256=2UnbH_mDNQnXUdO36znvjPyHH5kIakeIOFAe1t2P3S4,173
+designer/data/colors.json,sha256=6jYobwJeeIeUbUtNFfv1aYp6MMcrgpi5p7Cd2FZOmK8,4041
+designer-0.0.71.dist-info/LICENSE.txt,sha256=yi203SzW6a2yx0Uv3u-K804Fb-tn9QgKb8KSZ5-USFM,1075
+designer-0.0.71.dist-info/METADATA,sha256=r2cTDCfLszSahyaajqq5BAX5UgTsGpQlzD6hCgnrrzE,842
+designer-0.0.71.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+designer-0.0.71.dist-info/top_level.txt,sha256=2BcbS1_i5w1D5mPuddpDecwM6D3aZb_BrifrAXfIG2k,9
+designer-0.0.71.dist-info/RECORD,,
