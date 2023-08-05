@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: akkaserverless
+Version: 0.1.8
+Summary: Akka Serverless Python Support Library
+Home-page: https://github.com/jpollock/akkaserverless-python-sdk
+Author: Lightbend
+License: Apache 2.0
+Project-URL: Documentation, https://akkaserverless.io/docs/user/lang/index.html
+Project-URL: Source, https://github.com/jpollock/akkaserverless-python-sdk
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+UNKNOWN
+
