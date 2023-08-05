@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: cfshandler
+Version: 0.0.6
+Summary: CFService Handler
+Home-page: https://github.com/boxpositron
+Author: David Ibia
+Author-email: <david.ibia@boxmarshall.com>
+License: UNKNOWN
+Keywords: python,cfservice
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: certifi (==2020.12.5)
+Requires-Dist: chardet (==3.0.4)
+Requires-Dist: idna (==2.10)
+Requires-Dist: mccabe (==0.6.1)
+Requires-Dist: pycodestyle (==2.7.0)
+Requires-Dist: pyflakes (==2.3.1)
+Requires-Dist: requests (==2.24.0)
+Requires-Dist: toml (==0.10.2)
+Requires-Dist: typing-extensions (==3.10.0.0)
+Requires-Dist: urllib3 (==1.25.11)
+Requires-Dist: zipp (==3.4.1)
+
+Easily interface with CFService
+
+
