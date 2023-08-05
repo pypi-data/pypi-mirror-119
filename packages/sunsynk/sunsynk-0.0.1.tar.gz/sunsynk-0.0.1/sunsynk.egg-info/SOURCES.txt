@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+sunsynk/__init__.py
+sunsynk/definitions.py
+sunsynk/sensor.py
+sunsynk.egg-info/PKG-INFO
+sunsynk.egg-info/SOURCES.txt
+sunsynk.egg-info/dependency_links.txt
+sunsynk.egg-info/requires.txt
+sunsynk.egg-info/top_level.txt
+sunsynk.egg-info/zip-safe
