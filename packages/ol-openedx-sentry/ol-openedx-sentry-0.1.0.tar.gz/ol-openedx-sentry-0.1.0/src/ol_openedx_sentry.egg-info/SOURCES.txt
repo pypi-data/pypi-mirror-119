@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.py
+src/ol_openedx_sentry/__init__.py
+src/ol_openedx_sentry/app.py
+src/ol_openedx_sentry.egg-info/PKG-INFO
+src/ol_openedx_sentry.egg-info/SOURCES.txt
+src/ol_openedx_sentry.egg-info/dependency_links.txt
+src/ol_openedx_sentry.egg-info/entry_points.txt
+src/ol_openedx_sentry.egg-info/namespace_packages.txt
+src/ol_openedx_sentry.egg-info/requires.txt
+src/ol_openedx_sentry.egg-info/top_level.txt
+src/ol_openedx_sentry/settings/__init__.py
+src/ol_openedx_sentry/settings/sentry.py
