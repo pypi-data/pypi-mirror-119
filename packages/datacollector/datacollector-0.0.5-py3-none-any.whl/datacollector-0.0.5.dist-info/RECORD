@@ -1,0 +1,12 @@
+datacollector/__init__.py,sha256=n-wkcsDMh3-RKlz9ZLgXQAomN7DgD6GZXtou-TSyCnM,99
+datacollector/article.py,sha256=xOn_bDdrUp-bBcpLaO-wjTef-Ruv8PYG_q0m2LDnDEE,1354
+datacollector/datacollector_id.py,sha256=uPAa-L-TH68zs29Yj3eHG2gN_nkmBmnAXuNi9ZKy-xQ,946
+datacollector/datacollector_query.py,sha256=uQ9Wb_mEvuuDmZ4oW2tlj80oZit-u65EbU7v6SNxGyk,920
+datacollector/datacollector_ui.py,sha256=hRcGduX5CIyvPq7PteXwKwQME4Slp7qr029DpNxPiIY,2424
+datacollector/download.py,sha256=12ZcDfq0D1d0luaa03jdsB_87CYGx2W7yiSg71Lhlog,447
+datacollector/ncbi.py,sha256=6t4efN7yKZ8kh61ZqcX-2-EbXNoKhelcp0pQUcrL7xI,2365
+datacollector/util.py,sha256=1Ovh8JzuNoupfcYP2r3v0Vz-oIsThxU3968xuvfnXZ8,195
+datacollector-0.0.5.dist-info/METADATA,sha256=F0-v3GyzcUO0e6OtOV2nFaNEEg_3knLNC2hc3CGz1hU,572
+datacollector-0.0.5.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+datacollector-0.0.5.dist-info/top_level.txt,sha256=ccTqwGvm9ZlRND4eMnFqURuv-a455ObBjRTWGm74S54,14
+datacollector-0.0.5.dist-info/RECORD,,
