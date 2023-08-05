@@ -1,0 +1,43 @@
+db:
+  # Write the name of your Articles database here
+  articles: Papers
+  # Write the name of your Authors database here
+  authors: Authors
+
+
+status:
+  # Set this to whatever prefix you'd like to designate status. OR you may leave
+  #   it blank.
+  prefix: "status:"
+  # Create as many states as you would like. Provide a valid Notion color, or
+  #   leave it as "default"
+  states:
+    unread: { name: "To Read", color: "red", }
+    read: { name: "Done", color: "green", }
+
+fields-methods:
+  # State how we should split labels to extract `field-method` pairs. TAKE CARE
+  #   TO ENSURE THIS ONLY APPEARS ONCE PER LABEL.
+  delim: " - "
+  fields:
+    # Fields should look like this:
+    # <abbr>: { color: <color>, name: <name> }
+  methods:
+    # Methods should look like this:
+    # <abbr>: { color: <color>, name: <name> }
+
+# You can feel free to omit this and we won't make use of this.
+bibtex:
+  venues:
+    book: publisher
+    article: journal
+    inproceedings: series
+    conference: series
+    proceedings: series
+
+  icons:
+    book: ":books:"
+    article: ":blue_book:"
+    inproceedings: ":bookmark_tabs:"
+    conference: ":bookmark_tabs:"
+    proceedings: ":bookmark_tabs:"
