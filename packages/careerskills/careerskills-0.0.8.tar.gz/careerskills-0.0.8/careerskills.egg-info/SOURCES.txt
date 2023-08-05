@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+aws_rds/__init__.py
+aws_rds/aws_rds.py
+careerskills/__init__.py
+careerskills/__main__.py
+careerskills/link_scraper.py
+careerskills/skill_mining.py
+careerskills/window.py
+careerskills.egg-info/PKG-INFO
+careerskills.egg-info/SOURCES.txt
+careerskills.egg-info/dependency_links.txt
+careerskills.egg-info/requires.txt
+careerskills.egg-info/top_level.txt
+test/test_link_scraper.py
