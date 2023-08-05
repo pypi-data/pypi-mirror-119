@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: dynamic-importer
+Version: 0.0.1
+Summary: Imports python files dynamically from files or directories
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: directoryhandler
+
+UNKNOWN
+
+
