@@ -1,0 +1,4 @@
+include data/*
+exclude manuscript/*
+include tests/test_data/*
+include *.yml
