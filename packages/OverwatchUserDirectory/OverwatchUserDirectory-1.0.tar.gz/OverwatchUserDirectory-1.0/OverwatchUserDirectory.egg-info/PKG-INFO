@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: OverwatchUserDirectory
+Version: 1.0
+Summary: An Overwatch user directory that gets everything you can take from Overwatch API using ovrstat(https://ovrstat.com) 
+Home-page: https://github.com/yotam201410/OverwatchUserDirectory
+Author: Yotam
+Author-email: yotam201410@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+
+UNKNOWN
+
