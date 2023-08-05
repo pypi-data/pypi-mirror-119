@@ -1,0 +1,13 @@
+terminado/__init__.py,sha256=p3OS-uVtrA0obqW3v3Jylk8WWUsYZSYty_8lxlPrfVk,545
+terminado/management.py,sha256=UsSkN1UK5wa-qyC7dIlsCygGtTVDLJcDtAzuEbLYVig,13490
+terminado/uimod_embed.js,sha256=38TUS4otQplKvP1Re31cbkRyP0kduyv4yOg5yKn5ZFI,773
+terminado/uimodule.py,sha256=FtOIQqxBvPDoxexHTj0KTiBtKlXTiHd0T6axk_QNpB4,1012
+terminado/websocket.py,sha256=-g_Tb6qzYbeZj6JcBOutcpUKMwhBR2Y0jdEUar_9qeI,4571
+terminado/_static/terminado.js,sha256=jtf3rZ-oeLYa4MnqPMeF3tt6oovg8-0bmnl_lH80skE,1218
+terminado/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+terminado/tests/basic_test.py,sha256=_pMPMvxSaK8gJDzcQmvj3swJyjMX66ei27pvxWikLIw,9826
+terminado-0.12.0.dist-info/LICENSE,sha256=t_QNiTfPG94dWy0uffm2_eTlWNyzEornoBJsMpi6G-g,1523
+terminado-0.12.0.dist-info/METADATA,sha256=WCydhE_ysfBv7Y-ar-lvwR47Kag6-pIq5qpNLnsEe7U,3678
+terminado-0.12.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+terminado-0.12.0.dist-info/top_level.txt,sha256=No1UtsIFr7gfyDXW5TzBgl9SyCQc5AznF0SwLZa4SOw,10
+terminado-0.12.0.dist-info/RECORD,,
