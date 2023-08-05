@@ -1,0 +1,3 @@
+[console_scripts]
+intuno = intuno.__main__:main
+
