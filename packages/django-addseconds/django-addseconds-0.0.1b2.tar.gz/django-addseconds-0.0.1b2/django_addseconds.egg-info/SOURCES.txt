@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+addseconds/__init__.py
+addseconds/templatetags/__init__.py
+addseconds/templatetags/addseconds.py
+django_addseconds.egg-info/PKG-INFO
+django_addseconds.egg-info/SOURCES.txt
+django_addseconds.egg-info/dependency_links.txt
+django_addseconds.egg-info/not-zip-safe
+django_addseconds.egg-info/requires.txt
+django_addseconds.egg-info/top_level.txt
