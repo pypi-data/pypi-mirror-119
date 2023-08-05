@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/tensorboxsdk/__init__.py
+src/tensorboxsdk/tensorboxsdk.py
+src/tensorboxsdk.egg-info/PKG-INFO
+src/tensorboxsdk.egg-info/SOURCES.txt
+src/tensorboxsdk.egg-info/dependency_links.txt
+src/tensorboxsdk.egg-info/top_level.txt
