@@ -1,0 +1,9 @@
+README.md
+setup.py
+python_imagemanipulating/__init__.py
+python_imagemanipulating/effects.py
+python_imagemanipulating.egg-info/PKG-INFO
+python_imagemanipulating.egg-info/SOURCES.txt
+python_imagemanipulating.egg-info/dependency_links.txt
+python_imagemanipulating.egg-info/requires.txt
+python_imagemanipulating.egg-info/top_level.txt
