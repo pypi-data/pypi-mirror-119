@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: vogue
+Version: 1.4.2
+Summary: UNKNOWN
+Home-page: https://github.com/Clinical-Genomics/vogue
+Author: Maya Brandi
+Author-email: maya.brandi@scilifelab.se
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: click (==8.0.1)
+Requires-Dist: bumpversion (==0.6.0)
+Requires-Dist: pyyaml (==5.4.1)
+Requires-Dist: pymongo (==3.11.4)
+Requires-Dist: genologics (>=0.4.6)
+Requires-Dist: flask (==1.1.2)
+Requires-Dist: Flask-DebugToolbar (==0.11.0)
+Requires-Dist: coloredlogs (==15.0.1)
+Requires-Dist: mongo-adapter (==0.3)
+Requires-Dist: lzstring (==1.0.4)
+Requires-Dist: gunicorn (==20.1.0)
+Requires-Dist: werkzeug (==0.16.1)
+Requires-Dist: numpy (==1.19.5)
+Requires-Dist: python-dateutil (==2.8.1)
+
+UNKNOWN
+
+
