@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/enum_extend/__init__.py
+src/enum_extend/__main__.py
+src/enum_extend.egg-info/PKG-INFO
+src/enum_extend.egg-info/SOURCES.txt
+src/enum_extend.egg-info/dependency_links.txt
+src/enum_extend.egg-info/top_level.txt
+src/ex/__init__.py
+src/tests/__init__.py
+src/tests/test_enum_auto.py
+src/tests/test_enum_compare.py
