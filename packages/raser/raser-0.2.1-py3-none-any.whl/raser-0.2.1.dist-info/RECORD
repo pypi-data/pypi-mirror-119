@@ -1,0 +1,12 @@
+raser/__init__.py,sha256=Jg0xl2s63zwGem4I2L_JG6KHVPDHrp2L-IV3Qx0Wxt8,235
+raser/calcurrent.py,sha256=LZMxHd5lFz-t3aYK01UMlufzMusqWu0SuNqVU6oj1zM,14218
+raser/elereadout.py,sha256=aA7pSP_pD3V99MI5cjh7prf26WPIQxIr8ZSArJkd7Mk,7222
+raser/g4particles.py,sha256=vugXPNEOoliGE6bbkh3B3s4eJtgo1rUodi3S1cqfqN8,19936
+raser/geometry.py,sha256=8gs9HrrkBCUnP17ocpvyB4PRlU9jWVhNnCZdbSNcENQ,4147
+raser/pyfenics.py,sha256=VOZiaSnUm2CPQ5unTU5kdpvwk6kdY3IyAKPhjTcR--o,11488
+raser/setting.py,sha256=YCYlm_KDjP3U2yoTMgRuV1agscDQc0SvDTb5FFYGjB4,7808
+raser-0.2.1.dist-info/LICENSE,sha256=ZkYUTy6UtlRkABBdaqW0VJtnx9Nl9l8ALcEsjDAVRcc,1062
+raser-0.2.1.dist-info/METADATA,sha256=rvp5quaHIilUL7tg_F0RF0Mg7VOo7CIIUMP1j7oIGGA,1491
+raser-0.2.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+raser-0.2.1.dist-info/top_level.txt,sha256=jD0L4p0ZSBxt04uoA52BtmKaapE0Ghsg96SAeIUCFZE,6
+raser-0.2.1.dist-info/RECORD,,
