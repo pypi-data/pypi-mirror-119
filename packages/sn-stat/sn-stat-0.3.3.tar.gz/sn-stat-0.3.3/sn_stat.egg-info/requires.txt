@@ -1,0 +1,11 @@
+numpy
+scipy
+
+[doc]
+sphinx
+sphinx-rtd-theme
+
+[test]
+pytest
+hypothesis
+flake8
