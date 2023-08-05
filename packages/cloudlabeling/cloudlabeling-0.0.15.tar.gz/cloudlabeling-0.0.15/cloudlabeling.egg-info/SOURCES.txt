@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+cloudlabeling/__init__.py
+cloudlabeling/cloudlabeling.py
+cloudlabeling/server.py
+cloudlabeling.egg-info/PKG-INFO
+cloudlabeling.egg-info/SOURCES.txt
+cloudlabeling.egg-info/dependency_links.txt
+cloudlabeling.egg-info/requires.txt
+cloudlabeling.egg-info/top_level.txt
+cloudlabeling/data/example.json
