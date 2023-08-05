@@ -1,0 +1,4 @@
+lxml
+mypy
+trio-typing
+types-python-slugify
