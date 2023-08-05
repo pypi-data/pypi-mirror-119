@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/MSSQLHELPER.egg-info/PKG-INFO
+src/MSSQLHELPER.egg-info/SOURCES.txt
+src/MSSQLHELPER.egg-info/dependency_links.txt
+src/MSSQLHELPER.egg-info/top_level.txt
