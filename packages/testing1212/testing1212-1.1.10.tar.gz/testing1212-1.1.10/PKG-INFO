@@ -1,0 +1,301 @@
+Metadata-Version: 2.1
+Name: testing1212
+Version: 1.1.10
+Summary: Utility code
+Home-page: https://gitlab.com/Rahultrel/testing
+Author: Rahul Kumar
+Author-email: rahul@trell.in
+License: UNKNOWN
+Description: <img src="https://i.ibb.co/5jF4CyY/Trell-Logo.png" alt="TRELL" width="200"/>
+        <h1>Trell Pip Package</h1>
+        
+        ***
+        Contents:<a id="contents"></a> [Section Header](###section-header)
+        ## Table of Contents
+        
+        - [Prerequisites](#Prerequisites)  
+        - [Slack Alerter](#Slack_Alerter)  
+        - [Log Formatter](#Log_Formatter)
+        - [S3 Connector](#S3_Connector)
+        - [Profile Decorator](#Profile_Decorator)
+        - [MySQL Connector](#MySQL_Connector)
+        - [BigQuery Connector](BigQuery_Connector#)
+        - [MongoDB Connector](#MongoDB_Connector)
+        
+        ***
+        
+        ## 1.  Prerequisites<a id="Prerequisites" name="Prerequisites">    
+        
+        - **Installation**    
+            `pip install trell-ai-utils`  
+            `pip install git+https://gitlab.com/trell/trell-ai-util.git`  
+            `pip install git+https://gitlab.com/trell/trell-ai-util.git@<tag_no>`  
+            `pip install git+https://gitlab.com/trell/trell-ai-util.git@<branch_name>`  
+            
+        *Trell-ai-utils pip package can be utilized if any of the following conditions are met.* 
+            
+        1. Trell-ai-utils pip package can be used in any Trell AWS EC2 instance with Secret Manager IAM role attached.
+              
+        2. Trell-ai-utils pip package can be used locally if AWS is locally configured.   
+             - AWS CLI configuration steps :    
+               `sudo apt install awscli`  
+               `aws_access_key_id = *********`  
+               `aws_secret_access_key = *********`
+            
+            
+        3. Trell-ai-utils pip package can be used without locally configuring AWS by following : - 
+            
+            - Manually configure from pip package utility functions :  
+             `from trell.utils import Credential`
+             `Credential.set(ACCESS_KEY="*********", SECRET_KEY="*********")`
+            - Or just export these two environment variables via :   
+            `export ACCESS_KEY="*********"`  
+            `export SECRET_KEY="*********"`
+            
+        ---
+            
+            
+        ##  2.  Slack Alerter<a name="Slack_Alerter">    
+            
+            
+        **Code Snippet Sample :**
+        ```python
+        from trell.Alerter import Alerter
+        try:
+            """Write your code"""
+        except:
+            """Catch exceptions"""
+            Alerter.send_alert(message=message, url=url, userId=userId, send_error=True) 
+        ```
+            
+        **Alerter Documentation :**
+        ```python
+        class Alerter:
+            """Class for sending alerts and monitoring stats to a slack channel"""
+        
+            def send_alert(message:str, url=url, userId:str=None, send_error:bool=False):
+                """
+                This function send alert to a target channel tagging a user with a alert message and traceback error.
+        
+                args:
+                        message : Pass the message to be displayed in the channel
+                        url : Pass webhook of target channel (if nothing is passed then #tesing channel will be alerted)
+                        userId : Slack userId of user who needs to be tagged (format of userid = 'Z0172K2PD5K')
+                        send_error : This should be set True, if slack_alert is called while catching exception
+                returns: Nothing
+                """
+        ```
+            
+            
+        ##  3.  Log Formatter<a name="Log_Formatter">
+            
+            
+        **Code Snippet Sample :**
+        ```python
+        from trell.utils import LogFormatter
+        LogFormatter.apply()
+        ```
+            
+        **Log Formatter Documentation**
+        ```python
+        class LogFormatter(logging.Formatter):
+            """Log Formatter class for trell ai usage"""
+        
+            __date_format = '%d/%b/%Y:%H:%M:%S %Z'
+        
+            @staticmethod
+            def apply(level=logging.INFO):
+                """
+                Start logging in json format.
+                :return:
+                """
+        ```
+            
+        ## 4. S3 Connector<a name="S3_Connector">     
+        
+        **Code Snippet Sample :**
+        ```python
+        from trell.S3 import S3
+        
+        # Uplaoding data to S3
+        demo = {"Name": "Trell", "Age": 4}
+        S3.write_to_s3_bucket(python_data_object=demo,
+                                     bucket='data-science-datas',
+                                     sub_bucket='models/', file_name="demo.pickle")
+                                     
+        # Doownlaoding data from S3
+        
+        demo = S3.read_from_s3_bucket(bucket='data-science-datas',          
+                                                 sub_bucket='models/',
+                                                 file_name="demo.pickle")
+        ```
+        
+        **S3 Connector Documentation**
+            
+        ```python
+        class S3:
+        
+            """AWS S3 utility functions"""
+        
+            @staticmethod
+            def read_from_s3_bucket(bucket='data-science-datas', sub_bucket='tests/', file_name='test.pkl'):
+        
+                """
+                read data stored in S3 bucket
+                :param string bucket: bucket name
+                :param string sub_bucket: sub-bucket name
+                :param string file_name: name of the file to be read
+                :return old_data : python object stored in the S3
+                """
+                
+            @staticmethod
+            def write_to_s3_bucket(python_data_object=None, bucket='data-science-datas', sub_bucket='tests/', file_name='test.pkl'):
+        
+                """
+                write python objects/variables etc  into S3 bucket
+                :param string bucket: bucket name
+                :param string sub_bucket: sub-bucket name
+                :param string file_name: name of the file to be written
+                :return None
+                """
+        
+             @staticmethod
+            def upload_data_from_local_to_s3(model_file_name, bucket='', sub_bucket=''):
+        
+                """
+                write data stored in local machine into S3 bucket from 
+                :param string bucket: bucket name
+                :param string sub_bucket: sub-bucket name
+                :param string file_name: name of the file to be written
+                :return None
+                """
+        ```
+            
+        ## 4. Profile Decorator<a name="Profile_Decorator">    
+            
+        **Code Snippet Sample :**  
+        ```python
+        from trell.profiler import profiler
+        @profiler(sort_by='cumulative', lines_to_print=10, strip_dirs=True)
+        def product_counter_v3():
+            return [1, 2, 3, 4, 5]
+        ```
+        **Profiler Documentaion**
+        ```python
+        def profiler(output_file=None, sort_by='cumulative', lines_to_print=None, strip_dirs=False):
+            """
+            A time profiler decorator
+        
+            :param str output_file: Path of the output file. If only name of the file is given, it's saved in the current
+            directory. If it's None, the name of the decorated function is used.
+            :param str sort_by: SortKey enum or tuple/list of str/SortKey enum Sorting criteria for the Stats object. For a list
+            of valid string and SortKey refer to: https://docs.python.org/3/library/profile.html#pstats.Stats.sort_stats
+            :param int lines_to_print: Number of lines to print. Default (None) is for all the lines. This is useful in reducing
+            the size of the printout, especially that sorting by 'cumulative', the time consuming operations are printed toward
+            the top of the file.
+            :param bool strip_dirs: Whether to remove the leading path info from file names. This is also useful in reducing the
+            size of the printout
+            :return: Profile of the decorated function
+            """
+        ```
+           
+        ## 5. MySQL Connector<a name="MySQL_Connector">  
+          
+        **Code Snippet Sample :**  
+        ```python
+        from trell.MySQL import MySQL 
+        query = "select languageId from trellDb.userLanguages where userId = 61668931"
+        df = MySQL.get_prod_data(query)
+        ```
+            
+        **MySQL Connector Documentaion**
+        ```python
+        class MySQL:
+        
+            """MySQL database utility functions"""
+        
+            def __init__(self, db_string):
+                """
+                initialisation method for mysql adapter
+                :param string db_string: mysql database connection string
+                """
+                self.db_string = db_string
+                
+        
+            @staticmethod
+            def get_data(query):
+        
+                """
+                Fetch data from mysql as a dataframe.
+                :param string query: query for fetching data from table
+                :return pd.DataFrame data
+                """
+        @staticmethod
+            def execute_query(query):
+        
+                """
+                Execute a query in the mysql table
+                :param string query: query for execution in the table
+                :return None
+                """
+        @staticmethod
+            def dump_data(data, table_name, mode="append"):
+        
+                """
+                Execute a query in the mysql table
+                :param string query: query for execution in the table
+                :param string table_name: name of the the target table
+                :param string mode: it can be either replace or append
+                :return None
+                """
+         @staticmethod
+            def get_prod_data_from_local(query):
+        
+                """
+                Fetch data from production mysql from local machine via SSH tunnelling (or local port forwarding).
+                :param string query: query for execution in the table
+                :param string table_name: name of the the target table
+                :param string db_string: mysql database connection string
+                :param string mode: it can be either replace or append
+                :return None
+                """
+        @staticmethod
+            def get_prod_data(query):
+        
+                """
+                Fetch data from production mysql as a dataframe.
+                :param string query: query for fetching data from table
+                :param string db_string: mysql database connection string
+                :return pd.DataFrame data
+                """
+         @staticmethod
+            def execute_query_in_prod(query):
+        
+                """
+                Execute a query in the production mysql table
+                :param string query: query for execution in the table
+                :param string db_string: mysql database connection string
+                :return None
+                """
+        @staticmethod
+            def dump_into_prod(data, table_name, mode="append"):
+        
+                """
+                Execute a query in the production mysql table
+                :param string query: query for execution in the table
+                :param string table_name: name of the the target table
+                :param string db_string: mysql database connection string
+                :param string mode: it can be either replace or append
+                :return None
+                """
+        
+        ```
+        # Section Header [`↩`](#contents) <a id="section-header"></a>
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.6.9
+Description-Content-Type: text/markdown
