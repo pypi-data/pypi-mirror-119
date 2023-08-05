@@ -1,0 +1,79 @@
+<h1>Machina SDK Release 2.1.2</h1>
+<h2>Introduction</h2>
+<p>Welcome to the 2.1.2 release of the Machina SDK.  This release contains a few minor bug fixes.</p>
+<p>Details are summarized below.</p>
+<h2>New Features / Improvements</h2>
+<h3>Metadata Collector API for environment variables and network info</h3>
+<p>The AgentMetadataCollectorProcessEnvironment and AgentMetadataCollectorNetwork classes collect
+metadata from the environment variables and network identifiers respectively. Call getMetadata() on
+the collector and pass the results into the new addMetadata() function available on metadata holders,
+like the Agent class.</p>
+<h3>Change to return codes on loadProfiles</h3>
+<p>Previously, a missing file did not return an error. Now this function returns ISAGENT_RESOURCE_NOT_FOUND
+unless called indirectly from an Agent intializer where a specific persistor file was not passed.</p>
+<h3>Extended API for validating assertions</h3>
+<p>Previously, you could only use this API with a KNS server. You can now pass an enrollment URL instead.</p>
+<h2>Issues Addressed</h2>
+<ul>
+<li>Encrypt and Decrypt in place normally encrypt to a temporary file and then on success, delete the
+original file and rename the temp into its place. This breaks hard links in the file system, so now,
+if a file has hard links, it is now copied to a temp file and then encrypted/decrypted over the
+original file, which maintains the hard link.</li>
+<li>Validate assertion API did not correctly adjust for Daylight Savings Time.</li>
+<li>Removed a confusing log message when a key create encounters an HTTP error code.</li>
+<li>The default Linux persistor was not exposed in certain SDK wrappers.</li>
+<li>The Linux Key Vault was not exposed in certain SDK wrappers.</li>
+<li>Windows security fixes</li>
+</ul>
+<h2>Discontinued Support</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2>Additional Notes</h2>
+<ul>
+<li>None</li>
+</ul>
+<h2>Supported Platforms</h2>
+<p>The Machina SDK is tested against the following platform configurations:</p>
+<table style="border-collapse: collapse;">
+<thead>
+<tr>
+<th style="border: thin solid black; padding: 3px;">Platform</th>
+<th style="border: thin solid black; padding: 3px;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: thin solid black; padding: 3px;">Linux</td>
+<td style="border: thin solid black; padding: 3px;">CentOS 7.8-2003</td>
+</tr>
+<tr>
+<td style="border: thin solid black; padding: 3px;">Linux</td>
+<td style="border: thin solid black; padding: 3px;">Ubuntu 18.04</td>
+</tr>
+<tr>
+<td style="border: thin solid black; padding: 3px;">Windows</td>
+<td style="border: thin solid black; padding: 3px;">Windows 8.1 (32 and 64 bit)</td>
+</tr>
+<tr>
+<td style="border: thin solid black; padding: 3px;">Windows</td>
+<td style="border: thin solid black; padding: 3px;">Windows 10 (32 and 64 bit)</td>
+</tr>
+<tr>
+<td style="border: thin solid black; padding: 3px;">macOS</td>
+<td style="border: thin solid black; padding: 3px;">macOS 13 (High Sierra)</td>
+</tr>
+<tr>
+<td style="border: thin solid black; padding: 3px;">macOS</td>
+<td style="border: thin solid black; padding: 3px;">macOS 14 (Mojave)</td>
+</tr>
+<tr>
+<td style="border: thin solid black; padding: 3px;">macOS</td>
+<td style="border: thin solid black; padding: 3px;">macOS 15 (Catalina)</td>
+</tr>
+<tr>
+<td style="border: thin solid black; padding: 3px;">Python</td>
+<td style="border: thin solid black; padding: 3px;">3.8.x</td>
+</tr>
+</tbody>
+</table>
