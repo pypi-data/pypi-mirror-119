@@ -1,0 +1,20 @@
+click
+sqlalchemy~=1.4.22
+
+[:python_version < "3.8"]
+typing-extensions
+
+[dev]
+coverage
+pre-commit
+pytest
+pytest-benchmark
+pytest-cov
+
+[examples]
+memory-profiler
+profilehooks
+psutil
+
+[examples:platform_system == "Windows"]
+pywin32
