@@ -1,0 +1,11 @@
+quickhttp/__init__.py,sha256=F_RlrUVJYfRPjZGR_YgfelmIwCFWrK5BmbLsX8bZ58w,278
+quickhttp/__main__.py,sha256=h_5DkCBqG5F5UYsn6MtRHAZYqVN6iwwk6azWKA6kUrA,68
+quickhttp/_version.py,sha256=wWvdr-e6rYHG4JQc9GYq8ByL9GobSOrfzEl2mpUq-Og,206
+quickhttp/cli.py,sha256=PhiiCWB3DqSECMg1Pe0wucdbQ75PPfi8waufeDgZMRE,3043
+quickhttp/exceptions.py,sha256=jIo4Pyn7V-i0lUugW-qbIESi1TWRRssa4GcdYFXyOho,236
+quickhttp/http_server.py,sha256=GWI-WwjrqBsUqbpG_vgIahXT4H8JR8l8MgMI7iRW0h4,5763
+quickhttp-1.0.0.dist-info/entry_points.txt,sha256=uT16HtDrS4Ege-QqUH29ATpiM91XTnJ5WioUd9ffOmE,47
+quickhttp-1.0.0.dist-info/LICENSE,sha256=455OdugAAgugZxvLIZIlEqlQgqYDPY3Rpet09s6vCjc,1063
+quickhttp-1.0.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+quickhttp-1.0.0.dist-info/METADATA,sha256=W09M2H59y3VRrc9JYbWsroHkZnlic4dACPyihSaj8Lg,5851
+quickhttp-1.0.0.dist-info/RECORD,,
