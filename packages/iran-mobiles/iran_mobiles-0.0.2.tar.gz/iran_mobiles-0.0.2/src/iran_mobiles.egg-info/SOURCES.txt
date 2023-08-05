@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/iran_mobile_va/__init__.py
+src/iran_mobile_va/mobile.py
+src/iran_mobiles.egg-info/PKG-INFO
+src/iran_mobiles.egg-info/SOURCES.txt
+src/iran_mobiles.egg-info/dependency_links.txt
+src/iran_mobiles.egg-info/top_level.txt
