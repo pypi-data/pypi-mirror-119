@@ -1,0 +1,17 @@
+qualichat/__init__.py,sha256=CMs70P7AhSXDoBoo-_tSjkkl8AcZsb8CRUdf7ZV56Dk,691
+qualichat/__main__.py,sha256=jpZsiCbh_8dRMzBwuNAaJ7EcItp_pJH8LaSvEsFauDE,7774
+qualichat/abc.py,sha256=xgiIsCGKQxgN3Qc7lvCtTYa2NV1IWVfB_AhjB4wJnyA,1551
+qualichat/books.txt,sha256=UdOftXUkP7J7q8jPcUx90HiiM2qOYQhprNcL_b96L-I,14237
+qualichat/chat.py,sha256=cUTmtGo7C3Z2SsBPRyDt6jLONOB_zi9EiPfiiGvONXc,5355
+qualichat/core.py,sha256=BdVP09tfjhZMju4Dg8Sx9GKqukqKBxcq_LCXYapY_0M,2850
+qualichat/enums.py,sha256=SVs97PGn9TFMqclTxEV9jfeIy2URa_dVlW2lzAJVI3w,3695
+qualichat/frames.py,sha256=BdqREAPtS_7M0dKDrbmtfq0KyEH2vlfRuULTe3Aa6T0,29620
+qualichat/models.py,sha256=lc233-t4oI8syOWg-6IxinW4uRkMek3-vwer_dFvHvw,9334
+qualichat/regex.py,sha256=TjD6Npm_eJk1nPFxJIIEZg2SaBLiCTkMCN6GNXN-4IE,2393
+qualichat/utils.py,sha256=tDE-xjpYEyLips4u_aCMv5GWCmiQuzgjxwujhGDBG8s,8928
+qualichat/fonts/Roboto-Regular.ttf,sha256=MZz_bnox8PKkHEddykKJCqXRn-FgF-IpD4wdThT3ZIE,168260
+qualichat-1.3.2.dist-info/LICENSE,sha256=iD3QmPyVG6mnuJobEfwOgOXFXJWUffubYY61RboKeBc,1066
+qualichat-1.3.2.dist-info/METADATA,sha256=ADKzLFZ_Ub7NuCBhzjmcukcTtyj2IzFdMFUJaLYAEq0,2650
+qualichat-1.3.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+qualichat-1.3.2.dist-info/top_level.txt,sha256=RykrDwFfme9eMBDArr4jOusda4x8L35SpI8y0iT3tXo,10
+qualichat-1.3.2.dist-info/RECORD,,
