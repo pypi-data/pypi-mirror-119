@@ -1,0 +1,34 @@
+[project]
+requires-python = ">=3.7"
+
+[build-system]
+requires = [
+    "setuptools>=45",
+    "setuptools_scm>=6.2",
+    "wheel",
+    "Cython>=0.22",
+    "toml",
+    # see: https://github.com/scipy/oldest-supported-numpy/blob/master/setup.cfg
+    "oldest-supported-numpy"
+]
+
+# uncomment to enable pep517 after versioneer problem is fixed.
+# https://github.com/python-versioneer/python-versioneer/issues/193
+# build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "bcolz/version.py"
+version_scheme = 'guess-next-dev'
+local_scheme = 'dirty-tag'
+
+[tool.cibuildwheel]
+test-extras = "test"
+test-requires = "numpy"
+test-command = 'python -c "import bcolz; bcolz.test()"'
+build-verbosity = 3
+
+# Optional: support Universal2 for Apple Silicon with these two lines:
+[tool.cibuildwheel.macos]
+archs = ["x86_64", "arm64", "universal2"]
+test-skip = ["*universal2:arm64"]
+

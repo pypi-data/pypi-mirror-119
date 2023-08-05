@@ -1,0 +1,45 @@
+{% set name = "bcolz-zipline" %}
+{% set version = "1.2.4" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.post2.tar.gz
+  md5: eae95628bb926a78ddcffd9d605c46cd
+
+build:
+  number: 0
+  script: {{ PYTHON }} -m pip install -vv .
+
+requirements:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]    -
+    - {{ compiler('c') }}
+  host:
+    - python
+    - cython
+    - numpy
+    - pip
+    - setuptools_scm
+  run:
+    - python
+    - {{ pin_compatible('numpy') }}
+
+test:
+  commands:
+    - pytest
+  requires:
+    - numpy
+    - pytest
+
+about:
+  home: https://github.com/stefan-jansen/bcolz-zipline
+  summary: Columnar and compressed data containers.
+  license: BSD-1-Clause
+  license_file: LICENSES/BCOLZ.txt
+
+
