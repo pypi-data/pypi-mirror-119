@@ -1,0 +1,9 @@
+src/tmx-to-text/tmx-to-text.py,sha256=YEsniWlraw85UBJiKf2_ve3yjN9H-_Ne1XpSRq3dbBI,4755
+src/tmx_to_text/__init__.py,sha256=ajz1GSNU9xYVrFEDSz6Xwg7amWQ_yvW75tQa1ZvRIWc,3
+src/tmx_to_text/converttmx.py,sha256=KVzyA2DzyLS64J8ed0LGYZwM0eqltO_98LC5QN9HAEI,2835
+src/tmx_to_text/tmx_to_text.py,sha256=IvyGIB46e5PRI_wLChUiGGmchhPXdIMY11k87f5Qnq8,2860
+tmx_to_text-0.1.2.dist-info/METADATA,sha256=vkjIjO347H9Ei1aqfHSZSuI3Lk3Vk10DR-p9D0X64YI,1374
+tmx_to_text-0.1.2.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+tmx_to_text-0.1.2.dist-info/entry_points.txt,sha256=6xWLV6qNyY_WfDCohsJoKh6KpyWTwO8pIfpm2Gu1BuA,66
+tmx_to_text-0.1.2.dist-info/top_level.txt,sha256=QeWb99C-Afl1h8kQ60T3AAQ1EcTeifvchdSz1fQcUaM,16
+tmx_to_text-0.1.2.dist-info/RECORD,,
