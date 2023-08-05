@@ -1,0 +1,8 @@
+PyYAML
+python-dotenv
+snowflake-connector-python
+
+[test]
+black
+mypy
+pylint
