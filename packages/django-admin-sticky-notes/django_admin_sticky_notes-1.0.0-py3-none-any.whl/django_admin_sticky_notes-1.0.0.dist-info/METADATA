@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: django-admin-sticky-notes
+Version: 1.0.0
+Summary: Django admin sticky notes
+Home-page: https://github.com/dchoruzy/django_admin_sticky_notes
+Author: Dariusz Choruzy
+Author-email: dariusz.choruzy@gmail.com
+License: MIT License
+Project-URL: Bug Tracker, https://github.com/dchoruzy/django_admin_sticky_notes/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+UNKNOWN
+

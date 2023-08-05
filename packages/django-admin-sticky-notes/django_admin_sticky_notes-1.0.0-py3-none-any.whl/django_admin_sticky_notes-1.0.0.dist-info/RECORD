@@ -1,0 +1,13 @@
+django_admin_sticky_notes/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_admin_sticky_notes/models.py,sha256=q0v75oN73KDdwPYcuEStmFG-AW0yNe0ypUfe5G9w5VQ,93
+django_admin_sticky_notes/urls.py,sha256=ulty9yfb2BqBaBRfAFthChRwAL-HxOPN0UGATEpUBLE,148
+django_admin_sticky_notes/views.py,sha256=qnUdCnlTvlY_guG4ol4aBS1OMc4QLfOZyoI2ehei7BI,500
+django_admin_sticky_notes/migrations/0001_initial.py,sha256=VCFESU2pSfEHHiKVvB1PpeAjZ4P2B9OXag6UggGgUM8,479
+django_admin_sticky_notes/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_admin_sticky_notes/static/admin/css/note.css,sha256=kJeX5CzEhv-NSeIQ1LR7ZJ_E5nHdwSc7dPpLvqlA7QE,928
+django_admin_sticky_notes/static/admin/js/note.js,sha256=RYNYKUuLJQ6jGdJxm9Gx3JhWjU6mlJUoMjZ8cKKk730,1144
+django_admin_sticky_notes/templates/admin/index.html,sha256=Z-wlHcalehNsZydJ2cQgCHLdVlBe85USgKDCotZZ-Ks,2030
+django_admin_sticky_notes-1.0.0.dist-info/METADATA,sha256=HqcO4X4zmVBssFf5QnRYFx_EnUh8DjxgcN1WHJEVoh8,578
+django_admin_sticky_notes-1.0.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+django_admin_sticky_notes-1.0.0.dist-info/top_level.txt,sha256=pq_fgMc9ldC6rHzUfbgqNVQPB3zHAtIN4XcFbPYuHd0,26
+django_admin_sticky_notes-1.0.0.dist-info/RECORD,,
