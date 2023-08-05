@@ -1,0 +1,84 @@
+[tool.poetry]
+name = "licensecheck"
+version = "2021.4"
+description = "Output the licenses used by dependencies and check if these are compatible with the project license"
+authors = ["FredHappyface"]
+classifiers = [
+	"Environment :: Console",
+	"Environment :: MacOS X",
+	"Environment :: Win32 (MS Windows)",
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Intended Audience :: Education",
+	"License :: OSI Approved :: MIT License",
+	"Natural Language :: English",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3.7",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: Implementation :: CPython",
+	"Topic :: Security",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	"Topic :: Utilities"
+]
+homepage = "https://github.com/FHPythonUtils/LicenseCheck"
+repository = "https://github.com/FHPythonUtils/LicenseCheck"
+documentation = "https://github.com/FHPythonUtils/LicenseCheck/blob/master/README.md"
+readme = "README.md"
+
+[tool.poetry.scripts]
+licensecheck = 'licensecheck:cli'
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requirements-parser = "<2,>=0.2.0"
+requests = "<4,>=2.24.0"
+metprint = "<2022,>=2020.7.1"
+pip = "<22,>=20.2.3"
+tomlkit = "<2,>=0.7.0"
+fhconfparser = "<2023,>=2021"
+
+[tool.poetry.extras]
+full = ["metprint"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# Pylint
+[tool.pylint.basic]
+argument-naming-style = "camelCase"
+attr-naming-style = "camelCase"
+function-naming-style = "camelCase"
+method-naming-style = "camelCase"
+variable-naming-style = "camelCase"
+
+[tool.pylint.format]
+indent-string = "\t"
+
+[tool.pylint.master]
+ignore-patterns = "test_.*?py"
+
+[tool.pylint.messages_control]
+enable = [
+	'F', # Fatal
+	'E', # Error
+	'W', # Warning
+	'R', # Refactor
+	'C', # Convention
+
+]
+disable = [
+	"pointless-string-statement",
+	"superfluous-parens",
+	"bad-continuation",
+	"wrong-import-position",
+	"unsubscriptable-object",
+	"python3",
+]
+
+
+[tool.licensecheck]
+# using = "requirements:requirements.txt;requirements_optional.txt"
+# format = "json"
