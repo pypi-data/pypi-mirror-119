@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: nlon-py
+Version: 0.1.5
+Summary: Python package for identifying text containing natural language (or not) using machine learning.
+Home-page: https://github.com/Jianwen-Xu/nlon-py
+Author: Jianwen Xu
+Author-email: xujianwen37@gmail.com
+License: MIT license
+Keywords: nlon_py
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: autopep8 (==1.5.7)
+Requires-Dist: click (==8.0.1)
+Requires-Dist: cycler (==0.10.0)
+Requires-Dist: Cython (==0.29.23)
+Requires-Dist: joblib (==1.0.1)
+Requires-Dist: kiwisolver (==1.3.1)
+Requires-Dist: lxml (==4.6.3)
+Requires-Dist: matplotlib (==3.4.2)
+Requires-Dist: numpy (==1.21.0)
+Requires-Dist: packaging (==21.0)
+Requires-Dist: pandas (==1.3.0)
+Requires-Dist: Pillow (==8.3.2)
+Requires-Dist: pycodestyle (==2.7.0)
+Requires-Dist: pyparsing (==2.4.7)
+Requires-Dist: PyQt5 (==5.15.4)
+Requires-Dist: PyQt5-Qt5 (==5.15.2)
+Requires-Dist: PyQt5-sip (==12.9.0)
+Requires-Dist: python-dateutil (==2.8.1)
+Requires-Dist: pytz (==2021.1)
+Requires-Dist: scikit-learn (==0.24.2)
+Requires-Dist: scipy (==1.7.0)
+Requires-Dist: seaborn (==0.11.1)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: threadpoolctl (==2.1.0)
+Requires-Dist: toml (==0.10.2)
+Requires-Dist: glmnet (==2.2.1)
+
+=======
+nlon-py
+=======
+
+
+.. image:: https://img.shields.io/pypi/v/nlon-py.svg
+        :target: https://pypi.python.org/pypi/nlon-py
+.. image:: https://app.travis-ci.com/Jianwen-Xu/NLoN-PY.svg?branch=master
+        :target: https://app.travis-ci.com/Jianwen-Xu/NLoN-PY
+.. image:: https://readthedocs.org/projects/nlon-py/badge/?version=latest
+        :target: https://nlon-py.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+
+
+Python package for identifying text containing natural language (or not) using machine learning.
+
+
+* Free software: MIT license
+* Documentation: https://nlon-py.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.4 (2021-07-18)
+------------------
+
+* Implement basic model and functions
+
+0.1.0 (2021-06-10)
+------------------
+
+* First release on PyPI.
+
+

@@ -1,0 +1,26 @@
+nlon_py/__init__.py,sha256=3PNiFaA8Sxuu3zX0q60G6UqArJwLF070_NKKWS5N6mw,1108
+nlon_py/cli.py,sha256=rxpW51YNcgVmyNLTRts_KMwCMbyYU0Ey427H9YM-70o,399
+nlon_py/features.py,sha256=oDYqxV7zPybhjWZdaXK2ENhUUblebytXxSKXztvQVVw,5147
+nlon_py/model.py,sha256=GFdspwVmvnq_A9AMk9fFMPYT7UQWbCLQCZgw7l-_WXM,9944
+nlon_py/nlon_py.py,sha256=h0hwdogXGFqerm-5ZPeT-irPn91pCcQRjiHThXsRzEk,19
+nlon_py/data/bitcoin.csv,sha256=H7QZhKsPWeEKvG4FR5B74jJQ3EduQ-GaCT_9qTE2uOM,149000
+nlon_py/data/build_model.py,sha256=XD9gF3P814kvaLLln_-0zOwWKsbTxVcQjmv_IXaQbYo,6130
+nlon_py/data/default_data.joblib,sha256=3Mop0FAj7ZEk4fwRhpMyjy7_Ks3KA_nS_pY4-KcLwNs,255881
+nlon_py/data/default_model.joblib,sha256=gtB58J-h5ywyZyUnj1C0NzBkUxfABfehCFk9dzVs-iM,163667
+nlon_py/data/default_vectorizer.joblib,sha256=uASuZ4ksRaPI4fsRCt5v_u5bPR1_Zibvz7OnAgxjEHg,201144
+nlon_py/data/kubernetes.csv,sha256=OVAg9deNxE48zvd4ArVEkcWj_5pRZB3x1HscP_626WE,210203
+nlon_py/data/lines.10k.cfo.sample.2000 - Bitcoin (github.com).csv,sha256=9PKIAhVeDtC_dXxLgN8yFtwvoH9Ie2YGzdLTFX9hY2Y,139981
+nlon_py/data/lines.10k.cfo.sample.2000 - Kubernetes (Slackarchive.io).csv,sha256=IIK8B18jxB_5oD6PYpMxgWE05hOAV-pSvGehEOR_f3I,195496
+nlon_py/data/lines.10k.cfo.sample.2000 - Lucene-dev mailing list.csv,sha256=syEV0lactuYT392JPZISLr-Y0TD0hhJTMH69JVmDFjc,124080
+"nlon_py/data/lines.10k.cfo.sample.2000 - Mozilla (Firefox, Core, OS).csv",sha256=FJVDlmjX6RRjjLDmCRqUPyo7JqvXzB77mA_qmdoaK9c,164919
+nlon_py/data/lucene.csv,sha256=X4UwJgnwmwDoC05ksqG0rdH5_FeBKlMh6l4iY-aF-F0,128562
+nlon_py/data/make_data.py,sha256=0_nAQP05QSEczN8lVHw5zxuU9LVvi9S75CrZ9UeIy54,2939
+nlon_py/data/mozilla.csv,sha256=EVFbYu_Hymo1moFvkxeGuNbRANd2CR26uVDGNpnPpCs,173752
+nlon_py/data/mysql_sw_wo_code_words.txt,sha256=2Pevv2FfDjtzPYNW-b7_snU84TXjI_deyrd97gH0HWM,3590
+nlon_py-0.1.5.dist-info/AUTHORS.rst,sha256=PsmqBW4KyfTpocghhcqwhhS70EAVqt2NB5LtKNkuZ1A,157
+nlon_py-0.1.5.dist-info/LICENSE,sha256=pZzV3s4BQLif-1TcIpEyhuZkg8EfOA817v38yPSVQRM,1069
+nlon_py-0.1.5.dist-info/METADATA,sha256=zKcWN1-A6qNcRFuucu1lNmyy4fCmHHBTky1TRewIOOA,2652
+nlon_py-0.1.5.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+nlon_py-0.1.5.dist-info/entry_points.txt,sha256=9DbG5EAOT9Z69TpPz0L7QuYNV9cEmq00ucK4D7cw6vs,46
+nlon_py-0.1.5.dist-info/top_level.txt,sha256=i5wF9GhQ80q-n-ErRATuUxxGF2WNHCXlC7Zub1mQRHQ,8
+nlon_py-0.1.5.dist-info/RECORD,,
