@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: moviepy-cli
+Version: 0.1.1
+Summary: Command line tools for quick video editing.
+Home-page: http://github.com/wkentaro/moviepy-cli
+Author: Kentaro Wada
+Author-email: www.kentaro.wada@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+
+# moviepy-cli
+
+Moviepy-cli is designed to apply **several video editing in a single command** and to be used as an alternative to [video-cli](https://github.com/wkentaro/video-cli).
+
+## Usage
+
+```bash
+moviepy --start 8 --retime 2 data/annotation.mp4
+```
+
+```bash
+usage: moviepy [-h] [--start START] [--retime RETIME] [--inplace]
+               [--output-file OUTPUT_FILE]
+               input_file
+
+positional arguments:
+  input_file            input file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --start START         start time (default: None)
+  --retime RETIME       retime (default: None)
+  --inplace             inplace (default: False)
+  --output-file OUTPUT_FILE
+                        output file (default: None)
+```
+
+## Tips
+
+```bash
+# edit video files in 4 processes maximum
+echo *.mp4 | xargs -n1 -P4 moviepy --start 8 --retime 2
+```
+
