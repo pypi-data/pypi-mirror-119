@@ -1,0 +1,14 @@
+click
+click_option_group
+tabulate
+requests
+defusedxml
+pyjwt~=2.0.1
+python-openstackclient
+future
+liboidcagent
+
+PyYAML>=5.4.1
+setuptools
+jsonschema
+psutil
