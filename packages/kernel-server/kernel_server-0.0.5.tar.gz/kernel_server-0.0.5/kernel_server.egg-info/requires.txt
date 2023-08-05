@@ -1,0 +1,8 @@
+pyzmq
+websockets
+fastapi
+
+[test]
+black
+mypy
+flake8
