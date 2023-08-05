@@ -1,0 +1,13 @@
+convpandas/__init__.py,sha256=OuqD7ccFgzZpmQpnGVPU2O_U2ITvETGXiWZ0KHN5j9g,64
+convpandas/__main__.py,sha256=mFkJNuW5CZ78iv6QBxl3E14QISv4baC6f43tI9s8PIg,1299
+convpandas/__version__.py,sha256=r4xAFihOf72W9TD-lpMi6ntWSTKTP2SlzKP1ytkjRbI,22
+convpandas/command/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+convpandas/command/csv2xlsx.py,sha256=-3HE1nToxjzG1ny30mqAenRwDWAb3O6fQxHzlmMyhKQ,5090
+convpandas/command/xlsx2csv.py,sha256=NULEhm1wmuVrrZ18xPRM8jDxwzemDwHAXj-2dT3RG-I,2644
+convpandas/common/__init__.py,sha256=0DBI9STUqsrkFNobG8Zd45lIUkd0gnVhY821IlMZGJY,74
+convpandas/common/cli.py,sha256=QrDdPL6dlfSM-msKF_2FnzGRLxy9NwTHx2brdPDGylY,237
+convpandas-0.3.1.dist-info/entry_points.txt,sha256=rgmQX_r46S_Nt6gwCb4b-U3kyrTqdIw7apuc65F-9jo,54
+convpandas-0.3.1.dist-info/LICENSE,sha256=o5XIJUdWPBq6qDNsoGnb8nvHjWBqiuzT9P6yYMAlc5U,1067
+convpandas-0.3.1.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+convpandas-0.3.1.dist-info/METADATA,sha256=27NZS2l5sKGbn7OflS6x3xg-Kup_A9z1bpXRkP4oLdA,4280
+convpandas-0.3.1.dist-info/RECORD,,
