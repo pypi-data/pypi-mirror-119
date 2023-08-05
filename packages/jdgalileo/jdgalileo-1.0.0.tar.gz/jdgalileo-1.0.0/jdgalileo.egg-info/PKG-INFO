@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: jdgalileo
+Version: 1.0.0
+Summary: Galileo
+Home-page: UNKNOWN
+Author: Galileo Authors
+Author-email: galileo_opensource@jd.com
+License: Apache License 2.0
+Keywords: graph-embeddinggraph-neural-networks,tensorflow,pytorch
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: GPU :: NVIDIA CUDA :: 10.1
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: C++
+Requires-Python: >=3.8
+License-File: LICENSE
+
+Galileo library for large scale graph training by JD
+
