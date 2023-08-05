@@ -1,0 +1,17 @@
+scrapy_redis_sentinel/__init__.py,sha256=xiMzGOXdTs13B7DFZDg8xN6HhiDm4nJDInrYu6PiP70,146
+scrapy_redis_sentinel/bloomfilter.py,sha256=t9QNFfWGtkSE299AIEFFDo5wsbSNmD3qdLaONAdXJ2Q,1574
+scrapy_redis_sentinel/connection.py,sha256=8VBADCtRzSZLFw1dto_4yUu3GAPSAfBTwQ3MfboIauM,5160
+scrapy_redis_sentinel/defaults.py,sha256=TfTVAfWhDw8CTFrIUWOg3KAKhcNap8j2SNljIO6yK7A,871
+scrapy_redis_sentinel/dupefilter.py,sha256=c2BIEEl2zr7lNL0r_unoxNFlyCP3YQRZNiTYINoJ3u0,8542
+scrapy_redis_sentinel/picklecompat.py,sha256=TgIl5iCfbZOvtris4ISmWUvbwvBd_SlktEzyZ2PK_FM,266
+scrapy_redis_sentinel/pipelines.py,sha256=wsrderHBsYWGDJCmrm7pI0LNwvdTk9StFsWeSxGpooo,2019
+scrapy_redis_sentinel/queue.py,sha256=4_VVGDYEJaSCAh8TufxxUq9JrmUlMXh5o7_lkyBHDfQ,5082
+scrapy_redis_sentinel/scheduler.py,sha256=y5zmQkqNJQpnf9SNnbeGPQLvodKyEiK7t-Ns7pCKJhU,6199
+scrapy_redis_sentinel/spiders.py,sha256=Z7tgVYTJ8HIYrwp6QuyGobejjSd-FFfqJt8CR5xQtr4,8406
+scrapy_redis_sentinel/stats.py,sha256=yXhgZnr0GJGlzIgQgpOauYhQ3urX8YhCecfJHhj97Nc,3087
+scrapy_redis_sentinel/utils.py,sha256=ZaJUgxDS-HVuquhl7bwAnQ2c-TzFkC7uZ4ebD4fKZhU,216
+scrapy_redis_sentinel-0.7.1.dist-info/LICENSE,sha256=HuXQXB5mKlALFdoPQwcD3RaL--Q9-AS15dfhvJqfW5Y,1066
+scrapy_redis_sentinel-0.7.1.dist-info/METADATA,sha256=2zlpwUAHSV5IJ2fvk6ie5S7BSZJ2T93yfbHIbiQk-TA,4403
+scrapy_redis_sentinel-0.7.1.dist-info/WHEEL,sha256=Z-nyYpwrcSqxfdux5Mbn_DQ525iP7J2DG3JgGvOYyTQ,110
+scrapy_redis_sentinel-0.7.1.dist-info/top_level.txt,sha256=zjn-CTc-vomkeP1bwXaz9u7kjqRAoRNE6snVFcd53uU,22
+scrapy_redis_sentinel-0.7.1.dist-info/RECORD,,
