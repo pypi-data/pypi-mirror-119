@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/mrstock/__init__.py
+src/mrstock/main.py
+src/mrstock.egg-info/PKG-INFO
+src/mrstock.egg-info/SOURCES.txt
+src/mrstock.egg-info/dependency_links.txt
+src/mrstock.egg-info/top_level.txt
