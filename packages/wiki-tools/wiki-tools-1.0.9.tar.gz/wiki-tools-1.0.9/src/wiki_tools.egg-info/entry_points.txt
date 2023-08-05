@@ -1,0 +1,4 @@
+[console_scripts]
+WikiFiller = WikiFiller.WikiFiller:main
+WikiFinder = WikiFinder.WikiFinder:main
+

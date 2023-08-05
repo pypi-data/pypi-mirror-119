@@ -1,0 +1,8 @@
+selenium>=3.141.0
+pyperclip>=1.8.2
+pubchempy>=1.0.4
+requests>=2.26.0
+fuzzywuzzy[speedup]>=0.18.0
+beautifulsoup4>=4.9.3
+termcolor>=1.1.0
+urwid>=2.1.2
