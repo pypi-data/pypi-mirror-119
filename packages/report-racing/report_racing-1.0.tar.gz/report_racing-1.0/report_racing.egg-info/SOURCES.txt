@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+report_racing.egg-info/PKG-INFO
+report_racing.egg-info/SOURCES.txt
+report_racing.egg-info/dependency_links.txt
+report_racing.egg-info/top_level.txt
+script_for_create_standings/__init__.py
+script_for_create_standings/racer_time.py
