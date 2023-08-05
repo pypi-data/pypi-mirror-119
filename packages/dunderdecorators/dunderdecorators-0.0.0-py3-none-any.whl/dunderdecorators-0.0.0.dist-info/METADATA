@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: dunderdecorators
+Version: 0.0.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Andy Stokely
+Author-email: amstokely@ucsd.edu
+License: MIT
+Platform: Linux
+Platform: Unix
+Requires-Python: >=3.6
+Requires-Dist: typing
+Requires-Dist: pytest
+Requires-Dist: cython
+
+UNKNOWN
+
+
