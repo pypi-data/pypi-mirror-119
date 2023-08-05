@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "wire_web"
+version = "0.1.5"
+description = "Wire the web"
+authors = ["Leo B. <bernerdoodle@outlook.de>"]
+keywords = ["asgi", "python", "web", "webdevelopment"]
+readme = "readme.md"
+license = "MIT"
+homepage = "https://wire.bernerdev.de/"
+repository = "https://github.com/cheetahbyte/wire"
+include = [
+    "LICENSE"
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+multidict = "^5.1.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+uvicorn = "^0.14.0"
+black = "^21.8b0"
+
+[tool.poetry.urls]
+Chat = "https://discord.gg/EtqGfBVuZS"
+Changes = "https://wire.bernerdev.de/changelog"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
