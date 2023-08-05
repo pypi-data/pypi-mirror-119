@@ -1,0 +1,11 @@
+h5py
+objax
+pytest
+plum-dispatch
+optax
+tqdm>=4.38
+matplotlib
+scikit-learn
+
+[EXPTS]
+olive-oil-ml
