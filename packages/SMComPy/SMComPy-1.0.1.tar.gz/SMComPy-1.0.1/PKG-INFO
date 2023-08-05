@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: SMComPy
+Version: 1.0.1
+Summary: SMComPy project
+Home-page: https://www.sensemore.io
+Author: sensemore
+Author-email: hello@sensemore.io
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# SMCom
+
+SMCom is a communication protocol and template class implementation which allows to create custom communication frames or provides common scenarios.
+
+
+
