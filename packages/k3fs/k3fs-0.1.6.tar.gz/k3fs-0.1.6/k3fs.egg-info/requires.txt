@@ -1,0 +1,9 @@
+semantic_version~=2.8.5
+jinja2~=2.11.2
+PyYAML~=5.3.1
+sphinx~=3.3.1
+k3ut<0.2,>=0.1.15
+k3confloader<0.2,>=0.1.1
+k3thread<0.2,>=0.1.0
+k3num<0.2,>=0.1.1
+psutil>=5.8.0
