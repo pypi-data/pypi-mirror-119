@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: collective.mosaictraining
+Version: 1.0
+Summary: installs a Mosaic training guide as Plone content
+Home-page: https://github.com/collective/collective.mosaictraining
+Author: T. Kim Nguyen
+Author-email: kim@sixfeetup.com
+License: GPL version 2
+Project-URL: PyPI, https://pypi.python.org/pypi/collective.mosaictraining
+Project-URL: Source, https://github.com/collective/collective.mosaictraining
+Project-URL: Tracker, https://github.com/collective/collective.mosaictraining/issues
+Description: .. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
+           If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
+           This text does not appear on pypi or github. It is a comment.
+        
+        =========================
+        collective.mosaictraining
+        =========================
+        
+        - This add-on creates a new unpublished folder called Mosaic User Training Guide.
+        - Uninstalling this will not remove the Mosaic User Training Guide folder.
+        - Re-installing the add-on will recreate any missing pages of the training guide without overwriting existing ones
+        - If the Mosaic User Training Guide folder is renamed or deleted, re-installing the add-on will recreate a new folder.
+        
+        Installation
+        ------------
+        
+        Install collective.mosaictraining by adding it to your buildout::
+        
+            [buildout]
+        
+            ...
+        
+            eggs =
+                collective.mosaictraining
+        
+        
+        and then running ``bin/buildout``
+        
+        
+        Contribute
+        ----------
+        
+        - Issue Tracker: https://github.com/collective/collective.mosaictraining/issues
+        - Source Code: https://github.com/collective/collective.mosaictraining
+        
+        
+        License
+        -------
+        
+        The project is licensed under the GPLv2.
+        
+        
+        Contributors
+        ============
+        
+        - Annette Lewis, annette@sixfeetup.com
+        - T. Kim Nguyen, kim@sixfeetup.com
+        
+        
+        Changelog
+        =========
+        
+        
+        1.0 (2021-09-07)
+        ----------------
+        
+        - Initial release.
+          [tkimnguyen]
+        
+Keywords: Python Plone
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Plone
+Classifier: Framework :: Plone :: Addon
+Classifier: Framework :: Plone :: 5.2
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Requires-Python: ==2.7, >=3.6
+Provides-Extra: test

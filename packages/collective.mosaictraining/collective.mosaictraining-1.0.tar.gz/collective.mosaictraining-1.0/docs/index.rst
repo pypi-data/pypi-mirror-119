@@ -1,0 +1,5 @@
+=========================
+collective.mosaictraining
+=========================
+
+User documentation
