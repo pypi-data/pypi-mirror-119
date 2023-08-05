@@ -1,0 +1,5 @@
+requests
+cloudscraper
+pillow
+lxml
+natsort
