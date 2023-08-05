@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: geyser-lava
+Version: 0.0.5
+Summary: Compose and execute python objects
+Home-page: https://github.com/chenrz925/geyser
+Author: Runze Chen
+Author-email: chenrz925@icloud.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/chenrz925/geyser/issues
+Project-URL: Source, https://github.com/chenrz925/geyser
+Keywords: sample,setuptools,development
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Environment :: Console
+Requires-Python: >=3.6, <4
+Description-Content-Type: text/markdown
+Requires-Dist: geyser (>=0.3.0)
+Provides-Extra: pytorch
+Requires-Dist: torch (>=1.9.0) ; extra == 'pytorch'
+Requires-Dist: torchaudio (>=0.9.0) ; extra == 'pytorch'
+Requires-Dist: torchvision (>=0.10.0) ; extra == 'pytorch'
+Requires-Dist: pytorch-ignite (>=0.4.6) ; extra == 'pytorch'
+
+# geyser-lava
+
+
