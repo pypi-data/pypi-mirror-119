@@ -1,0 +1,16 @@
+material_engineering_QBD-0.0.8-py3.9-nspkg.pth,sha256=F4aXuY9Hj1SGb195iwPCQwyalCZuFYQqNT2jqHQTuzo,535
+material_engineering_QBD/__init__.py,sha256=md6bFNhHg7347Qw5_PI4rryFCGn6RA-n2EAXo9LxttQ,187
+material_engineering_QBD/numeric.py,sha256=QTjXRkWRw1nBhwhV52Em26oWtVGPR7igDGL440Yw2D8,102
+material_engineering_QBD/tools.py,sha256=vU149Drf4QBcYrGVaFG-PFZtyCzF5AtD85oquv9tAVY,1224
+material_engineering_QBD/chemical_QBD/__init__.py,sha256=VYO-VEXmx46xyLAKuCvrM7fAxlB-SJkY3Qw8ShTz5JQ,45
+material_engineering_QBD/chemical_QBD/const.py,sha256=Jr8sOY-G_BbrWKzGAGnJr38v6-k8JTYTOHy8apeWacc,631
+material_engineering_QBD/chemical_QBD/tools.py,sha256=ylFhMmT4y2nIxUGNiaLYY5sr0DNTtHZ4Fj-Ug1-nkUA,1109
+material_engineering_QBD/units_QBD/__init__.py,sha256=DDJMonS6kTZ-CYtYMnXSwJoJZPx9D5cga8vKAwv9ZDU,434
+material_engineering_QBD/units_QBD/const.py,sha256=MFMZV4vidWnf1FPnBTJmLuYtZHJVVBVaa53OfMNyABM,2357
+material_engineering_QBD/units_QBD/standardise_.py,sha256=FqlYWiYYj1s-YZ9gKNfNuSpzL9RK-f7rbarkHcMkUs0,8695
+material_engineering_QBD/units_QBD/tools.py,sha256=-EUoGqbKRbTL42ME15YPumqsnABwYn1oWNULz9DRxro,11297
+material_engineering_QBD-0.0.8.dist-info/METADATA,sha256=l4cK7xEJ2bMPNuzoiGGectCOsTfw42HyPXy3zbdY6N4,1128
+material_engineering_QBD-0.0.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+material_engineering_QBD-0.0.8.dist-info/namespace_packages.txt,sha256=4J9lbBMLnAiyxatxh8iRKV5Entd_6-oqbO7pzJjMsPw,6
+material_engineering_QBD-0.0.8.dist-info/top_level.txt,sha256=sg7G94E9bddyuLZyVMeI40xGSHBzPLQ_D7rRkUK4j0E,25
+material_engineering_QBD-0.0.8.dist-info/RECORD,,
