@@ -1,0 +1,38 @@
+Metadata-Version: 1.2
+Name: fsharadar
+Version: 0.3.0
+Summary: Flounder interface of the Zipline platform to the Sharadar data.
+Home-page: https://flounderteam.github.io/fsharadar/
+Author: Flounder Team
+Author-email: flounderhost@gmail.com
+License: MIT
+Description: ===================================
+        Flounder Zipline-Sharadar Interface
+        ===================================
+        
+        .. image:: https://img.shields.io/travis/flounderteam/fsharadar.svg
+                :target: https://travis-ci.org/flounderteam/fsharadar
+        
+        .. image:: https://img.shields.io/pypi/v/fsharadar.svg
+                :target: https://pypi.python.org/pypi/fsharadar
+        
+        
+        Flounder Zipline-Sharadar Interface
+        
+        The Flounder Zipline-Sharadar interface represents the Flounder extension
+        of the `Zipline <https://github.com/quantopian/zipline>`_ quantitative research platform for ingesting and loading
+        `Sharadar <https://www.quandl.com/publishers/SHARADAR>`_ data.
+        
+        The current version provides consolidated access to daily prices,
+        fundamentals, and metadata of US stocks for selecting
+        tradable universes and running multiple factors within the Zipline pipeline.
+        
+        * Documentation: https://flounderteam.github.io/fsharadar/
+        * Installation: pip install cython fsharadar
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
