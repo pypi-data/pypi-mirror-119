@@ -1,0 +1,10 @@
+setup.py
+k3modutil/__init__.py
+k3modutil/modutil.py
+k3modutil/setup.py
+k3modutil/synopsis.py
+k3modutil.egg-info/PKG-INFO
+k3modutil.egg-info/SOURCES.txt
+k3modutil.egg-info/dependency_links.txt
+k3modutil.egg-info/requires.txt
+k3modutil.egg-info/top_level.txt
