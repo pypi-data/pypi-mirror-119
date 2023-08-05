@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+Sansorchi.egg-info/PKG-INFO
+Sansorchi.egg-info/SOURCES.txt
+Sansorchi.egg-info/dependency_links.txt
+Sansorchi.egg-info/requires.txt
+Sansorchi.egg-info/top_level.txt
+sansorchi/__init__.py
+sansorchi/__version__.py
+sansorchi/data.py
+sansorchi/sansorchi.py
+test/test_sentences.py
+test/test_word.py
