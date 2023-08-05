@@ -1,0 +1,9 @@
+certbot_dns_cloudflare/__init__.py,sha256=JscBvA8MacjDSXHPW-QoU8Xrn38YpM5IjMnxSTUG3Ak,4569
+certbot_dns_cloudflare/_internal/__init__.py,sha256=CCYNHwFnJrHaoTkrPUFpa_3nZ_Pm7OmMnyGuyVGw5vE,82
+certbot_dns_cloudflare/_internal/dns_cloudflare.py,sha256=l4cisEDcWwqJYtkfmBn4z1qjZhvYb4niuMHM2r55jaE,11707
+certbot_dns_cloudflare-1.19.0.dist-info/LICENSE.txt,sha256=LMXecVrlqXbwhvukkwiAyeQhkUFz_IURG_9RTUdXEj8,10786
+certbot_dns_cloudflare-1.19.0.dist-info/METADATA,sha256=T9FsUQcJApMLsL1eK0G2uqErSMGF9EdPGIb5ul7nhj4,1386
+certbot_dns_cloudflare-1.19.0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+certbot_dns_cloudflare-1.19.0.dist-info/entry_points.txt,sha256=mewuL3Y4HmCMakvcdnaQ0V4W8y78X1lxwQq1JEfPOWM,98
+certbot_dns_cloudflare-1.19.0.dist-info/top_level.txt,sha256=W4gG-UxoubWE4DhflM9xD-iv6fxoTGlgUgcGx6iR8xM,23
+certbot_dns_cloudflare-1.19.0.dist-info/RECORD,,
