@@ -1,0 +1,14 @@
+jaikit/__init__.py,sha256=QvlVh4JTl3JL7jQAja76yKtT-IvF4631ASjWY1wS6AQ,22
+jaikit/character/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jaikit/character/cjk_detail.py,sha256=5eqRh0YwbedzwNuO7nsHwGhfHsxfMR9b5nHBD_oUgi4,2741
+jaikit/character/unicode.py,sha256=5VnJcQ5NgQKwEeMxSEwj-bRcbvp9nE6Mg9Dc0kbiE3M,1205
+jaikit/datascience/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jaikit/datascience/calculate.py,sha256=L7cayYj1wxXaqM2QlwJlpd3-0CloV9YJUCuEYRk4DtY,646
+jaikit/datascience/one_hot.py,sha256=ybp4ukEr0Tano6djjw_p30wYqBzboCwCJpgSTfLgBmY,1015
+jaikit/datascience/plot.py,sha256=VBa_Rlp7evbYQr_PIE6ccAgDY27E1fm1jEcJklQfYoE,1181
+jaikit/datastructure/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jaikit/datastructure/flat_to_tree.py,sha256=cLmTeUViVmxJvtUgOUS0bxkSrWyqLc-ItQQ33Rc2edo,1627
+jaikit-0.0.2.dist-info/METADATA,sha256=moOwvN7THmNiUI0oSCMGN2rPJHVVtcuB9X8JlAMxSnY,652
+jaikit-0.0.2.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+jaikit-0.0.2.dist-info/top_level.txt,sha256=zbRmYaaQV92G-tl2iFmndHdZGUpgCYCmhZ6KmpV-vtI,7
+jaikit-0.0.2.dist-info/RECORD,,
