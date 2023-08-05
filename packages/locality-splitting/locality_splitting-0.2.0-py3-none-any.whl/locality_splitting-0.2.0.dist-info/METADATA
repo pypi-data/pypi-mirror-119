@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: locality-splitting
+Version: 0.2.0
+Summary: Implementation of locality splitting metrics for political redistricing plans
+Home-page: https://github.com/jacobwachspress/locality-splitting
+Author: Jacob Wachspress
+Author-email: jacobwachspress@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+Code for running metrics that quantify locality (e.g. county, community of interest) splitting in districting plans, including:
+- Geography-based
+	- Number of localities split
+	- Number of locality-district intersections
+- Population-based
+	- Effective splits
+	- Conditional entropy
+	- Square root entropy
+	- Split pairs
+
+Options are provided to ignore zero-population regions and to calculate symmetric splitting scores.
+
