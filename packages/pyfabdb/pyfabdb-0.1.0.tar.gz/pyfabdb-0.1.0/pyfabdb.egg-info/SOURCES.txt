@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+pyfabdb/__init__.py
+pyfabdb/client.py
+pyfabdb/pyfabdb.py
+pyfabdb/util.py
+pyfabdb.egg-info/PKG-INFO
+pyfabdb.egg-info/SOURCES.txt
+pyfabdb.egg-info/dependency_links.txt
+pyfabdb.egg-info/requires.txt
+pyfabdb.egg-info/top_level.txt
