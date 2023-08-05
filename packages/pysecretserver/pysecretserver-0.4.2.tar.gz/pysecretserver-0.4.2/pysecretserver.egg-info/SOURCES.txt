@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+pysecretserver/__init__.py
+pysecretserver/api.py
+pysecretserver/items.py
+pysecretserver/query.py
+pysecretserver.egg-info/PKG-INFO
+pysecretserver.egg-info/SOURCES.txt
+pysecretserver.egg-info/dependency_links.txt
+pysecretserver.egg-info/not-zip-safe
+pysecretserver.egg-info/requires.txt
+pysecretserver.egg-info/top_level.txt
