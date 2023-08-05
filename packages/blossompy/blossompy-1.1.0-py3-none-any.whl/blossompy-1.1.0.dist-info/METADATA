@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: blossompy
+Version: 1.1.0
+Summary: Used to run and create basic commands for Human-Robot Interaction with the Blossom Robot
+Home-page: https://github.com/riya-ranjan/blossom-public/tree/master/blossompy
+Author: Riya Ranjan
+Author-email: riya.ranjan.00@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyQt5
+Requires-Dist: py-getch
+Requires-Dist: getch
+Requires-Dist: opencv-python (==4.3.0.38)
+Requires-Dist: simpleaudio
+Requires-Dist: PyYAML
+Requires-Dist: flask-cors
+Requires-Dist: prettytable
+
+# Blossom Package
+
+This python package includes all the basics necessary to run your
+Blossom robot to make it perform various gestures and sequences, creating a
+seamless platform for you to create sequences and run them from your laptop. 
+
+## About Blossom
+
+Blossom is a socially assistive robot developed by Cornell university. 
+Learn more about Blossom [here] (https://spectrum.ieee.org/automaton/robotics/home-robots/blossom-a-creative-handmade-approach-to-social-robotics-from-cornell-and-google).
+
+Some examples of a Blossom robot are here:
+
+<img src="http://guyhoffman.com/wp-content/uploads/2017/08/blossom-bunny-corner-e1502812175733-300x189.jpg" width="300">
+<img src="http://guyhoffman.com/wp-content/uploads/2017/08/blossom-jellyfish-768x606.jpg" width="300" >
+
+**Version 1.0.0** - [Change log](../CHANGELOG.md)
+
+## Install Blossompy
+
+Blossompy is fully available for Mac (OS X) and Linux. We are currently developing an
+implementation for Windows. 
+
+To install, run:
+```
+pip install blossompy
+```
+Alternatively, you may have to run:
+```
+pip3 install blossompy
+```
+
+## Running Blossompy
+
+To execute this package and run commands for your Blossom robot from the command line, 
+plug in your Blossom and use:
+```
+python -m blossompy
+```
+
+
+
