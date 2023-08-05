@@ -1,0 +1,104 @@
+variables :
+  name :
+    - "areacello"
+    - "zos"
+    - "tauuo"
+    - "tauvo"
+
+
+areacello :
+  atts :
+    cell_methods : "area: sum"
+    comment : "TAREA"
+    coordinates : "lat lon"
+    description : "Cell areas for any grid used to report ocean variables and variables which are requested as used on the model ocean grid (e.g. hfsso, which is a downward heat flux from the atmosphere interpolated onto the ocean grid). These cell areas should be defined to enable exact calculation of global integrals (e.g., of vertical fluxes of energy at the surface and top of the atmosphere)."
+    frequency : "fx"
+    id : "areacello"
+    long_name : "Grid-Cell Area for Ocean Variables"
+    mipTable : "Ofx"
+    missing_value : 1.e+20
+    out_name : "areacello"
+    prov : "Ofx ((isd.003))"
+    realm : "ocean"
+    standard_name : "cell_area"
+    time_label : "None"
+    time_title : "No temporal dimensions ... fixed field"
+    title : "Grid-Cell Area for Ocean Variables"
+    type : "real"
+    units : "m2"
+    variable_id : "areacello"
+  static : true
+
+zos :
+  atts :
+    cell_measures : 'area: areacello'
+    cell_methods : 'area: mean where sea time: mean'
+    comment : 'SSH'
+    description : 'This is the dynamic sea level, so should have zero global area mean. It should not include inverse barometer depressions from sea ice.'
+    frequency : 'mon'
+    id : 'zos'
+    long_name : 'Sea Surface Height Above Geoid'
+    mipTable : 'Omon'
+    out_name : 'zos'
+    prov : 'Omon ((isd.003))'
+    realm : 'ocean'
+    standard_name : 'sea_surface_height_above_geoid'
+    time : 'time'
+    time_label : 'time-mean'
+    time_title : 'Temporal mean'
+    title : 'Sea Surface Height Above Geoid'
+    type : 'real'
+    units : 'm'
+    variable_id : 'zos'
+  stats :
+    - [-0.09352626651525497, 0.7232627272605896]
+
+tauuo :
+  atts :
+    cell_measures : '--OPT'
+    cell_methods : 'time: mean'
+    comment : 'TAUX'
+    description : 'This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.'
+    frequency : 'mon'
+    id : 'tauuo'
+    long_name : 'Surface Downward X Stress'
+    mipTable : 'Omon'
+    out_name : 'tauuo'
+    positive : 'down'
+    prov : 'Omon ((isd.003))'
+    realm : 'ocean'
+    standard_name : 'surface_downward_x_stress'
+    time : 'time'
+    time_label : 'time-mean'
+    time_title : 'Temporal mean'
+    title : 'Surface Downward X Stress'
+    type : 'real'
+    units : 'N m-2'
+    variable_id : 'tauuo'
+  stats :
+    - [0.001569337327964604, 0.07642165571451187]
+
+tauvo :
+  atts :
+    cell_measures : '--OPT'
+    cell_methods : 'time: mean'
+    comment : 'TAUY'
+    description : 'This is the stress on the liquid ocean from overlying atmosphere, sea ice, ice shelf, etc.'
+    frequency : 'mon'
+    id : 'tauuo'
+    long_name : 'Surface Downward Y Stress'
+    mipTable : 'Omon'
+    out_name : 'tauvo'
+    positive : 'down'
+    prov : 'Omon ((isd.003))'
+    realm : 'ocean'
+    standard_name : 'surface_downward_y_stress'
+    time : 'time'
+    time_label : 'time-mean'
+    time_title : 'Temporal mean'
+    title : 'Surface Downward Y Stress'
+    type : 'real'
+    units : 'N m-2'
+    variable_id : 'tauuo'
+  stats :
+    - [0.0020488635636866093, 0.04154461994767189]

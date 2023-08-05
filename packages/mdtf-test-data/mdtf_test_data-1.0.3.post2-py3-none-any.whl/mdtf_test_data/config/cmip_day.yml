@@ -1,0 +1,50 @@
+# input data file for generating daily data using CMIP naming conventions
+variables :
+  name :
+    - "tas"
+    - "psl"
+    - "zg500"
+tas :
+  atts :
+    long_name : 'Near-Surface Air Temperature'
+    units : 'K'
+    cell_methods : 'area: time: mean'
+    cell_measures : 'area: areacella'
+    standard_name : 'air_temperature'
+    interp_method : 'conserve_order2'
+    original_name : 'tas'
+  stats :
+    - [277.8414001464844, 21.905702590942383]
+  coordinates :
+    name : 'height'
+    value : 2.
+    atts :
+      long_name : "height"
+      units : "m"
+      cell_methods : "time: point"
+      axis : "Z"
+      positive : "up"
+      standard_name : "height"
+      description : "~2 m standard surface air temperature and surface humidity  height"
+psl :
+  atts :
+    long_name : 'Sea Level Pressure'
+    units : 'Pa'
+    cell_methods : 'area: time: mean'
+    cell_measures : 'area: areacella'
+    standard_name : 'air_pressure_at_mean_sea_level'
+    interp_method : 'conserve_order2'
+    original_name : 'psl'
+  stats :
+    - [100787.9140625, 1471.68212890625]
+zg500 :
+  atts :
+    long_name : 'Geopotential Height at 500 hPa'
+    units : 'm'
+    cell_methods : 'area: time: mean'
+    cell_measures : 'area: areacella'
+    standard_name : 'geopotential_height'
+    interp_method : 'conserve_order1'
+    original_name : 'zg500'
+  stats :
+    - [5500.68798828125, 351.7859802246094]
