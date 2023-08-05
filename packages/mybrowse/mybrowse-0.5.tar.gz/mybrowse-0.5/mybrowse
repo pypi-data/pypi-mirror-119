@@ -1,0 +1,479 @@
+#!/usr/bin/env python3
+
+#Copyright (C) 2021  tuxifreund <kaiser.barbarossa@yandex.com>
+#
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+import configparser
+from pathlib import Path
+import argparse
+import os
+import tempfile
+import gi
+gi.require_version('WebKit2', '4.0')
+gi.require_version('Gtk', '3.0')
+gi.require_version('Gdk', '3.0')
+from gi.repository import Gtk, WebKit2, Gdk, GLib
+
+argparser = argparse.ArgumentParser(description='A simple and lightweight browser written in Python.')
+argparser.add_argument('url', help='URL/command to open/execute at startup', nargs='*')
+argparser.add_argument('--basedir', '-B', help='Base directory')
+argparser.add_argument('--temp-dir', '-t', help='Use a temporary base directory', action='store_true')
+args = argparser.parse_args()
+
+# Create needed directories
+
+if not args.temp_dir:
+    try:
+        basedir = os.environ['MYBROWSE_HOME']
+    except KeyError:
+        try:
+            if len(args.basedir) > 0:
+                basedir = args.basedir[0:]
+            else:
+                basedir = Path.home()
+        except TypeError:
+            basedir = Path.home()
+else:
+    basedir = tempfile.mkdtemp(prefix='mybrowse-')
+
+dir_tuple = [(f"{basedir}/.config/mybrowse", "configuration directory"),
+(f"{basedir}/.local/share/mybrowse/themes", "theme directory"),
+(f"{basedir}/.local/share/mybrowse/extensions", "extension directory")]
+
+for (directory, description) in dir_tuple:
+    if not Path(directory).is_dir():
+        try:
+            Path(directory).mkdir(parents=True)
+            print(f'Create {description}')
+        except OSError as e:
+            print(e)
+            pass
+
+conf_file = f"{basedir}/.config/mybrowse/mybrowse.cfg"
+
+if not Path(conf_file).exists():
+        print('No configuration found')
+        with open(conf_file, 'w') as f:
+                f.write('''
+[General]
+home = https://lite.duckduckgo.com
+search = https://duckduckgo.com/?q=
+
+[Browser]
+''')
+                f.close()
+
+config = configparser.ConfigParser()
+config.read(['/etc/mybrowse/mybrowse.cfg', conf_file])
+searchengine = config['General']['search']
+startpage = config['General']['home']
+
+extension_dir = f"{basedir}/.local/share/mybrowse/extensions/"
+theme_dir = f"{basedir}/.local/share/mybrowse/themes/"
+conf_dir = f"{basedir}/.config/mybrowse/"
+
+def editconfig(settings):
+    key = settings.split('=', 1)[0]
+    value = settings.split('=', 1)[1]
+    config[key.split('.')[0]][key.split('.')[1]] = value
+    with open(conf_file, 'w') as configfile:
+        config.write(configfile)
+
+def links(url):
+    if not url.startswith(':'):
+        if not ":" in url:
+            if url.startswith('/'):
+               href = f'file://{url}'
+            elif url.startswith('~'):
+               href = f"file://{str(Path(url).expanduser())}"
+            else:
+               href = f'https://{url}'
+        elif url == "about:bookmarks":
+            href = f'file://{conf_dir}bookmarks.html'
+        elif url == "about:history":
+            href = f'file://{conf_dir}history'
+        elif url == 'about:home':
+            href = startpage
+        elif '://' in url: # Custom "protocols"
+            try:
+                for key in config['Protocols']:
+                    try:
+                        href = f"{config['Protocols'][url.split('://', 1)[0]]}{url.split('://', 1)[1]}"
+                    except KeyError:
+                        href = url
+            except KeyError:
+                href = url
+        else:
+            href = url
+    else:
+        if url.startswith(':exec'):
+            os.system(url.split(':exec ', 1)[1])
+        elif url == ':report':
+           href = 'https://github.com/KaiserBarbarossa/MyBrowse/issues/new'
+        elif url == ':home':
+           href = startpage
+        elif url.startswith(':open') or url.startswith(':o') or url.startswith(':e'):
+           href = links(url.split(' ', 1)[1])
+        elif url.startswith(':q'):
+            Gtk.main_quit()
+        elif url.startswith(':set'):
+            editconfig(url.split(':set ', 1)[1])
+        else:
+            href = url
+    try:
+        return href
+    except UnboundLocalError:
+        pass
+
+if len(args.url) > 0:
+        starturl = ' '.join(args.url[0:])
+else:
+        starturl = startpage
+
+class Browser(Gtk.Window):
+    def __init__(self):
+        Gtk.Window.__init__(self, title='MyBrowse')
+
+        styleprovider = Gtk.CssProvider()
+        try:
+            cssfile = f"{theme_dir}{config['General']['theme']}/style.css"
+            styleprovider.load_from_path(cssfile)
+        except KeyError:
+            pass
+        if Path(f'{conf_dir}style.css').exists():
+            styleprovider.load_from_path(f"{conf_dir}style.css")
+        style = self.get_style_context()
+        screen = Gdk.Screen.get_default()
+        style.add_provider_for_screen(screen, styleprovider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        self.context = WebKit2.WebContext.get_default()
+        self.context.set_web_extensions_directory(extension_dir)
+
+        self.view = WebKit2.WebView.new_with_context(self.context)
+
+        self.vbox = Gtk.Box(orientation=Gtk.STYLE_CLASS_VERTICAL)
+        self.vbox.expand = True
+        self.vbox.set_spacing(10)
+        self.set_icon_name('browser')
+
+        self.menu = Gtk.Box(orientation=Gtk.STYLE_CLASS_HORIZONTAL)
+        self.menu.expand = False
+        self.back = Gtk.Button(tooltip_text='One page back (Ctrl + Z)')
+        self.back_arrow = Gtk.Image.new_from_icon_name('go-previous', Gtk.IconSize.SMALL_TOOLBAR)
+        self.back.add(self.back_arrow)
+        self.menu.add(self.back)
+        self.forward = Gtk.Button(tooltip_text='One page forward (Ctrl + Y)')
+        self.forward_arrow = Gtk.Image.new_from_icon_name('go-next', Gtk.IconSize.SMALL_TOOLBAR)
+        self.forward.add(self.forward_arrow)
+        self.menu.add(self.forward)
+        self.reload = Gtk.Button(tooltip_text='Reload current page (Ctrl + R)')
+        self.reload_arrow = Gtk.Image.new_from_icon_name('view-refresh', Gtk.IconSize.SMALL_TOOLBAR)
+        self.reload.add(self.reload_arrow)
+        self.menu.add(self.reload)
+        self.home = Gtk.Button(tooltip_text='Open home page')
+        self.home_arrow = Gtk.Image.new_from_icon_name('go-home', Gtk.IconSize.SMALL_TOOLBAR)
+        self.home.add(self.home_arrow)
+        self.menu.add(self.home)
+        self.bookmarker = Gtk.Button(tooltip_text='Bookmark current page (Ctrl + B)')
+        self.bookmarker_symbol = Gtk.Image.new_from_icon_name('bookmark-new', Gtk.IconSize.SMALL_TOOLBAR)
+        self.bookmarker.add(self.bookmarker_symbol)
+        self.menu.add(self.bookmarker)
+        self.searchbar = Gtk.SearchEntry()
+        self.searchbar.set_name('searchbar')
+        self.menu.add(self.searchbar)
+        
+        self.back.connect("clicked", self.go_back)
+        self.forward.connect("clicked", self.go_forward)
+        self.reload.connect("clicked", self.go_reload)
+        self.home.connect("clicked", self.go_home)
+        self.searchbar.connect("activate", self.search)
+        self.bookmarker.connect("clicked", self.set_bookmark)
+        self.vbox.add(self.menu)
+
+        self.addressbar = Gtk.Entry()
+        self.addressbar.set_text(starturl)
+        self.addressbar.set_name('addressbar')
+        self.vbox.add(self.addressbar)
+        
+        self.addressbar.connect("activate", self.change_url)
+
+        self.findcontroller = WebKit2.FindController(web_view=self.view)
+
+        self.sw = Gtk.ScrolledWindow()
+        self.sw.add(self.view)
+
+        self.vbox.pack_start(self.sw, True, True, 0)
+        self.add(self.vbox)
+        self.view.load_uri(starturl)
+        self.view.connect("notify::uri", self.change_uri)
+        self.view.connect("notify::title", self.change_title)
+        self.view.connect("mouse-target-changed", self.link_hover)
+        self.view.connect("notify::estimated-load-progress", self.progressbar)
+        self.connect("key-press-event", self.keybinding)
+        self.connect("scroll-event", self.mousebindings)
+
+        # Load configuration on startup
+        self.configuration()
+
+    def str_to_bool(self, string):
+        """
+        Convert a string to its boolean. Every other string than "True" and "False"
+        is ignored and a ValueError is raised.
+        """
+        if str(string).lower() == 'true':
+            return True
+        elif str(string).lower() == 'false':
+            return False
+        raise ValueError(f'Cannot convert string to bool: {str(string)}')
+
+    def configuration(self, *args):
+        settings = self.view.get_settings()
+        try:
+            settings.set_property('enable-javascript',
+                    self.str_to_bool(config['Browser']['js']))
+        except KeyError:
+            print('JavaScript not explicit disabled.\r')
+            config['Browser']['js'] = 'True'
+            with open(conf_file, 'w') as configfile:
+                config.write(configfile)
+        try:
+            settings.set_property('enable_write_console_messages_to_stdout',
+                    self.str_to_bool(config['General']['debug']))
+        except KeyError:
+            pass
+        try:
+             settings.set_property('user-agent', config['Browser']['user-agent'])
+        except KeyError:
+             print('User-Agent value not set. Use fallback value\r')
+        try:
+             settings.set_property('enable-developer-extras',
+                     self.str_to_bool(config['Browser']['firebug']))
+        except KeyError:
+             settings.set_property('enable-developer-extras', 'True')
+             print('Firebug value not set. Use fallback value\r')
+             config['Browser']['firebug'] = 'True'
+             with open(conf_file, 'w') as configfile:
+                     config.write(configfile)
+        try:
+            settings.set_property('enable-webgl', self.str_to_bool(config['Browser']['webgl']))
+        except KeyError:
+            settings.set_property('enable-webgl', 'True')
+            print('WebGL setting not set. Use fallback value\r')
+            config['Browser']['webgl'] = 'True'
+            with open(conf_file, 'w') as configfile:
+                    config.write(configfile)
+        try:
+            self.view.set_zoom_level(float(config['General']['zoom']))
+        except KeyError:
+            pass
+        try:
+            settings.set_property('zoom-text-only',
+                    config['Browser']['zoom-text-only'])
+        except KeyError:
+            pass
+        try:
+            self.context.set_preferred_languages(config['General']['language'])
+        except KeyError:
+            pass
+
+        # Cookie accept settings
+        self.cookie_manager = self.context.get_cookie_manager()
+        try:
+            if config['Browser']['cookies'] == 'ALWAYS':
+                self.cookie_manager.set_accept_policy(WebKit2.CookieAcceptPolicy.ALWAYS)
+            elif config['Browser']['cookies'] == 'NO_THIRD_PARTY':
+                self.cookie_manager.set_accept_policy(WebKit2.CookieAcceptPolicy.NO_THIRD_PARTY)
+            elif config['Browser']['cookies'] == 'NEVER':
+                self.cookie_manager.set_accept_policy(WebKit2.CookieAcceptPolicy.NEVER)
+        except KeyError:
+            self.cookie_manager.set_accept_policy(WebKit2.CookieAcceptPolicy.NO_THIRD_PARTY)
+            print('Cookie accept policy not set. Use fallback value\r')
+            config['Browser']['cookies'] = 'NO_THIRD_PARTY'
+            with open(conf_file, 'w') as configfile:
+                    config.write(configfile)
+
+        # Persistent Cookie storage
+        try:
+            if config['Browser']['persistent-cookies'] == 'True':
+                storage = WebKit2.CookiePersistentStorage.TEXT
+                try:
+                    self.cookie_manager.set_persistent_storage(str(Path(
+                        config['Browser']['cookiepath']).expanduser()), storage)
+                except KeyError:
+                    print('Cookie file not set. Use default value.\r')
+                    self.cookie_manager.set_persistent_storage('/tmp/mybrowse-cookies.txt', storage)
+                    config['Browser']['cookiepath'] = '/tmp/mybrowse-cookies.txt'
+                    with open(conf_file, 'w') as configfile:
+                        config.write(configfile)
+        except KeyError:
+            pass
+
+
+    def change_url(self, widget):
+        url = self.addressbar.get_text()
+        if url in (':back', ':undo', ':u'):
+            self.view.go_back()
+        elif url in (':forward', ':redo', ':r'):
+            self.view.go_forward()
+        elif url in (':reload', ':rl'):
+            self.view.reload()
+        elif url.startswith(':/'):
+            self.search_page(url.split(':/', 1)[1])
+        else:
+            try:
+                self.view.load_uri(links(url))
+            except TypeError:
+                pass
+        self.configuration()
+
+    def change_title(self, widget, data, *arg):
+        title = widget.get_title()
+        if title == '':
+                self.set_title('MyBrowse')
+        else:
+                self.set_title(f'{title} - MyBrowse')
+
+    def change_uri(self, widget, data, *arg):
+        uri = widget.get_uri()
+        try:
+            self.view.load_uri(links(uri))
+            self.addressbar.set_text(uri)
+        except TypeError:
+            pass
+        history = open(f'{conf_dir}history', 'a')
+        history.write(f'{uri}\r\n')
+        history.close()
+
+    def go_back(self, widget):
+        self.view.go_back()
+
+    def go_forward(self, widget):
+        self.view.go_forward()
+
+    def go_reload(self, widget):
+        self.view.reload()
+
+    def go_home(self, widget):
+        self.addressbar.set_text(startpage)
+        self.view.load_uri(startpage)
+
+    def search(self, searchbar):
+        searchstring = self.searchbar.get_text()
+        self.view.load_uri(f'{links(searchengine)}'
+                           f'{GLib.uri_escape_string(searchstring,"", True)}')
+
+    def set_bookmark(self, widget):
+        url = self.addressbar.get_text()
+        title = self.view.get_title()
+        bm_file_path = f'{conf_dir}bookmarks.html'
+        bm_file =  open(bm_file_path, 'a+')
+        if open(bm_file_path, 'r').read() == "":
+            bm_content = f'<!DOCTYPE html>\n<head>\n<meta charset="utf-8">\n</head>\n<body>\n<a href="{url}">{title}</a><br>\r\n'
+        else:
+            bm_content = f'<a href="{url}">{title}</a><br>\r\n'
+        bm_file.write(bm_content)
+        bm_file.close()
+
+    def link_hover(self, widget, hit_test, *args):
+        if not (self.addressbar.has_focus() and self.addressbar.get_text().startswith(':')):
+            if hit_test.get_link_uri() is not None:
+                self.addressbar.set_text(hit_test.get_link_uri())
+            else:
+                self.addressbar.set_text(widget.get_uri())
+
+    def progressbar(self, widget, data, *arg):
+        amount = widget.get_estimated_load_progress()
+        if not amount == 1:
+            self.addressbar.set_progress_fraction(amount)
+        else:
+            self.addressbar.set_progress_fraction(0)
+            self.view.grab_focus()
+
+    def search_page(self, *args):
+        keyword = args[0]
+        if not keyword == "":
+            self.findcontroller.search(keyword, WebKit2.FindOptions.CASE_INSENSITIVE,
+                    WebKit2.FindOptions.WRAP_AROUND)
+
+    def mousebindings(self, widget, event):
+        if event.get_state() & Gdk.ModifierType.CONTROL_MASK:
+            scrolldir = event.get_scroll_deltas()[2]
+            if scrolldir > 0:
+                self.view.set_zoom_level(self.view.get_zoom_level() - 0.1)
+            elif scrolldir < 0:
+                self.view.set_zoom_level(self.view.get_zoom_level() + 0.1)
+
+    def keybinding(self, widget, event):
+        if (event.keyval == Gdk.keyval_from_name('d') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                self.set_bookmark(self.view)
+        if (event.keyval == Gdk.keyval_from_name('r') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                self.view.reload()
+        if event.keyval == Gdk.KEY_F5:
+                self.view.reload()
+        if (event.keyval == Gdk.KEY_F5 and
+            event.get_state() & Gdk.ModifierType.SHIFT_MASK):
+                self.view.reload_bypass_cache()
+        if (event.keyval == Gdk.keyval_from_name('z') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                self.view.go_back()
+        if (event.keyval == Gdk.keyval_from_name('y') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                self.view.go_forward()
+        if (event.keyval == Gdk.keyval_from_name('0') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                self.view.set_zoom_level(1)
+        if (event.keyval == Gdk.unicode_to_keyval(ord('+')) and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                self.view.set_zoom_level(self.view.get_zoom_level() + 0.1)
+        if (event.keyval == Gdk.unicode_to_keyval(ord('-')) and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                self.view.set_zoom_level(self.view.get_zoom_level() - 0.1)
+        if (event.keyval == Gdk.keyval_from_name('q') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+                Gtk.main_quit()
+        if (event.keyval == Gdk.keyval_from_name('l') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+               self.addressbar.grab_focus()
+        if (event.keyval == Gdk.KEY_Escape and
+            self.addressbar.get_text().startswith(':/')):
+                self.findcontroller.search_finish()
+        if (event.keyval == Gdk.KEY_Escape and
+            (self.addressbar.get_text() is not self.view.get_uri()
+            or self.addressbar.get_text().startswith(':/'))):
+            self.addressbar.set_text(self.view.get_uri())
+        if (event.keyval == Gdk.KEY_Escape and
+            self.addressbar.get_text() == self.view.get_uri()):
+               self.addressbar.grab_focus()
+        if (event.keyval == Gdk.keyval_from_name('f') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+            self.addressbar.grab_focus()
+            self.addressbar.set_text(':/')
+            self.addressbar.set_position(-1)
+        if (event.keyval == Gdk.keyval_from_name('k') and
+            event.get_state() & Gdk.ModifierType.CONTROL_MASK):
+            self.searchbar.grab_focus()
+
+if __name__ == "__main__":
+    browser = Browser()
+    try:
+        browser.set_default_size(float(config['Browser']['width']), float(config['Browser']['height']))
+    except KeyError:
+        browser.maximize()
+    browser.connect("delete-event", Gtk.main_quit)
+    browser.show_all()
+    Gtk.main()

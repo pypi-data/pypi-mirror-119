@@ -1,0 +1,10 @@
+LICENSE
+README.md
+mybrowse
+pyproject.toml
+setup.py
+mybrowse.egg-info/PKG-INFO
+mybrowse.egg-info/SOURCES.txt
+mybrowse.egg-info/dependency_links.txt
+mybrowse.egg-info/requires.txt
+mybrowse.egg-info/top_level.txt
