@@ -1,0 +1,5 @@
+cramjam-2.4.0_rc1.dist-info/METADATA,sha256=FS-oOXbIWZspTB4SfhhWTKBkzDEAMp0UVY3wc4WViM8,3378
+cramjam-2.4.0_rc1.dist-info/WHEEL,sha256=mZkBCksASjvatl7Ro5AczKqJU8WLu5s2CaesrtSTF0M,105
+cramjam/__init__.py,sha256=5FoF0HAQ9bNUC4j1M1d6_Z35hc97jzimuPoXwMzS56Q,23
+cramjam/cramjam.pypy36-pp73-x86_64-linux-gnu.so,sha256=TYDy2FNO3HVONx67aMgMkBDPSzhX7iT2gULkECjxqkw,3916088
+cramjam-2.4.0_rc1.dist-info/RECORD,,
