@@ -1,0 +1,80 @@
+\documentclass[10pt,twocolumn,lettersize]{book}
+
+% For parsed docstrings
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{alltt}
+\usepackage[bookmarks=true,bookmarksopen=true]{hyperref}
+\usepackage{bookmark}
+\usepackage{supertabular}
+
+% Make lists more compact
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+\newlength{\zerosep}
+[% if use_dnd_decorations %]
+  \usepackage[layout=true]{dnd}
+  \setlength{\zerosep}{0em}
+[% else %]
+  \usepackage[margin=1.5cm]{geometry}
+  \usepackage[dvipsnames]{color}
+  \setlength{\zerosep}{-1em}
+[% endif %]
+  \definecolor{mygrey}{gray}{0.7}
+
+%% Unicode definitions for superscripts/subscripts
+\DeclareUnicodeCharacter{00B9}{\textsuperscript{1}}
+\DeclareUnicodeCharacter{00B2}{\textsuperscript{2}}
+\DeclareUnicodeCharacter{00B3}{\textsuperscript{3}}
+\DeclareUnicodeCharacter{2074}{\textsuperscript{4}}
+\DeclareUnicodeCharacter{2075}{\textsuperscript{5}}
+\DeclareUnicodeCharacter{2076}{\textsuperscript{6}}
+\DeclareUnicodeCharacter{2077}{\textsuperscript{7}}
+\DeclareUnicodeCharacter{2078}{\textsuperscript{8}}
+\DeclareUnicodeCharacter{2079}{\textsuperscript{9}}
+\DeclareUnicodeCharacter{2070}{\textsuperscript{0}}
+
+%%% Fallback definitions for Docutils-specific commands
+[% raw %]
+\usepackage{longtable,ltcaption,array}
+\setlength{\extrarowheight}{2pt}
+\newlength{\DUtablewidth} % internal use in tables
+% admonition (specially marked topic)
+\providecommand{\DUadmonition}[2][class-arg]{%
+  % try \DUadmonition#1{#2}:
+  \ifcsname DUadmonition#1\endcsname%
+    \csname DUadmonition#1\endcsname{#2}%
+  \else
+    \begin{center}
+      \fbox{\parbox{0.9\linewidth}{#2}}
+    \end{center}
+  \fi
+}
+\newenvironment{DUlineblock}[1]{%
+  \list{}{\setlength{\partopsep}{\parskip}
+    \addtolength{\partopsep}{\baselineskip}
+    \setlength{\topsep}{0pt}
+    \setlength{\itemsep}{0.15\baselineskip}
+    \setlength{\parsep}{0pt}
+    \setlength{\leftmargin}{#1}}
+  \raggedright
+}
+
+% titlereference standard role
+\providecommand*{\DUroletitlereference}[1]{\textsl{#1}}
+
+% title for topics, admonitions, unsupported section levels, and sidebar
+\providecommand*{\DUtitle}[2][class-arg]{%
+  % call \DUtitle#1{#2} if it exists:
+  \ifcsname DUtitle#1\endcsname%
+    \csname DUtitle#1\endcsname{#2}%
+  \else
+    \smallskip\noindent\textbf{#2}\smallskip%
+  \fi
+}
+[% endraw %]
+
+\begin{document}
+
+\chapter*{[[ title ]]}
