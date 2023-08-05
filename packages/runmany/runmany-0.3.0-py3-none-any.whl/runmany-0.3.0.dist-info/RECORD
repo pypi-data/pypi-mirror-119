@@ -1,0 +1,13 @@
+runmany/__init__.py,sha256=i6x-sVMqFgbQR5Lcyyj5ANvVcRGwS-14HAZDrJ_n6hU,321
+runmany/default_settings.json,sha256=Zo0gj9knRDDfVIwrb0Zajd4vlXBLJ6SA3s5CEzb3fz8,1352
+runmany/parser.py,sha256=0EKKHlUfK1Ou0iuoAWKsP-TqsonyWh0G4G-4kybM-Bw,4622
+runmany/runmany.py,sha256=FVqD0A8VpscYTk5KNQwbHYyroX3uZlKnqdzHqkQb5ro,5283
+runmany/runner.py,sha256=A17z5bWfIqsVdxvrAJoDhhy-5auO4863W32HqZ08ysg,8821
+runmany/settings.py,sha256=cjJ5khpWic7B15g-0qy8z0F5DZqiVKqcXUX9MzYrhQg,4594
+runmany/util.py,sha256=kFHf5rnmYoN5qqPJfYuXCN3Zl0T3uVY091okCUylkd8,1033
+runmany-0.3.0.dist-info/LICENSE.txt,sha256=zWfKZJH1haegR6dfUH4lrpqtxgXNy7w9TWPRqMbS37g,1070
+runmany-0.3.0.dist-info/METADATA,sha256=Zk3XGY8wEoYgbtRX7gjjBjuGrU7tZStBEYTeF8Z6C9U,22125
+runmany-0.3.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+runmany-0.3.0.dist-info/entry_points.txt,sha256=9vMuRX_r8ZcGZrnsh3HkePef6ZIR5boZjAmhj4Mm5f8,50
+runmany-0.3.0.dist-info/top_level.txt,sha256=qZ4W2tBnYp_F-We6EZ6zF2tmJ2wMPULC8ceul-zdIhg,8
+runmany-0.3.0.dist-info/RECORD,,
