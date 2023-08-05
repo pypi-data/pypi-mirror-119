@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: quidax-python
+Version: 1.0
+Summary: A python library to consume Quidax API
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: oye@appstate.co
+License: MIT
+Description: UNKNOWN
+Keywords: quidax python library
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
