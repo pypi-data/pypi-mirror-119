@@ -1,0 +1,4 @@
+[console_scripts]
+owl-migrate = owl_server.migrations.migrate:main
+owl-server = owl_server.cli:main
+
