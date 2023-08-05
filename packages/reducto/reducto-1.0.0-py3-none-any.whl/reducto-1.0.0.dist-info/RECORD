@@ -1,0 +1,12 @@
+reducto/__init__.py,sha256=CjXxwZpqG53eDOLcaQnMnos4ubGR8LK9NiTo7kGgoWc,119
+reducto/cli.py,sha256=1UAER1jcelBR06N0ma8d5RLW9EHpVUwTHHInThpfldM,461
+reducto/items.py,sha256=Jo8FtUBfyy3WVDByyUCT_qZdRxxCDpBCHWtFeN0K3z8,6563
+reducto/package.py,sha256=MApycmP7lW0FF4IxJQIuHKUlSc9fbyVh6X9QlNUt9l8,9472
+reducto/reducto.py,sha256=BYntS_1FOeV67udtBc0XRp4PhHwDLn4ZpzUdtOrSdo8,8061
+reducto/reports.py,sha256=S2yNlPnYtcqexEQSRMfxy1XhWXUkplem_sKzOEb5ygs,16369
+reducto/src.py,sha256=0IxoRW77qGRFmS6yP2R-MrNGu5n_MhASo-gvFCpc-Yg,16998
+reducto-1.0.0.dist-info/entry_points.txt,sha256=GGzeKuXunXmsWjXEvZFriVO8_-kR_ivLQ51CUJy1Li8,40
+reducto-1.0.0.dist-info/LICENSE,sha256=Aahb07N2TuLryjIaO9VuxtVdy5Scx9avyyZhRXFwUmI,1064
+reducto-1.0.0.dist-info/WHEEL,sha256=o-Q2E8s7BKkCJ1EC2uQdaymZVVu2aUt1e8uTTFpzHVs,81
+reducto-1.0.0.dist-info/METADATA,sha256=k8pvWfh0LKCkUxtiIMfBhqDaaA9JjPmk83ePNviAeYM,5957
+reducto-1.0.0.dist-info/RECORD,,
