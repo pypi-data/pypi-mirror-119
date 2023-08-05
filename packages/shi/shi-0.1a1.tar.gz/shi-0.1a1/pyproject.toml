@@ -1,0 +1,19 @@
+[build-system]
+requires = ["pyproject-toml==0.0.10"]
+build-backend = "pyproject_toml.build_system.build_backend"
+
+[project]
+name = "shi"
+version = "0.1a1"
+description = "Shi is a tool for dependency management and packaging in Python."
+readme = "README.rst"
+authors = [{ name = "Tang Ziya", email = "tcztzy@hotmail.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+homepage = "https://github.com/python-shi/shi"

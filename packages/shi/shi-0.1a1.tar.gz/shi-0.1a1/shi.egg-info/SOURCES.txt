@@ -1,0 +1,6 @@
+README.rst
+pyproject.toml
+shi.egg-info/PKG-INFO
+shi.egg-info/SOURCES.txt
+shi.egg-info/dependency_links.txt
+shi.egg-info/top_level.txt

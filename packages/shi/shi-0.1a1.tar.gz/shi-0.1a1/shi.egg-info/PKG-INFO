@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: shi
+Version: 0.1a1
+Summary: Shi is a tool for dependency management and packaging in Python.
+Home-page: https://github.com/python-shi/shi
+Author-email: Tang Ziya <tcztzy@hotmail.com>
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/x-rst
+
+UNKNOWN
+
