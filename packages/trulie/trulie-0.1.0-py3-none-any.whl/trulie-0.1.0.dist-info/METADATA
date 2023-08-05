@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: trulie
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: https://github.com/Stannislav/trulie
+Author: Stanislav Schmidt
+License: UNKNOWN
+Platform: UNKNOWN
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: pydocstyle ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: tox ; extra == 'dev'
+
+UNKNOWN
+
