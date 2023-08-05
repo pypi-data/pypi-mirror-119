@@ -1,0 +1,37 @@
+# 1) Units --> Unit type (observational or experimental unit)
+# 2) Measures that are associated with each unit --> declare measures with a unit (measures that are associated with each observational/experimental unit)
+# 3) Clusters
+# repeats
+# nested within (could be expressed as "has")
+
+from tisane.variable import Associate, Cause, Moderate
+
+test_score = student.numeric("Test score", exactly=12) --> still requires follow-up to say what variable according to
+
+# NOT WORK FOR: time variables?? 
+#E.g., 
+student.repeats(test_score, according_to=week) --> How to define week? 
+# Week is agnostic to any particular unit
+
+
+student.repeats(test_score, according_to=week)
+
+race = student.nominal("Race", cardinality=5, exactly=1, up_to=None) # exactly=1 is  default, can set exactly to another value OR set up_to (by default is None)
+race = student.nominal("Race", cardinality=5) # same as above
+
+# Conceptual relationships 
+Cause
+Associate 
+Moderate
+
+# Clustering data measurement relationships
+student.repeats(test_score, according_to=week)
+student.nests_within(school) # assumption: exaclty=1; allows for complete/incomplete factorial nesting
+
+
+# Syntactic sugar
+tutoring = student.nominal("Tutoring", exactly=1)
+tutoring.treats(student, exactly=1) # Necessary? 
+
+
+# Question: How is repeats used for inferring random effects??? YES, so we need some additional information about according to which 
