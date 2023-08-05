@@ -1,0 +1,32 @@
+{
+  "cluster": {
+    "n_workers": 12,
+    "threads_per_worker": 4,
+    "local_directory": "TMP"
+  },
+  "config_path": "/eresearch/heart/vvib872/Vault/Raw/CV58-E/BlockR/BlockR.json",
+  "range": {
+    "sessions": "",
+    "lasers": "561",
+    "pzf_dirs": "10-15",
+    "z_range": "100-110"
+  },
+  "lines": {
+    "weights_file": "",
+    "weights_option": "merge",
+    "single_line_no": 4
+  },
+  "deconvolve": {
+    "status": "False",
+    "overlap": "(64, 32, 32)",
+    "psf_path": "measured",
+    "psf_res": "",
+    "iterations": 10
+  },
+  "save": {
+    "tmp_dir": "TMP",
+    "tmp_chunks": "(1,512,512)",
+    "xy_chunks": "(256,256)",
+    "zchunk_range": "200-300"
+  }
+}

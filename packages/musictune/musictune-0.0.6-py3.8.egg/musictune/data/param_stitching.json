@@ -1,0 +1,19 @@
+{
+  "client_port": 41417,
+  "config_path": "/eresearch/heart/vvib872/MAIN/0_ZARR/CV58-E/BlockR.json",
+  "range": {
+    "sessions": "",
+    "lasers": "561",
+    "pzf_dirs": ""
+  },
+  "line_profile": {
+    "file_path": "/hpc/vvib872/Code/tune/configs/line_profile.csv",
+    "upper_limit": 4,
+    "cutoff": 32
+  },
+  "save": {
+    "tmp_dir": "/tmp",
+    "tmp_chunks": "(1,512,512)",
+    "save_dtype": "f4"
+  }
+}
