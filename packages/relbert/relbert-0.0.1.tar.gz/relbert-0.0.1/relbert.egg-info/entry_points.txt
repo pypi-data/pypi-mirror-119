@@ -1,0 +1,6 @@
+[console_scripts]
+relbert-eval = relbert_cl.evaluate:main
+relbert-prompt-continuous = relbert_cl.prompt_continuous:main
+relbert-prompt-discrete = relbert_cl.prompt_discrete:main
+relbert-train = relbert_cl.train:main
+

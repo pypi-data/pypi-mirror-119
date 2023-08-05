@@ -1,0 +1,14 @@
+torch
+tqdm
+requests
+tfrecord
+tensorboard
+gdown
+pandas
+numpy
+transformers
+sentencepiece
+tensorboard
+truecase
+sklearn
+gensim==3.8.1
