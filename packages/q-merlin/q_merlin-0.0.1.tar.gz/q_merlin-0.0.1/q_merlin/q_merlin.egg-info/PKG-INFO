@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: q-merlin
+Version: 0.0.1
+Summary: Quandri Library-Merlin
+Home-page: https://github.com/pypa/sampleproject
+Author: Matthew Ebert
+Author-email: ebertmx@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Keywords: python,package,quandri,q_merlin,Merlin
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Quandri's Library for application
+

@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+q_merlin/q_merlin.egg-info/PKG-INFO
+q_merlin/q_merlin.egg-info/SOURCES.txt
+q_merlin/q_merlin.egg-info/dependency_links.txt
+q_merlin/q_merlin.egg-info/requires.txt
+q_merlin/q_merlin.egg-info/top_level.txt
+test/testing.py
