@@ -1,0 +1,11 @@
+README.md
+setup.py
+python_gelbooru/__init__.py
+python_gelbooru/booru_async.py
+python_gelbooru/classes.py
+python_gelbooru/exceptions.py
+python_gelbooru.egg-info/PKG-INFO
+python_gelbooru.egg-info/SOURCES.txt
+python_gelbooru.egg-info/dependency_links.txt
+python_gelbooru.egg-info/requires.txt
+python_gelbooru.egg-info/top_level.txt
