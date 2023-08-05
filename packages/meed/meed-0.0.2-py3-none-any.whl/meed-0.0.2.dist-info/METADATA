@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: meed
+Version: 0.0.2
+Summary: A configurable stats logger for the end user
+Home-page: UNKNOWN
+Author: Tristan Arthur
+Author-email: tristanarthur@pm.me
+Maintainer: 
+Maintainer-email: 
+License: Apache Software License
+Platform: UNKNOWN
+Classifier: Intended Audience :: Customer Service
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PySimpleGUI (==4.47.0)
+Requires-Dist: boto3 (==1.18.36)
+Requires-Dist: colorama (==0.4.4)
+Requires-Dist: pybuilder (==0.12.10)
+
+UNKNOWN
+
