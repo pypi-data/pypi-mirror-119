@@ -1,0 +1,3 @@
+[console_scripts]
+snowflakeio=snowflakeio.__main__:app
+
