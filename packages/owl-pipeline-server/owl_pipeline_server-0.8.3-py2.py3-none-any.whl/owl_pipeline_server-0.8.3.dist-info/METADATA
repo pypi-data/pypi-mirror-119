@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: owl-pipeline-server
+Version: 0.8.3
+Summary: Owl Pipeline Server Framework
+Home-page: https://github.com/eddienko/owl-pipeline-server
+Author: Eduardo Gonzalez Solares
+Author-email: e.gonzalezsolares@gmail.com
+License: GNU General Public License v3
+Project-URL: Documentation, https://eddienko.github.io/owl-pipeline/
+Project-URL: Tracker, https://github.com/eddienko/owl-pipeline-server/issues
+Keywords: owl,pipeline,dask,kubernetes,python
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: System :: Distributed Computing
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: aiohttp (==3.*)
+Requires-Dist: aiosqlite
+Requires-Dist: alembic
+Requires-Dist: asyncpg
+Requires-Dist: coloredlogs
+Requires-Dist: dask
+Requires-Dist: dask-kubernetes
+Requires-Dist: databases
+Requires-Dist: distributed
+Requires-Dist: fastapi
+Requires-Dist: kubernetes
+Requires-Dist: loky
+Requires-Dist: psycopg2
+Requires-Dist: pyyaml
+Requires-Dist: pyzmq
+Requires-Dist: requests
+Requires-Dist: sqlalchemy
+Requires-Dist: transaction
+Requires-Dist: uvicorn
+Requires-Dist: voluptuous
+
+Owl Job Scheduler
+=================
+
+|Build Status| |Doc Status| |Version Status|
+
+Owl is a job scheduler that allows to submit user jobs to a Kubernetes cluster from anywhere.
+See documentation_ for more information.
+
+Discussion
+----------
+
+Any feedback, ideas, enhancements, contributions are welcome. Head to the discussion_
+to add yours or submit issues or bugs in the tracker_.
+
+LICENSE
+-------
+
+GPL. See `License File <https://github.com/eddienko/owl-pipeline-server/blob/main/LICENSE>`__.
+
+.. _documentation: https://eddienko.github.io/owl-pipeline/
+.. _discussion: https://github.com/eddienko/owl-pipeline-server/discussions
+.. _tracker: https://github.com/eddienko/owl-pipeline-server/issues
+.. |Build Status| image:: https://github.com/eddienko/owl-pipeline-server/actions/workflows/CI.yml/badge.svg
+   :target: https://github.com/eddienko/owl-pipeline-server/actions/workflows/CI.yml?query=workflow%3ACI
+.. |Doc Status| image:: https://github.com/eddienko/owl-pipeline/actions/workflows/deploy-github.yml/badge.svg
+   :target: https://eddienko.github.io/owl-pipeline/
+.. |Version Status| image:: https://img.shields.io/pypi/v/owl-pipeline-server.svg
+   :target: https://pypi.python.org/pypi/owl-pipeline-server
+
+
+
+
