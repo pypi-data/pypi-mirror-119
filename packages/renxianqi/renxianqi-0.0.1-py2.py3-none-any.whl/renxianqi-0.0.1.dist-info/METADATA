@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: renxianqi
+Version: 0.0.1
+Summary: A small tool to check the absentee
+Home-page: https://blog.csdn.net/geeklevin
+Author: levin
+Author-email: 991219092@qq.com
+License: Apache License 2.0
+Platform: all
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+License-File: LICENSE
+Requires-Dist: pypinyin
+Requires-Dist: pyperclip
+
+Powered by py4u (LeiXueWei). This tool is very useful to check the absentee for any activities!
+

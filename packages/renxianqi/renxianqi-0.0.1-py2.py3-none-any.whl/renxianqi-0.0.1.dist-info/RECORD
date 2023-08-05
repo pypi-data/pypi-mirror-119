@@ -1,0 +1,10 @@
+renxianqi/__init__.py,sha256=f2Z3RWkPHGv3cKhf1B7VO9qlpmP2WtZDVn91-cCoIJc,205
+renxianqi/localdata_loader.py,sha256=HuveDATL2UqtUZDDY7KcL-dsvXYfG2ywoSWkUD1dZh4,1415
+renxianqi/name_checker.py,sha256=Ea05kBxAyOparKbWjKvFaFTsL5kfwIX1BTzepHt0CaQ,4038
+renxianqi/name_parser.py,sha256=2_DFaleutmrpYB25ARmM00-C486FCjFjTUjwkoXCHac,1275
+renxianqi/pinyin_sort.py,sha256=xuumtkVPs1Ty4meRXGGicfmNb6Mb1nzrv4rRxCt5aWc,589
+renxianqi-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+renxianqi-0.0.1.dist-info/METADATA,sha256=7JlmwsM0eXwET_xu9eEpP936mkCHbgTj0w-i6dCoMiw,1034
+renxianqi-0.0.1.dist-info/WHEEL,sha256=Z-nyYpwrcSqxfdux5Mbn_DQ525iP7J2DG3JgGvOYyTQ,110
+renxianqi-0.0.1.dist-info/top_level.txt,sha256=MU6jEnYhHuUuqRm7gXR4HEG-PrnJdvZsvam-Gy-y7Do,10
+renxianqi-0.0.1.dist-info/RECORD,,
