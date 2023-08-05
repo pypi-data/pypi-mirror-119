@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+pdfmacha/__init__.py
+pdfmacha/pdf2image.py
+pdfmacha.egg-info/PKG-INFO
+pdfmacha.egg-info/SOURCES.txt
+pdfmacha.egg-info/dependency_links.txt
+pdfmacha.egg-info/top_level.txt
