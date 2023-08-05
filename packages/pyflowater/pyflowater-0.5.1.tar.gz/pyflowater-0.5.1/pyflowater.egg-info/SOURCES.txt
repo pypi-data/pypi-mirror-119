@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+setup.cfg
+setup.py
+pyflowater/__init__.py
+pyflowater/const.py
+pyflowater/flostream.py
+pyflowater.egg-info/PKG-INFO
+pyflowater.egg-info/SOURCES.txt
+pyflowater.egg-info/dependency_links.txt
+pyflowater.egg-info/requires.txt
+pyflowater.egg-info/top_level.txt
+pyflowater.egg-info/zip-safe
