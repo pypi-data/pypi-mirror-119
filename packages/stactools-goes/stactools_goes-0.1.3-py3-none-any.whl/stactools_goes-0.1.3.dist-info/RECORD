@@ -1,0 +1,11 @@
+stactools/goes/__init__.py,sha256=SJXXj9a-qlCLh9MSfGtMpAMRaYkPEkRCV54BzJo-S4k,314
+stactools/goes/commands.py,sha256=XKc6UTdWwf-BzX4apbKct6vbA8mTxx3yiePdjbwTg3I,1254
+stactools/goes/dataset.py,sha256=JF7WRhvXR7ymyjMRw5gjxHCpGUpAvrX_QT9u5TtrBg0,9405
+stactools/goes/enums.py,sha256=M2FJ34YcyPn2WNQGrYORG5pmWLVM0-WF4JbEd8ailmc,691
+stactools/goes/errors.py,sha256=RQa6TwyQKvM9lX4MxN-p5scxQH9R5eMbkQS9SNt2vKY,89
+stactools/goes/stac.py,sha256=2W09Fx2-nw9Xi9k2tz783IWxONKbZUGdmxPB2f2FxaM,5223
+stactools_goes-0.1.3.dist-info/LICENSE,sha256=kGshx52lEVXCvfof1klIqE0XMDNNK05-b3xtn6rH8E4,641
+stactools_goes-0.1.3.dist-info/METADATA,sha256=kFVnsC-DefV7vgUvB6t44EZwa_03L3UsQLDrqOA1op0,1736
+stactools_goes-0.1.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+stactools_goes-0.1.3.dist-info/top_level.txt,sha256=0eoUA-AbTfjFtxXr3W-vQdRyNmpGnA0wlTL3ppTPCG8,10
+stactools_goes-0.1.3.dist-info/RECORD,,
