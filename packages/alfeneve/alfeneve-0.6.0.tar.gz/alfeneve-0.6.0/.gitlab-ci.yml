@@ -1,0 +1,20 @@
+before_script:
+- pip install --upgrade pip setuptools virtualenv tox
+
+py37:
+  image: python:3.7
+  stage: test
+  script:
+  - tox
+
+py38:
+  image: python:3.8
+  stage: test
+  script:
+  - tox
+
+py39:
+  image: python:3.9
+  stage: test
+  script:
+  - tox
