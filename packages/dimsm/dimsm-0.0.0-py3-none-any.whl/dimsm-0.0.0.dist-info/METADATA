@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: dimsm
+Version: 0.0.0
+Summary: dimsm: Kalman based dimension smoothing tool.
+Home-page: https://github.com/ihmeuw-msca/dimsm
+Author: IHME Math Sciences
+Author-email: ihme.math.sciences@gmail.com
+License: BSD 2-Clause License
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas
+Requires-Dist: xarray
+Provides-Extra: dev
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-mock ; extra == 'dev'
+Provides-Extra: docs
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-mock ; extra == 'test'
+
+[![build](https://github.com/ihmeuw-msca/dimsm/actions/workflows/build.yml/badge.svg)](https://github.com/ihmeuw-msca/dimsm/actions/workflows/build.yml)
+[![pypi](https://badge.fury.io/py/dimsm.svg)](https://badge.fury.io/py/dimsm)
+
+# Dimension Smoother
+
+Kalman based smoother, smoothing data across different dimensions.
+
+## Install
+
+To install the `dimsm` package do
+
+```
+pip install dimsm
+```
+
+If want to install the package with experimental features do
+
+```
+pip install git+https://github.com/ihmeuw-msca/dimsm.git@develop
+```
+
+## Example
+
+* `examples/1d_smoother.py`: Simple 1D smoother example with sinusoidal curve
+
+
