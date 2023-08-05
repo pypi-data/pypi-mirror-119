@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+src/CyroWebB.egg-info/PKG-INFO
+src/CyroWebB.egg-info/SOURCES.txt
+src/CyroWebB.egg-info/dependency_links.txt
+src/CyroWebB.egg-info/top_level.txt
