@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: d2b-compile
+Version: 1.0.0
+Summary: compile-dcm2bids-config plugin for the d2b package
+Home-page: https://github.com/d2b-dev/d2b-compile
+Keywords: neuroscience,neuroimaging,bids,plugin,d2b
+Author: Alec Ross
+Author-email: alexander.w.rosss@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Requires-Dist: compile-dcm2bids-config (>=1.0.0,<2.0.0)
+Requires-Dist: d2b (>=1.0.0,<2.0.0)
+Project-URL: Documentation, https://github.com/d2b-dev/d2b-compile
+Project-URL: Repository, https://github.com/d2b-dev/d2b-compile
+Description-Content-Type: text/markdown
+
+# d2b-compile
+
+compile-dcm2bids-config plugin for the d2b package.
+
+[![PyPI Version](https://img.shields.io/pypi/v/d2b-compile.svg)](https://pypi.org/project/d2b-compile/)
+
+## Installation
+
+```bash
+pip install d2b-compile
+```
+
+## Usage
+
+After installation the `d2b run` command should have additional `compile`-subcommand:
+
+```text
+$ d2b --help
+usage: d2b [-h] [-v] {run,scaffold,compile} ...
+
+d2b - Organize data in the BIDS format
+
+positional arguments:
+  {run,scaffold,compile}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+```
+
+```text
+$ d2b compile --help
+usage: d2b compile [-h] [-o OUT_FILE] in_file [in_file ...]
+
+positional arguments:
+  in_file               The JSON config files to combine
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUT_FILE, --out-file OUT_FILE
+                        The file to write the combined config file to. If not specified outputs are written to stdout.
+```
+
+The `d2b compile` subcommand is a thin wrapper around `compile-dcm2bids-config`.
+
