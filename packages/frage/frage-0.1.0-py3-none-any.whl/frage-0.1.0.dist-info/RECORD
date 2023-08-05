@@ -1,0 +1,9 @@
+frage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+frage/__main__.py,sha256=7CGv-aXkkK6z_j34M7xyNZSD3FCFB1kTyZztuSHgBo0,1055
+frage/http.py,sha256=lBxVhPpPj-fBHD9RN_tVlhvD8u8Ca0ylIUEhQyKqzIw,685
+frage/models.py,sha256=MMWUXRMYDZnqnGgtQAV5kZxjiU9Z40X43tNNigyA1LA,488
+frage/parser.py,sha256=BIa1q3Limo_QQo-zAVADp07k3YE-_kKCmvb26GalnFU,269
+frage-0.1.0.dist-info/entry_points.txt,sha256=iB8JMJbjlZWfsXUswQtAtcxgKUfypjP4HagXg-y_G2k,44
+frage-0.1.0.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+frage-0.1.0.dist-info/METADATA,sha256=xQdphIXj7Gjgim7P7OB_8lEpAbugu8mJ2NxRFyPtKjU,425
+frage-0.1.0.dist-info/RECORD,,
