@@ -1,0 +1,10 @@
+dmc_floss_gimp_color_palette_generator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dmc_floss_gimp_color_palette_generator/__version__.py,sha256=ySPSLQR0ByncF5AAQKzM3RoBqFn5TL_7Un60Zd13pf8,50
+dmc_floss_gimp_color_palette_generator/generator.py,sha256=uHd8kR5GPVXyNCELIXbSMfSGJox_xURz2R0ZpKnpu4Y,1618
+dmc_floss_gimp_color_palette_generator/gpl.py,sha256=ceCiYpuIe2XZqAZiSyNHygktQg0NoZJpOauCphdHqiU,1343
+dmc_floss_gimp_color_palette_generator-1.0.0.dist-info/LICENSE,sha256=EN5C9Wp2ls4ZRml2-u4A_kH3M-8hc-Rsk3keI_nmXgY,1549
+dmc_floss_gimp_color_palette_generator-1.0.0.dist-info/METADATA,sha256=XEfOlRF6SJjwP9JRM4h4lX02G6L823qumdoZFQ0_v7w,2147
+dmc_floss_gimp_color_palette_generator-1.0.0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+dmc_floss_gimp_color_palette_generator-1.0.0.dist-info/entry_points.txt,sha256=sKnLPbZzlhwFCVBMnZ6CUxJyXLp1WG1Xb3qzR5iHmio,95
+dmc_floss_gimp_color_palette_generator-1.0.0.dist-info/top_level.txt,sha256=EhjrWst4Nq1CQUMEDvh3alXVIZSk5F7DROwXZbQiK9o,39
+dmc_floss_gimp_color_palette_generator-1.0.0.dist-info/RECORD,,

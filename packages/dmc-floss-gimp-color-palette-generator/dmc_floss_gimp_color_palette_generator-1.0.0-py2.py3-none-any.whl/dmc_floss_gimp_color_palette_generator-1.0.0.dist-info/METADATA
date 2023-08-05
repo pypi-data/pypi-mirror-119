@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: dmc-floss-gimp-color-palette-generator
+Version: 1.0.0
+Summary: Generates a GIMP palette with DMC floss colors from data scraped from the web.
+Home-page: https://github.com/ksletmoe/dmc_floss_gimp_color_palette_generator
+Author: Kyle Sletmoe
+Author-email: kyle.sletmoe@gmail.com
+License: BSD
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.7.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+Provides-Extra: distribution
+Requires-Dist: twine ; extra == 'distribution'
+
+
+# dmc-floss-gimp-color-palette-generator
+Generates a GIMP palette from the data at http://my.crazyartzone.com/dmc.asp
+
+You can install this tool to generate the latest color palette data. DMC doesn't release new colors
+all that often however, so you may just want to download the latest pre-generated palette from [palettes/](palettes/).
+
+## Installation
+`$ pip install dmc-floss-gimp-color-palette-generator`
+
+## Usage
+`$ generate_dmc_palette`
+
+The above will write out a palette file called `dmc_floss.gpl` in the current working directory.
+
+Alternatively, you can specify the output file path:
+`$ generate_dmc_palette /some/file/path.gpl`
+
+Be sure to keep the extension as `.gpl` so GIMP will recognize it as a palette file.
+
+## Importing a palette file into GIMP
+Right click somewhere in the Palettes dialog and click "Import Palette...". In the resulting dialog,
+click "Palette File" and select the palette file with the file selection dialog. Be sure to set the
+desired name for your palette in the "Palette Name" text box. Click "Import" and your palette will
+be usable in GIMP.
+
+![Import Palette Dialog](https://github.com/ksletmoe/dmc_floss_gimp_color_palette_generator/blob/main/readme/import_palette.png?raw=true)
+
+
