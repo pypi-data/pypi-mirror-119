@@ -1,0 +1,7 @@
+LICENSE
+README.md
+marco.egg-info/PKG-INFO
+marco.egg-info/SOURCES.txt
+marco.egg-info/dependency_links.txt
+marco.egg-info/requires.txt
+marco.egg-info/top_level.txt
