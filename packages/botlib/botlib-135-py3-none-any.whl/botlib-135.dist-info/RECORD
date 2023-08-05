@@ -1,0 +1,16 @@
+bot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bot/fnd.py,sha256=Q4EU3AD2xTGIV5zUaJhPw05wM2NXw0v4a6jhhB5Q8MQ,839
+bot/irc.py,sha256=fb8qmnp82mysorUeXpR6elo76rn-d8ny3wIxuOjsp70,17080
+bot/log.py,sha256=iYSsu9C9M2gAEjKq7EGV1KEY37p0B2zQFxRhIpVHKtQ,323
+bot/obj.py,sha256=phGY9OktuwVvq5yCmXkajp_JfFAnBm3NlxcspNMWyG8,10859
+bot/rss.py,sha256=KlaNWr4N6ru8r-9GegF7_wHp6NJiMxpeYhS6l9QExXo,5850
+bot/run.py,sha256=NG8W2dBjsxTi4FhXGzlkc5DjYmx4TbFlj8_c3droOsA,20226
+bot/sys.py,sha256=e3mT4oGhc2BOMLb2resWiNvf-R0as7sGN8aBIaZixPs,1261
+bot/udp.py,sha256=xQ_sQTL2YRdM85_RW2_ZeTIddFQ8Nnzoq_WJjp_saVY,1748
+botlib-135.data/data/man/man1/bot.1.gz,sha256=qLT6Ir68ylNmwHiFjttlLbx9i3IhW276RxfDybQ7da8,552
+botlib-135.data/scripts/bot,sha256=UHRi_0hFoiKPMFt9dmDpcOxxtn8sXiZFWS2PjcGjuRo,2669
+botlib-135.dist-info/METADATA,sha256=U5_sBSsmNVHRgskCHEtbL0ytIOtB69W98UYUVIXaLWw,1391
+botlib-135.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+botlib-135.dist-info/top_level.txt,sha256=BfGEUPXgtCpne5POfPQ8gBzacfrzBulmV45hd8vheOI,4
+botlib-135.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+botlib-135.dist-info/RECORD,,
