@@ -1,0 +1,11 @@
+LICENSE,sha256=LVE_pK7Rv7EeawytZiJI-tHp6ZZOFKx4Q70k1HEhwOE,1082
+scikeras/__init__.py,sha256=GWX1-_jriKGE8yii3BxypP7NUnFwh-PwBndgOg8Or6o,1063
+scikeras/_saving_utils.py,sha256=5DjQbtRUEIiL0Kww9pjjyDBsNuPldTVQcjoba__-ZWE,5717
+scikeras/_utils.py,sha256=GXEU01Uxi5le7LZir8MxbC7KPlQ_Sl5z_waseCW636U,8145
+scikeras/utils/__init__.py,sha256=a7VEKEMLAYou4dycFmLk4Mh-m6ju63ZEJIyhVFC0Y1M,3542
+scikeras/utils/transformers.py,sha256=EvLmLshdZBx3aCCUQ1bevJfBrzYv0aAo8hmlfhbQYUo,14531
+scikeras/wrappers.py,sha256=kA5fH_W9_OTFM1V1l0otg4q4N3QKMusPWGXOQdsMfoI,69974
+scikeras-0.4.1.dist-info/LICENSE,sha256=LVE_pK7Rv7EeawytZiJI-tHp6ZZOFKx4Q70k1HEhwOE,1082
+scikeras-0.4.1.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+scikeras-0.4.1.dist-info/METADATA,sha256=ACnmXd6AUCDuVTpr_MCt4tIfOjMY9CLzJfJXJVpRAFg,3044
+scikeras-0.4.1.dist-info/RECORD,,
