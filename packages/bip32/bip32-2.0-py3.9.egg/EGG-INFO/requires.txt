@@ -1,0 +1,2 @@
+base58~=2.0
+coincurve~=15.0
