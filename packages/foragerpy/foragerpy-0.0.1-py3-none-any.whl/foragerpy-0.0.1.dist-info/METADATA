@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: foragerpy
+Version: 0.0.1
+Summary: The official Python client for Forager.
+Author: Fait Poms
+Author-email: faitpoms@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: Pillow (>=8.3.1,<9.0.0)
+Requires-Dist: aiohttp (>=3.7.4,<4.0.0)
+Requires-Dist: tqdm (>=4.61.2,<5.0.0)
