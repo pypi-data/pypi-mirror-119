@@ -1,0 +1,10 @@
+asai/__init__.py,sha256=BUHwt8VXH_N05JbxTgzBe2f9tTVaHUODfiZEWat3LV0,961
+asai/_backend.py,sha256=vzzVHhSlqrn2PL0Cl9iMCIwncM4Dy2QMvhzEi1gZXK0,2687
+asai/_cli.py,sha256=2K_EAlpyKt0not1ygdnFbvhvfSMBRxazX6sGVbDsqdw,6750
+asai/models.py,sha256=my229_PTaSCHUH341Z5-DW2zgd0S1hhHBbhjVuOyhEM,4819
+asai-0.3.1.dist-info/LICENSE,sha256=GRZks4RDsAyXMv_fqFcVaVzpbKu5Gj2AFFPnt7YjA18,1506
+asai-0.3.1.dist-info/METADATA,sha256=LGMOGF_sHrGWM8Q_J16GEFbcp3sR86CIFmcxD8zUgyU,5848
+asai-0.3.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+asai-0.3.1.dist-info/entry_points.txt,sha256=CEJi2reZ1a5nDQTwXVO-z4uExMQPnbGC0EAjHpON608,40
+asai-0.3.1.dist-info/top_level.txt,sha256=sd3uX1OfGtdmbbCJfwtJI-LQqYsZvR6xG2mb98-brH4,5
+asai-0.3.1.dist-info/RECORD,,
