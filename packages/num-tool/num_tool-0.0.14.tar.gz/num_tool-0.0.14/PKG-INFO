@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: num_tool
+Version: 0.0.14
+Summary: A basic number tools package
+Home-page: UNKNOWN
+Author: totensee (Ruben Pérez Krüger)
+Author-email: <churrerico@web.de>
+License: UNKNOWN
+Keywords: python,random,number,tools
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+A basic number tools package. In Development
+
