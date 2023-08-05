@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+setup.cfg
+src/ConnectomeMatch.egg-info/PKG-INFO
+src/ConnectomeMatch.egg-info/SOURCES.txt
+src/ConnectomeMatch.egg-info/dependency_links.txt
+src/ConnectomeMatch.egg-info/top_level.txt
