@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: sdss-actorcore
+Version: 5.0.3
+Summary: SDSS core base actor
+Home-page: https://github.com/sdss/actorcore
+Maintainer: José Sánchez-Gallego
+Maintainer-email: gallegoj@uw.edu
+License: BSD 3-Clause License
+Project-URL: Repository, https://github.com/sdss/actorcore
+Keywords: astronomy,software
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: astropy (>=4.0.0)
+Requires-Dist: pyyaml (>=5.2)
+Requires-Dist: twisted (>=19.10.0)
+Requires-Dist: sdss-opscore (>=3.0.0)
+Requires-Dist: sdsstools (>=0.4.10)
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: Sphinx (>=2.2.0) ; extra == 'docs'
+Requires-Dist: sphinx-bootstrap-theme (>=0.4.12) ; extra == 'docs'
+
+# actorcore
+
+Provides core services used by most actors. `actorcore` and `opscore` provide direct dependencies for the actors, while `actorkeys` provides the definitions of standard messages that will be broadcast by each actor.
+
+## Installation
+
+To install using `pip`
+
+```(console)
+pip install sdss-actorcore
+```
+
+To install from source
+
+```(console)
+git clone git@github.com:sdss/actorcore
+cd actorcore
+pip install .
+```
+
+

@@ -1,0 +1,8 @@
+#!python
+
+try:
+    from stagemanager.stagemanager import StageManager
+except ImportError as e:
+    raise ImportError(str(e))
+else:
+    StageManager(console=True)
