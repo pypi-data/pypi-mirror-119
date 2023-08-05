@@ -1,0 +1,9 @@
+kmm/__init__.py,sha256=_hAxmF_MoqG2RitJDHb7e17qArKQx5rK-CSqI-jVGyU,26
+kmm/camera_positions.py,sha256=72YIkCUPyW5l6sU6hKb7twEQvy3VzAi1MejRDUvHgpY,1098
+kmm/kmm.py,sha256=b0eY6EOJGJmEtXcgp2C177TX6znBknCulEFMKs5qDDA,713
+kmm/kmm2.py,sha256=gnSC2lMQdtka9TakaVJ9GE8jDjvGqI7u4MosY0dMbEg,1403
+kmm/read.py,sha256=qR8R5ARUU0JOXQWs_sKMHtx25p16mdpEoiHuH2L4GEw,1423
+kmm-0.0.1.dist-info/LICENSE,sha256=XudxEgNioG8Dg7nVU3iAyWJ3RvkdeQdTblakew3WOuA,90835
+kmm-0.0.1.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+kmm-0.0.1.dist-info/METADATA,sha256=f7MqGdp_zUfAyMrc7QzrzJz-g3JvIXN-3deMCeoSqmc,506
+kmm-0.0.1.dist-info/RECORD,,
