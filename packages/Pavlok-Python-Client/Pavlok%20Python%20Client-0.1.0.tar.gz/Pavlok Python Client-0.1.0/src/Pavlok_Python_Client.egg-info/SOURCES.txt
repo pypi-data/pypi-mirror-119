@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+src/Pavlok_Python_Client.egg-info/PKG-INFO
+src/Pavlok_Python_Client.egg-info/SOURCES.txt
+src/Pavlok_Python_Client.egg-info/dependency_links.txt
+src/Pavlok_Python_Client.egg-info/requires.txt
+src/Pavlok_Python_Client.egg-info/top_level.txt
