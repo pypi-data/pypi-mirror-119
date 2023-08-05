@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: ARAMBHML
+Version: 0.1.6
+Summary: An Auto ML framework that solves Classification Tasks
+Home-page: UNKNOWN
+Author: Amartya Bhattacharya,Rupam Kumar Roy
+License: UNKNOWN
+Description: 
+        # Auto ML for Solving Classification Problems for Tabular Data
+        
+        [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
+        [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)   
+        
+        
+        ## Functionality of the Auto ML Framework
+        
+        - Detects the type of problem from the given target feature
+        - Does EDA on it's own
+        - Finds out if there are null values present or not
+        - If null values are present they are treated specifically with the class they are present in
+        - Forms train-test split on it's own
+        - Applies 6 ML models to show the use which model performs the best
+        
+        ## Usage
+        
+        - Make sure you have Python installed in your system.
+        - Run Following command in the CMD.
+         ```
+          pip install ARAMBHML
+          ```
+        ## Example
+        
+         
+        # test.py
+         ```
+          from ARAMBHML import arambhNet
+          ```
+         ```
+          new = arambhNet(path,target) #target is the dependent feature and path is the path of csv file
+          ```
+         ```
+          new.get_model_details(path,target)
+          ```
+        
+        ## Run the Above Commands to get the results.
+         
+        
+        **NOTE** There are more than functionalities available, you can press "tab" after "new." to get the options
+        
+        ## Here you can perform EDA and also see how do models perform on the dataset.
+        
+        ## Note 
+        - I have tried to implement all the functionality, it might have some bugs also. Moreover a number of more functionalities would be added later.
+        
+Keywords: auto ml,python,classification problem,machine learning
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
