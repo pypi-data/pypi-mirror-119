@@ -1,0 +1,3 @@
+[console_scripts]
+bettersis = bettersis.bettersis:main
+
