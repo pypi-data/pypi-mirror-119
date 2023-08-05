@@ -1,0 +1,509 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>standardize &mdash; npfc 0.7.12-11-g0395543e documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utils" href="utils.html" />
+    <link rel="prev" title="save" href="save.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> npfc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.12-11-g0395543e
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="duplicate.html">duplicate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw.html">draw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filter.html">filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fragment_search.html">fragment_search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fragment_combination.html">fragment_combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fragment_combination_graph.html">fragment_combination_graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fragment_combination_point.html">fragment_combination_point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="load.html">load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save.html">save</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">standardize</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-standardize">Module standardize</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">npfc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>standardize</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/standardize.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-npfc.standardize">
+<span id="standardize"></span><h1>standardize<a class="headerlink" href="#module-npfc.standardize" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-standardize">
+<h2>Module standardize<a class="headerlink" href="#module-standardize" title="Permalink to this headline">¶</a></h2>
+<p>This modules is used to standardize molecules and molecular DataFrames.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="npfc.standardize.FullUncharger">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">npfc.standardize.</span></span><span class="sig-name descname"><span class="pre">FullUncharger</span></span><a class="reference internal" href="_modules/npfc/standardize.html#FullUncharger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.FullUncharger" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class derived from rdkit.Chem.MolStandardize.charge.Uncharger, so
+instead of attempting to create zwitterions all possible charges are removed
+from the molecule.</p>
+<p>For instance:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Uncharger:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">O</span><span class="o">-</span><span class="p">][</span><span class="n">N</span><span class="o">+</span><span class="p">](</span><span class="n">C</span><span class="p">)(</span><span class="n">C</span><span class="p">)</span><span class="n">C</span><span class="p">[</span><span class="n">O</span><span class="o">-</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">O</span><span class="o">-</span><span class="p">][</span><span class="n">N</span><span class="o">+</span><span class="p">](</span><span class="n">C</span><span class="p">)(</span><span class="n">C</span><span class="p">)</span><span class="n">CO</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># FullUncharger:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">O</span><span class="o">-</span><span class="p">][</span><span class="n">N</span><span class="o">+</span><span class="p">](</span><span class="n">C</span><span class="p">)(</span><span class="n">C</span><span class="p">)</span><span class="n">C</span><span class="p">[</span><span class="n">O</span><span class="o">-</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">O</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="p">](</span><span class="n">C</span><span class="p">)(</span><span class="n">C</span><span class="p">)</span><span class="n">CO</span>
+</pre></div>
+</div>
+<p>Create an instance of FullUncharger.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This will remove charges from -2 to +2 only. This could be improved using more general smarts?</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="npfc.standardize.FullUncharger.full_uncharge">
+<span class="sig-name descname"><span class="pre">full_uncharge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#FullUncharger.full_uncharge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.FullUncharger.full_uncharge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Neutralize molecule by adding/removing hydrogens.
+Does not attempt to preserve zwitterions.
+For now takes into account only charges of -2 and +2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code>) – the input molecule</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the uncharged molecule</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="npfc.standardize.Standardizer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">npfc.standardize.</span></span><span class="sig-name descname"><span class="pre">Standardizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mol'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'idm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements_medchem</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'B',</span> <span class="pre">'Br',</span> <span class="pre">'C',</span> <span class="pre">'Cl',</span> <span class="pre">'F',</span> <span class="pre">'H',</span> <span class="pre">'I',</span> <span class="pre">'N',</span> <span class="pre">'O',</span> <span class="pre">'P',</span> <span class="pre">'S'}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#Standardizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.Standardizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for standardizing molecular structures. The standardization itself is based
+on a protocol that the user can modify.</p>
+<p>By default this protocol consists in 15 tasks applied to each molecule invidually:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>initiate_mol</strong>: check if the molecule passed the RDKit conversion</p></li>
+<li><p><strong>filter_empty</strong>: filter molecules with empty structures</p></li>
+<li><p><strong>disconnect_metal</strong>: break bonds involving metallic atoms, resulting in potentially several molecules per structure.</p></li>
+<li><p><strong>clear_mixtures</strong>: retrieve only the “best” molecule from a mixture, which might not always be the largest one.</p></li>
+<li><p><strong>deglycosylate</strong>: remove all external sugars-like rings from the molecule and return the remaining non-linear entity.</p></li>
+<li><p><strong>filter_num_heavy_atom</strong>: filter molecules with a heavy atom count not in the accepted range. By default: num_heavy_atom &gt; 3.</p></li>
+<li><p><strong>filter_molecular_weight</strong>: filter molecules with a molecular weight not in the accepted range. By default: molecular_weight &lt;= 1000.0.</p></li>
+<li><p><strong>filter_num_ring</strong>: filter molecules with a number of rings (Smallest Sets of Smallest Rings or SSSR) not in the accepted range. By default: num_ring &gt; 0.</p></li>
+<li><p><strong>filter_elements</strong>: filter molecules with elements not considered as medchem. By default: elements in H, B, C, N, O, F, P, S, Cl, Br, I.</p></li>
+<li><p><strong>clear_isotopes</strong>: set all atoms to their most common isotope (i.e. 14C becomes 12C which is C).</p></li>
+<li><p><strong>normalize</strong>: always write the same functional groups in the same manner.</p></li>
+<li><p><strong>uncharge</strong>: remove all charges on a molecule when it is possible. This is different from rdkit.Chem.MolStandardize.charge module as there is no attempt for reaching the zwitterion.</p></li>
+<li><p><strong>canonicalize</strong>: enumerate the canonical tautomer.</p></li>
+<li><p><strong>clear_stereo</strong>: remove all remaining stereochemistry flags on the molecule.</p></li>
+<li><p><strong>reset_mol</strong>: convert forth and back to SMILES format to discard potential residual outdated flags on atoms and bonds.</p></li>
+</ol>
+</div></blockquote>
+<p>Other steps are not part of this protocol but can be executed as well for convenience:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>depict</strong>: find the “best” possible 2D depiction of the molecule among Input/rdDepictor/Avalon/CoordGen methods</p></li>
+<li><p><strong>extract_murcko</strong>: return the Murcko Scaffold from the molecule</p></li>
+<li><p><strong>clear_side_chains</strong>: remove any exocyclic atom that is not part of a linker</p></li>
+<li><p><strong>reset_mol</strong>: reset the molecule by converting to and then from smiles</p></li>
+</ul>
+</div></blockquote>
+<p>This results in new columns in the input DataFrame:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the ‘mol’ column: updated structure (only for the protocol)</p></li>
+<li><p>the ‘status’ column: either passed, filtered or error.</p></li>
+<li><p>the ‘task’ column: the latest task that was applied to the molecule.</p></li>
+</ul>
+</div></blockquote>
+<p>The standardizer works either on a molecule (method: ‘run’) or on a DataFrame containing molecules (‘run_df’).</p>
+<p>In the latter case, the inchikey is computed and can be used for identifying duplicate entries.</p>
+<p>A timeout value is set by default and will be applied to each molecule individually to avoid the process being stuck on marginally difficult cases.
+This value can be set either during the Standardizer object initialization or by defining as an option in the protocol (priority is given to the latter if defined).</p>
+<p>Create a Standardizer object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protocol</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.9)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]) – Either a JSON file or a dictionary. The resultung dictinary needs a ‘tasks’ key that lists all tasks to be excuted as a list.</p></li>
+<li><p><strong>col_mol</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the column with the molecule for when running the run_df method</p></li>
+<li><p><strong>col_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – the column with the id for when running the run_df method</p></li>
+<li><p><strong>filter_duplicates</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="npfc.standardize.Standardizer.clear_isotopes">
+<span class="sig-name descname"><span class="pre">clear_isotopes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#Standardizer.clear_isotopes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.Standardizer.clear_isotopes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a molecule without any isotopes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code>) – the input molecule</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the molecule without isotope</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="npfc.standardize.Standardizer.clear_mixtures">
+<span class="sig-name descname"><span class="pre">clear_mixtures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#Standardizer.clear_mixtures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.Standardizer.clear_mixtures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the “best” molecule found in a molecular structure.</p>
+<p>The “best” molecule is determined by the following criteria, sorted by priority:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>contains only medchem elements</p></li>
+<li><p>contains at least one ring</p></li>
+<li><p>has the largest molecular weight of the mixture</p></li>
+</ol>
+</div></blockquote>
+<p>To summarize:</p>
+<div class="math">
+<p><img src="_images/math/9d38d8a859040db59e88fdcf7b67665576b35bac.png" alt="medchem &gt; non linear &gt; molecular weight"/></p>
+</div><p>So the largest molecule of a mixture might not always be selected, for instance
+a very long aliphatic chain would be dismissed to keep a benzene molecule instead.</p>
+<p>This is implemented in such a way because our fragments used for substructure search contain at least one ring.
+On the contrary, this long aliphatic chain would be kept in a mixture with a non-medchem molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code>) – the input molecule(s)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the best molecule</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="npfc.standardize.Standardizer.clear_side_chains">
+<span class="sig-name descname"><span class="pre">clear_side_chains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#Standardizer.clear_side_chains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.Standardizer.clear_side_chains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the side chains of a molecule.</p>
+<p>This method operates in 3 steps:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Remove quickly all atoms in side chains but the one attached to a ring, starting from the terminal atom. (would certainly fail in case of linear molecules)</p></li>
+<li><p>Iterate over each remaining exocyclic atoms to remove only atoms when it does not break the ring aromaticity. Simple and double bonds can be broken and the atoms in rings which were attached to removed atoms are neutralized.</p></li>
+<li><p>Remove eventual nitrogen radicals by Smiles editing.</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I found only nitrogen radicals in my dataset, this might be insufficient on a larger scale.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I found a bug for this molecule ‘O=C(O)C1OC(OCC2OC(O)C(O)C(O)C2O)C(O)C(O)C1O’, where a methyl remains after processing.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code>) – the molecule to simplify</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a simplified copy of the molecule</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="npfc.standardize.Standardizer.deglycosylate">
+<span class="sig-name descname"><span class="pre">deglycosylate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'run'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#Standardizer.deglycosylate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.Standardizer.deglycosylate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to deglycosylate molecules.</p>
+<p>Several rules are applied for removing Sugar-Like Rings (SLRs) from molecules:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Only external SLRs are removed, so a molecule with aglycan-SLR-aglycan is not modified</p></li>
+<li><p>Only molecules with both aglycans and SLRs are modified (so only SLRs or none are left untouched)</p></li>
+<li><p>Linear aglycans are considered to be part of linkers and are thus never returned as results</p></li>
+<li><p>Glycosidic bonds are defined as either O or CO and can be linked to larger linear linker. So from a SLR side, either nothing or only 1 C are allowed before the glycosidic bond oxygen</p></li>
+<li><p>Linker atoms until the glycosidic bond oxygen atom are appended to the definition of the SLR, so that any extra methyl is also removed.</p></li>
+</ol>
+</div></blockquote>
+<img alt="_images/std_deglyco_algo.svg" class="align-center" src="_images/std_deglyco_algo.svg" /><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code>) – the input molecule</p></li>
+<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) – either ‘run’ for actually deglycosylating the molecule or ‘graph’ for returning a graph of rings instead (useful for presentations or debugging)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.9)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the deglycosylated molecule or a graph of rings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="npfc.standardize.Standardizer.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#Standardizer.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.Standardizer.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute the standardization protocol on a molecule.
+Molecule that exceed the timeout value are filtered with a task=’timeout’.</p>
+<p>As a final step of the protocol, InChiKeys (‘inchikey’) are computed for identifying molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Mol</span></code>) – the input molecule</p></li>
+<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – the maximum number of seconds for processing a molecule</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a tuple containing the molecule, its status and the further task name it reached</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="npfc.standardize.Standardizer.run_df">
+<span class="sig-name descname"><span class="pre">run_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/npfc/standardize.html#Standardizer.run_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#npfc.standardize.Standardizer.run_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the standardization protocol on a DataFrame, with the possibility of directly filtering duplicate entries as well.
+This can be very useful as the standardization process can expose duplicate entries due to salts removal, neutralization,
+canonical tautomer enumeration, and stereochemistry centers unlabelling</p>
+<p>If a reference file is specified, duplicate removals becomes possible accross chunks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>) – the input DataFrame</p></li>
+<li><p><strong>timeout</strong> – the maximum number of seconds for processing a molecule</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>three DataFrames separated by status:</p>
+<ul class="simple">
+<li><p>passed</p></li>
+<li><p>filtered</p></li>
+<li><p>error</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As a side effect, the output DataFrames get indexed by idm. The ‘inchikey’ col is not returned, but the values can be accessed using the reference file.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> – The DataFrame with molecules to standardize</p></li>
+<li><p><strong>return</strong> – a tuple of 3 DataFrames: standardized, filtered and error.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="utils.html" class="btn btn-neutral float-right" title="utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="save.html" class="btn btn-neutral float-left" title="save" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, Dr. Jose-Manuel Gally.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
