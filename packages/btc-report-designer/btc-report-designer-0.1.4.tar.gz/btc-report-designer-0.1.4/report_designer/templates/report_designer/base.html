@@ -1,0 +1,17 @@
+{% extends 'report_designer.html' %}
+
+
+{% block header %}
+    <div class="heading">
+        <h1>
+            {% block title %}
+                {{ title }}
+            {% endblock title %}
+        </h1>
+        {{ action_group }}
+    </div>
+{% endblock header %}
+{% block content %}{% endblock content %}
+{% block additional_blocks %}
+    {% include 'report_designer/modal.html' %}
+{% endblock additional_blocks %}

@@ -1,0 +1,28 @@
+<thead>
+{# Проход по уровням шапки #}
+{% for level in header %}
+    <tr>
+        {# Проход по ячейкам уровня  #}
+        {% for head in level %}
+            {# Настройка ячейки #}
+            <th colspan="{{ head.col_span|default:1 }}" rowspan="{{ head.row_span|default:1 }}">
+                {{ head.name }}
+{#                {% if head.ordering %}#}
+                    {# Если задана сортировка #}
+{#                    {% ordering_direction head.ordering as ordering_direction %}#}
+{#                    <a class="{% ordering_direction_class head.ordering %}"#}
+                       {# Если ajax, то записываем data-параметр sort-by #}
+{#                       {% if action_ajax %}#}
+{#                            data-sort-by="?{% url_replace ordering=ordering_direction %}"#}
+{#                       {% else %}#}
+{#                            href="?{% url_replace ordering=ordering_direction %}"#}
+{#                       {% endif %}#}
+{#                    >{{  head.name }}</a>#}
+{#                {% else %}#}
+{#                    {{  head.name }}#}
+{#                {% endif %}#}
+            </th>
+        {% endfor %}
+    </tr>
+{% endfor %}
+</thead>

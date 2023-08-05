@@ -1,0 +1,9 @@
+<div class="table_inline_grid">
+{#    {% include 'report_designer/core/' %}#}
+    <div class="table-responsive">
+        <table class="{{ classes }}">
+            {% include 'report_designer/core/tables/header.html' with header=header only %}
+            {% include 'report_designer/core/tables/body.html' with rows=rows only %}
+        </table>
+    </div>
+</div>
