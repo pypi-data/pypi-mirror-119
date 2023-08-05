@@ -1,0 +1,14 @@
+build
+dist
+tmp
+__pycache__
+pysdif/_pysdif.c
+*egg*
+*.so
+wheelhouse/
+SDIF/build
+SDIF/*.cache
+site
+*~
+*.user
+build-*
