@@ -1,0 +1,12 @@
+cmsis_pack_manager-0.3.0.dist-info/entry_points.txt,sha256=Yn9d3GFkidoTYpxzrQh_MtxvKcOSD3IeHa3eQR3mGR4,71
+cmsis_pack_manager-0.3.0.dist-info/RECORD,,
+cmsis_pack_manager-0.3.0.dist-info/METADATA,sha256=BK-_ua74DSNrnB2LlIQ7qZhEgkwwV6IJZS8o5JqTJ1U,3355
+cmsis_pack_manager-0.3.0.dist-info/LICENSE,sha256=psuoW8kuDP96RQsdhzwOqi6fyWv0ct8CR6Jr7He_P_k,10173
+cmsis_pack_manager-0.3.0.dist-info/WHEEL,sha256=5ywJKOLTQnuW4guD5Kpc50IUAu8uP7v2z4DPtHsnUiE,111
+cmsis_pack_manager-0.3.0.dist-info/top_level.txt,sha256=1KFZfAjzVEzTxO5CdiVHGhgDn5EZfaM_K6_Sefx2tUU,19
+cmsis_pack_manager/_native.py,sha256=vcVPG2LHE8U1HRgky_LzxO4E4fXpl8-9RWMioexWUTY,194
+cmsis_pack_manager/_native__lib.so,sha256=Webu8yL1C8gW7yF2dgAT3UGkjdZW2U149D-k9XM1vcM,6893168
+cmsis_pack_manager/pack_manager.py,sha256=hokr_qzDfltTZBK0hoY9VPoy-junEHK9n8NmlEJxJYQ,8544
+cmsis_pack_manager/_native__ffi.py,sha256=8hJZNIMySE1zZftzNkcH-_B0hB43LfdrJqXvk7kyU6s,2295
+cmsis_pack_manager/_version.py,sha256=YNd1dEdZGzG2MvXfaTQdmMYCLOQm-rV09_xmC5Hxu5Y,142
+cmsis_pack_manager/__init__.py,sha256=1QrFw8E0mC6ClGkAzjGbO1xi_F0e8wdqP-DiemBftUw,13486
