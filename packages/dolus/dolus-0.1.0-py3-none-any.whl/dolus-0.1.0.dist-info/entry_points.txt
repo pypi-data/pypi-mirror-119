@@ -1,0 +1,3 @@
+[console_scripts]
+dolus=dolus:main
+
