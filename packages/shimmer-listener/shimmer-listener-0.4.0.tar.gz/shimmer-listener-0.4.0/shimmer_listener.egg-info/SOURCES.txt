@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+shimmer_listener/__init__.py
+shimmer_listener/_master.py
+shimmer_listener/_slave.py
+shimmer_listener/_streams.py
+shimmer_listener/console_scripts.py
+shimmer_listener.egg-info/PKG-INFO
+shimmer_listener.egg-info/SOURCES.txt
+shimmer_listener.egg-info/dependency_links.txt
+shimmer_listener.egg-info/entry_points.txt
+shimmer_listener.egg-info/requires.txt
+shimmer_listener.egg-info/top_level.txt
