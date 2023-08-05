@@ -1,0 +1,10 @@
+Django>=2.2
+
+[dev]
+tox
+jasmine
+djangorestframework~=3.0
+
+[devdb]
+psycopg2
+mysqlclient
