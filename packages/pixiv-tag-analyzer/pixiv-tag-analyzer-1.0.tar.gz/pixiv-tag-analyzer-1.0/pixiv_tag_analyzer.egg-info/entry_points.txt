@@ -1,0 +1,3 @@
+[console_scripts]
+pta = pta.main:main
+
