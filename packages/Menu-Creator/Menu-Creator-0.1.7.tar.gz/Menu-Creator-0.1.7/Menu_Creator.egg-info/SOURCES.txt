@@ -1,0 +1,9 @@
+README.md
+setup.py
+MenuCreator/MenuCreator.py
+MenuCreator/__init__.py
+Menu_Creator.egg-info/PKG-INFO
+Menu_Creator.egg-info/SOURCES.txt
+Menu_Creator.egg-info/dependency_links.txt
+Menu_Creator.egg-info/requires.txt
+Menu_Creator.egg-info/top_level.txt
