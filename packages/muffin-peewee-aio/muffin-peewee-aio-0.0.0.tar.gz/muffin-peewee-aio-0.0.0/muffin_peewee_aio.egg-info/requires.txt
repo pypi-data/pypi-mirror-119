@@ -1,0 +1,15 @@
+muffin>=0.83
+peewee>=3
+peewee-aio>=0.0.7
+peewee-migrate>=1.4.3
+
+[build]
+bump2version
+wheel
+
+[tests]
+pytest
+pytest-aio
+pytest-mypy
+aiosqlite
+uvicorn
