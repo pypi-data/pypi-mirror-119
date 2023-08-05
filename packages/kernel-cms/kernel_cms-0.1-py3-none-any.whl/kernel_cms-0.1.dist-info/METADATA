@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: kernel-cms
+Version: 0.1
+Summary: A KERNEL CMS Utility for back developper
+Home-page: https://github.com/bensamdi10/kernel_cms_pip
+Author: Said Bensamdi
+Author-email: bensamdisaid@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: click
+Requires-Dist: configparser
+
+A KERNEL CMS Utility for back developper
+
+
