@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/catilo/__init__.py
+src/catilo/catilo.py
+src/catilo.egg-info/PKG-INFO
+src/catilo.egg-info/SOURCES.txt
+src/catilo.egg-info/dependency_links.txt
+src/catilo.egg-info/top_level.txt
