@@ -1,0 +1,64 @@
+#!python
+"""Script to query the database and display the results."""
+import argparse
+import math
+import re
+
+from met_jobs.search import Search
+
+
+def format_title(index, title_str):
+    """Edit title string to have a uniform format for display."""
+
+    title_str = re.sub(r"[\n\t\s+]", " ", title_str)
+
+    # Make sure all prints have the same length
+    if len(title_str) > 75:
+        title_str = title_str[:75]
+        title_str = title_str[:-3] + "..."
+    else:
+        title_str = f"{title_str:<75}"
+
+    # Compensate for variable length of index
+    sep = " " * (3 - math.floor(math.log10(index)))
+
+    return sep + title_str
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Search in the met-jobs ads database.")
+    parser.add_argument(
+        "query", metavar="QUERY", type=str, help="String for search query"
+    )
+    parser.add_argument(
+        "-d",
+        "--database",
+        type=str,
+        help="Path of database used for search query (default is built-in database)",
+    )
+    parser.add_argument(
+        "-n", "--n_results", default=10, type=int, help="Number of results displayed"
+    )
+    parser.add_argument("-s", "--start", type=str, help="Start date for search")
+    parser.add_argument("-e", "--end", type=str, help="End date for search")
+    parser.add_argument(
+        "--by",
+        type=str,
+        default="best",
+        choices=["best", "newest", "oldest"],
+        help="Criterium for order of results",
+    )
+    args = parser.parse_args()
+
+    search = Search(
+        args.query, args.database, args.start, args.end, args.by, args.n_results
+    )
+    for i_count, idx_df in enumerate(search.first_results):
+        if i_count:
+            print("\n")
+        title, date, url = search.df.loc[idx_df, ["title", "date", "url"]]
+
+        title_fmt = format_title(i_count + 1, title)
+
+        print(f"{i_count+1}){title_fmt} - {date.strftime('%d-%m-%Y')}")
+        print(f"{url}")
