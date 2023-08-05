@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/jsonpatch2pymongo/__init__.py
+src/jsonpatch2pymongo/main.py
+src/jsonpatch2pymongo.egg-info/PKG-INFO
+src/jsonpatch2pymongo.egg-info/SOURCES.txt
+src/jsonpatch2pymongo.egg-info/dependency_links.txt
+src/jsonpatch2pymongo.egg-info/top_level.txt
