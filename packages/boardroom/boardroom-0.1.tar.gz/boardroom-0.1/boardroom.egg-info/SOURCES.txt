@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+boardroom/__init__.py
+boardroom/__main__.py
+boardroom/errors.py
+boardroom/functions.py
+boardroom/params.py
+boardroom/proposal.py
+boardroom/protocol.py
+boardroom/voter.py
+boardroom.egg-info/PKG-INFO
+boardroom.egg-info/SOURCES.txt
+boardroom.egg-info/dependency_links.txt
+boardroom.egg-info/top_level.txt
