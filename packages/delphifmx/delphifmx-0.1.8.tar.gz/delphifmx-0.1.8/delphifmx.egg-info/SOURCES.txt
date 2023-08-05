@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+delphifmx/__init__.py
+delphifmx/__version__.py
+delphifmx.egg-info/PKG-INFO
+delphifmx.egg-info/SOURCES.txt
+delphifmx.egg-info/dependency_links.txt
+delphifmx.egg-info/top_level.txt

@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: delphifmx
+Version: 0.1.8
+Summary: Delphi FMX for Python
+Home-page: UNKNOWN
+Author: Lucas Belo, Jim McKeeth
+Author-email: lucas.belo@live.com
+License: UNKNOWN
+Description: # DelphiFMX4Python
+        Delphi's FireMonkey framework as a Python module for Windows, MacOS, Linux, and Android GUI development.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Android
+Description-Content-Type: text/markdown
