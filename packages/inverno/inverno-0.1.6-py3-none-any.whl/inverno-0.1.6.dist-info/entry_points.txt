@@ -1,0 +1,3 @@
+[console_scripts]
+inverno=inverno.cli:main
+

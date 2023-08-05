@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: inverno
+Version: 0.1.6
+Summary: Investments portfolio tracking tool
+Author: werew
+Author-email: werew@ret2libc.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: CurrencyConverter (>=0.16.1,<0.17.0)
+Requires-Dist: Jinja2 (>=2.11.3,<3.0.0)
+Requires-Dist: PyYAML (>=5.4.1,<6.0.0)
+Requires-Dist: click (>=7.1.2,<8.0.0)
+Requires-Dist: matplotlib (>=3.4.1,<4.0.0)
+Requires-Dist: pandas (>=1.2.3,<2.0.0)
+Requires-Dist: yfinance (>=0.1.59,<0.2.0)
