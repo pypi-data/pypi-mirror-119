@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: emxps
+Version: 0.0.6
+Summary: Miscellanous Explanation Methods
+Home-page: https://github.com/emanuele-albini/emxps
+Author: Emanuele Albini
+License: UNKNOWN
+Project-URL: Documentation, https://emanuele-albini.github.io/emxps
+Project-URL: Source Code, https://github.com/emanuele-albini/emxps
+Project-URL: Bug Tracker, https://github.com/emanuele-albini/emxps/issues
+Project-URL: Author Website, https://www.emanuelealbini.com
+Keywords: XAI,Explainability,Explainable,AI,Counterfactual,Algorithmic Recourse,Contrastive Explanations,Feature Importance,Feature Attribution
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# EmXPS - Miscellaneous Explanation Methods
+
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/emxps.svg)](https://pypi.python.org/pypi/emxps/)
+[![GitHub license](https://img.shields.io/github/license/emanuele-albini/emxps)](https://github.com/emanuele-albini/emxps/blob/master/LICENSE)
+[![PyPI](https://badge.fury.io/py/emxps.svg)](https://pypi.python.org/pypi/emxps/)
+[![Maintaner](https://img.shields.io/badge/maintainer-Emanuele-lightgrey)](https://www.emanuelealbini.com)
+[![Tests](https://github.com/emanuele-albini/emxps/actions/workflows/tests.yml/badge.svg)](https://github.com/emanuele-albini/emxps/actions/workflows/tests.yml)
+<!-- [![Release](https://github.com/emanuele-albini/emxps/actions/workflows/release.yml/badge.svg)](https://github.com/emanuele-albini/emxps/actions/workflows/release.yml) -->
+
+This package contains various implementations of *feature importance* and *counterfactual explanations* (aka *actionable recourse*) methods for research purposes.
+
+**Package under active development. Please use specific releases version from PyPi or conda for stable versions.**
+
+## Installation
+
+Using PIP:
+
+```bash
+pip install emxps
+```
+
+#### For developers
+
+To use the package in editable mode use instead the following.
+
+```bash
+git clone https://github.com/emanuele-albini/emxps.git
+pip install --editable emxps
+```
+
+
+## Documentation
+
+See [here](https://emanuele-albini.github.io/emxps) for the complete documentation of the modules.
+
+
