@@ -1,0 +1,17 @@
+shannonca/__init__.py,sha256=TMWmEjk-mUnzT6C7WdP2r_1hGV2T_nkMP-JKRtEiE5U,246
+shannonca/connectors.py,sha256=jz_byOODfxb_XkmvcUCUjYPX3wfQHCwiuT_Mya20Pqc,821
+shannonca/correctors.py,sha256=Z4af3kXSmxZrtB7VpBgz15HDjq00_dh_gq-gLuEA1Hw,742
+shannonca/dimred.py,sha256=pjSCbexrDORTyZNxlpmR67XQNUwd_iLzK1dgTuDYuEw,12001
+shannonca/embedders.py,sha256=uxzTmcKdLv3JQVtDvxrKfJkdAsXyKIGEQ_xPTqSgC4w,2699
+shannonca/generate.py,sha256=v0nw07AJv_BfysC3tTUCzckC17MI7Wshk03b0M7k7-I,2202
+shannonca/integrate.py,sha256=5krFDQpcxlBJIuj6xZV9qpl_gHmix9SRGkZ6p19riZM,1564
+shannonca/optimize.py,sha256=6TTqYfcNVpRUvwiX-ve_05l6m0o3or5na6wih9Uo8B8,1310
+shannonca/plotting.py,sha256=QhNTF7aB3atbo-t3iVF9sGJkmJk-lGLcZE623yeQk68,2141
+shannonca/score.py,sha256=eG6xUw55onOu8pk_GBVMv6p28HAYyNjCk2-C68dH9BI,21002
+shannonca/scorers.py,sha256=Riack8Jeu3YCjc_IgIFXIGUSnUvP9RX-cdWPCRfJVQ4,12438
+shannonca/utils.py,sha256=QQuRIKgjxw8yZj7h0yeqc882i0C2veg6Eo0EG8BAgEg,5102
+shannonca-0.0.6.dist-info/LICENSE,sha256=VYOZjl8Tb5qSkJwVM1QjDvA1oEHVqBE3KYM8SJX1e7Q,1070
+shannonca-0.0.6.dist-info/METADATA,sha256=LEecRJvoJa1rk029E-0fa3Av0x-HIpqW33jBlMrv_V8,3772
+shannonca-0.0.6.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+shannonca-0.0.6.dist-info/top_level.txt,sha256=IP9EvXFnEQ2qEA6i6NgiKu9UyNE-P3QnBR5BYl1VR2Q,10
+shannonca-0.0.6.dist-info/RECORD,,
