@@ -1,0 +1,3 @@
+[markdown.extensions]
+citeproc = citeproc_markdown.citeproc:CiteprocExtension
+

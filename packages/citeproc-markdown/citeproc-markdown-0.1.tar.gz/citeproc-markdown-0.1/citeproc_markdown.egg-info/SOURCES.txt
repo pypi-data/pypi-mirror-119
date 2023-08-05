@@ -1,0 +1,10 @@
+README.md
+setup.py
+citeproc_markdown/__init__.py
+citeproc_markdown/citeproc.py
+citeproc_markdown.egg-info/PKG-INFO
+citeproc_markdown.egg-info/SOURCES.txt
+citeproc_markdown.egg-info/dependency_links.txt
+citeproc_markdown.egg-info/entry_points.txt
+citeproc_markdown.egg-info/requires.txt
+citeproc_markdown.egg-info/top_level.txt
