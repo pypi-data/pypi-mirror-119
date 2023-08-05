@@ -1,0 +1,16 @@
+astropy>=4.0.0
+pyyaml>=5.2
+twisted>=19.10.0
+sdss-opscore>=3.0.0
+sdsstools>=0.4.10
+
+[dev]
+black
+flake8
+twine
+wheel
+isort
+
+[docs]
+Sphinx>=2.2.0
+sphinx_bootstrap_theme>=0.4.12
