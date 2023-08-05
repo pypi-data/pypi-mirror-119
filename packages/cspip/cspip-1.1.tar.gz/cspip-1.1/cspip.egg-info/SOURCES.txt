@@ -1,0 +1,9 @@
+README.md
+setup.py
+cspip/__init__.py
+cspip/jixnprint.py
+cspip.egg-info/PKG-INFO
+cspip.egg-info/SOURCES.txt
+cspip.egg-info/dependency_links.txt
+cspip.egg-info/requires.txt
+cspip.egg-info/top_level.txt
