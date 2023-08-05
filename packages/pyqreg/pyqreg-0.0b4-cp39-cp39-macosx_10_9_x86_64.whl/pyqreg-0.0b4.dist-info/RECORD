@@ -1,0 +1,14 @@
+pyqreg/__init__.py,sha256=GDX8bf8WmiKz2GjfgMPPNMA3ekf0H-EaTvqFXRmAjDA,31
+pyqreg/quantreg.py,sha256=hzUZhFzFb33is22e7YId55puoJKPK_rrvMz4gW9ffII,333
+pyqreg/c/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyqreg/c/blas_lapack.cpython-39-darwin.so,sha256=bpbV7BQIaMbfMB_5ydL1rOjFKGZewSmS8qbSPJSibNU,46336
+pyqreg/c/blas_lapack.pyx,sha256=GnbZ5nys_dppddekkvGXbezgqEcZviM_sZDDOvk0xzU,3253
+pyqreg/c/fit_coefs.cpython-39-darwin.so,sha256=8xUfFet9cXJafvHfmxILvTgjFqcTzp-njYuLoBw6VVo,93816
+pyqreg/c/fit_coefs.pyx,sha256=tPM7oaudMWjan_C8P09ni0Os2pwqUBkzXrcBf9YjgoY,14078
+pyqreg/c/mat_vec_ops.cpython-39-darwin.so,sha256=JmmYyeV6szud0zryosSn9V2yYJu8qUQ-S9elkbco74c,61680
+pyqreg/c/mat_vec_ops.pyx,sha256=6S5NmuLlSxCRovOOYVlu_EkhYQ4HtamP2pAqHvbQPe0,2270
+pyqreg-0.0b4.dist-info/LICENSE,sha256=HTcc_aX_QRU4_N_HaS3-oILNWZL-T2OJZSTU_QNhO28,1514
+pyqreg-0.0b4.dist-info/METADATA,sha256=kOfouI0Dp9kGfRtHLejNmyhWQ3tbXTO5p3Bmg2ujmJs,357
+pyqreg-0.0b4.dist-info/WHEEL,sha256=bRe_g_g-vZInZP5wOdewl-4AeWx8E2_UC3Ffr2csPyk,109
+pyqreg-0.0b4.dist-info/top_level.txt,sha256=TOlJOBKpo8aoFJtMLSMN34C4rUt_TNv_rQqsllB_MRU,7
+pyqreg-0.0b4.dist-info/RECORD,,
