@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: Alert_Behavior
+Version: 1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Bishwa Sapkota
+Author-email: bishowbs08@gmail.com
+License: MIT
+Description: 
+        **Introduction:**
+        This package alerts the users if they happen to touch their mouth and nose
+        while working in the computers. Some people develop unwanted habits such as
+        nose picking and nail biting while working all day long in computer without thier attention. This package
+        can help them destroy such habits by alerting right on time. This package bears more importance in the light of ongoing COVID pandemic.
+        
+        **Pre-requisites:**
+        You should have your webcam connected to your computer and it should be fully functional. You should also have python program installed into your computer. How to install python? Check this video. https://www.youtube.com/watch?v=4Rx_JRkwAjY&ab_channel=ProgrammingKnowledge2 https://www.youtube.com/watch?v=4gTCQCT_930&ab_channel=TechMeSpot
+        
+        **Concept:**
+        This package utilizes a very powerful pacakge called `mediapipe` to detect landmarks in face and fingers. These landmarks have unique ids and their local coordinates can easily be retrieved using pacakges like cv2. The distance between these landmarks can be calculated and analyzed to trigger an event such as making a beep sound.
+        
+        **If  you are using pip**
+        
+        1. open up your terminal by typing `cmd` and type `pip install packagename`(you can copy the package name from above)
+        1. open up the python program by typing `python` into the `cmd`
+        1. type `import Alert_Behavior`
+        1. type `from Alert_Behavior import alert`
+        1. type `alert.start_session().start_alert()`
+        
+        Yayy! if you see the webcam video launched in imaging window, you successfully started the session. You can try by moving your fingers near to nose and mouth and you will hear the beep sound. If you have a habit of touching nose and mouth with your fingers, this annoying beep sound will deter you from doing that
+        
+        **If you are cloning from github:**
+        
+        1. open up your terminal by typing `cmd` on the navigation address within the folder where you want to download/clone the code from github
+        1. clone the github repository by pasting this command  `git clone https://github.com/BishwaBS/Alert_Behavior.git`
+        1. change the working directory to Alert_Behavior  `cd Alert_Behavior`
+        1. run the setup file found within the Alert_Behavior `python setup.py install`
+        1. open up the python program by typing `python`
+        1. type `import Alert_Behavior`
+        1. type `from Alert_Behavior import alert`
+        1. type `alert.start_session().start_alert()`
+        
+        Yayy! if you see the webcam video being launched, you successfully started the session. You can try by moving your fingers near to nose and mouth and you will hear the beep sound. If you have a habit of touching nose and mouth with your fingers, this annoying beep sound will deter you from doing that. 
+        
+        STAY HEALTHY , STAY SAFE!
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
