@@ -1,0 +1,15 @@
+requests
+
+[all]
+requests_kerberos
+
+[kerberos]
+requests_kerberos
+
+[tests]
+requests_kerberos
+httpretty
+pytest
+pytest-runner
+pytz
+click
