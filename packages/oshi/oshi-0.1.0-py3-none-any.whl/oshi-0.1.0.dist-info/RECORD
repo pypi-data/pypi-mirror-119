@@ -1,0 +1,13 @@
+LICENSE,sha256=I_S5ZEshM2pZZI37oln5N9LBkJFi4yuLam4rsNIU4e8,1062
+oshi/__init__.py,sha256=k_FHGykGSnUl-HBCnngt4bJX36nU5s00uNJFxD3Mx-Q,83
+oshi/auth.py,sha256=JGDeFl2xtYBu9NB5NAepV6j2DazY_ZyTLz5YQavzJ9A,750
+oshi/client.py,sha256=UWMknT7-gAAUA-MqObT7ZLim9MhgfB7yhgoq0tL5URQ,1316
+oshi/http.py,sha256=kqoCZrW4E5SQMFGU_MzZY4zJNeXxF_ctHnWdfQphLPI,3188
+oshi/objects/__init__.py,sha256=k0FQebKbG08ep9ug6IwVUsw1c-2kBov4ZVUMGJXHA98,43
+oshi/objects/base.py,sha256=FWgP6zm_NNM8Zayrc3VB6dl8xBmt-cF9_i0u2yCgIUA,613
+oshi/objects/beatmap.py,sha256=MoPCq6hwwJ6_KzbWm6jsUZpPj45W7WVHzfgfErthEwo,2848
+oshi/utils.py,sha256=7kohR5tRiaXP1PbSn3MoU1EyFo8nz9-4queamF2LC1g,287
+oshi-0.1.0.dist-info/LICENSE,sha256=I_S5ZEshM2pZZI37oln5N9LBkJFi4yuLam4rsNIU4e8,1062
+oshi-0.1.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+oshi-0.1.0.dist-info/METADATA,sha256=0FytxRlsC8GdN2EJHYl9C4tCufNCmlGWFp2oiwdnp8A,1087
+oshi-0.1.0.dist-info/RECORD,,

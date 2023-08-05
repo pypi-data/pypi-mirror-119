@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: oshi
+Version: 0.1.0
+Summary: An asynchronous osu API wrapper written in python
+Home-page: https://github.com/an-dyy/oshi
+License: MIT
+Keywords: osu
+Author: an-dyy
+Author-email: andy.development@protonmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiohttp (>=3.7.4,<4.0.0)
+Project-URL: Repository, https://github.com/an-dyy/oshi
+Description-Content-Type: text/markdown
+
+# oshi
+An asynchronous osu API wrapper made in python 
+
+## Example(s)
+
+   ```py
+   import oshi
+   import asyncio
+
+
+   async def main() -> None:
+      auth = oshi.Authentication(CLIENT_ID, "CLIENT_SECRET")
+
+      async with oshi.Client(auth) as client:
+         map = await client.get_beatmap(id=1222063)
+         print(map.url)
+
+   asyncio.run(main())
+   ```
+
+
+## Development
+_For developers_
+If you plan on contributing please open an issue beforehand
+
+## Contributors
+
+- [an-dyy](https://github.com/an-dyy) - creator and maintainer
+
+
