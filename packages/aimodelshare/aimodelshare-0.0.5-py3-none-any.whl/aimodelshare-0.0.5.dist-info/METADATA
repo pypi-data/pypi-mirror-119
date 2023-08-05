@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: aimodelshare
+Version: 0.0.5
+Summary: Deploy locally saved machine learning models to a live rest API and web-dashboard.  Share it with the world via modelshare.org
+Home-page: https://www.modelshare.org
+Author: Michael Parrott
+Author-email: mikedparrott@modelshare.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: boto3 (==1.18.2)
+Requires-Dist: botocore (==1.21.2)
+Requires-Dist: scikit-learn (==0.24.2)
+Requires-Dist: onnx (>=1.9.0)
+Requires-Dist: onnxconverter-common (>=1.7.0)
+Requires-Dist: keras2onnx (>=1.7.0)
+Requires-Dist: tensorflow (>=2.5.0)
+Requires-Dist: tf2onnx
+Requires-Dist: skl2onnx (>=1.8.0)
+Requires-Dist: onnxruntime (>=1.7.0)
+Requires-Dist: urllib3 (==1.25.11)
+Requires-Dist: xgboost (>=0.90)
+Requires-Dist: torch (>=1.8.1)
+Requires-Dist: onnxmltools (>=1.6.1)
+Requires-Dist: Pympler (==0.9)
+Requires-Dist: docker (==5.0.0)
+
+
+# aimodelshare
+Repo for AI Model Share Project 
+  
+
+
