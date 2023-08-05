@@ -1,0 +1,6 @@
+sphinx
+ipywidgets
+ipython
+scikit-image
+Pillow
+setuptools
