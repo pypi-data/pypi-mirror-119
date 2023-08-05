@@ -1,0 +1,11 @@
+README.rst
+setup.cfg
+setup.py
+folder_structure/__init__.py
+folder_structure/__main__.py
+folder_structure/cli.py
+folder_structure.egg-info/PKG-INFO
+folder_structure.egg-info/SOURCES.txt
+folder_structure.egg-info/dependency_links.txt
+folder_structure.egg-info/not-zip-safe
+folder_structure.egg-info/top_level.txt
