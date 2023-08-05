@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: eternalris
+Version: 0.1
+Summary: Python library to integrate with Eternal Studios RIS API
+Home-page: https://github.com/user/viabhinav
+Author: LeviAckerman
+Author-email: levi@eternalstudios.xyz
+License: MIT
+Download-URL: https://github.com/viabhinav/eternalris/archive/refs/tags/1.0.tar.gz
+Description: UNKNOWN
+Keywords: RIS
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
