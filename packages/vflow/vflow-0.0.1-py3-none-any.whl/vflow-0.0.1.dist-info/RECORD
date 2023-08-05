@@ -1,0 +1,13 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_basic.py,sha256=y8MXg4yEp8wGTM96fXwFdWkK-S6teJiRa-6VCbDaUGU,1144
+tests/test_dict_combine.py,sha256=fjyAX_FqTKjvRWB-FdIv3KJIk6GvqmFhTizajAXAUIY,3345
+tests/test_pipelines.py,sha256=a5dMvPdqGWPPosnjoSjNdqxh7vuuK0mNrIjLir3EG-Y,7616
+vflow/__init__.py,sha256=VOHPvBsE2VXXQEgz006vu3ToAQO0qiMBNukKVN8eYy8,137
+vflow/convert.py,sha256=toURXSMgdidErj1v2KtmDTdoQXq2Eg_D59TY1V_UaDA,17053
+vflow/module.py,sha256=LUVaFwE5sVhsYR6SNAs8rwb_ya4oWLBWOWKdd4sqwV4,2041
+vflow/module_set.py,sha256=YsWTx4RhGlZMekIzce3ussjBSXmdIyyTgOQTtz8JmZQ,7011
+vflow/pipeline.py,sha256=VTo08SQ5QfiWnDVf208GDdb-DEZGf0ch1eN2krLiI2c,3721
+vflow-0.0.1.dist-info/METADATA,sha256=e2QttmjzRZDO7ct-EVYEafMwtoLPublwyA-M8IrqR3w,732
+vflow-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+vflow-0.0.1.dist-info/top_level.txt,sha256=NSNx-6XZV7s88wMdAJ1CA5sSIL-sqC7MCe8VeQ1qd0k,12
+vflow-0.0.1.dist-info/RECORD,,
