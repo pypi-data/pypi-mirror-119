@@ -1,0 +1,9 @@
+setup.py
+pymymusic/__init__.py
+pymymusic/pymymusic.py
+pymymusic.egg-info/PKG-INFO
+pymymusic.egg-info/SOURCES.txt
+pymymusic.egg-info/dependency_links.txt
+pymymusic.egg-info/not-zip-safe
+pymymusic.egg-info/requires.txt
+pymymusic.egg-info/top_level.txt
