@@ -1,0 +1,12 @@
+ldict/__init__.py,sha256=Cz9xu-sbH7gsM9fND1OnvSf7G0lNkSTrP-aHEQB2wso,313
+ldict/appearance.py,sha256=yAnyjujFAbYdNJOSzC_yS_jtAohXCKrATszzU_jnaK0,5319
+ldict/apply.py,sha256=AnE6NFnQJQTNi_-ppDR7LqlnZ3ns65RismUknEDWyBo,9371
+ldict/customjson.py,sha256=6le8m_ryR6h9wIk50gcY-35xrk01iDeMADuzvpRTkXU,1921
+ldict/data.py,sha256=8m3UVuoNsQ2QCDtvLdfpcaFSyYY1_8C6xfRU1Rdx6Wk,5558
+ldict/exception.py,sha256=PqlX2mh4tgh71IH2SAOz4PvFjGqfFvZkyINnnpwRAAg,2391
+ldict/history.py,sha256=yDh1p_fTEQds_zqmOrWLFnew2M6O_Olj-cN1yt0KErw,6106
+ldict/lazy.py,sha256=DvsZbBevl3VW2B9W4YIsy8amOYGUHCnUmIxuTPHEUEA,1556
+ldict/ldict_.py,sha256=Pavs0GlLyuKwEs5zApByiEZvCYYw6KRVzQ_bmhodS-g,15390
+ldict-2.210908.4.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+ldict-2.210908.4.dist-info/METADATA,sha256=XCqdC3-MY7fnJjYpnpwze_hUD_4VONgvpgjrs5P11ic,4979
+ldict-2.210908.4.dist-info/RECORD,,
