@@ -1,0 +1,5 @@
+aws_assume_role_lib.py,sha256=xC-6Hr8uMCPVpWtjU-0fQRhRXO8zuVwL_s1MoHPcP0c,22064
+aws_assume_role_lib-2.8.0.dist-info/LICENSE,sha256=9j8RqO8bPFqn4auDoWpegssMFBSlrw52EoRAO4PJyOA,11340
+aws_assume_role_lib-2.8.0.dist-info/WHEEL,sha256=SrtnPGVTMeYWttls9xnWA01eUhCZ3ufFdJUYb1J3r-U,83
+aws_assume_role_lib-2.8.0.dist-info/METADATA,sha256=1sQGbQDvNZ21ZLDqLFeFE9-H0Mmi19T2tmMP2-XaKdo,15671
+aws_assume_role_lib-2.8.0.dist-info/RECORD,,
