@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+compExtract/__init__.py
+compExtract/compExtract.py
+compExtract/utility.py
+compExtract.egg-info/PKG-INFO
+compExtract.egg-info/SOURCES.txt
+compExtract.egg-info/dependency_links.txt
+compExtract.egg-info/requires.txt
+compExtract.egg-info/top_level.txt
