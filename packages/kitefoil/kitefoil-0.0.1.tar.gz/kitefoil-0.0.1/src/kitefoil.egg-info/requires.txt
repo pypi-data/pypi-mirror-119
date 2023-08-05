@@ -1,0 +1,7 @@
+geopy
+gpxpy
+matplotlib
+numpy
+pandas
+plotly
+windrose
