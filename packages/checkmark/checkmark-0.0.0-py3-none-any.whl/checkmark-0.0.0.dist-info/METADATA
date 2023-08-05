@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: checkmark
+Version: 0.0.0
+Summary: Write HTML forms in a Markdown-like language
+Home-page: https://gitlab.com/deepadmax/checkmark
+Author: Maximillian Strand
+Author-email: maximillian.strand@protonmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# Checkmark
+
+Write HTML forms in a Markdown-like language.
