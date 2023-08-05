@@ -1,0 +1,8 @@
+flytekitplugins_pod-0.22.1-py3.9-nspkg.pth,sha256=lkJ-eVJsxHcpr3YkJBzWrgSFWPWyG3DLhUSGmTcjxhg,584
+flytekitplugins/pod/__init__.py,sha256=Ta2dLxZFFFc-vF1BfUas_A5x3_NRRn7XiBzq_GiyGDQ,22
+flytekitplugins/pod/task.py,sha256=kX3KBQA6Kpg8k4kJ6JdLzcqIOP939VfoGLZWVOMYk9w,5154
+flytekitplugins_pod-0.22.1.dist-info/METADATA,sha256=Q1mjG4pt3Y-khFbPZq2kgkepQ-JpFHuYwQU6T6KwXYM,872
+flytekitplugins_pod-0.22.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+flytekitplugins_pod-0.22.1.dist-info/namespace_packages.txt,sha256=b2gTzXFHuV5afchaJ28HueRhYzj-8x5Ytr8n2twnAik,16
+flytekitplugins_pod-0.22.1.dist-info/top_level.txt,sha256=b2gTzXFHuV5afchaJ28HueRhYzj-8x5Ytr8n2twnAik,16
+flytekitplugins_pod-0.22.1.dist-info/RECORD,,
