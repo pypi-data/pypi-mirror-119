@@ -1,0 +1,29 @@
+DataKund Scraper is a library that makes it easy to scrape information from any url. You don't have to inspect any web elements to find tags, xpath id etc.
+It learns from the data given by you & builds a scraper. Then you can use it to get JSON data out of the HTML.
+
+### Train Scraper
+We train scraper by passing url. This gives us id in return which can be used in future to run scraper. Training can take 2-3 minutes, but don't worry it is for first time only. Once trained you can pass any similiar link to that for fetching data.
+```sh
+from datakund_scraper import *
+link='https://pypi.org/search/?q=firebase'
+response=scraper.train(url=link)
+#response={"id":"fwefsd45","status":True}
+```
+
+
+### Run Scraper
+We run scraper by passing url and id we fetched earlier in training. This gives us JSON data in return.
+```sh
+from datakund_scraper import *
+link='https://pypi.org/search/?q=firebase'
+response=scraper.run(url=link,id="fwefsd45")
+#response={"Results":[{"title":"","link":""},...]}
+```
+
+### Examples
+Below are some of the examples of links using which you can run autoscraper:-
+1. Pypi Search Results [https://pypi.org/search/?q=firebase]
+2. Amazon Search Results [https://www.amazon.com/s?k=shoes&ref=nb_sb_noss]
+3. Wordpress Themes [https://wordpress.org/themes/search/green/]
+4. PlayStore Apps [https://play.google.com/store/search?q=war&c=apps]
+5. GoFundMe Results [https://www.gofundme.com/s?q=help]
