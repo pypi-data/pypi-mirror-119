@@ -1,0 +1,6 @@
+fastapi
+pydantic
+SQLAlchemy>=1.4
+StrEnum
+psycopg2
+asyncpg
