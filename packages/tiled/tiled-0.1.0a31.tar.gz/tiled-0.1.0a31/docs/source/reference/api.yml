@@ -1,0 +1,1124 @@
+components:
+  schemas:
+    About:
+      properties:
+        aliases:
+          additionalProperties:
+            additionalProperties:
+              items:
+                type: string
+              type: array
+            type: object
+          title: Aliases
+          type: object
+        api_version:
+          title: Api Version
+          type: integer
+        formats:
+          additionalProperties:
+            items:
+              type: string
+            type: array
+          title: Formats
+          type: object
+        library_version:
+          title: Library Version
+          type: string
+        meta:
+          title: Meta
+          type: object
+        queries:
+          items:
+            type: string
+          title: Queries
+          type: array
+      required:
+      - api_version
+      - library_version
+      - formats
+      - aliases
+      - queries
+      - meta
+      title: About
+      type: object
+    AccessAndRefreshTokens:
+      properties:
+        access_token:
+          title: Access Token
+          type: string
+        expires_in:
+          title: Expires In
+          type: integer
+        refresh_token:
+          title: Refresh Token
+          type: string
+        refresh_token_expires_in:
+          title: Refresh Token Expires In
+          type: integer
+        token_type:
+          title: Token Type
+          type: string
+      required:
+      - access_token
+      - expires_in
+      - refresh_token
+      - refresh_token_expires_in
+      - token_type
+      title: AccessAndRefreshTokens
+      type: object
+    Body_login_for_access_token_token_post:
+      properties:
+        client_id:
+          title: Client Id
+          type: string
+        client_secret:
+          title: Client Secret
+          type: string
+        grant_type:
+          pattern: password
+          title: Grant Type
+          type: string
+        password:
+          title: Password
+          type: string
+        scope:
+          default: ''
+          title: Scope
+          type: string
+        username:
+          title: Username
+          type: string
+      required:
+      - username
+      - password
+      title: Body_login_for_access_token_token_post
+      type: object
+    EntryFields:
+      description: An enumeration.
+      enum:
+      - metadata
+      - structure_family
+      - structure.micro
+      - structure.macro
+      - count
+      - specs
+      - ''
+      title: EntryFields
+      type: string
+    Error:
+      properties:
+        code:
+          title: Code
+          type: integer
+        message:
+          title: Message
+          type: string
+      required:
+      - code
+      - message
+      title: Error
+      type: object
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          title: Detail
+          type: array
+      title: HTTPValidationError
+      type: object
+    RefreshToken:
+      properties:
+        refresh_token:
+          title: Refresh Token
+          type: string
+      required:
+      - refresh_token
+      title: RefreshToken
+      type: object
+    Response:
+      properties:
+        data:
+          title: Data
+        error:
+          $ref: '#/components/schemas/Error'
+        links:
+          title: Links
+          type: object
+        meta:
+          title: Meta
+          type: object
+      title: Response
+      type: object
+    ValidationError:
+      properties:
+        loc:
+          items:
+            type: string
+          title: Location
+          type: array
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+      type: object
+  securitySchemes:
+    APIKeyCookie:
+      in: cookie
+      name: tiled_api_key
+      type: apiKey
+    APIKeyHeader:
+      in: header
+      name: x-tiled-api-key
+      type: apiKey
+    APIKeyQuery:
+      in: query
+      name: api_key
+      type: apiKey
+    OAuth2PasswordBearer:
+      flows:
+        password:
+          refreshUrl: token/refresh
+          scopes: {}
+          tokenUrl: token
+      type: oauth2
+info:
+  description: Structured data access service
+  title: Tiled
+  version: 0.1.0a30.post101+gf42b6dd
+openapi: 3.0.2
+paths:
+  /:
+    get:
+      operationId: about__get
+      parameters:
+      - in: query
+        name: root_path
+        required: false
+        schema:
+          title: Root Path
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/About'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: About
+  /array/block/{path}:
+    get:
+      description: Fetch a chunk of array-like data.
+      operationId: array_block_array_block__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: block
+        required: true
+        schema:
+          pattern: ^[0-9]*(,[0-9]+)*$
+          title: Block
+          type: string
+      - in: query
+        name: slice
+        required: false
+        schema:
+          pattern: ^[0-9,:]*$
+          title: Slice
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Array Block
+  /array/full/{path}:
+    get:
+      description: Fetch a slice of array-like data.
+      operationId: full_array_array_full__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: slice
+        required: false
+        schema:
+          pattern: ^[0-9,:]*$
+          title: Slice
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Full Array
+  /data_array/block/{path}:
+    get:
+      description: Fetch a chunk from an xarray.DataArray.
+      operationId: xarray_DataArray_block_data_array_block__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: coord
+        required: false
+        schema:
+          minLength: 1
+          title: Coord
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: block
+        required: true
+        schema:
+          pattern: ^[0-9]*(,[0-9]+)*$
+          title: Block
+          type: string
+      - in: query
+        name: slice
+        required: false
+        schema:
+          pattern: ^[0-9,:]*$
+          title: Slice
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Xarray.Dataarray Block
+  /data_array/variable/full/{path}:
+    get:
+      description: Fetch a chunk from an xarray.DataArray.
+      operationId: full_xarray_Variable_from_within_an_xarray_DataArray_data_array_variable_full__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: coord
+        required: false
+        schema:
+          minLength: 1
+          title: Coord
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Full Xarray.Variable From Within An Xarray.Dataarray
+  /dataframe/divisions/{path}:
+    get:
+      description: Fetch the Apache Arrow serialization of the index values at the
+        partition edges.
+      operationId: dataframe_divisions_dataframe_divisions__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Dataframe Divisions
+  /dataframe/full/{path}:
+    get:
+      description: Fetch all the rows of DataFrame.
+      operationId: full_dataframe_dataframe_full__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: column
+        required: false
+        schema:
+          items:
+            minLength: 1
+            type: string
+          minLength: 1
+          title: Column
+          type: array
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Full Dataframe
+  /dataframe/meta/{path}:
+    get:
+      description: Fetch the Apache Arrow serialization of (an empty) DataFrame with
+        this structure.
+      operationId: dataframe_meta_dataframe_meta__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Dataframe Meta
+  /dataframe/partition/{path}:
+    get:
+      description: Fetch a partition (continuous block of rows) from a DataFrame.
+      operationId: dataframe_partition_dataframe_partition__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: partition
+        required: true
+        schema:
+          title: Partition
+          type: integer
+      - in: query
+        name: column
+        required: false
+        schema:
+          items:
+            minLength: 1
+            type: string
+          minLength: 1
+          title: Column
+          type: array
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Dataframe Partition
+  /dataset/block/{path}:
+    get:
+      description: Fetch a chunk from an xarray.Dataset.
+      operationId: xarray_Dataset_block_dataset_block__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: variable
+        required: true
+        schema:
+          minLength: 1
+          title: Variable
+          type: string
+      - in: query
+        name: coord
+        required: false
+        schema:
+          minLength: 1
+          title: Coord
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: block
+        required: true
+        schema:
+          pattern: ^[0-9]*(,[0-9]+)*$
+          title: Block
+          type: string
+      - in: query
+        name: slice
+        required: false
+        schema:
+          pattern: ^[0-9,:]*$
+          title: Slice
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Xarray.Dataset Block
+  /dataset/coord/full/{path}:
+    get:
+      description: Fetch a full coordinate from within an xarray.Dataset.
+      operationId: full_xarray_Dataset_coordinate_dataset_coord_full__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: coord
+        required: true
+        schema:
+          minLength: 1
+          title: Coord
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Full Xarray.Dataset Coordinate
+  /dataset/data_var/full/{path}:
+    get:
+      description: Fetch a full xarray.Variable from within an xarray.Dataset.
+      operationId: full_xarray_Dataset_data_variable_dataset_data_var_full__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: variable
+        required: true
+        schema:
+          minLength: 1
+          title: Variable
+          type: string
+      - in: query
+        name: coord
+        required: false
+        schema:
+          minLength: 1
+          title: Coord
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Full Xarray.Dataset Data Variable
+  /dataset/full/{path}:
+    get:
+      description: Fetch a full coordinate from within an xarray.Dataset.
+      operationId: full_xarray_Dataset_dataset_full__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: variable
+        required: false
+        schema:
+          items:
+            minLength: 1
+            type: string
+          minLength: 1
+          title: Variable
+          type: array
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Full Xarray.Dataset
+  /entries/{path}:
+    get:
+      description: List the entries in a Tree, which may be sub-Trees or Readers.
+      operationId: entries_entries__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: page[offset]
+        required: false
+        schema:
+          default: 0
+          title: Page[Offset]
+          type: integer
+      - in: query
+        name: page[limit]
+        required: false
+        schema:
+          default: 100
+          title: Page[Limit]
+          type: integer
+      - in: query
+        name: sort
+        required: false
+        schema:
+          title: Sort
+          type: string
+      - in: query
+        name: fields
+        required: false
+        schema:
+          default:
+          - metadata
+          - structure_family
+          - structure.micro
+          - structure.macro
+          - count
+          - specs
+          - ''
+          items:
+            $ref: '#/components/schemas/EntryFields'
+          type: array
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Entries
+  /logout:
+    post:
+      operationId: logout_logout_post
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      summary: Logout
+  /metadata/{path}:
+    get:
+      description: Fetch the metadata for one Tree or Reader.
+      operationId: metadata_metadata__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: fields
+        required: false
+        schema:
+          default:
+          - metadata
+          - structure_family
+          - structure.micro
+          - structure.macro
+          - count
+          - specs
+          - ''
+          items:
+            $ref: '#/components/schemas/EntryFields'
+          type: array
+      - in: query
+        name: root_path
+        required: false
+        schema:
+          title: Root Path
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Metadata
+  /token:
+    post:
+      operationId: login_for_access_token_token_post
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Body_login_for_access_token_token_post'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessAndRefreshTokens'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Login For Access Token
+  /token/refresh:
+    post:
+      description: Obtain a new access token and refresh token.
+      operationId: post_token_refresh_token_refresh_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshToken'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessAndRefreshTokens'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Post Token Refresh
+  /variable/block/{path}:
+    get:
+      description: Fetch a chunk of array-like data from an xarray.Variable.
+      operationId: xarray_Variable_block_variable_block__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: block
+        required: true
+        schema:
+          pattern: ^[0-9]*(,[0-9]+)*$
+          title: Block
+          type: string
+      - in: query
+        name: slice
+        required: false
+        schema:
+          pattern: ^[0-9,:]*$
+          title: Slice
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Xarray.Variable Block
+  /variable/full/{path}:
+    get:
+      description: Fetch a full xarray.Variable.
+      operationId: full_xarray_Variable_variable_full__path__get
+      parameters:
+      - in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+      - in: query
+        name: format
+        required: false
+        schema:
+          title: Format
+          type: string
+      - in: query
+        name: expected_shape
+        required: false
+        schema:
+          minLength: 1
+          pattern: ^[0-9]+(,[0-9]+)*$|^scalar$
+          title: Expected Shape
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      security:
+      - OAuth2PasswordBearer: []
+      - APIKeyQuery: []
+      - APIKeyHeader: []
+      - APIKeyCookie: []
+      summary: Full Xarray.Variable
