@@ -1,0 +1,1061 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Milko Krachounov <milko@3mhz.net>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-12 16:40+0200\n"
+"PO-Revision-Date: 2017-11-12 21:10+0200\n"
+"Last-Translator: Milko Krachounov <milko@3mhz.net>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: typeatlas/gui.py:149 typeatlas/gui.py:150 typeatlas/gui.py:150
+msgid "Font name"
+msgstr "Име на шрифт"
+
+#: typeatlas/gui.py:218 typeatlas/gui.py:555 typeatlas/gui.py:1277
+#: typeatlas/gui.py:219 typeatlas/gui.py:556 typeatlas/gui.py:1278
+#: typeatlas/gui.py:219 typeatlas/gui.py:556 typeatlas/gui.py:1278
+msgid "Outline"
+msgstr "Векторен"
+
+#: typeatlas/gui.py:220 typeatlas/gui.py:1284 typeatlas/gui.py:221
+#: typeatlas/gui.py:1285 typeatlas/gui.py:221 typeatlas/gui.py:1285
+msgid "Bitmap"
+msgstr "Растерен"
+
+#: typeatlas/gui.py:223 typeatlas/gui.py:553 typeatlas/gui.py:1288
+#: typeatlas/gui.py:224 typeatlas/gui.py:554 typeatlas/gui.py:1289
+#: typeatlas/gui.py:224 typeatlas/gui.py:554 typeatlas/gui.py:1289
+msgid "Scalable"
+msgstr "Скалируем"
+
+#: typeatlas/gui.py:256 typeatlas/gui.py:257 typeatlas/gui.py:257
+#, python-brace-format
+msgid "Width {width}, slant {slant}, weight {weight}."
+msgstr "Широчина {width}, наклон {slant}, дебелина {weight}."
+
+#: typeatlas/gui.py:259 typeatlas/gui.py:260 typeatlas/gui.py:260
+msgid "Decorative."
+msgstr "Декоративен."
+
+#: typeatlas/gui.py:261 typeatlas/gui.py:262 typeatlas/gui.py:262
+msgid "Vertical."
+msgstr "Вертикален."
+
+#: typeatlas/gui.py:359 typeatlas/gui.py:360 typeatlas/gui.py:360
+msgid "Select languages"
+msgstr "Избери езици"
+
+#: typeatlas/gui.py:408 typeatlas/gui.py:409 typeatlas/gui.py:409
+msgid "Select writing systems"
+msgstr "Избери писмености"
+
+#: typeatlas/gui.py:451 typeatlas/gui.py:452 typeatlas/gui.py:452
+msgid "Select font style family and features"
+msgstr "Избери свойства и фамилия на шрифт"
+
+#: typeatlas/gui.py:461 typeatlas/gui.py:462 typeatlas/gui.py:462
+msgid "IBM class"
+msgstr "IBM клас"
+
+#: typeatlas/gui.py:485 typeatlas/gui.py:486 typeatlas/gui.py:486
+msgid "PANOSE class"
+msgstr "PANOSE клас"
+
+#: typeatlas/gui.py:564 typeatlas/gui.py:565 typeatlas/gui.py:565
+msgid "&Writing..."
+msgstr "&Писмености..."
+
+#: typeatlas/gui.py:568 typeatlas/gui.py:569 typeatlas/gui.py:569
+msgid "&Languages..."
+msgstr "&Езици..."
+
+#: typeatlas/gui.py:572 typeatlas/gui.py:573 typeatlas/gui.py:573
+msgid "&Class..."
+msgstr "&Клас..."
+
+#: typeatlas/gui.py:789 typeatlas/gui.py:790 typeatlas/gui.py:790
+msgid "Default antialiasing"
+msgstr "Заглаждане по подразбиране"
+
+#: typeatlas/gui.py:790 typeatlas/gui.py:791 typeatlas/gui.py:791
+msgid "No antialiasing"
+msgstr "Без заглаждане"
+
+#: typeatlas/gui.py:794 typeatlas/gui.py:795 typeatlas/gui.py:795
+msgid "No subpixel rendering"
+msgstr "Без подпикселно заглаждане"
+
+#: typeatlas/gui.py:796 typeatlas/gui.py:797 typeatlas/gui.py:797
+msgid "Antialiasing"
+msgstr "Заглаждане"
+
+#: typeatlas/gui.py:799 typeatlas/gui.py:800 typeatlas/gui.py:800
+msgid "Default hinting"
+msgstr "Инструктиране по подразбиране"
+
+#: typeatlas/gui.py:800 typeatlas/gui.py:801 typeatlas/gui.py:801
+msgid "No hinting"
+msgstr "Без инструктиране"
+
+#: typeatlas/gui.py:801 typeatlas/gui.py:802 typeatlas/gui.py:802
+msgid "Vertical hinting"
+msgstr "Вертикално инструктиране"
+
+#: typeatlas/gui.py:802 typeatlas/gui.py:803 typeatlas/gui.py:803
+msgid "Full hinting"
+msgstr "Пълно инструктиране"
+
+#: typeatlas/gui.py:852 typeatlas/gui.py:853 typeatlas/gui.py:853
+msgid "TypeAtlas Sampler"
+msgstr "Мостри на ШрифтАтлас"
+
+#: typeatlas/gui.py:1008 typeatlas/gui.py:1009 typeatlas/gui.py:1009
+msgid "Twilight TypeAtlas"
+msgstr "Twilight ШрифтАтлас"
+
+#: typeatlas/gui.py:1012 typeatlas/gui.py:1013 typeatlas/gui.py:1013
+msgid "&Fonts"
+msgstr "&Шрифтове"
+
+#: typeatlas/gui.py:1013 typeatlas/gui.py:1014 typeatlas/gui.py:1014
+msgid "&View"
+msgstr "&Изглед"
+
+#: typeatlas/gui.py:1014 typeatlas/gui.py:1015 typeatlas/gui.py:1015
+msgid "&Help"
+msgstr "&Помощ"
+
+#: typeatlas/gui.py:1026 typeatlas/gui.py:1027 typeatlas/gui.py:1027
+msgid "Loading font list..."
+msgstr "Зареждане на списъка с шрифтове..."
+
+#: typeatlas/gui.py:1035 typeatlas/gui.py:1036 typeatlas/gui.py:1036
+msgid "Filling detailed font info..."
+msgstr "Попълване на подробната информация за шрифтовете..."
+
+#: typeatlas/gui.py:1043 typeatlas/gui.py:1044 typeatlas/gui.py:1044
+msgid "Attempting to guess family type..."
+msgstr "Опит за отгатване на фамилиите..."
+
+#: typeatlas/gui.py:1047 typeatlas/gui.py:1048 typeatlas/gui.py:1048
+msgid "Populating unicode info..."
+msgstr "Попълване на уникод информацията... "
+
+#: typeatlas/gui.py:1096 typeatlas/gui.py:1097 typeatlas/gui.py:1097
+msgid "System fonts"
+msgstr "Системни шрифтове"
+
+#: typeatlas/gui.py:1097 typeatlas/gui.py:1098 typeatlas/gui.py:1098
+msgid "Standard"
+msgstr "Стандартен"
+
+#: typeatlas/gui.py:1098 typeatlas/gui.py:1099 typeatlas/gui.py:1099
+msgid "Files"
+msgstr "Файлове"
+
+#: typeatlas/gui.py:1106 typeatlas/gui.py:1107 typeatlas/gui.py:1107
+msgid "Overview"
+msgstr "Обобщение"
+
+#: typeatlas/gui.py:1114 typeatlas/gui.py:1115 typeatlas/gui.py:1115
+msgid "Characters"
+msgstr "Знаци"
+
+#: typeatlas/gui.py:1129 typeatlas/gui.py:1130 typeatlas/gui.py:1130
+msgid "Sampler"
+msgstr "Мостри"
+
+#: typeatlas/gui.py:1130 typeatlas/gui.py:1131 typeatlas/gui.py:1131
+msgid "Open sampler"
+msgstr "Отваряне на мостри"
+
+#: typeatlas/gui.py:1297 typeatlas/gui.py:1298 typeatlas/gui.py:1298
+#, python-brace-format
+msgid ""
+"Anti-aliased - {antialias}, RGBA {rgba}. Hinted - {hinting}, style "
+"{hintstyle}. Autohinter - {autohinter}. LCD filter {lcdfilter}"
+msgstr ""
+"Заглаждане - {antialias}, подпикселно {rgba}. Инструктиране - {hinting}, "
+"стил{hintstyle}. Автоинструктиране - {autohinter}. LCD филтър {lcdfilter}"
+
+#: typeatlas/gui.py:1302 typeatlas/gui.py:1305 typeatlas/gui.py:1308
+#: typeatlas/gui.py:1303 typeatlas/gui.py:1306 typeatlas/gui.py:1309
+#: typeatlas/gui.py:1303 typeatlas/gui.py:1306 typeatlas/gui.py:1309
+msgid "yes"
+msgstr "да"
+
+#: typeatlas/gui.py:1302 typeatlas/gui.py:1305 typeatlas/gui.py:1308
+#: typeatlas/gui.py:1303 typeatlas/gui.py:1306 typeatlas/gui.py:1309
+#: typeatlas/gui.py:1303 typeatlas/gui.py:1306 typeatlas/gui.py:1309
+msgid "no"
+msgstr "не"
+
+#: typeatlas/fontgrid.py:135 typeatlas/fontgrid.py:534
+#: typeatlas/fontgrid.py:135 typeatlas/fontgrid.py:534
+msgid "Unicode database not loaded"
+msgstr "Уникод базата не е заредена"
+
+#: typeatlas/fontgrid.py:139 typeatlas/fontgrid.py:539
+#: typeatlas/fontgrid.py:139 typeatlas/fontgrid.py:539
+msgid "Unknown character"
+msgstr "Неизвестен знак"
+
+#: typeatlas/fontgrid.py:152 typeatlas/fontgrid.py:550
+#: typeatlas/fontgrid.py:152 typeatlas/fontgrid.py:550
+#, python-format
+msgid "Hex code"
+msgstr "Шестнадесетичен код"
+
+#: typeatlas/fontgrid.py:153 typeatlas/fontgrid.py:551
+#: typeatlas/fontgrid.py:153 typeatlas/fontgrid.py:551
+#, python-format
+msgid "Character"
+msgstr "Знак"
+
+#: typeatlas/fontgrid.py:154 typeatlas/fontgrid.py:552
+#: typeatlas/fontgrid.py:154 typeatlas/fontgrid.py:552
+#, python-format
+msgid "Category"
+msgstr "Категория"
+
+#: typeatlas/fontgrid.py:158 typeatlas/fontgrid.py:555
+#: typeatlas/fontgrid.py:158 typeatlas/fontgrid.py:555
+#, python-format
+msgid "Block"
+msgstr "Блок"
+
+#: typeatlas/fontgrid.py:159 typeatlas/fontgrid.py:556
+#: typeatlas/fontgrid.py:159 typeatlas/fontgrid.py:556
+#, python-format
+msgid "Script"
+msgstr "Писменост"
+
+#: typeatlas/fontgrid.py:168 typeatlas/fontgrid.py:565
+#: typeatlas/fontgrid.py:168 typeatlas/fontgrid.py:565
+msgid "Variation"
+msgstr "Вариация"
+
+#: typeatlas/fontgrid.py:396 typeatlas/fontgrid.py:396
+msgid "Search characters..."
+msgstr "Търсене в знаците..."
+
+#: typeatlas/fontgrid.py:458 typeatlas/fontgrid.py:487
+#: typeatlas/fontgrid.py:458 typeatlas/fontgrid.py:487
+msgid "All"
+msgstr "Всички"
+
+#: typeatlas/about.py:15 typeatlas/about.py:134 typeatlas/about.py:15
+#: typeatlas/about.py:134
+#, python-format
+msgid "About %s"
+msgstr "За %s"
+
+#: typeatlas/about.py:35 typeatlas/about.py:129 typeatlas/about.py:35
+#: typeatlas/about.py:129
+msgid "About FreeType"
+msgstr "За FreeType"
+
+#: typeatlas/about.py:46 typeatlas/about.py:46
+#, python-format
+msgid "Fonts rendering provided by FreeType %s"
+msgstr "Растеризиране на шрифтове предоставено от FreeType %s"
+
+#: typeatlas/about.py:48 typeatlas/about.py:48
+msgid ""
+"FreeType is a cross-platform multi-format library for font rasterization."
+msgstr ""
+"FreeType е многоплаформена многоформатна библиотека за растеризиране на "
+"шрифтове."
+
+#: typeatlas/about.py:59 typeatlas/about.py:131 typeatlas/about.py:59
+#: typeatlas/about.py:131
+msgid "About Python"
+msgstr "За Python"
+
+#: typeatlas/about.py:65 typeatlas/about.py:65
+#, python-format
+msgid "This program is powered by Python %s"
+msgstr "Тази програма се изпълнява от Python %s"
+
+#: typeatlas/about.py:68 typeatlas/about.py:68
+msgid "Python is a cross-platform high-level programming language"
+msgstr "Python е многоплатформен език за програмиране от високо ниво"
+
+#: typeatlas/about.py:70 typeatlas/about.py:70
+#, python-format
+msgid "Using %s implementation"
+msgstr "Използане на %s имплементация"
+
+#: typeatlas/about.py:86 typeatlas/about.py:132 typeatlas/about.py:86
+#: typeatlas/about.py:132
+msgid "About operating system"
+msgstr "За операционната система"
+
+#: typeatlas/about.py:108 typeatlas/about.py:108
+#, python-format
+msgid "System: %s"
+msgstr "Система: %s"
+
+#: typeatlas/about.py:130 typeatlas/about.py:130
+msgid "About Qt"
+msgstr "За Qt"
+
+#: typeatlas/gui.py:252 typeatlas/gui.py:253 typeatlas/gui.py:253
+msgid "unclassified"
+msgstr "некласифициран"
+
+#: typeatlas/opentype.py:132 typeatlas/opentype.py:132
+msgid "Unclassfied"
+msgstr "Некласифициран"
+
+#: typeatlas/opentype.py:133 typeatlas/opentype.py:207
+#: typeatlas/opentype.py:133 typeatlas/opentype.py:207
+msgid "Old-style Serif"
+msgstr "Античен сериф"
+
+#: typeatlas/opentype.py:134 typeatlas/opentype.py:134
+msgid "Transitional Serif"
+msgstr "Преходен сериф"
+
+#: typeatlas/opentype.py:135 typeatlas/opentype.py:135
+msgid "Modern Serif"
+msgstr "Модерен сериф"
+
+#: typeatlas/opentype.py:136 typeatlas/opentype.py:136
+msgid "Clarendon Serif"
+msgstr "Кларендон сериф"
+
+#: typeatlas/opentype.py:137 typeatlas/opentype.py:137
+msgid "Slab Serif"
+msgstr "Блоков сериф"
+
+#: typeatlas/opentype.py:138 typeatlas/opentype.py:138
+msgid "Freeform Serif"
+msgstr "Свободен сериф"
+
+#: typeatlas/opentype.py:139 typeatlas/opentype.py:139
+msgid "Sans Serif"
+msgstr "Безсерифен"
+
+#: typeatlas/opentype.py:140 typeatlas/opentype.py:140
+msgid "Ornamental"
+msgstr "Орнаментен"
+
+#: typeatlas/opentype.py:141 typeatlas/opentype.py:162
+#: typeatlas/opentype.py:165 typeatlas/opentype.py:141
+#: typeatlas/opentype.py:162 typeatlas/opentype.py:165
+msgid "class|Script"
+msgstr "class|Ръкопис"
+
+#: typeatlas/opentype.py:142 typeatlas/opentype.py:235
+#: typeatlas/charinfo.py:61 typeatlas/charinfo.py:62 typeatlas/charinfo.py:63
+#: typeatlas/charinfo.py:64 typeatlas/opentype.py:142
+#: typeatlas/opentype.py:235 typeatlas/charinfo.py:61 typeatlas/charinfo.py:62
+#: typeatlas/charinfo.py:63 typeatlas/charinfo.py:64
+msgid "Symbol"
+msgstr "Символ"
+
+#: typeatlas/opentype.py:147 typeatlas/opentype.py:230
+#: typeatlas/opentype.py:315 typeatlas/opentype.py:147
+#: typeatlas/opentype.py:230 typeatlas/opentype.py:315
+msgid "Unclassified"
+msgstr "Некласифициран"
+
+#: typeatlas/opentype.py:148 typeatlas/opentype.py:231
+#: typeatlas/opentype.py:316 typeatlas/opentype.py:148
+#: typeatlas/opentype.py:231 typeatlas/opentype.py:316
+msgid "Miscellaneous"
+msgstr "Разни"
+
+#: typeatlas/opentype.py:152 typeatlas/opentype.py:152
+msgid "IBM Rounded Legibility"
+msgstr "IBM заоблен четлив"
+
+#: typeatlas/opentype.py:153 typeatlas/opentype.py:153
+msgid "Garalde"
+msgstr "Гералдов"
+
+#: typeatlas/opentype.py:154 typeatlas/opentype.py:154
+msgid "Venetian"
+msgstr "Венециански"
+
+#: typeatlas/opentype.py:155 typeatlas/opentype.py:155
+msgid "Modified Venetian"
+msgstr "Модифициран венециански"
+
+#: typeatlas/opentype.py:156 typeatlas/opentype.py:156
+msgid "Dutch Modern"
+msgstr "Модерен холандски"
+
+#: typeatlas/opentype.py:157 typeatlas/opentype.py:157
+msgid "Dutch Traditional"
+msgstr "Традиционен холандски"
+
+#: typeatlas/opentype.py:158 typeatlas/opentype.py:158
+msgid "Contemporary"
+msgstr "Съвременен"
+
+#: typeatlas/opentype.py:159 typeatlas/opentype.py:159
+msgid "Calligraphic"
+msgstr "Калиграфически"
+
+#: typeatlas/opentype.py:161 typeatlas/opentype.py:161
+msgid "Direct Line"
+msgstr "Пряк щрих"
+
+#: typeatlas/opentype.py:164 typeatlas/opentype.py:164
+msgid "Italian"
+msgstr "Италиански"
+
+#: typeatlas/opentype.py:167 typeatlas/opentype.py:167
+msgid "Clarendon"
+msgstr "Кларендонски"
+
+#: typeatlas/opentype.py:168 typeatlas/opentype.py:181
+#: typeatlas/opentype.py:168 typeatlas/opentype.py:181
+msgid "Modern"
+msgstr "Модерен"
+
+#: typeatlas/opentype.py:169 typeatlas/opentype.py:169
+msgid "Traditional"
+msgstr "Традиционен"
+
+#: typeatlas/opentype.py:170 typeatlas/opentype.py:170
+msgid "Newspaper"
+msgstr "Вестникарски"
+
+#: typeatlas/opentype.py:171 typeatlas/opentype.py:171
+msgid "Stub Serif"
+msgstr "Къс сериф"
+
+#: typeatlas/opentype.py:172 typeatlas/opentype.py:175
+#: typeatlas/opentype.py:172 typeatlas/opentype.py:175
+msgid "Monotone"
+msgstr "Монотонен"
+
+#: typeatlas/opentype.py:173 typeatlas/opentype.py:179
+#: typeatlas/opentype.py:173 typeatlas/opentype.py:179
+msgid "Typewriter"
+msgstr "Машинописен"
+
+#: typeatlas/opentype.py:176 typeatlas/opentype.py:184
+#: typeatlas/opentype.py:176 typeatlas/opentype.py:184
+msgid "Humanist"
+msgstr "Хуманистичен"
+
+#: typeatlas/opentype.py:177 typeatlas/opentype.py:177
+msgid "Geometric"
+msgstr "Геометрически"
+
+#: typeatlas/opentype.py:178 typeatlas/opentype.py:178
+msgid "Swiss"
+msgstr "Швейцарски"
+
+#: typeatlas/opentype.py:183 typeatlas/opentype.py:183
+msgid "IBM Neo-grotesque Gothic"
+msgstr "IBM нео-гротесков готически"
+
+#: typeatlas/opentype.py:185 typeatlas/opentype.py:185
+msgid "Low-X Round Geometric"
+msgstr "Нисък заоблен геометрически"
+
+#: typeatlas/opentype.py:186 typeatlas/opentype.py:186
+msgid "High-X Round Geometric"
+msgstr "Висок заоблен геометрически"
+
+#: typeatlas/opentype.py:187 typeatlas/opentype.py:187
+msgid "Neo-grotesque Gothic"
+msgstr "Нео-гротесков готически"
+
+#: typeatlas/opentype.py:188 typeatlas/opentype.py:188
+msgid "Modified Neo-grotesque Gothic"
+msgstr "Модифициран нео-гротесков готически"
+
+#: typeatlas/opentype.py:189 typeatlas/opentype.py:189
+msgid "Typewriter Gothic"
+msgstr "Машинописен готически"
+
+#: typeatlas/opentype.py:190 typeatlas/opentype.py:190
+msgid "Matrix"
+msgstr "Матричен"
+
+#: typeatlas/opentype.py:192 typeatlas/opentype.py:192
+msgid "Engraver"
+msgstr "Гравиран"
+
+#: typeatlas/opentype.py:193 typeatlas/opentype.py:193
+msgid "Black Letter"
+msgstr "Готическо писмо"
+
+#: typeatlas/opentype.py:194 typeatlas/opentype.py:234
+#: typeatlas/opentype.py:194 typeatlas/opentype.py:234
+msgid "Decorative"
+msgstr "Декоративен"
+
+#: typeatlas/opentype.py:195 typeatlas/opentype.py:195
+msgid "Three-dimensional"
+msgstr "Триизмерен"
+
+#: typeatlas/opentype.py:197 typeatlas/opentype.py:197
+msgid "Uncial"
+msgstr "Унциален"
+
+#: typeatlas/opentype.py:198 typeatlas/opentype.py:198
+msgid "Brush Joined"
+msgstr "Четка, слята"
+
+#: typeatlas/opentype.py:199 typeatlas/opentype.py:199
+msgid "Formal Joined"
+msgstr "Формален слят"
+
+#: typeatlas/opentype.py:200 typeatlas/opentype.py:201
+#: typeatlas/opentype.py:200 typeatlas/opentype.py:201
+msgid "Monotone Joined"
+msgstr "Монотонен слят"
+
+#: typeatlas/opentype.py:202 typeatlas/opentype.py:202
+msgid "Brush Unjoined"
+msgstr "Четка, неслята"
+
+#: typeatlas/opentype.py:203 typeatlas/opentype.py:203
+msgid "Formal Unjoined"
+msgstr "Формален неслят"
+
+#: typeatlas/opentype.py:204 typeatlas/opentype.py:204
+msgid "Monotone Unjoined"
+msgstr "Монотонен слят"
+
+#: typeatlas/opentype.py:206 typeatlas/opentype.py:206
+msgid "Mixed Serif"
+msgstr "Смесен сериф"
+
+#: typeatlas/opentype.py:208 typeatlas/opentype.py:208
+msgid "Neo-grotesque Sans Serif"
+msgstr "Нео-гротесков безсерифен"
+
+#: typeatlas/opentype.py:232 typeatlas/opentype.py:232
+msgid "Text"
+msgstr "Текст"
+
+#: typeatlas/opentype.py:233 typeatlas/opentype.py:233
+msgid "Handwritten"
+msgstr "Ръкописен"
+
+#: typeatlas/opentype.py:320 typeatlas/opentype.py:320
+msgid "Cove Serif"
+msgstr "Сериф със свод"
+
+#: typeatlas/opentype.py:321 typeatlas/opentype.py:321
+msgid "Obtuse Cove Serif"
+msgstr "Сериф с тъп свод"
+
+#: typeatlas/opentype.py:322 typeatlas/opentype.py:322
+msgid "Square Cove Serif"
+msgstr "Сериф с квадратен свод"
+
+#: typeatlas/opentype.py:323 typeatlas/opentype.py:323
+msgid "Obtuse Square Cove Serif"
+msgstr "Сериф с тъп квадратен свод"
+
+#: typeatlas/opentype.py:324 typeatlas/opentype.py:324
+msgid "Square Serif"
+msgstr "Квадратен сериф"
+
+#: typeatlas/opentype.py:325 typeatlas/opentype.py:325
+msgid "Thin Serif"
+msgstr "Тънък сериф"
+
+#: typeatlas/opentype.py:326 typeatlas/opentype.py:326
+msgid "Oval Serif"
+msgstr "Заоблен сериф"
+
+#: typeatlas/opentype.py:327 typeatlas/opentype.py:327
+msgid "Exaggerated Serif"
+msgstr "Подчертан сериф"
+
+#: typeatlas/opentype.py:328 typeatlas/opentype.py:328
+msgid "Triangle Serif"
+msgstr "Триъгълен сериф"
+
+#: typeatlas/opentype.py:329 typeatlas/opentype.py:329
+msgid "Normal Sans"
+msgstr "Обикновен безсерифен"
+
+#: typeatlas/opentype.py:330 typeatlas/opentype.py:330
+msgid "Obtuse Sans"
+msgstr "Тъп безсерифен"
+
+#: typeatlas/opentype.py:331 typeatlas/opentype.py:331
+msgid "Perpendicular Sans"
+msgstr "Перпендикулярен безсерифен"
+
+#: typeatlas/opentype.py:332 typeatlas/opentype.py:332
+msgid "Flared Transitional Serif"
+msgstr "Разтворен преходен сериф"
+
+#: typeatlas/opentype.py:333 typeatlas/opentype.py:333
+msgid "Rounded Transitional Serif"
+msgstr "Овален преходен сериф"
+
+#: typeatlas/opentype.py:337 typeatlas/opentype.py:337
+msgid "Flat Nib"
+msgstr "Право перо"
+
+#: typeatlas/opentype.py:338 typeatlas/opentype.py:338
+msgid "Pressure Point"
+msgstr "Гъвкав връх"
+
+#: typeatlas/opentype.py:339 typeatlas/opentype.py:339
+msgid "Engraved"
+msgstr "Гравиран"
+
+#: typeatlas/opentype.py:340 typeatlas/opentype.py:340
+msgid "Ball (Round Cap)"
+msgstr "Химикалка (заоблен връх)"
+
+#: typeatlas/opentype.py:341 typeatlas/opentype.py:341
+msgid "Brush"
+msgstr "Четка"
+
+#: typeatlas/opentype.py:342 typeatlas/opentype.py:342
+msgid "Rough"
+msgstr "Груб"
+
+#: typeatlas/opentype.py:343 typeatlas/opentype.py:343
+msgid "Felt Pen / Brush Tip"
+msgstr "Маркер / флумастер"
+
+#: typeatlas/opentype.py:344 typeatlas/opentype.py:344
+msgid "Wild Brush (Drips and splatters)"
+msgstr "Дива четка (капе и пръска)"
+
+#: typeatlas/opentype.py:348 typeatlas/opentype.py:348
+msgid "Derivative"
+msgstr "Производен"
+
+#: typeatlas/opentype.py:349 typeatlas/opentype.py:349
+msgid "Non-standard Topology"
+msgstr "Нестандартна топология"
+
+#: typeatlas/opentype.py:350 typeatlas/opentype.py:350
+msgid "Non-standard Elements"
+msgstr "Нестандартни елементи"
+
+#: typeatlas/opentype.py:351 typeatlas/opentype.py:351
+msgid "Non-standard Aspect"
+msgstr "Нестандартни пропорции"
+
+#: typeatlas/opentype.py:352 typeatlas/opentype.py:352
+msgid "Initials"
+msgstr "Заглавки (инициали)"
+
+#: typeatlas/opentype.py:353 typeatlas/opentype.py:353
+msgid "Cartoon"
+msgstr "Карикатура"
+
+#: typeatlas/opentype.py:354 typeatlas/opentype.py:354
+msgid "Picture Stems"
+msgstr "Рисуван ствол"
+
+#: typeatlas/opentype.py:355 typeatlas/opentype.py:355
+msgid "Ornamented"
+msgstr "С орнаменти"
+
+#: typeatlas/opentype.py:356 typeatlas/opentype.py:356
+msgid "Text and Background"
+msgstr "Текст и фон"
+
+#: typeatlas/opentype.py:357 typeatlas/opentype.py:357
+msgid "Collage"
+msgstr "Колаж"
+
+#: typeatlas/opentype.py:358 typeatlas/opentype.py:358
+msgid "Montage"
+msgstr "Монтаж"
+
+#: typeatlas/opentype.py:362 typeatlas/opentype.py:362
+msgid "Montages"
+msgstr "Монтажи"
+
+#: typeatlas/opentype.py:363 typeatlas/opentype.py:363
+msgid "Pictures"
+msgstr "Рисунки"
+
+#: typeatlas/opentype.py:364 typeatlas/opentype.py:364
+msgid "Shapes"
+msgstr "Форми"
+
+#: typeatlas/opentype.py:365 typeatlas/opentype.py:365
+msgid "Scientific"
+msgstr "Научни"
+
+#: typeatlas/opentype.py:366 typeatlas/opentype.py:366
+msgid "Music"
+msgstr "Музика"
+
+#: typeatlas/opentype.py:367 typeatlas/opentype.py:367
+msgid "Expert"
+msgstr "Експертен"
+
+#: typeatlas/opentype.py:368 typeatlas/opentype.py:368
+msgid "Patterns"
+msgstr "Шарки"
+
+#: typeatlas/opentype.py:369 typeatlas/opentype.py:369
+msgid "Boarders"
+msgstr "Рамки"
+
+#: typeatlas/opentype.py:370 typeatlas/opentype.py:370
+msgid "Icons"
+msgstr "Икони"
+
+#: typeatlas/opentype.py:371 typeatlas/opentype.py:371
+msgid "Logos"
+msgstr "Логотипи"
+
+#: typeatlas/opentype.py:372 typeatlas/opentype.py:372
+msgid "Industry specific"
+msgstr "Специфични за отрасъл"
+
+#: typeatlas/opentype.py:429 typeatlas/fontlist.py:605
+#: typeatlas/fontlist.py:607 typeatlas/fontlist.py:611
+#: typeatlas/fontlist.py:613 typeatlas/fontlist.py:615
+#: typeatlas/fontlist.py:617 typeatlas/fontlist.py:620
+#: typeatlas/fontlist.py:625 typeatlas/opentype.py:429
+#: typeatlas/fontlist.py:605 typeatlas/fontlist.py:607
+#: typeatlas/fontlist.py:611 typeatlas/fontlist.py:613
+#: typeatlas/fontlist.py:615 typeatlas/fontlist.py:617
+#: typeatlas/fontlist.py:620 typeatlas/fontlist.py:625
+msgid "serif"
+msgstr "серифен"
+
+#: typeatlas/opentype.py:431 typeatlas/fontlist.py:603
+#: typeatlas/fontlist.py:609 typeatlas/fontlist.py:620
+#: typeatlas/fontlist.py:625 typeatlas/opentype.py:431
+#: typeatlas/fontlist.py:603 typeatlas/fontlist.py:609
+#: typeatlas/fontlist.py:620 typeatlas/fontlist.py:625
+msgid "sans-serif"
+msgstr "безсерифен"
+
+#: typeatlas/opentype.py:433 typeatlas/fontlist.py:621
+#: typeatlas/fontlist.py:626 typeatlas/opentype.py:433
+#: typeatlas/fontlist.py:621 typeatlas/fontlist.py:626
+msgid "fantasy"
+msgstr "фантазия"
+
+#: typeatlas/opentype.py:435 typeatlas/fontlist.py:621
+#: typeatlas/fontlist.py:626 typeatlas/opentype.py:435
+#: typeatlas/fontlist.py:621 typeatlas/fontlist.py:626
+msgid "cursive"
+msgstr "курсив"
+
+#: typeatlas/opentype.py:437 typeatlas/opentype.py:437
+msgid "symbol"
+msgstr "символ"
+
+#: typeatlas/charinfo.py:34 typeatlas/charinfo.py:35 typeatlas/charinfo.py:36
+#: typeatlas/charinfo.py:41 typeatlas/charinfo.py:52 typeatlas/charinfo.py:53
+#: typeatlas/charinfo.py:34 typeatlas/charinfo.py:35 typeatlas/charinfo.py:36
+#: typeatlas/charinfo.py:41 typeatlas/charinfo.py:52 typeatlas/charinfo.py:53
+msgid "Letter"
+msgstr "Буква"
+
+#: typeatlas/charinfo.py:34 typeatlas/charinfo.py:34
+msgid "Uppercase"
+msgstr "Главна"
+
+#: typeatlas/charinfo.py:35 typeatlas/charinfo.py:35
+msgid "Lowercase"
+msgstr "Малка"
+
+#: typeatlas/charinfo.py:36 typeatlas/charinfo.py:36
+msgid "Titlecase"
+msgstr "Заглавна"
+
+#: typeatlas/charinfo.py:37 typeatlas/charinfo.py:38 typeatlas/charinfo.py:39
+#: typeatlas/charinfo.py:37 typeatlas/charinfo.py:38 typeatlas/charinfo.py:39
+msgid "Mark"
+msgstr "Знак"
+
+#: typeatlas/charinfo.py:37 typeatlas/charinfo.py:37
+msgid "Non-Spacing"
+msgstr "Без разредка"
+
+#: typeatlas/charinfo.py:38 typeatlas/charinfo.py:38
+msgid "Spacing Combining"
+msgstr "Комбиниращи, с разредка"
+
+#: typeatlas/charinfo.py:39 typeatlas/charinfo.py:39
+msgid "Enclosing"
+msgstr "Ограждащи"
+
+#: typeatlas/charinfo.py:40 typeatlas/charinfo.py:41 typeatlas/charinfo.py:42
+#: typeatlas/charinfo.py:40 typeatlas/charinfo.py:41 typeatlas/charinfo.py:42
+msgid "Number"
+msgstr "Число"
+
+#: typeatlas/charinfo.py:40 typeatlas/charinfo.py:40
+msgid "Decimal Digit"
+msgstr "Десетична цифра"
+
+#: typeatlas/charinfo.py:42 typeatlas/charinfo.py:46 typeatlas/charinfo.py:47
+#: typeatlas/charinfo.py:48 typeatlas/charinfo.py:49 typeatlas/charinfo.py:50
+#: typeatlas/charinfo.py:53 typeatlas/charinfo.py:60 typeatlas/charinfo.py:64
+#: typeatlas/charinfo.py:42 typeatlas/charinfo.py:46 typeatlas/charinfo.py:47
+#: typeatlas/charinfo.py:48 typeatlas/charinfo.py:49 typeatlas/charinfo.py:50
+#: typeatlas/charinfo.py:53 typeatlas/charinfo.py:60 typeatlas/charinfo.py:64
+msgid "Other"
+msgstr "Други"
+
+#: typeatlas/charinfo.py:43 typeatlas/charinfo.py:44 typeatlas/charinfo.py:45
+#: typeatlas/charinfo.py:43 typeatlas/charinfo.py:44 typeatlas/charinfo.py:45
+msgid "Separator"
+msgstr "Разделител"
+
+#: typeatlas/charinfo.py:43 typeatlas/charinfo.py:43
+msgid "Space"
+msgstr "Разредка"
+
+#: typeatlas/charinfo.py:44 typeatlas/charinfo.py:44
+msgid "Line"
+msgstr "Линия"
+
+#: typeatlas/charinfo.py:45 typeatlas/charinfo.py:45
+msgid "Paragraph"
+msgstr "Параграф"
+
+#: typeatlas/charinfo.py:46 typeatlas/charinfo.py:46
+msgid "Control"
+msgstr "Контролен"
+
+#: typeatlas/charinfo.py:47 typeatlas/charinfo.py:47
+msgid "Format"
+msgstr "Форматиране"
+
+#: typeatlas/charinfo.py:48 typeatlas/charinfo.py:48
+msgid "Surrogate"
+msgstr "Сурогатни"
+
+#: typeatlas/charinfo.py:49 typeatlas/charinfo.py:49
+msgid "Private Use"
+msgstr "Частно ползване"
+
+#: typeatlas/charinfo.py:50 typeatlas/charinfo.py:50
+msgid "Not Assigned"
+msgstr "Незададен"
+
+#: typeatlas/charinfo.py:52 typeatlas/charinfo.py:63 typeatlas/charinfo.py:52
+#: typeatlas/charinfo.py:63
+msgid "Modifier"
+msgstr "Модификатор"
+
+#: typeatlas/charinfo.py:54 typeatlas/charinfo.py:55 typeatlas/charinfo.py:56
+#: typeatlas/charinfo.py:57 typeatlas/charinfo.py:58 typeatlas/charinfo.py:59
+#: typeatlas/charinfo.py:60 typeatlas/charinfo.py:54 typeatlas/charinfo.py:55
+#: typeatlas/charinfo.py:56 typeatlas/charinfo.py:57 typeatlas/charinfo.py:58
+#: typeatlas/charinfo.py:59 typeatlas/charinfo.py:60
+msgid "Punctuation"
+msgstr "Пунктуация"
+
+#: typeatlas/charinfo.py:54 typeatlas/charinfo.py:54
+msgid "Connector"
+msgstr "Свързващ символ"
+
+#: typeatlas/charinfo.py:55 typeatlas/charinfo.py:55
+msgid "Dash"
+msgstr "Тире"
+
+#: typeatlas/charinfo.py:56 typeatlas/charinfo.py:56
+msgid "Open"
+msgstr "Отваряне"
+
+#: typeatlas/charinfo.py:57 typeatlas/charinfo.py:57
+msgid "Close"
+msgstr "Затваряне"
+
+#: typeatlas/charinfo.py:58 typeatlas/charinfo.py:58
+msgid "Initial quote"
+msgstr "Начална кавичка"
+
+#: typeatlas/charinfo.py:59 typeatlas/charinfo.py:59
+msgid "Final quote"
+msgstr "Крайна кавичка"
+
+#: typeatlas/charinfo.py:61 typeatlas/charinfo.py:61
+msgid "Math"
+msgstr "Математика"
+
+#: typeatlas/charinfo.py:62 typeatlas/charinfo.py:62
+msgid "Currency"
+msgstr "Валута"
+
+#: typeatlas/charinfo.py:68 typeatlas/charinfo.py:68
+msgid "Left-to-Right"
+msgstr "Отляво надясно"
+
+#: typeatlas/charinfo.py:69 typeatlas/charinfo.py:69
+msgid "Left-to-Right Embedding"
+msgstr "Отляво надясно вграждащ"
+
+#: typeatlas/charinfo.py:70 typeatlas/charinfo.py:70
+msgid "Left-to-Right Override"
+msgstr "Отляво надясно отменящ"
+
+#: typeatlas/charinfo.py:71 typeatlas/charinfo.py:71
+msgid "Right-to-Left"
+msgstr "Отдясно наляво"
+
+#: typeatlas/charinfo.py:72 typeatlas/charinfo.py:72
+msgid "Right-to-Left Arabic"
+msgstr "Отдясно наляво арабски"
+
+#: typeatlas/charinfo.py:73 typeatlas/charinfo.py:73
+msgid "Right-to-Left Embedding"
+msgstr "Отдясно наляво вмъкващ"
+
+#: typeatlas/charinfo.py:74 typeatlas/charinfo.py:74
+msgid "Right-to-Left Override"
+msgstr "Отдясно наляво отменящ"
+
+#: typeatlas/charinfo.py:75 typeatlas/charinfo.py:75
+msgid "Pop Directional Format"
+msgstr "Край на форматирането за посока"
+
+#: typeatlas/charinfo.py:76 typeatlas/charinfo.py:76
+msgid "European Number"
+msgstr "Европейско число"
+
+#: typeatlas/charinfo.py:77 typeatlas/charinfo.py:77
+msgid "European Number Separator"
+msgstr "Разделител на европейски числа"
+
+#: typeatlas/charinfo.py:78 typeatlas/charinfo.py:78
+msgid "European Number Terminator"
+msgstr "Край на европейски числа"
+
+#: typeatlas/charinfo.py:79 typeatlas/charinfo.py:79
+msgid "Arabic Number"
+msgstr "Арабско число"
+
+#: typeatlas/charinfo.py:80 typeatlas/charinfo.py:80
+msgid "Common Number Separator"
+msgstr "Общ разделител на числа"
+
+#: typeatlas/charinfo.py:81 typeatlas/charinfo.py:81
+msgid "Non-Spacing Mark"
+msgstr "Знак без разредка"
+
+#: typeatlas/charinfo.py:82 typeatlas/charinfo.py:82
+msgid "Boundary Neutral"
+msgstr "Гранично неутрален"
+
+#: typeatlas/charinfo.py:83 typeatlas/charinfo.py:83
+msgid "Paragraph Separator"
+msgstr "Разделител на параграфи"
+
+#: typeatlas/charinfo.py:84 typeatlas/charinfo.py:84
+msgid "Segment Separator"
+msgstr "Разделител на части"
+
+#: typeatlas/charinfo.py:85 typeatlas/charinfo.py:85
+msgid "Whitespace"
+msgstr "Разредки"
+
+#: typeatlas/charinfo.py:86 typeatlas/charinfo.py:86
+msgid "Other Neutrals"
+msgstr "Други неутрални"
+
+#: typeatlas/charinfo.py:176 typeatlas/charinfo.py:176
+msgid "Unknown"
+msgstr "Неизвестен"
+
+#: typeatlas/fontlist.py:49 typeatlas/fontlist.py:49
+msgid "OpenType Font"
+msgstr "OpenType шрифт"
+
+#: typeatlas/fontlist.py:52 typeatlas/fontlist.py:52
+msgid "OpenType Collection"
+msgstr "OpenType колекция"
+
+#: typeatlas/fontlist.py:55 typeatlas/fontlist.py:55
+msgid "TrueType Font"
+msgstr "TrueType шрифт"
+
+#: typeatlas/fontlist.py:58 typeatlas/fontlist.py:58
+msgid "TrueType Collection"
+msgstr "TrueType колекция"
+
+#: typeatlas/fontlist.py:61 typeatlas/fontlist.py:61
+msgid "PostScript Printer Font Binary"
+msgstr "PostScript компилиран шрифт за принтер"
+
+#: typeatlas/fontlist.py:63 typeatlas/fontlist.py:63
+msgid "PostScript Type 1 Printer Font"
+msgstr "PostScript Type 1 шрифт за принтер"
+
+#: typeatlas/fontlist.py:65 typeatlas/fontlist.py:65
+msgid "PostScript Printer Font ASCII"
+msgstr "PostScript некомпилиран шрифт за принтер"
+
+#: typeatlas/fontlist.py:71 typeatlas/fontlist.py:71
+msgid "Portable Compiled Font Format"
+msgstr "Portable Compiled Font формат"
+
+#: typeatlas/fontlist.py:73 typeatlas/fontlist.py:73
+msgid "Glyph Bitmap Distribution Format"
+msgstr "Bitmap Distribution Format за знаци"
+
+#: typeatlas/fontlist.py:75 typeatlas/fontlist.py:75
+msgid "Windows FNT Bitmap Fonts"
+msgstr "Windows FNT растерни шрифтове"
+
+#: typeatlas/fontlist.py:80 typeatlas/fontlist.py:80
+msgid "Unknown file format"
+msgstr "Неизвестен файлов формат"
+
+#: typeatlas/fontlist.py:99 typeatlas/fontlist.py:99
+msgid "Gzip Lempel-Ziv compression"
+msgstr "Gzip Lempel-Ziv компресия"
+
+#: typeatlas/fontlist.py:101 typeatlas/fontlist.py:101
+msgid "Bzip2 Burrows-Wheeler block-sorting compression"
+msgstr "Bzip2 Burrows-Wheeler блоково сортираща компресия"
+
+#: typeatlas/fontlist.py:104 typeatlas/fontlist.py:104
+msgid "XZ-encoded Lempel-Ziv-Markov chain-Algorithm compression"
+msgstr "XZ-кодирана компресия с Lempel-Ziv-Markov chain-Algorithm"
+
+#: typeatlas/fontlist.py:107 typeatlas/fontlist.py:107
+msgid "Lempel-Ziv-Markov chain-Algorithm compression"
+msgstr "Lempel-Ziv-Markov chain-Algorithm компресия"
+
+#: typeatlas/fontlist.py:125 typeatlas/fontlist.py:125
+msgid "X11 Glyph Bitmap Distribution Format"
+msgstr "X11 Glyph Bitmap Distribution формат"
+
+#: typeatlas/fontlist.py:127 typeatlas/fontlist.py:127
+msgid "X11 Portable Compiled Font Format"
+msgstr "X11 Portable Compiled Font формат"
+
+#: typeatlas/fontlist.py:130 typeatlas/fontlist.py:130
+msgid "Unknown font format"
+msgstr "Неизвестен формат на шрифт"
+
+#: typeatlas/proginfo.py:7 typeatlas/proginfo.py:7
+msgid "Type Atlas"
+msgstr "Шрифт Атлас"
+
+#: typeatlas/gui.py:548 typeatlas/gui.py:548
+msgid "Search fonts..."
+msgstr "Търсене в шрифтовете..."
+
