@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: frage
+Version: 0.1.0
+Summary: 
+License: GPL3
+Author: Elias Tandel
+Author-email: elias.tandel@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiohttp (>=3.7.4,<4.0.0)
+Requires-Dist: dhall (>=0.1.7,<0.2.0)
+Requires-Dist: pydantic (>=1.8.2,<2.0.0)
