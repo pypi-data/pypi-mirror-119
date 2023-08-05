@@ -1,0 +1,54 @@
+<h1>User's manual for <tt>vtsv</tt></h1>
+<p>
+    <tt>vtsv</tt> is a basic and lightweight format viewer (and a little bit editor) for TSV (tab separated values) files. 
+    It reads data from one or many TSV files and shows them as grids in notebook tabs.
+<p>Usage:
+    <br/>
+    <br/>
+    <tt>&nbsp;&nbsp;&nbsp;vtsv file1.tsv[ file2.tsv[ ...]]</tt>
+</p>
+<p>
+    Its main interest compared to text editors is that the content is well aligned, no matter how large the cells are. However, the edition capabilities of <tt>vtsv</tt> are very limited. Only existing cells can be modified. If you copy/paste a text with tabulations/end-line characters in a cell and save the file, they will create new cell/new row but during copy/paste itself, it will not be reflected in GUI.
+</p>
+<p>
+    Compared to classical spreadsheet software, <tt>vtsv</tt> does not introduce any format issue when, e.g. a string '010' could be interpreted and shown as a number '10' or a gene name 'Oct1' could become a date 'October 1'. With <tt>vtsv</tt> they remain as are, i.e. '010' and 'Oct1'. In other words, the content is always interpreted as plain strings.
+    Other limitation is that cells cannot have multi-line content and no tabulation character can occur in a cell (cf. remark in previous paragraph)
+</p>
+<h2>Graphical user interface (GUI)</h2>
+<p>
+    The GUI is composed of:
+    <ul>
+        <li>menu bar: File (Open, Save, Quit), Help (Content, About)</li>
+        <li>tool bar: Cell control, Search, up, Goto line</li>
+        <li>main panel showing a file content in a spreadsheet manner</li>
+        <li>list of tabs, one per opened file</li>
+        <li>status window showing various helpful information</li>
+    </ul>
+</p>
+<h2>Functioning</h2>
+<p>
+    If not yet done on a command line, use menu <tt>File > Open</tt> to choose and open a TSV file. It can have any extension, not only <tt>.tsv</tt>. However, only tabulation character is used as field separator. No coma ',', semicolon ';' and so on are allowed in this role.
+    Opening a file will create a new tab with its content parsed in a grid. Navigating between opened files can be done via tabs in the lower part of the main window. There is no way to selectively close tabs/files.
+)</p>
+<p>
+    When user selects a grid cell, cell coords (e.g. 'A1', 'A' for the first column, '1' for the first row) and its content are shown in the leftmost part of a toolbar, Cell control field. This field can also be used to edit the shown content. As already mentioned, no new cell can be created. I.e. cells non existent in the original file remain uneditable.
+    An editable cell can also be modified "in-place". A double-click will open an editor in a cell. Use it for modifying this cell.
+</p>
+<p>
+    Next field in the toolbar, 'Search', can be used to search for some text in the current tab starting from currently selected cell. The search is circular, case sensitive and can be upward/downward if a checkbox 'up' is checked/unchecked. Searching for a next item occurrence can be done by hitting Return. If the field is not empty, there is a small icon at the right hand side to clean the field by a click.
+</p>
+<p>
+    The field 'Goto line' can help to navigate directly to a given line number in the current tab: just enter a number and hit Return. The first cell on this line will be selected and shown.
+</p>
+<p>
+    The content of the edited tabs can be saved back to the original files with menu action <tt>File > Save</tt>
+</p>
+<h2>Legal information</h2>
+<p>
+    Copyright 2021, INRAE/INSA/CNRS<br/>
+    License: <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GPL-2</a><br/>
+    Issue reporting: <a href="https://github.com/Mathematics-Cell/vtsv/issues">vtsv issues</a><br/>
+    Author: Serguei Sokol (sokol at insa-toulouse dot fr)
+    <br/>
+    <br/>
+</p>
