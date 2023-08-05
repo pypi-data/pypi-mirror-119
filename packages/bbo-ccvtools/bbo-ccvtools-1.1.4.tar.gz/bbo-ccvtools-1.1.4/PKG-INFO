@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: bbo-ccvtools
+Version: 1.1.4
+Summary: Work with BBO CCV files
+Home-page: https://github.com/bbo-lab/ccvtools
+Author: BBO-lab @ caesar
+Author-email: kay-michael.voit@caesar.de
+License: BSD
+Description: Includes imageio filter and some tools to work with the CCV data format, used by the BBO lab at caesar research center
+        
+        ```from ccvtools import rawio``` to add ccv support to imageio.
+        
+        Create a compressed movie with
+        ```python -m ccvtools -a convert --fps 200 [ccv_file]```
+        
+        The result will be in the same location with additional extension .mkv.
+        Alternatively, specify an output file with
+        ```    -o [output file]```
+        
+        Specify a frame idx range with
+        ```    --idxrange [startidx] [endidx]```
+        Note that these are python slice indices, so first frame is 0, and
+        ```    --idxrange 10 20```
+        would be equivalent to MATLABs 11:20 (sic!)
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
