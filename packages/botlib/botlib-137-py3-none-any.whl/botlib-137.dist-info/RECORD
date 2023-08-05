@@ -1,0 +1,14 @@
+botl/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+botl/fnd.py,sha256=Q4EU3AD2xTGIV5zUaJhPw05wM2NXw0v4a6jhhB5Q8MQ,839
+botl/irc.py,sha256=fb8qmnp82mysorUeXpR6elo76rn-d8ny3wIxuOjsp70,17080
+botl/log.py,sha256=iYSsu9C9M2gAEjKq7EGV1KEY37p0B2zQFxRhIpVHKtQ,323
+botl/obj.py,sha256=phGY9OktuwVvq5yCmXkajp_JfFAnBm3NlxcspNMWyG8,10859
+botl/rss.py,sha256=KlaNWr4N6ru8r-9GegF7_wHp6NJiMxpeYhS6l9QExXo,5850
+botl/run.py,sha256=8oHh4QnuuTCWOevq3cQSwC2k_Wdg0V3tVMk7tUetzyY,20227
+botl/sys.py,sha256=e3mT4oGhc2BOMLb2resWiNvf-R0as7sGN8aBIaZixPs,1261
+botl/udp.py,sha256=xQ_sQTL2YRdM85_RW2_ZeTIddFQ8Nnzoq_WJjp_saVY,1748
+botlib-137.dist-info/METADATA,sha256=wPbobt9uxGBgrFAQ7KUKvmb1r4WabzQ9G86MYs3Qu-o,1391
+botlib-137.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+botlib-137.dist-info/top_level.txt,sha256=1xFFUgpk3C-1-GbZFYqj4kRaHH51nlFHkJa_zuo7Xhw,5
+botlib-137.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+botlib-137.dist-info/RECORD,,
