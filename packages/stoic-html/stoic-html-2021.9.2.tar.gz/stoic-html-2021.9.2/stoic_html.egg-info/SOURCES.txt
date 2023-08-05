@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+stoic_html/__init__.py
+stoic_html.egg-info/PKG-INFO
+stoic_html.egg-info/SOURCES.txt
+stoic_html.egg-info/dependency_links.txt
+stoic_html.egg-info/requires.txt
+stoic_html.egg-info/top_level.txt
