@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: astrosat
+Version: 0.1
+Summary: A tool for forecasting satellite transits in astronomical observations
+Home-page: https://github.com/james-m-osborn/astrosat
+Author: James Osborn
+Author-email: james.osborn@durham.ac.uk, matthew.townson@durham.ac.uk
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
