@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+aprile/POSE-pred.pt
+aprile/__init__.py
+aprile/model.py
+aprile/pure_query.py
+aprile/utils.py
+aprile.egg-info/PKG-INFO
+aprile.egg-info/SOURCES.txt
+aprile.egg-info/dependency_links.txt
+aprile.egg-info/requires.txt
+aprile.egg-info/top_level.txt
