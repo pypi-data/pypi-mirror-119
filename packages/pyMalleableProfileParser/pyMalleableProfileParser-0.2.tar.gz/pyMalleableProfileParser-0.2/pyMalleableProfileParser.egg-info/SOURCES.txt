@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+mpp/__init__.py
+mpp/profile.py
+mpp/parser/__init__.py
+mpp/parser/parser.py
+pyMalleableProfileParser.egg-info/PKG-INFO
+pyMalleableProfileParser.egg-info/SOURCES.txt
+pyMalleableProfileParser.egg-info/dependency_links.txt
+pyMalleableProfileParser.egg-info/top_level.txt
