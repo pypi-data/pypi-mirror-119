@@ -1,0 +1,12 @@
+peaktools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+peaktools/plugins/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+peaktools/plugins/isotope.cp36-win_amd64.pyd,sha256=USGgSDYlFlbdqjX0qhbW0tzHeWojuQ_Jk-2D-KOIxT0,149504
+peaktools/plugins/utils.cp36-win_amd64.pyd,sha256=qNMjXFXSMyupfGFuf_BPi_JxaoTfzurMoskivTowgaA,36864
+peaktools/samples/isotope/data/20200709_LM2_Fetuin_DIA_IGP_library120619_Glycan_Composition.txt,sha256=HOIhikVEYeSjPde-v3gsU4P50h4rcJrG6RrXOaxF5nk,15236
+peaktools/samples/isotope/param/param_peaktools_isotope_v20210907.txt,sha256=cxQVZPA91pbO42Zhqq9PKoWIb5R6CQnnT9IozMYfOCg,22
+peaktools-0.0.0.dist-info/LICENSE,sha256=FfBiWi8L1JlC9UQiyF0IQXycIXa3soB-0A3d2OlE9_Q,1083
+peaktools-0.0.0.dist-info/METADATA,sha256=jkGS9AVZUEefEPFRv-G1DEkIJ03cVwwgpIWZ_CerQl4,212
+peaktools-0.0.0.dist-info/WHEEL,sha256=hjxCepQBXS-sq_JehIDt_m-XLDxE9ssXOignC0wRm1s,101
+peaktools-0.0.0.dist-info/entry_points.txt,sha256=sI_EolDswjo2VnN8QSX-02vDZonGHKefdeEaIQWCkGg,70
+peaktools-0.0.0.dist-info/top_level.txt,sha256=caa8eRW056MZHg_s6MAQ9uupmd5Gi6ywALdQaZ5kaXA,10
+peaktools-0.0.0.dist-info/RECORD,,

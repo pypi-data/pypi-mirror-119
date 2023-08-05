@@ -1,0 +1,3 @@
+[console_scripts]
+peaktools-isotope = peaktools.plugins.isotope:main
+
