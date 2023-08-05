@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: LinAlgebraPy
+Version: 0.1.2
+Summary: Linear Algebra Package
+Home-page: UNKNOWN
+Author: Rami El Dahouk
+Author-email: ramipypi@outlook.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.0
+License-File: LICENSE
+
+This is a Linear Algebra Package 
+ Easy to use with simple methods for calculation and
+ the float precision is set to -13 for better precision      
+ PS: Don't use version 0.1.1, it contains errors
+
