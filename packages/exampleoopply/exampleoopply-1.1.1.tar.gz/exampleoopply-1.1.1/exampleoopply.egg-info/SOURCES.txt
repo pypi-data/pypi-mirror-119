@@ -1,0 +1,15 @@
+.txt
+LICENSE.md
+MANIFEST.in
+README.md
+README.rst
+setup.py
+exampleoopply/__init__.py
+exampleoopply/test.py
+exampleoopply.egg-info/PKG-INFO
+exampleoopply.egg-info/SOURCES.txt
+exampleoopply.egg-info/dependency_links.txt
+exampleoopply.egg-info/requires.txt
+exampleoopply.egg-info/top_level.txt
+exampleoopply/__pycache__/__init__.cpython-38.pyc
+exampleoopply/__pycache__/test.cpython-38.pyc
