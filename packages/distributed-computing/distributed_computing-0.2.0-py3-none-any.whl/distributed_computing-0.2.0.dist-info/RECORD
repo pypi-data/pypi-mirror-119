@@ -1,0 +1,13 @@
+distributed_computing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+distributed_computing/api.py,sha256=4R_O74bHkIJfVRmoexnywxoWz06qT27JQdPnNVrl0kk,11749
+distributed_computing/client.py,sha256=mMVNAgN5jNMgfK4dBpprfLmIjbEAxHK3zsc8OgfCa3c,7289
+distributed_computing/common.py,sha256=pS6cn7zHPHQT-rS3B__XpKWE526cF8gwqSi0KRZ4wPk,2397
+distributed_computing/globals.py,sha256=nj7WTFixsht0UjqBnEmzpZtFL_2HA0BhelUCwro3IRY,149
+distributed_computing/server.py,sha256=5t3RIKTxRv8g_WruNg5gsY_Pqe749fDgu2UJLADbfr4,12318
+distributed_computing/test.py,sha256=kV2alOx1UZvdJ1aE1j4br6y17zZV3DbeTkqtj11sgQw,1210
+distributed_computing-0.2.0.data/scripts/start_node,sha256=n6uNrz5Io06slXyRaUcBEeeZ5OQjLPIoMfaONfimtkw,1544
+distributed_computing-0.2.0.dist-info/LICENSE,sha256=3fnHXr0PdU2JgOHZRZXGo-PGn9mvx3s4LVn5_XEeOdE,1072
+distributed_computing-0.2.0.dist-info/METADATA,sha256=yLBVy8PnvMEl513hY1R1oSyMfrUe05NVKbkDYbSTkmM,474
+distributed_computing-0.2.0.dist-info/WHEEL,sha256=p46_5Uhzqz6AzeSosiOnxK-zmFja1i22CrQCjmYe8ec,92
+distributed_computing-0.2.0.dist-info/top_level.txt,sha256=1pZ-ZJhbBBwLZODR3M9oqXuXqxby2f92fWU01iYy3aQ,22
+distributed_computing-0.2.0.dist-info/RECORD,,

@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: distributed-computing
+Version: 0.2.0
+Summary: Distributed GPU computing with python
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: boaz85@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: redis-server (==5.0.7)
+Requires-Dist: GPUtil (==1.4.0)
+Requires-Dist: psutil (==5.7.3)
+Requires-Dist: setproctitle (==1.1.10)
+Requires-Dist: redis (==3.5.3)
+Requires-Dist: requests (==2.23.0)
+Requires-Dist: service-identity (==18.1.0)
+
+UNKNOWN
+
+
