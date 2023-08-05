@@ -1,0 +1,12 @@
+README.md
+setup.py
+src/slots_factory/__init__.py
+src/slots_factory/object_model_methods.py
+src/slots_factory/slots_factory.py
+src/slots_factory.egg-info/PKG-INFO
+src/slots_factory.egg-info/SOURCES.txt
+src/slots_factory.egg-info/dependency_links.txt
+src/slots_factory.egg-info/requires.txt
+src/slots_factory.egg-info/top_level.txt
+src/slots_factory/tools/__init__.py
+src/slots_factory/tools/slots_factory_tools.c
