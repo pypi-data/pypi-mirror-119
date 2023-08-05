@@ -1,0 +1,8 @@
+setup.py
+gutefrage/__init__.py
+gutefrage.egg-info/PKG-INFO
+gutefrage.egg-info/SOURCES.txt
+gutefrage.egg-info/dependency_links.txt
+gutefrage.egg-info/not-zip-safe
+gutefrage.egg-info/requires.txt
+gutefrage.egg-info/top_level.txt

@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: gutefrage
+Version: 0.3
+Summary: Unofficial GuteFrage api. Check https://github.com/DAMcraft/gutefrage/wiki on how to use it
+Home-page: https://github.com/DAMcraft/gutefrage
+Author: DAMcraft
+Author-email: 
+License: MIT
+Description: # Unofficial Gutefrage API
+        
+        It doesnt have a lot of features yet. Check it out [here](https://github.com/DAMcraft/gutefrage/wiki) how it works!
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
