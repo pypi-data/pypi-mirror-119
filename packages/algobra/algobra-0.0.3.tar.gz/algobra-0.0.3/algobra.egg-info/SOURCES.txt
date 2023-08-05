@@ -1,0 +1,12 @@
+README.md
+setup.py
+algobra/__init__.py
+algobra/engine.py
+algobra/snp500.py
+algobra.egg-info/PKG-INFO
+algobra.egg-info/SOURCES.txt
+algobra.egg-info/dependency_links.txt
+algobra.egg-info/requires.txt
+algobra.egg-info/top_level.txt
+test/test_engine.py
+test/test_snp500.py

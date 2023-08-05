@@ -1,0 +1,11 @@
+numpy
+requests
+
+[gpu]
+pyopencl
+six
+
+[testing]
+pytest
+torch
+tqdm
