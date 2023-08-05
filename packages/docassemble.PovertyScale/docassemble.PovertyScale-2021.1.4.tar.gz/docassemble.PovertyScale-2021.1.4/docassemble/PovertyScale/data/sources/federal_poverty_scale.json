@@ -1,0 +1,9 @@
+{
+  "poverty_level_update_year": 2021,
+  "poverty_base": 12880,
+  "poverty_increment": 4540,
+  "poverty_base_hi": 14820,
+  "poverty_increment_hi": 5220,
+  "poverty_base_ak": 16090,
+  "poverty_increment_ak": 5680
+}
