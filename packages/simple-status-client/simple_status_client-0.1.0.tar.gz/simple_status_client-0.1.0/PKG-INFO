@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: simple-status-client
+Version: 0.1.0
+Summary: A package for interacting with the Simple Status Server
+License: gnu-3
+Author: Benjamin Smith
+Author-email: bravosierra99@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests (>=2.26.0,<3.0.0)
+Requires-Dist: yarl (>=1.6.3,<2.0.0)

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "simple_status_client"
+version = "0.1.0"
+description = "A package for interacting with the Simple Status Server"
+authors = ["Benjamin Smith <bravosierra99@gmail.com>"]
+license = "gnu-3"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.26.0"
+yarl = "^1.6.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
