@@ -1,0 +1,11 @@
+rocketpy/Environment.py,sha256=b65snI3c_SBxIJsb0PfEbG57CcuS35LeAxILLLQoeVk,121828
+rocketpy/Flight.py,sha256=PR6fi5Y9A_zz7VzAyFr_V1-ZG4mskeITlr8Ty6pL4HU,148804
+rocketpy/Function.py,sha256=E1e366kBPe2N3iOLAyAOhYp4Mkc7DxZWTIxWsEHjdJI,88285
+rocketpy/Rocket.py,sha256=NwHN2clMRnWFg05Vz9NQaU4RAPIPmDusw81h-owRUzo,36705
+rocketpy/SolidMotor.py,sha256=ZDV0mj5rYI4KrOFB6jGCNdQP70xYXu6GTtaz_hxPqms,29484
+rocketpy/__init__.py,sha256=82aUvNpdHLzFIdIEpYpVOddVUT14k7UyQcvvEeGGgSk,1445
+rocketpy-0.9.6.dist-info/LICENSE,sha256=yW57cdzzKVxFFK-hmx40XzI86tgd3DNmluc5e4GTShM,1079
+rocketpy-0.9.6.dist-info/METADATA,sha256=Ooc-61cEY_i5aVTeUftllL0kh5oHil-zK74ip_LZvyw,9199
+rocketpy-0.9.6.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+rocketpy-0.9.6.dist-info/top_level.txt,sha256=RnNaRRe3dIPwwuaamN5QLOgTRBe3nI84kiOvspb0wQE,9
+rocketpy-0.9.6.dist-info/RECORD,,
