@@ -1,0 +1,13 @@
+trino/__init__.py,sha256=2LsCCJI7SYDNzHVE6Ic8TB6HEoWFmbhohvDUQwgidto,778
+trino/auth.py,sha256=a-XktgogbNKfX71dTnXau0yZS6S1O4VAu8urC_ZW_4A,4901
+trino/client.py,sha256=CZwyD7HJHF2H6AgglVbJSRNNlBFdTO-QDOsbE-5owmU,19664
+trino/constants.py,sha256=eqNLSqgRkfuaxVsW1AZCqFjO4eRbMEbdM1jGnfaAq6o,1454
+trino/dbapi.py,sha256=sG4G56CoYl-pdgaxM79DZbz-6wn3-KnJI5-t_BhjYCw,16417
+trino/exceptions.py,sha256=_EaGfi_hpu8HMRjhAmy_4zh84Ht3IyVaRCd_sGbN7EE,5151
+trino/logging.py,sha256=SURBHgjtl662ViSSipad25QLmBr0IQO22bN3b7d3ePo,765
+trino/transaction.py,sha256=__5OpH6YWjMG_oyo4XQZS6Dz8BYrXD_VxnsowUTem-Q,3402
+trino-0.306.0.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+trino-0.306.0.dist-info/METADATA,sha256=0E1efzJ86RYjJwPwpC6H75ksYUsYsU4oYb84iofq9sU,1700
+trino-0.306.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+trino-0.306.0.dist-info/top_level.txt,sha256=iHqQtrm6g-HE386hcIwGWLOIdCCxvE7jM7xR7z5muHc,6
+trino-0.306.0.dist-info/RECORD,,
