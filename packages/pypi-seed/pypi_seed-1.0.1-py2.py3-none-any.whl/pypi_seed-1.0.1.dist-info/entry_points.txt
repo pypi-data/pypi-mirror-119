@@ -1,0 +1,4 @@
+[console_scripts]
+pypiseed = pypi_seed.main:main
+pyseed = pypi_seed.main:main
+
