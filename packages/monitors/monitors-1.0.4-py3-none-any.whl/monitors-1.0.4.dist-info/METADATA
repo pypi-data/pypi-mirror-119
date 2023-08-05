@@ -1,0 +1,105 @@
+Metadata-Version: 2.1
+Name: monitors
+Version: 1.0.4
+Summary: monitor tools
+Home-page: https://github.com/Pactortester/monitors
+Author: lijiawei
+Author-email: 1456470136@qq.com
+License: MIT Licence
+Keywords: grafana,monitors,process monitor,system monitor,influxdb
+Platform: any
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console :: Curses
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: System :: Networking :: Monitoring
+Classifier: Topic :: Software Development :: Testing
+Classifier: Typing :: Typed
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: psutil (~=5.8.0)
+Requires-Dist: influxdb (~=5.3.1)
+Requires-Dist: requests (~=2.26.0)
+
+# monitors
+
+
+[![Build Status](https://travis-ci.com/Pactortester/monitors.svg?branch=master)](https://travis-ci.com/Pactortester/monitors) ![PyPI](https://img.shields.io/pypi/v/monitors) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/monitors) ![GitHub top language](https://img.shields.io/github/languages/top/Pactortester/monitors) ![PyPI - Downloads](https://img.shields.io/pypi/dm/monitors) ![GitHub stars](https://img.shields.io/github/stars/Pactortester/monitors?style=social) ![https://blog.csdn.net/flower_drop](https://img.shields.io/badge/csdn-%40flower__drop-orange)
+
+
+## Logo
+
+
+![](https://files.mdnice.com/user/17535/0ce07240-b2ea-4739-aede-b67a2bc8b757.png)
+
+
+## 安装
+
+
+pip install monitors
+
+
+##  仓库地址：
+
+
+- github：https://github.com/Pactortester/monitors.git
+- pypi：https://pypi.org/project/monitors/#history
+
+
+## 社区地址
+
+
+- testerhome：https://testerhome.com/opensource_projects/monitors
+
+
+## 适用场景
+
+
+1. 监控某一个进程的性能,默认监控一天，数据每隔3秒刷新一次
+2. 根据子进程名称获取到父进程的id,进行性能监控。
+3. 适用于各个平台（Windows, Mac, Linux）
+- 例如：想监控整个chrome浏览器的系统资源消耗情况
+- 只需要传入[chrome.exe] 系统将自动为你监控整个chrome浏览器的资源消耗情况。
+## 
+![](https://files.mdnice.com/user/17535/8a99528d-e310-41c9-b6b2-071c9255849d.png)
+
+
+
+## 功能
+
+
+1. 自动监控此进程的性能情况，控制台实时输出数据
+2. 将性能数据以log文件形式存与 [monitor_log] 文件夹
+
+
+
+## 命令
+
+
+```shell
+python <you_test_script.py>
+```
+
+
+## Demo
+
+
+```python
+from monitors.monitor_util import monitor_start
+
+monitor_start(name='chrome.exe')
+```
+## 
+
+以上便是 monitors 的基本用法介绍。
+
+如果您有发现错误，或者您对 monitors 有任何建议，欢迎到 [monitors Issues](https://github.com/Pactortester/monitors/issues) 发表，非常感谢您的支持。您的反馈和建议非常宝贵，希望您的参与能帮助 monitors 做得更好。
+
+
