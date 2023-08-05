@@ -1,0 +1,7 @@
+queue_broker_client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+queue_broker_client/broker.py,sha256=pg_IdbhXx_xPnjnA4A0kJSuL0GJEmCM3b-icGLHAaAU,3344
+queue_broker_client-0.0.5.dist-info/LICENSE,sha256=7EI8xVBu6h_7_JlVw-yPhhOZlpY9hP8wal7kHtqKT_E,1074
+queue_broker_client-0.0.5.dist-info/METADATA,sha256=99gXp_q_j0ZFSJ74EPfvkfQ8DVivWSgb1TimmLDJOHo,520
+queue_broker_client-0.0.5.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+queue_broker_client-0.0.5.dist-info/top_level.txt,sha256=PHuF7R5BK1WPIeg5sO9lLNoWrYNzrRL8DtCUCb1H0Dw,20
+queue_broker_client-0.0.5.dist-info/RECORD,,
