@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+dmc_floss_gimp_color_palette_generator/__init__.py
+dmc_floss_gimp_color_palette_generator/__version__.py
+dmc_floss_gimp_color_palette_generator/generator.py
+dmc_floss_gimp_color_palette_generator/gpl.py
+dmc_floss_gimp_color_palette_generator.egg-info/PKG-INFO
+dmc_floss_gimp_color_palette_generator.egg-info/SOURCES.txt
+dmc_floss_gimp_color_palette_generator.egg-info/dependency_links.txt
+dmc_floss_gimp_color_palette_generator.egg-info/entry_points.txt
+dmc_floss_gimp_color_palette_generator.egg-info/requires.txt
+dmc_floss_gimp_color_palette_generator.egg-info/top_level.txt

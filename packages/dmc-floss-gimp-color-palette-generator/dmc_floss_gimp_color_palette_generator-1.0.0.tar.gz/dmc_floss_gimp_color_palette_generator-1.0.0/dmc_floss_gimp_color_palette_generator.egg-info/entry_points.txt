@@ -1,0 +1,3 @@
+[console_scripts]
+generate_dmc_palette = dmc_floss_gimp_color_palette_generator.generator:run
+
