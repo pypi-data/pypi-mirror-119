@@ -1,0 +1,3 @@
+[console_scripts]
+yonde = yonde.__main__:main
+
