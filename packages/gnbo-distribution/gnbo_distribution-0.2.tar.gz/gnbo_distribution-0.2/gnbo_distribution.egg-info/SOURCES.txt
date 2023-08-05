@@ -1,0 +1,10 @@
+setup.py
+gnbo_distribution/Binomialdistribution.py
+gnbo_distribution/Gaussiandistribution.py
+gnbo_distribution/Generaldistribution.py
+gnbo_distribution/__init__.py
+gnbo_distribution.egg-info/PKG-INFO
+gnbo_distribution.egg-info/SOURCES.txt
+gnbo_distribution.egg-info/dependency_links.txt
+gnbo_distribution.egg-info/not-zip-safe
+gnbo_distribution.egg-info/top_level.txt
