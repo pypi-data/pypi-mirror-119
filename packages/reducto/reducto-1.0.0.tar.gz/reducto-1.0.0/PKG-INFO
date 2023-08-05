@@ -1,0 +1,7 @@
+Metadata-Version: 1.1
+Name: reducto
+Version: 1.0.0
+Summary: Reduce a package as a set of basic source code statistics. 
+Home-page: https://github.com/plaguss/reducto
+Author: Agustín Piqueres
+Author-email: agustin.piqueres@gmail.com
