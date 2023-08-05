@@ -1,0 +1,16 @@
+lighttree==1.3.4
+elasticsearch<8.0.0,>=7.0.0
+typing_extensions
+
+[develop]
+pre-commit
+black
+coverage
+flake8
+pytest
+pytest-cov
+mock
+mypy
+pandas
+Sphinx
+twine
