@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "robocorp-inspector"
+version = "0.3.8"
+description = "Robocorp Inspector"
+
+authors = ["Ossi Rajuvaara <ossi@rajuvaara.com>"]
+repository = "https://github.com/robocorp/inspector"
+license = "Proprietary"
+readme = "README.md"
+
+packages = [
+	{ include = "inspector" },
+]
+include = ["inspector/static/**/*"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pywebview = "^3.5"
+rpaframework-core = "^6.3.2"
+rpaframework-recognition = "^0.7.2"
+mss = "^6.1.0"
+requests = "^2.25.1"
+
+[tool.poetry.dev-dependencies]
+PyQt5 = {version = "^5.15.4", platform = "linux"}
+PyQtWebEngine = {version = "^5.15.4", platform = "linux"}
+black = { version = "*", allow-prereleases = true }
+pylint = "^2.6.0"
+flake8 = "^3.8.4"
+pytest = "^6.2.1"
+setuptools = "^51.1.2"
+PyYAML = "^5.4.1"
+mypy = "^0.800"
+
+[tool.poetry.scripts]
+inspector = "inspector.cli:run"
+
+[tool.black]
+target-version = ["py37", "py38"]
+
+[build-system]
+requires = ["poetry>=1.1.4"]
+build-backend = "poetry.masonry.api"
