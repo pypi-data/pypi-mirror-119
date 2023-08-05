@@ -1,0 +1,9 @@
+numpy
+scipy
+matplotlib
+networkx
+pandas
+joblib
+scikit-learn>=0.23.0
+pytest
+ray

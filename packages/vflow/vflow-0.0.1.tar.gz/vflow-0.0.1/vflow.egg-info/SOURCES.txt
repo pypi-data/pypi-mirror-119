@@ -1,0 +1,15 @@
+setup.py
+tests/__init__.py
+tests/test_basic.py
+tests/test_dict_combine.py
+tests/test_pipelines.py
+vflow/__init__.py
+vflow/convert.py
+vflow/module.py
+vflow/module_set.py
+vflow/pipeline.py
+vflow.egg-info/PKG-INFO
+vflow.egg-info/SOURCES.txt
+vflow.egg-info/dependency_links.txt
+vflow.egg-info/requires.txt
+vflow.egg-info/top_level.txt
