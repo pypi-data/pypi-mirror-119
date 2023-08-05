@@ -1,0 +1,9 @@
+.gitattributes
+LICENSE
+README.md
+publish.py
+setup.py
+sciml.egg-info/PKG-INFO
+sciml.egg-info/SOURCES.txt
+sciml.egg-info/dependency_links.txt
+sciml.egg-info/top_level.txt
