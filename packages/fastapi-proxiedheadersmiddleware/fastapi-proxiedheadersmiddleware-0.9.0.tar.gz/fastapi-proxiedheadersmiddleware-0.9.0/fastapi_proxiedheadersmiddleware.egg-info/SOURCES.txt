@@ -1,0 +1,9 @@
+COPYING
+README.md
+setup.py
+fastapi_proxiedheadersmiddleware/__init__.py
+fastapi_proxiedheadersmiddleware.egg-info/PKG-INFO
+fastapi_proxiedheadersmiddleware.egg-info/SOURCES.txt
+fastapi_proxiedheadersmiddleware.egg-info/dependency_links.txt
+fastapi_proxiedheadersmiddleware.egg-info/requires.txt
+fastapi_proxiedheadersmiddleware.egg-info/top_level.txt
