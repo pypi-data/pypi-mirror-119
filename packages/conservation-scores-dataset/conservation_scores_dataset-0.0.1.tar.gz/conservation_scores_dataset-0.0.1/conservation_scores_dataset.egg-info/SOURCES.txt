@@ -1,0 +1,14 @@
+README.rst
+setup.py
+conservation_scores_dataset/__init__.py
+conservation_scores_dataset/__version__.py
+conservation_scores_dataset/extract.py
+conservation_scores_dataset/load_aggregated_conservation_scores.py
+conservation_scores_dataset/load_conservation_scores.py
+conservation_scores_dataset/retrieve_all.py
+conservation_scores_dataset/utils.py
+conservation_scores_dataset.egg-info/PKG-INFO
+conservation_scores_dataset.egg-info/SOURCES.txt
+conservation_scores_dataset.egg-info/dependency_links.txt
+conservation_scores_dataset.egg-info/requires.txt
+conservation_scores_dataset.egg-info/top_level.txt

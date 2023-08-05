@@ -1,0 +1,4 @@
+downloaders
+pandas>=1.1.5
+pybwtool>=1.0.8
+epigenomic_dataset
