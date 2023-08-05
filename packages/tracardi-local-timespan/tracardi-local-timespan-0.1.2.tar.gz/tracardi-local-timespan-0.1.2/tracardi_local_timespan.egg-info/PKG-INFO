@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: tracardi-local-timespan
+Version: 0.1.2
+Summary: The purpose of this plugin is to check if current time is in given time span.
+Home-page: UNKNOWN
+Author: Marcin Gaca
+Author-email: emygeq@gmail.com
+License: UNKNOWN
+Keywords: tracardi,plugin
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+
+# Tracardi plugin
+
+This code can be run within Tracardi workflow.
+
+# Local time span action
+
+The purpose of this plugin is to check if the local time is within 
+defined time span.
+
+This action minds the time zone to the event. Therefore, you must provide 
+time zone. By default, time zone is included in browser event context. 
+
+
+# Configuration
+
+This node requires configuration. In order to read timezone 
+you must define path to time zone. Use dot notation to do that.
+
+Moreover, you need to set start and end of the time span. The time slots 
+have no default values. 
+
+Example of the configuration:
+
+```json
+{
+  "timezone": "session@context.time.tz",
+  "start": "12:00:00",
+  "end": "14:00:00"
+}
+```
+
+# Input payload
+
+This node does not process input payload.
+
+# Output
+
+Return True or False. Return True if local time is in defined time span.
+

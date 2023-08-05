@@ -1,0 +1,15 @@
+.gitignore
+LICENSE.md
+MANIFEST.in
+README.md
+build.sh
+build_setup.sh
+requirements.txt
+setup.py
+tracardi_local_timespan/plugin.py
+tracardi_local_timespan.egg-info/PKG-INFO
+tracardi_local_timespan.egg-info/SOURCES.txt
+tracardi_local_timespan.egg-info/dependency_links.txt
+tracardi_local_timespan.egg-info/requires.txt
+tracardi_local_timespan.egg-info/top_level.txt
+tracardi_local_timespan/model/configuration.py

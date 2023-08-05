@@ -1,0 +1,5 @@
+tracardi_dot_notation
+tracardi_plugin_sdk
+pydantic
+pytz
+pytest
