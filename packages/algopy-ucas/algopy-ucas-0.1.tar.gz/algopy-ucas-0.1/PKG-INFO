@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: algopy-ucas
+Version: 0.1
+Summary: Algorithms for Course 081203M04001H, UCAS
+Home-page: UNKNOWN
+Author: UCAS
+Author-email: 1596117875@qq.com
+License: MIT Licence
+Description: UNKNOWN
+Keywords: testing testautomation
+Platform: any
+Requires-Python: >=3.0.*
