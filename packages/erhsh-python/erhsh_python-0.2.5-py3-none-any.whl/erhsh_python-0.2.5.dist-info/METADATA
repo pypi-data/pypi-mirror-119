@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: erhsh-python
+Version: 0.2.5
+Summary: This is a util python package
+Home-page: https://www.erhsh.com
+Author: along
+Author-email: erhsh_165@126.com
+License: Apache 2.0
+Platform: UNKNOWN
+Requires-Dist: click
+
+UNKNOWN
+
+
