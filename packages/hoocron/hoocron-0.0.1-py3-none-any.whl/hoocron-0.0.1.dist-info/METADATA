@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: hoocron
+Version: 0.0.1
+Summary: Cron with hooks (webhook and others)
+Home-page: https://github.com/yaroslaff/hoocron
+Author: Yaroslav Polyakov
+Author-email: yaroslaff@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.4
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# hoocron
+Cron with different triggers to kick immediate execution of jobs
+
+# Installation
+~~~
+pip3 install hoocron
+~~~
+
+# Usage examples
+We will run program /bin/touch with different arguments.
+
+Simplest case:
+~~~
+hoocron.py -j J /bin/touch /tmp/touch -p J 20s
+~~~
+
+This command configures *job* (what to run, command and arguments) and *hook* (when to run). This very similar to cron.
+
+Now, lets make it more interesting, we will also run job if get HTTP request
+
+~~~
+
+~~~
+
+# See also
+
+[Redis plugin](https://github.com/yaroslaff/hoocron-plugin-redis)
+
