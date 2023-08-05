@@ -1,0 +1,9 @@
+tft_loaded_dice/__init__.py,sha256=RcsznqrLpdRbfTKM722BqN--PDVoDWNEq4D857IH7kk,48
+tft_loaded_dice/champions.json,sha256=VdetTxlW2ELWBH8PCQu-v_Pn2A6ZRUu3oZ2ta_ofF7M,9236
+tft_loaded_dice/consts.py,sha256=OwfYDLUvbcHgvxJlSkamJYGU28JjJVaFQJGNkf9mdgI,407
+tft_loaded_dice/exceptions.py,sha256=x7fk0xRsHvUEgNfnYGc--xzvYJ4fQjjLcf4NsbrIXSI,55
+tft_loaded_dice/main.py,sha256=L5mFqlZ8o-gX7gDA2w7kKTvlTVTTm07ZXfCODoIxPsI,1756
+tft_loaded_dice-11.18.0.dist-info/LICENSE,sha256=HyBwdVU0FpqcxcHx-7KUaQe4gaRsA3i27ECb75zqi70,1150
+tft_loaded_dice-11.18.0.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+tft_loaded_dice-11.18.0.dist-info/METADATA,sha256=u6Mb0i_Gh4_z_edasqj9TBH6TTCCY3CqicxyhWD5fdk,2636
+tft_loaded_dice-11.18.0.dist-info/RECORD,,
