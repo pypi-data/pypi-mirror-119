@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: cvh
+Version: 1.0.0
+Summary: Computer Vision Library
+Home-page: https://github.com/AkshayHolkar/cvh
+Author: Akshay Holkar
+Author-email: dhamakk@gmail.com
+License: MIT
+Download-URL: https://github.com/AkshayHolkar/cvh/archive/refs/tags/v_1.0.0.tar.gz
+Description: UNKNOWN
+Keywords: Computer Vision,CV
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
