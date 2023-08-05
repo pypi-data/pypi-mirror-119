@@ -1,0 +1,12 @@
+README.md
+setup.py
+DataCollector.egg-info/PKG-INFO
+DataCollector.egg-info/SOURCES.txt
+DataCollector.egg-info/dependency_links.txt
+DataCollector.egg-info/requires.txt
+DataCollector.egg-info/top_level.txt
+datacollector.egg-info/PKG-INFO
+datacollector.egg-info/SOURCES.txt
+datacollector.egg-info/dependency_links.txt
+datacollector.egg-info/requires.txt
+datacollector.egg-info/top_level.txt
