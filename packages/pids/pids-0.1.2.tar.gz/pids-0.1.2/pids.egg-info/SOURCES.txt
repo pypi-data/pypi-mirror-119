@@ -1,0 +1,8 @@
+README.md
+pids.py
+setup.py
+pids.egg-info/PKG-INFO
+pids.egg-info/SOURCES.txt
+pids.egg-info/dependency_links.txt
+pids.egg-info/requires.txt
+pids.egg-info/top_level.txt
