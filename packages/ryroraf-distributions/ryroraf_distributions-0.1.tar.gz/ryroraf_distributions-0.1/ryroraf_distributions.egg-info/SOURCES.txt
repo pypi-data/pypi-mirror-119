@@ -1,0 +1,10 @@
+setup.py
+ryroraf_distributions/Binomialdistribution.py
+ryroraf_distributions/Gaussiandistribution.py
+ryroraf_distributions/Generaldistribution.py
+ryroraf_distributions/__init__.py
+ryroraf_distributions.egg-info/PKG-INFO
+ryroraf_distributions.egg-info/SOURCES.txt
+ryroraf_distributions.egg-info/dependency_links.txt
+ryroraf_distributions.egg-info/not-zip-safe
+ryroraf_distributions.egg-info/top_level.txt
