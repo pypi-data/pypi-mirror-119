@@ -1,0 +1,107 @@
+<html>
+
+<body>
+    <table>
+        <tr>
+            <th></th>
+            {% for column in columns -%}
+                {%- if column.traced_to|length == 0 -%}
+                    <th class="untraced">{{ column.id }}</th>
+                {%- else -%}
+                    <th>{{ column.id }}</th>
+                {%- endif %}
+            {% endfor -%}
+            <th class="total">Total</th>
+        </tr>
+        {%- for row in rows %}
+        {% if row.traced_to|length == 0 -%}
+            <tr class="untraced">
+        {%- else -%}
+            <tr>
+        {%- endif %}
+            <td class="rowitem">{{ row.id }}</td>
+            {% for column in columns %}
+                {%- if column in row.traced_to -%}
+                    <td>x</td>
+                {%- else -%}
+                    {%- if column.traced_to|length == 0 -%}
+                        <td class="untraced"></td>
+                    {%- else -%}
+                        <td></td>
+                    {%- endif -%}
+                {%- endif %}
+            {% endfor -%}
+            {% if row.traced_to|length == 0 -%}
+                <td class="untraced">{{ row.traced_to|length }}</td>
+            {%- else -%}
+                <td class="total">{{ row.traced_to|length }}</td>
+            {%- endif %}
+        </tr>
+        {%- endfor %}
+        <tr class="total">
+            <td>Total</td>
+            {% for column in columns -%}
+                {%- if column.traced_to|length == 0 -%}
+                    <td class="untraced">0</td>
+                {%- else -%}
+                    <td>{{ column.traced_to|length }}</td>
+                {%- endif %}
+            {% endfor -%}
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+<style>
+    table {
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    td,
+    th {
+        border: 1px solid #999;
+        padding: 10px;
+        position: relative;
+    }
+
+    th, .rowitem {
+        background-color: rgb(172, 172, 172);
+    }
+
+    .total {
+        background-color: rgb(221, 221, 221);
+    }
+
+    .untraced {
+        background-color: rgba(193, 98, 117, 0.5);
+    }
+
+    td:hover::before {
+        background-color: #eee;
+        content: '';
+        height: 100%;
+        left: -5000px;
+        position: absolute;
+        top: 0;
+        width: 10000px;
+        z-index: -2;
+    }
+
+    td:hover::after {
+        background-color: rgb(216, 216, 216);
+        content: '';
+        height: 10000px;
+        left: 0;
+        position: absolute;
+        top: -5000px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    body {
+        margin: 1em;
+    }
+</style>
+
+</html>
