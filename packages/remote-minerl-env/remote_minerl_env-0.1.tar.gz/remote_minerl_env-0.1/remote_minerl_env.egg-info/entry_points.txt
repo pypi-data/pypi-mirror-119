@@ -1,0 +1,3 @@
+[console_scripts]
+remote-minerl-env = remote_minerl_env.cli:main
+
