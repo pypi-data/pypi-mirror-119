@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+libpythonpro/__init__.py
+libpythonpro/github_api.py
+libpythonpro_rafa.egg-info/PKG-INFO
+libpythonpro_rafa.egg-info/SOURCES.txt
+libpythonpro_rafa.egg-info/dependency_links.txt
+libpythonpro_rafa.egg-info/not-zip-safe
+libpythonpro_rafa.egg-info/requires.txt
+libpythonpro_rafa.egg-info/top_level.txt
