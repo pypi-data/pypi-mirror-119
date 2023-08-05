@@ -1,0 +1,3 @@
+[console_scripts]
+tdo=tclidemo.main:app
+
