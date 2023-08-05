@@ -1,0 +1,4 @@
+PySimpleGUI==4.47.0
+boto3==1.18.36
+colorama==0.4.4
+pybuilder==0.12.10
