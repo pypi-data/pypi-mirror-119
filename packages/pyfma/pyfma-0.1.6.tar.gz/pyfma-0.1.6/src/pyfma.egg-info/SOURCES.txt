@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+cpp/pybind11.cpp
+src/pyfma/__init__.py
+src/pyfma/_main.py
+src/pyfma.egg-info/PKG-INFO
+src/pyfma.egg-info/SOURCES.txt
+src/pyfma.egg-info/dependency_links.txt
+src/pyfma.egg-info/not-zip-safe
+src/pyfma.egg-info/requires.txt
+src/pyfma.egg-info/top_level.txt
