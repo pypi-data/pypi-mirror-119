@@ -1,0 +1,12 @@
+nr/__init__.py,sha256=V4HKk2TVKBPn9noSDfyZUHgwFUUHFFXpAchk3zhVj_o,82
+nr/appfire/__init__.py,sha256=BPWXiQ57yC1e2H2MaRdCl63XZqeE0sNJUrn4Jd6WbW0,85
+nr/appfire/tasks/__init__.py,sha256=XZSkjRRqfC_4Q1g43RchvhEpLXljD9plnMnI5J3zCkE,217
+nr/appfire/tasks/task.py,sha256=rO3t4vxCl3nBRuZRrFpxr1Le-cfHNVWddYGL7mg9UhM,10552
+nr/appfire/tasks/task_manager.py,sha256=Ohck9aCr1Cu1QR76uRptWlnz0mBqUwkld30Zi7pLOz4,6733
+nr/appfire/tasks/util.py,sha256=ZlToXMR8qu_dRmP6EgRpURDMxQKEOYUqYrxEY1MIZlU,1025
+nr.appfire-0.1.0.dist-info/LICENSE.txt,sha256=DWcTMuhLaPQZurKHQT2h7S8qmLCOEKgGuZ_kTIgjSiI,1002
+nr.appfire-0.1.0.dist-info/METADATA,sha256=zBvdoEfJJQhvbFcXRo5uNCezBaOCQKHGEHd3SoA1eNY,1234
+nr.appfire-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+nr.appfire-0.1.0.dist-info/top_level.txt,sha256=8ipe96hphd64fYwhLcJmehxJ5lvqPpqOvSWVv-HcPnI,3
+nr.appfire-0.1.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+nr.appfire-0.1.0.dist-info/RECORD,,
