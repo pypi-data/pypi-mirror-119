@@ -1,0 +1,7 @@
+argcomplete>=1.12.3
+beautifulsoup4>=4.8.2
+html2text>=2020.1.16
+lxml>=4.5.0
+psutil>=5.8.0
+pyfzf>=0.2.2
+requests>=2.25.1
