@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.cfg
+src/exabyte/__init__.py
+src/exabyte/main.py
+src/exabyte.egg-info/PKG-INFO
+src/exabyte.egg-info/SOURCES.txt
+src/exabyte.egg-info/dependency_links.txt
+src/exabyte.egg-info/top_level.txt
