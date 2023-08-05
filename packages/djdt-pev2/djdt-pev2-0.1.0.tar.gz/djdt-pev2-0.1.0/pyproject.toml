@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "djdt-pev2"
+version = "0.1.0"
+description = "Django Debug Toolbar Postgress Exlain Visualizer 2 panel"
+authors = ["william chu <williamchu@uptickhq.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django-debug-toolbar = "^3.2.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+##### Tooling configuraiton
+[tool.black]
+target-version = ['py38']
+experimental_string_processing = true
+
+[tool.isort]
+profile = 'black'
