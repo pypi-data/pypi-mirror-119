@@ -1,0 +1,11 @@
+grids/__init__.py,sha256=WA4X9eI2LNM0KnqnylPjmCQtKrlt0vG2YfBzTDuXDoE,262
+grids/_consts.py,sha256=9MGAWIu3F-8gQLHIB5C6Bd--9fhS4W-4iiC1Qq7F8w0,538
+grids/_coords.py,sha256=1P_XYw6UAJpjOpMVOuXMo2M_6y-xm28Q4uvKlmauzYg,2090
+grids/_errors.py,sha256=CtzK3mce1-nQCIfo4vEprA6lYme2cSH9Kwx8b1ZwW54,280
+grids/_ts.py,sha256=8Xx_7Xst1evUjFuiMcp1KI5CBNj37XqyUMwTw_A9R5g,28105
+grids/_utils.py,sha256=E88a58uZpA2csjDuFLlw_QR4_lYRvbTx32nui7bVXcM,6829
+grids-0.12.dist-info/LICENSE,sha256=73EtDx8830pMmEPOhqboQaaPEK4KYMtnHWVpDsXkkQI,1687
+grids-0.12.dist-info/METADATA,sha256=RdmR8I0TNJU-RvwUA8cyxQ2ky_0IcjeKrx_GDdGKR1w,2095
+grids-0.12.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+grids-0.12.dist-info/top_level.txt,sha256=8r9zqB_ICdrBxRo3JA9bReGiNLudMFVrkf1HBNBuLuk,6
+grids-0.12.dist-info/RECORD,,
