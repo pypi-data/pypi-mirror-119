@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: PySR3
+Version: 0.3.0
+Summary: Python Library for Sparse Relaxed Regularized Regression.
+Home-page: https://github.com/aksholokhov/pysr3
+Author: Aleksei Sholokhov
+Author-email: aksh@uw.edu
+License: GNU GPLv3
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: docs
+Provides-Extra: test
+Provides-Extra: dev
+License-File: LICENSE
+
+This package implements classic and novel feature selection algorithms  for linear and mixed-effect models. It supports many widely used regularization techniques, like LASSO, A-LASSO, CAD and SCAD. See README.md for details and examples.
+
