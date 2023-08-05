@@ -1,0 +1,10 @@
+README.txt
+setup.py
+propertypro/__init__.py
+propertypro/propertypro.py
+propertypro_scrapper.egg-info/PKG-INFO
+propertypro_scrapper.egg-info/SOURCES.txt
+propertypro_scrapper.egg-info/dependency_links.txt
+propertypro_scrapper.egg-info/top_level.txt
+tests/__init__.py
+tests/test_propertypro.py

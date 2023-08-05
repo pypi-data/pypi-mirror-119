@@ -1,0 +1,34 @@
+Metadata-Version: 1.1
+Name: propertypro-scrapper
+Version: 2.0
+Summary: A scraper that helps scrape a housing website propertypro
+Home-page: https://github.com/Ifyokoh/End-to-End-Machine-Learning
+Author: Ifeoma Okoh
+Author-email: odibest1893@gmail.com
+License: MIT
+Description: Propertypro Scraper
+        -------------------
+        A data collection tool that helps scrape a housing website propertypro
+        
+        Installation
+        ----------------
+        
+        to use the package in your notebook:
+        
+        ``!pip install propertypro-scrapper``
+        
+        ``from propertypro.propertypro import Propertypro``
+        
+        
+        Usage
+        --------
+        
+        - scraper = Propertypro()
+        
+        - scraper.scrape_data(100, ["enugu"])
+        
+Keywords: scraper
+Platform: UNKNOWN
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
