@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: async-task-helpers
+Version: 1.0.1
+Summary: Simple asynchronous task helpers
+Home-page: https://github.com/Lapis0875/async_task_helpers
+Author: Lapis0875
+Author-email: lapis0875@kakao.com
+License: MIT
+Project-URL: Issue tracker, https://github.com/Lapis0875/async_task_helpers/issues
+Project-URL: Donate, https://www.patreon.com/lapis0875
+Keywords: asyncio,task,loop task
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7.0
+Description-Content-Type: text/markdown
+
+# async_task_helpers
+Simple asynchronous task helpers
+
+## How to install
+```shell
+pip install async_task_helpers
+```
+
+## Features
+### Loop tasks
+```python
+from async_task_helpers import loop
+
+@loop(minutes=5, seconds=30)
+async def loop_example():
+    # This LoopTask will run in every 5 minute and 30 seconds.
+    await some_async_task()
+    await some_async_task2()
+```
+
+
+### Asynchronous Callbacks
+```python
+import asyncio
+from async_task_helpers import async_callback_handler
+
+async def universe_last_answer():
+    print('Universe`s a whole and entire, final answer is...')
+    await asyncio.sleep(1)
+    print('42!')
+    return 42
+
+
+async def async_callback(result):
+    await asyncio.sleep(5)
+    print(f'I got the result of {result}!')
+    
+
+task = asyncio.create_task(
+    async_callback_handler(
+        universe_last_answer,
+        async_callback
+    ),
+    name='Async Callback Test'
+)
+```
+
