@@ -1,0 +1,5 @@
+[console_scripts]
+config_value=scripts.config_value:main
+parla_frequencies=scripts.parla_frequencies:main
+parla_transform=scripts.parla_transform:main
+
