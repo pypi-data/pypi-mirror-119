@@ -1,0 +1,10 @@
+snowenv/__init__.py,sha256=qVzz5RBhfTF068cLw5yMK9Ua-896_H2skh7m0YVuPNE,1709
+snowenv/_version.py,sha256=Tjb_poy6EuGRi7TlrksJa9Qpx1MXOCO3p3F6tJ8xa5o,142
+snowenv/connector.py,sha256=ty-qiozzCzTKXJyl7vaW7TZoeNbyFqa5MOkgMe-qR0I,2005
+snowenv/generate.py,sha256=ep5Ri4mOdw_A5wclip7fO0-rQULX2vnxjIO2olspxw0,2662
+snowenv/utils.py,sha256=0xAqhcpZwrbZOg9h-EPYF5fU02s36tU_2FajZW5NXCs,862
+snowenv-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+snowenv-0.0.1.dist-info/METADATA,sha256=RokdUGf64W_6ZfU8Kb0L1zVC17-ey7KLGf2s-_rwtHE,2348
+snowenv-0.0.1.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+snowenv-0.0.1.dist-info/top_level.txt,sha256=h4VpJRRoLd4LKp-b3sWZ2q28jmZmqpX6_IBVUtaIM2Y,8
+snowenv-0.0.1.dist-info/RECORD,,

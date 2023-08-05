@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: snowenv
+Version: 0.0.1
+Summary: Environment switching for Snowflake Connector for Python
+Home-page: https://github.com/gouline/snowenv-python
+Author: Mike Gouline
+Author-email: hello@gouline.net
+License: Apache License 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/x-rst
+Requires-Dist: PyYAML
+Requires-Dist: python-dotenv
+Requires-Dist: snowflake-connector-python
+Provides-Extra: test
+Requires-Dist: black ; extra == 'test'
+Requires-Dist: mypy ; extra == 'test'
+Requires-Dist: pylint ; extra == 'test'
+
+snowenv-python
+##############
+
+.. image:: https://github.com/gouline/snowenv/actions/workflows/master.yml/badge.svg
+    :target: https://github.com/gouline/snowenv/actions/workflows/master.yml
+    :alt: GitHub Actions
+.. image:: https://img.shields.io/pypi/v/snowenv
+    :target: https://pypi.org/project/snowenv/
+    :alt: PyPI
+.. image:: https://pepy.tech/badge/snowenv
+    :target: https://pepy.tech/project/snowenv
+    :alt: Downloads
+.. image:: https://black.readthedocs.io/en/stable/_static/license.svg
+    :target: https://github.com/gouline/snowenv/blob/master/LICENSE
+    :alt: License: MIT
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+    :alt: Code style: black
+
+Environment switching for Snowflake Connector for Python.
+
+Requirements
+============
+
+Requires Python 3.6 or above.
+
+Usage
+=====
+
+You can install snowenv from `PyPI`_:
+
+.. _`PyPI`: https://pypi.org/project/snowenv/
+
+.. code-block:: shell
+
+    pip install snowenv
+
+Code of Conduct
+===============
+
+All contributors are expected to follow the `PyPA Code of Conduct`_.
+
+.. _`PyPA Code of Conduct`: https://www.pypa.io/en/latest/code-of-conduct/
+
+
