@@ -1,0 +1,9 @@
+src/marco/__init__.py,sha256=JrpDZ4WbmmP-feys1NRiNOd2tR_Ek4mnQ4k7667AAy4,73
+src/marco/categorical.py,sha256=EiGk9Z2gI_kmqGLopn6e7GkLeZOs4mq4C5Vv8TXt28I,1131
+src/marco/quantitative.py,sha256=9C5065CuNHBtSfZx4MNFHwVkkyrsipOA09dca7rkAhk,2922
+src/marco/quantitative_frame.py,sha256=vs810bxb9c7RVBqNeAs94OCq1vRok_8SqymNZgFaHiA,1888
+marco-0.1.2.dist-info/LICENSE,sha256=sgY2cil3xkqpxsJP0H4E1Fmfwqy_fVF69i9UTMxpCEU,1093
+marco-0.1.2.dist-info/METADATA,sha256=m22xqqtxQeSSTJfB9iBFgU_pZs8Fh0LdTWshyyhykaI,694
+marco-0.1.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+marco-0.1.2.dist-info/top_level.txt,sha256=74rtVfumQlgAPzR5_2CgYN24MB0XARCg0t-gzk6gTrM,4
+marco-0.1.2.dist-info/RECORD,,
