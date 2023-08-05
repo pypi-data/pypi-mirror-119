@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: symro
+Version: 0.0.1
+Summary: SYMbolic Reformulation and Optimization (SYMRO) package
+Home-page: https://github.com/ari-bou/symro
+Author: Ariel A. Boucheikhchoukh
+Author-email: ariel.boucheikh@gmail.com
+License: MIT
+Description: The Symbolic Reformulation and Optimization (SymRO) package is a multi-purpose modelling/optimization toolset.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Intended Audience :: Science/Research
+Classifier: Development Status :: 2 - Pre-Alpha
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown

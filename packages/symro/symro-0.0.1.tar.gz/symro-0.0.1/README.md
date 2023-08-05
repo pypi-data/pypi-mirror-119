@@ -1,0 +1,1 @@
+The Symbolic Reformulation and Optimization (SymRO) package is a multi-purpose modelling/optimization toolset.
