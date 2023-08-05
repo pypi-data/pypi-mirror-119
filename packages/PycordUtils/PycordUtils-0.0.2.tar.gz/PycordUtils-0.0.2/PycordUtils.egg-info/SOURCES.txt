@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+PycordUtils/InviteTracker.py
+PycordUtils/Music.py
+PycordUtils/Pagination.py
+PycordUtils/__init__.py
+PycordUtils.egg-info/PKG-INFO
+PycordUtils.egg-info/SOURCES.txt
+PycordUtils.egg-info/dependency_links.txt
+PycordUtils.egg-info/requires.txt
+PycordUtils.egg-info/top_level.txt
