@@ -1,0 +1,3 @@
+[smqtk_plugins]
+smqtk_detection.impls.detection_element.memory=smqtk_detection.impls.detection_element.memory
+
