@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: hepdata-maker
+Version: 0.2.1
+Summary: hepdata_lib wrapper for hepdata record creation and validation
+Home-page: https://github.com/butsuri43/hepdata_maker
+Author: Krzysztof Bozek
+Author-email: bozek.krzysiek@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: hepdata-lib
+Requires-Dist: hepdata-validator
+Requires-Dist: six
+Requires-Dist: click
+Requires-Dist: click-completion
+Requires-Dist: pytest
+Requires-Dist: pyyaml
+Requires-Dist: jsonschema
+Requires-Dist: json5
+Requires-Dist: jsonref
+Requires-Dist: jq
+Requires-Dist: uproot
+Requires-Dist: TexSoup
+Requires-Dist: regex
+Requires-Dist: scipy
+Requires-Dist: rich
+Requires-Dist: validators
+Requires-Dist: wheel
+Provides-Extra: docs
+Requires-Dist: autoclasstoc ; extra == 'docs'
+Requires-Dist: sphinx-click ; extra == 'docs'
+Requires-Dist: sphinx-copybutton ; extra == 'docs'
+
+UNKNOWN
+
