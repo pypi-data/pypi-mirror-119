@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+src/dimsm/__about__.py
+src/dimsm/__init__.py
+src/dimsm/dimension.py
+src/dimsm/measurement.py
+src/dimsm/prior.py
+src/dimsm/process.py
+src/dimsm/smoother.py
+src/dimsm/solver.py
+src/dimsm.egg-info/PKG-INFO
+src/dimsm.egg-info/SOURCES.txt
+src/dimsm.egg-info/dependency_links.txt
+src/dimsm.egg-info/not-zip-safe
+src/dimsm.egg-info/requires.txt
+src/dimsm.egg-info/top_level.txt
