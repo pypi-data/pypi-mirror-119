@@ -1,0 +1,3 @@
+[console_scripts]
+nlon_py = nlon_py.cli:main
+

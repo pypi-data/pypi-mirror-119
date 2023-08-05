@@ -1,0 +1,50 @@
+AUTHORS.rst
+CONTRIBUTING.rst
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+docs/Makefile
+docs/authors.rst
+docs/conf.py
+docs/contributing.rst
+docs/history.rst
+docs/index.rst
+docs/installation.rst
+docs/make.bat
+docs/readme.rst
+docs/usage.rst
+docs/_build/html/_static/file.png
+docs/_build/html/_static/minus.png
+docs/_build/html/_static/plus.png
+nlon_py/__init__.py
+nlon_py/cli.py
+nlon_py/features.py
+nlon_py/model.py
+nlon_py/nlon_py.py
+nlon_py.egg-info/PKG-INFO
+nlon_py.egg-info/SOURCES.txt
+nlon_py.egg-info/dependency_links.txt
+nlon_py.egg-info/entry_points.txt
+nlon_py.egg-info/not-zip-safe
+nlon_py.egg-info/requires.txt
+nlon_py.egg-info/top_level.txt
+nlon_py/data/bitcoin.csv
+nlon_py/data/build_model.py
+nlon_py/data/default_data.joblib
+nlon_py/data/default_model.joblib
+nlon_py/data/default_vectorizer.joblib
+nlon_py/data/kubernetes.csv
+nlon_py/data/lines.10k.cfo.sample.2000 - Bitcoin (github.com).csv
+nlon_py/data/lines.10k.cfo.sample.2000 - Kubernetes (Slackarchive.io).csv
+nlon_py/data/lines.10k.cfo.sample.2000 - Lucene-dev mailing list.csv
+nlon_py/data/lines.10k.cfo.sample.2000 - Mozilla (Firefox, Core, OS).csv
+nlon_py/data/lucene.csv
+nlon_py/data/make_data.py
+nlon_py/data/mozilla.csv
+nlon_py/data/mysql_sw_wo_code_words.txt
+tests/__init__.py
+tests/test_nlon_py.py
