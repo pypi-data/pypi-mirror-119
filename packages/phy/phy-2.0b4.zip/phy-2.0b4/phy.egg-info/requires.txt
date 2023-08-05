@@ -1,0 +1,17 @@
+click
+colorcet
+cython
+dask
+h5py
+joblib
+matplotlib
+mkdocs
+mtscomp
+numpy
+phylib
+pillow
+pyopengl
+qtconsole
+requests
+scipy
+tqdm
