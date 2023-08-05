@@ -1,0 +1,8 @@
+README.md
+setup.py
+orffinder/__init__.py
+orffinder/orffinder.py
+orffinder.egg-info/PKG-INFO
+orffinder.egg-info/SOURCES.txt
+orffinder.egg-info/dependency_links.txt
+orffinder.egg-info/top_level.txt
