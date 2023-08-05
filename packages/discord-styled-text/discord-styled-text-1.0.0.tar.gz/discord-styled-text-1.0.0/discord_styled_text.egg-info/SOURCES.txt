@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+discord_styled_text.egg-info/PKG-INFO
+discord_styled_text.egg-info/SOURCES.txt
+discord_styled_text.egg-info/dependency_links.txt
+discord_styled_text.egg-info/top_level.txt
+discord_styler/__info__.py
+discord_styler/__init__.py
+discord_styler/escape.py
+discord_styler/py.typed
+discord_styler/styler.py
