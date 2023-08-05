@@ -1,0 +1,8 @@
+pywrithe/__init__.py,sha256=_lODgpjkmNV8CVvf7qDNvls5InmqzYcmffhSAbiaSB8,86
+pywrithe/writhe.py,sha256=JyUqaYHD6sNcAoOGO631Z5WQ6iL3Nucp_gu3uMAv_EM,2210
+pywrithe/writhe_jax.py,sha256=3ouZz0YDPGj4no_g2MnoEKfbwmtdXv2mn4eqNKUnrlk,2361
+PyWrithe-0.0.1.dist-info/LICENSE,sha256=L1IyKLkWhxbevSTioopWQCm8Cl0GyoetB7ofW4qYr_4,1075
+PyWrithe-0.0.1.dist-info/METADATA,sha256=QuJ2PochBcDTPyN0DytQ5p7L70wb7ADrqmh8CeQD43M,866
+PyWrithe-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+PyWrithe-0.0.1.dist-info/top_level.txt,sha256=PpnLW6JUJkKmMVOTomoHYGpVueW0Q-sEsWpAo15deHY,9
+PyWrithe-0.0.1.dist-info/RECORD,,
