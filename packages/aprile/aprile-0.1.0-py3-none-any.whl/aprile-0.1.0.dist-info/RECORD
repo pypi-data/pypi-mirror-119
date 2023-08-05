@@ -1,0 +1,11 @@
+aprile/POSE-pred.pt,sha256=Wd_HIVgLY1YjGb0EH9BoDUVt-syxGgT8WZ5Y-eH27zA,5552254
+aprile/__init__.py,sha256=Pru0BlFBASFCFo7McHdohtKkUtgMPDwbGfyUZlE2_Vw,21
+aprile/model.py,sha256=RuyLXJ8LomlvF3x4JF8DW9IrkJrVkHuEsJvXtA3xEUU,31344
+aprile/pure_query.py,sha256=wbhxm90w0W2l3mqIlttaQebQ7iYN4Xnpt__s4X9fU0c,8821
+aprile/utils.py,sha256=_bjajo9g-NFAq3AlzJVBQcXghAKmr5VoGb-vMDkOORI,14557
+aprile-0.1.0.data/data/POSE-pred.pt,sha256=Wd_HIVgLY1YjGb0EH9BoDUVt-syxGgT8WZ5Y-eH27zA,5552254
+aprile-0.1.0.dist-info/LICENSE,sha256=lu_9v5V9U85kZqLunsm7DqWXjwaUJqNlKV8rkprQTaI,1063
+aprile-0.1.0.dist-info/METADATA,sha256=zWeoTFm4b35tIzJJT2C8bHKTJhzkit0CgQ-8WGqgdK8,5068
+aprile-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+aprile-0.1.0.dist-info/top_level.txt,sha256=6TOoq1Npi4w8Ok_XTXLcvezRpLHuh9Nfw3ShqYta2Pc,7
+aprile-0.1.0.dist-info/RECORD,,
