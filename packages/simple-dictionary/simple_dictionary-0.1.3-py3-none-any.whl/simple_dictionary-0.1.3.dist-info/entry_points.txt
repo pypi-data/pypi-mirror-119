@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    dictionary=dictionary.__main__:main
+    

@@ -1,0 +1,10 @@
+dictionary/__init__.py,sha256=lrYF9CXQTZnXEzSn36F09hpwWZ3XxH4xwpZ6RKI0_dA,65
+dictionary/__main__.py,sha256=m_MQU-w3fDq6XTTv3xRNWN4-r9o9NElhsPvMUzjeApM,476
+dictionary/app.py,sha256=QEYBnwwWqQraCAVX5NNceiRehG0hNse131sZ_54bzEg,1157
+dictionary/data.json,sha256=_21L2V2bsqbT7h1poDM0gzW4wAIwQ08cnbfS-66x4g4,4913089
+simple_dictionary-0.1.3.dist-info/LICENSE,sha256=fLucxNjgjqR0F2B9oPFRpGMkMIbIKaEGWWPsVw6LmGc,1064
+simple_dictionary-0.1.3.dist-info/METADATA,sha256=VE9fQgr5PBSS80QI-ohx5rO5ByBF3YdSuzsA9drBwQc,1586
+simple_dictionary-0.1.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+simple_dictionary-0.1.3.dist-info/entry_points.txt,sha256=mFktWbCCeSvywZMIbI7saxX14pQYqcDM70Bj7VVqQFA,67
+simple_dictionary-0.1.3.dist-info/top_level.txt,sha256=l2U9zvWpA9NJH89mgBrDpPCKy7S0Bm47Xr8v9DBuAoU,11
+simple_dictionary-0.1.3.dist-info/RECORD,,
