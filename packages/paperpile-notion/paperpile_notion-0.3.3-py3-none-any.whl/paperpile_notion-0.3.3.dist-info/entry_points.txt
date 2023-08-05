@@ -1,0 +1,3 @@
+[console_scripts]
+paperpile-notion=paperpile_notion.commands:cli
+
