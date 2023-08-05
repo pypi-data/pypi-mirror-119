@@ -1,0 +1,8 @@
+LICENSE.md
+README.rst
+setup.py
+example_package_ydliildy.egg-info/PKG-INFO
+example_package_ydliildy.egg-info/SOURCES.txt
+example_package_ydliildy.egg-info/dependency_links.txt
+example_package_ydliildy.egg-info/requires.txt
+example_package_ydliildy.egg-info/top_level.txt
