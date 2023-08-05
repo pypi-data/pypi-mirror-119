@@ -1,0 +1,10 @@
+polyga/__init__.py,sha256=qKK4BMzdt84HiCorJPWqgEfa_DbJeuGx_bIPrDui2vc,22
+polyga/analysis/__init__.py,sha256=H1g0lhNyLEb0r_jP-Wm3XZ57S992haEPySr2yqAuGvY,1869
+polyga/default_files/dna.csv,sha256=r-59ASSXK4zUFlgY3Bay3Mo_wFlDA3nYzMxXuTaTNOQ,7379
+polyga/models.py,sha256=JdpydjjWFoVeJ39-2uu8inzYYHz1fJYziSdv2DasdVY,1189
+polyga/polygod.py,sha256=_fBQWiPD_NC7lZis46DVkeQs3gD0m5YphyG4l2hnl78,55303
+polyga/utils.py,sha256=ia6nT_za1MAqmRFs8Oc2MA7BO2eCVour3Lsvrpv_xKM,5578
+polyga-1.0.3.dist-info/LICENSE,sha256=MPEAAuKxGwiugGFelbpl7W-gnAR2WDLlHae03ka3mKw,1060
+polyga-1.0.3.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+polyga-1.0.3.dist-info/METADATA,sha256=3M447Sk7F1X0L1vXDSYcV7ksYB4mrUNA3P00HEMLHU4,684
+polyga-1.0.3.dist-info/RECORD,,
