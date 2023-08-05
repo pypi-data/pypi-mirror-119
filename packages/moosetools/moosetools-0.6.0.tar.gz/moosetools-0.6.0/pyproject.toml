@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "moosetools"
+version = "0.6.0"
+description = "Moose Tools"
+license = "LGPL-3.0-or-later"
+authors = ["Chuck Mo <chuck@moosejudge.com>"]
+homepage = "https://moosetools.moosejudge.com"
+repository = "https://github.com/TheChuckMo/moosetools"
+readme = "README.md"
+
+classifiers = [ "Topic :: Software Development :: Libraries :: Python Modules" ]
+
+[tool.poetry.dependencies]
+python = "^3.6.9"
+requests = "^2"
+requests-toolbelt = "^0.9.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5"
+mkdocs = "^1"
+mkdocs-material = "^7"
+mkdocstrings = "^0.15"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
