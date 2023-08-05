@@ -1,0 +1,9 @@
+README.md
+setup.py
+spatial_soul.egg-info/PKG-INFO
+spatial_soul.egg-info/SOURCES.txt
+spatial_soul.egg-info/dependency_links.txt
+spatial_soul.egg-info/top_level.txt
+spatialsoul/codex.py
+spatialsoul/fiji.py
+spatialsoul/shell.py
