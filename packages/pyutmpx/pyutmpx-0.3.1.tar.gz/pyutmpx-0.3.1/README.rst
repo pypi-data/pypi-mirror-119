@@ -1,0 +1,83 @@
+utmp/wtmp/btmp reader module for Python 3.x
+===========================================
+
+This project is a binary CPython 3.x module which allows you to interact with
+the user accounting databases ``utmp``, ``wtmp`` and ``btmp``, which keep
+track of the boot, login and logout events.
+
+It was developed for the `fingerd`_ project, which needs to know the last
+login date of a user, if the user is still logged in, on which line they are
+connected to the system, and so on. I decided to make my own module to
+manage these files.
+
+These files and the interfaces to them vary among systems, but this module
+attempts at implementing as much as possible, including the standardized
+form in POSIX and the `Single Unix Specification`_.
+
+Usage
+-----
+
+The module defines at least the ``pyutmpx.utmp`` object, and at most it and
+two other databases, which are ``pyutmpx.wtmp`` and ``pyutmpx.btmp``.
+The three objects behave the same, so in the rest of the description,
+I'll only deal with ``pyutmpx.utmp``.
+
+``pyutmpx.utmp`` is both an iterator and iterable, using itself as the
+iterator, which allows you to use tools such as list comprehensions with it.
+You can also use the ``.reset()`` and ``.next()`` methods with it.
+
+Every return entry will be a ``pyutmpx.entry``, which has the following
+properties:
+
+``type`` (integer)
+	The entry type, among the following:
+
+		``pyutmpx.BOOT_TIME``
+			Time of system boot.
+
+		``pyutmpx.OLD_TIME``
+			Time before system clock change.
+
+		``pyutmpx.NEW_TIME``
+			Time after system clock change.
+
+		``pyutmpx.USER_PROCESS``
+			Normal process.
+
+		``pyutmpx.INIT_PROCESS``
+			Process spawned by init(8).
+
+		``pyutmpx.LOGIN_PROCESS``
+			Session leader process for user login.
+
+		``pyutmpx.DEAD_PROCESS``
+			Terminated process.
+
+``id`` (string)
+	The terminal name suffix, or inittab(5) ID.
+
+``user`` (string)
+	The username.
+
+``line`` (string)
+	The line on which the user is logged in, usually the device name of the
+	tty minus the "/dev/" part.
+
+``date`` (``datetime.datetime`` instance)
+	The date of the event.
+
+``pid`` (integer)
+	The process identifier.
+
+What is left to do
+------------------
+
+- Implement other interfaces, standard and non-standard, as explained in
+  the “Compatibility” section in ``utmp.c``.
+- Add the ``pyutmpx.wtmp`` and ``pyutmpx.btmp`` objects when possible.
+- Add utmp filename getting and setting for these objects.
+- Add a list-like interface, with length and index.
+- Add methods to add an event, such as login or logout events.
+
+.. _fingerd: https://forge.touhey.fr/fingerd.git/
+.. _Single Unix Specification: http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/utmpx.h.html
