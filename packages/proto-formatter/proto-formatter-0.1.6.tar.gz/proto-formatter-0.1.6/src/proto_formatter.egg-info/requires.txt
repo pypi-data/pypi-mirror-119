@@ -1,0 +1,7 @@
+anytree==2.8.0
+
+[dev]
+build==0.5.1
+twine<4,>=3.4.2
+pip-tools<6,>=5
+pytest<6.3,>=6.2.4
