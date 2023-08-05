@@ -1,0 +1,4 @@
+[console_scripts]
+galileo_convertor = galileo.platform.tools.convertor:main
+galileo_service = galileo.platform.tools.start_service:main
+

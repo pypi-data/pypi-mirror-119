@@ -1,0 +1,4 @@
+tensorflow>=2.3.0
+torch>=1.6.0
+networkx==2.3
+attrs
