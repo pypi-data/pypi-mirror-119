@@ -1,0 +1,16 @@
+README.rst
+setup.py
+btc_report_designer.egg-info/PKG-INFO
+btc_report_designer.egg-info/SOURCES.txt
+btc_report_designer.egg-info/dependency_links.txt
+btc_report_designer.egg-info/requires.txt
+btc_report_designer.egg-info/top_level.txt
+report_designer/__init__.py
+report_designer/admin.py
+report_designer/apps.py
+report_designer/choices.py
+report_designer/managers.py
+report_designer/models.py
+report_designer/tests.py
+report_designer/urls.py
+report_designer/views.py
