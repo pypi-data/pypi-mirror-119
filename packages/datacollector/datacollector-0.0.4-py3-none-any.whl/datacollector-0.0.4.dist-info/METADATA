@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: datacollector
+Version: 0.0.4
+Summary: PubMed article data collector
+Home-page: UNKNOWN
+Author: Kwok Sun Cheng
+Author-email: <kwoksuncheng@unomaha.edu>
+License: UNKNOWN
+Keywords: python,PubMed,Data collector
+Platform: UNKNOWN
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Requires-Dist: beautifulsoup4
+Requires-Dist: metapub
+
+PubMed article data collector is able to let you download the metadata of bioinformatic acticle from the PubMed repository.
+
