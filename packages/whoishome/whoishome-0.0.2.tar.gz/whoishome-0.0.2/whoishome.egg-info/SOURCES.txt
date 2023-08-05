@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+whoishome.egg-info/PKG-INFO
+whoishome.egg-info/SOURCES.txt
+whoishome.egg-info/dependency_links.txt
+whoishome.egg-info/requires.txt
+whoishome.egg-info/top_level.txt
