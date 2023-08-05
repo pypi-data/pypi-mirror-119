@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pymymusic
+Version: 0.0.1
+Summary: Download youtube music fast
+Home-page: https://github.com/unlikelycreator/pymynote
+Author: iamhritikpawar
+Author-email: hritikpawar.personal@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: youtube-search-python
+Requires-Dist: youtube-dl
+Requires-Dist: future
+Requires-Dist: pyfiglet
+Requires-Dist: jsons
+
+pymymusic is a cli based youtube music downloader just type name of song hit enter and see the magic.
+
