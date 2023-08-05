@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+earthquake_detection/__init__.py
+latest_indonesia_earthquake.egg-info/PKG-INFO
+latest_indonesia_earthquake.egg-info/SOURCES.txt
+latest_indonesia_earthquake.egg-info/dependency_links.txt
+latest_indonesia_earthquake.egg-info/top_level.txt

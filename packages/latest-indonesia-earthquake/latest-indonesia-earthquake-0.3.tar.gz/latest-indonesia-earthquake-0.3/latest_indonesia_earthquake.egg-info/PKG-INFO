@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: latest-indonesia-earthquake
+Version: 0.3
+Summary: Latest information Indonesia earthquake from Meteorological, Climatological, and Geophysical Agency
+Home-page: https://github.com/Ade-Project/latest-indonesia-earthquake
+Author: Ade Ristanto
+Author-email: ade.ristanto@gmail.com
+License: UNKNOWN
+Project-URL: GitHub, https://github.com/AdeRistanto
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Latest Information Indonesia Earthquake
+Latest information Indonesia earthquake from Meteorological, Climatological, and Geophysical Agency
+
+## How It Work?
+This package will scrape from [BMKG](https://bmkg.go.id) to get latest information Indonesia earthquake
+
+This package will use BeautifulSoup4 and Request, can be used to collect the latest data on earthquakes in Indonesia
+
+#How To Use
+````
+import earthquake_detection
+
+if __name__ == "__main__":
+    result = earthquake_detection.ekstraksi_data()
+    earthquake_detection.tampilkan_data(result)
+````
+
+#Author
+Ade Ristanto
+
