@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: blmfilter
+Version: 0.0.1
+Summary: an easy bloom filter by py.
+Home-page: https://gitee.com/czasg/blmfilter
+Author: CzaOrz
+Author-email: 972542644@qq.com
+License: UNKNOWN
+Description: see https://gitee.com/czasg/blmfilter
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
