@@ -1,0 +1,5 @@
+pydantic
+geojson
+requests
+tethysts>=0.2.15
+rasterio
