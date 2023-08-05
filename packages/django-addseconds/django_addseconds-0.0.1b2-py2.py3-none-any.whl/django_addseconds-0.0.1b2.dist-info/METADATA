@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: django-addseconds
+Version: 0.0.1b2
+Summary: The Django-AddSeconds package provides template filters for datetime manipulations
+Home-page: https://github.com/nnseva/django-addseconds
+Author: Vsevolod Novikov
+Author-email: nnseva@gmail.com
+License: LGPL
+Keywords: django templatetags datetime
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 2.0
+Classifier: Framework :: Django :: 2.1
+Classifier: Framework :: Django :: 3.0
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: django
+
+
+Django-AddSeconds
+=================
+
+The package provides template filters for datetime manipulations.
+See details at the home page: https://github.com/nnseva/django-addseconds
+
+
