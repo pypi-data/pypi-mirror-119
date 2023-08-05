@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: typeatlas
+Version: 0.96.173
+Summary: TypeAtlas font explorer
+Home-page: UNKNOWN
+Author: Milko Krachounov
+Author-email: typeatlas@milko.3mhz.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: fonttools
+Requires: PyQt5
