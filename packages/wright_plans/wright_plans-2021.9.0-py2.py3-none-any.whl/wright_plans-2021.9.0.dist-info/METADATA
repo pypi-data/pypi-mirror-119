@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: wright_plans
+Version: 2021.9.0
+Summary: Bluesky plans and utilities to provide functionality that the Wright Group needs.
+Home-page: https://github.com/wright-group/bluesky-wright
+Author: Kyle Sunden
+Author-email: contact@ksunden.space
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: bluesky
+Requires-Dist: pint
+Requires-Dist: toolz
+Requires-Dist: attune ; extra == "attune"
+Requires-Dist: numpy ; extra == "attune"
+Requires-Dist: cycler ; extra == "attune"
+Provides-Extra: attune
