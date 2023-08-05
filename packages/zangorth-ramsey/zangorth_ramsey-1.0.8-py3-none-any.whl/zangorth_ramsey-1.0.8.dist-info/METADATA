@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: zangorth-ramsey
+Version: 1.0.8
+Summary: Helper Functions for Ramsey Project
+Home-page: UNKNOWN
+Author: Zangorth
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: SQLAlchemy
+Requires-Dist: pytube
+Requires-Dist: pyodbc
+Requires-Dist: youtube-transcript-api
+Requires-Dist: librosa
+Requires-Dist: pydub
+Requires-Dist: streamlit
+
+UNKNOWN
+
