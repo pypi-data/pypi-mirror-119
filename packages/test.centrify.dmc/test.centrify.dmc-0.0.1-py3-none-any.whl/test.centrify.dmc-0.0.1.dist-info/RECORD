@@ -1,0 +1,6 @@
+dmc/__init__.py,sha256=FDGM_uQMXn4xxrDjVHtRPBD0uy6mMoNP82cIK9QXSi0,30
+dmc/lrpc2.py,sha256=8nzf37Y0gUFv016cXFOthK1hDjKDcLAj_A5uAbiXV5I,7586
+test.centrify.dmc-0.0.1.dist-info/METADATA,sha256=qW1T3z9mMqk5J_LZRm_bbqkuem8canxAAenzI7a60EM,427
+test.centrify.dmc-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+test.centrify.dmc-0.0.1.dist-info/top_level.txt,sha256=i5PEjOHvOP42bL5Nj7SSX8n2jThzfll-XY2tIWQ2anw,4
+test.centrify.dmc-0.0.1.dist-info/RECORD,,
