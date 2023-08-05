@@ -1,0 +1,3 @@
+[console_scripts]
+nesc = nesc.clis.cli:cli
+
