@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: extreme-parser
+Version: 1.10.3
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: parsel
+Requires-Dist: js2py
+
+UNKNOWN
+
