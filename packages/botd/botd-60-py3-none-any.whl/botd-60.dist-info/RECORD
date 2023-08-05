@@ -1,0 +1,12 @@
+botd-60.data/data/etc/rc.d/botd,sha256=N6mxxJkUMOSGIKDGVklgnfuuLxIAw15s9PltywhoNcM,284
+botd-60.data/data/lib/systemd/system/botd.service,sha256=dx-0cOAqtNANuGt44DI4t8gvdki4Sq2bBKr_nS4IiRs,259
+botd-60.data/data/man/man8/botctl.8.gz,sha256=D3ShrYSjp6gqEx8sDpgxTEbvc9cboklG4CD8e_laTZ8,873
+botd-60.data/data/man/man8/botd.8.gz,sha256=UnkZ-WTZSqs_rDaVQZrxWR85PDkrWsvMvp8AxKhgHws,871
+botd-60.data/data/share/doc/botd/botd.8.md,sha256=G3LaJASaBmWriA071NiGT5Ecj09WVEeQOefkvq4z16Q,1418
+botd-60.data/scripts/botctl,sha256=YYVzs5-OJoi6LBhVhB07ZDBAVSkTuSbWL4K2mt0Paf0,2167
+botd-60.data/scripts/botd,sha256=YzdyIFftuoVlBAkCCePxRjAdWTZrFXLY4ZecpgyO6Ug,1567
+botd-60.dist-info/METADATA,sha256=f4aL5Fcg9rfEMZ9u6Gm8YeR7Ftns5gKRlnkeIJyGFeo,1880
+botd-60.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+botd-60.dist-info/top_level.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+botd-60.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+botd-60.dist-info/RECORD,,
