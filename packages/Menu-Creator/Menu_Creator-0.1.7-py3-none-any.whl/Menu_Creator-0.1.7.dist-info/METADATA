@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: Menu-Creator
+Version: 0.1.7
+Summary: This module will allow you to quickly create interesting and user-friendly menus for console applications!
+Home-page: https://github.com/GolemIron/MenuCreator
+Author: Golem_Iron
+Author-email: timulep@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/GolemIron/MenuCreator/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7.9
+Description-Content-Type: text/markdown
+Requires-Dist: keyboard (<=0.13.5)
+
+# Description
+This module will allow you to quickly create interesting and user-friendly menus for console applications!
+
+ATTENTION: Required keyboard module
+
+# Code example
+```python
+from MenuCreator import CreateMenu
+
+Menu = CreateMenu(title="Example Menu", elements=[  
+    'First element',  
+    'Second element',  
+    'Third element'  
+])
+
+Menu.load_menu()  
+Menu.wait()
+
+if Menu.get_selected_item() == 0:
+    print("Selected first element!")
+
+elif Menu.get_selected_item() == 1:
+    print("Selected second element!")
+
+else:
+    pass
+
+
