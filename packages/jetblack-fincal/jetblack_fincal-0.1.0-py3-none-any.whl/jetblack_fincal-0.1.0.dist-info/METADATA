@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: jetblack-fincal
+Version: 0.1.0
+Summary: Financial calendars
+Home-page: https://github.com/rob-blackbourn/jetblack-fincal
+Author: Rob Blackbourn
+Author-email: rob.blackbourn@googlemail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: jetblack-datemath (>=1.0.1,<2.0.0)
+Project-URL: Repository, https://github.com/rob-blackbourn/jetblack-fincal
+Description-Content-Type: text/markdown
+
+# jetblack-fincal
+
+Financial calendars
+
