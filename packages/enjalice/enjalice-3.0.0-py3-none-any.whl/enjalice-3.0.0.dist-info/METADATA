@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: enjalice
+Version: 3.0.0
+Summary: EnjAlice is a asynchronous framework for Yandex Alice API
+Home-page: https://github.com/jottyVlad/EnjAlice
+License: MIT
+Keywords: alice,yandex,api,async,framework
+Author: jotty
+Author-email: bard143games@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Provides-Extra: aiohttp
+Requires-Dist: aiohttp[speedups] (>=3.7.4,<4.0.0); extra == "aiohttp"
+Requires-Dist: pydantic (>=1.8.2,<2.0.0)
+Project-URL: Documentation, https://enjalice.readthedocs.io/ru/latest/
+Project-URL: Repository, https://github.com/jottyVlad/EnjAlice
+Description-Content-Type: text/markdown
+
+# EnjAlice
+
+EnjAlice - асинхронная обёртка над API Яндекс.Алисы, которая предоставляет возможность быстро запустить и удобно разрабатывать callback диалоги.
+
+Документация доступна по ссылке: https://enjalice.readthedocs.io/ru/latest/
+
+## Установка
+
+```
+pip install enjalice
+```
+
+## Пример бота
+
+Все примеры находятся в папке /example
+
+## Copyright
+Проект имеет лицензию MIT.
+
+Copyright © Jotty
+
