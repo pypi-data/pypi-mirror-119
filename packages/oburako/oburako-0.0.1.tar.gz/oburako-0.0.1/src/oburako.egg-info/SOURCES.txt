@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/file_registry/__init__.py
+src/file_registry/file_registry.py
+src/oburako.egg-info/PKG-INFO
+src/oburako.egg-info/SOURCES.txt
+src/oburako.egg-info/dependency_links.txt
+src/oburako.egg-info/top_level.txt
