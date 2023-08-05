@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: spatial-soul
+Version: 0.1.3
+Summary: Spatial -omics utilities library
+Home-page: https://github.com/vibbits/spatial-soul
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+## spatial-soul: spatial omics utilities library
+
+spatial-soul is a tiny package with just a handful of helper functions used in a larger spatial -omics processing pipeline.
+
+
