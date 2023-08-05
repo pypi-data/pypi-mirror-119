@@ -1,0 +1,7 @@
+[console_scripts]
+ems = erhsh.ms.cli:ms_cli
+emsd = erhsh.ms.demo.cli:msd_cli
+ept = erhsh.pt.cli:pt_cli
+eptd = erhsh.pt.demo.cli:ptd_cli
+etools = erhsh.tools.cli:tools_cli
+
