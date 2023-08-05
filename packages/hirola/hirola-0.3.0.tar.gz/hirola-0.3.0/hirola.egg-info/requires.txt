@@ -1,0 +1,9 @@
+cslug
+numpy
+
+[test]
+pytest>=3
+pytest-order
+coverage
+pytest-cov
+coverage-conditional-plugin
