@@ -1,0 +1,9 @@
+labellines/__init__.py,sha256=s9C4S3WQyXKVswUKx3oW2_LhUFqU2FhhwC2FsQwABnc,75
+labellines/core.py,sha256=Tu4lOvUpaCM-K9qSVk5NV-hoFo3170eqI1bcsmTn3pE,8290
+labellines/test.py,sha256=u9x8yjHybpz3xrVGlVpRphNwwa4OoqAKOq1HNsHypwo,7317
+labellines/utils.py,sha256=YAi9pizTSWPPhs8PaQyN_wEDMF4skE_38PLW8VmbU1k,3195
+matplotlib_label_lines-0.4.1.dist-info/LICENSE,sha256=rVDx2f1yWw5KgTQdIjnSoP0zHmj64WDT_jJ3Q7OOEoI,1072
+matplotlib_label_lines-0.4.1.dist-info/METADATA,sha256=du8cJeb_cPWOy35xOCH7FC_02HIvv5zquhjYbgi3kto,3878
+matplotlib_label_lines-0.4.1.dist-info/WHEEL,sha256=EVRjI69F5qVjm_YgqcTXPnTAv3BfSUr0WVAHuSP3Xoo,92
+matplotlib_label_lines-0.4.1.dist-info/top_level.txt,sha256=x9EFsGrVNZbWyOdhUqMtoBeVaW6raPSbrMGnHnWml1E,11
+matplotlib_label_lines-0.4.1.dist-info/RECORD,,
