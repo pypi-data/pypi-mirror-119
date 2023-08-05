@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+LinAlgebraPy/__init__.py
+LinAlgebraPy.egg-info/PKG-INFO
+LinAlgebraPy.egg-info/SOURCES.txt
+LinAlgebraPy.egg-info/dependency_links.txt
+LinAlgebraPy.egg-info/top_level.txt
+LinAlgebraPy/matrices/__init__.py
+LinAlgebraPy/matrices/matrix.py
+LinAlgebraPy/matrices/matrixfunc.py
+LinAlgebraPy/vectors/__init__.py
+LinAlgebraPy/vectors/vector.py
+LinAlgebraPy/vectors/vectorfunc.py
+test/__init__.py
+test/test_m.py
