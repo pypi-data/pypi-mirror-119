@@ -1,0 +1,16 @@
+AUTHORS.md
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+src/to_delete/__init__.py
+src/to_delete/__main__.py
+src/to_delete.egg-info/PKG-INFO
+src/to_delete.egg-info/SOURCES.txt
+src/to_delete.egg-info/dependency_links.txt
+src/to_delete.egg-info/entry_points.txt
+src/to_delete.egg-info/not-zip-safe
+src/to_delete.egg-info/top_level.txt
