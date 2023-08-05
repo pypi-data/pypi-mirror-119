@@ -1,0 +1,13 @@
+boardroom/__init__.py,sha256=lzpooRmXBIkNz-c7f7CUCmDsXHa1nuz6K5etADSVA8o,245
+boardroom/__main__.py,sha256=mhGUnRiJALiqv6YbIfdKjqihQaTrF0GvISxX6ZdT2_c,46
+boardroom/errors.py,sha256=zqKGUO8hJPzcrJFFQh0ggvh6MEwveSE552DvoziYvaQ,87
+boardroom/functions.py,sha256=s93C1PteJfwdGULzEX--1hHRXMC-fJjN5E-urh5pafQ,3984
+boardroom/params.py,sha256=GnwOGQwS1EXvwiPdGnwG6JlxpnnoJzz9dLYVhxCn7iA,902
+boardroom/proposal.py,sha256=K60MtHKYED-7pqt5MPsjO3QqQDRSL3Ybk2r74kjGNMc,3250
+boardroom/protocol.py,sha256=pSya9uD-dLhTJ9JTtW-MlXyS3riaZeUQZl-DqPj-cd8,4818
+boardroom/voter.py,sha256=9OIMwugOS_oJr4H921kBafSrl_w9zBFeheAziWWoR_E,4516
+boardroom-0.1.dist-info/LICENSE,sha256=vS7E8U9y0sValPhuS3XYI-7opsaUJHp9KCRfHa5U6Ls,1072
+boardroom-0.1.dist-info/METADATA,sha256=dHJr91FrgsNSO35cHLEdwhM-BqBjqXnbEzVKXjrMb6M,856
+boardroom-0.1.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+boardroom-0.1.dist-info/top_level.txt,sha256=pmgiVWNxeaAgBEZkMVrO2aUKrmkmB3hjBRynTCoo7fk,10
+boardroom-0.1.dist-info/RECORD,,
