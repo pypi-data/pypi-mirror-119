@@ -1,0 +1,16 @@
+docs/config.yaml,sha256=QY4gvl21VtaBj1QOsr6WrCK0NZKqc0gVoVhp5SlXN0c,1185
+paperpile_notion/commands.py,sha256=0fxct16tThJlAz8XqSMBxnF9UKyBI4j5cHIk66kuzB0,4941
+paperpile_notion/from_bib.py,sha256=fUl_cANEU47dCiuaeEBM9hWFJI8yipvtn1DfYCAvc84,3918
+paperpile_notion/models/__init__.py,sha256=mo9M-8EzPaIXjXd-Xtubrz8P2AqObmr0e6oT4sTP7uk,152
+paperpile_notion/models/_models.py,sha256=9PJAsi7qXJmMCkptaS0LcyLtGXJD09JRl9LLPYM8aqE,2346
+paperpile_notion/models/cells.py,sha256=-DYfW3dNv0qh05Z1qS4_vpVKukXRKeQ3WFoBK5N6Uqc,4174
+paperpile_notion/models/validators.py,sha256=wKYokltCvDnUfmNS5TDeY0nEmeTLv6bKJx8BC4dkPvA,853
+paperpile_notion/utils/__init__.py,sha256=6Uh2QbTq6I78wlJZKetYUsv6pmYN8xgPm7UhK42USI0,59
+paperpile_notion/utils/bibtex.py,sha256=WCvPCW3gtg3QFdhI6yZe_w49PZ2tXXuHtYeNv6Ony2U,3484
+paperpile_notion/utils/notion.py,sha256=o_4taxy2qFJJqrkSj_LYMOnc7wYhOB4bn5IituJdNYU,2285
+paperpile_notion/utils/printers.py,sha256=Tu5HOvFGleAgURXTxjoSeF6U7W9A_WhLcJTkChAwKRE,849
+paperpile_notion-0.3.4.dist-info/entry_points.txt,sha256=fQpo1hffWWHqY6gKNuba5cUrckuCjb1IydSKLICFkQ0,66
+paperpile_notion-0.3.4.dist-info/LICENSE,sha256=jM8Hfxx_Xg4wlim_jo_2m6zmfmNF9EYtqLj5ny5ImgQ,1095
+paperpile_notion-0.3.4.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+paperpile_notion-0.3.4.dist-info/METADATA,sha256=cHyEwlIOOO7JcGJKXrSeaK7cN9giIWW12xJ_7t7sq4g,4501
+paperpile_notion-0.3.4.dist-info/RECORD,,
