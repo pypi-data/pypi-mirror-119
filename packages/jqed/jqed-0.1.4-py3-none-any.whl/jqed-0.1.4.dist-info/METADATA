@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: jqed
+Version: 0.1.4
+Summary: Process JSON data interactively using JQ
+Home-page: https://github.com/Wazzaps/jqed
+Author: David Shlemayev
+Author-email: david.shlemayev@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Utilities
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Text Processing
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: urwid (>=2.1)
+Requires-Dist: urwid-readline (>=0.13)
+
+# json interactive stream editor
+
+A tool inspired by [Ultimate Plumber](https://github.com/akavel/up) that uses [jq](https://stedolan.github.io/jq) to process JSON and show you the results instantly, to enable greater interactivity.
+
+[![asciicast](https://asciinema.org/a/313423.svg)](https://asciinema.org/a/313423)
+
+[A manual for jq can be found here.](https://stedolan.github.io/jq/manual)
+
+## Download & Install
+
+```bash
+sudo apt install jq  # <-- Install the jq tool, on MacOS install using `brew install jq`
+pip3 install jqed
+```
+
+## Usage / Examples
+```sh
+cat some_file.json | jqed
+ip --json link | jqed
+```
+
+

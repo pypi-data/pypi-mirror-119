@@ -1,0 +1,3 @@
+[console_scripts]
+jqed=jqed.jqed:cli
+
