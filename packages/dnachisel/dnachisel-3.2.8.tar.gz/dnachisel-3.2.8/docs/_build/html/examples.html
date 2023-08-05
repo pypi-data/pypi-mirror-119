@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Examples</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/css/press_main.css" type="text/css" />
+          <link rel="stylesheet" href="_static/css/press_main.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="prev" title="Genbank usage notes" href="genbank/genbank_notes.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <img class="logo" src="_static/html_logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="index.html#related-projects"
+         class="nav-link ">
+         Reference
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#related-projects"
+         class="nav-link ">
+         Using Genbanks
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#related-projects"
+         class="nav-link  router-link-active">
+         Examples
+      </a>
+    </div>
+  
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://github.com/Edinburgh-Genome-Foundry/DnaChisel"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="index.html#related-projects"
+         class="nav-link ">
+         Reference
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#related-projects"
+         class="nav-link ">
+         Using Genbanks
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="index.html#related-projects"
+         class="nav-link  router-link-active">
+         Examples
+      </a>
+    </div>
+  
+
+
+
+  
+    <div class="nav-item">
+      <a href="https://github.com/Edinburgh-Genome-Foundry/DnaChisel"
+        class="nav-link external">
+          Github <outboundlink/>
+      </a>
+    </div>
+  
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#related-projects">Reference</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="ref/core_classes.html" class="reference internal ">Core Classes</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="ref/reports.html" class="reference internal ">Reports</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="ref/constraints_reports.html" class="reference internal ">Constraints reports</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="ref/biotools.html" class="reference internal ">Biotools</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="ref/builtin_specifications.html" class="reference internal ">Built-in Specifications</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="ref/cli.html" class="reference internal ">Command Line Interface</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="notes.html" class="reference internal ">Notes</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#related-projects">Using Genbanks</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="genbank/genbank_api.html" class="reference internal ">Genbank API</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="genbank/genbank_notes.html" class="reference internal ">Genbank usage notes</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#related-projects">Examples</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Examples</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#examples" class="reference internal">Examples</a></li>
+                
+                  <li class="toctree-l2"><a href="#basic-examples" class="reference internal">Basic examples</a></li>
+                
+                  <li class="toctree-l2"><a href="#advanced-examples" class="reference internal">Advanced examples</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Examples</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="genbank/genbank_notes.html"
+       title="previous chapter">← Genbank usage notes</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="examples">
+<h1><a class="toc-backref" href="#id1">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<p>Note: all examples here are available in the <code class="docutils literal notranslate"><span class="pre">examples/</span></code> folder of the
+code repository</p>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#examples" id="id1">Examples</a></p></li>
+<li><p><a class="reference internal" href="#basic-examples" id="id2">Basic examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#optimization-with-report" id="id3">Optimization with report</a></p></li>
+<li><p><a class="reference internal" href="#optimization-of-a-circular-sequence" id="id4">Optimization of a circular sequence</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#advanced-examples" id="id5">Advanced examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sequence-standardization-domestication" id="id6">Sequence standardization/domestication</a></p></li>
+<li><p><a class="reference internal" href="#programmatic-optimization-of-a-full-genome" id="id7">Programmatic optimization of a full genome</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-collection-of-compatible-primers" id="id8">Creating a collection of compatible primers</a></p></li>
+<li><p><a class="reference internal" href="#writing-a-custom-specification-9-mer-score" id="id9">Writing a custom Specification: 9-mer score</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-sequence-without-e-coli-tf-binding-sites" id="id10">Creating a sequence without E. coli TF binding sites</a></p></li>
+<li><p><a class="reference internal" href="#constraints-reports-example" id="id11">Constraints reports example</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="basic-examples">
+<h1><a class="toc-backref" href="#id2">Basic examples</a><a class="headerlink" href="#basic-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="optimization-with-report">
+<h2><a class="toc-backref" href="#id3">Optimization with report</a><a class="headerlink" href="#optimization-with-report" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="optimization-of-a-circular-sequence">
+<h2><a class="toc-backref" href="#id4">Optimization of a circular sequence</a><a class="headerlink" href="#optimization-of-a-circular-sequence" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="advanced-examples">
+<h1><a class="toc-backref" href="#id5">Advanced examples</a><a class="headerlink" href="#advanced-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sequence-standardization-domestication">
+<h2><a class="toc-backref" href="#id6">Sequence standardization/domestication</a><a class="headerlink" href="#sequence-standardization-domestication" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="programmatic-optimization-of-a-full-genome">
+<h2><a class="toc-backref" href="#id7">Programmatic optimization of a full genome</a><a class="headerlink" href="#programmatic-optimization-of-a-full-genome" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="creating-a-collection-of-compatible-primers">
+<h2><a class="toc-backref" href="#id8">Creating a collection of compatible primers</a><a class="headerlink" href="#creating-a-collection-of-compatible-primers" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="writing-a-custom-specification-9-mer-score">
+<h2><a class="toc-backref" href="#id9">Writing a custom Specification: 9-mer score</a><a class="headerlink" href="#writing-a-custom-specification-9-mer-score" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="creating-a-sequence-without-e-coli-tf-binding-sites">
+<h2><a class="toc-backref" href="#id10">Creating a sequence without E. coli TF binding sites</a><a class="headerlink" href="#creating-a-sequence-without-e-coli-tf-binding-sites" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="constraints-reports-example">
+<h2><a class="toc-backref" href="#id11">Constraints reports example</a><a class="headerlink" href="#constraints-reports-example" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="genbank/genbank_notes.html"
+       title="previous chapter">← Genbank usage notes</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2019, Edinburgh Genome Foundry.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
