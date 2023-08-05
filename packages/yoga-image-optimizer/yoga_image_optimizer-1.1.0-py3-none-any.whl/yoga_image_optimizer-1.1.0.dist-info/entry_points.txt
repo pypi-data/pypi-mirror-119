@@ -1,0 +1,3 @@
+[console_scripts]
+yoga-image-optimizer = yoga_image_optimizer.__main__:main
+
