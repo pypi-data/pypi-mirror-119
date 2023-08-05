@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: raya
+Version: 0.6.0
+Summary: Raya - Unlimited Robotics Python Library
+Home-page: UNKNOWN
+Author: Camilo Camacho
+Author-email: camilo@unlimited-robotics.com
+License: MIT
+Keywords: robotics,unlimited-robotics,gary
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: numpy (>=1.21.1)
+Requires-Dist: asgiref (>=3.4.1)
+Requires-Dist: opencv-python (>=4.5.3.56)
+
+# Raya - Unlimited Robotics Python Library
+
+Documentation: https://documentation.unlimited-robotics.com/
+
+
+
