@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: seems-legit-cache
+Version: 0.1.0
+Summary: A dict-based cache that's probably fine to use
+Home-page: https://github.com/lucperkins/seems-legit-cache
+Author: Luc Perkins
+Author-email: lucperkins@gmail.com
+License: MIT
+Platform: UNKNOWN
+License-File: LICENSE
+
+# Seems Legit Cache
+
+A caching library that's probably pretty good. I dunno.
+

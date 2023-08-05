@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+seems_legit_cache.egg-info/PKG-INFO
+seems_legit_cache.egg-info/SOURCES.txt
+seems_legit_cache.egg-info/dependency_links.txt
+seems_legit_cache.egg-info/requires.txt
+seems_legit_cache.egg-info/top_level.txt
+seems_legit_cache.egg-info/zip-safe
+seemslegitcache/__init__.py
