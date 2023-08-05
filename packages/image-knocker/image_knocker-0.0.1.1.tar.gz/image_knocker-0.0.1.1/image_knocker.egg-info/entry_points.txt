@@ -1,0 +1,3 @@
+[console_scripts]
+image-knocker = image_knocker.image_knocker:main
+
