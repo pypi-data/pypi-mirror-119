@@ -1,0 +1,11 @@
+odbctools/__init__.py,sha256=Xz4LXYLUhoj2UgcDxoWTa7gtyWjJTvXH9gfiKBUNoa8,38
+odbctools/odbcmanager/__init__.py,sha256=Xz4LXYLUhoj2UgcDxoWTa7gtyWjJTvXH9gfiKBUNoa8,38
+odbctools/odbcmanager/odbcmanager.py,sha256=4bZ65vRh2Dc5lHCC_FvrBNYWMOQmV51khEIGvo0fwFg,5442
+odbctools/odbcmanager/pypyodbc.py,sha256=_4FLI_AwE4vFFSih0ooQm-I924aMZ2fJHpetCNs1Tv4,109416
+odbctools/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+odbctools/tests/odbcmanager_tests.py,sha256=Z6VeBtw1cKoDJKJF0vEaMYPolwCpgvjvQ6OiEjqhtuI,1711
+odbctools-0.7.0.dist-info/LICENSE,sha256=J5xhdk1LrxL1a4jF-fhu-JTXraxb0JyLo-Tdk7J5xcQ,1107
+odbctools-0.7.0.dist-info/METADATA,sha256=0Ngz3t5MX1fu7-0PUUWjSm1cNwbg9gwTZ-RmaC1Ao2U,3381
+odbctools-0.7.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+odbctools-0.7.0.dist-info/top_level.txt,sha256=Z-HBxh8BmF-nz-wgaz5znnN-Wt4bmiRSm_cUxK_Zv_I,10
+odbctools-0.7.0.dist-info/RECORD,,
