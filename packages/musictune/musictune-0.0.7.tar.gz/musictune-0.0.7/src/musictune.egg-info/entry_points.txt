@@ -1,0 +1,4 @@
+[console_scripts]
+pzf2zarr = musictune.scripts.pzf2zarr:main
+start_cluster = musictune.scripts.start_cluster:main
+
