@@ -1,0 +1,7 @@
+requests
+cloudscraper
+pillow
+lxml
+natsort
+cssselect
+colorama
