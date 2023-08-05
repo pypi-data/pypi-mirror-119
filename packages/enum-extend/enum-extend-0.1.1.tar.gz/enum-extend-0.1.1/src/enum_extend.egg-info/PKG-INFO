@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: enum-extend
+Version: 0.1.1
+Summary: Enum base classes that support enum comparsion and auto numbering with doc strings
+Home-page: https://github.com/Amourspirit/python-enum-extend
+Author: :Barry-Thomas-Paul: Moss
+Author-email: bigbytetech@gmail.com
+License: MIT
+Keywords: python,enum,autoenum,compare-enum,enum-compare,enum-docstring
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.4.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![codecov](https://codecov.io/gh/Amourspirit/python-enum-extend/branch/master/graph/badge.svg?token=FR0OBGG97C)](https://codecov.io/gh/Amourspirit/python-enum-extend) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/enum-extend) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/enum-extend)
+
+# Python enum-extended module
+
+Enum Extend classes.
+
+## Docs
+
+Read the docs [here](https://python-enum-extend.readthedocs.io/)
+
+## Install
+
+### PIP
+
+```bash
+pip install enum-extend
+```
+
+## EnumComparable
+
+EnumComparable class is designed for comparsion of Integer based enums.
+
+Allows child classes to be compared using the following comparsion operaters.
+
+`==`, `!=`, `<`, `<=`, `>`, `>=`, `+`, `+=`, `-`, and `-=`.
+
+## AutoEnum
+
+AutoEnum class is a child class of EnumComparable.
+
+Allows child classed to be auto numbered with Docstring.
+
+
