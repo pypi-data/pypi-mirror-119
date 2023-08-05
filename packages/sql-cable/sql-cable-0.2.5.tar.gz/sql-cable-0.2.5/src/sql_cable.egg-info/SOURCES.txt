@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/sql_cable/__init__.py
+src/sql_cable/columns.py
+src/sql_cable/migrations.py
+src/sql_cable/model.py
+src/sql_cable.egg-info/PKG-INFO
+src/sql_cable.egg-info/SOURCES.txt
+src/sql_cable.egg-info/dependency_links.txt
+src/sql_cable.egg-info/top_level.txt
+src/sql_cable/querys/__init__.py
+src/sql_cable/querys/delete.py
+src/sql_cable/querys/insert.py
+src/sql_cable/querys/select.py
+src/sql_cable/querys/update.py
