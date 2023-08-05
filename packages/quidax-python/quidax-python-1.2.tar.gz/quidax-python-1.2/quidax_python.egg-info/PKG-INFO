@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: quidax-python
+Version: 1.2
+Summary: A python library to consume Quidax API
+Home-page: UNKNOWN
+Author-email: oye@appstate.co
+License: MIT
+Description: # quidax-python
+        
+        
+        Python plugin for [Quidax](https://www.quidax.com/)
+        View on [pypi.python.org](https://pypi.org/project/quidax-python/)
+        
+        ## Installation
+        
+        ```shell
+        pip install quidax-python
+        ```
+        
+        ## Instantiate Quidax
+        
+        ```python
+        from quidaxapi.quidax import Quidax
+        quidax_secret_key = "5om3secretK3y"
+        quidax = Quidax(secret_key=quidax_secret_key)
+        
+        # to use users class
+        quidax.users.all_sub_account()
+        
+        # to list all markets
+        quidax.markets.list_all_markets()
+        
+        # to fetch user trades
+        quidax.trades.trades(user_id)
+        
+        # to fetch wallets from a user and a specific wallet.
+        quidax.wallets.fetch_a_specific_currency_wallet(user_id, currency)
+        ```
+        
+        ## DOC Reference: <https://developer.quidax.com/>
+        
+        ### Other methods can be found in the docs folder
+        
+        
+        ### Available resources
+        
+        ```Python
+        
+        Users
+        Orders
+        InstantOrders
+        Markets
+        Wallets
+        Withdrawal
+        Deposits
+        Trades
+        Quotes
+        ```
+        
+        Please reference the **docs** folder for usage,
+        
+        This repo won't be possible without the hard work of [andela-sjames](https://github.com/andela-sjames).
+Keywords: quidax python library
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
