@@ -1,0 +1,93 @@
+{% load i18n %}{% load static %}
+<html>
+  <header>
+    <script type="text/javascript" src="https://unpkg.com/vue" defer></script>
+    <script src="https://unpkg.com/pev2/dist/pev2.umd.js" defer></script>
+    <link
+      href="https://unpkg.com/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@fortawesome/fontawesome-free@5.13.0/css/all.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 10px;
+      }
+      #app {
+        height: 100%;
+      }
+      #djDebug pre {
+        white-space: pre-wrap;
+        color: #555;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        background-color: #fff;
+        display: block;
+        overflow: auto;
+        padding: 2px 3px;
+        margin-bottom: 3px;
+        font-family: Consolas, Monaco, "Bitstream Vera Sans Mono",
+          "Lucida Console", monospace;
+      }
+      #djDebug .djdt-stack span {
+        color: #000;
+        font-weight: bold;
+      }
+      #djDebug .djdt-stack span.djdt-path,
+      #djDebug .djdt-stack pre.djdt-locals,
+      #djDebug .djdt-stack pre.djdt-locals span {
+        color: #777;
+        font-weight: normal;
+      }
+      #djDebug .djdt-stack span.djdt-code {
+        font-weight: normal;
+      }
+      #djDebug .djdt-stack pre.djdt-locals {
+        margin: 0 27px 27px 27px;
+      }
+    </style>
+  </header>
+
+  <body onload="render()">
+    <h3>{{plan_title}}</h3>
+    <span><b>Link:</b> <a href="{{url}}">{{url}}</a> </span>
+    <span><b>Database:</b> {{alias}} </span>
+    <span><b>Created:</b> {{created}} </span>
+      <details>
+        <summary><b>SQL</b></summary>
+        {{formatted_sql | safe}}
+      </details>
+    {% if stacktrace %}
+    <details id="djDebug">
+      <summary><b>Stack Trace</b></summary>
+      <pre class="djdt-stack">{{ stacktrace |safe}}</pre>
+    </details>
+    {% endif %}
+    <div id="pev2">
+      <pev2 :plan-source="plan" :plan-query="query"></pev2>
+    </div>
+
+    <script type="text/javascript">
+      function render() {
+        const plan = `{{ plan|safe }}`;
+        const query = `{{ sql|safe}}`;
+        new Vue({
+          el: "#pev2",
+          data: function () {
+            return {
+              plan,
+              query,
+            };
+          },
+          components: {
+            pev2: pev2,
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
