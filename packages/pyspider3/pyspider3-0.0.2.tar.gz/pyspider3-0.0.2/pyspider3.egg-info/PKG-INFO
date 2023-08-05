@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: pyspider3
+Version: 0.0.2
+Summary: 由于pyspider模块年久失修，pyspider3基于原作者github源码制作而成
+Home-page: https://github.com/binux/pyspider
+Author: kts168
+Author-email: kts168@163.com
+License: Apache License, Version 2.0
+Description: # Example Package
+        
+        由于pyspider模块年久失修，pyspider3基于原作者github源码制作而成
+        
+        https://github.com/binux/pyspider
+Keywords: scrapy crawler spider webui
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Web Environment
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Provides-Extra: all
+Provides-Extra: test
