@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: tracardi-maxmind-geolite2
+Version: 0.1.5
+Summary: The purpose of this plugin is to connect to maxmind geolite2 and retrieve location data.
+Home-page: UNKNOWN
+Author: Risto Kowaczewski
+Author-email: risto.kowaczewski@gmail.com
+License: UNKNOWN
+Keywords: tracardi,plugin
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+
+# GeoLite2 plugin
+
+This plugin reads connects geoIP servers and returns localisation based on the provided ip address.
+
+# Configuration
+
+Example:
+
+```json
+{
+  "source": {
+    "id": "5600c92a-835d-4fbe-a11d-7076fd983434"
+  },
+  "ip": "payload@ip"
+}
+```
+
+To run this plugin you must provide source id that has configured GeoLite2 server credentials.
+
+Example of source configuration for GeoLite2 API:
+
+```json
+{
+  "webservice": {
+    "accountId": <you-account-id>,
+    "license": <license-key>
+  }
+}
+```
+
+You must provide `license-key` and `account-id` to connect to MaxMind GeoLite2 API.
+
+Example of source configuration for GeoLite2 local database file:
+
+```json
+{
+  "database": <path-to-database>
+}
+```
+
+If you provide local database for city locations you can use it locally without connecting to remote API.
+
+
