@@ -1,0 +1,12 @@
+zensols/nlp/__init__.py,sha256=wYl34jG0yUohIEvxkVcuhWR5CtLZzh2Mqz4gZEuHIV8,136
+zensols/nlp/container.py,sha256=EInikFtTG966rKNFFD-a7Y1qarlyYWKfsGvEGJ1NNOg,16360
+zensols/nlp/dataframe.py,sha256=utzZui8oQhtKqTnuJYCPd0rASKFRmKs2ioFZ0BDspNY,1129
+zensols/nlp/docparser.py,sha256=KJ80sWnmYWC75W0ghCp6PBnk7cohQSZfAXJJn8rFOkw,3503
+zensols/nlp/feature.py,sha256=boOb3BTm4MsVXHdan5qQEFVaZk8GPrt6gaUUT7jf3tA,10744
+zensols/nlp/lang.py,sha256=KyDOzELZlClbUlp30TedYVYOFy-k_Vals9p8WUkzUgI,11000
+zensols/nlp/norm.py,sha256=2fgD4gCTldEEUay39_irxRoBwSjEPl0ahEy--sunQiM,10705
+zensols/nlp/stemmer.py,sha256=51LPX85jCuG_PBIO0VNVDtHHKc2dD4EVq2k-mjFsFIU,576
+zensols.nlp-0.1.1.dist-info/METADATA,sha256=DlfTRrfLT8CE8qQMvbeCidZHiJcRKfFJo_cWrnuCLoQ,3417
+zensols.nlp-0.1.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+zensols.nlp-0.1.1.dist-info/top_level.txt,sha256=NgD-P1jf-0xvfkWIxho1IVPkpl2JLBaIjIssgP_pkw8,12
+zensols.nlp-0.1.1.dist-info/RECORD,,
