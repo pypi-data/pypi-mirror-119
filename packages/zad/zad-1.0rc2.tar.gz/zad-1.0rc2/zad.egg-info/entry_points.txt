@@ -1,0 +1,3 @@
+[console_scripts]
+zad = zad.app:run
+
