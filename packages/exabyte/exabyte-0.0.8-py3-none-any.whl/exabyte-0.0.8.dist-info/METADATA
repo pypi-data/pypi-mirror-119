@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: exabyte
+Version: 0.0.8
+Summary: Distributed learning.
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: dask-saturn
+Requires-Dist: dask
+Requires-Dist: distributed
+Requires-Dist: joblib
+
+# Install
+
+You should probably create a virtual environment.
+
+python3 -m pip install exabyte
+
+
