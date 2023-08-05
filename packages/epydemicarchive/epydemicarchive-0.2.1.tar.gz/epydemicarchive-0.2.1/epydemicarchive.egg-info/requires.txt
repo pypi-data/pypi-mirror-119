@@ -1,0 +1,16 @@
+epydemic>=1.7.1
+networkx>=2.4
+numpy>=1.18
+pyyaml
+pyopenssl
+python-dotenv
+flask
+flask-bootstrap
+flask-wtf
+email_validator
+flask-sqlalchemy
+flask-migrate
+flask-login
+flask-httpauth
+requests
+requests-toolbelt
