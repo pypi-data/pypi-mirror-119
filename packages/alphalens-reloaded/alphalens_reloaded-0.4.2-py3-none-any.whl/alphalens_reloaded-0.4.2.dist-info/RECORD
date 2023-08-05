@@ -1,0 +1,15 @@
+alphalens/__init__.py,sha256=RITDu3CNkL2urlOyguS2B_mKNly0WV4p3aEPb2TDnY4,241
+alphalens/_version.py,sha256=9URRwmnZOhw1Gnb4FaazngKhz717QWlvoI3lm5jBt1o,497
+alphalens/performance.py,sha256=r1HQ5fhBgdbdgL0I3XLmvdNbBwTn6ZoW9hBQjCatjmg,44175
+alphalens/plotting.py,sha256=qPt1d4Utjkhass_K5DrVbiLpNUVrkMmhvb-_AAHlb9o,29057
+alphalens/tears.py,sha256=VFkAf9oo7nvk4PJvOTKGXAA3Brk9hWfgkF0Ak7bdSUc,23965
+alphalens/utils.py,sha256=EupE5xCeJeWYz2EAh99rpZ0_agYL2U1W_q4TGJBx1aQ,41543
+alphalens/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+alphalens/tests/test_performance.py,sha256=d5yfPZJaIfAs8E_GDxAjh9XQ3B6Bev_ZfvxzpqzvVzI,50468
+alphalens/tests/test_tears.py,sha256=7RsBClZMCadtebJgUEHyID7u9aMnRn_GOH9a0tT-J6s,13303
+alphalens/tests/test_utils.py,sha256=lX-WJNrNIBmiOADhzkHAEpO5WJ7036nOL0CDeIHyFPs,25791
+alphalens_reloaded-0.4.2.dist-info/LICENSE,sha256=K2UcLSnGRNHHNBfNlubPpQbW3hAu2W_D3pbWduCJzyk,11346
+alphalens_reloaded-0.4.2.dist-info/METADATA,sha256=ALRx7INYS0EeQu2W7iemDUYmWzSgjqPodth4ScY19Mc,7999
+alphalens_reloaded-0.4.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+alphalens_reloaded-0.4.2.dist-info/top_level.txt,sha256=uRRSJxUNf3C_dlfHktOhnvuRluqgl7aD2E4bDR1bqVg,10
+alphalens_reloaded-0.4.2.dist-info/RECORD,,
