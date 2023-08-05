@@ -1,0 +1,12 @@
+frage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+frage/__main__.py,sha256=V1hMlkUu0BWZQscHR3EvfG8Tc78KqRS5C2pPVDCHS38,790
+frage/compiler.py,sha256=O4BmyAd88o0R4WhnaN9PyMscG6uLVGQaNtk06tsIubk,594
+frage/config.py,sha256=PK0OBe0tS6ac6wLN6OGMyEEhhIu7IXt3OXUEyCxRAJ0,1464
+frage/http.py,sha256=lBxVhPpPj-fBHD9RN_tVlhvD8u8Ca0ylIUEhQyKqzIw,685
+frage/models.py,sha256=gf9moPRbHkll2j7n8izdMQa0gpbOJFc31neM_6DZH0E,822
+frage/parser.py,sha256=5ca-rItf-jDbubl3gmplYODlQDeYCx-o1V4Vij9xuuo,504
+frage-0.3.0.dist-info/entry_points.txt,sha256=iB8JMJbjlZWfsXUswQtAtcxgKUfypjP4HagXg-y_G2k,44
+frage-0.3.0.dist-info/LICENSE,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+frage-0.3.0.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+frage-0.3.0.dist-info/METADATA,sha256=0XnbNsLB3d1osXeWptbasw7yvSBjlc8xqivx-R9v1mw,1001
+frage-0.3.0.dist-info/RECORD,,
