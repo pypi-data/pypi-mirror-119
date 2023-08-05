@@ -1,0 +1,12 @@
+colored
+dict-toolbox>=2
+jinja2>=3.0.1
+pop>=16.4
+pyyaml>=5.1
+toml
+
+[full]
+jsonnet
+
+[jsonnet]
+jsonnet
