@@ -1,0 +1,5 @@
+[console_scripts]
+inkid-rclone-upload = inkid.scripts.rclone_upload:main
+inkid-summary = inkid.scripts.create_summary_images:main
+inkid-train-and-predict = inkid.scripts.train_and_predict:main
+
