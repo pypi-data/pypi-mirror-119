@@ -1,0 +1,22 @@
+
+▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒
+ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+ ▒▒▒▒▒▒▒▒██████╗▒▒██╗▒██████╗████████╗▒▒▒▒▒▒
+ ▒▒▒▒▒▒▒▒██╔══██╗███║██╔════╝╚══██╔══╝▒▒▒▒▒▒
+ ▒▒▒▒▒▒▒▒██║▒▒██║╚██║██║▒▒▒▒▒▒▒▒██║▒▒▒▒▒▒▒▒▒
+ ▒▒▒▒▒▒▒▒██║▒▒██║▒██║██║▒▒▒▒▒▒▒▒██║▒▒▒▒▒▒▒▒▒
+ ▒▒▒▒▒▒▒▒██████╔╝▒██║╚██████╗▒▒▒██║▒▒▒▒▒▒▒▒▒
+ ▒▒▒▒▒▒▒▒╚═════╝▒▒╚═╝▒╚═════╝▒▒▒╚═╝▒▒▒▒▒▒▒▒▒
+ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒▓▒
+
+d1ct
+Another earth-shattering invention
+UltrafunkAmsterdam (c) 2021
+
+
+d1ct is a hybrid object/mapping. In contrast to some other attempts
+from developers, this one is json serializable, subclassable, metaclassable,
+dict attribute accessible, **unpackable, interchangable with dict and back.
+
+minor detail: it is recursive, and autocomplete works in 95% of the cases, even if returned from a list.
