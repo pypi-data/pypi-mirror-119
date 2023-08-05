@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: django_nonmodel_admin
+Version: 0.1.1
+Summary: Allows to add sections to django admin which are not tied to any model. They can render some template for example.
+Home-page: https://github.com/pawnhearts/django_nonmodel_admin
+Author: robot naoborot
+Author-email: robotnaoborot@gmail.com
+License: MIT license
+Keywords: django_nonmodel_admin
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+
+=====================
+Django NonModel Admin
+=====================
+
+
+
+Allows to add sections to django admin which are not tied to any model. They can render some template for example.
+
+=====
+Usage
+=====
+
+In admins.py::
+
+    from django_nonmodel_admin import NonModelAdmin, register
+
+    @register()
+    class DashboardAdmin(NonModelAdmin):
+        name = 'dashboard'
+        verbose_name = 'My dashboard'
+        change_list_template = "my_app/dashboard.html"
+
+register decorator can be used with regular ModelAdmin's too.
+
+Template example::
+
+    {% extends "admin/change_list.html" %}
+    {% block content %}
+    <div id="content-main">
+    ,,, your stuff
+    </div>
+    {% endblock %}
+
+Extra context can be defined via overwriting get_extra_context method of NonModelAdmin.
+
+It can be extended like regular ModelAdmin, for example you can define own get_urls method.
+
+You DON'T have to add anything to INSTALLED_APPS.
+
+* Free software: MIT license
+
+
+
+
+=======
+History
+=======
+
+0.1.0 (2021-09-07)
+------------------
+
+* First release on PyPI.
+
+
