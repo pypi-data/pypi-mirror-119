@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: jupyterlab_gpustats
+Version: 1.0.1
+Summary: gpustats extension for JupyterLab.
+Home-page: https://txn2.com
+Author: gpustats
+License: BSD-3-Clause
+Description: # JupyterLab GPU Stats Extension
+        
+Keywords: Jupyter,JupyterLab,JupyterLab3
+Platform: Linux
+Platform: Mac OS X
+Platform: Windows
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Framework :: Jupyter
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

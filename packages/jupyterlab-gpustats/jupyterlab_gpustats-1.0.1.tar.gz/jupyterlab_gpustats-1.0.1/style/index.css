@@ -1,0 +1,19 @@
+#jp-MainLogo {
+    visibility: hidden;
+    display: none;
+}
+
+.jp-gpustats-header {
+}
+
+.jp-gpustats-msg-button {
+    margin-right: 5px;
+}
+
+.jp-gpustats-logo {
+    width: 140px;
+    background-image: url('logo_110x20.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-left: 6px;
+}
