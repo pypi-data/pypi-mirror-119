@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+src/smack_talk_steve.egg-info/PKG-INFO
+src/smack_talk_steve.egg-info/SOURCES.txt
+src/smack_talk_steve.egg-info/dependency_links.txt
+src/smack_talk_steve.egg-info/requires.txt
+src/smack_talk_steve.egg-info/top_level.txt
+src/steve/__init__.py
+src/steve/insults.py
