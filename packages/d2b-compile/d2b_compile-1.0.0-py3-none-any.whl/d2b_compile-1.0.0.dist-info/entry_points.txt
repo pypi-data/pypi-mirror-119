@@ -1,0 +1,3 @@
+[d2b]
+compile=d2b_compile
+
