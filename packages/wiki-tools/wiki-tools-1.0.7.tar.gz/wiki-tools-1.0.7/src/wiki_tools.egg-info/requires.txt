@@ -1,0 +1,6 @@
+selenium>=3.141.0
+pyperclip>=1.8.2
+requests>=2.26.0
+beautifulsoup4>=4.9.3
+termcolor>=1.1.0
+urwid>=2.1.2
