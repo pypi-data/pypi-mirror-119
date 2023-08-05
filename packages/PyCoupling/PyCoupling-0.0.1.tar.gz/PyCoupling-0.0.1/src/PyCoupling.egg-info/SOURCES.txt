@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/PyCoupling.egg-info/PKG-INFO
+src/PyCoupling.egg-info/SOURCES.txt
+src/PyCoupling.egg-info/dependency_links.txt
+src/PyCoupling.egg-info/top_level.txt
