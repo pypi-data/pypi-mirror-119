@@ -1,0 +1,3 @@
+[console_scripts]
+hepdata_maker = hepdata_maker.cli:hepdata_maker
+
