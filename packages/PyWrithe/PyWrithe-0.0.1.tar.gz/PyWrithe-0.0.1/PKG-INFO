@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: PyWrithe
+Version: 0.0.1
+Summary: All Python package to compute writhe of closed curves with numpy or jax.numpy
+Home-page: https://github.com/RadostW/PyWrithe/
+Author: Radost Waszkiewicz
+Author-email: radost.waszkiewicz@gmail.com
+License: MIT
+Project-URL: Documentation, https://pywrithe.readthedocs.io
+Project-URL: Source, https://github.com/RadostW/PyWrithe/
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyWrithe
+
+All Python package to compute closed curve's writhe.
+
+Supports both numpy and jax.numpy.
+
+
+# Algorithm concept
+
+Klenin K., Langowski J. *Computation of writhe in modeling of supercoiled DNA*; Biopolymers (2000)
+
+https://doi.org/10.1002/1097-0282(20001015)54:5<307::AID-BIP20>3.0.CO;2-Y
+
+# License
+
+This software is licensed under MIT license
+
+Copyright (c) Radost Waszkiewicz (2021)
+
+
