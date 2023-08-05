@@ -1,0 +1,17 @@
+README.rst
+setup.py
+vtsv/__init__.py
+vtsv/licence_en.txt
+vtsv/version.txt
+vtsv/vtsv.py
+vtsv.egg-info/PKG-INFO
+vtsv.egg-info/SOURCES.txt
+vtsv.egg-info/dependency_links.txt
+vtsv.egg-info/entry_points.txt
+vtsv.egg-info/requires.txt
+vtsv.egg-info/top_level.txt
+vtsv/example/f1.tsv
+vtsv/example/f2.tsv
+vtsv/help/vtsv.hhc
+vtsv/help/vtsv.hhp
+vtsv/help/vtsv.htm

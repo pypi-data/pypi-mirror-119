@@ -1,0 +1,27 @@
+Metadata-Version: 1.2
+Name: vtsv
+Version: 1.0.1
+Summary: basic TSV viewer/editor
+Home-page: https://github.com/MathsCell/vtsv
+Author: Serguei Sokol
+Author-email: sokol@insa-toulouse.fr
+License: GNU General Public License v2
+Project-URL: Documentation, https://mathscell.github.io/docs/vtsv/
+Project-URL: Source, https://github.com/MathsCell/vtsv
+Project-URL: Tracker, https://github.com/MathsCell/vtsv/issues
+Description: vtsv is a basic TSV (tab separated values) viewer/editor
+        
+Keywords: spreadsheet
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: MacOS X :: Aqua
+Classifier: Environment :: MacOS X :: Carbon
+Classifier: Environment :: MacOS X :: Cocoa
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Environment :: X11 Applications :: GTK
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Utilities
