@@ -1,0 +1,9 @@
+hoocron-0.0.4.data/scripts/hoocron.py,sha256=EVr6iPlVVFBx2MnnB-afXux9Ma4YFYjbg5Ar5B9mxxU,4850
+hoocron_plugin/__init__.py,sha256=QHpb-rUu8_ukCH4MWtz5CQOyMDXI-2nbM-8zvtDhrEo,399
+hoocron_plugin/cron/__init__.py,sha256=mH7G5SWobmmTkN9CFSzsGwyy6A5TCr6Gv5Z-HjjR60c,3451
+hoocron_plugin/http/__init__.py,sha256=uX83c7kBKh4R9_auUAGeHJw6AC6Ua_994Qy3Gkvu3tY,3991
+hoocron-0.0.4.dist-info/LICENSE,sha256=88TS7M3q3F2STp1VQoq5rF4HmhWRUYxMdfJPEKJO5fY,1074
+hoocron-0.0.4.dist-info/METADATA,sha256=QZC7RhnSBx1ZyzIDs8a9JvaJ_KLYUNb-b3i5fqjBQLg,4004
+hoocron-0.0.4.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+hoocron-0.0.4.dist-info/top_level.txt,sha256=3xuDAt-HIWGIeL8I8Ri7Jq4-EMwTxW72CJh7lcaOyYE,15
+hoocron-0.0.4.dist-info/RECORD,,
