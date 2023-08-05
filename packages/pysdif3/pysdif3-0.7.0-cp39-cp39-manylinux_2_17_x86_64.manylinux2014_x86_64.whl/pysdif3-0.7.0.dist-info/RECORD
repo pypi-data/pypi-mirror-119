@@ -1,0 +1,16 @@
+pysdif/tools.py,sha256=xZvgSJg_Z1Sq65bzuGPGma6IV0V2wUiNUZuqx2XiaUQ,8867
+pysdif/_pysdif.cpython-39-x86_64-linux-gnu.so,sha256=n66-ltwYhUr7aS8yChqhK9fRc8bcEC5NtIHF9MoHOWU,4012160
+pysdif/bench.py,sha256=FGGwAt9g-fN8WzPP5pL64W8iMT5waR-jStH6_REXhwQ,1449
+pysdif/__init__.py,sha256=Ecv5EQ6Uz-bzsVQ3E2UVRdLLpV8fIttzYGgXOk1qeeI,484
+pysdif/pysdif.pxd,sha256=-BOmmMBYLYEDguokGhJ1mCioRoffz3IYLNnqi_n_To8,140255
+pysdif/version.py,sha256=uvfbyJM4YuZnSAeRXPIczkW0epWdu7hMGm4NPPrc3tg,24
+pysdif/_pysdif.c,sha256=uFmRhWC6zExbEepNRA5ThEusIwrp2OOIqujuRrBUC4M,1949285
+pysdif/_pysdif.pyx,sha256=8UxpZsu0Xk3c_W0HU6sgs2Voab_PwzXBgNXRZSQLL6M,75951
+pysdif/markers.py,sha256=0KZXZnEewDiQucIIFM0ErN7GmGH4SIUyotDDBbojVA8,2151
+pysdif/data/SdifTypes.STYP,sha256=fHvLyzKSRRFe-dJKHMz4kcKdGlg0FqndJ3WmUzV4sv0,3471
+pysdif3-0.7.0.dist-info/LICENSE.txt,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+pysdif3-0.7.0.dist-info/top_level.txt,sha256=fRwUm8FfW7tlYIj2iH0uy3tPfsP2LohZ9PzYbjWyjOg,7
+pysdif3-0.7.0.dist-info/METADATA,sha256=QC6saUbVCgFR0tzmeqDgnJGeJ9wshjESoMOewH3YIfw,4959
+pysdif3-0.7.0.dist-info/RECORD,,
+pysdif3-0.7.0.dist-info/WHEEL,sha256=ts1NGDem03kTrzsJp50lKy9cpDxDoGil0Q-wLa_TR_0,148
+pysdif3-0.7.0.data/scripts/sdifinfo,sha256=nDzgoGMqdZZ9TJX6QpwPTRSZGH8OZxgs2BfaGv_DtpU,1309
