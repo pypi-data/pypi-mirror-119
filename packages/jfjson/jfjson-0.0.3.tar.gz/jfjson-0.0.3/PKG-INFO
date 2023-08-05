@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: jfjson
+Version: 0.0.3
+Summary: Automatic json parsing and serialing
+Home-page: https://github.com/tyehle/jfjson
+Author: Tobin Yehle
+Author-email: tobin@yehle.us
+License: UNKNOWN
+Description: # jfjson
+        [![Build](https://github.com/tyehle/jfjson/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/tyehle/jfjson/actions/workflows/build.yml)
+        
+        Just fucking json!
+        
+        Converts json to python objects using type annotations.
+        
+        ```python
+        @dataclass
+        class Record:
+            name: str
+            pos: int
+            age: float
+        
+        jfjson.loads('[{"name": "you", "pos": 42, "age": 5.2}]', List[Record])
+        # [Record(name='you', pos=42, age=5.2)]
+        ```
+        
+        It also does data validation and type checking
+        ```python
+        jfjson.loads('["a", null, 12]', List[Optional[str]])
+        # jfjson.core.JsonConversionError: Found <class 'int'>, but was expecting typing.Optional[str]: at location .[2]
+        ```
+        
+        Also knows how to write any class that has a `__dict__` attribute or `_asdict()` function.
+        
+        ```python
+        @dataclass
+        class Record:
+            name: str
+            pos: int
+            age: float
+        
+        jfjson.dumps([Record(name='you', pos=42, age=5.2)])
+        # '[{"name": "you", "pos": 42, "age": 5.2}]'
+        ```
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Classifier: Intended Audience :: Developers
+Classifier: Typing :: Typed
+Description-Content-Type: text/markdown
