@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: ip-locator-city
+Version: 0.0.1
+Summary: ip locator with a simple ui
+Home-page: UNKNOWN
+Author: Clive Hunt
+Author-email: cliveapple265@gmail.com
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.0
+Description-Content-Type: text/markdown
+License-File: licence
+
+README.md
+
