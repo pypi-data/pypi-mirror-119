@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: zad
+Version: 1.0rc2
+Summary: A GUI tool for maintaining DNS zones via dynamic update
+Home-page: https://codeberg.org/ajr/zad
+Author: Axel Rau>
+Author-email: axel.rau@chaos1.de
+License: GNU General Public License Version 3
+Project-URL: Bug Tracker, https://codeberg.org/ajr/zad/issues
+Project-URL: Documentation, https://zad.readthedocs.io
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: Topic :: Internet :: Name Service (DNS)
+Classifier: Intended Audience :: System Administrators
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dnspython (==2.1.0)
+Requires-Dist: PyQt5 (==5.15.4)
+Requires-Dist: qasync (==0.17.0)
+
+
+In times of DNSsec, edited zone files interfere with resigning activities of
+the nameserver. To avoid inconsistency, zones are maintained by dynamic update
+(RFC 2136).
+
+zad provides a GUI for dynamic updates and zone visualisation to make address
+and host name editing easy like zone file editing.
+
+
