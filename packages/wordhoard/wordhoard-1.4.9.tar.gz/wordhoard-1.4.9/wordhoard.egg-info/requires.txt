@@ -1,0 +1,7 @@
+backoff
+bs4
+deckar01-ratelimit
+deep-translator
+lxml
+requests
+urllib3
