@@ -1,0 +1,6 @@
+# pikachuy_groupA
+This is a simple minimal set of codes to create a Python Package
+
+TEST PUSHING...
+...
+"# pikachuy_groupA" 

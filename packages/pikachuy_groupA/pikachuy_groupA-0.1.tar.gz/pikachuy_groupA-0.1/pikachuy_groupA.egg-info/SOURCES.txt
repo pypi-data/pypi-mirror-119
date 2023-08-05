@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+pikachuy_groupA/__init__.py
+pikachuy_groupA.egg-info/PKG-INFO
+pikachuy_groupA.egg-info/SOURCES.txt
+pikachuy_groupA.egg-info/dependency_links.txt
+pikachuy_groupA.egg-info/not-zip-safe
+pikachuy_groupA.egg-info/top_level.txt
