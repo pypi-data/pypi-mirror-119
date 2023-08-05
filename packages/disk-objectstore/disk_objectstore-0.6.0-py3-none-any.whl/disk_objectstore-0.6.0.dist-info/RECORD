@@ -1,0 +1,16 @@
+disk_objectstore/__init__.py,sha256=STN8InN8_EvSBJ4wpE7dg1OV15OUJXPvlel0xfoOsK0,260
+disk_objectstore/cli.py,sha256=z1vHMNLMd2xdC2O4h7j1ToxTWjL908EY2V4pi-3uCBs,3985
+disk_objectstore/container.py,sha256=TISBbSHxP_wcfe1YerNQamTcVSr2aUVTRu88-CVwmYQ,124883
+disk_objectstore/database.py,sha256=rcZpXZoBbpfJn1w9dGGEWXSe2gp9zs-nsHuedpv9rco,4097
+disk_objectstore/exceptions.py,sha256=TpjRb0jMegseqLceoEP_O6TwbFJ5m7tTwRr6FvkgFi8,950
+disk_objectstore/py.typed,sha256=8PjyZ1aVoQpRVvt71muvuq5qE-jTFZkK-GLHkhdebmc,26
+disk_objectstore/utils.py,sha256=HTK5TNMN8Zqoz1toGsvJ93C3ye68tZFpAzPv4eDcLro,51596
+disk_objectstore/examples/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+disk_objectstore/examples/example_objectstore.py,sha256=oW7CHOuIG7hdocSjAeGZ1QSwqZ0OypZNAdzRpp9ti3I,10939
+disk_objectstore/examples/profile_zeros.py,sha256=2oHLNMoiCqSsgkbSL7XcMnbwSxqT6mphqqY-wRYHC0s,7128
+disk_objectstore-0.6.0.dist-info/LICENSE.txt,sha256=7BHBdP5EC-3HsnBeD1aqOw6PL0jBn-zad3szXoMBnNs,1084
+disk_objectstore-0.6.0.dist-info/METADATA,sha256=r276b7BPho8fehnh55_WgEtftgmGUmJi4idQrooS_dM,26131
+disk_objectstore-0.6.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+disk_objectstore-0.6.0.dist-info/entry_points.txt,sha256=tLQNXePBpKd7uUl6-NvydTxTJYyzb8TPvnGMlVNqnVo,55
+disk_objectstore-0.6.0.dist-info/top_level.txt,sha256=24ngdbFXcxbg211G8PIr1oQF0dDEDQ_F-RfWuDZop_k,17
+disk_objectstore-0.6.0.dist-info/RECORD,,
