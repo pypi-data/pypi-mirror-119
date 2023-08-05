@@ -1,0 +1,8 @@
+zato_client-3.2.1-py3.8-nspkg.pth,sha256=4HeVlQL7yHr3E50N1PRQ4XT089RJJAYymYF1_cfxYnM,529
+zato/client/__init__.py,sha256=oxH5VQZeayt9JtPo3g_8M2AS7wk58AmpEI6ClaBGb_I,21334
+zato_client-3.2.1.dist-info/METADATA,sha256=NQQMmXpac9qZIJRmVuwCIAOCLpJgbnRFp8Oxqe4A99g,2024
+zato_client-3.2.1.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+zato_client-3.2.1.dist-info/namespace_packages.txt,sha256=GtxfcI2X5EPGFwD_QgTZplWO7nxKvhe3WZ9VLrZf-pc,5
+zato_client-3.2.1.dist-info/pbr.json,sha256=7csOnjTMrc1YZNo_-sSWGP_r8IPrYn7Rhj0eMEqVpF8,49
+zato_client-3.2.1.dist-info/top_level.txt,sha256=GtxfcI2X5EPGFwD_QgTZplWO7nxKvhe3WZ9VLrZf-pc,5
+zato_client-3.2.1.dist-info/RECORD,,
