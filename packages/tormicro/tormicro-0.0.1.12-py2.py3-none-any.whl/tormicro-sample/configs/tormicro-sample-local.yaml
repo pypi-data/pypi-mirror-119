@@ -1,0 +1,13 @@
+addr-db:
+  memory: null
+
+logging:
+  handlers:
+    sls:
+      log_store: demolog
+  loggers:
+    addressbook:
+      level: DEBUG
+      handlers:
+        - console
+        - sls
