@@ -1,0 +1,15 @@
+PyQt5
+py-getch
+getch
+opencv-python==4.3.0.38
+simpleaudio
+PyYAML
+flask_cors
+prettytable
+flask_cors
+PyYAML
+simpleaudio
+opencv-python==4.3.0.38
+getch
+py-getch
+PyQt5

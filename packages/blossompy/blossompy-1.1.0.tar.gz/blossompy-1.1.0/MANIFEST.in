@@ -1,0 +1,10 @@
+include blossompy/src/sequences/test/*.json 
+include blossompy/src/sequences/woody/anger/*.json
+include blossompy/src/sequences/woody/breathing/*.json
+include blossompy/src/sequences/woody/fear/*.json
+include blossompy/src/sequences/woody/grand/*.json
+include blossompy/src/sequences/woody/happy/*.json
+include blossompy/src/sequences/woody/inside/*.json
+include blossompy/src/sequences/woody/sad/*.json
+include blossompy/src/sequences/woody/sesame/*.json
+include blossompy/src/sequences/woody/*.json
