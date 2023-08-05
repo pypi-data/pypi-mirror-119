@@ -1,0 +1,9 @@
+README.rst
+setup.py
+hex/__init__.py
+hex/superhex.py
+superhex.egg-info/PKG-INFO
+superhex.egg-info/SOURCES.txt
+superhex.egg-info/dependency_links.txt
+superhex.egg-info/requires.txt
+superhex.egg-info/top_level.txt
