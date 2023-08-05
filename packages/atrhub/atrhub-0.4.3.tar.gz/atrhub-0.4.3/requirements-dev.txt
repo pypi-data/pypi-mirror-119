@@ -1,0 +1,4 @@
+mamba
+expects
+coverage
+-r requirements.txt
