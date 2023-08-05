@@ -1,0 +1,11 @@
+setup.py
+TypeTools.egg-info/PKG-INFO
+TypeTools.egg-info/SOURCES.txt
+TypeTools.egg-info/dependency_links.txt
+TypeTools.egg-info/top_level.txt
+typetools/__init__.py
+typetools/_test_typetools.py
+typetools/broadtypes.py
+typetools/descriptor.py
+typetools/typed.py
+typetools/types.py
