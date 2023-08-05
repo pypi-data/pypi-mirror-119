@@ -1,0 +1,15 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+setup.py
+tox.ini
+src/trulie/__init__.py
+src/trulie/tableau.py
+src/trulie/version.py
+src/trulie.egg-info/PKG-INFO
+src/trulie.egg-info/SOURCES.txt
+src/trulie.egg-info/dependency_links.txt
+src/trulie.egg-info/requires.txt
+src/trulie.egg-info/top_level.txt
+tests/test_version.py
