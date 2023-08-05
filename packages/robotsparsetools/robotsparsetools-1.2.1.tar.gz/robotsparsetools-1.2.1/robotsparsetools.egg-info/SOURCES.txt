@@ -1,0 +1,9 @@
+README.md
+setup.py
+robotsparsetools/__init__.py
+robotsparsetools/error.py
+robotsparsetools/parse.py
+robotsparsetools.egg-info/PKG-INFO
+robotsparsetools.egg-info/SOURCES.txt
+robotsparsetools.egg-info/dependency_links.txt
+robotsparsetools.egg-info/top_level.txt
