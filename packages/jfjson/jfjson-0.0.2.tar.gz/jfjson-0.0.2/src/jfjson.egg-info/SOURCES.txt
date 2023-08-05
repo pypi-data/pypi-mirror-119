@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+src/jfjson/__init__.py
+src/jfjson/core.py
+src/jfjson.egg-info/PKG-INFO
+src/jfjson.egg-info/SOURCES.txt
+src/jfjson.egg-info/dependency_links.txt
+src/jfjson.egg-info/top_level.txt
+test/test_core.py
