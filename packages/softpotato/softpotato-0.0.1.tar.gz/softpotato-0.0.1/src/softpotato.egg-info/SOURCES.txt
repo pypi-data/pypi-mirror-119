@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/softpotato/__init__.py
+src/softpotato/technique.py
+src/softpotato.egg-info/PKG-INFO
+src/softpotato.egg-info/SOURCES.txt
+src/softpotato.egg-info/dependency_links.txt
+src/softpotato.egg-info/top_level.txt
