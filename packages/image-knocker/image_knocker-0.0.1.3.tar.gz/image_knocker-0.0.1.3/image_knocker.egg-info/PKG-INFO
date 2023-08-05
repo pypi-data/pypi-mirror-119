@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: image-knocker
+Version: 0.0.1.3
+Summary: Knock your images before these make you painful
+Home-page: https://github.com/developer0hye/image-knocker
+Author: Yonghye Kwon
+Author-email: developer.0hye@gmail.com
+License: Apache
+Keywords: image,img
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# image-knocker
+
+Knock your images before these make you painful.
+
+## Background
+
+One day, I had run my deep learning model training program and got off work on Friday. When I checked the training process on Monday after arriving at work, the program was terminated because of some images that cannot be opened by image processing libraries like PIL.
+
+I developed this project to check images that cannot be opened by image processing libraries before running computer vision applications.
+
+`image-knocker` is very fast and simple!
+
+## Install
+
+```
+pip install image-knocker
+```
+
+## Usage
+
+```console
+foo@bar:~$ image-knocker --path dataset_path/ --exts png jpg jpeg
+```
+
+## Output
+
+
+### if `corrupted image` in `dataset`:
+```
+  Knocking... Root Path: D:\datasets\detection\VOCdevkit
+  100%|██████████████████| 34179/34179 [00:03<00:00, 10911.31it/s]
+  Corrupted image files are detected!
+  D:/datasets/detection/VOCdevkit/outlier.png
+  Corrupted image file list is saved to D:\datasets\detection\corrupted_imgs_list.txt
+```
+### else:
+```
+  Knocking... Root Path: D:\datasets\detection\VOCdevkit
+  100%|██████████████████| 34178/34178 [00:04<00:00, 7792.30it/s]
+  There are no corrupted image files! 
+  All images were loaded successfully using PIL.Image.open!
+```
+
+
