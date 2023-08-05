@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/conga_office/__init__.py
+src/conga_office/tools.py
+src/conga_office.egg-info/PKG-INFO
+src/conga_office.egg-info/SOURCES.txt
+src/conga_office.egg-info/dependency_links.txt
+src/conga_office.egg-info/requires.txt
+src/conga_office.egg-info/top_level.txt
+src/conga_office/config/__init__.py
+src/conga_office/config/metadata.py
