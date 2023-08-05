@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: kraken-aliyun-api-gateway-sdk
+Version: 2021.9.7.1631002909
+Summary: aliyun api gateway
+Home-page: https://github.com/kraken-cloud/kraken
+Author: wei.fu
+Author-email: mefuwei@163.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: loguru
+
+UNKNOWN
+
+
