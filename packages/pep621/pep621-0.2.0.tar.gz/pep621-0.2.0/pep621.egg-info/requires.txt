@@ -1,0 +1,6 @@
+packaging>=19.0
+tomli>=1.0.0
+
+[test]
+pytest>=6.2.4
+pytest-cov>=2
