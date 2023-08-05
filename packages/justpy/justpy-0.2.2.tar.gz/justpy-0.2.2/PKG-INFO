@@ -1,0 +1,7 @@
+Metadata-Version: 1.1
+Name: justpy
+Version: 0.2.2
+Summary: JustPy is an object-oriented, component based, high-level Python Web Framework that requires no front-end programming
+Home-page: https://justpy.io
+Author: Eli Mintz
+Author-email: eli.mintz@gmail.com
