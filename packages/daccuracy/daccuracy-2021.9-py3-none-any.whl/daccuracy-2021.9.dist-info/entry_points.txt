@@ -1,0 +1,3 @@
+[console_scripts]
+daccuracy = daccuracy.daccuracy:Main
+

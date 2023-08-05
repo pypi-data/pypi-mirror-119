@@ -1,0 +1,161 @@
+Metadata-Version: 2.1
+Name: daccuracy
+Version: 2021.9
+Summary: Detection and Segmentation Accuracy Measures
+Home-page: https://gitlab.inria.fr/edebreuv/daccuracy
+Author: Eric Debreuve
+Author-email: eric.debreuve@univ-cotedazur.fr
+License: UNKNOWN
+Project-URL: Source, https://gitlab.inria.fr/edebreuv/daccuracy
+Keywords: image,object detection,segmentation,accuracy
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+Requires-Dist: imageio
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: scikit-image
+Requires-Dist: scipy
+
+=======================================================
+DAccuracy: Detection and Segmentation Accuracy Measures
+=======================================================
+
+Brief Description
+=================
+
+``DAccuracy`` (Detection Accuracy) allows to compute
+
+- some accuracy measures
+- on an N-dimensional detection or segmentation image
+- when the ground-truth is available as a `CSV file <https://en.wikipedia.org/wiki/Comma-separated_values>`_ or an image.
+
+It works in 3 contexts:
+
+- one-to-one: single ground-truth, single detection image;
+- one-to-many: unique ground-truth, several detection images (typically obtained by various methods);
+- many-to-many: set of "(ground-truth, detection image)" pairs.
+
+Note that, **with most image formats**, ground-truth and detection **cannot contain more than 255 objects**. If they do, ``DAccuracy`` will complain about the image being incorrectly labeled. This constraint will be relaxed in a future version (it cannot be simply removed when using fixed-length representations of integers) by allowing to pass files of `Numpy arrays <https://numpy.org/>`_ and unlabeled images.
+
+Example console output (accuracy measures can also be written to a CSV file)::
+
+            Ground truth = ground-truth.csv
+               Detection = detection.png
+         N ground truths = 55
+            N detections = 47
+           True_positive = 43
+          False_positive = 4
+          False_negative = 12
+               Precision = 0.9148936170212766
+                  Recall = 0.7818181818181819
+                F1_score = 0.8431372549019609
+             Froc_sample = (4, 0.7818181818181819)
+    Check_tp_fn_equal_gt = 55
+    Check_tp_fp_equal_dn = 47
+
+
+
+.. _installation:
+
+Installation
+============
+
+The ``DAccuracy`` project is published on the `Python Package Index (PyPI) <https://pypi.org>`_ at: `https://pypi.org/project/daccuracy <https://pypi.org/project/daccuracy>`_. It requires version 3.8, or newer, of the interpreter. It should be installable from Python distribution platforms or Integrated Development Environments (IDEs). Otherwise, it can be installed from a command-line console:
+
+- For all users, after acquiring administrative rights:
+    - First installation: ``pip install daccuracy``
+    - Installation update: ``pip install --upgrade daccuracy``
+- For the current user (no administrative rights required):
+    - First installation: ``pip install --user daccuracy``
+    - Installation update: ``pip install --user --upgrade daccuracy``
+
+
+
+Documentation
+=============
+
+After installation, the ``daccuracy`` command should be available from a command-line console. The usage help is obtained with ``daccuracy --help`` (see output below).
+
+The ground-truth can be specified through a CSV file or a labeled image. The detection must be specified through a labeled image. A labeled image must have the background labeled with zero, with the objects labeled consecutively from 1.
+
+.. note::
+    The input images are requested to be labeled (as opposed to binary: zero for the background and 1 for the objects) in order to be able to deal with tangent objects. With a binary image, there is no way to distinguish a unique object from a set of tangent objects.
+
+In CSV format, the ground truth must be specified as one row per object where two columns (typically the first two ones) correspond to the row and column of the object center. Note that "row" and "column" are misleading terms since they can have non-integer values.
+
+Example CSV::
+
+    1.2, 2.3
+    3.4, 4.5
+
+This specifies two ground-truth object centers, the first one being at row 1.2 and column 2.3. Alternatively, the center coordinates can be passed in x/y coordinate system. See the usage help below for details.
+
+The following accuracy measures are computed:
+
+- Number of ground-truth objects
+- Number of detected objects
+- Number of true positives, false positives, and false negatives
+- Precision, recall, and F1 score
+- Free-response Receiver Operating Characteristic (FROC) curve sample: named ``froc_sample`` and corresponding to the tuple (false positives, true positive rate)
+- Values for measure correctness checking: ``check_tp_fn_equal_gt`` (true_positives + false_negatives ?=? ground-truths) and ``check_tp_fp_equal_dn`` (true_positives + false_positives ?=? detections)
+
+Additionally, if the ground-truth has been passed as an image (as opposed to a CSV file), the mean, standard deviation, minimum, and maximum of the following measures are also computed:
+
+- Ground-truth/detection overlap (as a percentage with respect to the smaller region among ground-truth and detection)
+- Ground-truth/detection Jaccard index
+- Pixel-wise precision, recall, and F1 score
+
+Usage Help::
+
+    usage: daccuracy [-h] --gt ground_truth --dn detection [--shifts Dn_shift Dn_shift] [-e] [-t TOLERANCE]
+                     [-f {csv,nev}] [-o Output file] [-s] [--no-usage-notice]
+
+    3 modes:
+        - one-to-one: one ground-truth (image or csv) vs. one detection (image)
+        - one-to-many: one ground-truth (image or csv) vs. several detections (folder of images)
+        - many-to-many: several ground-truths (folder of images and/or csv's) vs. corresponding detections (folder of images)
+
+    Note that, WITH MOST IMAGE FORMATS, ground-truth and detection CANNOT CONTAIN MORE THAN 255 OBJECTS.
+    If they do, DAccuracy will complain about the image being incorrectly labeled. This constraint will be relaxed in a
+    future version (it cannot be simply removed when using fixed-length representations of integers) by allowing to pass
+    files of Numpy arrays and unlabeled images.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --gt ground_truth     Ground-truth labeled image or CSV file of centers, or ground-truth folder; If CSV, --rAcB (or
+                            --xAyB) can be passed additionally to indicate which columns contain the centers' rows and
+                            cols (or x's and y's, respectively)
+      --dn detection        Detection labeled image, or detection folder
+      --shifts Dn_shift Dn_shift
+                            Vertical (row) and horizontal (col) shifts to apply to detection
+      -e, --exclude-border  If present, this option instructs to discard objects touching image border, both in ground-
+                            truth and detection
+      -t TOLERANCE, --tol TOLERANCE, --tolerance TOLERANCE
+                            Max ground-truth-to-detection distance to count as a hit (meant to be used when ground-truth
+                            is a CSV file of centers)
+      -f {csv,nev}, --format {csv,nev}
+                            nev: one "Name = Value"-row per measure; csv: one CSV-row per ground-truth/detection pairs
+      -o Output file        Name-Value or CSV file to store the computed measures, or "-" for console output
+      -s, --show-image      If present, this option instructs to show an image superimposing ground-truth onto detection
+      --no-usage-notice     Silences usage notice about maximum number of objects
+
+
+
+Thanks
+======
+
+The project is developed with `PyCharm Community <https://www.jetbrains.com/pycharm>`_.
+
+The development relies on several open-source packages (see ``install_requires`` in ``setup.py``).
+
+The code is formatted by `Black <https://github.com/psf/black>`_, *The Uncompromising Code Formatter*.
+
+The imports are ordered by `isort <https://github.com/timothycrosley/isort>`_... *your imports, so you don't have to*.
+
+
