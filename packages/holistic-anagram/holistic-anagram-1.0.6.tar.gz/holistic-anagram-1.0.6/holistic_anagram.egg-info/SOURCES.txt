@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+setup.py
+holistic_anagram/__init__.py
+holistic_anagram/holistic_anagram.py
+holistic_anagram.egg-info/PKG-INFO
+holistic_anagram.egg-info/SOURCES.txt
+holistic_anagram.egg-info/dependency_links.txt
+holistic_anagram.egg-info/top_level.txt
