@@ -1,0 +1,6 @@
+pytest
+pip-services3-aws
+pip-services3-commons
+pip-services3-components
+pip-services3-container
+pip-services3-rpc

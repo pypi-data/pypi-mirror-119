@@ -1,0 +1,237 @@
+Metadata-Version: 2.1
+Name: pip_client_data_python
+Version: 1.0.0
+Summary: Communication components for Pip.Services in Python
+Home-page: https://github.com/pip-templates-services/pip-client-data-python
+Author: Conceptual Vision Consulting LLC
+Author-email: seroukhov@gmail.com
+License: MIT
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+
+# <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Client library for sample data microservice
+
+This is a client library to the sample data microservice. This library shall be used
+as a template to create clients to general purpose data microservices.
+
+Supported functionality:
+* Null and Mock clients for testing
+* HTTP clients: REST and Commandable
+* GRPC clients: Plain and Commandable
+* AWS Lambda clients: Plain and Commandable
+
+Key patterns implemented in this library:
+
+**Zero-time onboarding:** A new developer doesn't have to have a prior khowledge of the code
+nor preinstalled and preconfigured development environment.
+To get started with any component he/she just need to do 3 simple steps:
++ Checkout the code
++ Launch dependencies via [docker-compose.dev.yml](docker/docker-compose.dev.yml)
++ Execute **npm test**.
+
+**Automated build and test processes:** Clear, build and test actions are dockerized and scripted.
+The scripts shall be run before committing the code. And the same scripts shall be executed in automated
+CI/CD pipelines. That approach allows to make identical build and test actions across the entire delivery
+pipeline. And have a clear separation between developer and DevOps roles (developers are responsible
+for individual components, their build, test and packaging. DevOps are responsible for running CI/CD pipelines, assembling and testing entire system from individual components).
+
+**Multiple communication protocols:** The library contains clients that allow to connect to the microservice several different ways, depending on the environment or client requirements. For instance: on-premises the microservice can be deployed as a docker container. Locally it can be called via GRPC interface and externally via REST. When the same microservice is deployed on AWS cloud as a Lambda function, it can be called using the LambdaClient. Moreover, several microservice can be packaged into a single process, essentially represending a monolith. In that scenario, then can be called using in-process calls using the DirectClient.
+
+**Monitoring and Observability:** All clients are instrumented to collect logs of called operations, metrics that collect number of calls, average call times and number of erors, and traces. Depending on the deployment configuration that information can be sent to different destinations: console, Promethous, DataDog service, ApplicationInsights, CloudWatch and others.
+
+**Versioning:** Data objects and clients are versioned from the beginning. When breaking changes are introduced into the microservice, it shall keep the old version of the interface for backward-compatibility and expose a new version of the interface simultaniously. Then client library will have a new set of objects and clients for the new version, while keeping the old one intact. That will provide a clear versioning and backward-compatibility for users of the microservice.
+
+<a name="links"></a> Quick links:
+
+* Communication Protocols:
+  - [gRPC Version 1](pip_client_data_python/protos/entities_v1.proto)
+  - [HTTP Version 1](https://github.com/pip-templates-services/pip-service-data-python/blob/main/pip_service_data_python/swagger/entities_v1.yaml)
+* [Microservice](https://github.com/pip-templates-services/pip-service-data-python)
+* [API Reference](https://pip-templates-services.github.io/pip-client-data-python/index.html)
+* [Change Log](CHANGELOG.md)
+
+
+## Contract
+
+The contract of the microservice is presented below.
+
+```python
+
+class EntityV1(IStringIdentifiable):
+    def __init__(self, id: str = None, site_id: str = None, type: str = None, name: str = None, content: str = None):
+        self.id = id            # Entity ID
+        self.type = type        # ID of a work site (field installation)
+        self.site_id = site_id  # Entity type: Type2, Type1 or Type3
+        self.name = name        # Human readable name
+        self.content = content  # String content
+
+class IEntitiesClientV1(ABC):
+
+    def get_entities(self, correlation_id: Optional[str], filter_params: FilterParams, paging: PagingParams) -> DataPage:
+        raise NotImplementedError("Method is not implemented")
+
+    def get_entities_by_id(self, correlation_id: Optional[str], entity_id: str) -> EntityV1:
+        raise NotImplementedError("Method is not implemented")
+
+    def get_entity_by_name(self, correlation_id: Optional[str], entity_name: str) -> EntityV1:
+        raise NotImplementedError("Method is not implemented")
+
+    def create_entity(self, correlation_id: Optional[str], entity: EntityV1) -> EntityV1:
+        raise NotImplementedError("Method is not implemented")
+
+    def update_entity(self, correlation_id: Optional[str], entity: EntityV1) -> EntityV1:
+        raise NotImplementedError("Method is not implemented")
+
+    def delete_entity_by_id(self, correlation_id: Optional[str], entity_id: str) -> EntityV1:
+        raise NotImplementedError("Method is not implemented")
+
+
+```
+
+## Get
+
+Get the microservice source from GitHub:
+```bash
+git clone git@github.com:pip-templates-services/pip-service-data-python.git
+```
+
+Install the microservice dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Install the client library as a binary dependency:
+```bash
+pip install pip-client-data-python
+```
+
+## Use
+
+Install the client pip package as
+```bash
+pip install install pip-client-data-python
+```
+
+Inside your code get the reference to the client SDK
+```python
+from pip_services3_commons.config import ConfigParams
+from pip_services3_commons.data import FilterParams, PagingParams
+
+from pip_service_data_python.data.EntityTypeV1 import EntityTypeV1
+from pip_service_data_python.data.EntityV1 import EntityV1
+
+from pip_client_data_python.clients.version1 import EntitiesCommandableHttpClientV1
+```
+
+Instantiate the client
+```python
+# Create the client instance
+client = EntitiesCommandableHttpClientV1()
+```
+
+Define client connection parameters
+```python
+# Client configuration
+http_config = ConfigParams.from_tuples(
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", 8080
+)
+# Configure the client
+client.configure(http_config)
+```
+
+Connect to the microservice
+```python
+# Connect to the microservice
+client.open(None)
+
+# Work with the microservice
+...
+```
+
+Call the microservice using the client API
+```python
+# Define a entity
+entity = EntityV1(
+    id= '1',
+    site_id= '1',
+    type= EntityTypeV1.Type1,
+    name= '00001',
+    content= 'ABC'
+)
+
+# Create the entity
+entity = self.client.create_entity(None, ENTITY1)
+
+# Do something with the returned entity...
+
+# Get a list of entities
+page = self.client.get_entities(
+    None,
+    FilterParams.from_tuples(
+        "name", "TestEntity",
+    ),
+    PagingParams(0, 10)
+)
+
+# Do something with the returned page...
+# E.g. entity = page['data'][0]
+```
+
+## Develop
+
+For development you shall install the following prerequisites:
+* Python 3.6+
+* Visual Studio Code or another IDE of your choice
+* Docker
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Before running tests launch infrastructure services and required microservices:
+```bash
+docker-compose -f ./docker-compose.dev.yml up
+```
+
+Run automated tests:
+```bash
+pytest
+```
+
+Generate GRPC protobuf stubs:
+```bash
+./protogen.ps1
+```
+
+Generate API documentation:
+```bash
+./docgen.ps1
+```
+
+Before committing changes run dockerized build and test as:
+```bash
+./build.ps1
+./test.ps1
+./package.ps1
+./run.ps1
+./clear.ps1
+```
+
+## Contacts
+
+This microservice was created and currently maintained by *Sergey Seroukhov* and *Danil Prisyzhniy*.
+
+
