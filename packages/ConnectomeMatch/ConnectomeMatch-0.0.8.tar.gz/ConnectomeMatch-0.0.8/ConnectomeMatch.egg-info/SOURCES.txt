@@ -1,0 +1,10 @@
+ConnectomeMatch.py
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+ConnectomeMatch.egg-info/PKG-INFO
+ConnectomeMatch.egg-info/SOURCES.txt
+ConnectomeMatch.egg-info/dependency_links.txt
+ConnectomeMatch.egg-info/requires.txt
+ConnectomeMatch.egg-info/top_level.txt
