@@ -1,0 +1,6 @@
+name: appfire
+version: 0.0.0
+author: Niklas Rosenstein <rosensteinniklas@gmail.com>
+description: Placeholder
+requirements:
+- python ^3.5

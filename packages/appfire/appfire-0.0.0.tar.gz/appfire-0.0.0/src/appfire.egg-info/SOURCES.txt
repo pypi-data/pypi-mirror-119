@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+package.yml
+setup.py
+src/appfire/__init__.py
+src/appfire.egg-info/PKG-INFO
+src/appfire.egg-info/SOURCES.txt
+src/appfire.egg-info/dependency_links.txt
+src/appfire.egg-info/top_level.txt
+src/appfire.egg-info/zip-safe
