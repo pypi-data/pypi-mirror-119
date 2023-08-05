@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "oshi"
+version = "0.1.0"
+description = "An asynchronous osu API wrapper written in python"
+authors = ["an-dyy <andy.development@protonmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/an-dyy/oshi"
+repository = "https://github.com/an-dyy/oshi"
+keywords = ["osu"]
+packages = [{include = "oshi"}]
+include = ["LICENSE"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.7.4"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+mypy = "^0.910"
+black = {version = "^21.8b0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
