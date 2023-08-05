@@ -1,0 +1,3 @@
+[console_scripts]
+emnbconvert = emutils.scripts.ipyexport:main
+

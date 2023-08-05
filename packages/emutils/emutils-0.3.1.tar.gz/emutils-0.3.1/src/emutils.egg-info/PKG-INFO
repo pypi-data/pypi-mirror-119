@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: emutils
+Version: 0.3.1
+Summary: Miscellanous Python Utilities
+Home-page: https://github.com/emanuele-albini/emutils
+Author: Emanuele Albini
+License: UNKNOWN
+Project-URL: Documentation, https://emanuele-albini.github.io/emutils
+Project-URL: Source Code, https://github.com/emanuele-albini/emutils
+Project-URL: Bug Tracker, https://github.com/emanuele-albini/emutils/issues
+Project-URL: Author Website, https://www.emanuelealbini.com
+Keywords: Utilities
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# EmUtils - Miscellanous Python Utilities
+
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/emutils.svg)](https://pypi.python.org/pypi/emutils/)
+[![GitHub license](https://img.shields.io/github/license/emanuele-albini/emutils)](https://github.com/emanuele-albini/emutils/blob/master/LICENSE)
+[![PyPI](https://badge.fury.io/py/emutils.svg)](https://pypi.python.org/pypi/emutils/)
+[![Maintaner](https://img.shields.io/badge/maintainer-Emanuele-lightgrey)](https://www.emanuelealbini.com)
+[![Tests](https://github.com/emanuele-albini/emutils/actions/workflows/tests.yml/badge.svg)](https://github.com/emanuele-albini/emutils/actions/workflows/tests.yml)
+<!-- [![Release](https://github.com/emanuele-albini/emutils/actions/workflows/release.yml/badge.svg)](https://github.com/emanuele-albini/emutils/actions/workflows/release.yml) -->
+
+This package contains various Python utilities.
+
+**Package under active development. Please use specific releases version from PyPi or conda for stable versions.**
+
+## Installation
+
+Using PIP:
+
+```bash
+pip install emutils
+```
+
+Using CONDA:
+
+```bash
+conda install -c emanuele-albini emutils
+```
+
+#### For developers
+
+To use the package in editable mode use instead the following.
+
+```bash
+git clone https://github.com/emanuele-albini/emutils.git
+pip install --editable emutils
+```
+
+
+## Documentation
+
+See [here](https://emanuele-albini.github.io/emutils) for the complete documentation of the modules.
+
+
