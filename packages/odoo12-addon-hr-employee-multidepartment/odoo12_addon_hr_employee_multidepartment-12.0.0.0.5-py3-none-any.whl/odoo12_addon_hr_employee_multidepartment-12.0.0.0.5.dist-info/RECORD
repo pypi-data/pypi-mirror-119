@@ -1,0 +1,15 @@
+odoo/addons/hr_employee_multidepartment/README.rst,sha256=I_Y6zk30CuGB5G6eDA54Hgm9GZPXr1yJLw_31cAYNgw,2591
+odoo/addons/hr_employee_multidepartment/__init__.py,sha256=X9EJGOE2GtZbS0G82PtSXmWSZ_R8jEM0rlJTDliQjp4,21
+odoo/addons/hr_employee_multidepartment/__manifest__.py,sha256=9gcO1c224AIHqPVqJEXdW2WEf3cCd4xPcpSTkgvl0U4,576
+odoo/addons/hr_employee_multidepartment/models/__init__.py,sha256=61YKU9vKVzt7Lxw8yCfwYCrn_EXkETEJVBrwbsRMORE,26
+odoo/addons/hr_employee_multidepartment/models/hr_employee.py,sha256=ajic_r3ivPK1JeLY8AepLV2VhOK_umqPvW3y99sBLTI,477
+odoo/addons/hr_employee_multidepartment/readme/DESCRIPTION.rst,sha256=hDcsy929L2oqteyitB5s5lK76YfRgN9BjlVZk1d2mYY,94
+odoo/addons/hr_employee_multidepartment/static/description/index.html,sha256=zSgX_wvt2xN9wIZ-sAz50L13q27nocMzmCD-tutDqZ8,11412
+odoo/addons/hr_employee_multidepartment/tests/__init__.py,sha256=L-23nAk5jhY_P-WAeRkdMlPys-uYJ0NMxcTrxkyX9fE,47
+odoo/addons/hr_employee_multidepartment/tests/test_hr_employee_multidepartment.py,sha256=CeUmE36oHl_ch6KAZ2yisFvOIvVo0fK_uCLolmE8f1o,1481
+odoo/addons/hr_employee_multidepartment/views/hr_employee_views.xml,sha256=kNIElljyeSCaae89pkuS3x5svXgL3y5Skav8dFCrHPU,556
+odoo/addons/hr_employee_multidepartment/views/hr_leave_views.xml,sha256=xRTdBm3ezkuigYU4CVlVfuw2lT9UtH0p1yN2qD21jkE,998
+odoo12_addon_hr_employee_multidepartment-12.0.0.0.5.dist-info/METADATA,sha256=2JOHSTJQZEhkd3tVcG2zCyUjp4pIUbXfjzZPvbpIvjs,3103
+odoo12_addon_hr_employee_multidepartment-12.0.0.0.5.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+odoo12_addon_hr_employee_multidepartment-12.0.0.0.5.dist-info/top_level.txt,sha256=qBj40grFkGOfDZ2WDSw3y1RnDlgG0u8rP8pvGNdbz4w,5
+odoo12_addon_hr_employee_multidepartment-12.0.0.0.5.dist-info/RECORD,,
