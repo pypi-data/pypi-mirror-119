@@ -1,0 +1,13 @@
+mopidy_funkwhale/__init__.py,sha256=Q-W4PjZBBBcsYEQ0wcwh5cVhKXLltUXW4ooNExJr-lw,2102
+mopidy_funkwhale/actor.py,sha256=x27YCdr3xqhJZx-iba6LMT0ZBgJZm9wO4i5_7ifJsbQ,1702
+mopidy_funkwhale/client.py,sha256=_zkGZE-11Y1S_nLv5RBdU99cnqfm18Qf75LPnj_4LlM,6552
+mopidy_funkwhale/commands.py,sha256=iR-Fih_Oa82zzJxwn55IrT9We6iPnoEkHMUMxzXG19Q,3001
+mopidy_funkwhale/ext.conf,sha256=kDv9pUa-vGCYww8HBT4xr22FTtUrFYpFHXtwVt03CvQ,1100
+mopidy_funkwhale/library.py,sha256=RtEllJ5VTmtE2IH1nNZKIkWT6gAbtwlTZoISWGY88d0,15373
+mopidy_funkwhale-0.1.0.dev36.dist-info/LICENSE,sha256=_j438TByB-RegzU3Cy6bPZEYjv3k4n0Ne2Y0zLTquRE,1586
+mopidy_funkwhale-0.1.0.dev36.dist-info/METADATA,sha256=wCLUmABB0TRyePJiWCKR9WJsdD4L5gyJKT_h2JiuWjM,2987
+mopidy_funkwhale-0.1.0.dev36.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+mopidy_funkwhale-0.1.0.dev36.dist-info/entry_points.txt,sha256=l86MDiNvWC93t3PZQk1R2JEy9y4nOuFDfW-Q4nVrx0k,53
+mopidy_funkwhale-0.1.0.dev36.dist-info/top_level.txt,sha256=IgKMIQPzXY6KsuYlFIadBPv3G5TbYTXb8G57FufmAuE,17
+mopidy_funkwhale-0.1.0.dev36.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+mopidy_funkwhale-0.1.0.dev36.dist-info/RECORD,,
