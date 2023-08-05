@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: PyPNA
+Version: 0.1.4
+Summary: Python interface for Keysight PNA
+Home-page: https://github.com/Bryce-AC/PyPNA
+Author: Bryce Chung
+Author-email: bryce.chung@student.adelaide.edu.au
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyPNA
+Interfacing Keysight PNA with Python.
+This library is a work in progress.
+
+Install: `pip install -i https://test.pypi.org/simple/PyPNA`
+
+Commands from: http://na.support.keysight.com/pna/help/latest/Programming/XComFinderSet.htm
+
+Guide: https://towardsdatascience.com/deep-dive-create-and-publish-your-first-python-library-f7f618719e14
+
+
