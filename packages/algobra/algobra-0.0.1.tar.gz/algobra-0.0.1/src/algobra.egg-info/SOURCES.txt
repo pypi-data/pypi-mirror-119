@@ -1,0 +1,14 @@
+README.md
+setup.py
+./src/engine.py
+./src/algobra.egg-info/PKG-INFO
+./src/algobra.egg-info/SOURCES.txt
+./src/algobra.egg-info/dependency_links.txt
+./src/algobra.egg-info/requires.txt
+./src/algobra.egg-info/top_level.txt
+src/engine.py
+src/algobra.egg-info/PKG-INFO
+src/algobra.egg-info/SOURCES.txt
+src/algobra.egg-info/dependency_links.txt
+src/algobra.egg-info/requires.txt
+src/algobra.egg-info/top_level.txt
