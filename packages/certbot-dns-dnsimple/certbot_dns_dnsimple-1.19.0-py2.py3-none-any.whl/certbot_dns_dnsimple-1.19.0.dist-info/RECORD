@@ -1,0 +1,9 @@
+certbot_dns_dnsimple/__init__.py,sha256=jsVP3dt8W67qCFJ1WWEjy4XkvAV5DVphOvSxPy9WOU0,3407
+certbot_dns_dnsimple/_internal/__init__.py,sha256=or3rATbR_egMndRV6AA8pR9BSJiTj_yKjzrr6cSLNFc,78
+certbot_dns_dnsimple/_internal/dns_dnsimple.py,sha256=roagdLFugKCcTw3WzAJjdGvO8fQGwtVPWlrJY_f-I2k,2903
+certbot_dns_dnsimple-1.19.0.dist-info/LICENSE.txt,sha256=LMXecVrlqXbwhvukkwiAyeQhkUFz_IURG_9RTUdXEj8,10786
+certbot_dns_dnsimple-1.19.0.dist-info/METADATA,sha256=Vsyu4oPmFe7N3akCae5HYoZ4xGyE_20XY94dRAB10Ts,1383
+certbot_dns_dnsimple-1.19.0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+certbot_dns_dnsimple-1.19.0.dist-info/entry_points.txt,sha256=ILqVqykxiJOfuZJjzccLZr9UXCpdSHa0v6OaIuOlBZg,92
+certbot_dns_dnsimple-1.19.0.dist-info/top_level.txt,sha256=ic5ShIPZzOap1t_RYpbsRCjvRWbCWIxXXVQvxFh3kNI,21
+certbot_dns_dnsimple-1.19.0.dist-info/RECORD,,
