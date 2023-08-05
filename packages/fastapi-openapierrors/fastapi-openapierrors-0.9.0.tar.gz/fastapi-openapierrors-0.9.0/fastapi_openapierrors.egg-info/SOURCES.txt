@@ -1,0 +1,9 @@
+COPYING
+README.md
+setup.py
+fastapi_openapierrors/__init__.py
+fastapi_openapierrors.egg-info/PKG-INFO
+fastapi_openapierrors.egg-info/SOURCES.txt
+fastapi_openapierrors.egg-info/dependency_links.txt
+fastapi_openapierrors.egg-info/requires.txt
+fastapi_openapierrors.egg-info/top_level.txt
