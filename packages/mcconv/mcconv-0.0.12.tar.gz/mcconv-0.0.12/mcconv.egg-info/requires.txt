@@ -1,0 +1,6 @@
+click
+HepMC3
+uproot>=4
+awkward
+numpy
+vector
