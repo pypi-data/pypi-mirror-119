@@ -1,0 +1,6 @@
+LofterString.py
+setup.py
+lzy_LofterString.egg-info/PKG-INFO
+lzy_LofterString.egg-info/SOURCES.txt
+lzy_LofterString.egg-info/dependency_links.txt
+lzy_LofterString.egg-info/top_level.txt
