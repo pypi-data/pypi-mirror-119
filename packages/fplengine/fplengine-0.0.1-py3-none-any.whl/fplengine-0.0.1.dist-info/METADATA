@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: fplengine
+Version: 0.0.1
+Summary: Package to pull fantasy football data and run your account
+Home-page: https://github.com/HendoGit/FantasyFootyBot.git
+Author: Alex Henderson
+Author-email: UNKNOWN
+License: Apache
+Platform: UNKNOWN
+Requires-Dist: requests
+Requires-Dist: sqlalchemy
+Requires-Dist: psycopg2
+Requires-Dist: pandas
+
+# FantasyFootyBot
+
+
