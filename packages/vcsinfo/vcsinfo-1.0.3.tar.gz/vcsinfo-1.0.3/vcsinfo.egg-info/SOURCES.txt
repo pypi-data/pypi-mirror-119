@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+bin/vcsinfo
+vcsinfo/VERSION
+vcsinfo/__init__.py
+vcsinfo/git.py
+vcsinfo/hg.py
+vcsinfo/perforce.py
+vcsinfo/py_info.py
+vcsinfo.egg-info/PKG-INFO
+vcsinfo.egg-info/SOURCES.txt
+vcsinfo.egg-info/dependency_links.txt
+vcsinfo.egg-info/requires.txt
+vcsinfo.egg-info/top_level.txt
