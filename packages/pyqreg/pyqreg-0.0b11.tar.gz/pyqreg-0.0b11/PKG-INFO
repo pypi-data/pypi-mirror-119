@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pyqreg
+Version: 0.0b11
+Summary: Fast implementation of the quantile regression with support for iid, robust, and cluster standard errors.
+Home-page: https://github.com/mozjay0619/pyqreg
+Author: Jay Kim
+Author-email: mozjay0619@gmail.com
+License: DSB 3-clause
+Platform: UNKNOWN
+Requires-Python: >=3
+License-File: LICENSE
+
+UNKNOWN
+
