@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: pynavio
+Version: 0.0.1
+Summary: Python lib for navio
+Home-page: https://github.com/craftworksgmbh/pynavio
+Author: craftworks
+Author-email: dev-accounts@craftworks.at
+License: MIT license
+Keywords: pynavio
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+=======
+pynavio
+=======
+
+
+.. image:: https://img.shields.io/pypi/v/pynavio.svg
+        :target: https://pypi.python.org/pypi/pynavio
+
+.. image:: https://img.shields.io/travis/craftworksgmbh/pynavio.svg
+        :target: https://travis-ci.com/craftworksgmbh/pynavio
+
+.. image:: https://readthedocs.org/projects/pynavio/badge/?version=latest
+        :target: https://pynavio.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+
+
+Python lib for navio
+
+
+* Free software: MIT license
+* Documentation: https://pynavio.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.0.1 (2021-09-07)
+------------------
+
+* First release on PyPI.
+
+
