@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/BotAuth/BotAuth.py
+src/BotAuth/__init__.py
+src/BottleAuth.egg-info/PKG-INFO
+src/BottleAuth.egg-info/SOURCES.txt
+src/BottleAuth.egg-info/dependency_links.txt
+src/BottleAuth.egg-info/requires.txt
+src/BottleAuth.egg-info/top_level.txt
