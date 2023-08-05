@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: envuitest
+Version: 0.0.2
+Summary: Web Auto Test Framework with Selenium
+Home-page: https://github.com/goeasyway/EasyPlug
+Author: Even Lan
+Author-email: goeasyway@163.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/goeasyway/EasyPlug/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Salesforce Web Driver
+Web Auto Test Framework with Selenium
+
