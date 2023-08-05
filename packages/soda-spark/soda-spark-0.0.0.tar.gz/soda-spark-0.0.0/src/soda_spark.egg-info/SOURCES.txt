@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/soda_spark.egg-info/PKG-INFO
+src/soda_spark.egg-info/SOURCES.txt
+src/soda_spark.egg-info/dependency_links.txt
+src/soda_spark.egg-info/requires.txt
+src/soda_spark.egg-info/top_level.txt
+src/sodaspark/__init__.py
+src/sodaspark/scan.py
