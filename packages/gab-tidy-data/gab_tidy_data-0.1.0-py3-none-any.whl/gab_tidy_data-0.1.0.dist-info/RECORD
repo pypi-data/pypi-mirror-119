@@ -1,0 +1,11 @@
+gab_tidy_data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gab_tidy_data/__main__.py,sha256=i2l-VXjzJp2FXGrIujLRs3W2rZuS-TvJM5klWLTT61k,2894
+gab_tidy_data/gab_data_mapping.py,sha256=yn-wcyF2owKbYP6AaT394dbRiEGcYETQkc3rbGLqLcw,18605
+gab_tidy_data/gab_schema.sql,sha256=E7j7ofbgzFcdUrO8HKGUvV6CiNuGr6lmRBXMBHewwlo,7806
+gab_tidy_data/gab_to_sqlite.py,sha256=OdvECTE_wnJ1h4KlifHo8YJKPtuur7BtLUOWTyzuDZA,5088
+gab_tidy_data-0.1.0.dist-info/LICENSE,sha256=ACwmltkrXIz5VsEQcrqljq-fat6ZXAMepjXGoe40KtE,1069
+gab_tidy_data-0.1.0.dist-info/METADATA,sha256=VrVgiitirDZf4GJej0m207kL_MoS1UDmlox7wZ2MmyU,3759
+gab_tidy_data-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+gab_tidy_data-0.1.0.dist-info/entry_points.txt,sha256=8LyoJ-4u13YetfLluirF21tndDSj0kc82FqOya5xrx4,72
+gab_tidy_data-0.1.0.dist-info/top_level.txt,sha256=nuor67uOMIeyreRPVBJzrAWj5E_7jErYtZhav1M5ohc,14
+gab_tidy_data-0.1.0.dist-info/RECORD,,
