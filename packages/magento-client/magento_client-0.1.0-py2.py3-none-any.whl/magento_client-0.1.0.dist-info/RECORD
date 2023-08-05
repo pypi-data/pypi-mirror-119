@@ -1,0 +1,11 @@
+magento_client/__init__.py,sha256=so_0hvlSlRGkDfIdz5Sy2EzSW8lu9LXmab4j8riZwUA,136
+magento_client/cli.py,sha256=-Dovffk3lVEMg0WymvjtAPERS0yW919UAZWXDeSP4fw,1013
+magento_client/magento_client.py,sha256=FxO0Gxt19C7vARD3pwv80jGNJPn9yJHFXyl3h_nRdWM,1844
+magento_client/rest_client.py,sha256=6H3Al5NTZLQu81lhSDOakcrzjg9UfFttOtzpxIeFDxk,5378
+magento_client-0.1.0.dist-info/AUTHORS.rst,sha256=dN4ZehQ_GVu2Z8qZsLUS2nW67YUkmYnldj3bUukkQM8,160
+magento_client-0.1.0.dist-info/LICENSE,sha256=rI7TBKRHrZ6WRAAi9ZOK4nX5vfYzWIiZlKS4xlsRsww,1072
+magento_client-0.1.0.dist-info/METADATA,sha256=4dU8l8QczjQnRlBr2T5dlSlhJKXVagKf4ldxN-l5Q0I,1782
+magento_client-0.1.0.dist-info/WHEEL,sha256=Z-nyYpwrcSqxfdux5Mbn_DQ525iP7J2DG3JgGvOYyTQ,110
+magento_client-0.1.0.dist-info/entry_points.txt,sha256=I5sFKVu4oqNIYrSgZjT-DOSdXy_th4OEgMBMj4n0PyE,56
+magento_client-0.1.0.dist-info/top_level.txt,sha256=QXNbBoWQq0VJ1ia6MkBYQSfiRgm80Nbp4CPYhG1WaYs,15
+magento_client-0.1.0.dist-info/RECORD,,
