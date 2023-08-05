@@ -1,0 +1,13 @@
+ScraGet/Exceptions.py,sha256=_Qh1KuahnWRrDipGcPavq_HNx2uIdch9r4-P7xOQPJc,239
+ScraGet/ScraGet.py,sha256=g7TyCe43z7a_zjsa_Ap3UN_6NcyAbSp-HxO5p09CmCU,270
+ScraGet/__init__.py,sha256=3bDHP-ZtuYOu8qibUUap16dYsDuD4JkKKosCNuLgs98,306
+ScraGet/forum.py,sha256=6i0Bvwok6-uPmCgbDiX1Lt_38adLGSteRWxkqMyQEOo,1995
+ScraGet/frontpage.py,sha256=u0KWtc7TB_ZaOskdoSuv9LWaIg7oJl2E149P5y76kws,1065
+ScraGet/project.py,sha256=2PE9LmOE017WUc6C8_e7elkQHNxzQPAQflBSoAf8bUE,2542
+ScraGet/studios.py,sha256=JQICl6MXHQKBFn7ziJIJuZK2SAXUYhmDcOfDCUlUJBY,1143
+ScraGet/user.py,sha256=McFeGbuPGdqfJlH04RFOwNhGDytxfgpaMuZAcs9m6iw,3971
+ScraGet-0.1.1.dist-info/LICENSE,sha256=J1ITywQrlVhag_9OHTD18Qb99IpCJS6GZ5cUZZqNpE0,1068
+ScraGet-0.1.1.dist-info/METADATA,sha256=I2rG5TbMDNiijmPTRRX3C7GWTwAgV29MsdAOh68o0nc,2138
+ScraGet-0.1.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+ScraGet-0.1.1.dist-info/top_level.txt,sha256=O4B4kA5T__peqy2-9DlBHaOV6ORuXXDKzflv717iRXQ,8
+ScraGet-0.1.1.dist-info/RECORD,,
