@@ -1,0 +1,3 @@
+[console_scripts]
+token-test = magento_client.cli:main
+
