@@ -1,0 +1,44 @@
+dbs:
+  # Head to your `Article` database and copy/paste the URL here (or just the
+  #   part following your workspace name)
+  articles: <your-articles-page-slug>
+  # Head to your `Author` database and copy/paste the URL here (or just the part
+  #   following your workspace name)
+  authors: <your-authors-page-slug>
+
+
+status:
+  # Set this to whatever prefix you'd like to designate status. OR you may leave
+  #   it blank.
+  prefix: "status:"
+  # Create as many states as you would like. Provide a valid Notion color, or
+  #   leave it as "default"
+  states:
+    unread: { name: "To Read", color: "red", }
+    read: { name: "Done", color: "green", }
+
+fields-methods:
+  # State how we should split labels to extract `field-method` pairs. TAKE CARE
+  #   TO ENSURE THIS ONLY APPEARS ONCE PER LABEL.
+  delim: " - "
+  fields:
+    # Fields should look like this:
+    # <abbr>: { color: <color>, name: <name> }
+  methods:
+    # Methods should look like this:
+    # <abbr>: { color: <color>, name: <name> }
+
+bibtex:
+  venues:
+    book: publisher
+    article: journal
+    inproceedings: series
+    conference: series
+    proceedings: series
+
+  icons:
+    book: ":books:"
+    article: ":blue_book:"
+    inproceedings: ":bookmark_tabs:"
+    conference: ":bookmark_tabs:"
+    proceedings: ":bookmark_tabs:"
