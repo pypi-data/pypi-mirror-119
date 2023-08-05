@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: aimodelshare
+Version: 0.0.5
+Summary: Deploy locally saved machine learning models to a live rest API and web-dashboard.  Share it with the world via modelshare.org
+Home-page: https://www.modelshare.org
+Author: Michael Parrott
+Author-email: mikedparrott@modelshare.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# aimodelshare
+Repo for AI Model Share Project 
+  
+
+
