@@ -1,0 +1,10 @@
+fastapi_datatables/__init__.py,sha256=Vh60PWp_xKBXTnlMk55V-Q9eA9z-8R_gtMOIELo5QAY,351
+fastapi_datatables/filtration.py,sha256=rU_RyFvKRGcR7Xbby-bzLw2-XRlRPIx5wArU2dh2CfM,6861
+fastapi_datatables/operations.py,sha256=TORwR-C96-HxFZMSEuxngeZcdVMCoBePtp3h1V7KAOs,304
+fastapi_datatables/query.py,sha256=INFbcPZTNyEonW-ulgeEPv7gUF0t1ydumWdEquXUi_A,10384
+fastapi_datatables/schemas.py,sha256=YqmTr9ODQv8285jKL6xeqvMRm4mIxL5gmkCd39hLBwQ,1850
+fastapi_datatables/table.py,sha256=mMgBIgcNbH9WekhhJAb8OgUBfJsNLCaHV0lIVk7UoME,1182
+fastapi_datatables-0.6.1.dist-info/LICENSE,sha256=x6cL6vGylHpR7q_UH0jBF-6inJbDje3MdilT1XBOwOY,1068
+fastapi_datatables-0.6.1.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+fastapi_datatables-0.6.1.dist-info/METADATA,sha256=zhsYbcy36q2fxjyESeZ17q_qV4jvEsvrjDWGFKlDbzE,697
+fastapi_datatables-0.6.1.dist-info/RECORD,,
