@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: cfshandler
+Version: 0.0.6
+Summary: CFService Handler
+Home-page: https://github.com/boxpositron
+Author: David Ibia
+Author-email: <david.ibia@boxmarshall.com>
+License: UNKNOWN
+Description: Easily interface with CFService
+Keywords: python,cfservice
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
