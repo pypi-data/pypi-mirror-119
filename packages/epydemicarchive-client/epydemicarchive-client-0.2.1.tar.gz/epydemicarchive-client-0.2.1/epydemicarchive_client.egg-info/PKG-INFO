@@ -1,0 +1,40 @@
+Metadata-Version: 1.2
+Name: epydemicarchive-client
+Version: 0.2.1
+Summary: Client for the epydemic archive
+Home-page: http://github.com/simoninireland/epydemicarchive
+Author: Simon Dobson
+Author-email: simoninireland@gmail.com
+License: License :: OSI Approved :: GNU General Public License v3 or later
+Description: epydemicarchive-client: Client for epydemic archives
+        ====================================================
+        
+        .. image:: https://badge.fury.io/py/epydemicarchive.svg
+            :target: https://badge.fury.io/py/epydemicarchive
+        
+        Overview
+        --------
+        
+        ``epydemicarchive-client`` is the client-side of the API for accessing
+        ``epydemicarchive`` archives of networks. It is intended to make the
+        programmatic use of the archive simpler. Even simpler is to use the
+        archive-friendly network generators of ``epydemic``.
+        
+        
+        Author and license
+        ------------------
+        
+        Copyright (c) 2021, Simon Dobson <simoninireland@gmail.com>
+        
+        Licensed under the `GNU General Public License v3 or later <http://www.gnu.org/licenses/gpl.html>`_.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.6

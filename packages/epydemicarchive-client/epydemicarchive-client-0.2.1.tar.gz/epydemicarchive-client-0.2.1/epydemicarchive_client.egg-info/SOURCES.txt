@@ -1,0 +1,10 @@
+README.rst
+setup.py
+epydemicarchive/api/v1/client/__init__.py
+epydemicarchive/api/v1/client/client.py
+epydemicarchive_client.egg-info/PKG-INFO
+epydemicarchive_client.egg-info/SOURCES.txt
+epydemicarchive_client.egg-info/dependency_links.txt
+epydemicarchive_client.egg-info/not-zip-safe
+epydemicarchive_client.egg-info/requires.txt
+epydemicarchive_client.egg-info/top_level.txt
