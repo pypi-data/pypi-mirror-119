@@ -1,0 +1,3 @@
+exclude */static/*
+include MANIFEST.in
+include */*.pyc
