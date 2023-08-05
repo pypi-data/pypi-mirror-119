@@ -1,0 +1,10 @@
+lastfmcollagegenerator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lastfmcollagegenerator/collage_generator.py,sha256=uq97yELoCu2nyIci7ZKwt8om0XRanb5inqsw9CkdWdQ,3419
+lastfmcollagegenerator/lastfm/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lastfmcollagegenerator/lastfm/client.py,sha256=5jWhMRFu9ZXUhvOwpio6fLxdm6hJCFQ6d_qctAOHcic,782
+lastfmcollagegenerator/lastfm/utils.py,sha256=LSROFUwU3_GkCGwuz5uXdUjjitySEYM998koRoWcf-0,313
+lastfmcollagegenerator-0.1.1.dist-info/LICENSE,sha256=FsUbLJFIqVslAHJg3AoweKnesFSxcSQJlS87PPPYoUU,1053
+lastfmcollagegenerator-0.1.1.dist-info/METADATA,sha256=2-AzRmFPy9pB_kczbkqub7gGAZ6ibHDlFbA_1xYteIo,1863
+lastfmcollagegenerator-0.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+lastfmcollagegenerator-0.1.1.dist-info/top_level.txt,sha256=bmUCg-fNorgIOCQtnxiiNes425ppDwyuyYuuOiMR0TU,23
+lastfmcollagegenerator-0.1.1.dist-info/RECORD,,
