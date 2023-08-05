@@ -1,0 +1,5 @@
+setup.py
+leso.egg-info/PKG-INFO
+leso.egg-info/SOURCES.txt
+leso.egg-info/dependency_links.txt
+leso.egg-info/top_level.txt
