@@ -1,0 +1,10 @@
+setup.py
+georgea_distributions/Binomialdistribution.py
+georgea_distributions/Gaussiandistribution.py
+georgea_distributions/Generaldistribution.py
+georgea_distributions/__init__.py
+georgea_distributions.egg-info/PKG-INFO
+georgea_distributions.egg-info/SOURCES.txt
+georgea_distributions.egg-info/dependency_links.txt
+georgea_distributions.egg-info/not-zip-safe
+georgea_distributions.egg-info/top_level.txt
