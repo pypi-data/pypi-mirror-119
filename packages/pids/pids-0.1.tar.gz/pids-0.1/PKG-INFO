@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: pids
+Version: 0.1
+Summary: A tiny Python library for generating public IDs from integers
+Home-page: https://github.com/simonw/...
+Author: Simon Willison
+License: Apache License, Version 2.0
+Platform: UNKNOWN
+
+UNKNOWN
+
