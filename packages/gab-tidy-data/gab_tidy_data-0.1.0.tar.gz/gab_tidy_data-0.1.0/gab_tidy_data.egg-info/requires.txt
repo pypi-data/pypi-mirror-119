@@ -1,0 +1,10 @@
+click>=8.0.1
+
+[develop]
+nox
+flake8
+black
+
+[test]
+pytest
+nox
