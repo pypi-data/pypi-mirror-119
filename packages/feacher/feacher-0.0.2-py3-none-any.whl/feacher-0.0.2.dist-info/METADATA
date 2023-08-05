@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: feacher
+Version: 0.0.2
+Summary: Feacher - An Image Feature Vector Extraction Library
+Home-page: https://github.com/qpochlabs/feacher
+Author: Hari Prasad
+Author-email: h4ri.prasad@gmail.com
+License: MIT
+Keywords: python,pytorch,torchvison,feature-extraction
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Natural Language :: English
+Requires-Dist: torch
+Requires-Dist: Pillow
+Requires-Dist: torchvision
+
+A simple PyTorch based image feature extractor using Pre-Trained Models useful for Transfer Learning applications.
+
+
