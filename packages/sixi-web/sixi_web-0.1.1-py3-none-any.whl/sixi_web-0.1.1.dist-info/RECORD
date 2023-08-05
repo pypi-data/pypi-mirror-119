@@ -1,0 +1,9 @@
+LICENSE,sha256=2AtwuJmLnQDGjSoPbqAEypxxyu9mdJZceJlCAyIcI14,1066
+sixi_web/__init__.py,sha256=md2ZaIWnAMI9J2TsCkvAOAFxxo3qUUdgrh9kMvZ6P58,137
+sixi_web/api.py,sha256=XfxjOSqDHdVYvuexoR11qgSvxIQX_pFqchH56-D17tg,6378
+sixi_web/middleware.py,sha256=wvnh28IQY5x-KGX4EkQpMo2XWuK2Iik3J34UO2pc8dA,681
+sixi_web/response.py,sha256=2dNehog-fdiQz6TH5mT3OelMU-Z_cOc7gcuzjqJwDzY,933
+sixi_web-0.1.1.dist-info/LICENSE,sha256=2AtwuJmLnQDGjSoPbqAEypxxyu9mdJZceJlCAyIcI14,1066
+sixi_web-0.1.1.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+sixi_web-0.1.1.dist-info/METADATA,sha256=frB7u9U0hHkqLD5JoyjBEl24jubtML_SwjtO6ul4ows,3643
+sixi_web-0.1.1.dist-info/RECORD,,
