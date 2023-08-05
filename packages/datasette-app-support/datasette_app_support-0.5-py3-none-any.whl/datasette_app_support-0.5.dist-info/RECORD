@@ -1,0 +1,8 @@
+datasette_app_support/__init__.py,sha256=UYIHwZ5ym2sDRW7esAsmXEtT_EUF4s75KHFwa1SxeWg,5855
+datasette_app_support/static/sticky-footer.css,sha256=F6BcyzcPu_LnfJp-44yODHJXXGPD7xZZV7_EDTfaEFU,146
+datasette_app_support/templates/database.html,sha256=1phfz61G2YKSuEpd3rfFqvr5hzYvBW97dTS9YjUcS2A,569
+datasette_app_support-0.5.dist-info/METADATA,sha256=iM5mT1ANdUQh4wtxxcctvRuVTniAEAmtlGAzovDzFU0,3953
+datasette_app_support-0.5.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+datasette_app_support-0.5.dist-info/entry_points.txt,sha256=q7KiDah8U7YPYJIQeZ_1D5Is5ZHDpMdo3Z5zcQto6y8,49
+datasette_app_support-0.5.dist-info/top_level.txt,sha256=FdBLrGJ8X9bNp-y9AqHSQVOOyE_iSORgGKXRxgfhbyc,22
+datasette_app_support-0.5.dist-info/RECORD,,
