@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: easy3dmol
+Version: 0.1
+Summary: easier py3Dmol
+Home-page: UNKNOWN
+Author: Kexin Zhang
+Author-email: zhangkx2@shanghaitech.edu.cn
+License: MIT
+Description: UNKNOWN
+Keywords: computational biology,chemical information,protein
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering

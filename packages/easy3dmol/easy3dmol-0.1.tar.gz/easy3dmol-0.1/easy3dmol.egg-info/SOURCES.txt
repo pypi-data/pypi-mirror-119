@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+easy3dmol/__init__.py
+easy3dmol/type.py
+easy3dmol/utils.py
+easy3dmol.egg-info/PKG-INFO
+easy3dmol.egg-info/SOURCES.txt
+easy3dmol.egg-info/dependency_links.txt
+easy3dmol.egg-info/top_level.txt
