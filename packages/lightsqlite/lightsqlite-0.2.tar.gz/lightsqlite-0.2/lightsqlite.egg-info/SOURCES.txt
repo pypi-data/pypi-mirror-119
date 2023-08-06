@@ -1,0 +1,7 @@
+lightsqlite.py
+setup.cfg
+setup.py
+lightsqlite.egg-info/PKG-INFO
+lightsqlite.egg-info/SOURCES.txt
+lightsqlite.egg-info/dependency_links.txt
+lightsqlite.egg-info/top_level.txt
