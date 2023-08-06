@@ -1,0 +1,9 @@
+README.md
+setup.py
+starstar/__init__.py
+starstar/__version__.py
+starstar/core.py
+starstar.egg-info/PKG-INFO
+starstar.egg-info/SOURCES.txt
+starstar.egg-info/dependency_links.txt
+starstar.egg-info/top_level.txt
