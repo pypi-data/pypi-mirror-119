@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: blep
+Version: 0.0.1
+Summary: Static site generator.
+Home-page: https://git.aphrodite.dev/Tools/blep
+Author: Artemis
+Author-email: git@artemix.org
+License: CNPLv6
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Internet
+Classifier: Typing :: Typed
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# blep
+
+![trans rights!](https://awoo.systems/trans_rights_badge.svg)
+
+![The logo of blep is a blob cat doing a blep](.logo.png)
+
+Static site generator.
+
+
