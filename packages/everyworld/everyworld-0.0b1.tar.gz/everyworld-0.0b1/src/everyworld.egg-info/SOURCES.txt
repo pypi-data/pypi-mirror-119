@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/everyworld/__init__.py
+src/everyworld/code.py
+src/everyworld.egg-info/PKG-INFO
+src/everyworld.egg-info/SOURCES.txt
+src/everyworld.egg-info/dependency_links.txt
+src/everyworld.egg-info/top_level.txt
