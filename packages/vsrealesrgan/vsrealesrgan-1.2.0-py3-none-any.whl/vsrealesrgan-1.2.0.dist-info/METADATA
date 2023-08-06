@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: vsrealesrgan
+Version: 1.2.0
+Summary: RealESRGAN function for VapourSynth
+Home-page: https://github.com/HolyWu/vs-realesrgan
+Author: HolyWu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Multimedia :: Video
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: requests
+Requires-Dist: torch
+Requires-Dist: tqdm
+
+# Real-ESRGAN
+Real-ESRGAN: Training Real-World Blind Super-Resolution with Pure Synthetic Data
+
+Ported from https://github.com/xinntao/Real-ESRGAN
+
+
+## Dependencies
+- [NumPy](https://numpy.org/install)
+- [PyTorch](https://pytorch.org/get-started), preferably with CUDA. Note that `torchvision` and `torchaudio` are not required and hence can be omitted from the command.
+- [VapourSynth](http://www.vapoursynth.com/)
+
+
+## Installation
+```
+pip install --upgrade vsrealesrgan
+python -m vsrealesrgan
+```
+
+
+## Usage
+```python
+from vsrealesrgan import RealESRGAN
+
+ret = RealESRGAN(clip)
+```
+
+See `__init__.py` for the description of the parameters.
+
+
