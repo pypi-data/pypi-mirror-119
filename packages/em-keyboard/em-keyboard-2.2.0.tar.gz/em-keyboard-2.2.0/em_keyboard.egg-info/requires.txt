@@ -1,0 +1,10 @@
+
+[:platform_system == "Darwin"]
+pyperclip
+
+[:platform_system == "Windows"]
+pyperclip
+
+[tests]
+pytest
+pytest-cov
