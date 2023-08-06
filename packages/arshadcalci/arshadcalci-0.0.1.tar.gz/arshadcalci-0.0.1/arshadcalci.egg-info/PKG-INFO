@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: arshadcalci
+Version: 0.0.1
+Summary: A very basic calculator
+Home-page: UNKNOWN
+Author: Arshad Khan
+Author-email: ak123@org1.org
+License: MIT
+Description: This is just for Practise
+        
+        CHANGE LOG
+        ==========
+        
+        0.0.1 ( 09/09/2021 )
+        --------------------
+        - First Release
+Keywords: calculator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3

@@ -1,0 +1,10 @@
+CHANGELOG.txt
+LICENCE.txt
+MANIFEST.in
+README.txt
+setup.py
+arshadcalci.egg-info/PKG-INFO
+arshadcalci.egg-info/SOURCES.txt
+arshadcalci.egg-info/dependency_links.txt
+arshadcalci.egg-info/top_level.txt
+library123/__init__.py
