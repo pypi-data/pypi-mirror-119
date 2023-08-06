@@ -1,0 +1,14 @@
+click
+google
+protobuf
+grpcio
+grpcio-tools
+tenhou_wall_reproducer
+rich
+gym
+pillow
+pettingzoo
+svgwrite
+
+[test]
+pytest
