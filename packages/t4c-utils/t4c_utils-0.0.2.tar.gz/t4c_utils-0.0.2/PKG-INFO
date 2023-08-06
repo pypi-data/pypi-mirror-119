@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: t4c_utils
+Version: 0.0.2
+Summary: T4C utils
+Home-page: https://github.com/NewbiZ/t4c_utils
+Author: Aurelien Vallee
+Author-email: aurelien.vallee@protonmail.com
+License: UNKNOWN
+Description: The 4th Coming helper tools
+Platform: UNKNOWN
+Requires-Python: >=3.8

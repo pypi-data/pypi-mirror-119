@@ -1,0 +1,15 @@
+README.md
+setup.py
+t4c_utils/__init__.py
+t4c_utils/cli.py
+t4c_utils/rtmap.py
+t4c_utils/sprite_data.py
+t4c_utils/sprite_id.py
+t4c_utils/sprite_palette.py
+t4c_utils/version.py
+t4c_utils.egg-info/PKG-INFO
+t4c_utils.egg-info/SOURCES.txt
+t4c_utils.egg-info/dependency_links.txt
+t4c_utils.egg-info/entry_points.txt
+t4c_utils.egg-info/requires.txt
+t4c_utils.egg-info/top_level.txt
