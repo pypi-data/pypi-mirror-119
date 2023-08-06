@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: Py3PDF
+Version: 1.26.1
+Summary: PyPDF2 fork
+Home-page: https://github.com/LateNightLearning/Py3PDF
+Author: Jacod Shax
+Author-email: igotlocekdout2day@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+
+
+A fork of the popular PyPDF2 library adding support to write
+to compression-based file descriptors (ex. gzip.open). Codebase
+is also being updated to support newer versions of Python 3.
+
+A Pure-Python library built as a PDF toolkit.  It is capable of:
+
+- extracting document information (title, author, ...)
+- splitting documents page by page
+- merging documents page by page
+- cropping pages
+- merging multiple pages into a single page
+- encrypting and decrypting PDF files
+- and more!
+
+By being Pure-Python, it should run on any Python platform without any
+dependencies on external libraries.  It can also work entirely on StringIO
+objects rather than file streams, allowing for PDF manipulation in memory.
+It is therefore a useful tool for websites that manage or manipulate PDFs.
+
+
