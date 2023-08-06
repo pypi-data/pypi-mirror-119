@@ -1,0 +1,14 @@
+fABBA/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fABBA/aggregation.py,sha256=IW6kCoVCN7iF4W7uKdKhpaT79VC-4mUxZLfkLbGbNkw,5219
+fABBA/caggregation.cp38-win_amd64.pyd,sha256=TdnBkdypSUOY7fFIxzplrUaJ-ic8K0fI-v7ZpR8-lc0,82944
+fABBA/caggregation_memview.cp38-win_amd64.pyd,sha256=8bJN8AV2NlYVsEIKwjemTTbZBt6fjZtOwDbCuKOBLgQ,191488
+fABBA/chainApproximation.py,sha256=7RoO4bGbEXi-KPAXYh8A1PPPdILwfIJFyBliUKLkNe0,3934
+fABBA/chainApproximation_c.cp38-win_amd64.pyd,sha256=iPJmlNH2cdUr1csKMa9BWMZdCS7a9u3vNYxol3yuFMo,159232
+fABBA/digitization.py,sha256=O5GXLnWM8vo0GQqoNwGTM7NCk0YVyDBpU2ABNfUs-9s,7433
+fABBA/load_datasets.py,sha256=HSYJ7g44zIcY6GvAQfJylF8Gt0YqNWLYC4tYbsKMQY4,376
+fABBA/symbolic_representation.py,sha256=f5TKyhqDTd-Dsy8MMHUvTrqeyZRtR4ACH-eX2iT5g84,29209
+fABBA-0.1.8.dist-info/LICENSE,sha256=w5qW9E9Dc1SkWq1c5tE6c0k_fvzs2qkrSV0Z3jWwVWU,1563
+fABBA-0.1.8.dist-info/METADATA,sha256=V6A7aTuOP4PYVlrwlAhm8g_V7JgA2C4OUH1MZWObMfE,3422
+fABBA-0.1.8.dist-info/WHEEL,sha256=P24hRDQapckAvHvgBBzlH5uw6rQ_oZQtKbG6drGrqOM,100
+fABBA-0.1.8.dist-info/top_level.txt,sha256=RtRW2F1Pwo3T3t9Rj3rxtFxOLC5YPtb5S3_W12SH3XY,6
+fABBA-0.1.8.dist-info/RECORD,,
