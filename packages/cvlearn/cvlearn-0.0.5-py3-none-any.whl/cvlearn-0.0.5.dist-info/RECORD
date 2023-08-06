@@ -1,0 +1,9 @@
+cvlearn/FaceDetection.py,sha256=T1YQY5opD0YwP0i6lLaeSfgRKffbzC1XfyShPBwnVDw,1615
+cvlearn/FaceMesh.py,sha256=ugao-Px1cubu8-nCic3ws0RMMv5H3lvHbtRbtkkdVWE,1674
+cvlearn/FingerCounter.py,sha256=3NGzXrFSp4lGUoMn_5WHHDL6CIobvFajLHuY4J7S-X0,3194
+cvlearn/HandTrackingModule.py,sha256=Le6YkteZZk3SdpVK6L-Kq5jqmXodG4C-Vfk1qtkzWVI,3871
+cvlearn/__init__.py,sha256=c4lz1BLE2oZ-fsMTdAhkikGnea8-XHXftDOe4nOUPro,140
+cvlearn-0.0.5.dist-info/METADATA,sha256=UYV8xlC4DxAJJwpdMA4XDSwCsVc52NxPWSeCmd3EzAI,3071
+cvlearn-0.0.5.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+cvlearn-0.0.5.dist-info/top_level.txt,sha256=Y1OXLkbShvs8sKbXQvMbUa40asvEkgmEpp6kGH1HzQQ,8
+cvlearn-0.0.5.dist-info/RECORD,,
