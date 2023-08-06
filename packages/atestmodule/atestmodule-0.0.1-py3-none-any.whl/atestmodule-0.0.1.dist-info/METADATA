@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: atestmodule
+Version: 0.0.1
+Summary: Data about World
+Home-page: UNKNOWN
+Author: Kashif Iftikhar (Megasoft)
+Author-email: <mkiak22571@gmail.com>
+License: UNKNOWN
+Keywords: python,infinitenoun,infinite,noun,infinite noun
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+A package that provides some useful info about World.
+
+
