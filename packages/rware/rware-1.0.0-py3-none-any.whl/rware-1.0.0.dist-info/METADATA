@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: rware
+Version: 1.0.0
+Summary: Multi-Robot Warehouse environment for reinforcement learning
+Home-page: https://github.com/semitable/robotic-warehouse
+Author: Filippos Christianos
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.7
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: gym (>=0.15)
+Requires-Dist: pyglet
+Requires-Dist: networkx
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
+UNKNOWN
+
