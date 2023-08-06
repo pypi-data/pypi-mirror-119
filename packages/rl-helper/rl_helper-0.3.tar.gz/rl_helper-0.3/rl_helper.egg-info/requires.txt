@@ -1,0 +1,6 @@
+gym
+pytest
+matplotlib
+pyvirtualdisplay
+pyyaml
+attrdict
