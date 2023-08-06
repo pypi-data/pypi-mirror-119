@@ -1,0 +1,10 @@
+resiliparse/__init__.py,sha256=tcgP7XSmGulsSZsXOjU4xV_EmkAWjFkLbt7KHwWwj9M,593
+resiliparse/parse/__init__.py,sha256=LI8IoSTYXe2g2CGdD99vPZVkxzxnPF97zwly2QfBIos,798
+resiliparse/parse/cli.py,sha256=WNWc9wUsMHVGLG9G-u8Me2Vj6S8NPOd8m-_bTsAAXLc,5641
+resiliparse/parse/encoding.cp310-win_amd64.pyd,sha256=OGD0kqPB-6Xoq-_OZibgdp70gFnoWKV8XOCLFQwbb0A,104960
+resiliparse/parse/html.cp310-win_amd64.pyd,sha256=qFgDFvoDJANMboNZncHvk20KkGBf_mUnv0SfXx8lcGk,267776
+resiliparse/parse/http.cp310-win_amd64.pyd,sha256=KKIepV6CzxL4ytOfRYzI2_6VvVrIsL_wvJyt8Npxz1w,53760
+Resiliparse-0.4.0.dist-info/METADATA,sha256=CTa9Ug7leWdK-ILeMkW7B-S0IQkXap_ibAZ3h_PIA5M,1904
+Resiliparse-0.4.0.dist-info/WHEEL,sha256=XLhL6_LGbcSb6E23Xy6hQ7SBsl9Luvz0KHWMAPovEWA,102
+Resiliparse-0.4.0.dist-info/top_level.txt,sha256=iwOzBXN0My7I-RCfTJKD4IrJage9Z8lzzfMsOUJ62HU,12
+Resiliparse-0.4.0.dist-info/RECORD,,
