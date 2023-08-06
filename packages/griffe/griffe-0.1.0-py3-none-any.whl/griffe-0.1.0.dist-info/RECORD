@@ -1,0 +1,17 @@
+griffe/__init__.py,sha256=_egiBa6s80d1Qf-ffyTIXmewY65zOg1zFUJL67ntHJY,293
+griffe/__main__.py,sha256=jn8UaYKEEYXF99-MTt4iq7JpU8eR5RHlBJ2wibzSTvM,338
+griffe/cli.py,sha256=wJCI5S97ZBY5Ws3NhVAQs2TRPBhydPM1dqyJJJgb0GQ,1725
+griffe/collections.py,sha256=-t_sOQM_a7vvFyizFgWifRc45Ij49j6OepFdpD_Cytc,251
+griffe/dataclasses.py,sha256=hXnUO4xk6LJif1o7QoiIdatADB6WysQ4GdLPPgs52Z0,7835
+griffe/encoders.py,sha256=bUk7_yaX4ljPOzrGommjKxF5DdcSlZqiDa8SL4WnwTY,3034
+griffe/extensions/__init__.py,sha256=QlQCck9YYvO7-9aSVqCSf7iCqnwfmbNb4V9Y4oJ7i3I,189
+griffe/extensions/base.py,sha256=lcEhj6R8wS_dy5aOMSx5QA8b3F_2zdPbRFvoxExzdP0,3436
+griffe/loader.py,sha256=wNUno1Do7XhNmv7lxyLvCyCHefo9lI96JTSFSZPa7qQ,5269
+griffe/logger.py,sha256=lB_DbZxRI-l6YVYWznLBqHq6J4swoktff9sGMmZO-T0,989
+griffe/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+griffe/visitor.py,sha256=O9n0fPhIMoQikIfHwOQOd195c7MN7-hdkOjEpvJ3eYE,4536
+griffe-0.1.0.dist-info/entry_points.txt,sha256=gQKKHdJwofLLmWbLfFdWsNg84XasWlEGgSAS6gbA_EU,42
+griffe-0.1.0.dist-info/WHEEL,sha256=ojyR114igv2JjOvmYwTpjt6GCKTaYPeRdrKIHlqFO60,87
+griffe-0.1.0.dist-info/METADATA,sha256=2Mt3BQCLfGpix1iSpPihzgk3mT_KMwi51xGdOOyhYCY,2577
+griffe-0.1.0.dist-info/LICENSE,sha256=JGb4pdPEM8TTjjhr-uNCO7oXkiVrwG5Pz0JamcjNF_s,754
+griffe-0.1.0.dist-info/RECORD,,
