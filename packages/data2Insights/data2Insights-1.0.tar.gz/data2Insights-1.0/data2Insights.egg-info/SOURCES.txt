@@ -1,0 +1,12 @@
+README.md
+setup.py
+data2Insights/__init__.py
+data2Insights/base1.py
+data2Insights/base2.py
+data2Insights/base3.py
+data2Insights/settings.py
+data2Insights.egg-info/PKG-INFO
+data2Insights.egg-info/SOURCES.txt
+data2Insights.egg-info/dependency_links.txt
+data2Insights.egg-info/requires.txt
+data2Insights.egg-info/top_level.txt
