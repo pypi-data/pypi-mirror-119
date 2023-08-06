@@ -1,0 +1,15 @@
+nuitkabs/__init__.py,sha256=mWAAXKNy4IxahcdLV_5IRfPMjE1hEBLPRn_3Xasc9X4,39
+nuitkabs/nbuilder.py,sha256=gAaAUXZyzuu_koHgwS9NLbKbGw7uDrUKddIgzK27D-I,1801
+nuitkabs/yaml_compat.py,sha256=1TS5HOvcB2wN2eS3mhtzPr0wiLQ1TiYAjxGZ4rzYSGE,188
+nuitkabs/builders/__init__.py,sha256=AFVPQHHCMxCE3-t2aWnlPv_LapRPqrcDa5ExE-U9yLc,139
+nuitkabs/builders/arg_processor.py,sha256=xPFwJcYskdrUTs465JY_0XjU1Bos7FO5U_qVA2Ckx0I,600
+nuitkabs/builders/executable.py,sha256=k9_keToDw-pQIYw0B-ECXvpuEjjCkLSryPpP2UvJO8g,432
+nuitkabs/builders/generic.py,sha256=UYfNjs62KJL5MDQpP6vi-WudSvISBKl-H7DGxbm7p0I,2083
+nuitkabs/builders/module.py,sha256=3QY_SxmGigZ1CbhFcEVVlRXJ564I6zMRqq6EyYYN83o,421
+nuitkabs/builders/package_finder.py,sha256=FudQtEhtz5ZE4lLNkFu27CvyuEYYVQT-_SVe6hLO4Q0,1339
+nuitkabs-0.0.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+nuitkabs-0.0.2.dist-info/METADATA,sha256=wleSCGsiOOkAHrWrwqtQETxPGLKLZQ-So5WhnUmJFS4,3285
+nuitkabs-0.0.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+nuitkabs-0.0.2.dist-info/entry_points.txt,sha256=75VB6pJMwxZyWNnUk1cfcyHYlAiNjf2nRkvXKpxT6mk,54
+nuitkabs-0.0.2.dist-info/top_level.txt,sha256=Zp1DIzePWwVOr03RrHQ9Vkc29H9od_vM6ycocrX9gK4,9
+nuitkabs-0.0.2.dist-info/RECORD,,
