@@ -1,0 +1,16 @@
+rfcdl/.gitignore,sha256=zYAINV1cdPnEx7wv_9n8W2FuzVjwkmxurIvlOL6NGYk,11
+rfcdl/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rfcdl/__main__.py,sha256=g6x69nmPcM_ft_d3Ac7V99zD00FAddqbq0IwOngrVRg,67
+rfcdl/arguments.py,sha256=spQ-xc85Csg2qqPL8P9FTw3coOxVdJFq21stirv8NWU,1492
+rfcdl/config.py,sha256=O3ussDdlepNO7Jz-ox6rrA0eUvecpgveh_lmS61HD8M,1297
+rfcdl/document.py,sha256=-jpWlfWb_adA01Gy4-SNLsfIQXi6AakdcGQv1oVCaoA,946
+rfcdl/downloader.py,sha256=65nAa19o774A3kd0CpSR-eDqVUXFbyicdMnXztYV2w8,3856
+rfcdl/exception.py,sha256=ZOkMercNpeNIDL7scjlGm_MOibIAbPJHDOcacyABjg4,161
+rfcdl/logging.py,sha256=agTScgWKclMqJMbvqihuEo2d2A9YVtzgP25ljmpkP5M,354
+rfcdl/rfcdl.py,sha256=eRpRgpeOGN94-Mx4QrpAuxtcWwEnm2A-Wwx_R9_AfX0,1819
+rfcdl/util.py,sha256=9wPZIZUkY3iwwZGdOCgdW9zKp7nMeOHPOqYniKrLks0,887
+rfcdl-1.2.7.dist-info/entry_points.txt,sha256=AQSd9_lZMhRFumHPE9MxYpS2WtEuTYtG-oDTGlrDU2g,42
+rfcdl-1.2.7.dist-info/LICENSE,sha256=m8lFIaUo9G2rtZDa2OeMAFwa-pXBGvsUv0zQos9Cr7s,1066
+rfcdl-1.2.7.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+rfcdl-1.2.7.dist-info/METADATA,sha256=tAuSDL2p2BjfiFDNWQPnAMqmPjS6tFjL4Og_-1zd6fg,4411
+rfcdl-1.2.7.dist-info/RECORD,,
