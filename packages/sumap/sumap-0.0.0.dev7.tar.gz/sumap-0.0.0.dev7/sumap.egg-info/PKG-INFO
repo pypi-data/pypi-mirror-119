@@ -1,0 +1,107 @@
+Metadata-Version: 2.1
+Name: sumap
+Version: 0.0.0.dev7
+Summary: SUMAP: Supervised UMAP
+Home-page: https://github.com/tianlinhe/sumap
+Author: Tianlin He
+Author-email: tinaho_ok@hotmail.com
+License: BSD 3-Clause License
+        
+        Copyright (c) 2021, Tianlin He
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        * Redistributions of source code must retain the above copyright notice, this
+          list of conditions and the following disclaimer.
+        
+        * Redistributions in binary form must reproduce the above copyright notice,
+          this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        
+        * Neither the name of the copyright holder nor the names of its
+          contributors may be used to endorse or promote products derived from
+          this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# SUMAP: Supervised UMAP
+
+`sumap` makes it easy to tune the parameters of UMAP (Uniform Manifold Approximation and Projection) for enhancement of embedding of high-dimensional data. 
+
+## Installation
+
+`sumap` can be installed by running the following command line code:
+
+```
+pip install sumap
+```
+
+## General Usage
+By creating a `sumap.SUMAP()` instance, one can set up the search of UMAP hyperparameters in a grid search by prefixing the hyperparameters with `umap__`.
+
+By default, the optimal UMAP hyperparamters is selected by a SVC classifier.
+
+```
+import sumap
+
+# create sumap instance
+mypipeline = sumap.SUMAP(
+    umap__n_neigbors=[5, 10] # list of n_neighbors to search
+    umap__min_dist=[0, 0.5] # list of min_dist to search
+)
+```
+
+Then we can fit the instance with training data:
+
+```
+# fit sumap instance with training data
+mypipeline.fit(Xtrain, # Pandas dataframe
+               ytrain # Pandas series
+               )
+```
+
+The fitted pipeline is stored as a `Pipeline` object which can be accessed by `mypipeline.clf_pipeline`.
+
+Alternatively, `mypipeline` has some attributes as function that allows one to transform data into lower dimensional, and predict the label of data etc.
+
+```
+# transform data to n_components dimension
+mypipeline.transform(Xtest)
+
+# predict label
+mypipeline.transform(Xtest)
+
+# score the predicted labels, if true labels were given
+mypipline.score(Xtest, ytest)
+```
+
+## Plotting utilities
+In addition, one can access more attributes for easy plotting of the results:
+
+```
+# plot confusion matrix of the classification, if true labels were given
+mypipeline.plot_cmatrix(Xtest, ytest)
+
+# plot the optimal umap embeddings and color the labels if given
+mypipeline.plot_embeddings(Xtest, ytest)
+```
+
+## Links:
+* [SUMAP on GitHub: ](https://github.com/tianlinhe/sumap)
+* [UMAP on GitHub: ](https://github.com/lmcinnes/umap)
+
+
