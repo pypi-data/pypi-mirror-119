@@ -1,0 +1,4 @@
+openpyxl
+odfpy
+pandas
+email-validator
