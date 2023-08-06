@@ -1,0 +1,105 @@
+.notebook_app {
+    /*background:red !important;*/
+}
+
+.mui-btn--primary {
+    background-color: #0b409c;
+}
+
+.fa-a:before {
+    font-family: "League Mono"; /* your font family here! */
+    font-weight: bold;
+    font-size: 17px;
+    content: 'a';
+}
+
+#cogram-status {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.cogram_info_panel_display {
+    z-index: 10;
+    top: 123px;
+    position: fixed;
+    right: 25px;
+    width: 35%;
+    padding: 20px 20px 30px;
+}
+
+#cogram_token_close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    cursor: pointer;
+}
+
+#cogram-button-group {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+}
+
+.alert-message {
+    margin: auto;
+    text-align: center;
+    color: black;
+}
+
+.success-message {
+    margin: auto;
+    text-align: center;
+    color: black;
+}
+
+.fa-hint {
+    font-size: 10px;
+}
+
+#cogram-hint {
+    position: absolute;
+    z-index: 10;
+    padding: 0;
+    left: 102px;
+    top: -20px;
+    display: flex;
+    align-items: center;
+    background: #EEE;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0;
+}
+
+#cogram-hint-text {
+    text-align: center;
+    font-size: 10px;
+    color: navy;
+}
+
+.cell.code_cell.selected {
+    position: relative;
+    /*border: none !important;*/
+}
+
+#upgrade_button {
+    min-width: 130px;
+}
+
+.notebook_app {
+    background: white !important;
+}
+
+#notebook-container {
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 1000px;
+}
+
+.input_area {
+    background-color: #F8F8F8 !important;
+    border: 1px solid #f7f7f7; /* Add border around selected code cell */
+    border-radius: 3px;
+    background: #f7f7f7;
+    line-height: 1.5em; /* margin: 0.5em 0; */
+    padding: 10px 5px;
+}
