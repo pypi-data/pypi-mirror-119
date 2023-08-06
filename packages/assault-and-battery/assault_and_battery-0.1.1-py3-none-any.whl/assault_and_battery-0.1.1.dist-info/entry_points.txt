@@ -1,0 +1,3 @@
+[console_scripts]
+assault=assault_and_battery.cli:cli
+
