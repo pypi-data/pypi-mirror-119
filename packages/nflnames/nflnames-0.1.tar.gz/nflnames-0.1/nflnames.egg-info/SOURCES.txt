@@ -1,0 +1,13 @@
+README.md
+setup.py
+nflnames/__init__.py
+nflnames/players.py
+nflnames/teams.py
+nflnames.egg-info/PKG-INFO
+nflnames.egg-info/SOURCES.txt
+nflnames.egg-info/dependency_links.txt
+nflnames.egg-info/not-zip-safe
+nflnames.egg-info/top_level.txt
+nflnames/data/master_players.csv
+scripts/__init__.py
+scripts/update_master_players.py
