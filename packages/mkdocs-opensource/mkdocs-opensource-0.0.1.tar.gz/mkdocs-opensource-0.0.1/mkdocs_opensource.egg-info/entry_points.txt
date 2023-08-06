@@ -1,0 +1,3 @@
+[mkdocs.themes]
+open_source_theme = open_source_theme
+
