@@ -1,0 +1,15 @@
+onnx_path: model.onnx
+trt_path: model.trt
+batch: 1
+fp16: 0
+int8: 0
+verbose: 0
+calibrator:
+  data_type: image      # [image, ]
+  data_dir: directory
+  batch: 5
+  input_size: [416, 416, 3]
+  num_random_samples: 500   # samples randomly from dataset
+  calibration_file: calibration_cache.bin
+  preprocess_fn: ./preprocess.py   # define preprocess_fn in py
+
