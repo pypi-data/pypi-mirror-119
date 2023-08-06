@@ -1,0 +1,10 @@
+pytz
+blinker
+requests
+simplejson
+lxml
+jinja2
+cologer>=2.0
+ctpbee_api>=0.21
+numpy
+pandas
