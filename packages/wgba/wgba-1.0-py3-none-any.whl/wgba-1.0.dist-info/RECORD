@@ -1,0 +1,12 @@
+wgba/__init__.py,sha256=sozD8mOMFOrU_9fHylt9jmYaHPIhNoE5RFneV38Jvk4,63
+wgba/cli.py,sha256=RPz7bxq4fxRg_ilu4uAJQ6CJzS24_-2AtkoxLJ8OT3Y,1929
+wgba/formats.py,sha256=wpXEzUluaXGlGaQDd3vda1TaqkG4H2dkubMqPHXL3j4,1965
+wgba/genomes.py,sha256=9SfEG61CIhySETzdkbBqUt320n2kfH0EJ_PJ9tv-e4M,1683
+wgba/sizes/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wgba/sizes/grch38.chrom.sizes,sha256=wtkyM5f2VjchBa2aEBbfIyOMmc1Xg9nFni4cXIOtFrI,11671
+wgba/sizes/hg19.chrom.sizes,sha256=kpugevANA3dJIwPliwoFA-5a2zb-8BxdLx2cQ-72vZs,1970
+wgba-1.0.dist-info/METADATA,sha256=-PsClcEABb7sg5uOmBzVmu71ed_sTmEcPMN5t4T_7Mo,2041
+wgba-1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+wgba-1.0.dist-info/entry_points.txt,sha256=xGOTzqd0YsHsQ-XjmKBKC1eD4mDU3SS9WHT1tENfpY4,39
+wgba-1.0.dist-info/top_level.txt,sha256=k22oKYWMz7zPalVIQCUj7uylHnLe2ELiiaHcZqupCAA,5
+wgba-1.0.dist-info/RECORD,,
