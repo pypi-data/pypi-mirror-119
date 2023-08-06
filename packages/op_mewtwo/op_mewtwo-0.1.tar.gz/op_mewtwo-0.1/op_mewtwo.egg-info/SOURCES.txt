@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+op_mewtwo/__init__.py
+op_mewtwo.egg-info/PKG-INFO
+op_mewtwo.egg-info/SOURCES.txt
+op_mewtwo.egg-info/dependency_links.txt
+op_mewtwo.egg-info/not-zip-safe
+op_mewtwo.egg-info/top_level.txt

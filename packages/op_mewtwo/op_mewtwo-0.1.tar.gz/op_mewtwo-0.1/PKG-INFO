@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: op_mewtwo
+Version: 0.1
+Summary: mewtwo - RiskDataframe
+Home-page: https://github.com/PaulaEscusol/Group-assignment_Python-II
+Author: Ahmed Aljeshi | Juan Francisco Balbi | Paula Escusol Entio | Isobel Rae Impas | Paliz Mungkaladung
+Author-email: paliz.mungkaladung@student.ie.edu
+License: MIT
+Description: **# op_mewtwo**
+        
+        This package contains a python class called Risk Dataframe which contains methods to perform a missing not at random analysis and to automate a risk-based segmentation process by analyzing all the features in the dataset and identifying the best split for segmenting each feature. 
+        
+        In order to effectively use the methods in this class, some degree of data cleaning and preparation will be required. A demo file using a Car Loans Portfolio Dataset is provided.
+        
+        
+        To access the Risk Dataframe class within the Mewtwo package, please do the following,
+        
+        **from op_mewtwo.RiskDataframe import RiskDataframe**
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
