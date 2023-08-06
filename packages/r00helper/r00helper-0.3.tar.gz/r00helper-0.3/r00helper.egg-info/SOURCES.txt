@@ -1,0 +1,13 @@
+.gitignore
+LICENSE.txt
+README.rst
+setup.py
+start.bat
+r00helper/__init__.py
+r00helper/asession.py
+r00helper/package2pypi.py
+r00helper.egg-info/PKG-INFO
+r00helper.egg-info/SOURCES.txt
+r00helper.egg-info/dependency_links.txt
+r00helper.egg-info/top_level.txt
+source/pypi.png
