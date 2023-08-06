@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: rl-helper
+Version: 0.3
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: cywgoog@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: gym
+Requires-Dist: pytest
+Requires-Dist: matplotlib
+Requires-Dist: pyvirtualdisplay
+Requires-Dist: pyyaml
+Requires-Dist: attrdict
+
+UNKNOWN
+
