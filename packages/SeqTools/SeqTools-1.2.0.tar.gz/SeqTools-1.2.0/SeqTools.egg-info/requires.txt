@@ -1,0 +1,24 @@
+tblib
+
+[documentation]
+sphinx
+ipython
+ipykernel
+nbconvert
+nbsphinx
+Pillow
+numpy
+scikit-learn
+
+[numpy support]
+numpy
+
+[pytorch support]
+pytorch
+
+[tests]
+pytest
+pytest-timeout
+numpy
+coverage
+nose
