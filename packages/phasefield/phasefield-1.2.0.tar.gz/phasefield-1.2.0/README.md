@@ -1,0 +1,60 @@
+Automatic Construction of Phasefield Approximations from Sharp-Interface Models
+===============================================================================
+
+The title says it all: this module uses a simple description of a sharp
+interface problem to derive a phasefield approximation which can then be
+solved using a finite-element toolbox. The domain specific language
+[UFL][ufllink] is used both for defining the sharp interface model and for
+the weak formulation of the phasefield approximation. The resulting UFL form
+can then be inserted into any of the finite element packages available
+which can take UFL forms as an input. A class for evolving the solution
+over time is available based on [dune][dunelink]  and [fenics][fenicslink].
+The bindings for the `dune` package are based on the dune module
+[dune-fem package][fempylink] include both dynamic local grid refinement
+and coarsening. This makes it easy to track the interface with a fine grid
+while a coarser grid can be used away from the interface. This is essential
+for evolving phasefield models efficiently. In addition the `dune` stepper
+also provides an efficient solver for obstacle problems so that double
+obstacle potentials can be used in the modelling. This solver is based
+on [tnmg][tnmglink].
+
+So far this module has been tested with:
+
+- two phase models including additional bulk equations, e.g., for the temperature
+- multphase models
+- single phase models, e.g., crack propagation problems
+
+Installation
+------------
+The easiest way to test this module is to install the python package from
+the python package index:
+
+```
+pip install phasefield
+```
+
+Some example scripts showing how to use the package can then be optained by
+calling
+
+```
+python -m phasefield
+```
+
+The scripts are then located in the subfolder `phasefield_tutorial`.
+
+You can also clone the git repository
+```
+git clone https://git.imp.fu-berlin.de/agnumpde/dune-tnnmg
+```
+and access the examples in the folder `phasefield/tutorial`.
+To get the python package up and running first execute
+```
+pip install -e .
+```
+in the main folder of the repository.
+
+[ufllink]: https://fenics.readthedocs.io/projects/ufl/en/latest/
+[fenicslink]: https://fenicsproject.org/
+[dunelink]: http://dune-project.org
+[fempylink]: https://gitlab.dune-project.org/dune-fem/dune-fem
+[tnmglink]: https://git.imp.fu-berlin.de/agnumpde/dune-tnnmg
