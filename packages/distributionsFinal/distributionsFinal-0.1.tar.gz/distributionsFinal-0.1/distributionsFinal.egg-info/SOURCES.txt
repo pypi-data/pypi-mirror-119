@@ -1,0 +1,13 @@
+README.md
+license.txt
+setup.cfg
+setup.py
+distributionsFinal/Binomialdistribution.py
+distributionsFinal/Gaussiandistribution.py
+distributionsFinal/Generaldistribution.py
+distributionsFinal/__init__.py
+distributionsFinal.egg-info/PKG-INFO
+distributionsFinal.egg-info/SOURCES.txt
+distributionsFinal.egg-info/dependency_links.txt
+distributionsFinal.egg-info/not-zip-safe
+distributionsFinal.egg-info/top_level.txt
