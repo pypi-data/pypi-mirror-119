@@ -1,0 +1,3 @@
+[console_scripts]
+blif2graph = blif2graph.blif2graph:main
+

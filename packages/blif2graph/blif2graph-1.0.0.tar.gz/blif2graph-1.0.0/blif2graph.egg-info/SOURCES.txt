@@ -1,0 +1,17 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+blif2graph/__init__.py
+blif2graph/__main__.py
+blif2graph/_version.py
+blif2graph/blif2graph.py
+blif2graph/fsm2graph.py
+blif2graph/lgate2graph.py
+blif2graph/utility.py
+blif2graph.egg-info/PKG-INFO
+blif2graph.egg-info/SOURCES.txt
+blif2graph.egg-info/dependency_links.txt
+blif2graph.egg-info/entry_points.txt
+blif2graph.egg-info/requires.txt
+blif2graph.egg-info/top_level.txt

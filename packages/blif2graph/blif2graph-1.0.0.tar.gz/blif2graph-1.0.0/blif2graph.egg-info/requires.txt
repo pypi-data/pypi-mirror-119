@@ -1,0 +1,2 @@
+graphviz==0.17
+blifparser==1.0.0
