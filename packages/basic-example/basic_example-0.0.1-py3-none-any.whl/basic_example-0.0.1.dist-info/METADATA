@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: basic-example
+Version: 0.0.1
+Summary: Basic example of a Python package
+Home-page: UNKNOWN
+Author: Connor Drooff
+Author-email: <drooff452@gmail.com>
+License: UNKNOWN
+Keywords: python,example package
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+
+A slightly longer description. Not at all cheeky or anything.
+
+
