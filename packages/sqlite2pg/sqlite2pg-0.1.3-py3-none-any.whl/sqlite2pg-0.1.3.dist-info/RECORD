@@ -1,0 +1,16 @@
+sqlite2pg/__init__.py,sha256=uQuM4dsV3jigdX9S6SV-OVrBtuQwVeISs5GJzBSZhRc,995
+sqlite2pg/cli.py,sha256=L7ZBXeC7J1fO7DnVPF5nzGUiKwpXV0bl3mda9mA5RLc,3099
+sqlite2pg/commands/config.py,sha256=VDbgmW81uKtYS9-DCYwIz2Sq_iaiF7FAsAWIXrgxTOk,638
+sqlite2pg/commands/migrate.py,sha256=mkg1EcGWl-LadjBZeJGA4Mv_2BFk-ZpyaRz-jHyfC1Y,245
+sqlite2pg/commands/schema.py,sha256=erE1uSajvCr6isjTDFLygUv6JoqcMB04_WCCeLkvBbU,2190
+sqlite2pg/modules/__init__.py,sha256=H849GB5wF9N90UJEmKAm4VspxjQuvYdu2o5XRVZ_BTs,312
+sqlite2pg/modules/errors.py,sha256=APcmo6PsI48_4oDiSp1SRUiwDUJAJ2TbcSFnM62qIWs,773
+sqlite2pg/modules/logging.py,sha256=v5gw1FiI87XrUNnEZySYAK1Y_xOk00ku6v7wUSeZbmA,1378
+sqlite2pg/modules/postgres.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlite2pg/modules/sqlite.py,sha256=C38cFTQoseYoX-TKyUB7Y6o8jwseqf-KpgfiBXPGmyk,402
+sqlite2pg/modules/worker.py,sha256=fB9aAfMLKy0HJhJPtsArXQx2GnxCJTWrupfPp4-oO_c,6873
+sqlite2pg-0.1.3.dist-info/entry_points.txt,sha256=4MslrQgwH8QFg6xy6q2N8jwPbZMPZH7Tx082myypQOc,48
+sqlite2pg-0.1.3.dist-info/LICENSE,sha256=vwo4dGEyqeo40Xq1ihLrORl48GQJxRxal34jopsriK0,1517
+sqlite2pg-0.1.3.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+sqlite2pg-0.1.3.dist-info/METADATA,sha256=bzAFLzWpOzme89theUDuBnIQvdvqtvbbsJ1vNp1X6mI,2032
+sqlite2pg-0.1.3.dist-info/RECORD,,
