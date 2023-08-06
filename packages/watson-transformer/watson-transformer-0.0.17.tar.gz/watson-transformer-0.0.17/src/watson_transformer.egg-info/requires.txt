@@ -1,0 +1,8 @@
+ibm-watson==5.2.0
+
+[dev]
+
+[test]
+pytest
+pytest-cov
+mock
