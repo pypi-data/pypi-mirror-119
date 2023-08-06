@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.html
+README.rst
+Tool.py
+setup.py
+xytestlib/__init__.py
+xytestlib/xylib1.py
+xytestlib.egg-info/PKG-INFO
+xytestlib.egg-info/SOURCES.txt
+xytestlib.egg-info/dependency_links.txt
+xytestlib.egg-info/top_level.txt
