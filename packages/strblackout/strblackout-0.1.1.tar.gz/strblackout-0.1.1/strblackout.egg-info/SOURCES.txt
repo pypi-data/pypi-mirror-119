@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+strblackout/__init__.py
+strblackout/__main__.py
+strblackout/blackout.py
+strblackout.egg-info/PKG-INFO
+strblackout.egg-info/SOURCES.txt
+strblackout.egg-info/dependency_links.txt
+strblackout.egg-info/entry_points.txt
+strblackout.egg-info/top_level.txt
