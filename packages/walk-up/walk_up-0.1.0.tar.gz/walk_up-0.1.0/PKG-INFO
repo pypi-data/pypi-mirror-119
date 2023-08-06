@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: walk_up
+Version: 0.1.0
+Summary: Find files in parent directories
+Home-page: https://github.com/jeff-hykin/walk_up
+Author: Jeff Hykin
+Author-email: jeff.hykin@gmail.com
+License: MIT
+Description: # What is this?
+        
+        A simple function for walking up a file directory until a certain file is found.
+        
+        JavaScript version:
+        
+        ```js
+        const { walkUpUntil } = require("walk_up")
+        
+        let filepath = walkUpUntil("package.json")
+        ```
+        
+        Python version:
+        
+        ```python
+        from walk_up import walk_up_until
+        
+        filepath = walk_up_until("requirements.txt")
+        ```
+        
+        Ruby version:
+        ```ruby
+        require "walk_up"
+        
+        require_relative walk_up_until("globals.rb") # <- will keep looking in parent directories for a "globals.rb" file
+        ```
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
