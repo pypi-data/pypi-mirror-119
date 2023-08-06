@@ -1,0 +1,15 @@
+deel/lip/__init__.py,sha256=LiotLYDOhP4p3ORnKeZXnbVprcmMTX6f7pXOMM8uqIU,304
+deel/lip/activations.py,sha256=65hc2hcwBNxr10w95KWfJI5fO1BvDNfnY5IiHDbh_W0,7108
+deel/lip/callbacks.py,sha256=4GPTgX7lHea9PcMZ1JRIvIM6oxJGQv8AsYEcgqF-W3s,6650
+deel/lip/constraints.py,sha256=iPAEaMwwKsqQm7xEGStOigF3Mxi3Vs6iPnC-FZxr1Io,4081
+deel/lip/initializers.py,sha256=l-7KAaV_h8ysXpEpUtCgaGh7tI72JLfVIfMDyR-qVaI,2090
+deel/lip/layers.py,sha256=pOtERS--2bex8ocz6LnAjAE3fWjp0RkNiPzuAZzq6oc,49004
+deel/lip/losses.py,sha256=PgnGQeFJcMOenSLmybA71MvYiEuqnKftlStfF1In0UA,12283
+deel/lip/model.py,sha256=b2iozvumuZnYDOkRnRxMj21HeaFWwyuNn8LdhjIxYiM,7537
+deel/lip/normalizers.py,sha256=CPEIbHQZBX8xm5grjar7OTianjfEfx5w5a0fP5CgHYQ,3783
+deel/lip/utils.py,sha256=ZrCpvhhridXl74m5Qitg9mxnZhowGAci3iT08OFikVI,2745
+deel_lip-1.2.0.dist-info/LICENSE,sha256=XrlZ0uYNVeUAF-iEVX21J3CTJjYPgIZUagYSy3Hf0jk,1265
+deel_lip-1.2.0.dist-info/METADATA,sha256=rQ3twQITHy_cJ6Yku3TdGOs-x56-ki0Nzvh83TDmflI,9884
+deel_lip-1.2.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+deel_lip-1.2.0.dist-info/top_level.txt,sha256=NvSeSUezst024_q94CgNNVYChYiRTXNTtmyNpY3sC7M,5
+deel_lip-1.2.0.dist-info/RECORD,,
