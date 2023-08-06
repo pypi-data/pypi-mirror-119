@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+scapy/__init__.py
+scapy/__version__.py
+scapy/worker.py
+scapy_man.egg-info/PKG-INFO
+scapy_man.egg-info/SOURCES.txt
+scapy_man.egg-info/dependency_links.txt
+scapy_man.egg-info/entry_points.txt
+scapy_man.egg-info/requires.txt
+scapy_man.egg-info/top_level.txt
