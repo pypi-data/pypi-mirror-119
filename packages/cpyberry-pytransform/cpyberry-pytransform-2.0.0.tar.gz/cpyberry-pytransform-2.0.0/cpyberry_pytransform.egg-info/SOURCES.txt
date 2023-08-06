@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+RELEASE_NOTES.md
+setup.py
+cpyberry_pytransform.egg-info/PKG-INFO
+cpyberry_pytransform.egg-info/SOURCES.txt
+cpyberry_pytransform.egg-info/dependency_links.txt
+cpyberry_pytransform.egg-info/not-zip-safe
+cpyberry_pytransform.egg-info/top_level.txt
+docs/ja-jp/README.md
+docs/ja-jp/RELEASE_NOTES.md
+pytransform/__info__.py
+pytransform/__init__.py
+pytransform/pytransform.py
