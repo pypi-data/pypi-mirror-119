@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: demo-energy-consumption
+Version: 0.2.2
+Summary: demo energy consumption shows how to seamlessly leverage Teradata Vantage in your Python projects.
+Home-page: https://github.com/denismolin/demo_energy_consumption
+Author: Denis Molin
+Author-email: denis.molin@teradata.com
+License: MIT license
+Keywords: demo_energy_consumption
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Requires-Dist: Click (>=7.0)
+Requires-Dist: docker (>=5)
+Requires-Dist: greenlet (>=1)
+Requires-Dist: pycryptodome (>=3)
+Requires-Dist: sqlalchemy (>=1.4)
+Requires-Dist: teradataml (>=17)
+Requires-Dist: teradatasql (>=17)
+Requires-Dist: teradatasqlalchemy (>=17)
+Requires-Dist: websocket-client (>=1.2)
+
+=======================
+demo energy consumption
+=======================
+
+
+.. image:: https://img.shields.io/pypi/v/demo_energy_consumption.svg
+        :target: https://pypi.python.org/pypi/demo_energy_consumption
+
+.. image:: https://img.shields.io/travis/denismolin/demo_energy_consumption.svg
+        :target: https://travis-ci.com/denismolin/demo_energy_consumption
+
+.. image:: https://readthedocs.org/projects/demo-energy-consumption/badge/?version=latest
+        :target: https://demo-energy-consumption.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+
+
+demo energy consumption shows how to seamlessly leverage Teradata Vantage in your Python projects.
+
+
+* Free software: MIT license
+* Documentation: https://demo-energy-consumption.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2021-09-01)
+------------------
+
+* First release on PyPI.
+
+
