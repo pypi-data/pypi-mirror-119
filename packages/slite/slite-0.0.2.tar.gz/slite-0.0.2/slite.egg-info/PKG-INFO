@@ -1,0 +1,16 @@
+Metadata-Version: 1.2
+Name: slite
+Version: 0.0.2
+Summary: Easily send data to Sqlite
+Home-page: https://github.com/dacker-team/pysqlite
+Author: Dacker
+Author-email: hello@dacker.co
+License: UNKNOWN
+Description: #pysqlite
+        
+Keywords: send data sqlite easy
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
