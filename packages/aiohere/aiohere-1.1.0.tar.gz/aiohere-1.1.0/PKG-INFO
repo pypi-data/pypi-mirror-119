@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: aiohere
+Version: 1.1.0
+Summary: Asynchronous Python client for the HERE API.
+Home-page: http://github.com/eifinger/aiohere
+Author: eifinger
+Author-email: kevin.stillhammer@gmail.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: aiohttp>=3.7.4
+Requires-Dist: aresponses==2.1.4 ; extra == "test"
+Requires-Dist: pytest==6.2.3 ; extra == "test"
+Requires-Dist: pytest-cov==2.11.1 ; extra == "test"
+Requires-Dist: pytest-asyncio==0.14.0 ; extra == "test"
+Requires-Dist: pylint==2.7.4 ; extra == "test"
+Requires-Dist: tox==3.23.0 ; extra == "test"
+Requires-Dist: codecov==2.1.11 ; extra == "test"
+Requires-Dist: flake8==3.9.0 ; extra == "test"
+Requires-Dist: mypy==0.812 ; extra == "test"
+Requires-Dist: pre-commit==2.12.0 ; extra == "test"
+Requires-Dist: black==20.8b1 ; extra == "test"
+Provides-Extra: test
+
+# aiohere
+
+Asynchronous Python client for the HERE API
+
+Based on [herepy](https://github.com/abdullahselek/HerePy)
+
+[![GitHub Actions](https://github.com/eifinger/aiohere/workflows/CI/badge.svg)](https://github.com/eifinger/aiohere/actions?workflow=CI)
+[![PyPi](https://img.shields.io/pypi/v/aiohere.svg)](https://pypi.python.org/pypi/aiohere)
+[![PyPi](https://img.shields.io/pypi/l/aiohere.svg)](https://github.com/eifinger/aiohere/blob/master/LICENSE)
+[![codecov](https://codecov.io/gh/eifinger/aiohere/branch/master/graph/badge.svg)](https://codecov.io/gh/eifinger/aiohere)
+[![Downloads](https://pepy.tech/badge/aiohere)](https://pepy.tech/project/aiohere)
+
+## Installation
+
+```bash
+$ pip install aiohere
+```
+
+## Usage
+
+```python
+from aiohere import AioHere, WeatherProductType
+
+import asyncio
+
+API_KEY = ""
+
+async def main():
+    """Show example how to get weather forecast for your location."""
+    async with AioHere(api_key=API_KEY) as aiohere:
+        response = await aiohere.weather_for_coordinates(
+            latitude=49.9836187,
+            longitude=8.2329145,
+            product=WeatherProductType.forecast_7days_simple,
+        )
+        lowTemperature = response["dailyForecasts"]["forecastLocation"]["forecast"][0]["lowTemperature"]
+        highTemperature = response["dailyForecasts"]["forecastLocation"]["forecast"][0]["highTemperature"]
+        weekday = response["dailyForecasts"]["forecastLocation"]["forecast"][0]["weekday"]
+
+        print(f"Temperature on {weekday} will be between {lowTemperature}°C and {highTemperature}°C")
+
+
+if __name__ == "__main__":
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+```
+
+<a href="https://www.buymeacoffee.com/eifinger" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a><br>
