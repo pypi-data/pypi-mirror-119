@@ -1,0 +1,5 @@
+setup.py
+poiia.egg-info/PKG-INFO
+poiia.egg-info/SOURCES.txt
+poiia.egg-info/dependency_links.txt
+poiia.egg-info/top_level.txt
