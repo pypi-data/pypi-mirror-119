@@ -1,0 +1,4 @@
+ariadne==0.13.0
+starlette<0.15
+PyJWT==2.1.0
+sqlalchemy<1.5
