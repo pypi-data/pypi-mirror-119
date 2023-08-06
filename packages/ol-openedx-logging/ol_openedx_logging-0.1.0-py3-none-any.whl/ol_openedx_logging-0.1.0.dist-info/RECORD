@@ -1,0 +1,10 @@
+ol_openedx_logging/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ol_openedx_logging/app.py,sha256=sjnzflTe1mULEN4sbBQgUqqkbVN9AMyQ4-WlXI97w4U,604
+ol_openedx_logging/settings/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ol_openedx_logging/settings/production.py,sha256=KZNMrz200fsy5ZAX0JiculTSCIgY19ks2krhwrfi7A4,1417
+ol_openedx_logging-0.1.0.dist-info/METADATA,sha256=3BZFHnE5BSg_2mEhu-X3DrKNTOGI5jtdtOhVEndXJpM,311
+ol_openedx_logging-0.1.0.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+ol_openedx_logging-0.1.0.dist-info/entry_points.txt,sha256=OMm2wZWctyuDGAoe690QWanOeTiUtu4Cy0dpzhjNC04,150
+ol_openedx_logging-0.1.0.dist-info/namespace_packages.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+ol_openedx_logging-0.1.0.dist-info/top_level.txt,sha256=wSjJx7IO96wLnTtM013kc5iZmBKMjqYc17v08V1qFYk,19
+ol_openedx_logging-0.1.0.dist-info/RECORD,,
