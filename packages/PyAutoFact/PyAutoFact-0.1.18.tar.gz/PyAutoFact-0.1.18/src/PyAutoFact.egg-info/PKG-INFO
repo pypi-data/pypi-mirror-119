@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: PyAutoFact
+Version: 0.1.18
+Summary: Automatic Factorization package for PyTorch modules
+Home-page: https://github.com/SamuelCahyawijaya/greenformer
+Author: Samuel Cahyawijaya
+Author-email: samuel.cahyawijaya@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/SamuelCahyawijaya/greenformer/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyAutoFact
+We move our project into [`Greenformer`](https://pypi.org/project/Greenformer)
+
+
