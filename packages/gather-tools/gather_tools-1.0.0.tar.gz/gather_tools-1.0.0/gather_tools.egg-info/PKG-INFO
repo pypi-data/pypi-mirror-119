@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: gather-tools
+Version: 1.0.0
+Summary: Gather Tools
+Home-page: UNKNOWN
+Author: Merreel
+Author-email: 1327444968@qq.com
+License: UNKNOWN
+Description: https://blog.csdn.net/weixin_44592427/article/details/115002569
+        
+        python setup.py sdist bdist_wheel
+        
+        
+        twine upload dist/*
+Keywords: command,line,tool
+Platform: UNKNOWN
