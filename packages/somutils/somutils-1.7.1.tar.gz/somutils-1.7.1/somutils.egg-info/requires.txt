@@ -1,0 +1,8 @@
+PyOpenSSL
+consolemsg
+decorator
+gspread>=4.0.0
+oauth2client>=2.0
+psycopg2-binary
+pytz
+yamlns>=0.7
