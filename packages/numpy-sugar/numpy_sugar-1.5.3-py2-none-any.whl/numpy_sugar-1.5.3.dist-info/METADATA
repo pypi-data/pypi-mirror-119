@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: numpy-sugar
+Version: 1.5.3
+Summary: Missing NumPy functionalities
+Home-page: https://github.com/limix/numpy-sugar
+Author: Danilo Horta
+Author-email: horta@ebi.ac.uk
+Maintainer: Danilo Horta
+Maintainer-email: horta@ebi.ac.uk
+License: MIT
+Download-URL: https://github.com/limix/numpy-sugar
+Keywords: numpy,array
+Platform: Windows
+Platform: MacOS
+Platform: Linux
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+Requires-Dist: dask[array] (>=2.18.0)
+Requires-Dist: numpy (>=1.18.5)
+Requires-Dist: pytest (>=6.1.2)
+Requires-Dist: scipy (>=1.4.1)
+
+# numpy-sugar
+
+[![Documentation](https://readthedocs.org/projects/numpy-sugar/badge/?version=latest)](https://numpy-sugar.readthedocs.io/en/latest/?badge=latest)
+
+Missing NumPy functionalities.
+
+## Install
+
+Enter
+
+```bash
+pip3 install numpy-sugar
+```
+
+from the command-line.
+
+## Running the tests
+
+Enter
+
+```python
+python3 -c "import numpy_sugar; numpy_sugar.test()"
+```
+
+
+## Authors
+
+* [Danilo Horta](https://github.com/horta)
+
+## License
+
+This project is licensed under the [MIT License](https://raw.githubusercontent.com/limix/numpy-sugar/master/LICENSE.md).
+
+
