@@ -1,0 +1,3 @@
+[console_scripts]
+preprocess = pkg_try_19_mb.preprocess:main
+
