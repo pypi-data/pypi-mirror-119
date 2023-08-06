@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+rotary_embedding_tensorflow/__init__.py
+rotary_embedding_tensorflow/rotary_embedding_tensorflow.py
+rotary_embedding_tensorflow.egg-info/PKG-INFO
+rotary_embedding_tensorflow.egg-info/SOURCES.txt
+rotary_embedding_tensorflow.egg-info/dependency_links.txt
+rotary_embedding_tensorflow.egg-info/requires.txt
+rotary_embedding_tensorflow.egg-info/top_level.txt
