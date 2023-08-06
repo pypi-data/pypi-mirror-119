@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: poem-parser
+Version: 0.0.1
+Summary: Parse poems into stressed and unstressed syllables
+Home-page: https://github.com/obeezzy/poem_parser
+Author: Chronic Coder
+Author-email: efeoghene.obebeduo@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: prosodic
+
+# poem_parser
+Parse words into stressed and unstressed syllables
+
+
