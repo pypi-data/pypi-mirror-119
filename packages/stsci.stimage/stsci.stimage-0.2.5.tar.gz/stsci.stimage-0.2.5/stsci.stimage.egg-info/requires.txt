@@ -1,0 +1,11 @@
+numpy>=1.14
+
+[docs]
+sphinx
+sphinx-automodapi
+sphinx-rtd-theme
+
+[test]
+pytest
+pytest-cov
+codecov
