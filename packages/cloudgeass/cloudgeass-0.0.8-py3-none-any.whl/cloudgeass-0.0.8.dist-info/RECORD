@@ -1,0 +1,12 @@
+cloudgeass/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudgeass/aws/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudgeass/aws/rds.py,sha256=93NYEW_LeFYwJLtCIKKLmlBHRTJNIorXAqD_WQdQJcU,12893
+cloudgeass/aws/s3.py,sha256=08W3MEDzrWbXP64tdo8gmQq9DGrhprjx6zajMXGA26c,29842
+cloudgeass/aws/serverless.py,sha256=g-XdSQfj1CYFOP_GBjoLXVQNMg2L5iYSs5Nt2wMon6M,15118
+cloudgeass/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudgeass/utils/log.py,sha256=qdwsVsVO_5Gr23xP2VS81c7MufBaU49WYyRvYBrUpxI,2412
+cloudgeass-0.0.8.dist-info/LICENSE,sha256=mYNFAmgVlo_wthcxIldWPT0cjPKRRJjtYwhBHbSlRz0,1091
+cloudgeass-0.0.8.dist-info/METADATA,sha256=Wnl25ZNy6hYZVyiSp9YaErSYRo7Lt2iA6WYDj7bLMyw,11234
+cloudgeass-0.0.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+cloudgeass-0.0.8.dist-info/top_level.txt,sha256=T6hSEyPEkxgMcfUHdBqpSOWh-qVPkMKQXfTuHtTTbrc,11
+cloudgeass-0.0.8.dist-info/RECORD,,
