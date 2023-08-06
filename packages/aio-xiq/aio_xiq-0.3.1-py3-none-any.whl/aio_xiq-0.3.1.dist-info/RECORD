@@ -1,0 +1,11 @@
+aioxiq/__init__.py,sha256=L8HG7_GjTdJgugS2UkoNqG5jycK9-OM3qHBTd0UpJGM,50
+aioxiq/v1/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aioxiq/v1/client.py,sha256=7dgKkd8ZFGn2FeuwJDeOWM7F2zshWpqpbCOgNErvlq8,1034
+aioxiq/v2/__init__.py,sha256=LmQD1LS48wL5Fk-UoCQUF1F_36Y7uDOSFAuTfZLGjEI,60
+aioxiq/v2/auth.py,sha256=nESA9Aa3c1A4fLRtaCw_d5dkRj0PjBIf_6IRv7ACSF8,3860
+aioxiq/v2/client.py,sha256=aAM8XtmlNhme7dPEFaDf29q8dVJU3D-yyCpRntZjbPI,5502
+aioxiq/v2/devices.py,sha256=X1Y9Np0R9AtRASUatcGihpe6rVpIVOrt7MgMESdEoIA,733
+aioxiq/v2/locations.py,sha256=7l0ihoO8RRlLATLkAgqD1eY6DY8-Kz5D-dCeDTCgHDU,5774
+aio_xiq-0.3.1.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+aio_xiq-0.3.1.dist-info/METADATA,sha256=8FY2_c0xfzl1jupzE-fZP5ojdZ2d_SYNL_X3B2WLW40,1323
+aio_xiq-0.3.1.dist-info/RECORD,,
