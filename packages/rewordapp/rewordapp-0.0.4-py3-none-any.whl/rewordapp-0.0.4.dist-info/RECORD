@@ -1,0 +1,11 @@
+rewordapp/__init__.py,sha256=i3Yo3sDki_kogALknryCYGSi1OBvDL7Ph0AovZA3CPI,256
+rewordapp/__main__.py,sha256=cZwfUCTso7svDLtReiO4I3E9bt6dgNbnIkJRpqSxZEw,68
+rewordapp/application.py,sha256=FIb-X1SdO-iRNohFxBw43D5oMdxxnBR2J48F_DRwNPY,13331
+rewordapp/config.py,sha256=wP6ZmPvLAUTdaq-xCZ9UV8zWEdJg8cidyN5EbYXBzjg,2735
+rewordapp/main.py,sha256=WGssLcnRXFX5klflMULhpdxO45XKqF9aBuM25hUobGU,1988
+rewordapp-0.0.4.dist-info/LICENSE,sha256=qnliEXg2fq5rHbfkl0FhKj8hnoGk_gHGYyhNpv8-wmk,1559
+rewordapp-0.0.4.dist-info/METADATA,sha256=H8LTizhLQvzhoniVzFe-pWkNKHtBxI82kFyCJcS5QGM,1135
+rewordapp-0.0.4.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+rewordapp-0.0.4.dist-info/entry_points.txt,sha256=FDXQ4YKvJ61FoF2U_Z9ryyc_67UAJg7wi-lfhnH69G0,62
+rewordapp-0.0.4.dist-info/top_level.txt,sha256=ZLP1pGW5syVSGB27VUemWT28hqEiHCMfAwYZ478z8Xg,10
+rewordapp-0.0.4.dist-info/RECORD,,
