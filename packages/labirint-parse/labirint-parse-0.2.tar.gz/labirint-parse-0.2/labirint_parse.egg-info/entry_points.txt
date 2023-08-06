@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        labirint_parser=labirint_parser.parser:main
+    
