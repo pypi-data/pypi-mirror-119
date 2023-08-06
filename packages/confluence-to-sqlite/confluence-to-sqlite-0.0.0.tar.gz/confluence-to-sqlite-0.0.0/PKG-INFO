@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: confluence-to-sqlite
+Version: 0.0.0
+Summary: CLI tool for loading data from a Confluence instance into a SQLite database
+Home-page: https://github.com/ryancheley/confluence-to-sqlite
+Author: Ryan Cheley
+License: Apache License, Version 2.0
+Project-URL: Issues, https://github.com/ryancheley/confluence-to-sqlite/issues
+Project-URL: CI, https://github.com/ryancheley/confluence-to-sqlite/actions
+Project-URL: Changelog, https://github.com/ryancheley/confluence-to-sqlite/releases
+Description: # confluence-to-sqlite
+        
+        CLI tool for loading data from a Confluence instance into a SQLite database
+        
+        ## How to install
+        
+            $ pip install confluence-to-sqlite
+        
+        ## Usage
+        
+        To do
+        
+        ## Using with Datasette
+        
+        The SQLite database produced by this tool is designed to be browsed using [Datasette](https://datasette.readthedocs.io/). Use the [datasette-render-timestamps](https://github.com/simonw/datasette-render-timestamps) plugin to improve the display of the timestamp values.
+        
+        
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: test

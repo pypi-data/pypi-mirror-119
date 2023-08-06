@@ -1,0 +1,5 @@
+sqlite-utils
+click
+
+[test]
+pytest

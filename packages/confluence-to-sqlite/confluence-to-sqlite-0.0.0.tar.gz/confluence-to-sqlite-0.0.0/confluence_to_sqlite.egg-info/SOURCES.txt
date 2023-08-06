@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+confluence_to_sqlite/__init__.py
+confluence_to_sqlite/cli.py
+confluence_to_sqlite.egg-info/PKG-INFO
+confluence_to_sqlite.egg-info/SOURCES.txt
+confluence_to_sqlite.egg-info/dependency_links.txt
+confluence_to_sqlite.egg-info/entry_points.txt
+confluence_to_sqlite.egg-info/requires.txt
+confluence_to_sqlite.egg-info/top_level.txt
