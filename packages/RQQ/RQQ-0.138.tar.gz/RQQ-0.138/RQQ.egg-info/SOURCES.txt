@@ -1,0 +1,7 @@
+setup.py
+RQQ/R.py
+RQQ/__init__.py
+RQQ.egg-info/PKG-INFO
+RQQ.egg-info/SOURCES.txt
+RQQ.egg-info/dependency_links.txt
+RQQ.egg-info/top_level.txt
