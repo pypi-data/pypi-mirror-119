@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: veriteos
+Version: 0.1.6
+Summary: Veriteos sentinel events registry
+Home-page: UNKNOWN
+Author: Veriteos Dev Team
+Author-email: <admin@veriteos.com>
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: veriteos,veriteos client,veriteos events register
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
