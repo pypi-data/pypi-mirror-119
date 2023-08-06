@@ -1,0 +1,11 @@
+fugue_fe/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fugue_fe/dummy.py,sha256=mpH2eE6YxlEjrpdH9dHLOuYtGNZ-F_oOklodv9ABGwg,24
+fugue_fe_version/__init__.py,sha256=sXLh7g3KC4QCFxcZGBTpG2scR7hmmBsMjq6LqRptkRg,22
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/fugue_fe/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/fugue_fe/test_dummy.py,sha256=C1NpNNFvVUbJfg4yxTHVAfyrI0_MnVEWaVS8RPtbNdU,71
+fugue_fe-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+fugue_fe-0.0.1.dist-info/METADATA,sha256=kPUtnpmGwBfufyvHLmiJHEF9n2ccUxDfHQaoAQNMEog,897
+fugue_fe-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+fugue_fe-0.0.1.dist-info/top_level.txt,sha256=YT4rXnQxP2PUA15dXLP9UpgpdYL6NmLnKWQ4yP0tIq8,32
+fugue_fe-0.0.1.dist-info/RECORD,,

@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: fugue-fe
+Version: 0.0.1
+Summary: The feature engineering solution based on Fugue
+Home-page: http://github.com/fugue-project/fugue-fe
+Author: The Fugue Development Team
+Author-email: hello@fugue.ai
+License: Apache-2.0
+Keywords: machine learning feature engineering
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: fugue[sql] (>=0.6.2)
+
+# fugue-fe
+Feature engineering solution based on Fugue
+
+
