@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: exopassword
+Version: 0.0.1
+Summary: ExoPassword is a Password Strength Analyzing module which utilizes different Machine Learning models to predict the strength of your passwords.
+Home-page: https://github.com/apratimshukla6/exo
+Author: Apratim Shukla, Mayank Tolani
+Author-email: apratimshukla6@gmail.com
+License: MIT
+Download-URL: https://pypi.org/project/exopassword/
+Keywords: Exo,ExoPassword,PasswordAnalysis
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: joblib
+Requires-Dist: scikit-learn (==0.24.1)
+
+ExoPassword is a Password Strength Analyzing module which utilizes different Machine Learning models to predict the strength of your passwords.
+
+# Change log
+
+## [0.0.1] - 2021-09-11
+- Updated README
+- Added initial files for Exo
+
+
