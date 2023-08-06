@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: nowcasting_utils
+Version: 0.0.2
+Summary: Nowcasting Utilities
+Home-page: https://github.com/openclimatefix/nowcasting_utils
+Author: Jacob Bieker, Jack Kelly, Peter Dudfield
+Author-email: jacob@openclimatefix.org
+License: MIT
+Keywords: artificial intelligence,deep learning,transformer
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# nowcasting_utils
+Common functionality between [SatFlow](https://github.com/openclimatefix/satflow) 
+and [predict_pv_yield](https://github.com/openclimatefix/predict_pv_yield)
+
+
+
+
