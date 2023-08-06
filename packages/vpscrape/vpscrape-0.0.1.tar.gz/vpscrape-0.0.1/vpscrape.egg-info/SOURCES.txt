@@ -1,0 +1,10 @@
+LICENSE.txt
+README.txt
+setup.py
+vpscrape/__init__.py
+vpscrape/misc.py
+vpscrape.egg-info/PKG-INFO
+vpscrape.egg-info/SOURCES.txt
+vpscrape.egg-info/dependency_links.txt
+vpscrape.egg-info/requires.txt
+vpscrape.egg-info/top_level.txt

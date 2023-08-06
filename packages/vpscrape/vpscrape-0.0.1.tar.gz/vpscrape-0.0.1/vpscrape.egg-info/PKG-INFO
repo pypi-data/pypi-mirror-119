@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: vpscrape
+Version: 0.0.1
+Summary: Web scraping based on selenium. supported for several website to do instantly webscraping with less code
+Home-page: UNKNOWN
+Author: Vinson Phoan
+Author-email: contact@vinsonphoan.com
+License: MIT
+Description: This is Web scraping based on selenium. supported for several website to do instantly webscraping with less code.
+        I create this for data mining that used a lot for me to do a university project.
+        
+        Change Log
+        ==========
+        
+        0.0.1 (12/09/2021)
+        ------------------
+        - First Release
+Keywords: scrape,web scraping,news scraper,scraper
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
