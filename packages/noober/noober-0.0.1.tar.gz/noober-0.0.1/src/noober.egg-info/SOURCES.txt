@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/noober/__init__.py
+src/noober/__main__.py
+src/noober.egg-info/PKG-INFO
+src/noober.egg-info/SOURCES.txt
+src/noober.egg-info/dependency_links.txt
+src/noober.egg-info/requires.txt
+src/noober.egg-info/top_level.txt
