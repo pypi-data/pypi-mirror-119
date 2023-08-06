@@ -1,0 +1,10 @@
+spector-1.2.dist-info/RECORD,,
+spector-1.2.dist-info/METADATA,sha256=kdlh-Nws5oCu_pAa0EHu5k7tZTfU0U6Ko4hmYKzQGBc,4613
+spector-1.2.dist-info/LICENSE.txt,sha256=NZwSfxEMQD0PQjQD8Oc3Gocsirqm4W2iztpHPNOzMUc,576
+spector-1.2.dist-info/WHEEL,sha256=vgY--ApCntYrINLsk_HlFoXfy-jeaqyh224UFzZ7QbA,185
+spector-1.2.dist-info/top_level.txt,sha256=We-Cx-in-0_eOnpQqnrqwdKOhnOBw3Pz2fHi0MQHi0U,8
+spector/vector.cpython-39-x86_64-linux-gnu.so,sha256=oRY9TeO1JDegDrhYOD1zj6Yj_KlLyWVqi5FpgavMN4Y,2530232
+spector/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spector/vector.pyx,sha256=GbkNti1Pz-FrZ2aZ-VReoi6TtbvYAday4Z4W67Vj-mw,20554
+spector/__init__.py,sha256=Yl87jvFpgDNKWW9DmI-_9IiOehyBlyeS-TJslWe6MxY,109
+spector/matrix.py,sha256=PKwjshcVkIk2aIHOhlLF_tWfICemct-fKxbWdslLmi8,4467
