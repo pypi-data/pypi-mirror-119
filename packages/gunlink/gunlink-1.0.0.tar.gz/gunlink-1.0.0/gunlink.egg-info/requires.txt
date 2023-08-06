@@ -1,0 +1,4 @@
+numpy
+ipwhois
+pyshorteners
+pydantic
