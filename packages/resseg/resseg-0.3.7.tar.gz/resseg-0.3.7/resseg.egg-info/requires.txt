@@ -1,0 +1,4 @@
+matplotlib
+pandas
+torchio
+unet==0.7.7
