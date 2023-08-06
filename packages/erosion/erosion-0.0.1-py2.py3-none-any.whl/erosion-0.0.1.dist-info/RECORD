@@ -1,0 +1,12 @@
+erosion/Scraper.py,sha256=1UJvyshQQL6U_7vyPVsAXG2Ufi9Abh7rwcHlMEbAFnE,5128
+erosion/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+erosion/db_pb2.py,sha256=3ubIo7oZRrVRmON3OKUwjtVlUHtsna168-Tbb4iDy8M,99725
+erosion/head.py,sha256=3U05Hrx2xBwAOJ0itj4Z7fCg0aabrtGnUPJXV2obAUk,299
+erosion/main.py,sha256=4FBcXgfXyRJSOmvSOlwlm4Ruq6qMNTyORy9uTzVY9NA,1569
+erosion/midhash.py,sha256=2k7fDtZvXyDJsymXTY8BtY8IheW3_ilAwt9kEjoOPI4,2210
+erosion/pare_xml.py,sha256=3RMS431VkkPXnfcGmMxiCeQjthJHRr7slBFa_cPVdTY,1461
+erosion-0.0.1.dist-info/METADATA,sha256=BWKAotAYfAESgWVVneqdXIDUjnWfLEdq3Hroi3GJuHU,243
+erosion-0.0.1.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+erosion-0.0.1.dist-info/entry_points.txt,sha256=Av85BzSQDr6AZ28coWf8vuFVBOcBrZG-onau1UzQFFM,64
+erosion-0.0.1.dist-info/top_level.txt,sha256=JLEEK74-j23ng5KITwChP4zYb6828LAI9wHfe33x8vk,8
+erosion-0.0.1.dist-info/RECORD,,
