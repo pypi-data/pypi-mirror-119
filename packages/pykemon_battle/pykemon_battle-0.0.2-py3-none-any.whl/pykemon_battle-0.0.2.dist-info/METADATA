@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pykemon_battle
+Version: 0.0.2
+Summary: A command-line Pokemon battling system
+Home-page: https://github.com/11michalis11/pykemon_battle
+Author: Michalis Panayides
+Author-email: PanayidesM@cardiff.ac.uk
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: requests==2.25.1
+Requires-Dist: requests-cache==0.7.4
+Requires-Dist: types-requests==2.25.5
+Requires-Dist: numpy==1.20.3
+
+# A library that attempts to build a text-based Pokémon battling system
