@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: astylo
+Version: 0.3.1
+Summary: astylo is now laputan
+Home-page: UNKNOWN
+License: UNKNOWN
+Description: # astylo is now laputan
+        
+        This package has been renamed. Use `pip install laputan` instead.
+        
+        New package: https://pypi.org/project/laputan/
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 7 - Inactive
+Description-Content-Type: text/markdown

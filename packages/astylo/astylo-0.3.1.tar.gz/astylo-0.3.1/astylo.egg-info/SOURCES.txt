@@ -1,0 +1,7 @@
+README.md
+setup.py
+astylo.egg-info/PKG-INFO
+astylo.egg-info/SOURCES.txt
+astylo.egg-info/dependency_links.txt
+astylo.egg-info/requires.txt
+astylo.egg-info/top_level.txt
