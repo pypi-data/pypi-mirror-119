@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+./ekca_service/plugins/otp/privacyidea/__about__.py
+./ekca_service/plugins/otp/privacyidea/__init__.py
+ekca_plugin_privacyidea.egg-info/PKG-INFO
+ekca_plugin_privacyidea.egg-info/SOURCES.txt
+ekca_plugin_privacyidea.egg-info/dependency_links.txt
+ekca_plugin_privacyidea.egg-info/entry_points.txt
+ekca_plugin_privacyidea.egg-info/not-zip-safe
+ekca_plugin_privacyidea.egg-info/requires.txt
+ekca_plugin_privacyidea.egg-info/top_level.txt

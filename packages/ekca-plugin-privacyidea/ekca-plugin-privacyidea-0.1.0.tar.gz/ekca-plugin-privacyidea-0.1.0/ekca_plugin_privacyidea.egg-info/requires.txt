@@ -1,0 +1,4 @@
+ekca-service>=0.1.3
+requests>=2.22
+responses>=0.10
+setuptools
