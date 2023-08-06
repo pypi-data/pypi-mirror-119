@@ -1,0 +1,13 @@
+svg_path_transform/__init__.py,sha256=VT_Aq1amzM8aX6eSNjhnbkKPrsHNApXc_21-NWoWiH4,234
+svg_path_transform/__main__.py,sha256=ZL8mER9zXh_ftY0IeujJoiQMfFExKXiEOa88p46oI2I,53
+svg_path_transform/__version__.py,sha256=N9zx1XYravbP3NrLcIS323H32DA-SdpPI227ek7StgA,170
+svg_path_transform/_cli.py,sha256=iycdPZrIue9nJwEb2oD63bYsmrXT9PL6w-kVVbqrgUE,1246
+svg_path_transform/_parser.py,sha256=G80h13gKQrjljfi-7ajjPlO9ZRzoBJwAc7HxdhiScfg,1350
+svg_path_transform/_transform.py,sha256=1qN86IOz1T1nD0cwEkoeYwRgKbrpvlffyB1-vKt4fYA,2310
+svg_path_transform/path.lark,sha256=Y3Oo8HaPebJ-sHlbkn_iQDa_KNiTvUD7hisFOelMPSw,970
+svg_path_transform-1.1.1.dist-info/LICENSE,sha256=Aae6HFkvaBgjsd5G4OcfB5UHLgIKadrDpFPIi89_cuw,1062
+svg_path_transform-1.1.1.dist-info/METADATA,sha256=Qb6vZrNAQSwM5wloAnrlehdLFAFQtG-ykb65dNdW2wU,2235
+svg_path_transform-1.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+svg_path_transform-1.1.1.dist-info/entry_points.txt,sha256=zqxia3Uy8r35suab5iiE2a4X7eItdprp1faLPK76qi4,70
+svg_path_transform-1.1.1.dist-info/top_level.txt,sha256=P3T0DmyqEzuy6G7JvQ2qZQVqMwIroeB39K1fJ2bRElY,19
+svg_path_transform-1.1.1.dist-info/RECORD,,
