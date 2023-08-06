@@ -1,0 +1,2 @@
+pypsrp>=0.5.0
+pypsrp~=0.5
