@@ -1,0 +1,7 @@
+aio-pika==6.8
+environs
+marshmallow
+
+[dev]
+flake8==3.9.2
+isort==5.9.3
