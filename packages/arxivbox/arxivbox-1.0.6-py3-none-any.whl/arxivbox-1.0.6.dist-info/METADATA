@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: arxivbox
+Version: 1.0.6
+Summary: Deep learning paper finders
+Home-page: https://github.com/ankanbhunia/arxivbox
+Author: Ankan Kumar Bhunia
+Author-email: ankankumarbhunia@email.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: dash
+Requires-Dist: dash-bootstrap-components
+Requires-Dist: feedparser
+Requires-Dist: requests
+
+UNKNOWN
+
