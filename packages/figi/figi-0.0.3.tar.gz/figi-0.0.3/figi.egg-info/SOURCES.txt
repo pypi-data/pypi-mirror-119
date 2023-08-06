@@ -1,0 +1,8 @@
+README.md
+setup.py
+figi/__init__.py
+figi/hello_world.py
+figi.egg-info/PKG-INFO
+figi.egg-info/SOURCES.txt
+figi.egg-info/dependency_links.txt
+figi.egg-info/top_level.txt
