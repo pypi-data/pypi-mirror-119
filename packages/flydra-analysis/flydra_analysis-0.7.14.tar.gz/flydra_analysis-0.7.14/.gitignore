@@ -1,0 +1,6 @@
+build
+dist
+flydra_analysis.egg-info
+flydra_fastfinder_help.c
+flydra_analysis/a2/sample_datafile-v0.4.28.h5.retracked.kh5-smoothcache
+dist
