@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+erqa/erqa.egg-info/PKG-INFO
+erqa/erqa.egg-info/SOURCES.txt
+erqa/erqa.egg-info/dependency_links.txt
+erqa/erqa.egg-info/requires.txt
+erqa/erqa.egg-info/top_level.txt
