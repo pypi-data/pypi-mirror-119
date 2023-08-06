@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+Magicweb.egg-info/PKG-INFO
+Magicweb.egg-info/SOURCES.txt
+Magicweb.egg-info/dependency_links.txt
+Magicweb.egg-info/requires.txt
+Magicweb.egg-info/top_level.txt
+magicweb/__init__.py
+magicweb/routes.py
