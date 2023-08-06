@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+monitor_air_quality/__init__.py
+monitor_air_quality/monitor_air_quality.py
+monitor_air_quality/monitor_air_quality_config.example.yaml
+monitor_air_quality.egg-info/PKG-INFO
+monitor_air_quality.egg-info/SOURCES.txt
+monitor_air_quality.egg-info/dependency_links.txt
+monitor_air_quality.egg-info/entry_points.txt
+monitor_air_quality.egg-info/requires.txt
+monitor_air_quality.egg-info/top_level.txt
+monitor_air_quality/deprecated/pysds011_active_mode.py
+monitor_air_quality/deprecated/use_serial_directly.py
+monitor_air_quality/deprecated/using_sds011_library.py

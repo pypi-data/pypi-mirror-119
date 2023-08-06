@@ -1,0 +1,5 @@
+PyYAML
+requests
+py-sds011
+python-aqi
+xdg
