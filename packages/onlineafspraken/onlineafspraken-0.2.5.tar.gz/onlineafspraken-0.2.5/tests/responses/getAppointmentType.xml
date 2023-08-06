@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Status>
+        <APIVersion>1.0</APIVersion>
+        <Date>2021-07-15 20:08:31</Date>
+        <Timestamp>1626372511</Timestamp>
+        <Status>success</Status>
+    </Status>
+    <Objects>
+        <AppointmentType>
+            <Id>1812</Id>
+            <Name>nieuwe aansluiting</Name>
+            <Description></Description>
+            <Status>1</Status>
+            <SchedulingType>resource</SchedulingType>
+            <PriceType>3</PriceType>
+            <Price>0.00</Price>
+            <Duration>30</Duration>
+            <MinTimeBeforeAppointment>1</MinTimeBeforeAppointment>
+            <MaxTimeBeforeAppointment>4320</MaxTimeBeforeAppointment>
+            <Buffer>0</Buffer>
+            <CanBeBookedByConsumer>1</CanBeBookedByConsumer>
+            <ExplicitEndDate></ExplicitEndDate>
+            <Category>Live test</Category>
+            <CategoryId>4693</CategoryId>
+            <Capacity>1</Capacity>
+            <ResourceId></ResourceId>
+        </AppointmentType>
+    </Objects>
+</Response>

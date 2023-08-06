@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+<Status>
+	<APIVersion>1.0</APIVersion>
+	<Date>2021-07-15 20:38:16</Date>
+	<Timestamp>1626374296</Timestamp>
+	<Status>success</Status>
+</Status>
+<Agenda>
+	<Id>270</Id>
+	<Name></Name>
+	<DateFormat>D d/m/Y</DateFormat>
+	<TimeFormat>H:i</TimeFormat>
+	<AlignGrid>5</AlignGrid>
+	<IsDefault>1</IsDefault>
+</Agenda>
+</Response>
