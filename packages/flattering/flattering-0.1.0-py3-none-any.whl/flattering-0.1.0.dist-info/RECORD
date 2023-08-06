@@ -1,0 +1,12 @@
+flattering/__init__.py,sha256=Ckh0bIGeLkjLhhY1Ug9y1pqOHu6KmDncKj1zuU-7iN8,40204
+flattering/__version__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+flattering/cli.py,sha256=rUmxpzKHnmUEDg-NKe8vp1h5q_WFj6gvcD2XR64hGZE,4202
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_csv.py,sha256=Zbko3Yb36nDVzKlI0yAPMDH4Bg0otv9_kBQbF0jlKng,80933
+flattering-0.1.0.dist-info/AUTHORS,sha256=1bqhueShmPLpYYKqD7f3LUEcm8HqheX9lFNBvuRyy3c,96
+flattering-0.1.0.dist-info/LICENSE,sha256=Xr5PbRV2ipgYPAyTHAewWy-zsCy_RWIc-ia8--0Mh1U,1068
+flattering-0.1.0.dist-info/METADATA,sha256=VBts7hx5Lhxs8NBEeSWAJbikDG0Fc6cmwmMAVu5y_6I,238
+flattering-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+flattering-0.1.0.dist-info/entry_points.txt,sha256=qFQHBocMfdXR1Zvn-FcOAGDC6TtieZU_TnnqH3gTrrs,52
+flattering-0.1.0.dist-info/top_level.txt,sha256=elPGPMTga-CQfEbRNYfZbOp2YMx20RE1_q6BJSVBdLU,17
+flattering-0.1.0.dist-info/RECORD,,
