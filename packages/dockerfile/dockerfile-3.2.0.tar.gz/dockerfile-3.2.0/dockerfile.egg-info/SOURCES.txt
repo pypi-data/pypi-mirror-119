@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+go.mod
+parse.go
+parse_test.go
+setup.cfg
+setup.py
+dockerfile.egg-info/PKG-INFO
+dockerfile.egg-info/SOURCES.txt
+dockerfile.egg-info/dependency_links.txt
+dockerfile.egg-info/top_level.txt
+pylib/main.go
+pylib/support.c
