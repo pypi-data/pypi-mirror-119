@@ -1,0 +1,16 @@
+[project]
+name = "mstp"
+version = "0.2.0"
+description = "secure data transfer protocol"
+
+python = "^3.6"
+
+[dependencies]
+cryptography = "^3.4.8"
+
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
