@@ -1,0 +1,30 @@
+name=Ode to Joy
+1=C
+bpm=100
+% this is a comment
+% first three lines must be like above, no comments and no empty lines
+% tone marker takes the form of [notation]=[absolute-notation]
+3345|5432|1123|[3,1.5][2,0.5]2-|
+3345|5432|1123|[2,1.5][1,0.5]1-| % comment
+% comment
+2231|2[3,0.5][4,0.5]31|2[3,0.5][4,0.5]32|12[<5,1.5][-,0.5]|
+3345|5432|1123|[2,1.5][1,0.5]1-|
+
+% Format of notations
+% notation takes the form of simple notation:
+%   1 means 'do'
+%   2 means 'mi'
+%   #1 means 'do sharp'
+%   b2 means 'mi flat'
+%   <1 means 'do one octave lower'
+%   <<1 means 'do two octaves lower'
+%   >1 means 'do one octave higher'
+%   >>1 means 'do two octave higher'
+%   >>#1 means 'do sharp two octave higher'
+% The default duration of simple notation is 1. Define a notation with different
+% duration need complex notation format [simple-notation,duration]:
+%   [1,0.5] means 'do with 0.5 duration'
+
+% notation series format
+% just write the notations together, any blank characters or '|' or comments
+% will be ignored.
