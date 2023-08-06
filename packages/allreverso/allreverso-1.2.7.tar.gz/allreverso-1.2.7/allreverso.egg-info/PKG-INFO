@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: allreverso
+Version: 1.2.7
+Summary: A simple package to handle allreverso.net services (translation, voice, dictionary etc.).
+Home-page: UNKNOWN
+Author: PetitPotiron
+License: Apache 2.0
+Project-URL: Homepage, https://github.com/PetitPotiron/allreverso
+Description: # allreverso
+        [<img src="docs/python_allreverso.png" width="50" alt="logo de allreverso">](https://petitpotiron.github.io/allreverso/fr/)
+        
+        
+        [![widget du serveur discord](https://discord.com/api/guilds/831480772455038996/embed.png)](https://discord.gg/v4yfnjWKvy)
+        [![version de allreverso](https://img.shields.io/pypi/v/allreverso.svg)](https://pypi.org/project/allreverso/)
+        [![versions de python supportÃ©es](https://img.shields.io/pypi/pyversions/allreverso.svg)](https://pypi.org/project/allreverso/)
+        
+        
+        A simple package to handle reverso.net services (translation, voice, dictionary etc.)
+        
+        Run `pip install allreverso` to install the package.
+        
+        [Click here to see the documentation](https://petitpotiron.github.io/allreverso)
+        
+        [PyPI](https://pypi.org/project/allreverso/)
+        
+        Example of usage :
+        ```python
+        import allreverso
+        
+        client = reverso.ReversoClient()
+        print(client.translate("en", "fr",
+                               "Hello, this text has been translated by the reverso package in python."))  # a simple translation example
+        print(client.define("en", "boat"))  # a simple definition example
+        print(client.synonymize("en", "boat"))  # a simple synonym example
+        client.speak_to_mp3("en", "Hello !")  # a simple voice example
+        
+        ```
+        Having troubles ? Check our [discord ![discord widget](https://discord.com/api/guilds/831480772455038996/widget.png)](https://discord.gg/v4yfnjWKvy)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Site Management :: Link Checking
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
