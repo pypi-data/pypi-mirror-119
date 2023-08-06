@@ -1,0 +1,17 @@
+README.md
+setup.cfg
+setup.py
+mosec/__init__.py
+mosec/_version.py
+mosec/coordinator.py
+mosec/protocol.py
+mosec/server.py
+mosec/utils.py
+mosec/worker.py
+mosec.egg-info/PKG-INFO
+mosec.egg-info/SOURCES.txt
+mosec.egg-info/dependency_links.txt
+mosec.egg-info/entry_points.txt
+mosec.egg-info/not-zip-safe
+mosec.egg-info/requires.txt
+mosec.egg-info/top_level.txt

@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: mosec
+Version: 0.1.0a2
+Summary: Model Serving made Efficient in the Cloud.
+Home-page: https://github.com/mosecorg/mosec
+Author: Keming Yang
+Author-email: kemingy94@gmail.com
+License: UNKNOWN
+Description: # mosec
+        
+        [![lint and test](https://github.com/mosecorg/mosec/actions/workflows/check.yml/badge.svg)](https://github.com/mosecorg/mosec/actions/workflows/check.yml)
+        [![Upload Python Package](https://github.com/mosecorg/mosec/actions/workflows/package.yml/badge.svg)](https://github.com/mosecorg/mosec/actions/workflows/package.yml)
+        
+        Model Serving made Efficient in the Cloud.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
