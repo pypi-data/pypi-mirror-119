@@ -1,0 +1,16 @@
+dbt_metabase-0.8.0rc4.data/scripts/dbt-metabase,sha256=DmfvJpGxIx5Uph3j10KIE6ZmUTBIDTEkTKR2OBSIdsM,102
+dbtmetabase/__init__.py,sha256=Vgbr7O2eYVpz-jsm5-n5V4vVA8_3kcosxqjMgodlmWk,13330
+dbtmetabase/_version.py,sha256=fZjAVQ0fUO_Wu0iN1lc2YDYbTkobfjeZCScIBapvHYs,145
+dbtmetabase/metabase.py,sha256=PmrTb-eu-Zdwb3NpHQy7yIre-QJFkIu8I4ObAvsph6o,29971
+dbtmetabase/utils.py,sha256=-QyPsbsURNstuJ-Tf_GF9a0K_modQysHvCm9z9AtG0Y,695
+dbtmetabase/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dbtmetabase/models/config.py,sha256=giPCAilXMPTFcl_welUxx4u2JZeUHNESzu-WT8lvalk,758
+dbtmetabase/models/metabase.py,sha256=jtikmUB4kJqG9yPajGcd66wcjc7MNscxVhaiO02cVu4,894
+dbtmetabase/parsers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dbtmetabase/parsers/dbt_folder.py,sha256=4NQxc9159EEStrB4ehGlQGepCe_86lcScVmDaBNH0dg,9829
+dbtmetabase/parsers/dbt_manifest.py,sha256=3QUmPM5tucH53NttNsk-15ypoa6V4LWWb5P1gRCg9Hw,9847
+dbt_metabase-0.8.0rc4.dist-info/LICENSE,sha256=8eJfaJA4Cp2KqhZ0PzqF6smOdUsrcw57hsVcSSX6Zq0,1069
+dbt_metabase-0.8.0rc4.dist-info/METADATA,sha256=-n2ieXZNR8MGvq9zCLAGQuKFoTPVGXEEOI58dd70glM,12615
+dbt_metabase-0.8.0rc4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+dbt_metabase-0.8.0rc4.dist-info/top_level.txt,sha256=oJGtfmX_xh-l59m2NxA2ab8tK18VEcQAFZ7nbxvMo5w,12
+dbt_metabase-0.8.0rc4.dist-info/RECORD,,
