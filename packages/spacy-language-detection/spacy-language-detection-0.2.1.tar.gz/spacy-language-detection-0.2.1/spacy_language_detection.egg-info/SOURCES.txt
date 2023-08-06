@@ -1,0 +1,14 @@
+README.md
+setup.cfg
+setup.py
+spacy_language_detection/__init__.py
+spacy_language_detection/spacy_language_detector.py
+spacy_language_detection/version.py
+spacy_language_detection.egg-info/PKG-INFO
+spacy_language_detection.egg-info/SOURCES.txt
+spacy_language_detection.egg-info/dependency_links.txt
+spacy_language_detection.egg-info/requires.txt
+spacy_language_detection.egg-info/top_level.txt
+tests/__init__.py
+tests/requirements_spacy.py
+tests/test_spacy_language_detector.py
