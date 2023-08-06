@@ -1,0 +1,9 @@
+Click>=7.0
+docker>=5
+greenlet>=1
+pycryptodome>=3
+sqlalchemy>=1.4
+teradataml>=17
+teradatasql>=17
+teradatasqlalchemy>=17
+websocket-client>=1.2
