@@ -1,0 +1,10 @@
+fastapi_azure_auth/__init__.py,sha256=Yl4QWJcahndjwKZT7tgYnYyUeIOF3Zm7vsQyCgxcRYk,255
+fastapi_azure_auth/auth.py,sha256=AE4IgEYECI1xcK5Ng1U4PyQkQbPrg7ThcYStchRRndM,14070
+fastapi_azure_auth/exceptions.py,sha256=DWhc-6cIhVgQH5kZ5dTUo90gGAWOrgKQ-ik1W-hgjKs,337
+fastapi_azure_auth/openid_config.py,sha256=-Unjj-pxUX4ewq_kpXKofbGp7o8HHJ3EqP98n49rINc,4771
+fastapi_azure_auth/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastapi_azure_auth/user.py,sha256=Tr-PzWw-uLK0TRthZk2eemSvvYreFLgNzfNwx7GJfpQ,614
+fastapi_azure_auth-3.0.0.dist-info/LICENSE,sha256=O-szkwAbFQXzbLOhur0WzK9ZYeh84E8XOogknpBajKU,1068
+fastapi_azure_auth-3.0.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+fastapi_azure_auth-3.0.0.dist-info/METADATA,sha256=SMKbNs8DjpStLo02Y20SMiOqVh9bqAoRdrFTHf2EgvQ,7857
+fastapi_azure_auth-3.0.0.dist-info/RECORD,,
