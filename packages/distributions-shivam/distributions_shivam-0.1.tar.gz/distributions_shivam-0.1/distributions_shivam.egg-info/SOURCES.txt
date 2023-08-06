@@ -1,0 +1,10 @@
+setup.py
+distributions_shivam/Binomialdistribution.py
+distributions_shivam/Gaussiandistribution.py
+distributions_shivam/Generaldistribution.py
+distributions_shivam/__init__.py
+distributions_shivam.egg-info/PKG-INFO
+distributions_shivam.egg-info/SOURCES.txt
+distributions_shivam.egg-info/dependency_links.txt
+distributions_shivam.egg-info/not-zip-safe
+distributions_shivam.egg-info/top_level.txt
