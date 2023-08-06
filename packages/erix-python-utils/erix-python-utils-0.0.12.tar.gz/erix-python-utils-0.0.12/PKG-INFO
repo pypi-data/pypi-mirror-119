@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: erix-python-utils
+Version: 0.0.12
+Summary: All of my utilities and tools in one place
+Home-page: UNKNOWN
+Author: Eric Stratigakis
+Author-email: enstrati@uwaterloo.ca
+License: UNKNOWN
+Description: # erix-python-utils
+        
+        This is a project that has utils that I like using, and want to make a package
+        
+        ## Installation
+        
+        ```python
+        pip install erix-python-utils
+        ```
+        
+        # Usage
+        
+        ## homebrew.py
+        
+        from helloworld import helloworld
+        helloworld()
+        
+        ## Developing erix-python-packages
+        
+        To install, along with the tools you need and run tests, run the following in you virtualenv
+        
+        ```bash
+        pip install -e .[dev]
+        ```
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3
+Description-Content-Type: text/markdown
