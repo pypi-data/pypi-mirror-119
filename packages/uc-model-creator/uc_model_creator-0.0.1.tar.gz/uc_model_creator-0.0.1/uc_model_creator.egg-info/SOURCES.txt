@@ -1,0 +1,11 @@
+README.md
+setup.py
+uc_model_creator/__init__.py
+uc_model_creator/main.py
+uc_model_creator/uc_model_creator.py
+uc_model_creator.egg-info/PKG-INFO
+uc_model_creator.egg-info/SOURCES.txt
+uc_model_creator.egg-info/dependency_links.txt
+uc_model_creator.egg-info/entry_points.txt
+uc_model_creator.egg-info/requires.txt
+uc_model_creator.egg-info/top_level.txt

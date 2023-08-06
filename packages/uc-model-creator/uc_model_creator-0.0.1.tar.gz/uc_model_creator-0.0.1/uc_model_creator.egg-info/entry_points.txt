@@ -1,0 +1,3 @@
+[console_scripts]
+uc_model_creator = uc_model_creator.main:main
+
