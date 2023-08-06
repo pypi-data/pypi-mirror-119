@@ -1,0 +1,11 @@
+sqlcontroller/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlcontroller/sqlcontroller.py,sha256=FsdAthmtu4nH3d3auUh0xpmQ3GRtY5GLGJg9dqqSszA,5631
+sqlcontroller/sqlfield.py,sha256=Qs11pDPJz_gcJW7Q61UPBGLpwiEXaElDnyqfuYjaUGQ,192
+sqlcontroller/sqlquerybuilder.py,sha256=70ZZBNrD2Vrl5MghSAjh1MRtm21Mfxxk9Zgf-kOmXD0,1934
+sqlcontroller/sqltable.py,sha256=7Idyy_8KvEYKzygCmNQvpEZ2PyL02JoecWbuN9HhYnw,4075
+sqlcontroller/sqlvalidator.py,sha256=mt1dJVL4z_ELyarTL1-TYajUfMQ1Fka2PuzKO9IgNHc,8592
+sqlcontroller-0.1.0.dist-info/LICENSE,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+sqlcontroller-0.1.0.dist-info/METADATA,sha256=0zUY7Wa8l74xCXFcI8Qm3lQfaDzzhF7z2jjzT64ff5U,588
+sqlcontroller-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+sqlcontroller-0.1.0.dist-info/top_level.txt,sha256=vfSAuZrtsCi4CDhBPXb1EDu2ObAlKHVRZjLITQOPqCY,14
+sqlcontroller-0.1.0.dist-info/RECORD,,
