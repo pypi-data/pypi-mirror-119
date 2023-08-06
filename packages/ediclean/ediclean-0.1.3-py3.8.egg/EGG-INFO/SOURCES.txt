@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+ediclean/__init__.py
+ediclean/__main__.py
+ediclean/paxlst.py
+ediclean.egg-info/PKG-INFO
+ediclean.egg-info/SOURCES.txt
+ediclean.egg-info/dependency_links.txt
+ediclean.egg-info/entry_points.txt
+ediclean.egg-info/top_level.txt
