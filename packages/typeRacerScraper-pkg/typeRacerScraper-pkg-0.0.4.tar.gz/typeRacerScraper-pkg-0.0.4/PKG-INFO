@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: typeRacerScraper-pkg
+Version: 0.0.4
+Summary: Scrapes scores from typeracer given a username.
+Home-page: https://github.com/Mohammad-Kheir/TypeRacerScraper
+Author: Mohammad Kheir
+Author-email: kheir.mirza@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Mohammad-Kheir/TypeRacerScraper
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# TypeRacerScraper
+Given a username and quantity of scores. Will scrape and return a JSON of scores in type racer.
+
+from typeracerScraper_package import typeracerScraper as t
+
+df = t.TypeRacerScraper("not_not_mk", "1000").result_json()
+
+print(df)
+
+
