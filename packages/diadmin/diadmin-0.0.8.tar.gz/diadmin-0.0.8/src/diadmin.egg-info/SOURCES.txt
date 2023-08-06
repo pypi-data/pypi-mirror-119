@@ -1,0 +1,13 @@
+README.md
+setup.py
+src/diadmin/__init__.py
+src/diadmin/__main__.py
+src/diadmin/genpwds.py
+src/diadmin/login.py
+src/diadmin/policies.py
+src/diadmin/useradmin.py
+src/diadmin.egg-info/PKG-INFO
+src/diadmin.egg-info/SOURCES.txt
+src/diadmin.egg-info/dependency_links.txt
+src/diadmin.egg-info/requires.txt
+src/diadmin.egg-info/top_level.txt
