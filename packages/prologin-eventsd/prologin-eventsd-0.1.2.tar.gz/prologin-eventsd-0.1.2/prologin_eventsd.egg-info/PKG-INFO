@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: prologin-eventsd
+Version: 0.1.2
+Summary: Django event management system
+Home-page: https://gitlab.com/prologin/eventsd
+Author: Association Prologin
+Author-email: info@prologin.org
+License: UNKNOWN
+Project-URL: Bug tracker, https://gitlab.com/prologin/eventsd/-/issues
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Plugins
+Classifier: Environment :: Web Environment
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+UNKNOWN
+

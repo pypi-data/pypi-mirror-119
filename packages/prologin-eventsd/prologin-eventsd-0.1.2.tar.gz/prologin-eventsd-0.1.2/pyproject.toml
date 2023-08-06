@@ -1,0 +1,12 @@
+[project]
+name = "prologin-eventsd"
+description = "A web application to manage events"
+readme = "README.md"
+maintainers = [
+    "Léo Portemont <leo@prologin.org>",
+    "Association Prologin <info@prologin.org>",
+]
+repository = "https://gitlab.com/prologin/eventsd"
+
+[tool.black]
+line-length = 79
