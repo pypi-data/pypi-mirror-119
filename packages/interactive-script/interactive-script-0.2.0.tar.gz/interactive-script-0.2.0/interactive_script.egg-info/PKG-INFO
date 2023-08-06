@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: interactive-script
+Version: 0.2.0
+Summary: Inject the full power of a REPL in your scripts
+Home-page: https://gitlab.com/Lattay/python-interactive
+Author: Théo Cavignac
+Author-email: theo.cavignac+dev@gmail.com
+License: BSD 3-Clause License
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Environment :: Console
+Classifier: Topic :: Software Development :: User Interfaces
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# interactive
+
+`interactive` is a Python 3 package that helps building interactive scripts using the full power of a Read-Eval-Print-Loop.
+
+## Installation
+
+Use pip to install this package.
+
+```sh
+$ pip install interactive
+```
+
+If you have to install offline you can install it from the sources:
+- get the sources from [here](https://github.com/Lattay/-/archive/main/interactive-main.zip).
+- unzip them (`unzip interactive-main.zip`)
+- go into the directory (`cd interactive-main`)
+- install with pip (`pip install .`)
+
+If you want to include this code in your own package, just make the `interactive` folder available to your project scope.
+
+## Usage
+
+### Basics
+
+Here is a small self explanatory example:
+```python
+#!/usr/bin/env python3
+from interactive import start, query
+from interactive.expect import ExpectPredicate
+
+start(locals())  # Initialize the context
+
+print("Start here")
+
+v = query(int, default=42)  # give the user a REPL and wait for an answer
+# the user may answer by calling `resume(some_value)`
+print(f"Got v = {v} !")
+
+sq = query(  # a custom validator for the user answer
+    ExpectPredicate(lambda x: x == v * v, description="the square of v"),
+    msg="Provide the square of v",
+)
+
+print("Nice, thanks.")
+```
+
+### Main classes and functions
+
+The package is very simple, thus the `help` command should be enough to discover it.
+
+The basic interface is made of the `start`, `query` and `resume` functions.
+`start` and `query` are used in the script.
+`resume` is used in interactive mode by the user to resume the script.
+
+They are all wrapper around the `interactive.context.Context` methods.
+
+A custom subclass of `Context` can be used for advanced control of the process.
+It should be passed to `start` like `start(locals(), Context=MyContext)`.
+
+The sources is currently so simple that you can probably just go check it out.
+
+The `Expect` class and its children are used to validate the data sent by the user. You may derive them and pass some instances as the `type_` argument of `query` to provide custom validation.
+
+### Scoping
+
+The scope of the REPL is handled manually two ways.
+
+If you want to bind to the local scope of a function, use `with rescope(locals()):`.
+Every `query` in the `with` block will share the scope of the current function.
+An example of that use can be found in [samples/02_scoping.py](samples/02_scoping.py).
+
+If you want arbitrary scope manipulation you may use the `start` and `stop` functions.
+`start(some_scope)` bind a new REPL to `some_scope` and `stop()` pop the last REPL from the stack.
+After a `start` all `query` will use `some_scope`. After `stop` the previous scope will be restored.
+
+`start` will also be used to open the top level REPL at the beginning of a script (as demonstrated above).
+
+
