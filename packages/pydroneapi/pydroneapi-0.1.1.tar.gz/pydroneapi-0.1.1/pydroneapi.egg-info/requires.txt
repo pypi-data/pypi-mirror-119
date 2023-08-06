@@ -1,0 +1,11 @@
+boto3
+requests
+
+[dev]
+PyYAML>=5.3.1
+pylint>=2.5.0
+pytest>=5.4.1
+pytest-cov>=2.8.1
+bandit>=1.6.2
+safety>=1.10.3
+requests_mock
