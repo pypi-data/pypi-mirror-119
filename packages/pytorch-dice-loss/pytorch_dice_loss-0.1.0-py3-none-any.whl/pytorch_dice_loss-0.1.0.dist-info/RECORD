@@ -1,0 +1,6 @@
+pytorch_dice_loss/__init__.py,sha256=QE1Cobt5brxqgszx-T1WW1v4-_5ndnneBcqzwZw6kg8,25
+pytorch_dice_loss/loss.py,sha256=9-Z8AP3TOMoWzyhxGu2wICh1yCR_aDOjAM_W77X0RBQ,10002
+pytorch_dice_loss-0.1.0.dist-info/LICENSE,sha256=sJmDfAEI60sbN3LqxbSPnyeotoWSZRf4kqDnYXad-lI,11331
+pytorch_dice_loss-0.1.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+pytorch_dice_loss-0.1.0.dist-info/METADATA,sha256=8qogj6SOE7L8EQRhW5IbjcMfsYhs0Qn4CYoWBWGdY9w,495
+pytorch_dice_loss-0.1.0.dist-info/RECORD,,
