@@ -1,0 +1,4 @@
+PyTurboJPEG
+numpy
+opencv-python
+orjson
