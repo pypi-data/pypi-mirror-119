@@ -1,0 +1,7 @@
+ec2pricing/__init__.py,sha256=HnizZ4kLEl21iR9TK7E6vuqVsq4TK5Zregy9uIWA7fo,92
+ec2pricing/main.py,sha256=alI0pzkoX0Iq8GT7TQpljTWlQfbm330m17_j5bCcppY,8506
+aws_ec2_pricing-0.1.8.dist-info/entry_points.txt,sha256=fOx3VSrz9hHBUSXj1qsx4ghZztaY_sP5UlWMl7aQyuk,45
+aws_ec2_pricing-0.1.8.dist-info/LICENSE,sha256=ymqfnLd7l-73xes78wIcTU3wt9A9yLRanyBINrymXYQ,11342
+aws_ec2_pricing-0.1.8.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+aws_ec2_pricing-0.1.8.dist-info/METADATA,sha256=Vm3sdTAmqMP_Jbfyfh-Mnolv3CKDd79qZdQTp7LXLJs,415
+aws_ec2_pricing-0.1.8.dist-info/RECORD,,
