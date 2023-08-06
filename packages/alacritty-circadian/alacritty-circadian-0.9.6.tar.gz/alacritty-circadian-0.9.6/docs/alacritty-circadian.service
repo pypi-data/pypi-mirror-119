@@ -1,0 +1,8 @@
+[Unit]
+Description=Alacritty automatic theme switch
+
+[Service]
+ExecStart=alacritty-circadian
+
+[Install]
+WantedBy=default.target
