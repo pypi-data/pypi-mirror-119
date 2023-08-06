@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+cog_reloader/__init__.py
+cog_reloader/cog.py
+cog_reloader.egg-info/PKG-INFO
+cog_reloader.egg-info/SOURCES.txt
+cog_reloader.egg-info/dependency_links.txt
+cog_reloader.egg-info/top_level.txt
