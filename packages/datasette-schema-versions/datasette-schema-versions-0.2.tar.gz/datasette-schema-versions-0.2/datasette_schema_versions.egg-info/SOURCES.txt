@@ -1,0 +1,9 @@
+README.md
+setup.py
+datasette_schema_versions/__init__.py
+datasette_schema_versions.egg-info/PKG-INFO
+datasette_schema_versions.egg-info/SOURCES.txt
+datasette_schema_versions.egg-info/dependency_links.txt
+datasette_schema_versions.egg-info/entry_points.txt
+datasette_schema_versions.egg-info/requires.txt
+datasette_schema_versions.egg-info/top_level.txt
