@@ -1,0 +1,13 @@
+README.md
+setup.py
+giants/__init__.py
+giants/__version__.py
+giants/config.py
+giants/model.py
+giants.egg-info/PKG-INFO
+giants.egg-info/SOURCES.txt
+giants.egg-info/dependency_links.txt
+giants.egg-info/requires.txt
+giants.egg-info/top_level.txt
+giants/test/__init__.py
+giants/test/test_model.py
