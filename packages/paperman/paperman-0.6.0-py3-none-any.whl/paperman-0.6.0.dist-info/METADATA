@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: paperman
+Version: 0.6.0
+Summary: latex project and bibliography management utility
+Home-page: UNKNOWN
+Author: zaphB
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: appdirs
+Requires-Dist: argparse
+Requires-Dist: argcomplete
+Requires-Dist: pyyaml
+
+# Latex Project and Bibliography Management Utilities
+
+Paperman is a command line utility designed to accelerate your latex writing workflow by automating tasks as:
+ * finding and copying frequently used images, bibtex entries and input tex-files from your other documents
+ * identifying unused image files and bibtex entries in your latex project
+ * maintaining consistent capitalization of, e.g., names in titles in bibtex entries
+ * maintaining consistent usage of ISO4 abbreviated or full journal names
+ * renaming and organizing downloaded bib and pdf files
+
+
