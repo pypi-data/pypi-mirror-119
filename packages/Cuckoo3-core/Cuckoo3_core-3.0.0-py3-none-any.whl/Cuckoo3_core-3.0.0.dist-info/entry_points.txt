@@ -1,0 +1,5 @@
+[console_scripts]
+cuckoo = cuckoo.main:main
+cuckoocleanup = cuckoo.scripts.cleanup:main
+cuckoosafelist = cuckoo.scripts.safelist:main
+

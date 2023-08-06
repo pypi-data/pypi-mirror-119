@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: Cuckoo3-core
+Version: 3.0.0
+Summary: Automated Malware Analysis System
+Home-page: https://github.com/cert-ee/
+Author: 
+Author-email: 
+License: UNKNOWN
+Keywords: cuckoo automated malware sandbox analysis project threat intelligence cert soc
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Flask
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Security
+Requires-Python: >=3.6
+Requires-Dist: Cuckoo3-common (==0.0.1)
+Requires-Dist: Cuckoo3-processing (==0.0.1)
+Requires-Dist: Cuckoo3-machineries (==0.0.1)
+Requires-Dist: Cuckoo3-web (==0.0.1)
+
+UNKNOWN
+
