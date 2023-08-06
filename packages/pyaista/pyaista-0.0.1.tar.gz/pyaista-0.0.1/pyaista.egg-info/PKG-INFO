@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: pyaista
+Version: 0.0.1
+Summary: AISTA Library
+Home-page: https://github.com/hamletj/pyaista
+Author: AISTA
+Author-email: current.address@current.domain
+License: Apache Software License
+Download-URL: https://github.com/hamletj/pyaista/archive/refs/tags/v0.0.1.tar.gz
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9

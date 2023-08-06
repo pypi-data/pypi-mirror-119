@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+pyaista/__init__.py
+pyaista/error.py
+pyaista/main.py
+pyaista.egg-info/PKG-INFO
+pyaista.egg-info/SOURCES.txt
+pyaista.egg-info/dependency_links.txt
+pyaista.egg-info/top_level.txt
