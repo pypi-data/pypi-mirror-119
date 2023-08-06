@@ -1,0 +1,10 @@
+toml
+lark-parser>=0.11.3
+python-dateutil
+pandas
+pyarrow>=5.0.0
+docker>=5.0.0
+requests[socks]
+stix-shifter>=3.5.1
+stix-shifter-utils>=3.5.1
+firepit>=1.2.0
