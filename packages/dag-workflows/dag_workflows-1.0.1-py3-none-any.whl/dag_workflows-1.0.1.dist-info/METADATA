@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: dag-workflows
+Version: 1.0.1
+Summary: Run tasks in a workflow
+Home-page: https://gitlab.com/roivant/oss/workflows
+Author: Roivant Sciences
+Author-email: alec.clowes@roivant.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: croniter
+Requires-Dist: inflection
+Requires-Dist: networkx
+Requires-Dist: pyyaml
+Provides-Extra: bq
+Requires-Dist: google-cloud-bigquery ; extra == 'bq'
+Provides-Extra: k8s
+Requires-Dist: kubernetes ; extra == 'k8s'
+Provides-Extra: scheduler
+Requires-Dist: django ; extra == 'scheduler'
+Requires-Dist: dj-database-url ; extra == 'scheduler'
+Requires-Dist: psycopg2-binary ; extra == 'scheduler'
+
+Materials in this repository are Copyright 2021 Roivant Sciences Inc. except as may be otherwise specifically noted.
+
+workflows
+================================
+
+Read the documentation at https://dag-workflows.readthedocs.io/
+
+About the template
+-------------------
+
+This repository was created from the `temple-python <https://gitlab.com/roivant/vant-tech/temple-python>`_
+template. If you have access to that repository, apply updates from the template by running::
+
+    temple update
+
+What tools are included?
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- A Makefile for convenience; use ``make setup`` to setup your dev environment
+- A build configuration in ``.gitlab-ci.yml``
+- A test framework using pytest and requiring 100% coverage; use ``make test`` to run
+- Python auto-formatting using ``black``, ``flake8``, and ``isort`` via a git pre-commit hook
+- Automatic versioning and ChangeLog using `PBR <https://docs.openstack.org/developer/pbr/>`_
+
+Versioning using PBR
+~~~~~~~~~~~~~~~~~~~~
+
+The `PBR <https://docs.openstack.org/developer/pbr/>`_ library will automatically
+increment the version when you commit to the main branch by merging your pull request.
+The commit message that you enter on GitHub when merging will determine what version
+number is assigned, using `Semantic Versioning <http://semver.org/>`_.
+
+- Messages starting with ``Sem-Ver: bugfix,`` or with no matching message will bump the ``PATCH`` number
+- Messages starting with ``Sem-Ver: feature,`` or ``Sem-Ver: deprecation,`` will bump the ``MINOR`` number.
+- Messages starting with ``Sem-Ver: api-break,`` will bump the ``MAJOR`` number.
+
+
+
