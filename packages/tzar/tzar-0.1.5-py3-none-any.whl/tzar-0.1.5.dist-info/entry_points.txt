@@ -1,0 +1,3 @@
+[console_scripts]
+tzar=tzar.cli:run
+
