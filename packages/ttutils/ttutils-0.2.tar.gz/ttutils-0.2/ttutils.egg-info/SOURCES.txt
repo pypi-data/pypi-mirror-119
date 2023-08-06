@@ -1,0 +1,13 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+ttutils/__init__.py
+ttutils/compress.py
+ttutils/config.py
+ttutils/safe_types.py
+ttutils.egg-info/PKG-INFO
+ttutils.egg-info/SOURCES.txt
+ttutils.egg-info/dependency_links.txt
+ttutils.egg-info/requires.txt
+ttutils.egg-info/top_level.txt
