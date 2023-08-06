@@ -1,0 +1,7 @@
+README.md
+license
+setup.py
+nikkiepy/nikkiepy.egg-info/PKG-INFO
+nikkiepy/nikkiepy.egg-info/SOURCES.txt
+nikkiepy/nikkiepy.egg-info/dependency_links.txt
+nikkiepy/nikkiepy.egg-info/top_level.txt
