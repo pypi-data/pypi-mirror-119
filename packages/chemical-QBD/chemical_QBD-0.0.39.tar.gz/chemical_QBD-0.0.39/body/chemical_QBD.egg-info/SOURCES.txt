@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+body/chemical_QBD/__init__.py
+body/chemical_QBD/const.py
+body/chemical_QBD/elementary__data.json
+body/chemical_QBD/tools.py
+body/chemical_QBD.egg-info/PKG-INFO
+body/chemical_QBD.egg-info/SOURCES.txt
+body/chemical_QBD.egg-info/dependency_links.txt
+body/chemical_QBD.egg-info/top_level.txt
