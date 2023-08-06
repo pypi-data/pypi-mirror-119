@@ -1,0 +1,17 @@
+lanceotron/__init__.py,sha256=Cj_C1LEg5Tbmipv7j2oyEotokDOiYAQpuqgdTTs_bZY,146
+lanceotron/cli.py,sha256=ioGTIPpGeEX5u0OW4UWED7zwB0D1fDU3MgD7K672ix8,3174
+lanceotron/lanceotron.py,sha256=89P2LJXhflZuvaQOUnFjwFInKAmT4qrYIpiYQuWtqKg,27147
+lanceotron/modules.py,sha256=XhYGaZWKdpAPX9Jj9F7n6zqrgPbwWNEgNn_j88oyvpk,13500
+lanceotron/utils.py,sha256=vSDrCccP0xj18pOJmfacYr999cFv1Kl0mGoyqNwgyoY,4624
+lanceotron/static/__init__.py,sha256=09uAQiFeCsy-b77rAzmRUi4FQy8nF11Dn1CplHyh6IQ,38
+lanceotron/static/standard_scaler_deep_v5_03.p,sha256=dO8YF4SEDASNGoR9GUp1JctDsFTD9JWpzDQibb6q-RA,48467
+lanceotron/static/standard_scaler_wide_v5_03.p,sha256=EGhWgYdIpMr5UCc_jQWUYZMqznsRPLl3UOtTYhWu344,742
+lanceotron/static/wide_and_deep_fully_trained_v5_03.h5,sha256=74N8BjmDYHh6ZHAXBqm0vVN8C1IOeCV4vEEQCuSJftY,1727328
+lanceotron/static/__pycache__/__init__.cpython-36.pyc,sha256=fdTxy-mgmn_BBIHFZRvcEOAl2r3HsHp8vgGj7AJ4N2c,154
+lanceotron/static/__pycache__/__init__.cpython-37.pyc,sha256=2rJ89Ja3PW5mTzFfZzFxrOfACn08q9KKGBhf8T1ko88,158
+lanceotron/static/__pycache__/__init__.cpython-38.pyc,sha256=Arx7J8-MHOc7FFEGVORhhLOvwKI56xBB2N3uuPtrGrk,162
+lanceotron-1.0.dist-info/METADATA,sha256=_XhGAKwqwhUIRMxtexb2SiABDeLIYylFvbPpU5lUKyE,4705
+lanceotron-1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+lanceotron-1.0.dist-info/entry_points.txt,sha256=_dVVrUuj2AT42dKWj9jlBJOmbRxyRiAmc4ZafBt5j6U,51
+lanceotron-1.0.dist-info/top_level.txt,sha256=wo4T82pE7VWF_7mpTdhVf8ikO63t-c07VjoYYtEZUUw,11
+lanceotron-1.0.dist-info/RECORD,,
