@@ -1,0 +1,7 @@
+README.md
+setup.py
+featrl.egg-info/PKG-INFO
+featrl.egg-info/SOURCES.txt
+featrl.egg-info/dependency_links.txt
+featrl.egg-info/requires.txt
+featrl.egg-info/top_level.txt
