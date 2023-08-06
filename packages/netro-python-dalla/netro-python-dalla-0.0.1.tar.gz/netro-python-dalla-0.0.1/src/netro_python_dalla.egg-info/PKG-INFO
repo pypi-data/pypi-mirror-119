@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: netro-python-dalla
+Version: 0.0.1
+Summary: Python package that provides access to Netro REST API
+Home-page: UNKNOWN
+Author: Valentino Dalla Valle
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+
+UNKNOWN
+
