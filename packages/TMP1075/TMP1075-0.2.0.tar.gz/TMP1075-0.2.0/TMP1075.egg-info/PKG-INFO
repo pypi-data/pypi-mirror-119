@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: TMP1075
+Version: 0.2.0
+Summary: A python wrapper for interacting with the TMP1075
+Home-page: https://github.com/Pioreactor/TMP1075
+Author: Cam Davidson-Pilon
+Author-email: cam@pioreactor.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# TMP1075
+A Python driver for the [TI TMP1075 temperature sensor](http://www.ti.com/product/TMP1075)
+
+Currently only supports querying of the temperature.
+
+## Usage
+
+```python
+from TMP1075 import TMP1075
+
+tmp = TMP1075()
+tmp.get_temperature()
+```
+

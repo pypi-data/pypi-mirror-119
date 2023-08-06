@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+TMP1075/__init__.py
+TMP1075/py.typed
+TMP1075.egg-info/PKG-INFO
+TMP1075.egg-info/SOURCES.txt
+TMP1075.egg-info/dependency_links.txt
+TMP1075.egg-info/requires.txt
+TMP1075.egg-info/top_level.txt
