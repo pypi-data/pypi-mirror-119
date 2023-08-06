@@ -1,0 +1,7 @@
+requests
+numpy
+pandas
+bokeh
+pyjwt
+scipy
+apscheduler
