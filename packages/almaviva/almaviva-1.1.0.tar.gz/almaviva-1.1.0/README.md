@@ -1,0 +1,122 @@
+# ALMAVIVA | Biblioteca com funções personalizadas desenvolvidos para Almaviva Do Brasil
+> Bibliotecas disponíveis: database, file, ihm, logging, webdriver
+
+
+## Importação e modos de uso
+
+Para usar esta biblioteca, basta instalar via PIP e posteriormente realizar a importação para dentro do código-fonte do seu projeto.
+
+```
+pip install almaviva
+```
+
+Para instalar a biblioteca na versão anteriormente publicada, acrescente "==1.1.0" na frente do nome do pacote que está instalando, ex.:
+
+```
+pip install almaviva==1.1.0
+```
+
+Para instalar a biblioteca do repositório de testes do PyPI, execute:
+
+```
+pip install -i https://test.pypi.org/simple/ almaviva
+```
+
+**Para exemplos de código python de cada pacote, veja arquivo ``README-`` de cada pacote na [pagina oficial do GitHub da Almaviva do Brasil](https://github.com/Almaviva-do-Brasil/almaviva-library)**
+
+
+## Ambiente virtual (AVISO IMPORTANTE)
+
+Recomenda-se criar/acessar um ambiente virtual do interpretador python na máquina local para fazer testes e/ou atualizar esta biblioteca, siga o passo a passo abaixo para criar/acessar o ambiente virtual antes de prosseguir
+
+- Para acessar o ambiente virtual existente deste projeto, execute, no PowerShell, de dentro da pasta desta biblioteca:
+
+    - No Windows, execute:
+
+        ```
+        virtualenv\Scripts\activate
+        ```
+
+    - No Unix ou no MacOS, execute:
+
+        ```
+        source virtualenv/bin/activate
+        ```
+
+- Para sair do ambiente virtual, execute:
+
+    ```
+    deactivate
+    ```
+
+- Para criar um novo ambiente virtual, vá até a pasta que contém os arquivos desta biblioteca e execute os códigos, no PowerShell:
+    
+    ```
+    python -m venv virtualenv --clear
+    virtualenv\Scripts\activate
+    python -m pip install -r requirements.txt
+    ```
+
+
+## Editando a biblioteca
+
+**O que você precisa saber antes de iniciar a edição deste projeto?**
+
+Para editar esta biblioteca, você precisará realizar a instalação dos serguintes pacotes:
+
+```
+pip install setuptools
+pip install wheel
+pip install twine
+```
+
+
+1. Criação das contas de serviço no PyPI.org
+
+    Inicialmente você precisa criar as contas de serviços nos repositório do PyPI.org
+
+    - [PyPI](https://pypi.org/)
+    - [Test PyPI](https://test.pypi.org/)
+
+    > O site Test PyPI é disponibilizado justamente para que seja possível testar os envios que queremos fazer no futuro. Lembre-se bem de seu login e senha, eles serão necessários quando enviarmos o pacote. Recomenda-se criar um token de autenticação nos sites e habilitar o código de verificação de dois fatores!
+
+
+2. Configuração e compilação do pacote
+
+    Para criar o pacote que será enviado ao PyPI, será necessário executar o compilador setup.py. Execute, no PowerShell:
+
+    ```
+    python setup.py sdist
+    ```
+
+    > Uma pasta "dist" será criada com os arquivos ".tar.gz", que contém o pacote a ser enviado ao PyPI
+
+
+3. Publicação no repositórios PyPI.org e test.PyPI.org
+
+    > Por fim, basta fazer o upload do pacote criado/atualizado. Entretanto, é interessante carregá-lo primeiro para o [site de teste do repositório PyPI](https://test.pypi.org). Desta forma, você não atrapalha o versionamento do repositório oficial e pode verificar se tudo está funcionando como desejado. Para fazer isso, execute o comando twine upload informando o URL da API Test PyPI:
+
+    ```
+    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    ```
+
+    > Para fazer o upload/atualização do seu pacote para o repositório oficial, basta executar o mesmo comando usado anteriormente porém sem informar nenhuma URL como parâmetro. Aqui, você será solicitado a fornecer seu login e senha do [site oficial do repositório PyPI](https://pypi.org).
+
+    ```
+    twine upload dist/*
+    ```
+
+
+4. Instalação e testes do pacote
+
+    Use os códigos da sessão [Importação e modos de uso](#importacao_e_modos_de_uso) para fins de testes e homologação da biblioteca.
+
+    Para mais detalhes, visite [Packaging Python Projects Site](https://packaging.python.org/tutorials/packaging-projects/#uploading-your-project-to-pypi)
+
+
+## Revisões da biblioteca
+
+Versão/Tags | Data edição | Branch(s)   | Data Publicação | Status                   | Publicado por
+------------| ----------- | ----------- | --------------- | ------------------------ | --------------------------------------------------------
+v1.0.0      | 2021-09-08  | STABLE      | 2021-09-08      | Pré-lançamento           | [Assad, Felipe](mailto:fassad@almavivadobrasil.com.br)
+v1.1.0      | 2021-09-09  | STABLE      | 2021-09-10      | GO-LIVE                  | [Assad, Felipe](mailto:fassad@almavivadobrasil.com.br)
