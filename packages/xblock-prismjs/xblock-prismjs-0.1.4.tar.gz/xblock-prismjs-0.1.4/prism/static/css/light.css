@@ -1,0 +1,127 @@
+/* PrismJS 1.24.1
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+go+java+json+lua+python+ruby+shell-session+sql+yaml */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+ .themelight {
+  /* Code blocks */
+  /* Inline code */
+}
+.themelight code[class*=language-],
+.themelight pre[class*=language-] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+.themelight pre[class*=language-]::-moz-selection, .themelight pre[class*=language-] ::-moz-selection,
+.themelight code[class*=language-]::-moz-selection, .themelight code[class*=language-] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+.themelight pre[class*=language-]::selection, .themelight pre[class*=language-] ::selection,
+.themelight code[class*=language-]::selection, .themelight code[class*=language-] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+@media print {
+  .themelight code[class*=language-],
+.themelight pre[class*=language-] {
+    text-shadow: none;
+  }
+}
+.themelight pre[class*=language-] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+.themelight :not(pre) > code[class*=language-],
+.themelight pre[class*=language-] {
+  background: #f5f2f0;
+}
+.themelight :not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+.themelight .token.comment,
+.themelight .token.prolog,
+.themelight .token.doctype,
+.themelight .token.cdata {
+  color: slategray;
+}
+.themelight .token.punctuation {
+  color: #999;
+}
+.themelight .token.namespace {
+  opacity: 0.7;
+}
+.themelight .token.property,
+.themelight .token.tag,
+.themelight .token.boolean,
+.themelight .token.number,
+.themelight .token.constant,
+.themelight .token.symbol,
+.themelight .token.deleted {
+  color: #905;
+}
+.themelight .token.selector,
+.themelight .token.attr-name,
+.themelight .token.string,
+.themelight .token.char,
+.themelight .token.builtin,
+.themelight .token.inserted {
+  color: #690;
+}
+.themelight .token.operator,
+.themelight .token.entity,
+.themelight .token.url,
+.themelight .language-css .token.string,
+.themelight .style .token.string {
+  color: #9a6e3a;
+  /* This background color was intended by the author of this theme. */
+  background: rgba(255, 255, 255, 0.5);
+}
+.themelight .token.atrule,
+.themelight .token.attr-value,
+.themelight .token.keyword {
+  color: #07a;
+}
+.themelight .token.function,
+.themelight .token.class-name {
+  color: #DD4A68;
+}
+.themelight .token.regex,
+.themelight .token.important,
+.themelight .token.variable {
+  color: #e90;
+}
+.themelight .token.important,
+.themelight .token.bold {
+  font-weight: bold;
+}
+.themelight .token.italic {
+  font-style: italic;
+}
+.themelight .token.entity {
+  cursor: help;
+}
+ 
+ 
