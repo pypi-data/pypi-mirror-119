@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+tempath/__init__.py
+tempath/tempfiles.py
+tempath.egg-info/PKG-INFO
+tempath.egg-info/SOURCES.txt
+tempath.egg-info/dependency_links.txt
+tempath.egg-info/not-zip-safe
+tempath.egg-info/top_level.txt
+tests/__init__.py
+tests/test_tempath.py
