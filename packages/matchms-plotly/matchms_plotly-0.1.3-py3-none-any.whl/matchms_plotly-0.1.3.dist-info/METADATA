@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: matchms-plotly
+Version: 0.1.3
+Summary: Plot Matchms spectra with Plotly].
+Home-page: https://gitlab.com/metwork/libs/matchms-plotly
+License: Apache-2.0
+Author: Yann Beauxis
+Author-email: dev@yannbeauxis.net
+Requires-Python: >=3.7.1,<4.0.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: matchms (>=0.9.0,<0.10.0)
+Requires-Dist: numpy (>=1.20.0,<2.0.0)
+Requires-Dist: pandas (>=1.2.1,<2.0.0)
+Requires-Dist: plotly (>=4.14.3,<5.0.0)
+Requires-Dist: pytest-cov (>=2.12.1,<3.0.0)
+Project-URL: Repository, https://gitlab.com/metwork/libs/matchms-plotly
+Description-Content-Type: text/markdown
+
+# matchms-plotly
+
+Plot [Matchms](https://matchms.readthedocs.io) spectra with [Plotly](https://plotly.com/python/).
+
+This package is under developement for the [MetWork](www.metwork.science) project.
+
+## Install
+
+```bash
+pip install matchms-plotly
+```
+
+## Usage
+
+```python
+from matchms_plotly import plot_spectrum, plot_spectra
+
+# Plot a single spectrum.
+plot_spectrum(spectrum)
+
+# Plot two spectrums in the "up and down" fashion.
+plot_spectra(spectrum_up, spectrum_down)
+```
+
