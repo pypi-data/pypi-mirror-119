@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: leeeeon4-test-package
+Version: 0.0.5
+Summary: A test package created to learn best practices regarding creating packages based on the course: Creating and Distributing Python Packages - https://twoscoopspress.thinkific.com/courses/creating-and-distributing-python-packages
+Home-page: https://github.com/leeeeon4/leeeeon4_test_package
+Author: Leon Michel Gorißen
+Author-email: leon.gorissen@rwth-aachen.de
+License: MIT license
+Keywords: leeeeon4_test_package
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: Click (>=7.0)
+
+=====================
+Leeeeon4 Test Package
+=====================
+
+
+.. image:: https://img.shields.io/pypi/v/leeeeon4_test_package.svg
+        :target: https://pypi.python.org/pypi/leeeeon4_test_package
+
+.. image:: https://img.shields.io/travis/leeeeon4/leeeeon4_test_package.svg
+        :target: https://travis-ci.com/leeeeon4/leeeeon4_test_package
+
+.. image:: https://readthedocs.org/projects/leeeeon4-test-package/badge/?version=latest
+        :target: https://leeeeon4-test-package.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+.. image:: https://pyup.io/repos/github/leeeeon4/leeeeon4_test_package/shield.svg
+     :target: https://pyup.io/repos/github/leeeeon4/leeeeon4_test_package/
+     :alt: Updates
+
+
+
+A test package created to learn best practices regarding creating packages.
+
+
+* Free software: MIT license
+* Documentation: https://leeeeon4-test-package.readthedocs.io.
+
+
+Features
+--------
+
+* Can list ingredients as in presented course example.
+* This is just a test. 
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+This package was build as part of the Course: `Creating and Distributing Python Packages`_. 
+
+.. _`Creating and Distributing Python Packages`: https://twoscoopspress.thinkific.com/courses/creating-and-distributing-python-packages
+
+
+=======
+History
+=======
+
+0.0.1 (2021-09-09)
+------------------
+
+* First release on PyPI.
+
+
