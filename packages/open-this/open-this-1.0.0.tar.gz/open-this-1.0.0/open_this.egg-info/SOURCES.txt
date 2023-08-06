@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+open_this/socialMedia.py
+open_this.egg-info/PKG-INFO
+open_this.egg-info/SOURCES.txt
+open_this.egg-info/dependency_links.txt
+open_this.egg-info/entry_points.txt
+open_this.egg-info/requires.txt
+open_this.egg-info/top_level.txt
