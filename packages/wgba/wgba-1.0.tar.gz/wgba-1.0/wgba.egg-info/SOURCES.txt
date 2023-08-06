@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.py
+test/test_all.py
+wgba/__init__.py
+wgba/cli.py
+wgba/formats.py
+wgba/genomes.py
+wgba.egg-info/PKG-INFO
+wgba.egg-info/SOURCES.txt
+wgba.egg-info/dependency_links.txt
+wgba.egg-info/entry_points.txt
+wgba.egg-info/requires.txt
+wgba.egg-info/top_level.txt
+wgba/sizes/__init__.py
+wgba/sizes/grch38.chrom.sizes
+wgba/sizes/hg19.chrom.sizes
