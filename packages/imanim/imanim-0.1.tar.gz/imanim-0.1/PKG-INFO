@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: imanim
+Version: 0.1
+Summary: show manim in jupyter
+Home-page: UNKNOWN
+Author: Kexin Zhang
+Author-email: zhangkx2@shanghaitech.edu.cn
+License: MIT
+Description: UNKNOWN
+Keywords: computer science
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
