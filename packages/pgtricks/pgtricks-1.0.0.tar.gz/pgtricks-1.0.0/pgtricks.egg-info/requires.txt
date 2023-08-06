@@ -1,0 +1,8 @@
+
+[test]
+darker[isort]
+flake8
+mypy
+pylint
+pytest
+pytest-mypy
