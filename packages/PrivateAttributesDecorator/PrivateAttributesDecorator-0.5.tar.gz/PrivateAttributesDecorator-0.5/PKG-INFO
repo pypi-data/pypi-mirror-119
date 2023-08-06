@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: PrivateAttributesDecorator
+Version: 0.5
+Summary: Module to increase encapsulation in Python, not allowing the access to private members outside their classes
+Home-page: https://github.com/AntoData
+Author: Antonio Pérez
+Author-email: ingovanpe@gmail.com
+License: MIT
+Download-URL: https://github.com/AntoData/PrivateAttributesProject/archive/refs/tags/v0.5.tar.gz
+Description: Module to increase encapsulation in Python, not allowing the access to private members outside their classes
+        We offer a decorator that we can use to decorate a class for this purpose. We only have to includethe parameters we want to make private and if we want to allow for deep copies of objects of this class
+        @private_attributes_decorator.private_attributes_dec("arg1",allow_deep_copy=True)
+        That way we won´t be able to get or set any our already private attributes plus the attribute arg1.However, we will allow for deep copies of objects of that class
+Keywords: Python,Python3,Encapsulation,Attributes,Private,Decorators
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
