@@ -1,0 +1,25 @@
+chardet
+colorama
+requests
+Pillow
+rarfile
+py7zr
+python-docx
+python-pptx
+xlrd
+
+pdfminer.six
+PyPDF2
+ebooklib
+python-ebooklib
+python-cabarchive
+reportlab 
+cnocr
+fitz
+
+pypiwin32
+SpeechRecognition
+pocketsphinx
+
+#cat install.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 /www/server/panel/pyenv/bin/python -m pip install
+

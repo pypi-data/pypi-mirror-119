@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<!--begin code mirror -->
+<!--下面两个是使用Code Mirror必须引入的-->
+<link rel="stylesheet" href="/static/codemirror/lib/codemirror.css"/>
+<script src="/static/codemirror/lib/codemirror.js"></script>
+<!--Java代码高亮必须引入
+<script src="/static/codemirror/lib/clike.js"></script>
+-->
+<!--groovy代码高亮
+<script src="codemirror-5.31.0/mode/groovy/groovy.js"></script>
+-->
+<!--引入css文件，用以支持主题
+<link rel="stylesheet" href="codemirror-5.31.0/theme/dracula.css"/>
+-->
+
+<!--支持代码折叠
+<link rel="stylesheet" href="/static/codemirror/addon/fold/foldgutter.css"/>
+<script src="codemirror-5.31.0/addon/fold/foldcode.js"></script>
+<script src="codemirror-5.31.0/addon/fold/foldgutter.js"></script>
+<script src="codemirror-5.31.0/addon/fold/brace-fold.js"></script>
+<script src="codemirror-5.31.0/addon/fold/comment-fold.js"></script>
+-->
+
+<!--括号匹配-->
+<script src="/static/codemirror/addon/edit/matchbrackets.js"></script>
+<!--end Code Mirror -->
+<style>
+.form-control{
+width: 100%;
+height:100%;
+min-height:600px;
+}
+.page a:hover {
+    background: #e8e8e8;
+    color: #20a53a;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+}
+.page a {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    font-family: "Arial";
+    font-size: 13px;
+    color: #666;
+    float: left;
+    border: 1px solid #ececec;
+    border-right: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.page span {
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 0px;
+    border: none;
+    background: 0 0;
+    display: inline-block;
+    border: 1px solid #ececec;
+}
+.page input {
+    display: inline-block;
+    width: 60px;
+    margin: 0 10px;
+    padding: 0 3px;
+    text-align: center;
+    }
+    
+.page button {
+    padding: 0 10px;
+}   
+
+#myform {display:inline-grid;} 
+</style>
+<head>
+    <meta charset="utf-8"/>
+    
+    <title>{{rs.path}}</title>
+</head>
+<body>
+    <div>
+    <form method="POST" id="myform" action="">
+    <input name="path" id="path" value="{{rs.path}}" type="hidden" />
+    
+    <ul id="filePage" class="page"><a title="first page" class="Pstart" onclick="GetFiles(1)">首页</a>
+    <a class="Ppren" title="previous page" onclick="GetFiles({{rs.curpage-1}})">上一页</a>
+    <a class="Pnext" title="next page" onclick="GetFiles({{rs.curpage+1}})">下一页</a>
+    <a class="Pend"  title="Last page" onclick="GetFiles({{rs.tpage}})">尾页 </a>
+    
+    <span class="layui-laypage-skip" title="GoTo">   到第
+    <input type="number" min="1" name="curpage" style="width:40px" value="{{rs.curpage}}" class="layui-input">
+    页 <button type="submit" title="submit" class="layui-laypage-btn">
+     确定</button></span>
+    <span class="layui-laypage-count" title="total pages">共 {{rs.tpage}} 页</span>
+    
+    <span class="" title="each page">   每页
+    <input type="number" name="bsize" min="1" max="3145728" style="width:80px" value="{{rs.bsize}}" class="layui-input">
+    Bytes</span>
+    <input name='words'  style="width:200px;margin-right:0;" value="{{rs.words or ''}}" title="Content search" placeholder='内容搜索' />
+    <select name='encoding'  style="width:60px;margin-left:0;" value="{{rs.encoding or ''}}" title="Content Coding" placeholder='文件编码'>
+    <option value=""></option>
+    <option value="UTF-8" {{ "selected" if rs.encoding=="UTF-8"}}>UTF-8</option>
+    <option value="GBK" {{ "selected" if rs.encoding=="GBK"}}>GBK</option>    
+    </select>
+    
+    </ul>
+    </form>
+    
+    </div>
+    <div>
+        <!-- begin code -->
+        <textarea class="form-control" id="code" name="code">{{rs.txt}}</textarea>
+        <!-- end code-->
+    </div>
+</div>
+
+<script>
+    //根据DOM元素的id构造出一个编辑器
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        //mode: "text/groovy",    //实现groovy代码高亮
+        mode: "text/txt", //实现Java代码高亮
+        lineNumbers: true,	//显示行号
+        //theme: "dracula",	//设置主题
+       styleActiveLine: true, // 当前行背景高亮
+        //foldGutter: true,
+        autoMatchParens: true,
+        //gutters: ["CodeMirror-linenumbers", ], //"CodeMirror-foldgutter"
+        matchBrackets: true,	//括号匹配
+        //readOnly: true,        //只读
+        textWrapping: true,
+        {% if rs.mode=="rb" %}
+        lineWrapping: true,    // 自动换行 代码折叠
+        {% endif %}
+    }); 
+    //editor.setSize('800px', '950px');     //设置代码框的长宽
+    s=window.document.body.innerHTML
+    //editor.setValue(s+s+s+s+s+s+s+s+s+s+s+s+s+s);    //先代码框的值清空
+    //editor.setValue(obj.scriptCode);    //给代码框赋值
+    // editor.setOption("readOnly", true);
+    function GetFiles(page){
+        myform.curpage.value = page
+        myform.submit()
+    }
+</script>
+</body>
+</html>
