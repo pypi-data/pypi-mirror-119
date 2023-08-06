@@ -1,0 +1,7 @@
+README.md
+setup.py
+slicey.py
+slicey.egg-info/PKG-INFO
+slicey.egg-info/SOURCES.txt
+slicey.egg-info/dependency_links.txt
+slicey.egg-info/top_level.txt
