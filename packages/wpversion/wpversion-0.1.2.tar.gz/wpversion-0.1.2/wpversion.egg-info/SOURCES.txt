@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+wpversion
+wpversion.py
+wpversion.egg-info/PKG-INFO
+wpversion.egg-info/SOURCES.txt
+wpversion.egg-info/dependency_links.txt
+wpversion.egg-info/requires.txt
+wpversion.egg-info/top_level.txt
