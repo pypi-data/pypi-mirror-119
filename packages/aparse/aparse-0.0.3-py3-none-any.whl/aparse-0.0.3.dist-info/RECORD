@@ -1,0 +1,10 @@
+aparse/__init__.py,sha256=OhubLWSxLWIbEjBiG554g0qg2BQ9nPEKzWBNuqr_fb0,318
+aparse/_lib.py,sha256=KWdI7rn9TzXq0vsGnu1ZhprDzLnl0n8kPTLxTBJeQh4,11077
+aparse/core.py,sha256=FQXCOwdI96xMujgT_iinfNERQneCmLrDN5YY2nG8pOI,2632
+aparse/handlers.py,sha256=Ay0Iy14jWwBT_9zKhFlF4jtv_V7T6m1TKqKWJ_YkWWY,5201
+aparse/wrappers.py,sha256=Dv1jN1qKJBhudVZMFCq3OKkIrKf-aJHT4WxdLLe1FvM,2212
+aparse-0.0.3.dist-info/LICENSE,sha256=5JyWBbaZmmL4nIjPaDsAOwKp40hPB80Pd6tw109aqj8,1074
+aparse-0.0.3.dist-info/METADATA,sha256=YSIMKTQNBd_Uw5_nvGRlXIogygQXzAdiSvNITsAqbIc,8112
+aparse-0.0.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+aparse-0.0.3.dist-info/top_level.txt,sha256=pC5zffZIU_XnSH-l10AKt3PsJhMud6nZhh5Ecu-Ngu8,7
+aparse-0.0.3.dist-info/RECORD,,
