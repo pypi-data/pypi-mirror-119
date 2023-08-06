@@ -1,0 +1,13 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/Comicsru.py
+src/__int__.py
+src/comicsru.py
+src/Comicsru.egg-info/PKG-INFO
+src/Comicsru.egg-info/SOURCES.txt
+src/Comicsru.egg-info/dependency_links.txt
+src/Comicsru.egg-info/top_level.txt
