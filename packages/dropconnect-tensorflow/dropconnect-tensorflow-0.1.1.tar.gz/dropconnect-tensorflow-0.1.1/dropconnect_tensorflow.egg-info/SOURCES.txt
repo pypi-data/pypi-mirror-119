@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+dropconnect_tensorflow/__init__.py
+dropconnect_tensorflow/dropconnect_tensorflow.py
+dropconnect_tensorflow.egg-info/PKG-INFO
+dropconnect_tensorflow.egg-info/SOURCES.txt
+dropconnect_tensorflow.egg-info/dependency_links.txt
+dropconnect_tensorflow.egg-info/requires.txt
+dropconnect_tensorflow.egg-info/top_level.txt
