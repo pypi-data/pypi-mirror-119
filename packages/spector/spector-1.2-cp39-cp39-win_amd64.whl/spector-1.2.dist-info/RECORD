@@ -1,0 +1,10 @@
+spector/__init__.py,sha256=xJ18yEm9FIeMEc-cOjCymIMr_-XWLOyEcpWEz9oYR6Y,113
+spector/matrix.py,sha256=MXZvUHa-cZgGjPlkg9nUgFQk3OGjOm2mqUpctEvRrCY,4595
+spector/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spector/vector.cp39-win_amd64.pyd,sha256=uI32UVh802cns2yR9nrt8cv6YY5IAyIhQLDfdB6yBOk,327680
+spector/vector.pyx,sha256=OjfSe0XvvMIBb48kpW_S25GFPXmuWTL7jvrGllR9vAg,21183
+spector-1.2.dist-info/LICENSE.txt,sha256=-d6Wd5oDuTrz7ckbr2q0yMA2oMb7h8gnzmPWaSMXTVo,589
+spector-1.2.dist-info/METADATA,sha256=kdlh-Nws5oCu_pAa0EHu5k7tZTfU0U6Ko4hmYKzQGBc,4613
+spector-1.2.dist-info/WHEEL,sha256=MRZ_p7RU4olp1XL4U2EYLkuYikriaVRqXBoKVLH_OSE,100
+spector-1.2.dist-info/top_level.txt,sha256=We-Cx-in-0_eOnpQqnrqwdKOhnOBw3Pz2fHi0MQHi0U,8
+spector-1.2.dist-info/RECORD,,
