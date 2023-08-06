@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "assault-and-battery"
+version = "0.1.0"
+description = "A battery discharge curve calculator slash torture test."
+authors = ["Stavros Korokithakis <hi@stavros.io>"]
+license = "AGPL-3.0-or-later"
+
+[tool.poetry.scripts]
+assault = "assault_and_battery.cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+matplotlib = "^3.4.3"
+pyserial = "^3.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
