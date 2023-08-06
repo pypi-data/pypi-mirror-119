@@ -1,0 +1,10 @@
+carbon_fuels/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+power_utilities/NamedLists.py,sha256=hRKJbBz5IDoznhGb3hr7KLnVRgZhb6ED5VTSNvWyqbo,684
+power_utilities/__init__.py,sha256=QwrTW7RzhyygJ--qE41Zef1lcjyPeMZ8uMuij2DVPKM,134
+power_utilities/carbon.py,sha256=7nYx48D3RCYeJOCFjXa3WNwfU8JIKSRBJmib9gyF11U,832
+power_utilities/fuelmix.py,sha256=vf4zqaT-lyyty3wbA-fAVNsoe7YCx4rPVnaiW2XN6S0,3753
+carbonfootprint-1.1.3.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+carbonfootprint-1.1.3.dist-info/METADATA,sha256=k9MVFq-oHqz3MskXkhw0cOlnBV0hQ3dh8DGPeeDKhEc,900
+carbonfootprint-1.1.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+carbonfootprint-1.1.3.dist-info/top_level.txt,sha256=ld6ifC2MYW1vIcZR0Hl3sw18M0PoxLjJ_dPV2yrXQ4w,29
+carbonfootprint-1.1.3.dist-info/RECORD,,
