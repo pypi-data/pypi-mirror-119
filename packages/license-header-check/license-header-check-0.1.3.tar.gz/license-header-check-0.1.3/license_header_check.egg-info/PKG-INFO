@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: license-header-check
+Version: 0.1.3
+Summary: A python license header checker.
+Home-page: https://github.com/TobiasSchaffner/license_header_check
+Author: Tobias Schaffner
+Author-email: tobiasschaffner87@outlook.com
+License: MIT
+Description: # license-header-check
+        
+        license-header-check is a tool to test if all modules in a python package have a certain license header.
+        
+        ## Install
+        
+        ```bash
+        pip install license-header-check
+        ```
+        
+        ## Usage
+        
+        You have to provide two arguments:
+        
+        * license_file: A file with the license header as its only content.
+        * package_name: The name of the package that should be checked.
+        
+        ## Example
+        
+        ```bash
+        license-header-check LICENSE my_package
+        ```
+        
+Keywords: license,header
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
