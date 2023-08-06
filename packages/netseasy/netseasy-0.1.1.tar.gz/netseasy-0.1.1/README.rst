@@ -1,0 +1,43 @@
+netseasy - Django gateway for the payment solution 'Easy' from Nets
+===================================================================
+
+.. image:: https://gitlab.com/norsktest/netseasy/badges/master/pipeline.svg
+   :target: https://gitlab.com/norsktest/netseasy/commits/master
+   :alt: pipeline status
+
+.. image:: https://img.shields.io/badge/docs-darkgreen.svg
+   :target: https://norsktest.gitlab.io/netseasy
+
+.. image:: https://gitlab.com/norsktest/netseasy/badges/master/coverage.svg
+   :target: https://norsktest.gitlab.io/netseasy/coverage
+   :alt: coverage report
+
+
+This is a django gateway for the 'Easy' payment solution from Nets.
+The EasyAPI is a REST-API and supports webhooks to send updates back to Django.
+
+
+Installation
+------------
+
+For the current stable version::
+
+    pip install netseasy
+
+For the development version::
+
+    pip install -e git+git@gitlab.com:norsktest/netseasy.git
+
+
+Setup
+-----
+You need to set these values in your settings.py::
+
+    EASY_CHECKOUT_URL = "https://test.checkout.dibspayment.eu/v1/checkout.js?v=1"
+    EASY_PAYMENT_URL = "https://test.api.dibspayment.eu/v1/payments/"
+    EASY_WEBHOOK_URL = "https://your.local.server/payment
+    EASY_CTX = EasyContext(<EASY_SECRET_KEY>, <EASY_CHECKOUT_KEY>')
+
+To test the solution in development, you must use a http tunnel using Ngrok (ngrok.com)
+or similar in order to get the webhooks to work. Running in dev, the EASY_WEBHOOK_URL setting must
+be set to your ngrok (or similar) address.
