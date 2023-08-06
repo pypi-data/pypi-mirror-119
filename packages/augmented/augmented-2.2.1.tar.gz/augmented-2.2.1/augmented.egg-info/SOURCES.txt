@@ -1,0 +1,13 @@
+CHANGELOG.txt
+MANIFEST.in
+README.md
+README.txt
+reqs.txt
+setup.py
+test.py
+augmented/__init__.py
+augmented.egg-info/PKG-INFO
+augmented.egg-info/SOURCES.txt
+augmented.egg-info/dependency_links.txt
+augmented.egg-info/requires.txt
+augmented.egg-info/top_level.txt
