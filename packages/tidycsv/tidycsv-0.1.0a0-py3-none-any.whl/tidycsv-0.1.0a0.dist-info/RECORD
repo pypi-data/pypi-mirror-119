@@ -1,0 +1,10 @@
+tidycsv/__init__.py,sha256=L7S9eV25wQFZm0NgGSPgTn0KXeJoxZc3qoSCDWMEGAk,185
+tidycsv/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tidycsv/core/parsing.py,sha256=Y1ewm032Ad9e63FwBgApE4wjQvbzKrItPUqthL9q7No,2468
+tidycsv/interface.py,sha256=I7gQzT81fRkMQ5lKwm7ZozYsoA-QpqhLB9EWvLytb5Q,1742
+tidycsv/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tidycsv/utils/customobjs.py,sha256=JqAFaz-H7O3TIzDC46D0L65rycsgvLnFNtmnllkSwE0,2428
+tidycsv-0.1.0a0.dist-info/LICENSE,sha256=NdQEniXVfCg4U0Pf4DJ8vS-jG77RLpTW5G1x-8tqQM0,1079
+tidycsv-0.1.0a0.dist-info/WHEEL,sha256=SrtnPGVTMeYWttls9xnWA01eUhCZ3ufFdJUYb1J3r-U,83
+tidycsv-0.1.0a0.dist-info/METADATA,sha256=S251Q2MbQx9LmlxS9d9YLD_drbCWL066pk4HZcQUS20,3788
+tidycsv-0.1.0a0.dist-info/RECORD,,
