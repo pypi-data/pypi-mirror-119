@@ -1,0 +1,7 @@
+LICENSE.md
+README.rst
+setup.py
+hello_world_from_C.egg-info/PKG-INFO
+hello_world_from_C.egg-info/SOURCES.txt
+hello_world_from_C.egg-info/dependency_links.txt
+hello_world_from_C.egg-info/top_level.txt
