@@ -1,0 +1,3 @@
+[console_scripts]
+is_bcg_network=main:main
+
