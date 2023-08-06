@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+abramyanSolver/src/abramyanSolver.egg-info/PKG-INFO
+abramyanSolver/src/abramyanSolver.egg-info/SOURCES.txt
+abramyanSolver/src/abramyanSolver.egg-info/dependency_links.txt
+abramyanSolver/src/abramyanSolver.egg-info/top_level.txt
+abramyanSolver/src/abramyanSolver.py
+abramyanSolver/src/abramyanSolver.egg-info/PKG-INFO
+abramyanSolver/src/abramyanSolver.egg-info/SOURCES.txt
+abramyanSolver/src/abramyanSolver.egg-info/dependency_links.txt
+abramyanSolver/src/abramyanSolver.egg-info/top_level.txt
