@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: orangepipes
+Version: 0.1.6
+Summary: Python library to read an orange.yml file and write the variables to the system.
+Home-page: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+# orangepipes
+
+A python library to read pipeline environment variables from orange.yml file and apply to OS.
+
+````
+orange.yml
+
+... 
+
+pipelines:
+  global:
+    env:
+      APP_NAME: sample
+      APP_PORT: 8080    
+  app_example:
+    env:
+      APP_PORT: 3000
+...
+````
+
+## How to use
+Follow [AWS Codeartifact](https://docs.aws.amazon.com/pt_br/codeartifact/latest/ug/using-python.html) steps to configure pip
+```
+pip install orangepipes==0.1.2
+```
+
+```
+from orangepipes import pipeline
+
+pipeline.apply_orange_envs()
+```
+
