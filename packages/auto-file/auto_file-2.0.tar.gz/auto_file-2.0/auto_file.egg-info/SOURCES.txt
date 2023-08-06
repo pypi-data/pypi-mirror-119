@@ -1,0 +1,10 @@
+README.md
+setup.py
+auto_file/__init__.py
+auto_file/extra.py
+auto_file/function.py
+auto_file/python.py
+auto_file.egg-info/PKG-INFO
+auto_file.egg-info/SOURCES.txt
+auto_file.egg-info/dependency_links.txt
+auto_file.egg-info/top_level.txt
