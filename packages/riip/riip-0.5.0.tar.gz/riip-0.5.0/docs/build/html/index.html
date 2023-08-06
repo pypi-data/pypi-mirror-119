@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RII_Pandas User’s Guide &mdash; RII_Pandas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/plot_directive.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="notebooks/00_Installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> RII_Pandas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/00_Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/01_tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/02_RiiDataFrame.html">RiiDataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#Helper-Methods">Helper Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/03_RiiMaterial.html">RiiMaterial Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/04_Material.html">Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/05_examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">RII_Pandas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>RII_Pandas User’s Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="rii-pandas-user-s-guide">
+<h1>RII_Pandas User’s Guide<a class="headerlink" href="#rii-pandas-user-s-guide" title="Permalink to this headline">¶</a></h1>
+<section id="rii-pandas">
+<h2>RII_Pandas<a class="headerlink" href="#rii-pandas" title="Permalink to this headline">¶</a></h2>
+<p>RII_Pandas is Python 3 + <a class="reference external" href="https://pandas.pydata.org/">Pandas</a>  wrapper for the <a class="reference external" href="http://refractiveindex.info/">refractiveindex.info database</a> developed by <a class="reference external" href="https://github.com/polyanskiy">Mikhail Polyanskiy</a>.
+It provides Pandas DataFrames for the catalog and experimental data stored in refractiveindex.info database based on the method of ‘dboperations.py’ from
+<a class="reference external" href="https://github.com/HugoGuillen/refractiveindex.info-sqlite">refractiveindex.info-sqlite package</a> developed by <a class="reference external" href="https://github.com/HugoGuillen">Hugo Guillén</a>.
+This package will make it easy to access dielectric properties of various materials in a Python framework.</p>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<p>Create Pandas DataFrame by parsing database files cloned from Polyanskiy’s <a class="reference external" href="https://github.com/polyanskiy/refractiveindex.info-database">GitHub repository</a>.
+Drude-Lorentz model (formula 21) and Brendel-Bormann model (formula 22) are availableto describe metallic dielectric function.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/00_Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/00_Installation.html#Install-and-update-using-pip">Install and update using pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/00_Installation.html#Install-using-conda">Install using conda</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/01_tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/01_tutorial.html#search"><strong>search</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/01_tutorial.html#select"><strong>select</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/01_tutorial.html#show"><strong>show</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/01_tutorial.html#read"><strong>read</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/01_tutorial.html#references"><strong>references</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/01_tutorial.html#plot"><strong>plot</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/01_tutorial.html#material"><strong>material</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/01_tutorial.html#RiiMaterial.k"><strong>RiiMaterial.k</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/01_tutorial.html#RiiMaterial.eps"><strong>RiiMaterial.eps</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/01_tutorial.html#RiiMaterial.plot"><strong>RiiMaterial.plot</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/02_RiiDataFrame.html">RiiDataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#Helper-Methods">Helper Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#plot"><strong>plot</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#search"><strong>search</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#select"><strong>select</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#show"><strong>show</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#read"><strong>read</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#references"><strong>references</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/02_RiiDataFrame.html#material"><strong>material</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/03_RiiMaterial.html">RiiMaterial Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/03_RiiMaterial.html#Reflactive-Index-n">Reflactive Index <strong>n</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/03_RiiMaterial.html#Extinction-Coefficient-k">Extinction Coefficient <strong>k</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/03_RiiMaterial.html#Dielectric-Function-eps">Dielectric Function <strong>eps</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/03_RiiMaterial.html#Bound_check">Bound_check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/03_RiiMaterial.html#plot"><strong>plot</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/04_Material.html">Material</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/04_Material.html#Water-with-constant-RI">Water with constant RI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/04_Material.html#A-definition-of-water-in-RIID">A definition of water in RIID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/04_Material.html#Plot-them:">Plot them:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/04_Material.html#Material-as-a-function">Material as a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/04_Material.html#It’s-not-a-numpy.ufunc">It’s <strong>not</strong> a numpy.ufunc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/04_Material.html#im_factor">im_factor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/05_examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/05_examples.html#Ag">Ag</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/05_examples.html#Dielectric-function">Dielectric function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/05_examples.html#Au">Au</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/05_examples.html#id1">Dielectric function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/05_examples.html#Al">Al</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/05_examples.html#Water">Water</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/05_examples.html#Wavelength-dependence-of-refractive-index">Wavelength dependence of refractive index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/05_examples.html#Averaged-refractive-index">Averaged refractive index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/05_examples.html#Extinction-coefficient">Extinction coefficient</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/05_examples.html#Methanol">Methanol</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="notebooks/00_Installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Munehiro Nishida
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

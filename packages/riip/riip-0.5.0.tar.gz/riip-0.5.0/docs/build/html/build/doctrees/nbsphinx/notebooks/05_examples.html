@@ -1,0 +1,3082 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Examples &mdash; RII_Pandas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/plot_directive.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> RII_Pandas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/00_RII_Pandas.html">RII_Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/01_tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/02_RiiDataFrame.html">RiiDataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/02_RiiDataFrame.html#Helper-Methods">Helper Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/03_RiiMaterial.html">RiiMaterial Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/04_Material.html">Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/05_examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">RII_Pandas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/build/doctrees/nbsphinx/notebooks/05_examples.ipynb" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Examples">
+<h1>Examples<a class="headerlink" href="#Examples" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">riip</span>
+
+<span class="n">ri</span> <span class="o">=</span> <span class="n">riip</span><span class="o">.</span><span class="n">RiiDataFrame</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-notebook&#39;</span><span class="p">)</span>
+<span class="n">plot_params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">],</span>
+    <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">:</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">:</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;legend.fontsize&#39;</span><span class="p">:</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">,</span>
+    <span class="c1"># &#39;legend.handlelength&#39;: 2.0,</span>
+<span class="p">}</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot_params</span><span class="p">)</span>
+<span class="n">props</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.prop_cycle&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<section id="Ag">
+<h2>Ag<a class="headerlink" href="#Ag" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Ag&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ag</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Johnson</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.1879</td>
+      <td>1.937</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ag</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Choi</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>1.2310</td>
+      <td>6.988</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ag</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Jiang</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.3000</td>
+      <td>2.000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Ag</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Yang</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.2700</td>
+      <td>24.920</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ag</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>McPeak</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.3000</td>
+      <td>1.700</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2770</th>
+      <td>Mg-LiTaO3</td>
+      <td></td>
+      <td>Moutzouris-e</td>
+      <td>3</td>
+      <td>f</td>
+      <td>0.4500</td>
+      <td>1.551</td>
+    </tr>
+    <tr>
+      <th>2886</th>
+      <td>Ag</td>
+      <td></td>
+      <td>Rakic-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.2066</td>
+      <td>12.400</td>
+    </tr>
+    <tr>
+      <th>2887</th>
+      <td>Ag</td>
+      <td></td>
+      <td>Vial-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.4000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>2888</th>
+      <td>Ag</td>
+      <td></td>
+      <td>Lee-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.2500</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>2902</th>
+      <td>Ag</td>
+      <td></td>
+      <td>Rakic-BBF</td>
+      <td>22</td>
+      <td>f</td>
+      <td>0.2066</td>
+      <td>12.400</td>
+    </tr>
+  </tbody>
+</table>
+<p>68 rows × 7 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Ag_id_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2886</span><span class="p">,</span> <span class="mi">2887</span><span class="p">,</span> <span class="mi">2888</span><span class="p">]</span>
+<span class="n">ri</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Ag_id_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ag</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Johnson</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.1879</td>
+      <td>1.937</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Ag</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>McPeak</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.3000</td>
+      <td>1.700</td>
+    </tr>
+    <tr>
+      <th>2886</th>
+      <td>Ag</td>
+      <td></td>
+      <td>Rakic-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.2066</td>
+      <td>12.400</td>
+    </tr>
+    <tr>
+      <th>2887</th>
+      <td>Ag</td>
+      <td></td>
+      <td>Vial-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.4000</td>
+      <td>1.000</td>
+    </tr>
+    <tr>
+      <th>2888</th>
+      <td>Ag</td>
+      <td></td>
+      <td>Lee-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.2500</td>
+      <td>1.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<section id="Dielectric-function">
+<h3>Dielectric function<a class="headerlink" href="#Dielectric-function" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">Ag_id_list</span><span class="p">:</span>
+    <span class="n">Ag</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+    <span class="n">Ag</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_6_0.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_6_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Au">
+<h2>Au<a class="headerlink" href="#Au" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Au&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>69</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Johnson</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.187900</td>
+      <td>1.937000</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>McPeak</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>1.700000</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Babar</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.206600</td>
+      <td>12.400000</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Olmon-ev</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>24.930000</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Olmon-sc</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>24.930000</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Olmon-ts</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>24.930000</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Werner</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.017586</td>
+      <td>2.479684</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Windt</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.002360</td>
+      <td>0.121570</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Ordal</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.667000</td>
+      <td>286.000000</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Hagemann</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.000008</td>
+      <td>248.000000</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Hagemann-2</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.003542</td>
+      <td>0.826600</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Yakubovsky-25nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Yakubovsky-53nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Yakubovsky-117nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Rosenblatt-11nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Rosenblatt-21nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Rosenblatt-44nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.250000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Yakubovsky-4nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>3.300000</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Yakubovsky-6nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>3.300000</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Yakubovsky-9nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>3.300000</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Ciesielski</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.190770</td>
+      <td>20.912000</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Ciesielski-Ge</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.190770</td>
+      <td>20.912000</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Lemarchand-3.96nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.350000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Lemarchand-4.62nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.350000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Lemarchand-5.77nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.350000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Au</td>
+      <td>Experimental data: thin film</td>
+      <td>Lemarchand-11.7nm</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.350000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>Au</td>
+      <td>Models and simulations</td>
+      <td>Rakic-BB</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.247970</td>
+      <td>6.199200</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>Au</td>
+      <td>Models and simulations</td>
+      <td>Rakic-LD</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.247970</td>
+      <td>6.199200</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>Au</td>
+      <td>Models and simulations</td>
+      <td>Werner-DFT</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.017586</td>
+      <td>2.479684</td>
+    </tr>
+    <tr>
+      <th>2684</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au100Ag0</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2685</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au90Ag10</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2686</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au80Ag20</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2687</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au70Ag30</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2688</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au60Ag40</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2689</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au50Ag50</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2690</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au40Ag60</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2691</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au30Ag70</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2692</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au20Ag80</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2693</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au10Ag90</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2694</th>
+      <td>Au-Ag</td>
+      <td></td>
+      <td>Rioux-Au0Ag100</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.270000</td>
+      <td>1.200000</td>
+    </tr>
+    <tr>
+      <th>2750</th>
+      <td>AuAl2</td>
+      <td>Bulk</td>
+      <td>Chen</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.220000</td>
+      <td>0.790000</td>
+    </tr>
+    <tr>
+      <th>2751</th>
+      <td>AuAl2</td>
+      <td>Thin film</td>
+      <td>Supansomboon</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.300000</td>
+      <td>1.320000</td>
+    </tr>
+    <tr>
+      <th>2890</th>
+      <td>Au</td>
+      <td></td>
+      <td>Rakic-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.400000</td>
+    </tr>
+    <tr>
+      <th>2891</th>
+      <td>Au</td>
+      <td></td>
+      <td>Stewart-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>2892</th>
+      <td>Au</td>
+      <td></td>
+      <td>Vial-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.500000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2893</th>
+      <td>Au</td>
+      <td></td>
+      <td>Vial-DF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.500000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2904</th>
+      <td>Au</td>
+      <td></td>
+      <td>Rakic-BBF</td>
+      <td>22</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.400000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Au_id_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">2890</span><span class="p">,</span> <span class="mi">2891</span><span class="p">,</span> <span class="mi">2892</span><span class="p">]</span>
+<span class="n">ri</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Au_id_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>69</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>Johnson</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.1879</td>
+      <td>1.937</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Au</td>
+      <td>Experimental data: bulk, thick film</td>
+      <td>McPeak</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.3000</td>
+      <td>1.700</td>
+    </tr>
+    <tr>
+      <th>2890</th>
+      <td>Au</td>
+      <td></td>
+      <td>Rakic-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.2066</td>
+      <td>12.400</td>
+    </tr>
+    <tr>
+      <th>2891</th>
+      <td>Au</td>
+      <td></td>
+      <td>Stewart-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.4000</td>
+      <td>2.000</td>
+    </tr>
+    <tr>
+      <th>2892</th>
+      <td>Au</td>
+      <td></td>
+      <td>Vial-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.5000</td>
+      <td>1.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<section id="id1">
+<h3>Dielectric function<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">Au_id_list</span><span class="p">:</span>
+    <span class="n">ri</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_11_0.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_11_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Al">
+<h2>Al<a class="headerlink" href="#Al" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Al&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Rakic</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.000124</td>
+      <td>200.0000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Cheng</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.225000</td>
+      <td>1.0000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>McPeak</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.150000</td>
+      <td>1.7000</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Larruquert</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.077000</td>
+      <td>0.1135</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Ordal</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.667000</td>
+      <td>200.0000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2885</th>
+      <td>metamaterials</td>
+      <td></td>
+      <td>Valentine</td>
+      <td>0</td>
+      <td>n</td>
+      <td>1.200000</td>
+      <td>1.7750</td>
+    </tr>
+    <tr>
+      <th>2889</th>
+      <td>Al</td>
+      <td></td>
+      <td>Rakic-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.4000</td>
+    </tr>
+    <tr>
+      <th>2898</th>
+      <td>Pd</td>
+      <td></td>
+      <td>Rakic-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.4000</td>
+    </tr>
+    <tr>
+      <th>2903</th>
+      <td>Al</td>
+      <td></td>
+      <td>Rakic-BBF</td>
+      <td>22</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.4000</td>
+    </tr>
+    <tr>
+      <th>2909</th>
+      <td>Pd</td>
+      <td></td>
+      <td>Rakic-BBF</td>
+      <td>22</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.4000</td>
+    </tr>
+  </tbody>
+</table>
+<p>380 rows × 7 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Al_id_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span>  <span class="mi">2889</span><span class="p">,</span> <span class="mi">2903</span><span class="p">]</span>
+<span class="n">ri</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Al_id_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Rakic</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.000124</td>
+      <td>200.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Cheng</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.225000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>McPeak</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.150000</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>2889</th>
+      <td>Al</td>
+      <td></td>
+      <td>Rakic-DLF</td>
+      <td>21</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.4</td>
+    </tr>
+    <tr>
+      <th>2903</th>
+      <td>Al</td>
+      <td></td>
+      <td>Rakic-BBF</td>
+      <td>22</td>
+      <td>f</td>
+      <td>0.206600</td>
+      <td>12.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ids</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;&#39;n&#39; in tabulated&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">lens</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">raw_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">id</span><span class="p">])</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">lens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(array([171.,   1.,   1.,   1.,   1.,   1.,   0.,   1.,   2.,   1.]),
+ array([   4. ,  137.7,  271.4,  405.1,  538.8,  672.5,  806.2,  939.9,
+        1073.6, 1207.3, 1341. ]),
+ &lt;BarContainer object of 10 artists&gt;)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_15_1.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_15_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">Al_id_list</span><span class="p">:</span>
+    <span class="n">ri</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_16_0.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_16_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">Al_id_list</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s1">&#39;eps&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_17_0.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_17_0.png" />
+</div>
+</div>
+</section>
+<section id="Water">
+<h2>Water<a class="headerlink" href="#Water" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>426</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Hale</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.200000</td>
+      <td>2.000000e+02</td>
+    </tr>
+    <tr>
+      <th>427</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Wang</td>
+      <td>0</td>
+      <td>k</td>
+      <td>1.200000</td>
+      <td>1.900000e+00</td>
+    </tr>
+    <tr>
+      <th>428</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Kedenburg</td>
+      <td>2</td>
+      <td>k</td>
+      <td>0.500000</td>
+      <td>1.600000e+00</td>
+    </tr>
+    <tr>
+      <th>429</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Daimon-19.0C</td>
+      <td>2</td>
+      <td>f</td>
+      <td>0.182000</td>
+      <td>1.129000e+00</td>
+    </tr>
+    <tr>
+      <th>430</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Daimon-20.0C</td>
+      <td>2</td>
+      <td>f</td>
+      <td>0.182000</td>
+      <td>1.129000e+00</td>
+    </tr>
+    <tr>
+      <th>431</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Daimon-21.5C</td>
+      <td>2</td>
+      <td>f</td>
+      <td>0.182000</td>
+      <td>1.129000e+00</td>
+    </tr>
+    <tr>
+      <th>432</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Daimon-24.0C</td>
+      <td>2</td>
+      <td>f</td>
+      <td>0.182000</td>
+      <td>1.129000e+00</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Segelstein</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.033963</td>
+      <td>1.000000e+07</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>H2O</td>
+      <td>Liquid water, H2O</td>
+      <td>Asfar-H2O</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>22.220000</td>
+      <td>1.733000e+03</td>
+    </tr>
+    <tr>
+      <th>435</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Warren-2008</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.044300</td>
+      <td>2.000000e+06</td>
+    </tr>
+    <tr>
+      <th>436</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Warren-1984</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.044300</td>
+      <td>1.670000e+02</td>
+    </tr>
+    <tr>
+      <th>437</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-10K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-30K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>439</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-50K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>440</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-70K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>441</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-90K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>442</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-110K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>443</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-130K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>444</th>
+      <td>H2O</td>
+      <td>Water ice</td>
+      <td>Kofman-150K</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210000</td>
+      <td>7.570000e-01</td>
+    </tr>
+    <tr>
+      <th>445</th>
+      <td>H2O</td>
+      <td>Supercooled liquid water</td>
+      <td>Rowe-240K</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.666684</td>
+      <td>1.039594e+04</td>
+    </tr>
+    <tr>
+      <th>446</th>
+      <td>H2O</td>
+      <td>Supercooled liquid water</td>
+      <td>Rowe-253K</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.666684</td>
+      <td>1.039594e+04</td>
+    </tr>
+    <tr>
+      <th>447</th>
+      <td>H2O</td>
+      <td>Supercooled liquid water</td>
+      <td>Rowe-263K</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.666684</td>
+      <td>1.039594e+04</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>H2O</td>
+      <td>Supercooled liquid water</td>
+      <td>Rowe-273K</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.666684</td>
+      <td>1.039594e+04</td>
+    </tr>
+    <tr>
+      <th>449</th>
+      <td>H2O</td>
+      <td>Heavy water, D2O</td>
+      <td>Kedenburg-D2O</td>
+      <td>2</td>
+      <td>k</td>
+      <td>0.500000</td>
+      <td>1.600000e+00</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>H2O</td>
+      <td>Heavy water, D2O</td>
+      <td>Wang-D2O</td>
+      <td>0</td>
+      <td>k</td>
+      <td>1.200000</td>
+      <td>2.600000e+00</td>
+    </tr>
+    <tr>
+      <th>451</th>
+      <td>H2O</td>
+      <td>Heavy water, D2O</td>
+      <td>Asfar-D2O</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>250.000000</td>
+      <td>2.000000e+03</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<section id="Wavelength-dependence-of-refractive-index">
+<h3>Wavelength dependence of refractive index<a class="headerlink" href="#Wavelength-dependence-of-refractive-index" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">water_id_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">426</span><span class="p">,</span> <span class="mi">429</span><span class="p">,</span> <span class="mi">430</span><span class="p">]</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">waters</span> <span class="o">=</span> <span class="p">[</span><span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">water_id_list</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">water</span> <span class="ow">in</span> <span class="n">waters</span><span class="p">:</span>
+    <span class="n">water</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1.325</span><span class="p">,</span> <span class="mf">1.35</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Extinction index is missing and set to zero.
+Extinction index is missing and set to zero.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_21_1.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_21_1.png" />
+</div>
+</div>
+</section>
+<section id="Averaged-refractive-index">
+<h3>Averaged refractive index<a class="headerlink" href="#Averaged-refractive-index" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">water</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="mi">426</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">water</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="n">wls</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.333734091651585
+</pre></div></div>
+</div>
+</section>
+<section id="Extinction-coefficient">
+<h3>Extinction coefficient<a class="headerlink" href="#Extinction-coefficient" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">water</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="mi">426</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">water</span><span class="o">.</span><span class="n">catalog</span><span class="p">)</span>
+<span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">water</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+shelf                                                      main
+shelf_name                    MAIN - simple inorganic materials
+division                                  O - Oxygen and oxides
+book                                                        H2O
+book_name     H&lt;sub&gt;2&lt;/sub&gt;O, D&lt;sub&gt;2&lt;/sub&gt;O (Water, heavy w...
+section                                       Liquid water, H2O
+page                                                       Hale
+path          /home/mnishida/anaconda3/envs/riip/lib/python3...
+formula                                                       0
+tabulated                                                    nk
+num_n                                                       169
+num_k                                                       169
+wl_n_min                                                    0.2
+wl_n_max                                                  200.0
+wl_k_min                                                    0.2
+wl_k_max                                                  200.0
+wl_min                                                      0.2
+wl_max                                                    200.0
+Name: 426, dtype: object
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_25_1.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_25_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;0.39 &lt;= wl &lt;= 0.41 &amp; n &gt;= 2.5 &amp; (k &lt;= 0.1 | k != k)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>161</th>
+      <td>SiC</td>
+      <td>4H-SiC crystal</td>
+      <td>Wang-4H-o</td>
+      <td>2</td>
+      <td>f</td>
+      <td>0.404700</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>SiC</td>
+      <td>4H-SiC crystal</td>
+      <td>Wang-4H-e</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.404700</td>
+      <td>2.325000</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>GaN</td>
+      <td>Experimental data</td>
+      <td>Barker-o</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.350000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>363</th>
+      <td>GaN</td>
+      <td>Experimental data</td>
+      <td>Lin-wurtzite</td>
+      <td>0</td>
+      <td>n</td>
+      <td>0.368124</td>
+      <td>0.991745</td>
+    </tr>
+    <tr>
+      <th>364</th>
+      <td>GaN</td>
+      <td>Experimental data</td>
+      <td>Lin-zincblende</td>
+      <td>0</td>
+      <td>n</td>
+      <td>0.385447</td>
+      <td>0.960283</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>KNbO3</td>
+      <td></td>
+      <td>Umemura-γ</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>5.300000</td>
+    </tr>
+    <tr>
+      <th>461</th>
+      <td>Nb2O5</td>
+      <td></td>
+      <td>Lemarchand</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.250000</td>
+      <td>2.500000</td>
+    </tr>
+    <tr>
+      <th>482</th>
+      <td>TeO2</td>
+      <td></td>
+      <td>Uchida-e</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>TiO2</td>
+      <td>Nanoparticles</td>
+      <td>Bodurov</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.405000</td>
+      <td>0.635000</td>
+    </tr>
+    <tr>
+      <th>600</th>
+      <td>MoS2</td>
+      <td>Bulk</td>
+      <td>Ermolaev-e</td>
+      <td>0</td>
+      <td>n</td>
+      <td>0.360000</td>
+      <td>1.700000</td>
+    </tr>
+    <tr>
+      <th>628</th>
+      <td>ZnS</td>
+      <td>Crystal</td>
+      <td>Debenham</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.405000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>630</th>
+      <td>ZnS</td>
+      <td>Thin film</td>
+      <td>Amotchkina</td>
+      <td>2</td>
+      <td>k</td>
+      <td>0.400000</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>631</th>
+      <td>ZnS</td>
+      <td>Models and simulations</td>
+      <td>Ozaki</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.221400</td>
+      <td>1.033200</td>
+    </tr>
+    <tr>
+      <th>680</th>
+      <td>ZnSe</td>
+      <td>Experimental data</td>
+      <td>Amotchkina</td>
+      <td>2</td>
+      <td>k</td>
+      <td>0.400000</td>
+      <td>13.900000</td>
+    </tr>
+    <tr>
+      <th>766</th>
+      <td>BaTiO3</td>
+      <td></td>
+      <td>Wemple-o</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>0.700000</td>
+    </tr>
+    <tr>
+      <th>767</th>
+      <td>BaTiO3</td>
+      <td></td>
+      <td>Wemple-e</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>0.700000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">gd</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">load_grid_data</span><span class="p">()</span>
+<span class="n">id_list</span> <span class="o">=</span> <span class="n">gd</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;0.39 &lt;= wl &lt;= 0.41 &amp; n &gt;= 2.5 &amp; (k &lt;= 0.1 | k != k)&quot;</span><span class="p">)[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">ri</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">id_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>161</th>
+      <td>SiC</td>
+      <td>4H-SiC crystal</td>
+      <td>Wang-4H-o</td>
+      <td>2</td>
+      <td>f</td>
+      <td>0.404700</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>SiC</td>
+      <td>4H-SiC crystal</td>
+      <td>Wang-4H-e</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.404700</td>
+      <td>2.325000</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>GaN</td>
+      <td>Experimental data</td>
+      <td>Barker-o</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.350000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>363</th>
+      <td>GaN</td>
+      <td>Experimental data</td>
+      <td>Lin-wurtzite</td>
+      <td>0</td>
+      <td>n</td>
+      <td>0.368124</td>
+      <td>0.991745</td>
+    </tr>
+    <tr>
+      <th>364</th>
+      <td>GaN</td>
+      <td>Experimental data</td>
+      <td>Lin-zincblende</td>
+      <td>0</td>
+      <td>n</td>
+      <td>0.385447</td>
+      <td>0.960283</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>KNbO3</td>
+      <td></td>
+      <td>Umemura-γ</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>5.300000</td>
+    </tr>
+    <tr>
+      <th>461</th>
+      <td>Nb2O5</td>
+      <td></td>
+      <td>Lemarchand</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.250000</td>
+      <td>2.500000</td>
+    </tr>
+    <tr>
+      <th>482</th>
+      <td>TeO2</td>
+      <td></td>
+      <td>Uchida-e</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>TiO2</td>
+      <td>Nanoparticles</td>
+      <td>Bodurov</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.405000</td>
+      <td>0.635000</td>
+    </tr>
+    <tr>
+      <th>600</th>
+      <td>MoS2</td>
+      <td>Bulk</td>
+      <td>Ermolaev-e</td>
+      <td>0</td>
+      <td>n</td>
+      <td>0.360000</td>
+      <td>1.700000</td>
+    </tr>
+    <tr>
+      <th>628</th>
+      <td>ZnS</td>
+      <td>Crystal</td>
+      <td>Debenham</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.405000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>630</th>
+      <td>ZnS</td>
+      <td>Thin film</td>
+      <td>Amotchkina</td>
+      <td>2</td>
+      <td>k</td>
+      <td>0.400000</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>631</th>
+      <td>ZnS</td>
+      <td>Models and simulations</td>
+      <td>Ozaki</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.221400</td>
+      <td>1.033200</td>
+    </tr>
+    <tr>
+      <th>680</th>
+      <td>ZnSe</td>
+      <td>Experimental data</td>
+      <td>Amotchkina</td>
+      <td>2</td>
+      <td>k</td>
+      <td>0.400000</td>
+      <td>13.900000</td>
+    </tr>
+    <tr>
+      <th>766</th>
+      <td>BaTiO3</td>
+      <td></td>
+      <td>Wemple-o</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>0.700000</td>
+    </tr>
+    <tr>
+      <th>767</th>
+      <td>BaTiO3</td>
+      <td></td>
+      <td>Wemple-e</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.400000</td>
+      <td>0.700000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;KNbO3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>388</th>
+      <td>KNbO3</td>
+      <td></td>
+      <td>Umemura-α</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.4</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>KNbO3</td>
+      <td></td>
+      <td>Umemura-β</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.4</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>KNbO3</td>
+      <td></td>
+      <td>Umemura-γ</td>
+      <td>4</td>
+      <td>f</td>
+      <td>0.4</td>
+      <td>5.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span> <span class="o">=</span> <span class="n">riip</span><span class="o">.</span><span class="n">RiiDataFrame</span><span class="p">()</span>
+<span class="n">KNbO3_alpha</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="mi">388</span><span class="p">)</span>
+<span class="n">KNbO3_beta</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="mi">389</span><span class="p">)</span>
+<span class="n">KNbO3_gamma</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="mi">390</span><span class="p">)</span>
+<span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">KNbO3_alpha</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">KNbO3_beta</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">KNbO3_gamma</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Extinction index is missing and set to zero.
+Extinction index is missing and set to zero.
+Extinction index is missing and set to zero.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_29_1.png" src="../../../../_images/build_doctrees_nbsphinx_notebooks_05_examples_29_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Methanol">
+<h2>Methanol<a class="headerlink" href="#Methanol" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;CH3OH&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>854</th>
+      <td>methanol</td>
+      <td></td>
+      <td>El-Kashef</td>
+      <td>5</td>
+      <td>f</td>
+      <td>0.40000</td>
+      <td>0.8000</td>
+    </tr>
+    <tr>
+      <th>855</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Myers</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>1.28244</td>
+      <td>25.0203</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Moutzouris</td>
+      <td>3</td>
+      <td>f</td>
+      <td>0.45000</td>
+      <td>1.5510</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Kozma</td>
+      <td>5</td>
+      <td>f</td>
+      <td>0.23000</td>
+      <td>0.6407</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Methanol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>854</th>
+      <td>methanol</td>
+      <td></td>
+      <td>El-Kashef</td>
+      <td>5</td>
+      <td>f</td>
+      <td>0.40000</td>
+      <td>0.8000</td>
+    </tr>
+    <tr>
+      <th>855</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Myers</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>1.28244</td>
+      <td>25.0203</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Moutzouris</td>
+      <td>3</td>
+      <td>f</td>
+      <td>0.45000</td>
+      <td>1.5510</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Kozma</td>
+      <td>5</td>
+      <td>f</td>
+      <td>0.23000</td>
+      <td>0.6407</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;methanol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>854</th>
+      <td>methanol</td>
+      <td></td>
+      <td>El-Kashef</td>
+      <td>5</td>
+      <td>f</td>
+      <td>0.40000</td>
+      <td>0.8000</td>
+    </tr>
+    <tr>
+      <th>855</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Myers</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>1.28244</td>
+      <td>25.0203</td>
+    </tr>
+    <tr>
+      <th>856</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Moutzouris</td>
+      <td>3</td>
+      <td>f</td>
+      <td>0.45000</td>
+      <td>1.5510</td>
+    </tr>
+    <tr>
+      <th>857</th>
+      <td>methanol</td>
+      <td></td>
+      <td>Kozma</td>
+      <td>5</td>
+      <td>f</td>
+      <td>0.23000</td>
+      <td>0.6407</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Munehiro Nishida
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

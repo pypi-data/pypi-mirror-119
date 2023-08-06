@@ -1,0 +1,1247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial &mdash; RII_Pandas  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/plot_directive.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> RII_Pandas
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/00_RII_Pandas.html">RII_Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/01_tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/02_RiiDataFrame.html">RiiDataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/02_RiiDataFrame.html#Helper-Methods">Helper Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/03_RiiMaterial.html">RiiMaterial Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/04_Material.html">Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/05_examples.html">Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">RII_Pandas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/build/html/notebooks/01_tutorial.ipynb" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Tutorial">
+<h1>Tutorial<a class="headerlink" href="#Tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Let’s start your survay of dielectric properties of various materials. The first thing you must do is to create a RiiDataFrame oject. The first trial will take a few minutes, because experimental data will be pulled down from Polyanskiy’s <a class="reference external" href="https://github.com/polyanskiy/refractiveindex.info-database">refractiveindex.info database</a> and equi-spaced grid data will be obtained by interpolating the experimental data.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">riip</span>
+<span class="n">ri</span> <span class="o">=</span> <span class="n">riip</span><span class="o">.</span><span class="n">RiiDataFrame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+Catalog file not found.
+Cloning Repository...
+Done.
+Creating catalog file...
+Done.
+Creating raw data file...
+Done.
+Updating grid data file...
+Done.
+</pre></div></div>
+</div>
+<p>You can use some helper methods for your survay.</p>
+<section id="search">
+<h2><strong>search</strong><a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>search(name: str) -&gt; DataFrame
+</pre></div>
+</div>
+<p>This method searches data that contain given <strong>name</strong> of material and return a catalog for them.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>182</th>
+      <td>NaCl</td>
+      <td></td>
+      <td>Li</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.20</td>
+      <td>30.0000</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>NaCl</td>
+      <td></td>
+      <td>Querry</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.22</td>
+      <td>166.6667</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;sodium&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># upper or lower case is not significant</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>127</th>
+      <td>NaBr</td>
+      <td></td>
+      <td>Li</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.210</td>
+      <td>34.0000</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>NaCl</td>
+      <td></td>
+      <td>Li</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.200</td>
+      <td>30.0000</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>NaCl</td>
+      <td></td>
+      <td>Querry</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.220</td>
+      <td>166.6667</td>
+    </tr>
+    <tr>
+      <th>229</th>
+      <td>NaF</td>
+      <td></td>
+      <td>Li</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.150</td>
+      <td>17.0000</td>
+    </tr>
+    <tr>
+      <th>295</th>
+      <td>NaI</td>
+      <td></td>
+      <td>Jellison</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.436</td>
+      <td>0.6330</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="select">
+<h2><strong>select</strong><a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>select(condition: str) -&gt; DataFrame
+</pre></div>
+</div>
+<p>This method make a query with the given <strong>condition</strong> and return a catalog. For example, if you want to find a material whose refractive index n is in a range 2.5 &lt; n &lt; 3 somewhere in the wavelength range 0.4μm &lt; wl &lt; 0.8μm:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;2.5 &lt; n &lt; 3 and 0.4 &lt; wl &lt; 0.8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>23</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Mathewson</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.495940</td>
+      <td>1.771200</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>Bi</td>
+      <td>Experimental data</td>
+      <td>Hagemann</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.000002</td>
+      <td>6.199000</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>TlBr</td>
+      <td></td>
+      <td>Palik</td>
+      <td>1</td>
+      <td>f</td>
+      <td>0.570000</td>
+      <td>39.400000</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>C</td>
+      <td>Amorphous thin film</td>
+      <td>Larruquert</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.019656</td>
+      <td>10.079189</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>C</td>
+      <td>Graphite</td>
+      <td>Djurisic-o</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.030996</td>
+      <td>10.332000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="show">
+<h2><strong>show</strong><a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>show(ids: int | Sequence[int]) -&gt; DataFrame
+</pre></div>
+</div>
+<p>This method shows the catalog for given <strong>ids</strong>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">show</span><span class="p">([</span><span class="mi">23</span><span class="p">,</span> <span class="mi">118</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>book</th>
+      <th>section</th>
+      <th>page</th>
+      <th>formula</th>
+      <th>tabulated</th>
+      <th>wl_min</th>
+      <th>wl_max</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>23</th>
+      <td>Al</td>
+      <td>Experimental data</td>
+      <td>Mathewson</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.495940</td>
+      <td>1.7712</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>Bi</td>
+      <td>Experimental data</td>
+      <td>Hagemann</td>
+      <td>0</td>
+      <td>nk</td>
+      <td>0.000002</td>
+      <td>6.1990</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="read">
+<h2><strong>read</strong><a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>read(id, as_dict=False)
+</pre></div>
+</div>
+<p>This method returns the contants of a page associated with the id.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">ri</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">23</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+# this file is part of refractiveindex.info database
+# refractiveindex.info database is in the public domain
+# copyright and related rights waived via CC0 1.0
+
+REFERENCES: &#34;A. G. Mathewson and H. P. Myers. Absolute values of the optical constants of some pure metals, &lt;a href=\&#34;https://doi.org/10.1088/0031-8949/4/6/009\&#34;&gt;&lt;i&gt;Phys. Scr.&lt;/i&gt; &lt;b&gt;4&lt;/b&gt;, 291-292 (1971)&lt;/a&gt;&#34;
+COMMENTS: &#34;298 K (24.85 °C)&#34;
+DATA:
+  - type: tabulated nk
+    data: |
+        0.49594 0.77909 5.84012
+        0.50606 0.81783 5.93033
+        0.51660 0.85227 6.10134
+        0.52759 0.89107 6.22848
+        0.53906 0.94408 6.35541
+        0.55104 1.00461 6.51991
+        0.56356 1.06864 6.64394
+        0.57667 1.14503 6.76839
+        0.59040 1.21981 6.92733
+        0.60480 1.30548 7.08550
+        0.61992 1.40111 7.20855
+        0.63582 1.50675 7.36684
+        0.65255 1.62810 7.49338
+        0.67018 1.77579 7.65855
+        0.68880 1.94186 7.82757
+        0.70848 2.13059 8.00246
+        0.72932 2.33676 8.15233
+        0.75142 2.57452 8.25398
+        0.77490 2.87316 8.23135
+        0.79990 3.03948 8.07703
+        0.82656 2.93996 7.75521
+        0.85506 2.52983 7.60921
+        0.88560 2.13552 7.74987
+        0.91840 1.81758 8.14270
+        0.95372 1.57683 8.68829
+        0.99187 1.41421 9.19239
+        1.03320 1.31513 9.73291
+        1.07812 1.24965 10.32287
+        1.12713 1.22635 10.88595
+        1.18080 1.22466 11.55421
+        1.23984 1.25115 12.18874
+        1.30510 1.29739 12.91059
+        1.37760 1.34628 13.70447
+        1.45864 1.42835 14.52722
+        1.54980 1.50000 15.50000
+        1.65312 1.58999 16.47811
+        1.77120 1.75488 17.75048
+SPECS:
+    n_absolute: true
+    wavelength_vacuum: true
+    temperature: 298 K
+
+</pre></div></div>
+</div>
+</section>
+<section id="references">
+<h2><strong>references</strong><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>references(id: int)
+</pre></div>
+</div>
+<p>This method returns the REFERENCES of a page associated with the id.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">references</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+A. G. Mathewson and H. P. Myers. Absolute values of the optical constants of some pure metals, <a href="https://doi.org/10.1088/0031-8949/4/6/009"><i>Phys. Scr.</i> <b>4</b>, 291-292 (1971)</a></div>
+</div>
+</section>
+<section id="plot">
+<h2><strong>plot</strong><a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plot(id: int, comp: str = &quot;n&quot;, fmt1: str = &quot;-&quot;, fmt2: str = &quot;--&quot;, **kwargs)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>id: ID number</p></li>
+<li><p>comp: ‘n’, ‘k’ or ‘eps’</p></li>
+<li><p>fmt1 (Union[str, None]): Plot format for n and Re(eps), such as “-”, “–”, “:”, etc.</p></li>
+<li><p>fmt2 (Union[str, None]): Plot format for k and Im(eps).</p></li>
+</ul>
+<p>This plot uses 200 data points only. If you want more fine plots, use <strong>plot</strong> method of <strong>RiiMaterial</strong> explained below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/build_html_notebooks_01_tutorial_15_0.png" src="../../../_images/build_html_notebooks_01_tutorial_15_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/build_html_notebooks_01_tutorial_16_0.png" src="../../../_images/build_html_notebooks_01_tutorial_16_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ri</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;eps&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/build_html_notebooks_01_tutorial_17_0.png" src="../../../_images/build_html_notebooks_01_tutorial_17_0.png" />
+</div>
+</div>
+</section>
+<section id="material">
+<h2><strong>material</strong><a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>material(id: int, bound_check: bool = True) -&gt; RiiMaterial
+</pre></div>
+</div>
+<p>This method returns <strong>RiiMaterial</strong>-class instance for given <strong>id</strong>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Al</span> <span class="o">=</span> <span class="n">ri</span><span class="o">.</span><span class="n">material</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">Al</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+riip.material.RiiMaterial
+</pre></div></div>
+</div>
+<p>Using the created RiiMaterial object, you can get refractive index n, extinction coefficient k, and dielectric function eps, and plot them. ### <strong>RiiMaterial.n</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>n(wl: ArrayLike) -&gt; ArrayLike
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Al</span><span class="o">.</span><span class="n">n</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># refractive index at wavelength = 1.0μm</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array(1.38992825)
+</pre></div></div>
+</div>
+<section id="RiiMaterial.k">
+<h3><strong>RiiMaterial.k</strong><a class="headerlink" href="#RiiMaterial.k" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>k(wl: ArrayLikey) -&gt; ArrayLike
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Al</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># extinction coeficient at wavelength = 1.0μm</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array(9.29871537)
+</pre></div></div>
+</div>
+</section>
+<section id="RiiMaterial.eps">
+<h3><strong>RiiMaterial.eps</strong><a class="headerlink" href="#RiiMaterial.eps" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>eps(wl: ArrayLike) -&gt; ArrayLike
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Al</span><span class="o">.</span><span class="n">eps</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># permittivity at wavelength = 1.0μm</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(-84.53420700623244+25.849094446766514j)
+</pre></div></div>
+</div>
+<p>Wavelengths <strong>wl</strong> can be a single complex value or an array of complex values.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">)</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">eps</span><span class="p">(</span><span class="n">wls</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([ -33.89779907 +9.35224833j,  -37.29663792+10.75592736j,
+        -40.46876552+12.53087225j,  -43.43229089+14.56533822j,
+        -46.41129574+16.83659629j,  -49.2385095 +19.32389012j,
+        -51.85810847+22.05300726j,  -54.02556411+25.09475885j,
+        -56.51540731+28.78382719j,  -58.85137684+32.85685103j,
+        -60.65700424+37.15810143j,  -61.43175009+41.51644492j,
+        -59.95632423+46.2612749j ,  -56.98218692+48.93047781j,
+        -53.3033943 +47.83981151j,  -51.42399408+43.33917313j,
+        -52.09515412+37.66299976j,  -55.02382243+33.71464066j,
+        -59.75774496+31.00602161j,  -65.290795  +28.99279851j,
+        -71.64789653+27.62974901j,  -77.38579793+26.59597033j,
+        -83.00116405+25.9583205j ,  -88.66217973+25.66864568j,
+        -94.45740961+25.59308157j, -100.4184537 +25.64273629j,
+       -106.33351686+25.85831884j, -111.78961815+26.22747249j,
+       -117.39172151+26.73801047j, -123.57283681+27.35673207j,
+       -129.90183728+28.0505345j , -135.77118107+28.79293226j,
+       -141.4590293 +29.61968582j, -147.26178938+30.54243649j,
+       -153.34266746+31.55295056j, -159.54434245+32.59908143j,
+       -165.8621051 +33.63953939j, -172.24952059+34.65000434j,
+       -178.75676755+35.68064054j, -185.37805733+36.7905399j ,
+       -191.65667882+37.98351764j, -197.98520692+39.2673907j ,
+       -204.41518109+40.5862849j , -211.05384398+41.8860973j ,
+       -218.04971886+43.14626872j, -225.16550454+44.36469822j,
+       -232.39837352+45.56977505j, -239.54672917+46.77259037j,
+       -246.14926471+47.9546164j , -252.83776621+49.19042027j])
+</pre></div></div>
+</div>
+</section>
+<section id="RiiMaterial.plot">
+<h3><strong>RiiMaterial.plot</strong><a class="headerlink" href="#RiiMaterial.plot" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plot(wls: np.ndarray, comp: str = &quot;n&quot;, fmt1: str = &quot;-&quot;, fmt2: str = &quot;--&quot;, **kwargs)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>wls: Wavelength [μm].</p></li>
+<li><p>comp: ‘n’, ‘k’ or ‘eps’</p></li>
+<li><p>fmt1 (Union[str, None]): Plot format for n and Re(eps), such as “-”, “–”, “:”, etc.</p></li>
+<li><p>fmt2 (Union[str, None]): Plot format for k and Im(eps).</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">wls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wls</span><span class="p">,</span> <span class="s2">&quot;eps&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/build_html_notebooks_01_tutorial_29_0.png" src="../../../_images/build_html_notebooks_01_tutorial_29_0.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/build_html_notebooks_01_tutorial_29_1.png" src="../../../_images/build_html_notebooks_01_tutorial_29_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/build_html_notebooks_01_tutorial_29_2.png" src="../../../_images/build_html_notebooks_01_tutorial_29_2.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Munehiro Nishida
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
