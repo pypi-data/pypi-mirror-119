@@ -1,0 +1,7 @@
+setup.py
+usefulfunctionsbyjoci/__init__.py
+usefulfunctionsbyjoci/function.py
+usefulfunctionsbyjoci.egg-info/PKG-INFO
+usefulfunctionsbyjoci.egg-info/SOURCES.txt
+usefulfunctionsbyjoci.egg-info/dependency_links.txt
+usefulfunctionsbyjoci.egg-info/top_level.txt
