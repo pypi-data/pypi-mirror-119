@@ -1,0 +1,15 @@
+ogdf_python/__init__.py,sha256=nsJH3mIHudanxhkw8M7ONnaWk0xg4z6uyDceQ_7aNPY,1498
+ogdf_python/doxygen.json,sha256=VkanrvDOQZSKZZ_EKZ6eGwwLbIOH29SqACl9tDgTP6g,6330566
+ogdf_python/doxygen.py,sha256=ptrm0cX2T84_SL0eF33BIi_DJeXEXOgxtL7HQHc2hv4,6556
+ogdf_python/doxygen_fmt.json,sha256=A0gf-OLWMGrVzkcRmLezkkzNbY82t51zdDo_HL6fMGo,8285117
+ogdf_python/doxygen_stuff.py,sha256=VP9KqjbY4zchefUtEbtIwIer7Gmbz8k73GkdaRNZHlA,1401
+ogdf_python/jupyter.py,sha256=HbobYrGvqWo5zmMWQmHaTJ1OaaUdIDIsHE8CpXjNUTQ,1891
+ogdf_python/pythonize/__init__.py,sha256=wy0muV5G3vyVmRRiOIzv-L2c_6i5tex1H4DjqKUuzaU,1693
+ogdf_python/pythonize/container.py,sha256=5NR1YArk7vJN1f08ios3Tya0xromnXsRKYygtLd1WwU,1222
+ogdf_python/pythonize/graph_attributes.py,sha256=FPABaoHZv-BnBqnPnNgS4JmO_UnTlSrO2KQp-6zmDuQ,4021
+ogdf_python/pythonize/render.py,sha256=SJ3F9Wcyto9AUFFl7ia5-sQafbstIAutR9FI--HxKPs,514
+ogdf_python/pythonize/str.py,sha256=yJCYC1wokPdQ2UVbVC4qLjSFVnXgRrRwbr0XE41idlM,1035
+ogdf_python/test.py,sha256=SXoXcjSO7L4qd3CW0rgx32dcRs9BZHD0Jh5N_zQlW94,40
+ogdf_python-0.1.2.dev0.dist-info/WHEEL,sha256=SrtnPGVTMeYWttls9xnWA01eUhCZ3ufFdJUYb1J3r-U,83
+ogdf_python-0.1.2.dev0.dist-info/METADATA,sha256=NAM7I08hj3YeKYXeWPhY8AxCdNQKCfRKJV_T-pi3Nxs,6634
+ogdf_python-0.1.2.dev0.dist-info/RECORD,,
