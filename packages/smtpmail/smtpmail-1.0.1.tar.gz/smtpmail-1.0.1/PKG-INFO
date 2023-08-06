@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: smtpmail
+Version: 1.0.1
+Summary: send email
+Home-page: https://github.com/cmtools/smtpmail
+Author: Omidekz
+Author-email: omidekz@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/cmtools/smtpmail/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# SMTP Mail
+
+# Usage
+```py
+    import smtpmail
+    import os
+
+    sender = os.getenv('smpt_sender')
+    pswd = os.getenv('smtp_pass')
+    host = os.getenv('smtp_host', 'smtp.gmail.com')
+    port = os.getenv('smtp_port', 587)
+    read_only_settings: smtpmail.Settings = smatpmail.Mail.init(sender, pswd, host, port)
+    ###
+    smtpmail.Mail.send_mail(to, subject, content, content_type='plain')
+```
+

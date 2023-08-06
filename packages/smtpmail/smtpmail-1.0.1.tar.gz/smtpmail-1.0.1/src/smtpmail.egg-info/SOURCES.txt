@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/smtpmail.egg-info/PKG-INFO
+src/smtpmail.egg-info/SOURCES.txt
+src/smtpmail.egg-info/dependency_links.txt
+src/smtpmail.egg-info/top_level.txt
