@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: mspell
+Version: 0.0.2
+Summary: Spell musical pitches
+Home-page: https://github.com/malcolmsailor/mspell
+Author: Malcolm Sailor
+Author-email: malcolm.sailor@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/malcolmsailor/mspell/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+A library for spelling and unspelling musical pitches.
+
+"Spelling" a pitch is going from an integer to a letter (and, optionally, an accidental and octave number). "Unspelling" a pitch is doing the reverse.
+
+Provides the following three classes, instances of each of which are callable:
+
+```
+Speller
+Unspeller
+Groupspeller
+```
+
+# Requirements
+
+numpy
+
+# Example usage
+
+```
+>>> import mspell
+>>> speller = mspell.Speller()
+>>> speller(6)
+'F#'
+>>> speller([3,6,10])
+['Eb', 'F#', 'Bb']
+>>> groupspeller = mspell.GroupSpeller()
+>>> groupspeller([3,6,10])
+['Eb', 'Gb', 'Bb']
+>>> unspeller = mspell.Unspeller(tet=31)
+>>> unspeller([['Eb', 'Gb', 'Bb'], ['Eb', 'F#', 'Bb']])
+[[8, 16, 26], [8, 15, 26]]
+```
+
+
