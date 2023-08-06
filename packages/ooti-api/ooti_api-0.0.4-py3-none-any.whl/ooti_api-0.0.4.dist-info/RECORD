@@ -1,0 +1,15 @@
+ooti/__init__.py,sha256=1mptEzQihbdyqqzMgdns_j5ZGK9gz7hR2bsgA_TnjO4,22
+ooti/collaboration.py,sha256=bJzSzv5dA6-hkVGv9b6LFdgvSNcfpGr5b7EQtDN_8RM,30669
+ooti/costs.py,sha256=CFm9DF0hQU8-pa1VgNeU_J8nlUqCK3LP8gvVRxOpUrw,39160
+ooti/deliverables.py,sha256=LkypB0I7coB0oJWe8AHcWCApzmWIRFXkr1a0K0dfuSA,82616
+ooti/example.py,sha256=XR9MdjVFl0WUee_9zvgOU7cFUk5mcOyamBy4kQH23CI,2265
+ooti/helper.py,sha256=8WOMHxZkHBJjlaxdjoTDDlTBOuHDxvVCD1oUAe1oI_Y,1161
+ooti/invoicing.py,sha256=BdgbhJnJOoZANPk7av82qZC9vRJJYOZ9tBpIb0ogvAY,42601
+ooti/ooti.py,sha256=GHGqScYQoRhzHFa59JYTyAqrb_2_KzyYmFYy-7CcM8A,38444
+ooti/others.py,sha256=GrsqQptcYRTenltEJgopjxitiQm8Z66A9bo3siGBC2g,28623
+ooti/settings.py,sha256=pOFQO25WnzfG2YEkcRpUqhYLxCBjDABZPSe3Gqq-uLk,15612
+ooti/time.py,sha256=grNExReNn4A_Ws9hbp9YXBFuLro_I_8c7p3Nv-wu6BA,46677
+ooti_api-0.0.4.dist-info/METADATA,sha256=ic0C13iDWqp2dpRN45JviOeOGohWcAJqZ_JGMsyZOgA,2680
+ooti_api-0.0.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+ooti_api-0.0.4.dist-info/top_level.txt,sha256=VxwOzMLR67sGZb186kKgdxiilSCirVb_fDDUxBlQ2JU,5
+ooti_api-0.0.4.dist-info/RECORD,,
