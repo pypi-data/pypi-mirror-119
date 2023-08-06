@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: Asyncbing
+Version: 0.1.0
+Summary: A api wrapper for the bing search api.
+Home-page: https://github.com/TennisBowling/asyncbing
+Author: TennisBowling
+Author-email: tennisbowling@tennisbowling.com
+License: LICENSE.md
+Platform: UNKNOWN
+License-File: LICENSE.md
+Requires-Dist: aiohttp
+Requires-Dist: asyncio
+
+# AsyncBing
+
