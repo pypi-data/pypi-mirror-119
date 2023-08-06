@@ -1,0 +1,6 @@
+jupyter>=1.0.0
+jupyterPiDAQ>=0.7.3
+Algebra_with_SymPy>=0.9.0
+jupyter_Pandas_GUI
+jupyter-datainputtable>=0.7.5
+JPSLUtils
