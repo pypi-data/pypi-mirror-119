@@ -1,0 +1,10 @@
+BSeries/__init__.py,sha256=jQOQPanbqatV2VsBaXLEqNIGreE_T705z5PMU1lfZso,101
+BSeries/bs.py,sha256=-sPibJoHF7gPlnXWKyTWLRUXcV3o-_Cyj795Gtjw0Lw,11317
+BSeries/test_trees.py,sha256=AfdEeA77i5AJvtcl3PxaCbTvth7MsAHvZAuFik1Qp3E,923
+BSeries/trees.py,sha256=8uH1WbGAL6_mJBarhFdQFgBOqKQPlSv8Y8xHF7dc5hc,22157
+BSeries/util.py,sha256=X3ujh4HnQux6mBU1x3LPdE0J-5OTdfszTzHCVjZf3p0,1813
+BSeries-0.1.dist-info/LICENSE.txt,sha256=h8djKOQ0ceUQtJDwxnk_5nQsMie7N6Yg8jH-UPgjG0A,1568
+BSeries-0.1.dist-info/METADATA,sha256=i53aZNwjIAML6nKM7LmsjTaMIJfdihqdBauvYx-1n8E,347
+BSeries-0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+BSeries-0.1.dist-info/top_level.txt,sha256=UpglBHpmNB1X3Km17oq3UXJCduq_PUKsayYwPuKwKco,8
+BSeries-0.1.dist-info/RECORD,,

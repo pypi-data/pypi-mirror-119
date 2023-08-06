@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: BSeries
+Version: 0.1
+Summary: A Package for Maniuplating Butcher Series
+Home-page: https://github.com/ketch/BSeries
+Author: ['David Ketcheson']
+Author-email: dketch@gmail.com
+License: modified BSD
+Platform: UNKNOWN
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: sympy
+Requires-Dist: matplotlib
+
+UNKNOWN
+
