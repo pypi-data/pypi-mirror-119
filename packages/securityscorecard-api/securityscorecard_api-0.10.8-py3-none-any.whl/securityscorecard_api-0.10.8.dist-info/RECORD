@@ -1,0 +1,14 @@
+securityscorecard_api/__init__.py,sha256=8zLGg-DfQhnDl2Ky0n-zXpN-8e-g7iR0AcaI4l4Vvpk,32
+securityscorecard_api/_defaults.py,sha256=NeyQFEIQd-AWxCCo-LRFCHDE7cEUESHKXCuZw_h8n6Y,45
+securityscorecard_api/client.py,sha256=ir8Ir7KMhbeOawGB02jSfMHEue1ZYWEVGXsm3gRSR6w,771
+securityscorecard_api/compliance.py,sha256=iWBkLl672UnIy4YcDZd4fBch39A6789RPiz0YCrguC8,365
+securityscorecard_api/events.py,sha256=QMK3VufQD2zVFS_OdK958-_tN6rtab1jCt2zdXlMZEc,432
+securityscorecard_api/scores.py,sha256=hpgPyJFIeax_ivdIpKT0vqA_jfuPndDshbZr6gsT9Fo,1468
+securityscorecard_api/version.py,sha256=rWhdWyjWF9QEYdPN0IWR5jPg34XLZIsyxcIMbw5tZgQ,23
+securityscorecard_api/version2.py,sha256=77fOUilcpoyAxHVi1PdWZxQP2CRMChqUgZWj4GdtBEA,22
+securityscorecard_api/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+securityscorecard_api/utils/utils.py,sha256=EmdgP4ezbPtVjuJ4llOOGeL7HsoKOkRIUuw668ZPOY0,195
+securityscorecard_api-0.10.8.dist-info/METADATA,sha256=fsVggev1lyhkXCWJChWJgJWCdU62vtzD9gF8VMK9NKE,945
+securityscorecard_api-0.10.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+securityscorecard_api-0.10.8.dist-info/top_level.txt,sha256=sfcglLuPNH7adkObwiTnxAW2p1jW3L76QOPoaYv0IoA,22
+securityscorecard_api-0.10.8.dist-info/RECORD,,
