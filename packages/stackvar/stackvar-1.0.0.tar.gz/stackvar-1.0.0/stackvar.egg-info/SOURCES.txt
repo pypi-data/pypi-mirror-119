@@ -1,0 +1,7 @@
+README
+setup.py
+stackvar.py
+stackvar.egg-info/PKG-INFO
+stackvar.egg-info/SOURCES.txt
+stackvar.egg-info/dependency_links.txt
+stackvar.egg-info/top_level.txt
