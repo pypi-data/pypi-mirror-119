@@ -1,0 +1,19 @@
+include LICENSE
+include README.md
+exclude requirements.txt
+exclude CONTRIBUTING.md
+exclude Makefile
+exclude tox.ini
+exclude .coveragerc
+exclude .editorconfig
+exclude *.cfg
+exclude *.yml
+exclude scripts
+exclude tests
+exclude Dangerfile
+exclude Gemfile
+recursive-exclude scripts *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude site *
+recursive-exclude tests *
