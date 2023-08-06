@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+qualysclient/qualysclient.egg-info/PKG-INFO
+qualysclient/qualysclient.egg-info/SOURCES.txt
+qualysclient/qualysclient.egg-info/dependency_links.txt
+qualysclient/qualysclient.egg-info/requires.txt
+qualysclient/qualysclient.egg-info/top_level.txt
