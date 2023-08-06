@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+amc_cropper.egg-info/PKG-INFO
+amc_cropper.egg-info/SOURCES.txt
+amc_cropper.egg-info/dependency_links.txt
+amc_cropper.egg-info/entry_points.txt
+amc_cropper.egg-info/requires.txt
+amc_cropper.egg-info/top_level.txt
+amccrop/__init__.py
+amccrop/__main__.py
+amccrop/amccrop.py
