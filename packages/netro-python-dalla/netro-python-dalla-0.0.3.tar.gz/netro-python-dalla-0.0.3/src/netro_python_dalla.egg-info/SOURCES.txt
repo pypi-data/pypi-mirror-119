@@ -1,0 +1,8 @@
+LICENSE
+pyproject.toml
+setup.cfg
+src/netro_python/__init__.py
+src/netro_python_dalla.egg-info/PKG-INFO
+src/netro_python_dalla.egg-info/SOURCES.txt
+src/netro_python_dalla.egg-info/dependency_links.txt
+src/netro_python_dalla.egg-info/top_level.txt
