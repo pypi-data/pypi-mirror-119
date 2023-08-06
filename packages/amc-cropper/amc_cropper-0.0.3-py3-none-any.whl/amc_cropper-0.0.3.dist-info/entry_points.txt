@@ -1,0 +1,3 @@
+[console_scripts]
+amccrop = amccrop.__main__
+
