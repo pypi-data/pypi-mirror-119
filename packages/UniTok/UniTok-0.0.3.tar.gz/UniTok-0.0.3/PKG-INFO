@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: UniTok
+Version: 0.0.3
+Summary: Unified Tokenizer
+Home-page: https://github.com/Jyonn/UnifiedTokenizer
+Author: Jyonn Liu
+Author-email: i@6-79.cn
+License: MIT Licence
+Description: Parse and tokenize data for downstream usage (e.g. the input of Bert model)
+Keywords: token,tokenizer,bert
+Platform: any
