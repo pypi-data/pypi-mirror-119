@@ -1,0 +1,10 @@
+README.md
+setup.py
+allreverso/__init__.py
+allreverso/__version__.py
+allreverso/result.py
+allreverso.egg-info/PKG-INFO
+allreverso.egg-info/SOURCES.txt
+allreverso.egg-info/dependency_links.txt
+allreverso.egg-info/requires.txt
+allreverso.egg-info/top_level.txt
