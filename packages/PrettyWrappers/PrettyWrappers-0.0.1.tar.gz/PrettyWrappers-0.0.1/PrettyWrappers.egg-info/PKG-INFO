@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: PrettyWrappers
+Version: 0.0.1
+Summary: Python module that adds useful for development decorators
+Home-page: https://github.com/nikitunkun/PrettyWrappers
+Author: n.lebedevvv
+Author-email: n.lebedevvv@mail.ru
+License: Apache License, Version 2.0, see LICENSE file
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python :: Implementation :: CPython
+
+Python module that adds useful for development decorators
+
