@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/allcountries.egg-info/PKG-INFO
+src/allcountries.egg-info/SOURCES.txt
+src/allcountries.egg-info/dependency_links.txt
+src/allcountries.egg-info/top_level.txt
+src/countries/__init__.py
+src/countries/all_countries.py
