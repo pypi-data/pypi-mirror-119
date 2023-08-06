@@ -1,0 +1,16 @@
+hdx/scraper/__init__.py,sha256=yNrxYUti103WaH5l0xEL_XfJJ2OmXRMq43BIHUA2_fA,2906
+hdx/scraper/csvoutput.py,sha256=4kvEJfaS97qcr_kKs3RQIj9C7558fS8FzNsGM5LcJR8,1875
+hdx/scraper/exceloutput.py,sha256=TRH4leroIlHQU0KrNIS2uqOnVIz_9BT_kzsvaUHZgIw,2149
+hdx/scraper/googlesheets.py,sha256=7QQR4_6voy1Bnbra_wQPAcr6q51i7Mldxbn6Pe9v8OM,3006
+hdx/scraper/jsonoutput.py,sha256=9DQIHzPr9G4XMoPGB4Xyn-64Ad87Lgism1PSE54qIp0,9594
+hdx/scraper/nooutput.py,sha256=83dxz9UKZ9JbO0WkDG0-otynfF0qR0Uqwjhp1xsoAoI,2887
+hdx/scraper/readers.py,sha256=1Cl3WSesBz1vbI6cmISFAlyIk4DSesNHB1KOK79yv8U,7268
+hdx/scraper/rowparser.py,sha256=wmWzYlxswcBi3mhteG3Yf_bbcWli8tB8oiQ8TuBB3GI,12961
+hdx/scraper/scrapers.py,sha256=O9EIRRwqUoEZmEBtFzK3-izel1gPEDXT3fUchrEWTD8,16460
+hdx/scraper/version.txt,sha256=exPSrztkeQgMZ8VTDFGwb8f-z8T_NbtvtmOtm7IiqvA,5
+hdx_python_scraper-1.3.2.dist-info/LICENSE,sha256=wc-4GpMn-ODs-U_bTe1YCiPVgvcjzrpYOx2wPuyAeII,1079
+hdx_python_scraper-1.3.2.dist-info/METADATA,sha256=WsyiF__SUf-vuNU8zqhhndKRbtVI1W1umWDV0vK1Wws,29180
+hdx_python_scraper-1.3.2.dist-info/WHEEL,sha256=Z-nyYpwrcSqxfdux5Mbn_DQ525iP7J2DG3JgGvOYyTQ,110
+hdx_python_scraper-1.3.2.dist-info/top_level.txt,sha256=cfo3TyDjnu-B1jb_itPPFQCH00c5VT5GuZ30eNrGmlI,4
+hdx_python_scraper-1.3.2.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+hdx_python_scraper-1.3.2.dist-info/RECORD,,
