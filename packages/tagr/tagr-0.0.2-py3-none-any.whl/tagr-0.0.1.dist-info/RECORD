@@ -1,0 +1,16 @@
+tagr/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tagr/config.py,sha256=br8_8cGxV2-SGXnW-ooj3U5waM9uejVTMeA-0FVGQgA,291
+tagr/utils.py,sha256=tb4BAelLUOUhsW18VEsPzap0GAwxodO_X85s7oKqkY4,425
+tagr/storage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tagr/storage/aws.py,sha256=SFxi8DFRqJq8j1x-Dxp8hzLVtRRlfZqago7WWLI_ZCU,3115
+tagr/storage/aws_helper.py,sha256=phRORS-sjBOCBpqdk5-RRsqr8_QMizIX3QGFH6o_ptE,3467
+tagr/storage/azure.py,sha256=yHQ1IFoo-SN9SAKti-o903mjQ2JIsVgg5oExJGOLXZw,2512
+tagr/storage/gcp.py,sha256=ibzN6EMQLmdA2KN4bxPPxMMyFLGUA89Om9WzZeYdbaI,2113
+tagr/storage/local.py,sha256=n_oR-Tr1B3far0RMWxvsJNjG-_GKk8l7-horkxAR4Lw,3022
+tagr/tagging/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tagr/tagging/artifacts.py,sha256=yDpwriJZWrt2Zy1KoQMBhAvDfjo_YmIqoigmhrxQ74o,9756
+tagr-0.0.1.dist-info/LICENSE,sha256=Bg2D_c9XfWzspoE0gFECHGeeqXvuGQjqi4c-lXKHL_o,1083
+tagr-0.0.1.dist-info/METADATA,sha256=_isYWBrd93hq9KbsYIBdjd8uDW1c7I1WWYdmtxdWQ5g,547
+tagr-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+tagr-0.0.1.dist-info/top_level.txt,sha256=Qogz1ltgAotaBXGDuoPeeEPLJjwm4JrjspQyb6s5AGE,5
+tagr-0.0.1.dist-info/RECORD,,
