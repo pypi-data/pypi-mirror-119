@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: hello_universe
+Version: 0.0.4
+Summary: A rookie pypi package to print Hello Universe
+Home-page: https://github.com/jayanthvarma134/hello-universe
+Author: M JAYANTH VARMA
+Author-email: jayanthvarma134@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# hello_universe
+
+## 1. About
+<b>hello_universe</b> is a rookie pypi package that just prints "Hello Universe"  
+The main purpose of this project was to get familiar with the purpose of creating and publishing a pypi package.
+
+## 2. Use the package
+
+
+
+
+
