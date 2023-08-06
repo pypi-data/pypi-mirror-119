@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/carbonemisison/NamedLists.py
+src/carbonemisison/__init__.py
+src/carbonemisison/carbon.py
+src/carbonemisison/fuelmix.py
+src/carbonfootprint.egg-info/PKG-INFO
+src/carbonfootprint.egg-info/SOURCES.txt
+src/carbonfootprint.egg-info/dependency_links.txt
+src/carbonfootprint.egg-info/top_level.txt
