@@ -1,0 +1,3 @@
+[console_scripts]
+resen = resen.resencmd:main
+
