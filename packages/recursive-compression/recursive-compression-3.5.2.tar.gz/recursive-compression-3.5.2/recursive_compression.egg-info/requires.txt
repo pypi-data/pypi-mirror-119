@@ -1,0 +1,2 @@
+patool
+tinyscript>=1.24.10
