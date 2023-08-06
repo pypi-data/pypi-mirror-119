@@ -1,0 +1,11 @@
+beautifulsoup4<4.10,>=4.8
+django-eventtools==1.0.*
+django-bootstrap4<2.4,>=2.0
+Django<3.3,>=3.0
+geocoder==1.38.*
+icalendar==4.0.*
+wagtail==2.14.*
+wagtailfontawesome>=1.2.*
+wagtail-cache==1.*
+wagtail-import-export<0.3,>=0.2
+wagtail-seo==1.*
