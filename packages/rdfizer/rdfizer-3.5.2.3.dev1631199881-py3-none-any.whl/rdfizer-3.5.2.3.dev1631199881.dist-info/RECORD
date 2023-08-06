@@ -1,0 +1,10 @@
+rdfizer/__init__.py,sha256=mq5mVInkfDvdDDfqUURnbyTOk8khkDU_8xgItaMgH_A,212627
+rdfizer/__main__.py,sha256=95LUEjpzZMAZx718nL9PEACNCsQr8b9GYWrSsfa8K4M,1061
+rdfizer/functions.py,sha256=0ZbGjjQZz949Lj1k3V-T8CdEzVx1WBnBxul58L8qHgc,37850
+rdfizer/semantify.py,sha256=CbTeGVHbhgLq_Se4xhaPOkjrJjLywFukZNBsPr9DHWc,227405
+rdfizer/triples_map/TriplesMap.py,sha256=VlEfMDGFHtJrn2I_7ugWGgDyVKJbbDnD2ZgOChLOslg,4830
+rdfizer/triples_map/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rdfizer-3.5.2.3.dev1631199881.dist-info/METADATA,sha256=o_8tXsO0UBIA8mApOWH6mexowiHtbZsdDJZKqFfUfbg,8262
+rdfizer-3.5.2.3.dev1631199881.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+rdfizer-3.5.2.3.dev1631199881.dist-info/top_level.txt,sha256=PMhBgnoDsh1_kppZeKe1Zo-JQp1_moBI7SifgWSBS58,8
+rdfizer-3.5.2.3.dev1631199881.dist-info/RECORD,,
