@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.labjackT7 &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.labjackT7</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.labjackT7</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">labjack</span> <span class="kn">import</span> <span class="n">ljm</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">ljm</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;ljm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Please install Labjack LJM and the ljm Python module&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">clamp</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">mini</span><span class="p">,</span> <span class="n">maxi</span><span class="p">):</span>
+  <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">maxi</span><span class="p">),</span> <span class="n">mini</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Labjack_t7"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7">[docs]</a><span class="k">class</span> <span class="nc">Labjack_t7</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Class for LabJack T7 devices.</span>
+
+<span class="sd">  It can use any channel as input/output, it can be used with an IOBlock.</span>
+
+<span class="sd">  This class is NOT capable of streaming. For higher frequency, see</span>
+<span class="sd">  :ref:`T7 Streamer` class.</span>
+
+<span class="sd">  The keyword argument ``channels`` is used to specify the channels.</span>
+
+<span class="sd">  Each channel must be represented as a :obj:`dict` including all the</span>
+<span class="sd">  parameters. See below for more details on the parameters of the channels.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Labjack_t7.__init__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">device</span><span class="o">=</span><span class="s1">&#39;ANY&#39;</span><span class="p">,</span>
+               <span class="n">connection</span><span class="o">=</span><span class="s1">&#39;ANY&#39;</span><span class="p">,</span>
+               <span class="n">identifier</span><span class="o">=</span><span class="s1">&#39;ANY&#39;</span><span class="p">,</span>
+               <span class="n">channels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">write_at_open</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">no_led</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the args and initializes the parent class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      device (:obj:`str`, optional): The type of the device to open. Possible</span>
+<span class="sd">        values include:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;ANY&#39;, &#39;T7&#39;, &#39;T4&#39;, &#39;DIGIT&#39;</span>
+
+<span class="sd">        Only tested with `&#39;T7&#39;` in Crappy.</span>
+<span class="sd">      connection (:obj:`str`, optional): How is the Labjack connected ?</span>
+<span class="sd">        Possible values include:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;ANY&#39;, &#39;TCP&#39;, &#39;USB&#39;, &#39;ETHERNET&#39;, &#39;WIFI&#39;</span>
+
+<span class="sd">      identifier (:obj:`str`, optional): Something to identify the Labjack. It</span>
+<span class="sd">        can be a serial number, an IP address, or a device name.</span>
+<span class="sd">      channels (:obj:`list`, optional): Channels to use and their settings. It</span>
+<span class="sd">        must be a :obj:`list` of :obj:`dict`.</span>
+<span class="sd">      write_at_open (:obj:`list`, optional): If you need to write specific</span>
+<span class="sd">        names or registers when opening the channel, you can give them as a</span>
+<span class="sd">        :obj:`list` of :obj:`tuple`. They will be written in the order of the</span>
+<span class="sd">        list.</span>
+<span class="sd">      no_led (:obj:`list`, optional): If :obj:`True`, turns off the LED on the</span>
+<span class="sd">        Labjack. This led can cause noise on the channels `AIN0` and `AIN1`.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      - ``channels`` keys:</span>
+
+<span class="sd">        - name (:obj:`str`): The name of the channel according to Labjack&#39;s</span>
+<span class="sd">          naming convention. Ex: `&#39;AIN0&#39;`. This will be used to define the</span>
+<span class="sd">          direction (in/out) and the available settings.</span>
+
+<span class="sd">          It can be:</span>
+<span class="sd">            - `AINx`: An analog input, if gain and/or offset is given, the</span>
+<span class="sd">              integrated slope mechanism will be used with the extended</span>
+<span class="sd">              features registers. It can also be used for thermocouples (see</span>
+<span class="sd">              below). You can use any EF by using the ``write_at_open`` and</span>
+<span class="sd">              ``to_read`` keys if necessary.</span>
+<span class="sd">            - `(T)DACx`: An analog output, you can specify gain and/or offset.</span>
+<span class="sd">            - `(E/F/C/M IOx)`: Digital in/outputs. You can specify the</span>
+<span class="sd">              direction.</span>
+
+<span class="sd">        - gain (:obj:`float`, default: `1`): A numeric value that will multiply</span>
+<span class="sd">          the given value for inputs and outputs.</span>
+<span class="sd">        - offset (:obj:`float`, default: `0`): Will be added to the value.</span>
+
+<span class="sd">          For inputs:</span>
+<span class="sd">          ::</span>
+
+<span class="sd">            returned_value = gain * measured_value + offset</span>
+
+<span class="sd">          For outputs:</span>
+<span class="sd">          ::</span>
+
+<span class="sd">            set_value = gain * given_value + offset.</span>
+
+<span class="sd">          Where `measured_value` and `set_values` are in Volts.</span>
+
+<span class="sd">        - make_zero (:obj:`bool`): AIN only, if :obj:`True` the input value</span>
+<span class="sd">          will be evaluated at startup and the offset will be adjusted to</span>
+<span class="sd">          return `0` (or the offset if any).</span>
+<span class="sd">        - direction (:obj:`bool`): DIO only, if :obj:`True` (or `1`), the port</span>
+<span class="sd">          will be used as an output else as an input.</span>
+<span class="sd">        - resolution (:obj:`int`, default: `1`): The resolution of the</span>
+<span class="sd">          acquisition, see Labjack documentation for more details. The bigger</span>
+<span class="sd">          this value the better the resolution, but the lower the speed. The</span>
+<span class="sd">          possible range is either `1` to `8` or to `12` according to the</span>
+<span class="sd">          model.</span>
+<span class="sd">        - range (:obj:`float`, default: `10`): The range of the acquisition in</span>
+<span class="sd">          Volts. A range of `x` means that values can be read  between `-x` and</span>
+<span class="sd">          `x` Volts. The possible values are:</span>
+<span class="sd">          ::</span>
+
+<span class="sd">            0.01, 0.1, 1, 10</span>
+
+<span class="sd">        - limits (:obj:`tuple`, default: None): To clamp the output values</span>
+<span class="sd">          to a given range. The :obj:`tuple` should contain two values: the min</span>
+<span class="sd">          and the max limit.</span>
+
+<span class="sd">        - thermocouple (:obj:`str`): The type of thermocouple (AIN only).</span>
+<span class="sd">          Possible values are:</span>
+<span class="sd">          ::</span>
+
+<span class="sd">            &#39;E&#39;, &#39;J&#39;, &#39;K&#39;, &#39;R&#39;, &#39;T&#39;, &#39;S&#39;, &#39;C&#39;</span>
+
+<span class="sd">          If specified, it will use the EF to read a temperature directly from</span>
+<span class="sd">          the thermocouples.</span>
+
+<span class="sd">        - write_at_open (:obj:`list`): If you need to write specific names or</span>
+<span class="sd">          registers when opening the channel, you can give them as a</span>
+<span class="sd">          :obj:`list` of :obj:`tuple`. They will be written in the order of the</span>
+<span class="sd">          list.</span>
+
+<span class="sd">          The tuples can either be `(name (str), value (int/float))` or</span>
+<span class="sd">          `(register (int), type (int), value (float/int))`.</span>
+
+<span class="sd">    Warning:</span>
+<span class="sd">      DO NOT CONSIDER the ``limits`` KEY AS A SAFETY IMPLEMENTATION. It</span>
+<span class="sd">      *should* not go beyond/below the given values, but this is not meant to</span>
+<span class="sd">      replace hardware safety!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">connection</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">identifier</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;AIN0&#39;</span><span class="p">}]</span> <span class="k">if</span> <span class="n">channels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">write_at_open</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">write_at_open</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">write_at_open</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">no_led</span> <span class="o">=</span> <span class="n">no_led</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_led</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">write_at_open</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;POWER_LED&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_chan</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+  <span class="k">def</span> <span class="nf">check_chan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">default</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gain&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;make_zero&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;resolution&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+               <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;dtype&#39;</span><span class="p">:</span> <span class="n">ljm</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">FLOAT32</span><span class="p">,</span>
+               <span class="s1">&#39;limits&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">]</span>
+    <span class="c1"># Let&#39;s loop over all the channels to set everything we need</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">:</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}</span>
+
+      <span class="c1"># === Modbus registers ===</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="s1">&#39;dtype&#39;</span><span class="p">,</span> <span class="s1">&#39;limits&#39;</span><span class="p">]:</span>
+          <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">default</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;direction&#39;</span><span class="p">]:</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_write&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+      <span class="c1"># === AIN channels ===</span>
+      <span class="k">elif</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;AIN&quot;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">,</span> <span class="s1">&#39;make_zero&#39;</span><span class="p">,</span> <span class="s1">&#39;resolution&#39;</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">]:</span>
+          <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">default</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;write_at_open&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;write_at_open&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">d</span><span class="p">[</span><span class="s1">&#39;write_at_open&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>  <span class="c1"># What is written when opening the chan</span>
+          <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_RANGE&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;range&#39;</span><span class="p">],),</span>
+          <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_RESOLUTION_INDEX&quot;</span><span class="p">)</span> <span class="o">+</span>
+          <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;resolution&#39;</span><span class="p">],)])</span>
+        <span class="k">if</span> <span class="s1">&#39;thermocouple&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="n">therm</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+                   <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;write_at_open&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_INDEX&quot;</span><span class="p">)</span> <span class="o">+</span>
+            <span class="p">(</span><span class="n">therm</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;thermocouple&#39;</span><span class="p">]],),</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_CONFIG_A&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="p">,),</span>
+            <span class="c1"># for degrees C</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_CONFIG_B&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">60052</span><span class="p">,),</span>
+            <span class="c1"># CJC config</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_CONFIG_D&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="p">,),</span>  <span class="c1"># CJC config</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_CONFIG_E&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span>  <span class="c1"># CJC config</span>
+            <span class="p">])</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span>
+                                                       <span class="s2">&quot;_EF_READ_A&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;gain&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;make_zero&#39;</span><span class="p">]:</span>
+          <span class="c1"># No gain/offset</span>
+          <span class="c1"># We can read directly of the AIN register</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># With gain and offset: let&#39;s use Labjack&#39;s built in slope</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;write_at_open&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_INDEX&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="p">,),</span>  <span class="c1"># for slope</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_CONFIG_D&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">],),</span>
+            <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_EF_CONFIG_E&quot;</span><span class="p">)</span> <span class="o">+</span>
+            <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;make_zero&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,),</span>
+          <span class="p">])</span>  <span class="c1"># To configure slope in the device</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span>
+                                                       <span class="s2">&quot;_EF_READ_A&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+      <span class="c1"># === DAC/TDAC channels ===</span>
+      <span class="k">elif</span> <span class="s2">&quot;DAC&quot;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">,</span> <span class="s1">&#39;limits&#39;</span><span class="p">]:</span>
+          <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">default</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_write&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+      <span class="c1"># === FIO/EIO/CIO/MIO channels ===</span>
+      <span class="k">elif</span> <span class="s2">&quot;IO&quot;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="s2">&quot;direction&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="n">d</span><span class="p">[</span><span class="s2">&quot;direction&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">default</span><span class="p">[</span><span class="s2">&quot;direction&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;direction&quot;</span><span class="p">]:</span>  <span class="c1"># 1/True =&gt; output, 0/False =&gt; input</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;limits&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_write&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;[labjack] Invalid chan name: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_dict</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_dict</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">c</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_dict</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_dict</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">c</span>
+
+  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">openS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+    <span class="c1"># ==== Writing initial config ====</span>
+    <span class="n">reg</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_at_open</span><span class="p">:</span>
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">typ</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">typ</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">t</span>
+      <span class="n">reg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+      <span class="n">types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">typ</span><span class="p">)</span>
+      <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="p">:</span>
+      <span class="c1"># Turn (name, val) tuples to (addr, type, val)</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;write_at_open&#39;</span><span class="p">,</span> <span class="p">[])):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+          <span class="n">c</span><span class="p">[</span><span class="s1">&#39;write_at_open&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],)</span>
+      <span class="c1"># Write everything we need</span>
+      <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;write_at_open&#39;</span><span class="p">,</span> <span class="p">[]):</span>
+        <span class="n">reg</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">reg</span><span class="p">:</span>
+      <span class="n">ljm</span><span class="o">.</span><span class="n">eWriteAddresses</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg</span><span class="p">),</span> <span class="n">reg</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+    <span class="c1"># ==== Recap of the addresses to read/write ====</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">read_addresses</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">read_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">write_addresses</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;to_write&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">write_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">last_values</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">write_addresses</span><span class="p">)</span>
+    <span class="c1"># ==== Measuring zero to add to the offset (if asked to) ====</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;make_zero&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="p">]):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Labjack] Please wait during offset evaluation...&quot;</span><span class="p">)</span>
+      <span class="n">off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval_offset</span><span class="p">()</span>
+      <span class="n">names</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">in_chan_list</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;make_zero&#39;</span> <span class="ow">in</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;make_zero&#39;</span><span class="p">]:</span>
+          <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_EF_CONFIG_E&#39;</span><span class="p">)</span>
+          <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">off</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="n">ljm</span><span class="o">.</span><span class="n">eWriteNames</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="n">names</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Labjack_t7.get_data"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.get_data">[docs]</a>  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Read the signal on all pre-defined input channels.&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span><span class="o">+</span><span class="n">ljm</span><span class="o">.</span><span class="n">eReadAddresses</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">read_addresses</span><span class="p">),</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">read_addresses</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_types</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">ljm</span><span class="o">.</span><span class="n">LJMError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[Labjack] Error in get_data:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+      <span class="k">raise</span></div>
+
+<div class="viewcode-block" id="Labjack_t7.set_cmd"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.set_cmd">[docs]</a>  <span class="k">def</span> <span class="nf">set_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts the tension value to a digital value and send it to the output.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      Once a value has been written, it will not be written again until it</span>
+<span class="sd">      changes! This is meant to lower the communication and Labjack activity.</span>
+
+<span class="sd">      It relies on the fact that these registers will not change between writes</span>
+<span class="sd">      (Which is true unless the card runs a lua script writing the same</span>
+<span class="sd">      registers as the user).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># values = []</span>
+    <span class="c1"># for val,chan in zip(cmd, self.out_chan_list):</span>
+    <span class="c1">#   values.append(chan[&#39;gain&#39;] * val + chan[&#39;offset&#39;])</span>
+    <span class="c1"># ljm.eWriteAddresses(self.handle,len(self.write_addresses),</span>
+    <span class="c1">#    self.write_addresses,self.write_types,values)</span>
+    <span class="n">addresses</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">write_addresses</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">write_types</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">last_values</span><span class="p">,</span>
+                                            <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_list</span><span class="p">)):</span>
+      <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="n">o</span><span class="p">:</span>
+        <span class="n">new_v</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;limits&#39;</span><span class="p">]:</span>
+          <span class="n">new_v</span> <span class="o">=</span> <span class="n">clamp</span><span class="p">(</span><span class="n">new_v</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;limits&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;limits&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="n">addresses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_v</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">addresses</span><span class="p">:</span>
+      <span class="n">ljm</span><span class="o">.</span><span class="n">eWriteAddresses</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">addresses</span><span class="p">),</span> <span class="n">addresses</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span>
+                          <span class="n">values</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Labjack_t7.__getitem__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.__getitem__">[docs]</a>  <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Allows reading of an input chan by calling ``lj[chan]``.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Apply offsets and stuff if this is a channel we know</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">time</span><span class="p">(),</span> <span class="n">ljm</span><span class="o">.</span><span class="n">eReadName</span><span class="p">(</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_chan_dict</span><span class="p">[</span><span class="n">chan</span><span class="p">][</span><span class="s1">&#39;to_read&#39;</span><span class="p">])</span>
+    <span class="c1"># Else: let the user access it directly</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">time</span><span class="p">(),</span> <span class="n">ljm</span><span class="o">.</span><span class="n">eReadName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">chan</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Labjack_t7.__setitem__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.__setitem__">[docs]</a>  <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Allows setting of an output chan by calling ``lj[chan] = val``.&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">ljm</span><span class="o">.</span><span class="n">eWriteName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">out_chan_dict</span><span class="p">[</span><span class="n">chan</span><span class="p">][</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">val</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">out_chan_dict</span><span class="p">[</span><span class="n">chan</span><span class="p">][</span><span class="s1">&#39;offset&#39;</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+      <span class="n">ljm</span><span class="o">.</span><span class="n">eWriteName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">chan</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Labjack_t7.write"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.write">[docs]</a>  <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To write data directly into a register.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">dtype</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">FLOAT32</span>
+    <span class="n">ljm</span><span class="o">.</span><span class="n">eWriteAddress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Labjack_t7.read"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.read">[docs]</a>  <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To read data directly from a register.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">dtype</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">FLOAT32</span>
+    <span class="k">return</span> <span class="n">ljm</span><span class="o">.</span><span class="n">eReadAddress</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Labjack_t7.close"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.labjackT7.Labjack_t7.close">[docs]</a>  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Closes the device.&quot;&quot;&quot;</span>
+
+    <span class="n">ljm</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1202 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.tool.gpucorrel &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.tool.gpucorrel</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.tool.gpucorrel</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding:utf-8</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pkg_resources</span> <span class="kn">import</span> <span class="n">resource_filename</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">cv2</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">cv2</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;opencv-python&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.fields</span> <span class="kn">import</span> <span class="n">get_field</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">pycuda.driver</span> <span class="k">as</span> <span class="nn">cuda</span>
+  <span class="kn">from</span> <span class="nn">pycuda.compiler</span> <span class="kn">import</span> <span class="n">SourceModule</span>
+  <span class="kn">import</span> <span class="nn">pycuda.gpuarray</span> <span class="k">as</span> <span class="nn">gpuarray</span>
+  <span class="kn">from</span> <span class="nn">pycuda.reduction</span> <span class="kn">import</span> <span class="n">ReductionKernel</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+  <span class="n">cuda</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pycuda&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;PyCUDA and CUDA are necessary to use GPUCorrel&quot;</span><span class="p">)</span>
+  <span class="n">SourceModule</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pycuda&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;PyCUDA and CUDA are necessary to use &quot;</span>
+                                <span class="s2">&quot;GPUCorrel&quot;</span><span class="p">)</span>
+  <span class="n">gpuarray</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pycuda&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;PyCUDA and CUDA are necessary to use GPUCorrel&quot;</span><span class="p">)</span>
+  <span class="n">ReductionKernel</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pycuda&quot;</span><span class="p">,</span>
+                                   <span class="s2">&quot;PyCUDA and CUDA are necessary to use &quot;</span>
+                                   <span class="s2">&quot;GPUCorrel&quot;</span><span class="p">)</span>
+
+
+<span class="n">context</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="interp_nearest"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.interp_nearest">[docs]</a><span class="k">def</span> <span class="nf">interp_nearest</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Used to interpolate the mask for each stage.&quot;&quot;&quot;</span>
+
+  <span class="k">if</span> <span class="n">ary</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ary</span>
+  <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">shape</span>
+  <span class="n">rx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">nx</span>
+  <span class="n">ry</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="n">ny</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ny</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+      <span class="n">out</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ary</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ry</span> <span class="o">*</span> <span class="n">j</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">rx</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="o">.</span><span class="mi">5</span><span class="p">)]</span>
+  <span class="k">return</span> <span class="n">out</span></div>
+
+
+<span class="c1"># =======================================================================#</span>
+<span class="c1"># =                                                                     =#</span>
+<span class="c1"># =                        Class CorrelStage:                           =#</span>
+<span class="c1"># =                                                                     =#</span>
+<span class="c1"># =======================================================================#</span>
+
+<div class="viewcode-block" id="CorrelStage"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage">[docs]</a><span class="k">class</span> <span class="nc">CorrelStage</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;Run a correlation routine on an image, at a given resolution.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    Multiple instances of this class are used for the pyramidal correlation in</span>
+<span class="sd">    `Correl()`.</span>
+
+<span class="sd">    Can but is not meant to be used as is.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># To count the instances so they get a unique number (self.num)</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">CorrelStage</span><span class="o">.</span><span class="n">num</span>
+    <span class="n">CorrelStage</span><span class="o">.</span><span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;verbose&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Initializing with resolution&quot;</span><span class="p">,</span> <span class="n">img_size</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">img_size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_ready</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nbIter</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;iterations&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">showDiff</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;show_diff&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">showDiff</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">cv2</span>
+      <span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+        <span class="n">cv2</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;opencv-python&quot;</span><span class="p">)</span>
+      <span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s2">&quot;Residual&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">WINDOW_NORMAL</span> <span class="o">|</span> <span class="n">cv2</span><span class="o">.</span><span class="n">WINDOW_KEEPRATIO</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">mul</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mul&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># These two store the values of the last resampled array</span>
+    <span class="c1"># It is meant to allocate output array only once (see resample_d)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">rX</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rY</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="c1"># self.loop will be incremented every time get_disp is called</span>
+    <span class="c1"># It will be used to measure performance and output some info</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Allocating stuff #</span>
+
+    <span class="c1"># Grid and block for kernels called with the size of the image #</span>
+    <span class="c1"># All the images and arrays in the kernels will be in order (x,y)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)),</span>
+                 <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">block</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span>
+                  <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Default grid:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;block&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">)</span>
+
+    <span class="c1"># We need the number of fields to allocate the G tables #</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Nfields&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Allocating everything we need #</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devG</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+      <span class="c1"># devG stores the G arrays (to compute the research direction)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devG</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+      <span class="c1"># devFieldsX/Y store the fields value along X and Y</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+    <span class="c1"># devH Stores the Hessian matrix</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># And devHi stores its invert</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devHi</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># devOut is written with the difference of the images</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devOut</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># devX stores the value of the parameters (what is actually computed)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devX</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># to store the research direction</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devVec</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># To store the original image on the device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devOrig</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># To store the gradient along X of the original image on the device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devGradX</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># And along Y</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devGradY</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="c1"># Locating the kernel file #</span>
+    <span class="n">kernel_file</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;kernel_file&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">kernel_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Kernel file not specified&quot;</span><span class="p">)</span>
+      <span class="n">kernel_file</span> <span class="o">=</span> <span class="n">resource_filename</span><span class="p">(</span><span class="s1">&#39;crappy&#39;</span><span class="p">,</span> <span class="s1">&#39;tool/kernels.cu&#39;</span><span class="p">)</span>
+    <span class="c1"># Reading kernels and compiling module #</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">kernel_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Sourcing module&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">mod</span> <span class="o">=</span> <span class="n">SourceModule</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">))</span>
+    <span class="c1"># Assigning functions to the kernels #</span>
+    <span class="c1"># These kernels are defined in tool/kernels.cu</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_resampleOrigKrnl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s1">&#39;resampleO&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_resampleKrnl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s1">&#39;resample&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_gradientKrnl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s1">&#39;gradient&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_makeGKrnl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s1">&#39;makeG&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_makeDiff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s1">&#39;makeDiff&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_dotKrnl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s1">&#39;myDot&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_addKrnl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s1">&#39;kadd&#39;</span><span class="p">)</span>
+    <span class="c1"># These ones use pyCuda reduction module to generate efficient kernels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_mulRedKrnl</span> <span class="o">=</span> <span class="n">ReductionKernel</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">neutral</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                       <span class="n">reduce_expr</span><span class="o">=</span><span class="s2">&quot;a+b&quot;</span><span class="p">,</span> <span class="n">map_expr</span><span class="o">=</span><span class="s2">&quot;x[i]*y[i]&quot;</span><span class="p">,</span>
+                                       <span class="n">arguments</span><span class="o">=</span><span class="s2">&quot;float *x, float *y&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_leastSquare</span> <span class="o">=</span> <span class="n">ReductionKernel</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">neutral</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                        <span class="n">reduce_expr</span><span class="o">=</span><span class="s2">&quot;a+b&quot;</span><span class="p">,</span> <span class="n">map_expr</span><span class="o">=</span><span class="s2">&quot;x[i]*x[i]&quot;</span><span class="p">,</span>
+                                        <span class="n">arguments</span><span class="o">=</span><span class="s2">&quot;float *x&quot;</span><span class="p">)</span>
+    <span class="c1"># We could have used use mulRedKrnl(x,x), but this is probably faster ?</span>
+
+    <span class="c1"># Getting texture references #</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_texref</span><span class="p">(</span><span class="s1">&#39;tex&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tex_d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_texref</span><span class="p">(</span><span class="s1">&#39;tex_d&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">texMask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_texref</span><span class="p">(</span><span class="s1">&#39;texMask&#39;</span><span class="p">)</span>
+    <span class="c1"># Setting proper flags #</span>
+    <span class="c1"># All textures use normalized coordinates except for the mask</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tex_d</span><span class="p">]:</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_flags</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">TRSF_NORMALIZED_COORDINATES</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tex_d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">texMask</span><span class="p">]:</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_filter_mode</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">filter_mode</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">)</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_address_mode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cuda</span><span class="o">.</span><span class="n">address_mode</span><span class="o">.</span><span class="n">BORDER</span><span class="p">)</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_address_mode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cuda</span><span class="o">.</span><span class="n">address_mode</span><span class="o">.</span><span class="n">BORDER</span><span class="p">)</span>
+
+    <span class="c1"># Preparing kernels for less overhead when called #</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_resampleOrigKrnl</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;Pii&quot;</span><span class="p">,</span> <span class="n">texrefs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_resampleKrnl</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;Pii&quot;</span><span class="p">,</span> <span class="n">texrefs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tex_d</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_gradientKrnl</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;PP&quot;</span><span class="p">,</span> <span class="n">texrefs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_makeDiff</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;PPPP&quot;</span><span class="p">,</span>
+                           <span class="n">texrefs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tex_d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">texMask</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_addKrnl</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;PfP&quot;</span><span class="p">)</span>
+    <span class="c1"># Reading original image if provided #</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_orig</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">))</span>
+    <span class="c1"># Reading fields if provided #</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_fields</span><span class="p">(</span><span class="o">*</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">))</span>
+    <span class="c1"># Reading mask if provided #</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mask&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_mask</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mask&quot;</span><span class="p">))</span>
+
+<div class="viewcode-block" id="CorrelStage.debug"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.debug">[docs]</a>  <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To print debug messages.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      First argument is the level of the message.</span>
+
+<span class="sd">      The others arguments will be displayed only if the `self.debug` var is</span>
+<span class="sd">      superior or equal.</span>
+
+<span class="sd">      Also, flag and indentation reflect respectively the origin and the level</span>
+<span class="sd">      of the message.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+      <span class="n">s2</span> <span class="o">=</span> <span class="p">()</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="n">s2</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="s2">&quot; &quot;</span><span class="p">),)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;[Stage &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">s2</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CorrelStage.set_orig"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.set_orig">[docs]</a>  <span class="k">def</span> <span class="nf">set_orig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To set the original image from a given CPU or GPU array.</span>
+
+<span class="sd">    Warning:</span>
+<span class="sd">      If it is a GPU array, it will NOT be copied.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      The most efficient method is to write directly over `self.devOrig` with</span>
+<span class="sd">      some kernel and then run :meth:`update_orig`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">assert</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> \
+        <span class="s2">&quot;Got a </span><span class="si">{}</span><span class="s2"> image in a </span><span class="si">{}</span><span class="s2"> correlation routine!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Setting original image from ndarray&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devOrig</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">GPUArray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Setting original image from GPUArray&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devOrig</span> <span class="o">=</span> <span class="n">img</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error ! Unknown type of data given to set_orig()&quot;</span><span class="p">)</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">update_orig</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="CorrelStage.update_orig"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.update_orig">[docs]</a>  <span class="k">def</span> <span class="nf">update_orig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Needs to be called after `self.img_d` has been written directly.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Updating original image&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">gpuarray_to_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devOrig</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="c1"># &#39;C&#39; order implies tex2D(x,y) will fetch matrix(y,x):</span>
+    <span class="c1"># this is where x and y are inverted to comply with the kernels order</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_compute_gradients</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_ready</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+  <span class="k">def</span> <span class="nf">_compute_gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper to call the gradient kernel.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_gradientKrnl</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">devGradX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">devGradY</span><span class="o">.</span><span class="n">gpudata</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CorrelStage.prepare"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.prepare">[docs]</a>  <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Computes all necessary tables to perform correlation.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      This method must be called everytime the original image or fields are</span>
+<span class="sd">      set.</span>
+
+<span class="sd">      If not done by the user, it will be done automatically when needed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;maskArray&#39;</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;No mask set when preparing, using a basic one, &quot;</span>
+                    <span class="s2">&quot;with a border of 5% the dimension&quot;</span><span class="p">)</span>
+      <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+      <span class="n">mask</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">//</span> <span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">//</span> <span class="mi">20</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">//</span> <span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">//</span> <span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_mask</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ready</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;array&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Tried to prepare but original texture is not set !&quot;</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Tried to prepare but fields are not set !&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_make_g</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_make_h</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ready</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Ready!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Tried to prepare when unnecessary, doing nothing...&quot;</span><span class="p">)</span></div>
+
+  <span class="k">def</span> <span class="nf">_make_g</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+      <span class="c1"># Change to prepared call ?</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_makeGKrnl</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devG</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">devGradX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                      <span class="bp">self</span><span class="o">.</span><span class="n">devGradY</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                      <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                      <span class="n">block</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_make_h</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mulRedKrnl</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devG</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">devG</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Hessian:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devHi</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">H</span><span class="p">))</span>  <span class="c1"># *1e-3)</span>
+    <span class="c1"># Looks stupid but prevents a useless devHi copy if nothing is printed</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Inverted Hessian:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">devHi</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+
+<div class="viewcode-block" id="CorrelStage.resample_orig"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.resample_orig">[docs]</a>  <span class="k">def</span> <span class="nf">resample_orig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_y</span><span class="p">,</span> <span class="n">new_x</span><span class="p">,</span> <span class="n">dev_out</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To resample the original image.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      Reads `orig.texture` and writes the interpolated `newX*newY` image to the</span>
+<span class="sd">      `devOut` array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">grid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_x</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_y</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)))</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_x</span> <span class="o">/</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_y</span> <span class="o">/</span> <span class="n">grid</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Resampling Orig texture, grid:&quot;</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;block:&quot;</span><span class="p">,</span> <span class="n">block</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_resampleOrigKrnl</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">,</span>
+                                         <span class="n">dev_out</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                         <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">new_x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">new_y</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Resampled original texture to&quot;</span><span class="p">,</span> <span class="n">dev_out</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CorrelStage.resample_d"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.resample_d">[docs]</a>  <span class="k">def</span> <span class="nf">resample_d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_y</span><span class="p">,</span> <span class="n">new_x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Resamples `tex_d` and returns it in a `gpuarray`.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rX</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rY</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">new_x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">new_y</span><span class="p">)):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">rGrid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_x</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_y</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">rBlock</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_x</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">rGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span>
+                     <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">new_y</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">rGrid</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">rX</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">new_x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">new_y</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devROut</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">new_y</span><span class="p">,</span> <span class="n">new_x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Resampling img_d texture to&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">new_y</span><span class="p">,</span> <span class="n">new_x</span><span class="p">),</span>
+               <span class="s2">&quot; grid:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rGrid</span><span class="p">,</span> <span class="s2">&quot;block:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rBlock</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_resampleKrnl</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rGrid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rBlock</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">devROut</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">rX</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rY</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">devROut</span></div>
+
+<div class="viewcode-block" id="CorrelStage.set_fields"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.set_fields">[docs]</a>  <span class="k">def</span> <span class="nf">set_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields_x</span><span class="p">,</span> <span class="n">fields_y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Method to give the fields to identify with the routine.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      This is necessary only once and can be done multiple times, but the</span>
+<span class="sd">      routine have to be initialized with :meth:`prepare`, causing a slight</span>
+<span class="sd">      overhead.</span>
+
+<span class="sd">      Takes a :obj:`tuple` or :obj:`list` of 2 `(gpu)arrays[Nfields,x,y]` (one</span>
+<span class="sd">      for displacement along `x` and one along `y`).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Setting fields&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields_x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">fields_x</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">fields_y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields_x</span><span class="p">,</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">GPUArray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span> <span class="o">=</span> <span class="n">fields_x</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span> <span class="o">=</span> <span class="n">fields_y</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="CorrelStage.set_image"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.set_image">[docs]</a>  <span class="k">def</span> <span class="nf">set_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_d</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set the image to compare with the original.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      Calling this method is not necessary: you can do `.get_disp(image)`.</span>
+<span class="sd">      This will automatically call this method first.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">assert</span> <span class="n">img_d</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> \
+        <span class="s2">&quot;Got a </span><span class="si">{}</span><span class="s2"> image in a </span><span class="si">{}</span><span class="s2"> correlation routine!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">img_d</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">img_d</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Creating texture from numpy array&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">array_d</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">matrix_to_array</span><span class="p">(</span><span class="n">img_d</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">img_d</span><span class="p">,</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">GPUArray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Creating texture from gpuarray&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">array_d</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">gpuarray_to_array</span><span class="p">(</span><span class="n">img_d</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error ! Unknown type of data given to .set_image()&quot;</span><span class="p">)</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tex_d</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array_d</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span></div>
+
+  <span class="k">def</span> <span class="nf">set_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Setting the mask&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> \
+        <span class="s2">&quot;Got a </span><span class="si">{}</span><span class="s2"> mask in a </span><span class="si">{}</span><span class="s2"> routine.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mask</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Converting the mask to float32&quot;</span><span class="p">)</span>
+      <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">maskArray</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">matrix_to_array</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">GPUArray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">maskArray</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">gpuarray_to_array</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error! Mask data type not understood&quot;</span><span class="p">)</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">texMask</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maskArray</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">set_disp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,),</span> \
+      <span class="s2">&quot;Incorrect initialization of the parameters&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">GPUArray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devX</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error! Unknown type of data given to &quot;</span>
+                    <span class="s2">&quot;CorrelStage.set_disp&quot;</span><span class="p">)</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span>
+
+  <span class="k">def</span> <span class="nf">write_diff_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_makeDiff</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span><span class="o">.</span><span class="n">gpudata</span><span class="p">)</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="mi">128</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">&quot;/home/vic/diff/diff</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">.png&quot;</span>
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="p">),</span> <span class="n">diff</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CorrelStage.get_disp"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.CorrelStage.get_disp">[docs]</a>  <span class="k">def</span> <span class="nf">get_disp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_d</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The method that actually computes the weight of the fields.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Calling main routine&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># self.mul = 3</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ready</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Wasn&#39;t ready ! Preparing...&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">img_d</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_image</span><span class="p">(</span><span class="n">img_d</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;array_d&#39;</span><span class="p">),</span> \
+        <span class="s2">&quot;Did not set the image, use set_image() before calling get_disp or &quot;</span> \
+        <span class="s2">&quot;give the image as parameter.&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Computing first diff table&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_makeDiff</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span><span class="o">.</span><span class="n">gpudata</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_leastSquare</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;res:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">)</span>
+
+    <span class="c1"># Iterating #</span>
+    <span class="c1"># Note: I know this section is dense and wrappers for kernel calls could</span>
+    <span class="c1"># have made things clearer, but function calls in python cause a</span>
+    <span class="c1"># non-negligible overhead and this is the critical part.</span>
+    <span class="c1"># The comments are here to guide you !</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nbIter</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Iteration&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+        <span class="c1"># Computing the direction of the gradient of each parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">devVec</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mulRedKrnl</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devG</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="p">)</span>
+      <span class="c1"># Newton method: we multiply the gradient vector by the pre-inverted</span>
+      <span class="c1"># Hessian, devVec now contains the actual research direction.</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_dotKrnl</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devHi</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">devVec</span><span class="p">,</span>
+                    <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">block</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+      <span class="c1"># This line simply adds k times the research direction to devX</span>
+      <span class="c1"># with a really simple kernel (does self.devX += k*self.devVec)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_addKrnl</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mul</span><span class="p">,</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">devVec</span><span class="o">.</span><span class="n">gpudata</span><span class="p">)</span>
+      <span class="c1"># Do not get rid of this condition: it will not change the output but</span>
+      <span class="c1"># the parameters will be evaluated, this will copy data from the device</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Direction:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">devVec</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;New X:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+
+      <span class="c1"># To get the new residual</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_makeDiff</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">devFieldsY</span><span class="o">.</span><span class="n">gpudata</span><span class="p">)</span>
+      <span class="n">oldres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">res</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_leastSquare</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+      <span class="c1"># If we moved away, revert changes and stop iterating</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">&gt;=</span> <span class="n">oldres</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Diverting from the solution new res=</span><span class="si">{}</span><span class="s2"> &gt;= </span><span class="si">{}</span><span class="s2">!&quot;</span>
+                   <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">oldres</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_addKrnl</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                    <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">mul</span><span class="p">,</span>
+                                    <span class="bp">self</span><span class="o">.</span><span class="n">devVec</span><span class="o">.</span><span class="n">gpudata</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">=</span> <span class="n">oldres</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Undone: X=&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+        <span class="k">break</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;res:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">)</span>
+    <span class="c1"># self.write_diff_file()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">showDiff</span><span class="p">:</span>
+      <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;Residual&quot;</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">devOut</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="mi">128</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span>
+      <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">get</span><span class="p">()</span></div></div>
+
+
+<span class="c1"># =======================================================================#</span>
+<span class="c1"># =                                                                     =#</span>
+<span class="c1"># =                           Class Correl:                             =#</span>
+<span class="c1"># =                                                                     =#</span>
+<span class="c1"># =======================================================================#</span>
+
+
+<div class="viewcode-block" id="GPUCorrel"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel">[docs]</a><span class="k">class</span> <span class="nc">GPUCorrel</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;Identify the displacement between two images.</span>
+
+<span class="sd">  This class is the core of the Correl block. It is meant to be efficient</span>
+<span class="sd">  enough to run in real-time.</span>
+
+<span class="sd">  It relies on :class:`CorrelStage` to perform correlation on different scales.</span>
+
+<span class="sd">  Requirements:</span>
+<span class="sd">    - The computer must have a Nvidia video card with compute capability</span>
+<span class="sd">      `&gt;= 3.0`</span>
+<span class="sd">    - `CUDA 5.0` or higher (only tested with `CUDA 7.5`)</span>
+<span class="sd">    - `pycuda 2014.1` or higher (only tested with pycuda `2016.1.1`)</span>
+
+<span class="sd">  Presentation:</span>
+<span class="sd">    This class takes a :obj:`list` of fields. These fields will be the base of</span>
+<span class="sd">    deformation in which the displacement will be identified. When given two</span>
+<span class="sd">    images, it will identify the displacement between the original and the</span>
+<span class="sd">    second image in this base as closely as possible lowering square-residual</span>
+<span class="sd">    using provided displacements.</span>
+
+<span class="sd">    This class is highly flexible and performs on GPU for faster operation.</span>
+
+<span class="sd">  Usage:</span>
+<span class="sd">    At initialization, Correl needs only one unnamed argument: the working</span>
+<span class="sd">    resolution (as a :obj:`tuple` of :obj:`int`), which is the resolution of</span>
+<span class="sd">    the images it will be given. All the images must have exactly these</span>
+<span class="sd">    dimensions. The dimensions must be given in this order: `(y,x)` (like</span>
+<span class="sd">    `openCV` images)</span>
+
+<span class="sd">    At initialization or after, this class takes a reference image. The</span>
+<span class="sd">    deformations on this image are supposed to be all equal to `0`.</span>
+
+<span class="sd">    It also needs a number of deformation fields (technically limited to `~500`</span>
+<span class="sd">    fields, probably much less depending on the resolution and the amount of</span>
+<span class="sd">    memory on the graphics card).</span>
+
+<span class="sd">    Finally, you need to provide the deformed image you want to process. It</span>
+<span class="sd">    will then identify parameters of the sum of fields that lowers the square</span>
+<span class="sd">    sum of differences between the original image and the second one displaced</span>
+<span class="sd">    with the resulting field.</span>
+
+<span class="sd">    This class will resample the images and perform identification on a lower</span>
+<span class="sd">    resolution, use the result to initialize the next stage, and again util it</span>
+<span class="sd">    reaches the last stage. It will then return the computed parameters. The</span>
+<span class="sd">    number of levels can be set with ``levels=x``.</span>
+
+<span class="sd">    The latest parameters returned (if any) are used to initialize computation</span>
+<span class="sd">    when called again, to help identify large displacement. It is particularly</span>
+<span class="sd">    adapted to slow deformations.</span>
+
+<span class="sd">    To lower the residual, this program computes the gradient of each parameter</span>
+<span class="sd">    and uses Newton method to converge as fast as possible. The number of</span>
+<span class="sd">    iterations for the resolution can also be set.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    img_size (:obj:`tuple`): tuple of 2 :obj:`int`, `(y,x)`, the working</span>
+<span class="sd">      resolution</span>
+
+<span class="sd">    verbose (:obj:`int`): Use ``verbose=x`` to choose the amount of information</span>
+<span class="sd">      printed to the console:</span>
+
+<span class="sd">      - `0`: Nothing except for errors</span>
+<span class="sd">      - `1`: Only important info and warnings</span>
+<span class="sd">      - `2`: Major info and a few values periodically (at a bearable rate)</span>
+<span class="sd">      - `3`: Tons of info including details of each iteration</span>
+
+<span class="sd">      Note that `verbose=3` REALLY slows the program down. To be used only for</span>
+<span class="sd">      debug.</span>
+
+<span class="sd">    fields (:obj:`list`): Use ``fields=[...]`` to set the fields. This can be</span>
+<span class="sd">      done later with :meth:`set_fields`, however in case when the fields are</span>
+<span class="sd">      set later, you need to add ``Nfields=x`` to specify at :meth:`__init__`</span>
+<span class="sd">      the number of expected fields in order to allocate all the necessary</span>
+<span class="sd">      memory on the device.</span>
+
+<span class="sd">      The fields should be given as a :obj:`list` of :obj:`tuple` of 2</span>
+<span class="sd">      `numpy.ndarrays` or `gpuarray.GPUArray` of the size of the image, each</span>
+<span class="sd">      array corresponds to the displacement in pixel along respectively `X` and</span>
+<span class="sd">      `Y`.</span>
+
+<span class="sd">      You can also use a :obj:`str` instead of the :obj:`tuple` for the common</span>
+<span class="sd">      fields:</span>
+
+<span class="sd">      - Rigid body and linear deformations:</span>
+
+<span class="sd">        - `&#39;x&#39;`: Movement along `X`</span>
+<span class="sd">        - `&#39;y&#39;`: Movement along `Y`</span>
+<span class="sd">        - `&#39;r&#39;`: Rotation (in the trigonometric direction)</span>
+<span class="sd">        - `&#39;exx&#39;`: Stretch along `X`</span>
+<span class="sd">        - `&#39;eyy&#39;`: Stretch along `Y`</span>
+<span class="sd">        - `&#39;exy&#39;`: Shear</span>
+<span class="sd">        - `&#39;z&#39;`: Zoom (dilatation) (`=exx+eyy`)</span>
+
+<span class="sd">        Note that you should not try to identify `exx`, `eyy` AND `z` at the</span>
+<span class="sd">        same time (one of them is redundant).</span>
+
+<span class="sd">      - Quadratic deformations:</span>
+
+<span class="sd">        These fields are more complicated to interpret but can be useful for</span>
+<span class="sd">        complicated solicitations such as biaxial stretch. `U` and `V`</span>
+<span class="sd">        represent the displacement along respectively `x` and `y`.</span>
+
+<span class="sd">        - `&#39;uxx&#39;`: `U(x,y) = x²`</span>
+<span class="sd">        - `&#39;uyy&#39;`: `U(x,y) = y²`</span>
+<span class="sd">        - `&#39;uxy&#39;`: `U(x,y) = xy`</span>
+<span class="sd">        - `&#39;vxx&#39;`: `V(x,y) = x²`</span>
+<span class="sd">        - `&#39;vyy&#39;`: `V(x,y) = y²`</span>
+<span class="sd">        - `&#39;vxy&#39;`: `V(x,y) = xy`</span>
+
+<span class="sd">      All of these default fields are normalized to have a max displacement of</span>
+<span class="sd">      `1` pixel and are centered in the middle of the image. They are generated</span>
+<span class="sd">      to have the size of your image.</span>
+
+<span class="sd">      You can mix strings and tuples at your convenience to perform your</span>
+<span class="sd">      identification.</span>
+
+<span class="sd">      Example:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          fields=[&#39;x&#39;, &#39;y&#39;, (MyFieldX, MyFieldY)]</span>
+
+<span class="sd">        where `MyfieldX` and `MyfieldY` are numpy arrays with the same shape as</span>
+<span class="sd">        the images</span>
+
+<span class="sd">        Example of memory usage: On a 2048x2048 image, count roughly</span>
+<span class="sd">        `180 + 100*Nfields` MB of VRAM</span>
+
+<span class="sd">    img: The original image. It must be given as a 2D `numpy.ndarray`. This</span>
+<span class="sd">      block works with `dtype=np.float32`. If the `dtype` of the given image is</span>
+<span class="sd">      different, it will print a warning and the image will be converted. It</span>
+<span class="sd">      can be given at :meth:`__init__` with the kwarg ``img=MyImage`` or later</span>
+<span class="sd">      with ``set_orig(MyImage)``.</span>
+
+<span class="sd">      Note:</span>
+<span class="sd">        You can reset it whenever you want, even multiple times but it will</span>
+<span class="sd">        reset the def parameters to `0`.</span>
+
+<span class="sd">      Once fields and original image are set, there is a short preparation time</span>
+<span class="sd">      before correlation can be performed. You can do this preparation yourself</span>
+<span class="sd">      by using :meth:`prepare`. If not called, it will be done automatically</span>
+<span class="sd">      when necessary, inducing a slight overhead at the first call of</span>
+<span class="sd">      :meth:`get_disp` after setting/updating the fields or original image.</span>
+
+<span class="sd">    levels (:obj:`int`, optional): Number of levels of the pyramid. More levels</span>
+<span class="sd">      can help converging with large and quick deformations but may fail on</span>
+<span class="sd">      images without low spatial frequency. Fewer levels mean that the program</span>
+<span class="sd">      will run faster.</span>
+
+<span class="sd">    resampling_factor (:obj:`float`, optional): The resolution will be divided</span>
+<span class="sd">      by this parameter between each stage of the pyramid. Low, can allow</span>
+<span class="sd">      coherence between stages but is more expensive. High, reaches small</span>
+<span class="sd">      resolutions in less levels and is faster but be careful not to loose</span>
+<span class="sd">      consistency between stages.</span>
+
+<span class="sd">    iterations (:obj:`int`, optional): The MAXIMUM number of iteration to be</span>
+<span class="sd">      ran before returning the values. Note that if the residual increases</span>
+<span class="sd">      before reaching `x` iterations, the block will return anyway.</span>
+
+<span class="sd">    mask (optional): To set the mask, to weight the zone of interest on the</span>
+<span class="sd">      images. It is particularly useful to prevent undesired effects on the</span>
+<span class="sd">      border of the images. If no mask is given, a rectangular mask will be</span>
+<span class="sd">      used, with border of `5%` the size of the image.</span>
+
+<span class="sd">    show_diff (:obj:`bool`, optional): Will open a :mod:`cv2` window and print</span>
+<span class="sd">      the difference between the original and the displaced image after</span>
+<span class="sd">      correlation. `128 Gray` means no difference, lighter means positive and</span>
+<span class="sd">      darker negative.</span>
+
+<span class="sd">    kernel_file (:obj:`str`, optional): Where `crappy_install_dir` is the root</span>
+<span class="sd">      directory of the installation of crappy (``crappy.__path__``).</span>
+
+<span class="sd">    mul (:obj:`float`, optional): This parameter is critical. The direction</span>
+<span class="sd">      will be multiplied by this scalar before being added to the solution. It</span>
+<span class="sd">      defines how &quot;fast&quot; we move towards the solution. High value, fast</span>
+<span class="sd">      convergence but risk to go past the solution and diverge (the program</span>
+<span class="sd">      does not try to handle this and if the residual rises, iterations will</span>
+<span class="sd">      stop immediately). Low value, probably more precise but slower and may</span>
+<span class="sd">      require more iterations.</span>
+
+<span class="sd">      After multiple tests, 3 was found to be a pretty acceptable value. Don&#39;t</span>
+<span class="sd">      hesitate to adapt it to your case. Use ``verbose=3`` and see if the</span>
+<span class="sd">      convergence is too slow or too fast.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    The compared image can be given directly when querying the displacement</span>
+<span class="sd">    as a parameter to :meth:`get_disp` or before, with :meth:`set_image`. You</span>
+<span class="sd">    can provide it as a `np.ndarray` just like `orig`, or as a</span>
+<span class="sd">    `pycuda.gpuarray.GPUArray`.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="c1"># Todo</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This section lists all the considered improvements for this program.</span>
+<span class="sd">    These features may NOT all be implemented in the future.</span>
+<span class="sd">    They are sorted by priority.</span>
+<span class="sd">    - Allow faster execution by executing the reduction only on a part</span>
+<span class="sd">      of the images (random or chosen)</span>
+<span class="sd">    - Add the possibility to return the value of the deformation `Exx` and</span>
+<span class="sd">      `Eyy` in a specific point</span>
+<span class="sd">    - Add a parameter to return values in `%`</span>
+<span class="sd">    - Add a filter to smooth/ignore incorrect values</span>
+<span class="sd">    - Allow a reset of the reference picture for simple deformations to</span>
+<span class="sd">      enhance robustness in case of large deformations or lightning changes</span>
+<span class="sd">    - Restart iterating from `0` once in a while to see if the residual is</span>
+<span class="sd">      lower. Can be useful to recover when diverged critically due to an</span>
+<span class="sd">      incorrect image (Shadow, obstruction, flash, camera failure, ...)</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">context</span>
+    <span class="k">if</span> <span class="s1">&#39;context&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;context&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">cuda</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">pycuda.tools</span> <span class="kn">import</span> <span class="n">make_default_context</span>
+      <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">ModuleNotFoundError</span><span class="p">):</span>
+        <span class="n">make_default_context</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pycuda&quot;</span><span class="p">,</span>
+                                              <span class="s2">&quot;PyCUDA and CUDA are necessary &quot;</span>
+                                              <span class="s2">&quot;to use GPUCorrel&quot;</span><span class="p">)</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="n">make_default_context</span><span class="p">()</span>
+    <span class="n">unknown</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+      <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;verbose&#39;</span><span class="p">,</span> <span class="s1">&#39;levels&#39;</span><span class="p">,</span> <span class="s1">&#39;resampling_factor&#39;</span><span class="p">,</span> <span class="s1">&#39;kernel_file&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;iterations&#39;</span><span class="p">,</span> <span class="s1">&#39;show_diff&#39;</span><span class="p">,</span> <span class="s1">&#39;Nfields&#39;</span><span class="p">,</span> <span class="s1">&#39;img&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;mask&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">]:</span>
+        <span class="n">unknown</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Unrecognized parameter&quot;</span> <span class="o">+</span> <span class="p">(</span>
+        <span class="s1">&#39;s: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="n">unknown</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="ne">SyntaxWarning</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;verbose&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;You set the verbose level to the maximum.</span><span class="se">\n\</span>
+<span class="s2">It may help finding bugs or tracking errors but it may also </span><span class="se">\</span>
+<span class="s2">impact the program performance as it will print A LOT of </span><span class="se">\</span>
+<span class="s2">output and add GPU-&gt;CPU copies only to print information.</span><span class="se">\n\</span>
+<span class="s2">If it is not desired, consider lowering the verbosity: </span><span class="se">\</span>
+<span class="s2">1 or 2 is a reasonable choice, </span><span class="se">\</span>
+<span class="s2">0 won&#39;t show anything except for errors.&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;levels&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">resamplingFactor</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resampling_factor&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">img_size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nbIter</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;iterations&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Initializing... Master resolution:&quot;</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span>
+               <span class="s2">&quot;levels:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">,</span> <span class="s2">&quot;verbosity:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
+
+    <span class="c1"># Computing dimensions of the different levels #</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">h</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resamplingFactor</span> <span class="o">**</span> <span class="n">i</span><span class="p">))))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">w</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resamplingFactor</span> <span class="o">**</span> <span class="n">i</span><span class="p">))))</span>
+
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Nfields&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Nfields&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;fields&quot;</span><span class="p">])</span>
+      <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error! You must provide the number of fields at init. </span><span class="se">\</span>
+<span class="s2">Add Nfields=x or directly set fields with fields=list/tuple&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span>
+
+    <span class="n">kernel_file</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;kernel_file&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">kernel_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Kernel file not specified, using the one in crappy dir&quot;</span><span class="p">)</span>
+      <span class="n">kernel_file</span> <span class="o">=</span> <span class="n">resource_filename</span><span class="p">(</span><span class="s1">&#39;crappy&#39;</span><span class="p">,</span> <span class="s1">&#39;tool/kernels.cu&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Kernel file:&quot;</span><span class="p">,</span> <span class="n">kernel_file</span><span class="p">)</span>
+
+    <span class="c1"># Creating a new instance of CorrelStage for each stage #</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">correl</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">CorrelStage</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+                                     <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+                                     <span class="n">Nfields</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span>
+                                     <span class="n">iterations</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nbIter</span><span class="p">,</span>
+                                     <span class="n">show_diff</span><span class="o">=</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                                         <span class="s2">&quot;show_diff&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)),</span>
+                                     <span class="n">mul</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mul&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+                                     <span class="n">kernel_file</span><span class="o">=</span><span class="n">kernel_file</span><span class="p">))</span>
+
+    <span class="c1"># Set original image if provided #</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_orig</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">))</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    texture&lt;float, cudaTextureType2D, cudaReadModeElementType&gt; texFx</span><span class="si">{0}</span><span class="s2">;</span>
+<span class="s2">    texture&lt;float, cudaTextureType2D, cudaReadModeElementType&gt; texFy</span><span class="si">{0}</span><span class="s2">;</span>
+<span class="s2">    __global__ void resample</span><span class="si">{0}</span><span class="s2">(float* outX, float* outY, int x, int y)</span>
+<span class="s2">    {{</span>
+<span class="s2">      int idx = blockIdx.x*blockDim.x+threadIdx.x;</span>
+<span class="s2">      int idy = blockIdx.y*blockDim.y+threadIdx.y;</span>
+<span class="s2">      if(idx &lt; x &amp;&amp; idy &lt; y)</span>
+<span class="s2">      {{</span>
+<span class="s2">        outX[idy*x+idx] = tex2D(texFx</span><span class="si">{0}</span><span class="s2">,(float)idx/x, (float)idy/y);</span>
+<span class="s2">        outY[idy*x+idx] = tex2D(texFy</span><span class="si">{0}</span><span class="s2">,(float)idx/x, (float)idy/y);</span>
+<span class="s2">      }}</span>
+<span class="s2">    }}</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">src</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">src</span> <span class="o">+=</span> <span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># Adding textures for the quick fields</span>
+      <span class="c1"># resampling</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">mod</span> <span class="o">=</span> <span class="n">SourceModule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">src</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">texFx</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">texFy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">resampleF</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">texFx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_texref</span><span class="p">(</span><span class="s2">&quot;texFx</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">texFy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_texref</span><span class="p">(</span><span class="s2">&quot;texFy</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">resampleF</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mod</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s2">&quot;resample</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">resampleF</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;PPii&quot;</span><span class="p">,</span> <span class="n">texrefs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">texFx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">texFy</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">texFx</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">texFy</span><span class="p">:</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_flags</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">TRSF_NORMALIZED_COORDINATES</span><span class="p">)</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_filter_mode</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">filter_mode</span><span class="o">.</span><span class="n">LINEAR</span><span class="p">)</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_address_mode</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cuda</span><span class="o">.</span><span class="n">address_mode</span><span class="o">.</span><span class="n">BORDER</span><span class="p">)</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">set_address_mode</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cuda</span><span class="o">.</span><span class="n">address_mode</span><span class="o">.</span><span class="n">BORDER</span><span class="p">)</span>
+
+    <span class="c1"># Set fields if provided #</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_fields</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mask&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_mask</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mask&quot;</span><span class="p">))</span>
+
+<div class="viewcode-block" id="GPUCorrel.get_fields"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel.get_fields">[docs]</a>  <span class="k">def</span> <span class="nf">get_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the fields, resampled to size `(y,x)`.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">out_x</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">out_y</span> <span class="o">=</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="mi">32</span><span class="p">)))</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="n">grid</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">resampleF</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">prepared_call</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span>
+                                      <span class="n">out_x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                      <span class="n">out_y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">gpudata</span><span class="p">,</span>
+                                      <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out_x</span><span class="p">,</span> <span class="n">out_y</span></div>
+
+<div class="viewcode-block" id="GPUCorrel.debug"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel.debug">[docs]</a>  <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="o">*</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To print debug info.</span>
+
+<span class="sd">    First argument is the level of the message.</span>
+<span class="sd">    It wil be displayed only if the `self.debug` is superior or equal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;[Correl]&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GPUCorrel.set_orig"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel.set_orig">[docs]</a>  <span class="k">def</span> <span class="nf">set_orig</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To set the original image.</span>
+
+<span class="sd">    This is the reference with which the second image will be compared.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;updating original image&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">),</span> <span class="s2">&quot;Image must be a numpy array&quot;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Image must have 2 dimensions (got </span><span class="si">{}</span><span class="s2">)&quot;</span> \
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s2">&quot;Wrong size!&quot;</span>
+    <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+      <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Correl() takes arrays with dtype np.float32 to allow GPU &quot;</span>
+                    <span class="s2">&quot;computing (got </span><span class="si">{}</span><span class="s2">). Converting to float32.&quot;</span>
+                    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span> <span class="ne">RuntimeWarning</span><span class="p">)</span>
+      <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_orig</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">resample_orig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                       <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">devOrig</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">update_orig</span><span class="p">()</span></div>
+
+  <span class="k">def</span> <span class="nf">set_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">),</span> \
+      <span class="s2">&quot;Cannot change the number of fields on the go!&quot;</span>
+    <span class="c1"># Choosing the right function to copy</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+      <span class="n">to_array</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">matrix_to_array</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">gpuarray</span><span class="o">.</span><span class="n">GPUArray</span><span class="p">):</span>
+      <span class="n">to_array</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">gpuarray_to_array</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error ! Incorrect fields argument. </span><span class="se">\</span>
+<span class="s2">See docstring of Correl&quot;</span><span class="p">)</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="c1"># These list store the arrays for the fields texture</span>
+    <span class="c1"># (to be interpolated quickly for each stage)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fieldsXArray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fieldsYArray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">):</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_field</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                              <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">fieldsXArray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">to_array</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;C&quot;</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">texFx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fieldsXArray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">fieldsYArray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">to_array</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;C&quot;</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">texFy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fieldsYArray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_fields</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_fields</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+  <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">:</span>
+      <span class="n">c</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Ready!&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">save_all_images</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="kn">import</span> <span class="nn">cv2</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+      <span class="n">cv2</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;opencv-python&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Saving all images with the name&quot;</span><span class="p">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;X.png&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+      <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">devOrig</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+      <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">set_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_d</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">img_d</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+      <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Correl() takes arrays with dtype np.float32 </span><span class="se">\</span>
+<span class="s2">to allow GPU computing (got </span><span class="si">{}</span><span class="s2">). Converting to float32.&quot;</span>
+                    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">img_d</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span> <span class="ne">RuntimeWarning</span><span class="p">)</span>
+      <span class="n">img_d</span> <span class="o">=</span> <span class="n">img_d</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_image</span><span class="p">(</span><span class="n">img_d</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_image</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">resample_d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">w</span><span class="p">))</span>
+
+  <span class="k">def</span> <span class="nf">set_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_mask</span><span class="p">(</span><span class="n">interp_nearest</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+<div class="viewcode-block" id="GPUCorrel.get_disp"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel.get_disp">[docs]</a>  <span class="k">def</span> <span class="nf">get_disp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img_d</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To get the displacement.</span>
+
+<span class="sd">    This will perform the correlation routine on each stage, initializing with</span>
+<span class="sd">    the previous values every time it will return the computed parameters</span>
+<span class="sd">    as a list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">img_d</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">set_image</span><span class="p">(</span><span class="n">img_d</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">disp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resamplingFactor</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+      <span class="n">disp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">Nfields</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">)):</span>
+      <span class="n">disp</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resamplingFactor</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_disp</span><span class="p">(</span><span class="n">disp</span><span class="p">)</span>
+      <span class="n">disp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_disp</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="n">disp</span>
+    <span class="c1"># Every 10 images, print the values (if debug &gt;=2)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Loop&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="p">,</span> <span class="s2">&quot;, values:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">devX</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span>
+                 <span class="s2">&quot;, res:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">res</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">disp</span></div>
+
+<div class="viewcode-block" id="GPUCorrel.get_res"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel.get_res">[docs]</a>  <span class="k">def</span> <span class="nf">get_res</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lvl</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the last residual of the specified level (`0` by default).</span>
+
+<span class="sd">    Usually, the correlation is correct when `res &lt; ~1e9-10` but it really</span>
+<span class="sd">    depends on the images: you need to find the value that suit your own</span>
+<span class="sd">    images, depending on the resolution, contrast, correlation method etc...</span>
+<span class="sd">    You can use :meth:`write_diff_file` to visualize the difference between the</span>
+<span class="sd">    two images after correlation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">lvl</span><span class="p">]</span><span class="o">.</span><span class="n">res</span></div>
+
+<div class="viewcode-block" id="GPUCorrel.write_diff_file"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel.write_diff_file">[docs]</a>  <span class="k">def</span> <span class="nf">write_diff_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To see the difference between the two images with the computed</span>
+<span class="sd">    parameters.</span>
+
+<span class="sd">    It writes a single channel picture named `&quot;diff.png&quot;` where `128 gray` is</span>
+<span class="sd">    exact equality, lighter pixels show positive difference and darker pixels</span>
+<span class="sd">    a negative difference. Useful to see if correlation succeeded and to</span>
+<span class="sd">    identify the origin of non convergence.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="p">[</span><span class="n">level</span><span class="p">]</span><span class="o">.</span><span class="n">write_diff_file</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GPUCorrel.clean"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.gpucorrel.GPUCorrel.clean">[docs]</a>  <span class="nd">@staticmethod</span>
+  <span class="k">def</span> <span class="nf">clean</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Needs to be called at the end, to destroy the context properly.&quot;&quot;&quot;</span>
+
+    <span class="n">context</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

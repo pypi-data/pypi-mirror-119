@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.camera.seek_thermal_pro &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.camera.seek_thermal_pro</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.camera.seek_thermal_pro</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">.camera</span> <span class="kn">import</span> <span class="n">Camera</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">usb.util</span>
+  <span class="kn">import</span> <span class="nn">usb.core</span>
+
+  <span class="n">Seek_therm_usb_req</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Write&#39;</span><span class="p">:</span> <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_OUT</span> <span class="o">|</span>
+                                 <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_TYPE_VENDOR</span> <span class="o">|</span>
+                                 <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_RECIPIENT_INTERFACE</span><span class="p">,</span>
+                        <span class="s1">&#39;Read&#39;</span><span class="p">:</span> <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_IN</span> <span class="o">|</span>
+                                <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_TYPE_VENDOR</span> <span class="o">|</span>
+                                <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_RECIPIENT_INTERFACE</span><span class="p">,</span>
+                        <span class="s1">&#39;Read_img&#39;</span><span class="p">:</span> <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_IN</span> <span class="o">|</span>
+                                    <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_TYPE_STANDARD</span> <span class="o">|</span>
+                                    <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">CTRL_RECIPIENT_INTERFACE</span><span class="p">}</span>
+
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">usb</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;usb&quot;</span><span class="p">)</span>
+
+<span class="n">Seek_thermal_pro_vendor</span> <span class="o">=</span> <span class="mh">0x289D</span>
+<span class="n">Seek_thermal_pro_product</span> <span class="o">=</span> <span class="mh">0x0011</span>
+
+<span class="n">Seek_thermal_pro_commands</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Read chip id&#39;</span><span class="p">:</span> <span class="mh">0x36</span><span class="p">,</span>
+                             <span class="s1">&#39;Start get image transfer&#39;</span><span class="p">:</span> <span class="mh">0x53</span><span class="p">,</span>
+                             <span class="s1">&#39;Get operation mode&#39;</span><span class="p">:</span> <span class="mh">0x3D</span><span class="p">,</span>
+                             <span class="s1">&#39;Get image processing mode&#39;</span><span class="p">:</span> <span class="mh">0x3F</span><span class="p">,</span>
+                             <span class="s1">&#39;Get firmware info&#39;</span><span class="p">:</span> <span class="mh">0x4E</span><span class="p">,</span>
+                             <span class="s1">&#39;Get factory settings&#39;</span><span class="p">:</span> <span class="mh">0x58</span><span class="p">,</span>
+                             <span class="s1">&#39;Set operation mode&#39;</span><span class="p">:</span> <span class="mh">0x3C</span><span class="p">,</span>
+                             <span class="s1">&#39;Set image processing mode&#39;</span><span class="p">:</span> <span class="mh">0x3E</span><span class="p">,</span>
+                             <span class="s1">&#39;Set firmware info features&#39;</span><span class="p">:</span> <span class="mh">0x55</span><span class="p">,</span>
+                             <span class="s1">&#39;Set factory settings features&#39;</span><span class="p">:</span> <span class="mh">0x56</span><span class="p">}</span>
+
+<span class="n">Seek_thermal_pro_dimensions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Width&#39;</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span>
+                               <span class="s1">&#39;Height&#39;</span><span class="p">:</span> <span class="mi">240</span><span class="p">,</span>
+                               <span class="s1">&#39;Raw width&#39;</span><span class="p">:</span> <span class="mi">342</span><span class="p">,</span>
+                               <span class="s1">&#39;Raw height&#39;</span><span class="p">:</span> <span class="mi">260</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="Seek_thermal_pro"><a class="viewcode-back" href="../../../crappydocs/cameras.html#crappy.camera.seek_thermal_pro.Seek_thermal_pro">[docs]</a><span class="k">class</span> <span class="nc">Seek_thermal_pro</span><span class="p">(</span><span class="n">Camera</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Class for reading the Seek Thermal Pro infrared camera.</span>
+
+<span class="sd">  The Seek_thermal_pro Camera block is meant for reading images from a Seek</span>
+<span class="sd">  Thermal Pro infrared camera. It communicates over USB, and gets images by</span>
+<span class="sd">  converting the received bytearrays into numpy arrays.</span>
+
+<span class="sd">  Important:</span>
+<span class="sd">    **Only for Linux users:** In order to drive the Seek Thermal Pro, the</span>
+<span class="sd">    appropriate udev rule should be set. This can be done using the</span>
+<span class="sd">    `udev_rule_setter` utility in ``crappy``&#39;s `util` folder. It is also</span>
+<span class="sd">    possible to add it manually by running:</span>
+<span class="sd">    ::</span>
+
+<span class="sd">      $ echo &quot;SUBSYSTEM==\\&quot;usb\\&quot;, ATTR{idVendor}==\\&quot;289d\\&quot;, \</span>
+<span class="sd">MODE=\\&quot;0777\\\&quot;&quot; | sudo tee seek_thermal.rules &gt; /dev/null 2&gt;&amp;1</span>
+
+<span class="sd">    in a shell opened in ``/etc/udev/rules.d``.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Seek_thermal_pro.__init__"><a class="viewcode-back" href="../../../crappydocs/cameras.html#crappy.camera.seek_thermal_pro.Seek_thermal_pro.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Selects the right USB device.&quot;&quot;&quot;</span>
+
+    <span class="n">Camera</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;seek_thermal_pro&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_calib</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">devices</span> <span class="o">=</span> <span class="n">usb</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">find_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                            <span class="n">idVendor</span><span class="o">=</span><span class="n">Seek_thermal_pro_vendor</span><span class="p">,</span>
+                            <span class="n">idProduct</span><span class="o">=</span><span class="n">Seek_thermal_pro_product</span><span class="p">)</span>
+    <span class="n">devices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Several matching cameras found, impossible to &quot;</span>
+                    <span class="s2">&quot;differentiate between them&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;No matching camera found&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span> <span class="o">=</span> <span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Seek_thermal_pro.open"><a class="viewcode-back" href="../../../crappydocs/cameras.html#crappy.camera.seek_thermal_pro.Seek_thermal_pro.open">[docs]</a>  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets the USB communication and device.&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">usb</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">USBError</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You may have to install the udev-rules for this USB device, &quot;</span>
+            <span class="s2">&quot;this can be done using the udev_rule_setter utility in the util &quot;</span>
+            <span class="s2">&quot;folder&quot;</span><span class="p">)</span>
+      <span class="k">raise</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span><span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set operation mode&#39;</span><span class="p">],</span>
+                     <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span>
+      <span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set factory settings features&#39;</span><span class="p">],</span>
+      <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x06\x00\x08\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span><span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set firmware info features&#39;</span><span class="p">],</span>
+                     <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x17\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span>
+      <span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set factory settings features&#39;</span><span class="p">],</span>
+      <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x01\x00\x00\x06\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">32</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span>
+          <span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set factory settings features&#39;</span><span class="p">],</span>
+          <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x20\x00</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span><span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set firmware info features&#39;</span><span class="p">],</span>
+                     <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x15\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span><span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set image processing mode&#39;</span><span class="p">],</span>
+                     <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x08\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span><span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set operation mode&#39;</span><span class="p">],</span>
+                     <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x01\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+      <span class="n">status</span><span class="p">,</span> <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grab</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dead_pixels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_dead_pixels_list</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+        <span class="k">break</span>
+      <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not get the dead pixels frame&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dead_pixels</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+      <span class="n">status</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grab</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_calib</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crop</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1600</span>
+        <span class="k">break</span>
+      <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span><span class="p">(</span><span class="s2">&quot;Could not set the camera&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Seek_thermal_pro.get_image"><a class="viewcode-back" href="../../../crappydocs/cameras.html#crappy.camera.seek_thermal_pro.Seek_thermal_pro.get_image">[docs]</a>  <span class="k">def</span> <span class="nf">get_image</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Reads a single image from the camera.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The timeframe and the captured image</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+      <span class="n">status</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grab</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_calib</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crop</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1600</span>
+      <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calib</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_correct_dead_pixels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_crop</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calib</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span><span class="p">(</span><span class="s2">&quot;Unable to read image&quot;</span><span class="p">)</span>
+      <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="Seek_thermal_pro.close"><a class="viewcode-back" href="../../../crappydocs/cameras.html#crappy.camera.seek_thermal_pro.Seek_thermal_pro.close">[docs]</a>  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Resets the camera and releases USB resources.&quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span><span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Set operation mode&#39;</span><span class="p">],</span>
+                       <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">usb</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">dispose_resources</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="p">)</span></div>
+
+  <span class="k">def</span> <span class="nf">_grab</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Captures a raw image from the camera.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The status information and the raw image</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_write_data</span><span class="p">(</span><span class="n">Seek_thermal_pro_commands</span><span class="p">[</span><span class="s1">&#39;Start get image transfer&#39;</span><span class="p">],</span>
+                     <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x58\x5b\x01\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">to_read</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> \
+        <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Raw width&#39;</span><span class="p">]</span> <span class="o">*</span> \
+        <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Raw height&#39;</span><span class="p">]</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="n">to_read</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">512</span><span class="p">:</span>
+      <span class="n">ret</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="n">Seek_therm_usb_req</span><span class="p">[</span><span class="s1">&#39;Read_img&#39;</span><span class="p">],</span>
+                            <span class="n">size_or_buffer</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span>
+                              <span class="n">to_read</span> <span class="o">/</span>
+                              <span class="p">(</span><span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Raw height&#39;</span><span class="p">]</span>
+                               <span class="o">/</span> <span class="mi">20</span><span class="p">)),</span>
+                            <span class="n">timeout</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="n">status</span> <span class="o">=</span> <span class="n">ret</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">==</span> <span class="n">to_read</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">status</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+        <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Raw height&#39;</span><span class="p">],</span>
+        <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Raw width&#39;</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">status</span><span class="p">,</span> <span class="kc">None</span>
+
+  <span class="k">def</span> <span class="nf">_get_dead_pixels_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Identifies the dead pixels on an image.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      data: The image</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The list of dead pixels</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crop</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+        <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Raw height&#39;</span><span class="p">],</span>
+        <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Raw width&#39;</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">img</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)))</span>
+
+  <span class="nd">@staticmethod</span>
+  <span class="k">def</span> <span class="nf">_crop</span><span class="p">(</span><span class="n">raw_img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Simply crops an image to the right dimensions.&quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">raw_img</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">],</span>
+                   <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">Seek_thermal_pro_dimensions</span><span class="p">[</span><span class="s1">&#39;Width&#39;</span><span class="p">]]</span>
+
+  <span class="k">def</span> <span class="nf">_correct_dead_pixels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Corrects the dead pixels values.</span>
+
+<span class="sd">    The new value is the average value of the surrounding pixels.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      img: The image to correct</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The corrected image</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dead_pixels</span><span class="p">:</span>
+      <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">img</span>
+
+  <span class="k">def</span> <span class="nf">_write_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for writing over USB.&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">ctrl_transfer</span><span class="p">(</span><span class="n">bmRequestType</span><span class="o">=</span><span class="n">Seek_therm_usb_req</span><span class="p">[</span><span class="s1">&#39;Write&#39;</span><span class="p">],</span>
+                                     <span class="n">bRequest</span><span class="o">=</span><span class="n">request</span><span class="p">,</span>
+                                     <span class="n">wValue</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                     <span class="n">wIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                     <span class="n">data_or_wLength</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                                     <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">usb</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">USBError</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;An error occurred during USB communication&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_read_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for reading over USB.&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">ctrl_transfer</span><span class="p">(</span><span class="n">bmRequestType</span><span class="o">=</span><span class="n">Seek_therm_usb_req</span><span class="p">[</span><span class="s1">&#39;Read&#39;</span><span class="p">],</span>
+                                     <span class="n">bRequest</span><span class="o">=</span><span class="n">request</span><span class="p">,</span>
+                                     <span class="n">wValue</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                     <span class="n">wIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                     <span class="n">data_or_wLength</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                                     <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">usb</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">USBError</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;An error occurred during USB communication&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

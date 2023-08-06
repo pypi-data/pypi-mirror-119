@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.kollmorgen &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.kollmorgen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.kollmorgen</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">pymodbus.client.sync</span> <span class="kn">import</span> <span class="n">ModbusTcpClient</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">ModbusTcpClient</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pymodbus&quot;</span><span class="p">,</span> <span class="s2">&quot;Cannot use KollMorgenVariator&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">float32_to_data</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;=HH&quot;</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;=f&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">data_to_float32</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+  <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;float32 expects 2 registers&quot;</span>
+  <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;=f&quot;</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;=HH&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">data</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="KollMorgenVariator"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator">[docs]</a><span class="k">class</span> <span class="nc">KollMorgenVariator</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;Main class to test communication with kollmorgen variator.</span>
+
+<span class="sd">  Every variable and its address has been defined in the Kollmorgen Integrated</span>
+<span class="sd">  Suite.</span>
+
+<span class="sd">  To add or remove some, update the dictionaries of :meth:`__init__`.</span>
+
+<span class="sd">  There are 3 motors, so the tens are for each motor, the units for the</span>
+<span class="sd">  address.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="KollMorgenVariator.__init__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">host</span><span class="o">=</span><span class="s1">&#39;192.168.0.109&#39;</span><span class="p">,</span>
+               <span class="n">port</span><span class="o">=</span><span class="mi">502</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the variator and defines the bits.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      host (:obj:`str`, optional): Variator&#39;s IP address.</span>
+<span class="sd">      port (:obj:`int`, optional): Port for modbus communication</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span> <span class="o">=</span> <span class="n">ModbusTcpClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">connect</span><span class="p">(),</span> <span class="s2">&quot;ERROR: could not connect to variator.&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">motor_addresses</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+    <span class="c1"># R/W bits: coils</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">coil_addresses</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;power&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;move_abs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s1">&#39;move_rel&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s1">&#39;move_vel&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s1">&#39;stop&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s1">&#39;ack_error&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+
+    <span class="c1"># R/W int32: holding registers</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">hldreg_addresses</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;distance&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s1">&#39;velocity&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s1">&#39;dec&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+      <span class="s1">&#39;fstdec&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">}</span>
+
+    <span class="c1"># R bits: input bits, not used.</span>
+    <span class="c1"># R int32: input registers.</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">inpreg_addresses</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;act_speed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;act_position&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s1">&#39;axis_state&#39;</span><span class="p">:</span> <span class="mi">4</span>
+    <span class="p">}</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.toggle_power"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.toggle_power">[docs]</a>  <span class="k">def</span> <span class="nf">toggle_power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Toggles power of given motor. Maybe not the most intelligent way to</span>
+<span class="sd">    handle power, though...&quot;&quot;&quot;</span>
+
+    <span class="n">address</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coil_addresses</span><span class="p">[</span><span class="s2">&quot;power&quot;</span><span class="p">]))</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_coils</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_coil</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="ow">not</span> <span class="n">state</span><span class="o">.</span><span class="n">bits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.clear_errors"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.clear_errors">[docs]</a>  <span class="k">def</span> <span class="nf">clear_errors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;If errors occurred, it must be clear in order to continue the program.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">axis_states</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_input_registers</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">err</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axis_states</span><span class="o">.</span><span class="n">registers</span><span class="p">):</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">err</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">motor</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">address</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coil_addresses</span><span class="p">[</span><span class="s2">&quot;ack_error&quot;</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_coil</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cleared error (AxisState </span><span class="si">%i</span><span class="s1">) in motor </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">motor</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.set_speed"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.set_speed">[docs]</a>  <span class="k">def</span> <span class="nf">set_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Writes to variator desired speed (signed), and its direction. Applies to</span>
+<span class="sd">    every motor movement (rotations, positioning...).&quot;&quot;&quot;</span>
+
+    <span class="n">address_hld</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hldreg_addresses</span><span class="p">[</span><span class="s2">&quot;velocity&quot;</span><span class="p">]))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_register</span><span class="p">(</span><span class="n">address_hld</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">speed</span><span class="p">))</span>
+    <span class="n">address_hld_direction</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hldreg_addresses</span><span class="p">[</span>
+      <span class="s2">&quot;direction&quot;</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_register</span><span class="p">(</span><span class="n">address_hld_direction</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_register</span><span class="p">(</span><span class="n">address_hld_direction</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.set_accelerations"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.set_accelerations">[docs]</a>  <span class="k">def</span> <span class="nf">set_accelerations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To set acceleration, deceleration (for positioning) and fast</span>
+<span class="sd">    deceleration (boolean stop).&quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">address</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_register</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span>
+                                       <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hldreg_addresses</span><span class="p">[</span><span class="n">address</span><span class="p">])),</span>
+                                   <span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.start_rotation"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.start_rotation">[docs]</a>  <span class="k">def</span> <span class="nf">start_rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the rotation of specified motor at specified speed (signed).&quot;&quot;&quot;</span>
+
+    <span class="n">address_coil</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coil_addresses</span><span class="p">[</span><span class="s2">&quot;move_vel&quot;</span><span class="p">]))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_coil</span><span class="p">(</span><span class="n">address_coil</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.stop"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.stop">[docs]</a>  <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Stops the motor movement.&quot;&quot;&quot;</span>
+
+    <span class="n">address</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coil_addresses</span><span class="p">[</span><span class="s2">&quot;stop&quot;</span><span class="p">]))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_coil</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.set_rotation"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.set_rotation">[docs]</a>  <span class="k">def</span> <span class="nf">set_rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">,</span> <span class="n">rotation</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To set a rotation (in degrees) of the motor axis. Rotation is signed.&quot;&quot;&quot;</span>
+
+    <span class="n">address_coil</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coil_addresses</span><span class="p">[</span><span class="s2">&quot;move_rel&quot;</span><span class="p">]))</span>
+    <span class="n">address_hld</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hldreg_addresses</span><span class="p">[</span><span class="s2">&quot;distance&quot;</span><span class="p">]))</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">float32_to_data</span><span class="p">(</span><span class="n">rotation</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_registers</span><span class="p">(</span><span class="n">address_hld</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_coil</span><span class="p">(</span><span class="n">address_coil</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.set_position"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.set_position">[docs]</a>  <span class="k">def</span> <span class="nf">set_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To set a position (in degrees), absolute value.&quot;&quot;&quot;</span>
+
+    <span class="n">address_coil</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coil_addresses</span><span class="p">[</span><span class="s2">&quot;move_abs&quot;</span><span class="p">]))</span>
+    <span class="n">address_hld</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hldreg_addresses</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]))</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">float32_to_data</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_registers</span><span class="p">(</span><span class="n">address_hld</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">write_coil</span><span class="p">(</span><span class="n">address_coil</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.read_position"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.read_position">[docs]</a>  <span class="k">def</span> <span class="nf">read_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To read position of motor. Returns a :obj:`float`.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">motor</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+      <span class="c1"># If 1 axis is needed</span>
+      <span class="n">address_inpreg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inpreg_addresses</span><span class="p">[</span>
+        <span class="s2">&quot;act_position&quot;</span><span class="p">]))</span>
+      <span class="n">read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_input_registers</span><span class="p">(</span><span class="n">address_inpreg</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="n">converted</span> <span class="o">=</span> <span class="n">data_to_float32</span><span class="p">(</span><span class="n">read</span><span class="o">.</span><span class="n">registers</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">converted</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="c1"># Reads 40 first addresses, and then extracts values from the length 40</span>
+      <span class="c1">#  list. Much more efficient, limits communication time.</span>
+      <span class="n">read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_input_registers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">44</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">motor_adr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">motor_addresses</span><span class="p">:</span>
+        <span class="n">address_inpreg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor_adr</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inpreg_addresses</span><span class="p">[</span>
+         <span class="s2">&quot;act_position&quot;</span><span class="p">]))</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">registers</span><span class="p">[</span><span class="n">address_inpreg</span><span class="p">:</span><span class="n">address_inpreg</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">converted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_to_float32</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">converted</span></div>
+
+<div class="viewcode-block" id="KollMorgenVariator.read_speed"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.KollMorgenVariator.read_speed">[docs]</a>  <span class="k">def</span> <span class="nf">read_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">motor</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Reads speed of each motor.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">motor</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+      <span class="n">address_inpreg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inpreg_addresses</span><span class="p">[</span>
+          <span class="s2">&quot;act_speed&quot;</span><span class="p">]))</span>
+      <span class="n">read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_input_registers</span><span class="p">(</span><span class="n">address_inpreg</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="n">converted</span> <span class="o">=</span> <span class="n">data_to_float32</span><span class="p">(</span><span class="n">read</span><span class="o">.</span><span class="n">registers</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">converted</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="n">read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_input_registers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">44</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">motor_adr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">motor_addresses</span><span class="p">:</span>
+        <span class="n">address_inpreg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">motor_adr</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inpreg_addresses</span><span class="p">[</span>
+          <span class="s2">&quot;act_speed&quot;</span><span class="p">]))</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">registers</span><span class="p">[</span><span class="n">address_inpreg</span><span class="p">:</span><span class="n">address_inpreg</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">converted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_to_float32</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">converted</span></div></div>
+
+
+<div class="viewcode-block" id="Koll"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.kollmorgen.Koll">[docs]</a><span class="k">class</span> <span class="nc">Koll</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Class to communicate to Kollmorgen devices via Crappy.&quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">data</span><span class="o">=</span><span class="s1">&#39;position&#39;</span><span class="p">,</span>
+               <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span>
+               <span class="n">speed</span><span class="o">=</span><span class="mi">360</span><span class="p">,</span>
+               <span class="n">acc</span><span class="o">=</span><span class="mi">3600</span><span class="p">,</span>
+               <span class="n">decc</span><span class="o">=</span><span class="mi">3600</span><span class="p">,</span>
+               <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">host</span><span class="o">=</span><span class="s1">&#39;192.168.0.109&#39;</span><span class="p">,</span>
+               <span class="n">port</span><span class="o">=</span><span class="mi">502</span><span class="p">):</span>
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="n">axis</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">acc</span> <span class="o">=</span> <span class="n">acc</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">decc</span> <span class="o">=</span> <span class="n">decc</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+      <span class="n">default_label</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;t(s)&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">default_label</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;t(s)&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">)]</span>
+
+      <span class="c1"># NB: I have trouble defining default args for labels. It seems that if</span>
+      <span class="c1">#  kwargs doesn&#39;t contain &quot;labels&quot;, I cannot put another default value</span>
+      <span class="c1"># than (&quot;t(s)&quot;, &quot;1&quot;) as defined in InOut parent class...</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">default_label</span> <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">labels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variator</span> <span class="o">=</span> <span class="n">KollMorgenVariator</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;speed&quot;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_speed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">)]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_speed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="s2">&quot;position&quot;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_position</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">)]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">variator</span><span class="o">.</span><span class="n">read_position</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span>
+    <span class="k">return</span> <span class="n">ret</span>
+
+  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to generate a signal with CRAPPY ? &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to use C++ designed hardware drivers with Crappy ?" href="c.html" />
+    <link rel="prev" title="Tutorials" href="../tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to generate a signal with CRAPPY ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#choose-a-signal">Choose a signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constant-signals">1. Constant signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ramp-signals">2. Ramp signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sine-signals">3. Sine signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cyclic-ramp-signals">4. Cyclic ramp signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-signals">5. Custom signals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-a-signal">Generate a signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plot-a-signal">Plot a signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-example">Code Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#another-example">Another example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">How to use C++ designed hardware drivers with Crappy ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+      <li>How to generate a signal with CRAPPY ?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tutorials/generators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-generate-a-signal-with-crappy">
+<h1>How to generate a signal with CRAPPY ?<a class="headerlink" href="#how-to-generate-a-signal-with-crappy" title="Permalink to this headline">¶</a></h1>
+<p>As in every new <a class="reference internal" href="../whatiscrappy.html#what-is-crappy"><span class="std std-ref">CRAPPY</span></a> project, the first thing to do is to import it. So the first line of code will simply be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">crappy</span>
+</pre></div>
+</div>
+<p>Then it’s up to the user to determine what the program should do.
+Here we’ll simply generate a signal, that we’ll be able to send as a command or to plot afterwards.</p>
+<p>So first let’s choose what kind of signal we want.</p>
+<div class="section" id="choose-a-signal">
+<h2>Choose a signal<a class="headerlink" href="#choose-a-signal" title="Permalink to this headline">¶</a></h2>
+<p>There are 8 different types of signal, all described in the <a class="reference internal" href="../crappydocs/blocks.html#generator-path"><span class="std std-ref">generator path</span></a> folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every signal must be a dictionary providing the parameters to generate it.</p>
+</div>
+<dl>
+<dt>Dictionary:</dt><dd><p>A dictionary consists in a collection of key-value pairs. Each key-value pair maps the
+key to its associated value. Here is the syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The order does not matter as each value is only associated with its key.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each dictionary in the signal generator <strong>MUST</strong> have a <code class="docutils literal notranslate"><span class="pre">type</span></code> key.</p>
+<p>Every non cyclic path <strong>MUST</strong> have a <code class="docutils literal notranslate"><span class="pre">condition</span></code> key. (Cyclic paths <strong>MUST</strong> have
+<code class="docutils literal notranslate"><span class="pre">condition1</span></code> and <code class="docutils literal notranslate"><span class="pre">condition2</span></code>.)</p>
+</div>
+<dl class="simple">
+<dt>A condition can be:</dt><dd><ul class="simple">
+<li><p>A delay (str, in seconds): <code class="docutils literal notranslate"><span class="pre">'delay=x'</span></code></p></li>
+<li><p>A condition on a label (str): <code class="docutils literal notranslate"><span class="pre">'label&lt;x'</span></code> or <code class="docutils literal notranslate"><span class="pre">'label&gt;x'</span></code>. The label can be internal
+(t(s) or cmd_label) or be provided using a link.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> for a signal that never ends</p></li>
+<li><p>A personalized condition: a fonction taking the dict of current labels as an argument
+and returning <code class="docutils literal notranslate"><span class="pre">True</span></code> if the path ends.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Here are described the 4 most common types of signal:</p>
+<div class="section" id="constant-signals">
+<h3>1. Constant signals<a class="headerlink" href="#constant-signals" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>The simplest signal, it only has 3 keys:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator_path.constant"><span class="std std-ref">constant</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code>: Whatever constant int or float value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code>: The condition that will indicate the end of the signal. For example a
+position to reach or a time to wait are commonly used conditions.</p></li>
+</ul>
+</dd>
+<dt>Example:</dt><dd><p>To get a constant signal sending the value 5 for 10 seconds, one should write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signal1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;condition&#39;</span><span class="p">:</span> <span class="s1">&#39;delay=10&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="ramp-signals">
+<h3>2. Ramp signals<a class="headerlink" href="#ramp-signals" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>An other quite simple signal that just has 4 keys:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator_path.ramp"><span class="std std-ref">ramp</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code>: same as the <a class="reference internal" href="#constant-signals"><span class="std std-ref">constant signal</span></a> condition, it will indicate the end of the signal when it’s reached.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed</span></code>: the slope of the ramp, in units per second.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmd</span></code>: the starting value of the ramp. <cite>Optional key</cite>. (If not specified, the
+starting value will be the previous value.)</p></li>
+</ul>
+</dd>
+<dt>Example:</dt><dd><p>To get a ramp signal increasing by 2 (mm/s for example) until it reaches 30
+(mm), one should write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signal2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ramp&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;condition&#39;</span><span class="p">:</span> <span class="s1">&#39;x(mm)&gt;30&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Of course <code class="docutils literal notranslate"><span class="pre">x(mm)</span></code> must be a label containing the real-time position of
+whatever we are controlling. It should be provided to the Generator block
+through a link.</p>
+</div>
+</div>
+<div class="section" id="sine-signals">
+<h3>3. Sine signals<a class="headerlink" href="#sine-signals" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>Now a sine signal, that has 6 keys:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator_path.sine"><span class="std std-ref">sine</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">freq</span></code>: the frequency of the signal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amplitude</span></code>: the amplitude of the signal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code>: adds an offset to the signal, the default offset is 0. <cite>Optional key</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phase</span></code>: adds a pahse to the signal, in unit of radians. The default phase is 0. <cite>Optional key</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code>: same as the <a class="reference internal" href="#constant-signals"><span class="std std-ref">constant signal</span></a> condition, it will indicate the end of the signal when it’s reached.</p></li>
+</ul>
+</dd>
+<dt>Example:</dt><dd><p>To get a sine with a frequency of 0.5, an amplitude of 2, an offset of 1 and that
+stops after 25 seconds, one should write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signal3</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;sine&#39;</span><span class="p">,</span> <span class="s1">&#39;freq&#39;</span><span class="p">:</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;amplitude&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s1">&#39;condition&#39;</span><span class="p">:</span> <span class="s1">&#39;delay=25&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Now to get a cosine, with the same parameters as the <code class="docutils literal notranslate"><span class="pre">Signal3</span></code>, then one should
+write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="n">Signal4</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;sine&#39;</span><span class="p">,</span> <span class="s1">&#39;freq&#39;</span><span class="p">:</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span><span class="p">:</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;amplitude&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="s1">&#39;condition&#39;</span><span class="p">:</span> <span class="s1">&#39;delay=25&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ne number pi first has to be imported from the python module <code class="docutils literal notranslate"><span class="pre">math</span></code>.</p>
+</div>
+</div>
+<div class="section" id="cyclic-ramp-signals">
+<h3>4. Cyclic ramp signals<a class="headerlink" href="#cyclic-ramp-signals" title="Permalink to this headline">¶</a></h3>
+<p>This type of signal is simply the combination of two <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator_path.ramp"><span class="std std-ref">ramps</span></a>, with the possibility to repeat them. So we’ve already detailed <a class="reference internal" href="#ramp-signals"><span class="std std-ref">how it works</span></a>!</p>
+<dl>
+<dt>It has 6 keys:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator_path.cyclic_ramp"><span class="std std-ref">cyclic ramp</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition1</span></code>: the condition to reach to stop the first ramp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed1</span></code>: the slope of the first ramp</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition2</span></code>: the condition to reach to stop the second ramp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speed2</span></code>: the slope of the second ramp</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cycles</span></code>: number of repetitions of the two ramps. Can be 1. If 0, it will loop forever.</p></li>
+</ul>
+</dd>
+<dt>Example:</dt><dd><p>To get a signal that goes up at a speed of 0.1 (mm/s) until it reach 5
+(mm), then goes down to 2 (mm) at a speed of 0.1 (mm/s), and is repeated 3 times, one should write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signal5</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;cyclic_ramp&#39;</span><span class="p">,</span> <span class="s1">&#39;condition1&#39;</span><span class="p">:</span> <span class="s1">&#39;x(mm)&gt;5&#39;</span><span class="p">,</span>
+<span class="s1">&#39;speed1&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;condition2&#39;</span><span class="p">:</span> <span class="s1">&#39;x(mm)&lt;2&#39;</span><span class="p">,</span> <span class="s1">&#39;speed2&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;cycles&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Apart from these 4 main types of signals, there’s another one that can prove very useful.</p>
+</div>
+<div class="section" id="custom-signals">
+<h3>5. Custom signals<a class="headerlink" href="#custom-signals" title="Permalink to this headline">¶</a></h3>
+<p>This type allows to import any signal from a .csv file (hence the name <cite>custom</cite>).</p>
+<dl class="simple">
+<dt>It only has 2 key:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator_path.custom"><span class="std std-ref">custom</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: the path of the .csv file.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The file must contain 2 columns: The first one with the time, and the second one with
+the value to send.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It will try to send at the right time every timestamp with the associated value.</p>
+</div>
+<dl>
+<dt>Example:</dt><dd><p>Really needed?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Signal6</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;custom&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;my_custom_signal.csv&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>One the signal has been created, it’s ready to be generated using a <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator"><span class="std std-ref">Generator</span></a> crappy block.</p>
+</div>
+</div>
+<div class="section" id="generate-a-signal">
+<h2>Generate a signal<a class="headerlink" href="#generate-a-signal" title="Permalink to this headline">¶</a></h2>
+<p>Creating a <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator"><span class="std std-ref">Generator</span></a> is as simple as that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OurGenerator</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Generator</span><span class="p">([</span><span class="n">Signalx</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator"><span class="std std-ref">Generator</span></a> class is a block, so it’s located in the
+folder <a class="reference internal" href="../crappydocs/blocks.html#blocks"><span class="std std-ref">blocks</span></a> which is in <a class="reference internal" href="../whatiscrappy.html#what-is-crappy"><span class="std std-ref">crappy</span></a>:
+<code class="docutils literal notranslate"><span class="pre">crappy.blocks.[...]</span></code></p>
+<p>Signalx can be replaced with the name of a signal that’s already been created, or
+directly with the explicit dictionary of the signal to be generated.</p>
+</div>
+<p>And here it is! Actually, that’s not all. A <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator"><span class="std std-ref">Generator</span></a> block in crappy must contain a list of dictionaries (hence the list: <code class="docutils literal notranslate"><span class="pre">[]</span></code>).</p>
+<p>Great, other signals can be added!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OurGenerator</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Generator</span><span class="p">([</span><span class="n">Signal1</span><span class="p">,</span> <span class="n">Signal2</span><span class="p">,</span> <span class="n">Signal3</span><span class="p">,</span> <span class="n">Signal4</span><span class="p">,</span> <span class="n">Signal5</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the end of a signal has been reached, the next one in the list begins immediately.
+Once the end of the list have been reached, the <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator"><span class="std std-ref">Generator</span></a> stops the
+program.</p>
+</div>
+<dl>
+<dt>Several options also allow to precise how the <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator"><span class="std std-ref">Generator</span></a> should work:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cmd_label</span></code> renames the output signal. The default name is ‘cmd’. This feature is mostly useful when the program contains several Generators.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">freq</span></code> imposes the generator output frequency. The Generator will output commands at the given frequency even if that implies missing signal points.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repeat</span></code> if True, the generator loops endlessly on the list and never ends the program.</p></li>
+</ul>
+</dd>
+<dt>Example:</dt><dd><p>To generate Signal1 at 500 points per second and name it ‘s1’, and also
+generate Signal2 and Signal3 without imposing a frequency and name it ‘s2’,
+one should write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OurGenerator1</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Generator</span><span class="p">([{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span>
+<span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;condition&#39;</span><span class="p">:</span> <span class="s1">&#39;delay=10&#39;</span><span class="p">}],</span> <span class="n">cmd_label</span><span class="o">=</span><span class="s1">&#39;s1&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">OurGenerator2</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Generator</span><span class="p">([</span><span class="n">Signal2</span><span class="p">,</span><span class="n">Signal3</span><span class="p">],</span> <span class="n">cmd_label</span><span class="o">=</span><span class="s1">&#39;s2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>As simple as that ! Now let’s try plotting the signals.</p>
+</div>
+<div class="section" id="plot-a-signal">
+<h2>Plot a signal<a class="headerlink" href="#plot-a-signal" title="Permalink to this headline">¶</a></h2>
+<p>To do so, first create a <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.grapher"><span class="std std-ref">Grapher</span></a> crappy block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>crappy.blocks.Grapher((`Here everything that should be plotted on the graph`),
+Here the graph settings`)
+</pre></div>
+</div>
+<dl>
+<dt>Example:</dt><dd><p>To plot Signal1, Signal2 and Signal3 at a frequency of 2 points
+per second on the same graph, and Signal1 only at a frequency of 10 points per
+second on another graph, one should write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Graph1</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Grapher</span><span class="p">((</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;s1&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;s2&#39;</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">Graph2</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Grapher</span><span class="p">((</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;s1&#39;</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Of course it won’t work if all the signals haven’t been generated before.</p>
+</div>
+<p>Finally, the last step is to link the <a class="reference internal" href="#generate-a-signal"><span class="std std-ref">Generator</span></a> block with the <a class="reference internal" href="#plot-a-signal"><span class="std std-ref">Grapher</span></a> block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>crappy.link(`name_of_the_Generator`, `name_of_the_Grapher`)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For each signal to be plotted, the associated <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.generator"><span class="std std-ref">Generator</span></a> should be linked to the <a class="reference internal" href="../crappydocs/blocks.html#module-crappy.blocks.grapher"><span class="std std-ref">Grapher</span></a>.</p>
+</div>
+</div>
+<div class="section" id="code-example">
+<h2>Code Example<a class="headerlink" href="#code-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">crappy</span>
+
+<span class="c1"># First: a constant value (2) for 5 seconds</span>
+<span class="n">path1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;condition&#39;</span><span class="p">:</span><span class="s1">&#39;delay=5&#39;</span><span class="p">}</span>
+<span class="c1"># Second: a sine wave of amplitude 1, freq 1Hz for 5 seconds</span>
+<span class="n">path2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;sine&#39;</span><span class="p">,</span><span class="s1">&#39;amplitude&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;freq&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;condition&#39;</span><span class="p">:</span><span class="s1">&#39;delay=5&#39;</span><span class="p">}</span>
+<span class="c1"># Third: A ramp rising a 1unit/s until the command reaches 10</span>
+<span class="n">path3</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;ramp&#39;</span><span class="p">,</span><span class="s1">&#39;speed&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;condition&#39;</span><span class="p">:</span><span class="s1">&#39;cmd&gt;10&#39;</span><span class="p">}</span>
+<span class="c1"># Fourth: cycles of ramps going down at 1u/s until cmd is &lt;9</span>
+<span class="c1"># then going up at 2u/s for 1s. Repeat 5 times</span>
+<span class="n">path4</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;cyclic_ramp&#39;</span><span class="p">,</span><span class="s1">&#39;speed1&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;condition1&#39;</span><span class="p">:</span><span class="s1">&#39;cmd&lt;9&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;speed2&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;condition2&#39;</span><span class="p">:</span><span class="s1">&#39;delay=1&#39;</span><span class="p">,</span><span class="s1">&#39;cycles&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># The generator: takes the list of all the paths to be generated</span>
+<span class="c1"># cmd_label specifies the name to give to the signal</span>
+<span class="c1"># freq : the target frequency in points/s</span>
+<span class="c1"># spam : Send the value even if it&#39;s identical to the previous one</span>
+<span class="c1">#   (so that the graph updates continuously)</span>
+<span class="c1"># verbose : display some information in the terminal</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Generator</span><span class="p">([</span><span class="n">path1</span><span class="p">,</span><span class="n">path2</span><span class="p">,</span><span class="n">path3</span><span class="p">,</span><span class="n">path4</span><span class="p">],</span>
+    <span class="n">cmd_label</span><span class="o">=</span><span class="s1">&#39;cmd&#39;</span><span class="p">,</span><span class="n">freq</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">spam</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># The graph : we will plot cmd vs time</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Grapher</span><span class="p">((</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span><span class="s1">&#39;cmd&#39;</span><span class="p">))</span>
+
+<span class="c1"># Do not forget to link them or the graph won&#39;t be able to plot anything !</span>
+<span class="n">crappy</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">gen</span><span class="p">,</span><span class="n">graph</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s start the program</span>
+<span class="n">crappy</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="another-example">
+<h2>Another example<a class="headerlink" href="#another-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">crappy</span>
+<span class="c1"># In this example, we would like to reach different levels of strain</span>
+<span class="c1"># and relax the sample (return to F=0) between each strain level</span>
+
+<span class="n">speed</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="mi">60</span> <span class="c1"># mm/sec</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># The list in which we&#39;ll put the paths to be followed</span>
+
+<span class="c1"># We will loop over the values we would like to reach</span>
+<span class="c1"># And add two paths for each loop: one for loading and one for unloading</span>
+<span class="k">for</span> <span class="n">exx</span> <span class="ow">in</span> <span class="p">[</span><span class="o">.</span><span class="mi">25</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+  <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="n">speed</span><span class="p">,</span>
+     <span class="s1">&#39;condition&#39;</span><span class="p">:</span><span class="s1">&#39;Exx(%)&gt;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exx</span><span class="p">)})</span> <span class="c1"># Go up to this level</span>
+  <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;value&#39;</span><span class="p">:</span><span class="o">-</span><span class="n">speed</span><span class="p">,</span>
+    <span class="s1">&#39;condition&#39;</span><span class="p">:</span><span class="s1">&#39;F(N)&lt;0&#39;</span><span class="p">})</span> <span class="c1"># Go down to F=0N</span>
+
+<span class="c1"># Now we can simply give our list of paths as an argument to the generator</span>
+<span class="n">generator</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Generator</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+
+<span class="c1"># This block will simulate a tensile test machine</span>
+<span class="n">machine</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Fake_machine</span><span class="p">()</span>
+<span class="c1"># The generator must be linked to the machine in order to control it</span>
+<span class="n">crappy</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">generator</span><span class="p">,</span><span class="n">machine</span><span class="p">)</span>
+<span class="c1"># And the machine must be linked to the generator because we added</span>
+<span class="c1"># conditions on force and strain, so the generator needs to access these</span>
+<span class="c1"># values coming out of the machine</span>
+<span class="c1"># Remember : links are one way only !</span>
+<span class="n">crappy</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">machine</span><span class="p">,</span><span class="n">generator</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s add two graphs to visualise in real time</span>
+<span class="n">graph_def</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Grapher</span><span class="p">((</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span><span class="s1">&#39;Exx(%)&#39;</span><span class="p">))</span>
+<span class="n">crappy</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">machine</span><span class="p">,</span><span class="n">graph_def</span><span class="p">)</span>
+
+<span class="n">graph_f</span> <span class="o">=</span> <span class="n">crappy</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">Grapher</span><span class="p">((</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span><span class="s1">&#39;F(N)&#39;</span><span class="p">))</span>
+<span class="n">crappy</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">machine</span><span class="p">,</span><span class="n">graph_f</span><span class="p">)</span>
+
+<span class="c1"># And start the test</span>
+<span class="n">crappy</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="c.html" class="btn btn-neutral float-right" title="How to use C++ designed hardware drivers with Crappy ?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

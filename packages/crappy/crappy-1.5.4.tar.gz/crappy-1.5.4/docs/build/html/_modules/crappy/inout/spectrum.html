@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.spectrum &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.spectrum</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.spectrum</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">..tool</span> <span class="kn">import</span> <span class="n">pyspcm</span> <span class="k">as</span> <span class="n">spc</span>  <span class="c1"># Wrapper for the spcm library</span>
+<span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+  <span class="n">spc</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pyspcm&quot;</span><span class="p">,</span> <span class="s2">&quot;Please install the Spectrum library&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SpectrumError"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.spectrum.SpectrumError">[docs]</a><span class="k">class</span> <span class="nc">SpectrumError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+  <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Spectrum"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.spectrum.Spectrum">[docs]</a><span class="k">class</span> <span class="nc">Spectrum</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Acquire data from a Spectrum device.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    - device (str, default: &quot;/dev/spcm0&quot;): The address of the device to use.</span>
+<span class="sd">    - channels (list, default: [0]): The channels to open. See doc for the</span>
+<span class="sd">      allowed combinations!</span>
+<span class="sd">    - ranges (list, default: [10000]): The ranges of the channels in mV.</span>
+<span class="sd">    - samplerate (int, default: 100000): The samplerate for all channels in Hz.</span>
+<span class="sd">    - buff_size (int, default: 2**16 (64MB)): The size of the memory</span>
+<span class="sd">      allocated as a rolling buffer to copy the data from the card</span>
+<span class="sd">    - notify_size (int, default: 2**16 (64kB)): The size of the chunks of</span>
+<span class="sd">      data to copy from the card.</span>
+<span class="sd">    - split_chan (bool, default: False): If False, it will return a single</span>
+<span class="sd">      2D array, else each chan will be a 1D array.</span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">device</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;/dev/spcm0&#39;</span><span class="p">,</span>
+               <span class="n">channels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">ranges</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">samplerate</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
+               <span class="n">buff_size</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">26</span><span class="p">,</span>
+               <span class="n">notify_size</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">16</span><span class="p">,</span>
+               <span class="n">split_chan</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">channels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ranges</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10000</span><span class="p">]</span> <span class="k">if</span> <span class="n">ranges</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">ranges</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span> <span class="o">=</span> <span class="n">samplerate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">buff_size</span> <span class="o">=</span> <span class="n">buff_size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span> <span class="o">=</span> <span class="n">notify_size</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">split_chan</span> <span class="o">=</span> <span class="n">split_chan</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nchan</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Spectrum] Will send </span><span class="si">{}</span><span class="s2"> chunks of </span><span class="si">{}</span><span class="s2"> kB per second (</span><span class="si">{}</span><span class="s2"> kB/s)&quot;</span><span class="o">.</span>
+          <span class="nb">format</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nchan</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span><span class="p">,</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">,</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nchan</span> <span class="o">/</span> <span class="mi">512</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">bs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nchan</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">hOpen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Could not open &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_CHENABLE</span><span class="p">,</span>
+                     <span class="nb">sum</span><span class="p">([</span><span class="mi">2</span> <span class="o">**</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">]))</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_CARDMODE</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_REC_FIFO_SINGLE</span><span class="p">)</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_TIMEOUT</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_TRIG_ORMASK</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_TMASK_SOFTWARE</span><span class="p">)</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_TRIG_ANDMASK</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_CLOCKMODE</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_CM_INTPLL</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">):</span>
+      <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_AMP0</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">chan</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ranges</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_SAMPLERATE</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span><span class="p">)</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_CLOCKOUT</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">real_samplerate</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">dw_get_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_SAMPLERATE</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">real_samplerate</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">buff</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">new_buffer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buff_size</span><span class="p">)</span>  <span class="c1"># Allocating the buffer</span>
+
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_def_transfer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span>  <span class="c1"># Handle</span>
+                        <span class="n">spc</span><span class="o">.</span><span class="n">SPCM_BUF_DATA</span><span class="p">,</span>  <span class="c1"># Buff type</span>
+                        <span class="n">spc</span><span class="o">.</span><span class="n">SPCM_DIR_CARDTOPC</span><span class="p">,</span>  <span class="c1"># Direction</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span><span class="p">,</span>  <span class="c1"># Notify every x byte</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">buff</span><span class="p">,</span>  <span class="c1"># buffer</span>
+                        <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Offset</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">buff_size</span><span class="p">)</span>  <span class="c1"># Buffer size</span>
+
+  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">:</span>
+      <span class="n">spc</span><span class="o">.</span><span class="n">vClose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">start_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_M2CMD</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">M2CMD_CARD_START</span> <span class="o">|</span>
+                     <span class="n">spc</span><span class="o">.</span><span class="n">M2CMD_CARD_ENABLETRIGGER</span> <span class="o">|</span> <span class="n">spc</span><span class="o">.</span><span class="n">M2CMD_DATA_STARTDMA</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">get_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_M2CMD</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">M2CMD_DATA_WAITDMA</span><span class="p">)</span>
+    <span class="c1"># self.status = spc.dw_get_param(self.h, spc.SPC_M2STATUS)</span>
+    <span class="c1"># self.avail = spc.dw_get_param(self.h, spc.SPC_DATA_AVAIL_USER_LEN)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pcpos</span> <span class="o">=</span> <span class="n">spc</span><span class="o">.</span><span class="n">dw_get_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_DATA_AVAIL_USER_POS</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buff</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span>
+                      <span class="n">count</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span>
+                      <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pcpos</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span><span class="o">//</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">nchan</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">nchan</span><span class="p">)</span>
+    <span class="c1"># To return mV as floats (More CPU and memory!)</span>
+    <span class="c1"># =======================</span>
+    <span class="c1"># r = np.empty(a.shape)</span>
+    <span class="c1"># for i in range(len(self.channels)):</span>
+    <span class="c1">#  r[:,i] = a[:,i] * self.ranges[i] / 32000</span>
+    <span class="c1"># =======================</span>
+    <span class="c1"># To return ints</span>
+    <span class="c1"># =======================</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># =======================</span>
+    <span class="k">del</span> <span class="n">a</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_DATA_AVAIL_CARD_LEN</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">notify_size</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bs</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_chan</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">r</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">))]</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span>
+    <span class="c1"># total += notify_size</span>
+
+  <span class="k">def</span> <span class="nf">stop_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">spc</span><span class="o">.</span><span class="n">dw_set_param</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">SPC_M2CMD</span><span class="p">,</span> <span class="n">spc</span><span class="o">.</span><span class="n">M2CMD_CARD_STOP</span> <span class="o">|</span>
+                     <span class="n">spc</span><span class="o">.</span><span class="n">M2CMD_DATA_STOPDMA</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

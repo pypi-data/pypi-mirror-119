@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.arduino &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.arduino</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.arduino</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span> <span class="k">as</span> <span class="n">Queue_threading</span><span class="p">,</span> <span class="n">Empty</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Queue</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">exists</span>
+
+<span class="kn">from</span> <span class="nn">..tool.GUI_Arduino.minitens</span> <span class="kn">import</span> <span class="n">MinitensFrame</span>
+<span class="kn">from</span> <span class="nn">..tool.GUI_Arduino.arduino_basics</span> <span class="kn">import</span> <span class="n">MonitorFrame</span><span class="p">,</span> <span class="n">SubmitSerialFrame</span>
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">CrappyStop</span>
+
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">serial</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">serial</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pyserial&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">tk</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;tkinter&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="collect_serial"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.collect_serial">[docs]</a><span class="k">def</span> <span class="nf">collect_serial</span><span class="p">(</span><span class="n">arduino</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Collect serial information, in a parallel way.&quot;&quot;&quot;</span>
+
+  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">arduino</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="ArduinoHandler"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.ArduinoHandler">[docs]</a><span class="k">class</span> <span class="nc">ArduinoHandler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;This class creates every object (GUIs, Arduino) and handles communication</span>
+<span class="sd">  between them. Inputs/outputs of arduino and GUIs.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    The user doesn&#39;t interact directly with it, the Arduino IOBlock will create</span>
+<span class="sd">    this handler.</span>
+
+<span class="sd">    The ArduinoHandler lives on a separate process from the :class:`Arduino`</span>
+<span class="sd">    class.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Because one cannot pass multiple kwargs when creating</span>
+    <span class="c1">#  a process...</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">baudrate</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;baudrate&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">queue_process</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;queue_process&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fontsize</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;fontsize&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">frames</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;frames&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">arduino_ser</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span>
+                                     <span class="n">baudrate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">baudrate</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">collect_serial_queue</span> <span class="o">=</span> <span class="n">Queue_threading</span><span class="p">()</span>  <span class="c1"># To collect serial</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">submit_serial_queue</span> <span class="o">=</span> <span class="n">Queue_threading</span><span class="p">()</span>  <span class="c1"># To send in serial</span>
+
+    <span class="c1"># A thread that runs independently to collect serial port continuously.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">collect_serial_threaded</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">collect_serial</span><span class="p">,</span>
+                                          <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arduino_ser</span><span class="p">,</span>
+                                                <span class="bp">self</span><span class="o">.</span><span class="n">collect_serial_queue</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">collect_serial_threaded</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">init_main_window</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">collect_serial_threaded</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">bool_loop</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">main_loop</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ArduinoHandler.init_main_window"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.ArduinoHandler.init_main_window">[docs]</a>  <span class="k">def</span> <span class="nf">init_main_window</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Creates every frame specified by user, and creates links between proper</span>
+<span class="sd">    objects.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Arduino on crappy v1.3&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">protocol</span><span class="p">(</span><span class="s2">&quot;WM_DELETE_WINDOW&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;monitor&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">:</span>
+      <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Arduino on port </span><span class="si">%s</span><span class="s2"> baudrate </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">baudrate</span><span class="p">)</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">monitor_frame</span> <span class="o">=</span> <span class="n">MonitorFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span>
+                                        <span class="n">width</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">10</span><span class="p">),</span>
+                                        <span class="n">fontsize</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fontsize</span><span class="p">,</span>
+                                        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">monitor_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="s2">&quot;submit&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">submit_frame</span> <span class="o">=</span> <span class="n">SubmitSerialFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span>
+                                            <span class="n">fontsize</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fontsize</span><span class="p">,</span>
+                                            <span class="n">width</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+                                            <span class="n">queue</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">submit_serial_queue</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">submit_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="s2">&quot;minitens&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">:</span>
+      <span class="c1"># The minitens frame modifies  the dictionary that comes from the</span>
+      <span class="c1"># arduino, and passes it to the crappy link.</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">crappy_queue</span> <span class="o">=</span> <span class="n">Queue_threading</span><span class="p">()</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">minitens_frame</span> <span class="o">=</span> <span class="n">MinitensFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span>
+                                          <span class="n">queue</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">submit_serial_queue</span><span class="p">,</span>
+                                          <span class="n">width</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+                                          <span class="n">fontsize</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fontsize</span><span class="p">,</span>
+                                          <span class="n">crappy_queue</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">crappy_queue</span><span class="p">)</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">menu</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">minitens_frame</span><span class="o">.</span><span class="n">menubar</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">minitens_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ArduinoHandler.update_serial"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.ArduinoHandler.update_serial">[docs]</a>  <span class="k">def</span> <span class="nf">update_serial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Collects serial and writes in it (if applicable).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      Received information, or :obj:`None` if nothing received in `0.01` secs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="c1"># Receiving from arduino</span>
+      <span class="n">serial_received</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">collect_serial_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                      <span class="n">timeout</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">Empty</span><span class="p">:</span>
+      <span class="c1"># In case there is a queue timeout, to update GUI anyway</span>
+      <span class="n">serial_received</span> <span class="o">=</span> <span class="kc">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="c1"># Sending to arduino</span>
+      <span class="n">serial_to_send</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_serial_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">arduino_ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">serial_to_send</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">Empty</span><span class="p">:</span>
+      <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">serial_received</span></div>
+
+<div class="viewcode-block" id="ArduinoHandler.send_guis"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.ArduinoHandler.send_guis">[docs]</a>  <span class="k">def</span> <span class="nf">send_guis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial_received</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Send to every created GUI information received from arduino (if</span>
+<span class="sd">    applicable).&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="s2">&quot;monitor&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">monitor_frame</span><span class="o">.</span><span class="n">update_widgets</span><span class="p">(</span><span class="n">serial_received</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;minitens&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">literal_eval</span><span class="p">(</span><span class="n">serial_received</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minitens_frame</span><span class="o">.</span><span class="n">update_data</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+      <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">SyntaxError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="ArduinoHandler.send_crappy"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.ArduinoHandler.send_crappy">[docs]</a>  <span class="k">def</span> <span class="nf">send_crappy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial_received</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Depending on which GUI is created, multiple cases can occur.</span>
+
+<span class="sd">    If monitor and/or submit GUI is created, the arduino string returned must</span>
+<span class="sd">    be evaluated as a :obj:`dict`.</span>
+
+<span class="sd">    If minitens GUI is created, it returns a :obj:`dict`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">serial_received</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">queue_process</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">serial_received</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">serial_received</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">literal_eval</span><span class="p">(</span><span class="n">serial_received</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">queue_process</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+      <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">SyntaxError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Arduino] </span><span class="si">%s</span><span class="s2">: Skipping data&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ArduinoHandler.main_loop"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.ArduinoHandler.main_loop">[docs]</a>  <span class="k">def</span> <span class="nf">main_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Update GUI, inputs and outputs.&quot;&quot;&quot;</span>
+
+    <span class="k">while</span> <span class="kc">True</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">bool_loop</span><span class="p">:</span>
+      <span class="n">serial_received</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_serial</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">serial_received</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_guis</span><span class="p">(</span><span class="n">serial_received</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="s2">&quot;minitens&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="n">new_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">crappy_queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">send_crappy</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">Empty</span><span class="p">:</span>
+          <span class="k">pass</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send_crappy</span><span class="p">(</span><span class="n">serial_received</span><span class="p">)</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="c1"># Executed if user closes the window. For proper CrappyStopping.</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">queue_process</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;STOP&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ArduinoHandler.close"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.ArduinoHandler.close">[docs]</a>  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exit main loop.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">bool_loop</span> <span class="o">=</span> <span class="kc">False</span></div></div>
+
+
+<div class="viewcode-block" id="Arduino"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.Arduino">[docs]</a><span class="k">class</span> <span class="nc">Arduino</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Main class used to interface Arduino, its GUI and crappy.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    For reusability, make sure the program inside the arduino sends to the</span>
+<span class="sd">    serial port a python dictionary formated string.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Arduino.__init__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.Arduino.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">port</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">baudrate</span><span class="o">=</span><span class="mi">9600</span><span class="p">,</span>
+               <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">frames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+               <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the args and initializes the parent class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      port: Serial port of the arduino.</span>
+<span class="sd">      baudrate: Baudrate defined inside the arduino program.</span>
+<span class="sd">      labels:</span>
+<span class="sd">      frames: Which frames to show. Available frames are :</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;monitor&#39;, &#39;submit&#39;, &#39;minitens&#39;</span>
+
+<span class="sd">      width: Width of the GUI.</span>
+<span class="sd">      fontsize: Size of the font inside the GUI.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">port</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="c1"># Tries to open the 5 first ttyACM&#39;s, that should be enough.</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/dev/ttyACM&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="s1">&#39;/dev/ttyACM&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+          <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">baudrate</span> <span class="o">=</span> <span class="n">baudrate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">frames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;monitor&quot;</span><span class="p">,</span> <span class="s2">&quot;submit&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">frames</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">frames</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">queue_get_data</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Arduino.open"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.Arduino.open">[docs]</a>  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Opens :class:`ArduinoHandler`.&quot;&quot;&quot;</span>
+
+    <span class="n">args_handler</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span>
+                    <span class="s2">&quot;baudrate&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">baudrate</span><span class="p">,</span>
+                    <span class="s2">&quot;queue_process&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue_get_data</span><span class="p">,</span>
+                    <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+                    <span class="s2">&quot;fontsize&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">fontsize</span><span class="p">,</span>
+                    <span class="s2">&quot;frames&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">frames</span><span class="p">,</span>
+                    <span class="s2">&quot;labels&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">}</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">arduino_handler</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">ArduinoHandler</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">args_handler</span><span class="p">,))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">handler_t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">arduino_handler</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Arduino.get_data"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.arduino.Arduino.get_data">[docs]</a>  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Gets data from :class:`ArduinoHandler`, or the minitens GUI.&quot;&quot;&quot;</span>
+
+    <span class="n">retrieved_from_arduino</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue_get_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">retrieved_from_arduino</span> <span class="o">==</span> <span class="s2">&quot;STOP&quot;</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">CrappyStop</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">:</span>
+      <span class="n">ordered</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+      <span class="n">ordered</span><span class="p">[</span><span class="s2">&quot;time(sec)&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
+      <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">:</span>
+        <span class="n">ordered</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">retrieved_from_arduino</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+      <span class="k">return</span> <span class="n">ordered</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">retrieved_from_arduino</span></div>
+
+  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">arduino_handler</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

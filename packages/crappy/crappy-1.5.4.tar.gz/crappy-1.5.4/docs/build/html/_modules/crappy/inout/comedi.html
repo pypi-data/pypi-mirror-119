@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.comedi &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.comedi</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.comedi</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">..tool</span> <span class="kn">import</span> <span class="n">comedi_bind</span> <span class="k">as</span> <span class="n">c</span>
+<span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>  <span class="c1"># Will be raised if unable to locate the .so file</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;comedi_bind&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;&quot;Could not import comedi_lib, make sure </span>
+<span class="s2">  libcomedi.so is installed&quot;&quot;&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Comedi"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.comedi.Comedi">[docs]</a><span class="k">class</span> <span class="nc">Comedi</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Comedi object, for IO with cards using comedi driver.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    The channel-specific args can be given as a list to set it for each channel</span>
+<span class="sd">    or as a single value to apply it to every channel.</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">    - device (str, default: &quot;/dev/comedi0&quot;): The address of the device.</span>
+<span class="sd">    - subdevice (int, default: 0): The id of the subdevice.</span>
+<span class="sd">    - channels (list, default: [0]): The list of the input channels.</span>
+<span class="sd">    - range_num (list/int, default: 0): The range to use on each channel.</span>
+<span class="sd">    - gain (list/float, default: 1): The return value for each chan will be</span>
+<span class="sd">      multiplied by the gain.</span>
+<span class="sd">    - offset (list/float, default: 0): The offset will be added to the return</span>
+<span class="sd">      value for each chan.</span>
+<span class="sd">    - make_zero (list/bool, default: True): If True, the value read at the</span>
+<span class="sd">      beginning will be removed to the offset to take it as a reference.</span>
+<span class="sd">    - channels (list, default: []): The list of the output channels.</span>
+<span class="sd">    - out_range_num (list/int, default: 0): The range to use on each output.</span>
+<span class="sd">    - out_gain (list/float, default: 1): The output value for each chan will be</span>
+<span class="sd">      multiplied by the gain.</span>
+<span class="sd">    - out_offset (list/float, default: 0): The offset will be added to the</span>
+<span class="sd">      output value for each chan.</span>
+<span class="sd">    - out_subdevice (int, default: 1): The id of the output subdevice.</span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;device&#39;</span><span class="p">:</span> <span class="sa">b</span><span class="s1">&#39;/dev/comedi0&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;subdevice&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;channels&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="s1">&#39;range_num&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;gain&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;make_zero&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s1">&#39;out_channels&#39;</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="s1">&#39;out_range_num&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;out_gain&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s1">&#39;out_offset&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;out_subdevice&#39;</span><span class="p">:</span> <span class="mi">1</span>
+                    <span class="p">}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span>
+    <span class="c1"># For consistency with out_*, in_xxx is equivalent to xxx:</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">arg</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;in_&#39;</span><span class="p">):</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="n">arg</span><span class="p">[</span><span class="mi">3</span><span class="p">:]]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">arg</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">arg</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">device_name</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device_name</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+      <span class="c1"># We need to give this to a c function, so convert it to bytes</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">subdevice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;subdevice&#39;</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_subdevice</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;out_subdevice&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;channels&#39;</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;channels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;channels&#39;</span><span class="p">]]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># Turning in channels kwargs into a list of dict with each channel setting</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;channels&#39;</span><span class="p">]):</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="n">chan</span><span class="p">}</span>
+      <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;range_num&#39;</span><span class="p">,</span> <span class="s1">&#39;gain&#39;</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">,</span> <span class="s1">&#39;make_zero&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+          <span class="k">try</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+          <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lists length differ in Comedi constructor!&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+      <span class="c1"># To quickly get the channel settings with its number (for get_data)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">channels_dict</span><span class="p">[</span><span class="n">chan</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="c1"># Same as above, but for out_channels</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;out_channels&#39;</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;out_channels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;out_channels&#39;</span><span class="p">]]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;out_channels&#39;</span><span class="p">]):</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="n">chan</span><span class="p">}</span>
+      <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;out_range_num&#39;</span><span class="p">,</span> <span class="s1">&#39;out_gain&#39;</span><span class="p">,</span> <span class="s1">&#39;out_offset&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+          <span class="k">try</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">:]]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+          <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lists length differ in Comedi constructor!&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">:]]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Comedi.open"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.comedi.Comedi.open">[docs]</a>  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Starts communication with the device, must be called before any</span>
+<span class="sd">    set_cmd or get_data.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      It reads channel properties from the device, those will be used</span>
+<span class="sd">      in data_read/data_write.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device_name</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">chan</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">:</span>
+      <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;maxdata&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_get_maxdata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">subdevice</span><span class="p">,</span>
+                                             <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">])</span>
+      <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_ds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_get_range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">subdevice</span><span class="p">,</span>
+                                            <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">],</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_num&#39;</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">chan</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">:</span>
+      <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;maxdata&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_get_maxdata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_subdevice</span><span class="p">,</span>
+                                             <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">])</span>
+      <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_ds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_get_range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_subdevice</span><span class="p">,</span>
+                                            <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">],</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_num&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;make_zero&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">]):</span>
+      <span class="n">off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval_offset</span><span class="p">()</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;make_zero&#39;</span><span class="p">]:</span>
+          <span class="k">if</span> <span class="n">off</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">off</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>  <span class="c1"># True if off[i] is a nan</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: could not measure offset on channel&quot;</span><span class="p">,</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">])</span>
+          <span class="k">else</span><span class="p">:</span>
+            <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">off</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Comedi.set_cmd"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.comedi.Comedi.set_cmd">[docs]</a>  <span class="k">def</span> <span class="nf">set_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cmd</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    To set the value of the outputs (when specified).</span>
+<span class="sd">    Takes as many argument as opened output channels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">),</span> \
+        <span class="s2">&quot;set_cmd takes </span><span class="si">{}</span><span class="s2"> args, but got </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">chan</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">):</span>
+      <span class="n">val</span> <span class="o">=</span> <span class="n">val</span> <span class="o">*</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span>
+      <span class="n">out_a</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_from_phys</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_ds&#39;</span><span class="p">],</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;maxdata&#39;</span><span class="p">])</span>
+      <span class="n">c</span><span class="o">.</span><span class="n">comedi_data_write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_subdevice</span><span class="p">,</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">],</span>
+                          <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_num&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">.</span><span class="n">AREF_GROUND</span><span class="p">,</span> <span class="n">out_a</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Comedi.get_data"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.comedi.Comedi.get_data">[docs]</a>  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    To read the value on input_channels.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      If channel is specified, it will only read and return these channels.</span>
+
+<span class="sd">      &#39;all&#39; (default) will read all opened channels.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">channel</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+      <span class="n">to_read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">channel</span> <span class="o">=</span> <span class="p">[</span><span class="n">channel</span><span class="p">]</span>
+      <span class="n">to_read</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">channels_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">channel</span><span class="p">]</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span>
+    <span class="k">for</span> <span class="n">chan</span> <span class="ow">in</span> <span class="n">to_read</span><span class="p">:</span>
+      <span class="n">data_read</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_data_read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                                     <span class="bp">self</span><span class="o">.</span><span class="n">subdevice</span><span class="p">,</span>
+                                     <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">],</span>
+                                     <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_num&#39;</span><span class="p">],</span>
+                                     <span class="n">c</span><span class="o">.</span><span class="n">AREF_GROUND</span><span class="p">)</span>
+
+      <span class="n">val</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_to_phys</span><span class="p">(</span><span class="n">data_read</span><span class="p">,</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;range_ds&#39;</span><span class="p">],</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;maxdata&#39;</span><span class="p">])</span>
+      <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span> <span class="o">*</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">chan</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">comedi_close</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ret</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Comedi.close failed&#39;</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

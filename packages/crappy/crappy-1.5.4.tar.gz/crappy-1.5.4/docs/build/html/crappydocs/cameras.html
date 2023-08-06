@@ -1,0 +1,852 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cameras &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modifiers" href="modifiers.html" />
+    <link rel="prev" title="Blocks" href="blocks.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../welcome.html">Welcome to Crappy !</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="block.html">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actuators.html">Actuators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blocks.html">Blocks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cameras</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.bispectral">Bispectral</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.camera">Meta Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.cameralink">Camera link</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.fakeCamera">Fake Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.jai">JAI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.picamera_picamera">PiCamera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.picamera_webcam">PiCamera - Webcam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.seek_thermal_pro">Seek Thermal Pro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.streamer">Streamer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.webcam">Webcam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.xiapi">Xi API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.camera.ximeaCV">Ximea CV</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modifiers.html">Modifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inouts.html">In / Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="links.html">Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../welcome.html">Welcome to Crappy !</a> &raquo;</li>
+        
+      <li>Cameras</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/crappydocs/cameras.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cameras">
+<h1>Cameras<a class="headerlink" href="#cameras" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-crappy.camera.bispectral">
+<span id="bispectral"></span><h2>Bispectral<a class="headerlink" href="#module-crappy.camera.bispectral" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.bispectral.Bispectral">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.bispectral.</span></span><span class="sig-name descname"><span class="pre">Bispectral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/bispectral.html#Bispectral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.bispectral.Bispectral" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.bispectral.Bispectral.get_ambiant_temperature">
+<span class="sig-name descname"><span class="pre">get_ambiant_temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/bispectral.html#Bispectral.get_ambiant_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.bispectral.Bispectral.get_ambiant_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns temperature of the board in °C.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.bispectral.Bispectral.get_sensor_temperature">
+<span class="sig-name descname"><span class="pre">get_sensor_temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/bispectral.html#Bispectral.get_sensor_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.bispectral.Bispectral.get_sensor_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns sensor temperature in Kelvin.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.bispectral.Bispectral.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/bispectral.html#Bispectral.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.bispectral.Bispectral.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens the camera.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.bispectral.Bispectral.set_external_trigger">
+<span class="sig-name descname"><span class="pre">set_external_trigger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/bispectral.html#Bispectral.set_external_trigger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.bispectral.Bispectral.set_external_trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the external trigger to val by toggling the value of the 3rd bit
+of register 102.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crappy.camera.bispectral.calc_string">
+<span class="sig-prename descclassname"><span class="pre">crappy.camera.bispectral.</span></span><span class="sig-name descname"><span class="pre">calc_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">st</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/bispectral.html#calc_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.bispectral.calc_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a binary string and starting CRC, Calc a final CRC-16.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.camera">
+<span id="meta-camera"></span><h2>Meta Camera<a class="headerlink" href="#module-crappy.camera.camera" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.camera.Cam_setting">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.camera.</span></span><span class="sig-name descname"><span class="pre">Cam_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">getter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Cam_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Cam_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents an attribute of the camera that can be set.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.camera.Cam_setting.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">getter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Cam_setting.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Cam_setting.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The name of the setting.</p></li>
+<li><p><strong>default</strong> – The default value, if not specified it will be set to this
+value.</p></li>
+<li><p><strong>getter</strong> – Function to read this value from the device. If set to
+<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, it will assume that the setting always happened correctly.</p></li>
+<li><p><strong>setter</strong> – A function that will be called when setting the parameter to a
+new value. Can do nothing, it will only change its value and nothing
+else.</p></li>
+<li><p><strong>limits</strong> – <p>It contains the available values for this parameter.</p>
+<p>The possible limit types are:</p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>: Values will not be tested and the parameter will not
+appear in CameraConfig.</p></li>
+<li><p>A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></a> of 2 <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>: Values must be
+between first and second value. CameraConfig will add a scale
+widget to set it. If they are integers, all the integers between
+them will be accessible, if they are floats, the range will be
+divided in 1000 in the scale widget.</p>
+<p>Note that if the upper value is callable (a function or method), it
+will be set to the return value of this function. It allows reading
+the max value from the device.</p>
+</li>
+<li><p>A <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>: Possible values will be <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a>,
+CameraConfig will add a checkbox to edit the value (default can be
+<a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a>, it doesn’t matter).</p></li>
+<li><p>A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>: Possible values are the values of the dict,
+CameraConfig will add radio buttons showing the keys, to set it to
+the corresponding value.</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.camera.</span></span><span class="sig-name descname"><span class="pre">Camera</span></span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Camera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a camera sensor.</p>
+<p>It may have settings: They represent all that can be set on the camera:
+height, width, exposure, AEAG, external trigger, etc…</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each parameter is represented by a <a class="reference internal" href="#crappy.camera.camera.Cam_setting" title="crappy.camera.camera.Cam_setting"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cam_setting</span></code></a> object: it includes
+the default value, a function to set and get parameter, etc…</p>
+<p>This class makes it transparent to the user: you can access a setting by
+using <code class="docutils literal notranslate"><span class="pre">myinstance.setting</span> <span class="pre">=</span> <span class="pre">stuff</span></code>.</p>
+<p>It will automatically check the validity and try to set it (see
+<a class="reference internal" href="#crappy.camera.camera.Cam_setting" title="crappy.camera.camera.Cam_setting"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cam_setting</span></code></a>).</p>
+<p>Don’t forget to call the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code> in the children or
+<a class="reference internal" href="#crappy.camera.camera.Camera.__getattr__" title="crappy.camera.camera.Camera.__getattr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code></a> will fall in an infinite recursion loop looking for
+settings…</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.__getattr__">
+<span class="sig-name descname"><span class="pre">__getattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Camera.__getattr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Camera.__getattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>The idea is simple: if the camera has this attribute: return it (default
+behavior) else, try to find the corresponding setting and return its value.</p>
+<p>Note that we made sure to raise an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.9)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a> if it is neither a
+camera attribute nor a setting.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>If Camera definition contains <code class="docutils literal notranslate"><span class="pre">self.add_setting(&quot;width&quot;,1280,set_w)</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">cam</span> <span class="pre">=</span> <span class="pre">Camera()</span></code>, then <code class="docutils literal notranslate"><span class="pre">cam.width</span></code> will return <cite>1280</cite>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Camera.__setattr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Camera.__setattr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as <a class="reference internal" href="#crappy.camera.camera.Camera.__getattr__" title="crappy.camera.camera.Camera.__getattr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code></a>: if it is a setting, then set its value
+using the setter in the <a class="reference internal" href="#crappy.camera.camera.Cam_setting" title="crappy.camera.camera.Cam_setting"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cam_setting</span></code></a>, else use the default
+behavior.</p>
+<p>It is important to make sure we don’t try to set ‘settings’, it would
+recursively call <a class="reference internal" href="#crappy.camera.camera.Camera.__getattr__" title="crappy.camera.camera.Camera.__getattr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code></a> and enter an infinite loop, hence the
+condition.</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">cam.width</span> <span class="pre">=</span> <span class="pre">2048</span></code> will be like <code class="docutils literal notranslate"><span class="pre">cam.settings['width'].value</span> <span class="pre">=</span> <span class="pre">2048</span></code>.
+It allows for simple settings of the camera.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.add_setting">
+<span class="sig-name descname"><span class="pre">add_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name</span></em>, <em class="sig-param"><span class="pre">getter=None</span></em>, <em class="sig-param"><span class="pre">setter=&lt;function</span> <span class="pre">Camera.&lt;lambda&gt;&gt;</span></em>, <em class="sig-param"><span class="pre">limits=None</span></em>, <em class="sig-param"><span class="pre">default=None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Camera.add_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Camera.add_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper to simply add a new setting to the camera.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.available_settings">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">available_settings</span></span><a class="headerlink" href="#crappy.camera.camera.Camera.available_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of available settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.read_image">
+<span class="sig-name descname"><span class="pre">read_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Camera.read_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Camera.read_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is a wrapper for <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_image()</span></code> that will limit fps to
+<cite>max_fps</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.reset_all">
+<span class="sig-name descname"><span class="pre">reset_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Camera.reset_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Camera.reset_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset all the settings to their default values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.set_all">
+<span class="sig-name descname"><span class="pre">set_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#Camera.set_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.Camera.set_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all the settings based on <cite>kwargs</cite>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not specified, the setting will take its default value.</p>
+<p>If override is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, it will not assume a setting and reset it
+unless it is already default.</p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="crappy.camera.camera.Camera.settings_dict">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">settings_dict</span></span><a class="headerlink" href="#crappy.camera.camera.Camera.settings_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns settings as a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>, keys are the names of the settings
+and values are <cite>setting.value</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.camera.MetaCam">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.camera.</span></span><span class="sig-name descname"><span class="pre">MetaCam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/camera.html#MetaCam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.camera.MetaCam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Metaclass that will define all cameras.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Camera classes should be of this type.</p>
+<p>To do so, simply add <code class="docutils literal notranslate"><span class="pre">__metaclass__</span> <span class="pre">=</span> <span class="pre">MetaCam</span></code> in the class definition.
+(Obviously, you must import this Metaclass first.)</p>
+<p><a class="reference internal" href="#crappy.camera.camera.MetaCam" title="crappy.camera.camera.MetaCam"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetaCam</span></code></a> is a MetaClass: We will NEVER do <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">MetaCam(...)</span></code>.</p>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code> is used to init the classes of type MetaCam (with
+<code class="docutils literal notranslate"><span class="pre">__metaclass__</span> <span class="pre">=</span> <span class="pre">MetaCam</span></code> as a class attribute) and NOT an instance of
+MetaClass.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.cameralink">
+<span id="camera-link"></span><h2>Camera link<a class="headerlink" href="#module-crappy.camera.cameralink" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.cameralink.Cl_camera">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.cameralink.</span></span><span class="sig-name descname"><span class="pre">Cl_camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numdevice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/cameralink.html#Cl_camera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.cameralink.Cl_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cameralink camera sensor.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.cameralink.Cl_camera.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numdevice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/cameralink.html#Cl_camera.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.cameralink.Cl_camera.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using the clModule, will open a cameraLink camera.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a config file is specified, it will be used to configure the camera.</p>
+<p>If not set, it will be asked, unless set to <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a> (or 0).</p>
+<p>Else, you must at least provide the camera type (eg: <cite>“FullAreaGray8”</cite>).</p>
+<p>Using a config file is recommended over changing all settings manually.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.cameralink.Cl_camera.configure">
+<span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/cameralink.html#Cl_camera.configure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.cameralink.Cl_camera.configure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the frame grabber to trig the camera internally.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.cameralink.Cl_camera.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/cameralink.html#Cl_camera.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.cameralink.Cl_camera.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens the camera.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.fakeCamera">
+<span id="fake-camera"></span><h2>Fake Camera<a class="headerlink" href="#module-crappy.camera.fakeCamera" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.fakeCamera.Fake_camera">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.fakeCamera.</span></span><span class="sig-name descname"><span class="pre">Fake_camera</span></span><a class="reference internal" href="../_modules/crappy/camera/fakeCamera.html#Fake_camera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.fakeCamera.Fake_camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fake camera sensor object.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.fakeCamera.Fake_camera.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/fakeCamera.html#Fake_camera.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.fakeCamera.Fake_camera.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens the fake camera.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.jai">
+<span id="jai"></span><h2>JAI<a class="headerlink" href="#module-crappy.camera.jai" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.jai.Jai">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.jai.</span></span><span class="sig-name descname"><span class="pre">Jai</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/jai.html#Jai"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.jai.Jai" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class allows the use of 10 and 12 bits mode for the Jai Cameras.
+Obviously, the framerate will be slower than the 8 bits version.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.jai.Jai.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/jai.html#Jai.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.jai.Jai.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens the camera.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.jai.Jai8">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.jai.</span></span><span class="sig-name descname"><span class="pre">Jai8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/jai.html#Jai8"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.jai.Jai8" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class supports Jai GO-5000-PMCL gray cameras.</p>
+<p>This one uses FullAreaGray8 module for maximum framerate.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.jai.Jai8.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/jai.html#Jai8.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.jai.Jai8.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens the camera.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.picamera_picamera">
+<span id="picamera"></span><h2>PiCamera<a class="headerlink" href="#module-crappy.camera.picamera_picamera" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.picamera_picamera.Picamera">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.picamera_picamera.</span></span><span class="sig-name descname"><span class="pre">Picamera</span></span><a class="reference internal" href="../_modules/crappy/camera/picamera_picamera.html#Picamera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_picamera.Picamera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for reading images from a PiCamera.</p>
+<p>The Picamera Camera block is meant for reading images from a Picamera.
+It uses the <code class="xref py py-mod docutils literal notranslate"><span class="pre">picamera</span></code> module for capturing images, and <code class="xref py py-mod docutils literal notranslate"><span class="pre">cv2</span></code> for
+converting bgr images to black and white.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only works on Raspberry Pi !</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.picamera_picamera.Picamera.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/picamera_picamera.html#Picamera.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_picamera.Picamera.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates the available settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.picamera_picamera.Picamera.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/picamera_picamera.html#Picamera.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_picamera.Picamera.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Joins the thread and closes the stream and the <code class="xref py py-class docutils literal notranslate"><span class="pre">picamera.PiCamera</span></code>
+object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.picamera_picamera.Picamera.get_image">
+<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/crappy/camera/picamera_picamera.html#Picamera.get_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_picamera.Picamera.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simply returns the last image in the buffer.</p>
+<p>The captured image is in bgr format, and converted into black and white if
+needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The timeframe and the image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.picamera_picamera.Picamera.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/picamera_picamera.html#Picamera.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_picamera.Picamera.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings to their default values and starts the thread.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.picamera_webcam">
+<span id="picamera-webcam"></span><h2>PiCamera - Webcam<a class="headerlink" href="#module-crappy.camera.picamera_webcam" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.picamera_webcam.Picamera_webcam">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.picamera_webcam.</span></span><span class="sig-name descname"><span class="pre">Picamera_webcam</span></span><a class="reference internal" href="../_modules/crappy/camera/picamera_webcam.html#Picamera_webcam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_webcam.Picamera_webcam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for reading images from a PiCamera.</p>
+<p>The Picamera_webcam Camera block is meant for reading images from a Picamera.
+It relies on <code class="xref py py-mod docutils literal notranslate"><span class="pre">cv2</span></code> and the V4L2 API just like the <a class="reference internal" href="#module-crappy.camera.webcam"><span class="std std-ref">Webcam</span></a> block,
+hence its name. The only differences with the <a class="reference internal" href="#module-crappy.camera.webcam"><span class="std std-ref">Webcam</span></a> block are that
+here the height and width must be multiples of 32, and the resolution limits
+are those of the Picamera.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Actually works with any camera, not only the Picamera.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.picamera_webcam.Picamera_webcam.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/picamera_webcam.html#Picamera_webcam.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_webcam.Picamera_webcam.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Releases the resources and joins the thread.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.picamera_webcam.Picamera_webcam.get_image">
+<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/crappy/camera/picamera_webcam.html#Picamera_webcam.get_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_webcam.Picamera_webcam.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads an image from the PiCamera using V4L2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The timeframe and the image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.picamera_webcam.Picamera_webcam.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/picamera_webcam.html#Picamera_webcam.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.picamera_webcam.Picamera_webcam.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the settings to their default values and starts buffering images.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.seek_thermal_pro">
+<span id="seek-thermal-pro"></span><h2>Seek Thermal Pro<a class="headerlink" href="#module-crappy.camera.seek_thermal_pro" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.seek_thermal_pro.Seek_thermal_pro">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.seek_thermal_pro.</span></span><span class="sig-name descname"><span class="pre">Seek_thermal_pro</span></span><a class="reference internal" href="../_modules/crappy/camera/seek_thermal_pro.html#Seek_thermal_pro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.seek_thermal_pro.Seek_thermal_pro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for reading the Seek Thermal Pro infrared camera.</p>
+<p>The Seek_thermal_pro Camera block is meant for reading images from a Seek
+Thermal Pro infrared camera. It communicates over USB, and gets images by
+converting the received bytearrays into numpy arrays.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Only for Linux users:</strong> In order to drive the Seek Thermal Pro, the
+appropriate udev rule should be set. This can be done using the
+<cite>udev_rule_setter</cite> utility in <code class="docutils literal notranslate"><span class="pre">crappy</span></code>’s <cite>util</cite> folder. It is also
+possible to add it manually by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;SUBSYSTEM==\&quot;usb\&quot;, ATTR{idVendor}==\&quot;289d\&quot;, MODE=\&quot;0777\&quot;&quot; | sudo tee seek_thermal.rules &gt; /dev/null 2&gt;&amp;1
+</pre></div>
+</div>
+<p>in a shell opened in <code class="docutils literal notranslate"><span class="pre">/etc/udev/rules.d</span></code>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.seek_thermal_pro.Seek_thermal_pro.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/seek_thermal_pro.html#Seek_thermal_pro.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.seek_thermal_pro.Seek_thermal_pro.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the right USB device.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.seek_thermal_pro.Seek_thermal_pro.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/seek_thermal_pro.html#Seek_thermal_pro.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.seek_thermal_pro.Seek_thermal_pro.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the camera and releases USB resources.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.seek_thermal_pro.Seek_thermal_pro.get_image">
+<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../_modules/crappy/camera/seek_thermal_pro.html#Seek_thermal_pro.get_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.seek_thermal_pro.Seek_thermal_pro.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a single image from the camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The timeframe and the captured image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.seek_thermal_pro.Seek_thermal_pro.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/camera/seek_thermal_pro.html#Seek_thermal_pro.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.seek_thermal_pro.Seek_thermal_pro.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the USB communication and device.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.streamer">
+<span id="streamer"></span><h2>Streamer<a class="headerlink" href="#module-crappy.camera.streamer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.streamer.Streamer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.streamer.</span></span><span class="sig-name descname"><span class="pre">Streamer</span></span><a class="reference internal" href="../_modules/crappy/camera/streamer.html#Streamer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.streamer.Streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a fake sensor meant to stream images that were already saved.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It needs a way to locate the time of each frame in the name of the picture.
+This is done using regular expressions.</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code> takes no args, the arguments must be given when calling
+<a class="reference internal" href="#crappy.camera.streamer.Streamer.open" title="crappy.camera.streamer.Streamer.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> (like all cameras).</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.streamer.Streamer.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">path</span></em>, <em class="sig-param"><span class="pre">pattern='img_\\d+_(\\d+\\.\\d+)\\.tiff'</span></em>, <em class="sig-param"><span class="pre">start_delay=0</span></em>, <em class="sig-param"><span class="pre">modifier=&lt;function</span> <span class="pre">Streamer.&lt;lambda&gt;&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/streamer.html#Streamer.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.streamer.Streamer.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – The path of the folder containing the images.</p></li>
+<li><p><strong>pattern</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – <p>The regular expression matching the
+images and returning the time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><cite>”d”</cite> matches digits, <cite>“d+”</cite> matches a group of digits. <cite>()</cite> is a
+capturing group, returning what is inside. Dot is a special character
+and needs to be escaped. The default value is compatible with the
+naming method of the <a class="reference internal" href="blocks.html#module-crappy.blocks.camera"><span class="std std-ref">Camera</span></a> and <a class="reference internal" href="blocks.html#module-crappy.blocks.videoExtenso"><span class="std std-ref">VideoExtenso</span></a> blocks.</p>
+</div>
+</p></li>
+<li><p><strong>start_delay</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – <p>Before actually streaming the image
+flux you can set a delay in seconds during which the first image will
+be streamed in a loop.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This can be useful to give time for spot selection when using
+videoextenso.</p>
+</div>
+</p></li>
+<li><p><strong>modifier</strong> – To apply a function to the image before sending it.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.webcam">
+<span id="webcam"></span><h2>Webcam<a class="headerlink" href="#module-crappy.camera.webcam" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.webcam.Webcam">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.webcam.</span></span><span class="sig-name descname"><span class="pre">Webcam</span></span><a class="reference internal" href="../_modules/crappy/camera/webcam.html#Webcam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.webcam.Webcam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Camera class for webcams, read using opencv.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.xiapi">
+<span id="xi-api"></span><h2>Xi API<a class="headerlink" href="#module-crappy.camera.xiapi" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.xiapi.Xiapi">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.xiapi.</span></span><span class="sig-name descname"><span class="pre">Xiapi</span></span><a class="reference internal" href="../_modules/crappy/camera/xiapi.html#Xiapi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.xiapi.Xiapi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Camera class for ximeas using official XiAPI.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.xiapi.Xiapi.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/xiapi.html#Xiapi.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.xiapi.Xiapi.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method closes properly the camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void return function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.xiapi.Xiapi.get_image">
+<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/xiapi.html#Xiapi.get_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.xiapi.Xiapi.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method get a frame on the selected camera and return a ndarray.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>frame from ximea device (<cite>ndarray height*width</cite>).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.xiapi.Xiapi.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/xiapi.html#Xiapi.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.xiapi.Xiapi.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will actually open the camera, args will be set to default unless
+specified otherwise in kwargs.</p>
+<p>If <cite>sn</cite> is given, it will open the camera with the corresponding serial
+number.</p>
+<p>Else, it will open any camera.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.xiapi.Xiapi.reopen">
+<span class="sig-name descname"><span class="pre">reopen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/xiapi.html#Xiapi.reopen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.xiapi.Xiapi.reopen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will reopen the camera, args will be set to default unless specified
+otherwise in kwargs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.camera.ximeaCV">
+<span id="ximea-cv"></span><h2>Ximea CV<a class="headerlink" href="#module-crappy.camera.ximeaCV" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.camera.ximeaCV.Ximea_cv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.camera.ximeaCV.</span></span><span class="sig-name descname"><span class="pre">Ximea_cv</span></span><a class="reference internal" href="../_modules/crappy/camera/ximeaCV.html#Ximea_cv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.ximeaCV.Ximea_cv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Camera class for ximeas using openCV.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It requires <code class="xref py py-mod docutils literal notranslate"><span class="pre">cv2</span></code> 3.0 or higher, compiled with WITH_XIMEA flag.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.ximeaCV.Ximea_cv.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/ximeaCV.html#Ximea_cv.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.ximeaCV.Ximea_cv.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to prints out main parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A formatted string with the value of the main parameter.</p>
+</dd>
+</dl>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">camera</span> <span class="o">=</span> <span class="n">Ximea_cv</span><span class="p">(</span><span class="n">numdevice</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">camera</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">exposure</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2048</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">camera</span>
+</pre></div>
+</div>
+<p>these lines will print out:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Exposure</span><span class="p">:</span> <span class="mi">10000</span>
+<span class="n">Numdevice</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Width</span><span class="p">:</span> <span class="mi">2048</span>
+<span class="n">Height</span><span class="p">:</span> <span class="mi">2048</span>
+<span class="n">X</span> <span class="n">offset</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Y</span> <span class="n">offset</span><span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.ximeaCV.Ximea_cv.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/ximeaCV.html#Ximea_cv.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.ximeaCV.Ximea_cv.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method close properly the frame grabber.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void return function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.ximeaCV.Ximea_cv.get_image">
+<span class="sig-name descname"><span class="pre">get_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/ximeaCV.html#Ximea_cv.get_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.ximeaCV.Ximea_cv.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method get a frame on the selected camera and return a ndarray.</p>
+<p>If the camera breaks down, it reinitializes it, and tries again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>frame from ximea device (<cite>ndarray height*width</cite>).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.ximeaCV.Ximea_cv.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numdevice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/ximeaCV.html#Ximea_cv.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.ximeaCV.Ximea_cv.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will actually open the camera, args will be set to default unless
+specified otherwise in kwargs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.camera.ximeaCV.Ximea_cv.reopen">
+<span class="sig-name descname"><span class="pre">reopen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/camera/ximeaCV.html#Ximea_cv.reopen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.camera.ximeaCV.Ximea_cv.reopen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will reopen the camera, args will be set to default unless specified
+otherwise in kwargs.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modifiers.html" class="btn btn-neutral float-right" title="Modifiers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="blocks.html" class="btn btn-neutral float-left" title="Blocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.actuator.pololu_tic &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.actuator.pololu_tic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.actuator.pololu_tic</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">check_output</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span><span class="p">,</span> <span class="n">RLock</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">.actuator</span> <span class="kn">import</span> <span class="n">Actuator</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">yaml</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">yaml</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pyyaml&quot;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="nb">getattr</span><span class="p">(</span><span class="n">yaml</span><span class="p">,</span> <span class="s1">&#39;FullLoader&#39;</span><span class="p">)</span>
+  <span class="n">full_loader</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+  <span class="n">full_loader</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">usb</span> <span class="kn">import</span> <span class="n">core</span>
+  <span class="kn">from</span> <span class="nn">usb</span> <span class="kn">import</span> <span class="n">util</span>
+
+  <span class="n">Tic_usb_request</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Cmd&#39;</span><span class="p">:</span> <span class="n">util</span><span class="o">.</span><span class="n">CTRL_OUT</span> <span class="o">|</span>
+                     <span class="n">util</span><span class="o">.</span><span class="n">CTRL_TYPE_VENDOR</span> <span class="o">|</span>
+                     <span class="n">util</span><span class="o">.</span><span class="n">CTRL_RECIPIENT_DEVICE</span><span class="p">,</span>
+                     <span class="s1">&#39;Var&#39;</span><span class="p">:</span> <span class="n">util</span><span class="o">.</span><span class="n">CTRL_IN</span> <span class="o">|</span>
+                     <span class="n">util</span><span class="o">.</span><span class="n">CTRL_TYPE_VENDOR</span> <span class="o">|</span>
+                     <span class="n">util</span><span class="o">.</span><span class="n">CTRL_RECIPIENT_DEVICE</span><span class="p">}</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">usb</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;pyusb&quot;</span><span class="p">)</span>
+  <span class="n">Tic_usb_request</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Cmd&#39;</span><span class="p">:</span> <span class="mh">0x40</span><span class="p">,</span>
+                     <span class="s1">&#39;Var&#39;</span><span class="p">:</span> <span class="mh">0xC0</span><span class="p">}</span>
+
+<span class="n">Tic_vendor_id</span> <span class="o">=</span> <span class="mh">0x1FFB</span>
+
+<span class="n">Tic_product_id</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;T825&#39;</span><span class="p">:</span> <span class="mh">0x00B3</span><span class="p">,</span>
+                  <span class="s1">&#39;T834&#39;</span><span class="p">:</span> <span class="mh">0x00B5</span><span class="p">,</span>
+                  <span class="s1">&#39;T500&#39;</span><span class="p">:</span> <span class="mh">0x00BD</span><span class="p">,</span>
+                  <span class="s1">&#39;N825&#39;</span><span class="p">:</span> <span class="mh">0x00C3</span><span class="p">,</span>
+                  <span class="s1">&#39;T249&#39;</span><span class="p">:</span> <span class="mh">0x00C9</span><span class="p">,</span>
+                  <span class="s1">&#39;36v4&#39;</span><span class="p">:</span> <span class="mh">0x00CB</span><span class="p">}</span>
+
+<span class="n">Tic_max_allowed_current</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;T825&#39;</span><span class="p">:</span> <span class="mi">3968</span><span class="p">,</span>
+                           <span class="s1">&#39;T834&#39;</span><span class="p">:</span> <span class="mi">3456</span><span class="p">,</span>
+                           <span class="s1">&#39;T500&#39;</span><span class="p">:</span> <span class="mi">3093</span><span class="p">,</span>
+                           <span class="s1">&#39;T249&#39;</span><span class="p">:</span> <span class="mi">4480</span><span class="p">,</span>
+                           <span class="s1">&#39;36v4&#39;</span><span class="p">:</span> <span class="mi">3939</span><span class="p">}</span>
+
+<span class="n">Tic_36v4_max_current</span> <span class="o">=</span> <span class="mi">9095</span>
+
+<span class="n">Tic_current_steps</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;T834&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+                     <span class="s1">&#39;T825&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+                     <span class="s1">&#39;T249&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+                     <span class="s1">&#39;36v4&#39;</span><span class="p">:</span> <span class="mf">71.615</span><span class="p">}</span>
+
+<span class="n">Tic_step_modes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;T825&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)],</span>
+                  <span class="s1">&#39;T834&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)],</span>
+                  <span class="s1">&#39;T500&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)],</span>
+                  <span class="s1">&#39;T249&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;2_100p&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;36v4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]}</span>
+
+<span class="n">Tic_step_mode</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                 <span class="mi">4</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                 <span class="mi">8</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                 <span class="mi">16</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                 <span class="mi">32</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                 <span class="s1">&#39;2_100p&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                 <span class="mi">64</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                 <span class="mi">128</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                 <span class="mi">256</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+
+<span class="n">Tic_cmd</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Set_target_position&#39;</span><span class="p">:</span> <span class="mh">0xE0</span><span class="p">,</span>
+           <span class="s1">&#39;Set_target_velocity&#39;</span><span class="p">:</span> <span class="mh">0xE3</span><span class="p">,</span>
+           <span class="s1">&#39;Halt_and_set_position&#39;</span><span class="p">:</span> <span class="mh">0xEC</span><span class="p">,</span>
+           <span class="s1">&#39;Halt_and_hold&#39;</span><span class="p">:</span> <span class="mh">0x89</span><span class="p">,</span>
+           <span class="s1">&#39;Go_home&#39;</span><span class="p">:</span> <span class="mh">0x97</span><span class="p">,</span>
+           <span class="s1">&#39;Reset_command_timeout&#39;</span><span class="p">:</span> <span class="mh">0x8C</span><span class="p">,</span>
+           <span class="s1">&#39;Deenergize&#39;</span><span class="p">:</span> <span class="mh">0x86</span><span class="p">,</span>
+           <span class="s1">&#39;Energize&#39;</span><span class="p">:</span> <span class="mh">0x85</span><span class="p">,</span>
+           <span class="s1">&#39;Exit_safe_start&#39;</span><span class="p">:</span> <span class="mh">0x83</span><span class="p">,</span>
+           <span class="s1">&#39;Enter_safe_start&#39;</span><span class="p">:</span> <span class="mh">0x8F</span><span class="p">,</span>
+           <span class="s1">&#39;Reset&#39;</span><span class="p">:</span> <span class="mh">0xB0</span><span class="p">,</span>
+           <span class="s1">&#39;Clear_driver_error&#39;</span><span class="p">:</span> <span class="mh">0x8A</span><span class="p">,</span>
+           <span class="s1">&#39;Set_max_speed&#39;</span><span class="p">:</span> <span class="mh">0xE6</span><span class="p">,</span>
+           <span class="s1">&#39;Set_starting_speed&#39;</span><span class="p">:</span> <span class="mh">0xE5</span><span class="p">,</span>
+           <span class="s1">&#39;Set_max_accel&#39;</span><span class="p">:</span> <span class="mh">0xEA</span><span class="p">,</span>
+           <span class="s1">&#39;Set_max_decel&#39;</span><span class="p">:</span> <span class="mh">0xE9</span><span class="p">,</span>
+           <span class="s1">&#39;Set_step_mode&#39;</span><span class="p">:</span> <span class="mh">0x94</span><span class="p">,</span>
+           <span class="s1">&#39;Set_current_limit&#39;</span><span class="p">:</span> <span class="mh">0x91</span><span class="p">,</span>
+           <span class="s1">&#39;Set_decay_mode&#39;</span><span class="p">:</span> <span class="mh">0x92</span><span class="p">,</span>
+           <span class="s1">&#39;Set_AGC_option&#39;</span><span class="p">:</span> <span class="mh">0x98</span><span class="p">,</span>
+           <span class="s1">&#39;Get_variable&#39;</span><span class="p">:</span> <span class="mh">0xA1</span><span class="p">,</span>
+           <span class="s1">&#39;Get_variable_and_clear_errors_occurred&#39;</span><span class="p">:</span> <span class="mh">0xA2</span><span class="p">,</span>
+           <span class="s1">&#39;Get_setting&#39;</span><span class="p">:</span> <span class="mh">0xA8</span><span class="p">,</span>
+           <span class="s1">&#39;Set_setting&#39;</span><span class="p">:</span> <span class="mh">0x13</span><span class="p">,</span>
+           <span class="s1">&#39;Reinitialize&#39;</span><span class="p">:</span> <span class="mh">0x10</span><span class="p">,</span>
+           <span class="s1">&#39;Start_bootloader&#39;</span><span class="p">:</span> <span class="mh">0xFF</span><span class="p">,</span>
+           <span class="s1">&#39;Get_debug_data&#39;</span><span class="p">:</span> <span class="mh">0x20</span><span class="p">}</span>
+
+<span class="c1"># offsets/indexes</span>
+<span class="n">Tic_var</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Operation_state&#39;</span><span class="p">:</span> <span class="mh">0x00</span><span class="p">,</span>
+           <span class="s1">&#39;Misc_flags1&#39;</span><span class="p">:</span> <span class="mh">0x01</span><span class="p">,</span>
+           <span class="s1">&#39;Error_status&#39;</span><span class="p">:</span> <span class="mh">0x02</span><span class="p">,</span>
+           <span class="s1">&#39;Errors_occurred&#39;</span><span class="p">:</span> <span class="mh">0x04</span><span class="p">,</span>
+           <span class="s1">&#39;Planning_mode&#39;</span><span class="p">:</span> <span class="mh">0x09</span><span class="p">,</span>
+           <span class="s1">&#39;Target_position&#39;</span><span class="p">:</span> <span class="mh">0x0A</span><span class="p">,</span>
+           <span class="s1">&#39;Target_velocity&#39;</span><span class="p">:</span> <span class="mh">0x0E</span><span class="p">,</span>
+           <span class="s1">&#39;Starting_speed&#39;</span><span class="p">:</span> <span class="mh">0x12</span><span class="p">,</span>
+           <span class="s1">&#39;Max_speed&#39;</span><span class="p">:</span> <span class="mh">0x16</span><span class="p">,</span>
+           <span class="s1">&#39;Max_decel&#39;</span><span class="p">:</span> <span class="mh">0x1A</span><span class="p">,</span>
+           <span class="s1">&#39;Max_accel&#39;</span><span class="p">:</span> <span class="mh">0x1E</span><span class="p">,</span>
+           <span class="s1">&#39;Current_position&#39;</span><span class="p">:</span> <span class="mh">0x22</span><span class="p">,</span>
+           <span class="s1">&#39;Current_velocity&#39;</span><span class="p">:</span> <span class="mh">0x26</span><span class="p">,</span>
+           <span class="s1">&#39;Acting_target_position&#39;</span><span class="p">:</span> <span class="mh">0x2A</span><span class="p">,</span>
+           <span class="s1">&#39;Time_since_last_step&#39;</span><span class="p">:</span> <span class="mh">0x2E</span><span class="p">,</span>
+           <span class="s1">&#39;Device_reset&#39;</span><span class="p">:</span> <span class="mh">0x32</span><span class="p">,</span>
+           <span class="s1">&#39;Vin_voltage&#39;</span><span class="p">:</span> <span class="mh">0x33</span><span class="p">,</span>
+           <span class="s1">&#39;Up_time&#39;</span><span class="p">:</span> <span class="mh">0x35</span><span class="p">,</span>
+           <span class="s1">&#39;Encoder_position&#39;</span><span class="p">:</span> <span class="mh">0x39</span><span class="p">,</span>
+           <span class="s1">&#39;RC_pulse_width&#39;</span><span class="p">:</span> <span class="mh">0x3D</span><span class="p">,</span>
+           <span class="s1">&#39;Analog_reading_SCL&#39;</span><span class="p">:</span> <span class="mh">0x3F</span><span class="p">,</span>
+           <span class="s1">&#39;Analog_reading_SDA&#39;</span><span class="p">:</span> <span class="mh">0x41</span><span class="p">,</span>
+           <span class="s1">&#39;Analog_reading_TX&#39;</span><span class="p">:</span> <span class="mh">0x43</span><span class="p">,</span>
+           <span class="s1">&#39;Analog_reading_RX&#39;</span><span class="p">:</span> <span class="mh">0x45</span><span class="p">,</span>
+           <span class="s1">&#39;Digital_readings&#39;</span><span class="p">:</span> <span class="mh">0x47</span><span class="p">,</span>
+           <span class="s1">&#39;Pin_states&#39;</span><span class="p">:</span> <span class="mh">0x48</span><span class="p">,</span>
+           <span class="s1">&#39;Step_mode&#39;</span><span class="p">:</span> <span class="mh">0x49</span><span class="p">,</span>
+           <span class="s1">&#39;Current_limit&#39;</span><span class="p">:</span> <span class="mh">0x4A</span><span class="p">,</span>
+           <span class="s1">&#39;Decay_mode&#39;</span><span class="p">:</span> <span class="mh">0x4B</span><span class="p">,</span>
+           <span class="s1">&#39;Input_state&#39;</span><span class="p">:</span> <span class="mh">0x4C</span><span class="p">,</span>
+           <span class="s1">&#39;Input_after_averaging&#39;</span><span class="p">:</span> <span class="mh">0x4D</span><span class="p">,</span>
+           <span class="s1">&#39;Input_after_hysteresis&#39;</span><span class="p">:</span> <span class="mh">0x4F</span><span class="p">,</span>
+           <span class="s1">&#39;Input_after_scaling&#39;</span><span class="p">:</span> <span class="mh">0x51</span><span class="p">}</span>
+
+<span class="c1"># indexes</span>
+<span class="n">Tic_settings</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Setting_not_initialized&#39;</span><span class="p">:</span> <span class="mh">0x00</span><span class="p">,</span>
+                <span class="s1">&#39;Control_mode&#39;</span><span class="p">:</span> <span class="mh">0x01</span><span class="p">,</span>
+                <span class="s1">&#39;Never_sleep&#39;</span><span class="p">:</span> <span class="mh">0x02</span><span class="p">,</span>
+                <span class="s1">&#39;Disable_safe_start&#39;</span><span class="p">:</span> <span class="mh">0x03</span><span class="p">,</span>
+                <span class="s1">&#39;Ignore_err_line_high&#39;</span><span class="p">:</span> <span class="mh">0x04</span><span class="p">,</span>
+                <span class="s1">&#39;Serial_baud_rate_generator&#39;</span><span class="p">:</span> <span class="mh">0x05</span><span class="p">,</span>
+                <span class="s1">&#39;Serial_device_number&#39;</span><span class="p">:</span> <span class="mh">0x07</span><span class="p">,</span>
+                <span class="s1">&#39;Auto_clear_driver_error&#39;</span><span class="p">:</span> <span class="mh">0x08</span><span class="p">,</span>
+                <span class="s1">&#39;Command_timeout_low&#39;</span><span class="p">:</span> <span class="mh">0x09</span><span class="p">,</span>
+                <span class="s1">&#39;Command_timeout_high&#39;</span><span class="p">:</span> <span class="mh">0x0A</span><span class="p">,</span>
+                <span class="s1">&#39;Serial_CRC_enabled&#39;</span><span class="p">:</span> <span class="mh">0x0B</span><span class="p">,</span>
+                <span class="s1">&#39;Low_vin_timeout&#39;</span><span class="p">:</span> <span class="mh">0x0C</span><span class="p">,</span>
+                <span class="s1">&#39;Low_vin_shutoff_voltage&#39;</span><span class="p">:</span> <span class="mh">0x0E</span><span class="p">,</span>
+                <span class="s1">&#39;Low_vin_startup_voltage&#39;</span><span class="p">:</span> <span class="mh">0x10</span><span class="p">,</span>
+                <span class="s1">&#39;High_vin_shutoff_voltage&#39;</span><span class="p">:</span> <span class="mh">0x12</span><span class="p">,</span>
+                <span class="s1">&#39;Vin_calibration&#39;</span><span class="p">:</span> <span class="mh">0x14</span><span class="p">,</span>
+                <span class="s1">&#39;RC_max_pulse_period&#39;</span><span class="p">:</span> <span class="mh">0x16</span><span class="p">,</span>
+                <span class="s1">&#39;RC_bad_signal_timeout&#39;</span><span class="p">:</span> <span class="mh">0x18</span><span class="p">,</span>
+                <span class="s1">&#39;RC_consecutive_good_pulses&#39;</span><span class="p">:</span> <span class="mh">0x1A</span><span class="p">,</span>
+                <span class="s1">&#39;Invert_motor_direction&#39;</span><span class="p">:</span> <span class="mh">0x1B</span><span class="p">,</span>
+                <span class="s1">&#39;Input_error_min&#39;</span><span class="p">:</span> <span class="mh">0x1C</span><span class="p">,</span>
+                <span class="s1">&#39;Input_error_max&#39;</span><span class="p">:</span> <span class="mh">0x1E</span><span class="p">,</span>
+                <span class="s1">&#39;Input_scaling_degree&#39;</span><span class="p">:</span> <span class="mh">0x20</span><span class="p">,</span>
+                <span class="s1">&#39;Input_invert&#39;</span><span class="p">:</span> <span class="mh">0x21</span><span class="p">,</span>
+                <span class="s1">&#39;Input_min&#39;</span><span class="p">:</span> <span class="mh">0x22</span><span class="p">,</span>
+                <span class="s1">&#39;Input_neutral_min&#39;</span><span class="p">:</span> <span class="mh">0x24</span><span class="p">,</span>
+                <span class="s1">&#39;Input_neutral_max&#39;</span><span class="p">:</span> <span class="mh">0x26</span><span class="p">,</span>
+                <span class="s1">&#39;Input_max&#39;</span><span class="p">:</span> <span class="mh">0x28</span><span class="p">,</span>
+                <span class="s1">&#39;Output_min&#39;</span><span class="p">:</span> <span class="mh">0x2A</span><span class="p">,</span>
+                <span class="s1">&#39;Input_averaging_enabled&#39;</span><span class="p">:</span> <span class="mh">0x2E</span><span class="p">,</span>
+                <span class="s1">&#39;Input_hysteresis&#39;</span><span class="p">:</span> <span class="mh">0x2F</span><span class="p">,</span>
+                <span class="s1">&#39;Current_limit_during_error&#39;</span><span class="p">:</span> <span class="mh">0x31</span><span class="p">,</span>
+                <span class="s1">&#39;Output_max&#39;</span><span class="p">:</span> <span class="mh">0x32</span><span class="p">,</span>
+                <span class="s1">&#39;Switch_polarity_map&#39;</span><span class="p">:</span> <span class="mh">0x36</span><span class="p">,</span>
+                <span class="s1">&#39;Encoder_postscaler&#39;</span><span class="p">:</span> <span class="mh">0x37</span><span class="p">,</span>
+                <span class="s1">&#39;SCL_config&#39;</span><span class="p">:</span> <span class="mh">0x3B</span><span class="p">,</span>
+                <span class="s1">&#39;SDA_config&#39;</span><span class="p">:</span> <span class="mh">0x3C</span><span class="p">,</span>
+                <span class="s1">&#39;TX_config&#39;</span><span class="p">:</span> <span class="mh">0x3D</span><span class="p">,</span>
+                <span class="s1">&#39;RX_config&#39;</span><span class="p">:</span> <span class="mh">0x3E</span><span class="p">,</span>
+                <span class="s1">&#39;RC_config&#39;</span><span class="p">:</span> <span class="mh">0x3F</span><span class="p">,</span>
+                <span class="s1">&#39;Current_limit&#39;</span><span class="p">:</span> <span class="mh">0x40</span><span class="p">,</span>
+                <span class="s1">&#39;Step_mode&#39;</span><span class="p">:</span> <span class="mh">0x41</span><span class="p">,</span>
+                <span class="s1">&#39;Decay_mode&#39;</span><span class="p">:</span> <span class="mh">0x42</span><span class="p">,</span>
+                <span class="s1">&#39;Starting_speed&#39;</span><span class="p">:</span> <span class="mh">0x43</span><span class="p">,</span>
+                <span class="s1">&#39;Max_speed&#39;</span><span class="p">:</span> <span class="mh">0x47</span><span class="p">,</span>
+                <span class="s1">&#39;Max_decel&#39;</span><span class="p">:</span> <span class="mh">0x4B</span><span class="p">,</span>
+                <span class="s1">&#39;Max_accel&#39;</span><span class="p">:</span> <span class="mh">0x4F</span><span class="p">,</span>
+                <span class="s1">&#39;Soft_error_response&#39;</span><span class="p">:</span> <span class="mh">0x53</span><span class="p">,</span>
+                <span class="s1">&#39;Soft_error_position&#39;</span><span class="p">:</span> <span class="mh">0x54</span><span class="p">,</span>
+                <span class="s1">&#39;Encoder_prescaler&#39;</span><span class="p">:</span> <span class="mh">0x58</span><span class="p">,</span>
+                <span class="s1">&#39;Encoder_unlimited&#39;</span><span class="p">:</span> <span class="mh">0x5C</span><span class="p">,</span>
+                <span class="s1">&#39;Kill_switch_map&#39;</span><span class="p">:</span> <span class="mh">0x5D</span><span class="p">,</span>
+                <span class="s1">&#39;Serial_response_delay&#39;</span><span class="p">:</span> <span class="mh">0x5E</span><span class="p">,</span>
+                <span class="s1">&#39;Limit_switch_forward_map&#39;</span><span class="p">:</span> <span class="mh">0x5F</span><span class="p">,</span>
+                <span class="s1">&#39;Limit_switch_reverse_map&#39;</span><span class="p">:</span> <span class="mh">0x60</span><span class="p">,</span>
+                <span class="s1">&#39;Homing_speed_towards&#39;</span><span class="p">:</span> <span class="mh">0x61</span><span class="p">,</span>
+                <span class="s1">&#39;Homing_speed_away&#39;</span><span class="p">:</span> <span class="mh">0x65</span><span class="p">,</span>
+                <span class="s1">&#39;Serial_device_number_high&#39;</span><span class="p">:</span> <span class="mh">0x69</span><span class="p">,</span>
+                <span class="s1">&#39;Serial_alt_device_number&#39;</span><span class="p">:</span> <span class="mh">0x6A</span><span class="p">,</span>
+                <span class="s1">&#39;Size&#39;</span><span class="p">:</span> <span class="mh">0x5F</span><span class="p">,</span>
+                <span class="s1">&#39;Unrestricted_current_limit&#39;</span><span class="p">:</span> <span class="mh">0x6C</span><span class="p">}</span>
+
+<span class="n">Tic_current_tables</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;T500&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">495</span><span class="p">,</span> <span class="mi">634</span><span class="p">,</span> <span class="mi">762</span><span class="p">,</span> <span class="mi">880</span><span class="p">,</span> <span class="mi">990</span><span class="p">,</span> <span class="mi">1092</span><span class="p">,</span>
+                               <span class="mi">1189</span><span class="p">,</span> <span class="mi">1281</span><span class="p">,</span> <span class="mi">1368</span><span class="p">,</span> <span class="mi">1452</span><span class="p">,</span> <span class="mi">1532</span><span class="p">,</span> <span class="mi">1611</span><span class="p">,</span> <span class="mi">1687</span><span class="p">,</span> <span class="mi">1762</span><span class="p">,</span>
+                               <span class="mi">1835</span><span class="p">,</span> <span class="mi">1909</span><span class="p">,</span> <span class="mi">1982</span><span class="p">,</span> <span class="mi">2056</span><span class="p">,</span> <span class="mi">2131</span><span class="p">,</span> <span class="mi">2207</span><span class="p">,</span> <span class="mi">2285</span><span class="p">,</span> <span class="mi">2366</span><span class="p">,</span>
+                               <span class="mi">2451</span><span class="p">,</span> <span class="mi">2540</span><span class="p">,</span> <span class="mi">2634</span><span class="p">,</span> <span class="mi">2734</span><span class="p">,</span> <span class="mi">2843</span><span class="p">,</span> <span class="mi">2962</span><span class="p">,</span> <span class="mi">3093</span><span class="p">],</span>
+                      <span class="s1">&#39;T834&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="n">Tic_current_steps</span><span class="p">[</span><span class="s1">&#39;T834&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span>
+                               <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">33</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span>
+                                <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))],</span>
+                      <span class="s1">&#39;T825&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="n">Tic_current_steps</span><span class="p">[</span><span class="s1">&#39;T825&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span>
+                               <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">33</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span>
+                                <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))],</span>
+                      <span class="s1">&#39;T249&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="n">Tic_current_steps</span><span class="p">[</span><span class="s1">&#39;T249&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span>
+                               <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">33</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span>
+                                <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">113</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))],</span>
+                      <span class="s1">&#39;36v4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="n">Tic_current_steps</span><span class="p">[</span><span class="s1">&#39;36v4&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span>
+                               <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">)]}</span>
+
+<span class="n">Tic_max_accel</span> <span class="o">=</span> <span class="mi">2147483647</span>  <span class="c1"># steps/s/100s</span>
+<span class="n">Tic_min_accel</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># steps/s/100s</span>
+<span class="n">Tic_max_speed</span> <span class="o">=</span> <span class="mi">500000000</span>  <span class="c1"># steps/10000s, i.e. a 50 kHz frequency</span>
+<span class="n">Tic_min_speed</span> <span class="o">=</span> <span class="mi">7</span>  <span class="c1"># steps/10000s, i.e. 1 step every 23 minutes</span>
+
+<span class="n">Tic_backends</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ticcmd&#39;</span><span class="p">,</span> <span class="s1">&#39;USB&#39;</span><span class="p">]</span>
+
+<span class="n">Tic_pins_bit</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;SCL&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s1">&#39;SDA&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;TX&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s1">&#39;RX&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="s1">&#39;RC&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">Tic_pin_modes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Default&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="s1">&#39;Kill switch&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                 <span class="s1">&#39;Limit switch forward&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                 <span class="s1">&#39;Limit switch reverse&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+<span class="n">Tic_pin_polarity</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Active low&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;Active high&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="Find_serial_number"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Find_serial_number">[docs]</a><span class="k">class</span> <span class="nc">Find_serial_number</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;A class used for finding USB devices matching a given serial number, using</span>
+<span class="sd">     the :meth:`usb.core.find` method.&quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serial_number</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">serial_number</span> <span class="o">=</span> <span class="n">serial_number</span>
+
+  <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">device</span><span class="o">.</span><span class="n">serial_number</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">serial_number</span></div>
+
+
+<div class="viewcode-block" id="Pololu_tic"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic">[docs]</a><span class="k">class</span> <span class="nc">Pololu_tic</span><span class="p">(</span><span class="n">Actuator</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Class for controlling Pololu&#39;s Tic stepper motor divers.</span>
+
+<span class="sd">  The Pololu_tic Actuator block is meant for controlling a Pololu Tic stepper</span>
+<span class="sd">  motor driver. It can be driven in both speed and position. Several Tic models</span>
+<span class="sd">  are supported. The length unit is the millimeter (`mm`), and time unit is the</span>
+<span class="sd">  second (`s`).</span>
+
+<span class="sd">  Important:</span>
+<span class="sd">    **Only for Linux users:** In order to drive the Tic, the appropriate udev</span>
+<span class="sd">    rule should be set. This is done automatically when installing `ticcmd`,</span>
+<span class="sd">    or can be done using the `udev_rule_setter` utility in ``crappy``&#39;s `util`</span>
+<span class="sd">    folder. It is also possible to add it manually by running:</span>
+<span class="sd">    ::</span>
+
+<span class="sd">      $ echo &quot;SUBSYSTEM==\\&quot;usb\\&quot;, ATTR{idVendor}==\\&quot;1ffb\\&quot;, \</span>
+<span class="sd">MODE=\\&quot;0666\\\&quot;&quot; | sudo tee pololu.rules &gt; /dev/null 2&gt;&amp;1</span>
+
+<span class="sd">    in a shell opened in ``/etc/udev/rules.d``.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Pololu_tic.__init__"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">steps_per_mm</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+               <span class="n">current_limit</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+               <span class="n">step_mode</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+               <span class="n">max_accel</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+               <span class="n">t_shutoff</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="n">config_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">serial_number</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">reset_command_timeout</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+               <span class="n">backend</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;USB&#39;</span><span class="p">,</span>
+               <span class="n">unrestricted_current_limit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+               <span class="n">pin_function</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">pin_polarity</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Checks args validity, finds the right device, reads the current limit</span>
+<span class="sd">    tables.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      steps_per_mm (:obj:`float`): The number of full steps needed for the</span>
+<span class="sd">        motor to travel `1mm`. This varies according to the motor model, and</span>
+<span class="sd">        can be deduced from the datasheet or directly measured. This value is</span>
+<span class="sd">        usually between `50` and `500`.</span>
+<span class="sd">      current_limit (:obj:`float`): The maximum current the motor is able to</span>
+<span class="sd">        withstand, in mA. It is usually around `1A` for small stepper motors,</span>
+<span class="sd">        and can go up to a few Amps. The maximum allowed ``current_limit``</span>
+<span class="sd">        value depends on the Tic model. The Tic 36v4 default maximum current</span>
+<span class="sd">        limit can be increased using the ``unrestricted_current_limit``</span>
+<span class="sd">        parameter.</span>
+<span class="sd">      step_mode (:obj:`int`, optional): Sets the number of microsteps used for</span>
+<span class="sd">        driving the motor. This number is always a power of `2`. The minimum</span>
+<span class="sd">        number of microsteps is `1` (full steps), and the maximum depends on</span>
+<span class="sd">        the Tic model. All models however support modes `1` to `8`. The block</span>
+<span class="sd">        manages speed and length conversions so that changing the step mode</span>
+<span class="sd">        doesn&#39;t affect the motor behaviour.</span>
+<span class="sd">      max_accel (:obj:`float`, optional): The maximum allowed acceleration for</span>
+<span class="sd">        the motor, in `mm/s²`. When asked to reach a given speed or position,</span>
+<span class="sd">        the motor accelerates at this rate. It also corresponds to the maximum</span>
+<span class="sd">        allowed deceleration. Usually doesn&#39;t need to be changed.</span>
+<span class="sd">      t_shutoff (:obj:`float`, optional): The :class:`Pololu_tic` block</span>
+<span class="sd">        features an auto-shutoff thread that deenergizes the motor after a</span>
+<span class="sd">        period of `t_shutoff` seconds of inactivity. The timer counts in steps</span>
+<span class="sd">        of `0.1s`, which is thus the maximum precision for this setting. When</span>
+<span class="sd">        set to `0`, this feature is disabled and the motor remains energized</span>
+<span class="sd">        until the :meth:`close` method is called.</span>
+<span class="sd">      config_file (:obj:`str`, optional): The path of the config file to be</span>
+<span class="sd">        loaded to the Tic. It only works if ``backend`` is &#39;ticcmd&#39;. The config</span>
+<span class="sd">        file contains some specific settings that can only be accessed this way</span>
+<span class="sd">        using the &#39;ticcmd&#39; backend. Not necessary for most applications.</span>
+<span class="sd">      serial_number (:obj:`str`, optional): The serial number of the Tic to be</span>
+<span class="sd">        controlled. It must be given as a :obj:`str`, and it is an 8-digits</span>
+<span class="sd">        number. Allows to control the right device if several Tic of the same</span>
+<span class="sd">        model are connected. Otherwise an error is raised.</span>
+<span class="sd">      model (:obj:`str`, optional): The model of the Tic to be controlled.</span>
+<span class="sd">        Available models are:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;T825&#39;, &#39;T824&#39;, &#39;T500&#39;, &#39;N825&#39;, &#39;T249&#39;, &#39;36v4&#39;</span>
+
+<span class="sd">        Allows to control the right device if several Tic of different models</span>
+<span class="sd">        are connected. Otherwise an error is raised.</span>
+<span class="sd">      reset_command_timeout (:obj:`bool`, optional): Enables or disables the</span>
+<span class="sd">        `reset_command_timeout` thread. It can only be disabled if ``backend``</span>
+<span class="sd">        is &#39;USB&#39;. This thread pings the Tic every `0.5s`, so that it doesn&#39;t</span>
+<span class="sd">        block due to a Command Timeout error. This feature is a safety to</span>
+<span class="sd">        prevent the motor from running indefinitely if the USB connection is</span>
+<span class="sd">        down, so it is better not to disable it. When disabled the Tic never</span>
+<span class="sd">        raises Command Timeout errors, and a bit of memory if freed because of</span>
+<span class="sd">        the thread not running.</span>
+<span class="sd">      backend (:obj:`str`, optional): The backend for communicating with the</span>
+<span class="sd">        Tic. Available backends are:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;USB&#39;, &#39;ticcmd&#39;</span>
+
+<span class="sd">        They both communicate over USB, but &#39;ticcmd&#39; requires Pololu&#39;s firmware</span>
+<span class="sd">        to be installed. Some features are specific to each backend.</span>
+<span class="sd">      unrestricted_current_limit (:obj:`bool`, optional): Enables or disables</span>
+<span class="sd">        the unrestricted current limit feature. Only works if ``backend`` is</span>
+<span class="sd">        &#39;USB&#39;, and for the 36v4 Tic model. When disabled, the maximum current</span>
+<span class="sd">        allowed is `3939mA`. If enabled, it goes up to `9095mA`. The Tic should</span>
+<span class="sd">        however be cooled in order to withstand currents higher than `3939mA`.</span>
+<span class="sd">      pin_function (:obj:`dict`, optional): Allows setting the Tic GPIO</span>
+<span class="sd">        functions. It is a :obj:`dict` whose keys are the pin names, and values</span>
+<span class="sd">        are the functions. Only works if ``backend`` is `&#39;USB&#39;`. Only the pins</span>
+<span class="sd">        indicated in ``pin_function`` are set, the others are left in their</span>
+<span class="sd">        previous state. The available pins are:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;SCL&#39;, &#39;SDA&#39;, &#39;TX&#39;, &#39;RX&#39;, &#39;RC&#39;</span>
+
+<span class="sd">        and can be set to:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;Default&#39;, &#39;Kill switch&#39;, &#39;Limit switch forward&#39;, \</span>
+<span class="sd">&#39;Limit switch reverse&#39;</span>
+
+<span class="sd">        The GPIO functions remain set as long as they are not changed by the</span>
+<span class="sd">        user, so for a given setup it is only necessary to set them once.</span>
+<span class="sd">      pin_polarity (:obj:`dict`, optional): Allows setting the polarity of the</span>
+<span class="sd">        GPIOs used as switches. It is a :obj:`dict`, whose keys are the pin</span>
+<span class="sd">        names, and values are the pin polarities. Only works if ``backend`` is</span>
+<span class="sd">        `&#39;USB&#39;`. Only the pins indicated in ``pin_function`` are set, the</span>
+<span class="sd">        others are left in their previous state. The available pins are:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;SCL&#39;, &#39;SDA&#39;, &#39;TX&#39;, &#39;RX&#39;, &#39;RC&#39;</span>
+
+<span class="sd">        and can be set to:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;Active high&#39;, &#39;Active low&#39;</span>
+
+<span class="sd">        The GPIO polarities remain set as long as they are not changed by the</span>
+<span class="sd">        user, so for a given setup it is only necessary to set them once.</span>
+
+<span class="sd">    Warning:</span>
+<span class="sd">      - ``current_limit``:</span>
+<span class="sd">        If the ``current_limit`` setting is higher than the motor max current,</span>
+<span class="sd">        there&#39;s a risk of overheating and damaging the motor !</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      - ``steps_per_mm``:</span>
+<span class="sd">        If you have to measure this value, it can be done easily following this</span>
+<span class="sd">        procedure. Set ``steps_per_mm`` to `spm` (`100` should be fine), and</span>
+<span class="sd">        ``step_mode`` to `sm` (`8` should be fine). Run a crappy program</span>
+<span class="sd">        for moving the motor from position `0` to position `p` (a few tenth of</span>
+<span class="sd">        millimeters should be fine). The motor will reach an actual position</span>
+<span class="sd">        `ap` that can be measured. The actual ``steps_per_mm`` value `aspm` for</span>
+<span class="sd">        this motor can be calculated as follows:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          aspm = spm * p / ap</span>
+
+<span class="sd">      - ``step_mode``:</span>
+<span class="sd">        Increasing the number of microsteps allows to reduce the noise, the</span>
+<span class="sd">        vibrations, and improve the precision. However the more microsteps, the</span>
+<span class="sd">        lower the maximum achievable speed for the motor. Chances that the</span>
+<span class="sd">        motor misses microsteps are also higher when the number of microsteps</span>
+<span class="sd">        is high.</span>
+<span class="sd">      - ``t_shutoff``:</span>
+<span class="sd">        This functionality was originally added for long assays in temperature</span>
+<span class="sd">        controlled environments, so that the motor doesn&#39;t unnecessarily heat</span>
+<span class="sd">        the setup when inactive. In other assays, it may still be useful for</span>
+<span class="sd">        reducing the noise, the electromagnetic interference, or the energy</span>
+<span class="sd">        consumption.</span>
+<span class="sd">      - ``serial_number``:</span>
+<span class="sd">        Serial numbers can be accessed using the `lsusb` command in Linux</span>
+<span class="sd">        shell, or running ``ticcmd --list`` if `ticcmd` is installed. This</span>
+<span class="sd">        number is also printed during :meth:`__init__` if only one device is</span>
+<span class="sd">        connected and ``serial_number`` is :obj:`None`.</span>
+<span class="sd">      - ``model``:</span>
+<span class="sd">        The model is written on the Tic board, and can be accessed by running</span>
+<span class="sd">        ``ticcmd --list`` in a shell if `ticcmd` is installed. It is also</span>
+<span class="sd">        printed during :meth:`__init__` if only one device is connected and</span>
+<span class="sd">        ``model`` is :obj:`None`.</span>
+<span class="sd">      - **Pins settings**:</span>
+<span class="sd">        The pin functions and polarity can also be set independently from</span>
+<span class="sd">        ``crappy`` before starting the assay, in the `ticgui`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Actuator</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">backend</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Tic_backends</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;backend should be in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tic_backends</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">=</span> <span class="n">backend</span>
+
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">model</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Tic_product_id</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;model should be in </span><span class="si">{}</span><span class="s2"> if given&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span>
+        <span class="n">Tic_product_id</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+
+    <span class="k">if</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">serial_number</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;serial_number should be given as a string&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Finding the right device among all the connected ones</span>
+    <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="c1"># Finding all devices matching the given inputs</span>
+      <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+          <span class="n">devices</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">find_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                              <span class="n">idVendor</span><span class="o">=</span><span class="n">Tic_vendor_id</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">devices</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">find_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                              <span class="n">idVendor</span><span class="o">=</span><span class="n">Tic_vendor_id</span><span class="p">,</span>
+                              <span class="n">custom_match</span><span class="o">=</span><span class="n">Find_serial_number</span><span class="p">(</span>
+                                <span class="n">serial_number</span><span class="p">))</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+          <span class="n">devices</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">find_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                              <span class="n">idVendor</span><span class="o">=</span><span class="n">Tic_vendor_id</span><span class="p">,</span>
+                              <span class="n">idProduct</span><span class="o">=</span><span class="n">Tic_product_id</span><span class="p">[</span><span class="n">model</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">devices</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">find_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                              <span class="n">idVendor</span><span class="o">=</span><span class="n">Tic_vendor_id</span><span class="p">,</span>
+                              <span class="n">idProduct</span><span class="o">=</span><span class="n">Tic_product_id</span><span class="p">[</span><span class="n">model</span><span class="p">],</span>
+                              <span class="n">custom_match</span><span class="o">=</span><span class="n">Find_serial_number</span><span class="p">(</span>
+                                <span class="n">serial_number</span><span class="p">))</span>
+      <span class="c1"># Making sure there&#39;s only one matching device</span>
+      <span class="n">devices</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span>
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;No matching device connected&quot;</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Several matching devices found, try specifying a &quot;</span>
+                      <span class="s2">&quot;device or a serial_number&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span> <span class="o">=</span> <span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="c1"># Setting self.serial_number and self.device</span>
+      <span class="k">if</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial_number</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">get_string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="p">,</span>
+                                              <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">iSerialNumber</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial_number</span> <span class="o">=</span> <span class="n">serial_number</span>
+      <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">Tic_product_id</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span>
+                             <span class="n">value</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">idProduct</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The Tic model automatically found is not &quot;</span>
+                           <span class="s2">&quot;implemented in crappy&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="k">elif</span> <span class="n">backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="c1"># Finding all devices matching the given inputs</span>
+      <span class="n">devices</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;ticcmd&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;--list&#39;</span><span class="p">])</span><span class="o">.</span>\
+        <span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+      <span class="n">devices</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>  <span class="c1"># Removing the &#39;&#39; element at the end of devices</span>
+      <span class="n">devices</span> <span class="o">=</span> <span class="p">[</span><span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">devices</span><span class="p">]</span>
+      <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+          <span class="n">devices</span> <span class="o">=</span> <span class="p">[</span><span class="n">dev</span> <span class="k">for</span> <span class="n">dev</span> <span class="ow">in</span> <span class="n">devices</span> <span class="k">if</span> <span class="n">dev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">serial_number</span> <span class="ow">and</span>
+                     <span class="n">model</span> <span class="ow">in</span> <span class="n">dev</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">devices</span> <span class="o">=</span> <span class="p">[</span><span class="n">dev</span> <span class="k">for</span> <span class="n">dev</span> <span class="ow">in</span> <span class="n">devices</span> <span class="k">if</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">dev</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+      <span class="k">elif</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">devices</span> <span class="o">=</span> <span class="p">[</span><span class="n">dev</span> <span class="k">for</span> <span class="n">dev</span> <span class="ow">in</span> <span class="n">devices</span> <span class="k">if</span> <span class="n">dev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">serial_number</span><span class="p">]</span>
+      <span class="c1"># Making sure there&#39;s only one matching device</span>
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;No matching device found&quot;</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">devices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Several matching devices found, try specifying a &quot;</span>
+                      <span class="s2">&quot;device or a serial_number&quot;</span><span class="p">)</span>
+      <span class="c1"># Setting self.serial_number and self.device</span>
+      <span class="k">if</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial_number</span> <span class="o">=</span> <span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_serial_number</span> <span class="o">=</span> <span class="n">serial_number</span>
+      <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">Tic_product_id</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span>
+                             <span class="n">devices</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The Tic model automatically found is not &quot;</span>
+                           <span class="s2">&quot;implemented in crappy&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="c1"># Printing model and serial_number if they were not specified by the user</span>
+    <span class="k">if</span> <span class="n">serial_number</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tic serial number :&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_serial_number</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tic model :&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">)</span>
+
+    <span class="c1"># Making sure the current limit is valid, especially for the 36v4 model</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">current_limit</span> <span class="o">&lt;</span> <span class="n">Tic_max_allowed_current</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">]:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">==</span> <span class="s1">&#39;36v4&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">current_limit</span> <span class="o">&lt;</span> <span class="n">Tic_36v4_max_current</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;current_limit should be between 0 and </span><span class="si">{}</span><span class="s2"> mA for &quot;</span>
+                           <span class="s2">&quot;this Tic model&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tic_36v4_max_current</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">unrestricted_current_limit</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;current_limit exceeds the safety limit, which may &quot;</span>
+                           <span class="s2">&quot;cause overheating. Set unrestricted_current_limit &quot;</span>
+                           <span class="s2">&quot;to True if you want to keep this current_limit &quot;</span>
+                           <span class="s2">&quot;(only works if backend=&#39;USB&#39;)&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">backend</span> <span class="o">!=</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Setting unrestricted_current_limit to True only &quot;</span>
+                           <span class="s2">&quot;works if backend=&#39;USB&#39;&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;current limit should be between 0 and </span><span class="si">{}</span><span class="s2"> mA &quot;</span>
+                         <span class="s2">&quot;for this Tic model&quot;</span><span class="o">.</span>
+                         <span class="nb">format</span><span class="p">(</span><span class="n">Tic_max_allowed_current</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">]))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_current_limit</span> <span class="o">=</span> <span class="n">current_limit</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_unrestricted_current_limit</span> <span class="o">=</span> <span class="n">unrestricted_current_limit</span>
+
+    <span class="c1"># Converting the current limit value to a current index, used by the</span>
+    <span class="c1"># USB backend only</span>
+    <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">==</span> <span class="s1">&#39;T500&#39;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_current_index</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">Tic_current_tables</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">]),</span>
+                                  <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">current_limit</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_current_index</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">Tic_current_tables</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">],</span>
+                                    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">current_limit</span><span class="p">))</span> <span class="o">/</span>
+                                    <span class="n">Tic_current_steps</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">step_mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Tic_step_modes</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">]:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;step_mode should be in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">Tic_step_modes</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_step_mode</span> <span class="o">=</span> <span class="n">step_mode</span>
+
+    <span class="k">if</span> <span class="n">steps_per_mm</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;steps_per_mm should be positive&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_steps_per_mm</span> <span class="o">=</span> <span class="n">steps_per_mm</span>
+
+    <span class="c1"># Keeping the max_accel and max_decel values within the Tic ratings</span>
+    <span class="k">if</span> <span class="n">max_accel</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">Tic_min_accel</span> <span class="o">/</span> <span class="mi">100</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;Requested acceleration below min allowed acceleration, &quot;</span>
+        <span class="s2">&quot;setting to min allowed acceleration&quot;</span><span class="p">)</span>
+      <span class="n">max_accel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">Tic_min_accel</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">max_accel</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">Tic_max_accel</span> <span class="o">/</span> <span class="mi">100</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;Requested acceleration exceeding max allowed acceleration, &quot;</span>
+        <span class="s2">&quot;setting to max allowed acceleration&quot;</span><span class="p">)</span>
+      <span class="n">max_accel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">Tic_max_accel</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_max_accel</span> <span class="o">=</span> <span class="n">max_accel</span>
+
+    <span class="k">if</span> <span class="n">t_shutoff</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;t_shutoff should be zero or positive&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_t_shutoff</span> <span class="o">=</span> <span class="n">t_shutoff</span>
+
+    <span class="k">if</span> <span class="n">config_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">backend</span> <span class="o">!=</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning : config files can only be loaded if backend=&#39;ticcmd&#39;, &quot;</span>
+            <span class="s2">&quot;ignoring the given config_file&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="o">=</span> <span class="n">config_file</span>
+
+    <span class="k">if</span> <span class="n">backend</span> <span class="o">!=</span> <span class="s1">&#39;USB&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">reset_command_timeout</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning : reset_command_timeout can only be disabled if &quot;</span>
+            <span class="s2">&quot;backend=&#39;USB&#39;, reset_command_timeout set to True&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_rct_on</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_rct_on</span> <span class="o">=</span> <span class="n">reset_command_timeout</span>
+
+    <span class="k">if</span> <span class="n">backend</span> <span class="o">!=</span> <span class="s1">&#39;USB&#39;</span> <span class="ow">and</span> <span class="n">pin_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;It is not possible to set the pin functions if &quot;</span>
+                       <span class="s2">&quot;the backend is not &#39;USB&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pin_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">key</span> <span class="ow">in</span> <span class="n">Tic_pins_bit</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">pin_function</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unexpected pin name, pin names should be in &quot;</span>
+                         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Tic_pins_bit</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">value</span> <span class="ow">in</span> <span class="n">Tic_pin_modes</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">pin_function</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unexpected pin function, pin functions should be in &quot;</span>
+                         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Tic_pin_modes</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pin_function</span> <span class="o">=</span> <span class="n">pin_function</span>
+
+    <span class="k">if</span> <span class="n">backend</span> <span class="o">!=</span> <span class="s1">&#39;USB&#39;</span> <span class="ow">and</span> <span class="n">pin_polarity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;It is not possible to set the pin polarities if &quot;</span>
+                       <span class="s2">&quot;the backend is not &#39;USB&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pin_polarity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">key</span> <span class="ow">in</span> <span class="n">Tic_pins_bit</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">pin_polarity</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unexpected pin name, pin names should be in &quot;</span>
+                         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Tic_pins_bit</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">value</span> <span class="ow">in</span> <span class="n">Tic_pin_polarity</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">pin_polarity</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unexpected pin function, pin functions should be in &quot;</span>
+                         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">Tic_pin_polarity</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_pin_polarity</span> <span class="o">=</span> <span class="n">pin_polarity</span>
+
+    <span class="c1"># The lock is meant for preventing interferences between the threads</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">RLock</span><span class="p">()</span>
+
+    <span class="c1"># Definition of the flags</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer_shutoff</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_RCT</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_reset_timer_shutoff</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_close</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Definition of the auxiliary threads</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_thrd_rct</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_thread_rct</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_thrd_shutoff</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_thread_shutoff</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pololu_tic.open"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.open">[docs]</a>  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the communication, the motor parameters and starts the threads.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">set_configuration</span><span class="p">()</span>
+      <span class="k">except</span> <span class="n">core</span><span class="o">.</span><span class="n">USBError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You may have to install the udev-rules for this USB device, &quot;</span>
+              <span class="s2">&quot;this can be done using the udev_rule_setter utility in the util &quot;</span>
+              <span class="s2">&quot;folder&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+
+    <span class="c1"># Setting the Tic according to the user parameters</span>
+    <span class="n">pin_changed</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pin_polarity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_set_pin_polarity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pin_polarity</span><span class="p">)</span>
+      <span class="n">pin_changed</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pin_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_set_pin_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_pin_function</span><span class="p">)</span>
+      <span class="n">pin_changed</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">pin_changed</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_enter_safe_start</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_deenergize</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_step_mode</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_current_limit</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_max_accel</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_max_decel</span><span class="p">()</span>
+
+    <span class="c1"># Loading the config file</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--settings&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_file</span><span class="p">))</span>
+
+    <span class="c1"># Starting the auxiliary threads</span>
+    <span class="c1"># The RCT thread is not needed in case reset_command_timeout is False</span>
+    <span class="c1"># The shutoff thread is not needed in case t_shutoff is zero</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rct_on</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_thrd_rct</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="mh">0x00</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Command_timeout_low&#39;</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="mh">0x00</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Command_timeout_high&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_shutoff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_thrd_shutoff</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Pololu_tic.get_speed"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.get_speed">[docs]</a>  <span class="k">def</span> <span class="nf">get_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads the current motor speed.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">          :obj:`float`: The speed in mm/s</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">),</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
+                         <span class="p">[</span><span class="s1">&#39;Current velocity&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span> <span class="k">if</span> <span class="n">full_loader</span> <span class="k">else</span> \
+        <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">))[</span><span class="s1">&#39;Current velocity&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span>
+                          <span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Get_variable&#39;</span><span class="p">],</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_var</span><span class="p">[</span><span class="s1">&#39;Current_velocity&#39;</span><span class="p">],</span>
+                          <span class="n">data_or_length</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+        <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;little&#39;</span><span class="p">,</span>
+        <span class="n">signed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pololu_tic.get_position"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.get_position">[docs]</a>  <span class="k">def</span> <span class="nf">get_position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads the current motor position.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      :obj:`float`: The position in mm</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">),</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
+                         <span class="p">[</span><span class="s1">&#39;Current position&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">full_loader</span> <span class="k">else</span> \
+        <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">))[</span><span class="s1">&#39;Current position&#39;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span>
+                          <span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Get_variable&#39;</span><span class="p">],</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_var</span><span class="p">[</span><span class="s1">&#39;Current_position&#39;</span><span class="p">],</span>
+                          <span class="n">data_or_length</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+        <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;little&#39;</span><span class="p">,</span>
+        <span class="n">signed</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Pololu_tic.set_position"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.set_position">[docs]</a>  <span class="k">def</span> <span class="nf">set_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a position command to the motor.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      position (:obj:`float`): The position to reach in `mm`</span>
+<span class="sd">      speed (:obj:`float`, optional): The speed at which the motor should move</span>
+<span class="sd">        to the given position, in `mm/s`</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      - ``speed``:</span>
+<span class="sd">        The only way to reach a position at a given speed is to change the</span>
+<span class="sd">        maximum speed. The Tic will try to accelerate to the maximum speed but</span>
+<span class="sd">        may remain slower if it doesn&#39;t have time to do so before reaching the</span>
+<span class="sd">        given position.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">speed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_set_max_speed</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span>
+
+    <span class="c1"># Energizing the motor</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_energize</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_exit_safe_start</span><span class="p">()</span>
+
+    <span class="c1"># Raising the flags</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer_shutoff</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_reset_timer_shutoff</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_RCT</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Sending the position command</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_position</span><span class="p">(</span><span class="n">position</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pololu_tic.set_speed"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.set_speed">[docs]</a>  <span class="k">def</span> <span class="nf">set_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a speed command to the motor.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      speed (:obj:`float`): The speed the motor should reach</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Changing the maximum speed if needed</span>
+    <span class="n">max_speed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_max_speed</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_speed</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_set_max_speed</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span>
+
+    <span class="c1"># The command speed may first need to be reduced or increased in order to</span>
+    <span class="c1"># comply with the Tic ratings</span>
+    <span class="n">final_speed</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="n">speed</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">)),</span> <span class="n">Tic_max_speed</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">final_speed</span><span class="p">:</span>  <span class="c1"># If speed is 0, then it should remain 0</span>
+      <span class="k">if</span> <span class="n">final_speed</span> <span class="o">&lt;</span> <span class="n">Tic_min_speed</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+          <span class="s2">&quot;Requested speed below min possible speed, setting to min &quot;</span>
+          <span class="s2">&quot;possible speed&quot;</span><span class="p">)</span>
+        <span class="n">final_speed</span> <span class="o">=</span> <span class="n">Tic_min_speed</span>
+      <span class="n">final_speed</span> <span class="o">*=</span> <span class="n">speed</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span>
+
+    <span class="c1"># Energizing the motor</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_energize</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_exit_safe_start</span><span class="p">()</span>
+
+    <span class="c1"># Raising the flags</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer_shutoff</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_reset_timer_shutoff</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_RCT</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Sending the speed command</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_velocity</span><span class="p">(</span><span class="n">final_speed</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pololu_tic.stop"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.stop">[docs]</a>  <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets the speed to `0`.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_velocity</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Pololu_tic.close"><a class="viewcode-back" href="../../../crappydocs/actuators.html#crappy.actuator.pololu_tic.Pololu_tic.close">[docs]</a>  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Stops the motor, joins the threads and deenergizes the motor.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_close</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rct_on</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_thrd_rct</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_shutoff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_thrd_shutoff</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_enter_safe_start</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_deenergize</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="n">util</span><span class="o">.</span><span class="n">dispose_resources</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="p">)</span></div>
+
+  <span class="k">def</span> <span class="nf">_to_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mm</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for converting `mm` to `steps`.&quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">mm</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_steps_per_mm</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step_mode</span>
+
+  <span class="k">def</span> <span class="nf">_to_mm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">steps</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for converting `steps` to `mm`.&quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">steps</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_steps_per_mm</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step_mode</span>
+
+  <span class="k">def</span> <span class="nf">_reset_command_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a reset command timeout command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--reset-command-timeout&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Reset_command_timeout&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_enter_safe_start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends an enter safe start command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--enter-safe-start&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Enter_safe_start&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_exit_safe_start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends an exit safe start command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--exit-safe-start&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Exit_safe_start&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_deenergize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a deenergize command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--deenergize&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Deenergize&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_energize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends an energize command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--energize&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Energize&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_set_step_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a set step mode command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--step-mode&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_step_mode</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_step_mode&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="n">Tic_step_mode</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_step_mode</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_set_current_limit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a set current limit command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--current&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_current_limit</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">==</span> <span class="s1">&#39;36v4&#39;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                          <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_unrestricted_current_limit</span><span class="p">,</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Unrestricted_current_limit&#39;</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_current_limit&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_current_index</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_set_max_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Clamps the speed within the limits and sets it.&quot;&quot;&quot;</span>
+
+    <span class="c1"># The given speed may first need to be reduced or increased in order to</span>
+    <span class="c1"># comply with the Tic ratings</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">Tic_max_speed</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;Requested speed exceeding max allowed speed, setting to max &quot;</span>
+        <span class="s2">&quot;allowed speed&quot;</span><span class="p">)</span>
+      <span class="n">max_speed</span> <span class="o">=</span> <span class="n">Tic_max_speed</span>
+    <span class="k">elif</span> <span class="nb">abs</span><span class="p">(</span><span class="n">speed</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">Tic_min_speed</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;Requested speed below min possible speed, setting to min &quot;</span>
+        <span class="s2">&quot;possible speed&quot;</span><span class="p">)</span>
+      <span class="n">max_speed</span> <span class="o">=</span> <span class="n">Tic_min_speed</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">max_speed</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="n">speed</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--max-speed&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">max_speed</span><span class="p">)))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_32_bit</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_max_speed&#39;</span><span class="p">],</span>
+                       <span class="n">data</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">max_speed</span><span class="p">))</span>
+
+  <span class="k">def</span> <span class="nf">_set_max_accel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Clamps the acceleration within the limits and sets it.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--max-accel&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_accel</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_32_bit</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_max_accel&#39;</span><span class="p">],</span>
+                       <span class="n">data</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_accel</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)))</span>
+
+  <span class="k">def</span> <span class="nf">_set_max_decel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Clamps the deceleration within the limits and sets it.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--max-decel&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_accel</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_32_bit</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_max_decel&#39;</span><span class="p">],</span>
+                       <span class="n">data</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_max_accel</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)))</span>
+
+  <span class="k">def</span> <span class="nf">_set_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a set position command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--position&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="n">position</span><span class="p">))))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_32_bit</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_target_position&#39;</span><span class="p">],</span>
+                       <span class="n">data</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_steps</span><span class="p">(</span><span class="n">position</span><span class="p">)))</span>
+
+  <span class="k">def</span> <span class="nf">_set_velocity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">velocity</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends a set velocity command.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;--velocity&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">velocity</span><span class="p">)))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_32_bit</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_target_velocity&#39;</span><span class="p">],</span>
+                       <span class="n">data</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">velocity</span><span class="p">))</span>
+
+  <span class="k">def</span> <span class="nf">_get_max_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads the maximum speed from the motor.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;--full&#39;</span><span class="p">),</span>
+                                   <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
+                         <span class="p">[</span><span class="s1">&#39;Max speed&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span> <span class="k">if</span> <span class="n">full_loader</span> <span class="k">else</span> \
+        <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ticcmd</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;--full&#39;</span><span class="p">))</span>
+                    <span class="p">[</span><span class="s1">&#39;Max speed&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_mm</span><span class="p">(</span><span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span>
+                            <span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Get_variable&#39;</span><span class="p">],</span>
+                            <span class="n">index</span><span class="o">=</span><span class="n">Tic_var</span><span class="p">[</span><span class="s1">&#39;Max_speed&#39;</span><span class="p">],</span>
+                            <span class="n">data_or_length</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+          <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;little&#39;</span><span class="p">,</span>
+          <span class="n">signed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10000</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_set_pin_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin_func</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets the pin function bitfields.</span>
+
+<span class="sd">    Sends a command for setting each pin separately, and three commands for</span>
+<span class="sd">    setting the Kill switch, Limit switch forward and Limit switch reverse</span>
+<span class="sd">    bitfields.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="k">pass</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="c1"># Reads the current bitfields</span>
+      <span class="n">kill_switch_map</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span>
+                          <span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Get_setting&#39;</span><span class="p">],</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Kill_switch_map&#39;</span><span class="p">],</span>
+                          <span class="n">data_or_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;little&#39;</span><span class="p">,</span>
+        <span class="n">signed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="n">limit_forward_map</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span>
+                          <span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Get_setting&#39;</span><span class="p">],</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Limit_switch_forward_map&#39;</span><span class="p">],</span>
+                          <span class="n">data_or_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;little&#39;</span><span class="p">,</span>
+        <span class="n">signed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="n">limit_reverse_map</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span>
+                          <span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Get_setting&#39;</span><span class="p">],</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Limit_switch_reverse_map&#39;</span><span class="p">],</span>
+                          <span class="n">data_or_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;little&#39;</span><span class="p">,</span>
+        <span class="n">signed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">pin_func</span><span class="p">:</span>
+        <span class="c1"># Modifies the three bitfields</span>
+        <span class="k">if</span> <span class="n">pin_func</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Default&#39;</span><span class="p">:</span>
+          <span class="n">kill_switch_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+          <span class="n">limit_forward_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+          <span class="n">limit_reverse_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">pin_func</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Kill switch&#39;</span><span class="p">:</span>
+          <span class="n">kill_switch_map</span> <span class="o">|=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span>
+          <span class="n">limit_forward_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+          <span class="n">limit_reverse_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">pin_func</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Limit switch forward&#39;</span><span class="p">:</span>
+          <span class="n">kill_switch_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+          <span class="n">limit_forward_map</span> <span class="o">|=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span>
+          <span class="n">limit_reverse_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">pin_func</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Limit switch reverse&#39;</span><span class="p">:</span>
+          <span class="n">kill_switch_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+          <span class="n">limit_forward_map</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+          <span class="n">limit_reverse_map</span> <span class="o">|=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span>
+
+        <span class="c1"># Sends an individual command for each pin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                          <span class="n">value</span><span class="o">=</span><span class="n">Tic_pin_modes</span><span class="p">[</span><span class="n">pin_func</span><span class="p">[</span><span class="n">pin</span><span class="p">]],</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="n">pin</span> <span class="o">+</span> <span class="s1">&#39;_config&#39;</span><span class="p">])</span>
+      <span class="c1"># Sets the three bitfields</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="n">kill_switch_map</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Kill_switch_map&#39;</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="n">limit_forward_map</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Limit_switch_forward_map&#39;</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="n">limit_reverse_map</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Limit_switch_reverse_map&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_set_pin_polarity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin_pol</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets the switch polarity bitfield.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="k">pass</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="n">current</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span>
+                          <span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Get_setting&#39;</span><span class="p">],</span>
+                          <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Switch_polarity_map&#39;</span><span class="p">],</span>
+                          <span class="n">data_or_length</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;little&#39;</span><span class="p">,</span>
+        <span class="n">signed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">pin_pol</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Tic_pin_polarity</span><span class="p">[</span><span class="n">pin_pol</span><span class="p">[</span><span class="n">pin</span><span class="p">]]:</span>
+          <span class="n">current</span> <span class="o">|=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">current</span> <span class="o">&amp;=</span> <span class="mh">0xFF</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">Tic_pins_bit</span><span class="p">[</span><span class="n">pin</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="n">current</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Switch_polarity_map&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Resets the Tic and reloads the settings.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;ticcmd&#39;</span><span class="p">:</span>
+      <span class="k">pass</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Reset&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_usb_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                   <span class="n">request_type</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Tic_usb_request</span><span class="p">[</span><span class="s1">&#39;Cmd&#39;</span><span class="p">],</span>
+                   <span class="n">request</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                   <span class="n">value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                   <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                   <span class="n">data_or_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytearray</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for sending a USB control transfer.&quot;&quot;&quot;</span>
+
+    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span><span class="o">.</span><span class="n">ctrl_transfer</span><span class="p">(</span><span class="n">bmRequestType</span><span class="o">=</span><span class="n">request_type</span><span class="p">,</span>
+                                         <span class="n">bRequest</span><span class="o">=</span><span class="n">request</span><span class="p">,</span>
+                                         <span class="n">wValue</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+                                         <span class="n">wIndex</span><span class="o">=</span><span class="n">index</span><span class="p">,</span>
+                                         <span class="n">data_or_wLength</span><span class="o">=</span><span class="n">data_or_length</span><span class="p">)</span>
+      <span class="k">except</span> <span class="n">core</span><span class="o">.</span><span class="n">USBError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;An error occurred during USB communication&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+  <span class="k">def</span> <span class="nf">_usb_32_bit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for sending USB requests containing 32-bits values.&quot;&quot;&quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&amp;</span> <span class="mh">0xFFFF</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="o">&amp;</span> <span class="mh">0xFFFF</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_ticcmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for calling ticcmd in a subprocess.&quot;&quot;&quot;</span>
+
+    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;ticcmd&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;-d&#39;</span><span class="p">]</span> <span class="o">+</span>
+                          <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_serial_number</span><span class="p">]</span>
+                          <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+
+  <span class="k">def</span> <span class="nf">_thread_shutoff</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Thread for deenergizing the motor after a given period of inactivity.</span>
+
+<span class="sd">    This thread reads the speed every 0.1s, and increments a timer if the speed</span>
+<span class="sd">    is `0`. Once the timer reaches `_t_shutoff`, deenergizes the motor. The</span>
+<span class="sd">    timer is reset if a speed or position command is issued, or if the speed is</span>
+<span class="sd">    not `0`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">:</span>
+      <span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+
+      <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_timer_shutoff</span><span class="p">:</span>
+        <span class="c1"># Exit if close flag raised</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">:</span>
+          <span class="k">break</span>
+
+        <span class="c1"># Resetting timer if reset flag raised</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reset_timer_shutoff</span><span class="p">:</span>
+          <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_reset_timer_shutoff</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Checking if the motor is moving</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_speed</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="n">timer</span> <span class="o">+=</span> <span class="mf">0.1</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+        <span class="c1"># Finally deenergizing the motor if all the conditions are met</span>
+        <span class="k">if</span> <span class="n">timer</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_t_shutoff</span> <span class="ow">and</span> \
+                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reset_timer_shutoff</span> <span class="ow">and</span> \
+                <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_enter_safe_start</span><span class="p">()</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_deenergize</span><span class="p">()</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_timer_shutoff</span> <span class="o">=</span> <span class="kc">False</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">_RCT</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Stopping the RCT thread as well</span>
+          <span class="n">timer</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">_thread_rct</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Thread for sending the reset command timeout command every `0.5s`.</span>
+
+<span class="sd">    This prevents the motor from stopping because of a reset command timeout</span>
+<span class="sd">    error. Only sends the command when the motor is energized.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Setting command timeout to 1000ms</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">==</span> <span class="s1">&#39;USB&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="mh">0xE8</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Command_timeout_low&#39;</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_usb_command</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Tic_cmd</span><span class="p">[</span><span class="s1">&#39;Set_setting&#39;</span><span class="p">],</span>
+                        <span class="n">value</span><span class="o">=</span><span class="mh">0x03</span><span class="p">,</span>
+                        <span class="n">index</span><span class="o">=</span><span class="n">Tic_settings</span><span class="p">[</span><span class="s1">&#39;Command_timeout_high&#39;</span><span class="p">])</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">:</span>
+      <span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+      <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_RCT</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_close</span><span class="p">:</span>
+          <span class="k">break</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reset_command_timeout</span><span class="p">()</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

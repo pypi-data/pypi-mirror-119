@@ -1,0 +1,595 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.nau7802 &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.nau7802</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.nau7802</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span><span class="p">,</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">..tool</span> <span class="kn">import</span> <span class="n">ft232h_server</span> <span class="k">as</span> <span class="n">ft232h</span><span class="p">,</span> <span class="n">Usb_server</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">smbus2</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">smbus2</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;smbus2&quot;</span><span class="p">)</span>
+
+<span class="c1"># Register Map</span>
+<span class="n">NAU7802_Scale_Registers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">:</span> <span class="mh">0x00</span><span class="p">,</span>
+                           <span class="s1">&#39;CTRL1&#39;</span><span class="p">:</span> <span class="mh">0x01</span><span class="p">,</span>
+                           <span class="s1">&#39;CTRL2&#39;</span><span class="p">:</span> <span class="mh">0x02</span><span class="p">,</span>
+                           <span class="s1">&#39;OCAL1_B2&#39;</span><span class="p">:</span> <span class="mh">0x03</span><span class="p">,</span>
+                           <span class="s1">&#39;OCAL1_B1&#39;</span><span class="p">:</span> <span class="mh">0x04</span><span class="p">,</span>
+                           <span class="s1">&#39;OCAL1_B0&#39;</span><span class="p">:</span> <span class="mh">0x05</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL1_B3&#39;</span><span class="p">:</span> <span class="mh">0x06</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL1_B2&#39;</span><span class="p">:</span> <span class="mh">0x07</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL1_B1&#39;</span><span class="p">:</span> <span class="mh">0x08</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL1_B0&#39;</span><span class="p">:</span> <span class="mh">0x09</span><span class="p">,</span>
+                           <span class="s1">&#39;OCAL2_B2&#39;</span><span class="p">:</span> <span class="mh">0x0A</span><span class="p">,</span>
+                           <span class="s1">&#39;OCAL2_B1&#39;</span><span class="p">:</span> <span class="mh">0x0B</span><span class="p">,</span>
+                           <span class="s1">&#39;OCAL2_B0&#39;</span><span class="p">:</span> <span class="mh">0x0C</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL2_B3&#39;</span><span class="p">:</span> <span class="mh">0x0D</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL2_B2&#39;</span><span class="p">:</span> <span class="mh">0x0E</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL2_B1&#39;</span><span class="p">:</span> <span class="mh">0x0F</span><span class="p">,</span>
+                           <span class="s1">&#39;GCAL2_B0&#39;</span><span class="p">:</span> <span class="mh">0x10</span><span class="p">,</span>
+                           <span class="s1">&#39;I2C_CONTROL&#39;</span><span class="p">:</span> <span class="mh">0x11</span><span class="p">,</span>
+                           <span class="s1">&#39;ADCO_B2&#39;</span><span class="p">:</span> <span class="mh">0x12</span><span class="p">,</span>
+                           <span class="s1">&#39;ADCO_B1&#39;</span><span class="p">:</span> <span class="mh">0x13</span><span class="p">,</span>
+                           <span class="s1">&#39;ADCO_B0&#39;</span><span class="p">:</span> <span class="mh">0x14</span><span class="p">,</span>
+                           <span class="s1">&#39;ADC&#39;</span><span class="p">:</span> <span class="mh">0x15</span><span class="p">,</span>
+                           <span class="s1">&#39;OTP_B1&#39;</span><span class="p">:</span> <span class="mh">0x16</span><span class="p">,</span>
+                           <span class="s1">&#39;OTP_B0&#39;</span><span class="p">:</span> <span class="mh">0x17</span><span class="p">,</span>
+                           <span class="s1">&#39;PGA&#39;</span><span class="p">:</span> <span class="mh">0x1B</span><span class="p">,</span>
+                           <span class="s1">&#39;PGA_PWR&#39;</span><span class="p">:</span> <span class="mh">0x1C</span><span class="p">,</span>
+                           <span class="s1">&#39;DEVICE_REV&#39;</span><span class="p">:</span> <span class="mh">0x1F</span><span class="p">}</span>
+
+<span class="c1"># Bits within the PU_CTRL register</span>
+<span class="n">NAU7802_PU_CTRL_Bits</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PU_CTRL_RR&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="s1">&#39;PU_CTRL_PUD&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="s1">&#39;PU_CTRL_PUA&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s1">&#39;PU_CTRL_PUR&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                        <span class="s1">&#39;PU_CTRL_CS&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                        <span class="s1">&#39;PU_CTRL_CR&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                        <span class="s1">&#39;PU_CTRL_OSCS&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                        <span class="s1">&#39;PU_CTRL_AVDDS&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+
+<span class="c1"># Bits within the CTRL2 register</span>
+<span class="n">NAU7802_CTRL2_Bits</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CTRL2_CALMOD&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="s1">&#39;CTRL2_CALS&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                      <span class="s1">&#39;CTRL2_CAL_ERROR&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                      <span class="s1">&#39;CTRL2_CRS&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                      <span class="s1">&#39;CTRL2_CHS&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+
+<span class="c1"># Bits within the PGA PWR register</span>
+<span class="n">NAU7802_PGA_PWR_Bits</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PGA_PWR_PGA_CURR&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="s1">&#39;PGA_PWR_ADC_CURR&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s1">&#39;PGA_PWR_MSTR_BIAS_CURR&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                        <span class="s1">&#39;PGA_PWR_PGA_CAP_EN&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+
+<span class="c1"># Allowed Low drop out regulator voltages</span>
+<span class="n">NAU7802_LDO_Values</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.4</span><span class="p">:</span> <span class="mb">0b111</span><span class="p">,</span>
+                      <span class="mf">2.7</span><span class="p">:</span> <span class="mb">0b110</span><span class="p">,</span>
+                      <span class="mf">3.0</span><span class="p">:</span> <span class="mb">0b101</span><span class="p">,</span>
+                      <span class="mf">3.3</span><span class="p">:</span> <span class="mb">0b100</span><span class="p">,</span>
+                      <span class="mf">3.6</span><span class="p">:</span> <span class="mb">0b011</span><span class="p">,</span>
+                      <span class="mf">3.9</span><span class="p">:</span> <span class="mb">0b010</span><span class="p">,</span>
+                      <span class="mf">4.2</span><span class="p">:</span> <span class="mb">0b001</span><span class="p">,</span>
+                      <span class="mf">4.5</span><span class="p">:</span> <span class="mb">0b000</span><span class="p">}</span>
+
+<span class="c1"># Allowed gains</span>
+<span class="n">NAU7802_Gain_Values</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mb">0b000</span><span class="p">,</span>
+                       <span class="mi">2</span><span class="p">:</span> <span class="mb">0b001</span><span class="p">,</span>
+                       <span class="mi">4</span><span class="p">:</span> <span class="mb">0b010</span><span class="p">,</span>
+                       <span class="mi">8</span><span class="p">:</span> <span class="mb">0b011</span><span class="p">,</span>
+                       <span class="mi">16</span><span class="p">:</span> <span class="mb">0b100</span><span class="p">,</span>
+                       <span class="mi">32</span><span class="p">:</span> <span class="mb">0b101</span><span class="p">,</span>
+                       <span class="mi">64</span><span class="p">:</span> <span class="mb">0b110</span><span class="p">,</span>
+                       <span class="mi">128</span><span class="p">:</span> <span class="mb">0b111</span><span class="p">}</span>
+
+<span class="c1"># Allowed samples per second</span>
+<span class="n">NAU7802_SPS_Values</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">:</span> <span class="mb">0b000</span><span class="p">,</span>
+                      <span class="mi">20</span><span class="p">:</span> <span class="mb">0b001</span><span class="p">,</span>
+                      <span class="mi">40</span><span class="p">:</span> <span class="mb">0b010</span><span class="p">,</span>
+                      <span class="mi">80</span><span class="p">:</span> <span class="mb">0b011</span><span class="p">,</span>
+                      <span class="mi">320</span><span class="p">:</span> <span class="mb">0b111</span><span class="p">}</span>
+
+<span class="c1"># Calibration state</span>
+<span class="n">NAU7802_Cal_Status</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CAL_SUCCESS&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="s1">&#39;CAL_IN_PROGRESS&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="s1">&#39;CAL_FAILURE&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="n">NAU7802_Backends</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pi4&#39;</span><span class="p">,</span> <span class="s1">&#39;ft232h&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Nau7802"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.nau7802.Nau7802">[docs]</a><span class="k">class</span> <span class="nc">Nau7802</span><span class="p">(</span><span class="n">Usb_server</span><span class="p">,</span> <span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Class for controlling Sparkfun&#39;s NAU7802 load cell conditioner.</span>
+
+<span class="sd">  The Nau7802 InOut block is meant for reading output values from a NAU7802</span>
+<span class="sd">  load cell conditioner, using the I2C protocol. The output is in Volts by</span>
+<span class="sd">  default, but can be converted into Newtons using ``gain`` and ``offset``.</span>
+
+<span class="sd">  Warning:</span>
+<span class="sd">    Only available on Raspberry Pi for now !</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Nau7802.__init__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.nau7802.Nau7802.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">backend</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+               <span class="n">i2c_port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+               <span class="n">device_address</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mh">0x2A</span><span class="p">,</span>
+               <span class="n">gain_hardware</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
+               <span class="n">sample_rate</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span>
+               <span class="n">gain</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+               <span class="n">offset</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+               <span class="n">ft232h_ser_num</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Checks the arguments validity.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      backend (:obj:`str`): The backend for communicating with the NAU7802.</span>
+<span class="sd">        Should be one of:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;Pi4&#39;, &#39;ft232h&#39;</span>
+
+<span class="sd">      i2c_port (:obj:`int`, optional): The I2C port over which the NAU7802</span>
+<span class="sd">        should communicate. On most Raspberry Pi models the default I2C port is</span>
+<span class="sd">        `1`.</span>
+<span class="sd">      device_address (:obj:`int`, optional): The I2C address of the NAU7802. It</span>
+<span class="sd">        is impossible to change this address, so it is not possible to have</span>
+<span class="sd">        several NAU7802 on the same i2c port.</span>
+<span class="sd">      gain_hardware (:obj:`int`, optional): The gain to be used by the</span>
+<span class="sd">        programmable gain amplifier. Setting a high gain allows to read small</span>
+<span class="sd">        voltages with a better precision, but it might saturate the sensor for</span>
+<span class="sd">        higher voltages. Available gains are:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          1, 2, 4, 8, 16, 32, 64, 128</span>
+
+<span class="sd">      sample_rate (:obj:`int`, optional): The sample rate for data conversion.</span>
+<span class="sd">        The higher the rate, the greater the noise. Available sample rates are:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          10, 20, 40, 80, 320</span>
+
+<span class="sd">      gain (:obj:`float`, optional): Allows to tune the output value according</span>
+<span class="sd">        to the formula:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          output = gain * tension + offset.</span>
+
+<span class="sd">      offset (:obj:`float`, optional): Allows to tune the output value</span>
+<span class="sd">        according to the formula:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          output = gain * tension + offset.</span>
+
+<span class="sd">      ft232h_ser_num (:obj:`str`, optional): If backend is `&#39;ft232h&#39;`, the</span>
+<span class="sd">        serial number of the ft232h to use for communication.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">backend</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">NAU7802_Backends</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;backend should be in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NAU7802_Backends</span><span class="p">))</span>
+
+    <span class="n">Usb_server</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                        <span class="n">serial_nr</span><span class="o">=</span><span class="n">ft232h_ser_num</span> <span class="k">if</span> <span class="n">ft232h_ser_num</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">)</span>
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">queue</span><span class="p">,</span> <span class="n">block_number</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">command_event</span><span class="p">,</span> \
+        <span class="n">answer_event</span><span class="p">,</span> <span class="n">next_event</span><span class="p">,</span> <span class="n">done_event</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">start_server</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s1">&#39;Pi4&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span> <span class="o">=</span> <span class="n">smbus2</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">i2c_port</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span> <span class="o">=</span> <span class="n">ft232h</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;I2C&#39;</span><span class="p">,</span>
+                         <span class="n">queue</span><span class="o">=</span><span class="n">queue</span><span class="p">,</span>
+                         <span class="n">namespace</span><span class="o">=</span><span class="n">namespace</span><span class="p">,</span>
+                         <span class="n">command_event</span><span class="o">=</span><span class="n">command_event</span><span class="p">,</span>
+                         <span class="n">answer_event</span><span class="o">=</span><span class="n">answer_event</span><span class="p">,</span>
+                         <span class="n">block_number</span><span class="o">=</span><span class="n">block_number</span><span class="p">,</span>
+                         <span class="n">next_block</span><span class="o">=</span><span class="n">next_event</span><span class="p">,</span>
+                         <span class="n">done_event</span><span class="o">=</span><span class="n">done_event</span><span class="p">,</span>
+                         <span class="n">serial_nr</span><span class="o">=</span><span class="n">ft232h_ser_num</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span> <span class="o">=</span> <span class="n">device_address</span>
+
+    <span class="k">if</span> <span class="n">gain_hardware</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">NAU7802_Gain_Values</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;gain_hardware should be in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span>
+        <span class="n">NAU7802_Gain_Values</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_gain_hardware</span> <span class="o">=</span> <span class="n">gain_hardware</span>
+
+    <span class="k">if</span> <span class="n">sample_rate</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">NAU7802_SPS_Values</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;sample_rate should be in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span>
+        <span class="n">NAU7802_SPS_Values</span><span class="o">.</span><span class="n">keys</span><span class="p">())))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_sample_rate</span> <span class="o">=</span> <span class="n">sample_rate</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_gain</span> <span class="o">=</span> <span class="n">gain</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="n">offset</span></div>
+
+<div class="viewcode-block" id="Nau7802.open"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.nau7802.Nau7802.open">[docs]</a>  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets the I2C communication and device&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_connected</span><span class="p">():</span>
+      <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;The NAU7802 is not connected&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Resetting the device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_RR&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_RR&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Powering up the device - takes approx 200µs</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_PUD&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_PUA&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">t_wait</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_PUR&#39;</span><span class="p">],</span>
+                            <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">]):</span>
+      <span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+      <span class="n">t_wait</span> <span class="o">+=</span> <span class="mf">0.001</span>
+      <span class="k">if</span> <span class="n">t_wait</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span>
+
+    <span class="c1"># Setting the Low Drop Out voltage to 3.3V and setting the gain</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">NAU7802_Gain_Values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_gain_hardware</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">write_byte_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">,</span>
+                              <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;CTRL1&#39;</span><span class="p">],</span> <span class="n">value</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_AVDDS&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Setting the sample rate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">write_byte_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">,</span>
+                              <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;CTRL2&#39;</span><span class="p">],</span>
+                              <span class="n">NAU7802_SPS_Values</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_sample_rate</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1"># Turning off CLK_CHP</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">write_byte_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">,</span>
+                              <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;ADC&#39;</span><span class="p">],</span> <span class="mh">0x30</span><span class="p">)</span>
+
+    <span class="c1"># Enabling 330pF decoupling cap on channel 2</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PGA_PWR_Bits</span><span class="p">[</span><span class="s1">&#39;PGA_PWR_PGA_CAP_EN&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PGA_PWR&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Re-calibrating the analog front-end</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_CTRL2_Bits</span><span class="p">[</span><span class="s1">&#39;CTRL2_CALS&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;CTRL2&#39;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">t_wait</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_afe_status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">NAU7802_Cal_Status</span><span class="p">[</span><span class="s1">&#39;CAL_SUCCESS&#39;</span><span class="p">]:</span>
+      <span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+      <span class="n">t_wait</span> <span class="o">+=</span> <span class="mf">0.001</span>
+      <span class="k">if</span> <span class="n">t_wait</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cal_afe_status</span><span class="p">()</span> <span class="o">==</span> <span class="n">NAU7802_Cal_Status</span><span class="p">[</span><span class="s1">&#39;CAL_FAILURE&#39;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Calibration failed !&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Nau7802.get_data"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.nau7802.Nau7802.get_data">[docs]</a>  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads the registers containing the conversion result</span>
+
+<span class="sd">    The output is in Volts by default, and can be converted into Newtons using</span>
+<span class="sd">    gain and offset.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      :obj:`list`: A list containing the timeframe and the output value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Waiting for data to be ready</span>
+    <span class="n">t_wait</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_available</span><span class="p">():</span>
+      <span class="n">sleep</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+      <span class="n">t_wait</span> <span class="o">+=</span> <span class="mf">0.0001</span>
+      <span class="k">if</span> <span class="n">t_wait</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span>
+
+    <span class="c1"># Reading the output data</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">read_i2c_block_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">,</span>
+                                          <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;ADCO_B2&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">value_raw</span> <span class="o">=</span> <span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">block</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">block</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># Converting raw data into Volts or Newtons</span>
+    <span class="k">if</span> <span class="n">block</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">7</span><span class="p">:</span>
+      <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">23</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">value_raw</span> <span class="o">&amp;</span> <span class="mh">0x7FFFFF</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span>
+                <span class="mi">2</span> <span class="o">**</span> <span class="mi">23</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mf">3.3</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gain_hardware</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">value</span> <span class="o">=</span> <span class="n">value_raw</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">23</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mf">3.3</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gain_hardware</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gain</span> <span class="o">*</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span></div>
+
+<div class="viewcode-block" id="Nau7802.close"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.nau7802.Nau7802.close">[docs]</a>  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Powers down the device&quot;&quot;&quot;</span>
+
+    <span class="c1"># Powering down the device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_PUD&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_set_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_PUA&#39;</span><span class="p">],</span>
+                  <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+  <span class="k">def</span> <span class="nf">_is_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Tries reading a byte from the device</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      :obj:`bool`: True if reading was successful, else False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">read_byte</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+      <span class="k">return</span> <span class="kc">False</span>
+
+  <span class="k">def</span> <span class="nf">_data_available</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads the data available bit</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      :obj:`int`: 1 if data is available, else 0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_bit</span><span class="p">(</span><span class="n">NAU7802_PU_CTRL_Bits</span><span class="p">[</span><span class="s1">&#39;PU_CTRL_CR&#39;</span><span class="p">],</span>
+                         <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;PU_CTRL&#39;</span><span class="p">])</span>
+
+  <span class="k">def</span> <span class="nf">_set_bit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">bit_number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+               <span class="n">register_address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+               <span class="n">bit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets a given bit in the specified register</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      bit_number (:obj:`int`): Position of the bit in the register</span>
+<span class="sd">      register_address (:obj:`int`): Index of the register</span>
+<span class="sd">      bit (:obj:`int`): Value of the bit</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">read_i2c_block_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">,</span>
+                                          <span class="n">register_address</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">bit</span><span class="p">:</span>
+      <span class="n">value</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_number</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">value</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_number</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">write_byte_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">,</span> <span class="n">register_address</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_get_bit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">bit_number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+               <span class="n">register_address</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads a given bit in the specified register</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      bit_number (:obj:`int`): Position of the bit in the register</span>
+<span class="sd">      register_address (:obj:`int`): Index of the register</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      :obj:`bool`: True if bit value is 1, else False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bus</span><span class="o">.</span><span class="n">read_i2c_block_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device_address</span><span class="p">,</span>
+                                          <span class="n">register_address</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">&gt;&gt;</span> <span class="n">bit_number</span> <span class="o">&amp;</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_cal_afe_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads the calibration status bits</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      :obj:`int`: The int value corresponding to the current calibration status</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_bit</span><span class="p">(</span><span class="n">NAU7802_CTRL2_Bits</span><span class="p">[</span><span class="s1">&#39;CTRL2_CAL_ERROR&#39;</span><span class="p">],</span>
+                     <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;CTRL2&#39;</span><span class="p">]):</span>
+      <span class="k">return</span> <span class="n">NAU7802_Cal_Status</span><span class="p">[</span><span class="s1">&#39;CAL_FAILURE&#39;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_bit</span><span class="p">(</span><span class="n">NAU7802_CTRL2_Bits</span><span class="p">[</span><span class="s1">&#39;CTRL2_CALS&#39;</span><span class="p">],</span>
+                       <span class="n">NAU7802_Scale_Registers</span><span class="p">[</span><span class="s1">&#39;CTRL2&#39;</span><span class="p">]):</span>
+      <span class="k">return</span> <span class="n">NAU7802_Cal_Status</span><span class="p">[</span><span class="s1">&#39;CAL_IN_PROGRESS&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">NAU7802_Cal_Status</span><span class="p">[</span><span class="s1">&#39;CAL_SUCCESS&#39;</span><span class="p">]</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

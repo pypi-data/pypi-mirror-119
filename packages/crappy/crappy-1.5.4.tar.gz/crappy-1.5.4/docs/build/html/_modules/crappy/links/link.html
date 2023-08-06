@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.links.link &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.links.link</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.links.link</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="c1"># Link class. All connection between Blocks should be made with this.</span>
+
+
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pipe</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">CrappyStop</span>
+
+
+<div class="viewcode-block" id="error_if_string"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.error_if_string">[docs]</a><span class="k">def</span> <span class="nf">error_if_string</span><span class="p">(</span><span class="n">recv</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;Decorator to raise an error if the function returns a string.&quot;&quot;&quot;</span>
+
+  <span class="nd">@wraps</span><span class="p">(</span><span class="n">recv</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">recv</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+      <span class="k">raise</span> <span class="n">CrappyStop</span>
+    <span class="k">return</span> <span class="n">ret</span>
+  <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<div class="viewcode-block" id="TimeoutError"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.TimeoutError">[docs]</a><span class="k">class</span> <span class="nc">TimeoutError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Custom error to raise in case of timeout.&quot;&quot;&quot;</span>
+
+  <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="MethodThread"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.MethodThread">[docs]</a><span class="k">class</span> <span class="nc">MethodThread</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;ThreadMethodThread, daemonic descendant class of :mod:`threading`.</span>
+
+<span class="sd">  Thread which simply runs the specified target method with the specified</span>
+<span class="sd">  arguments.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Thread</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">setDaemon</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">target</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<div class="viewcode-block" id="MethodThread.run"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.MethodThread.run">[docs]</a>  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">exception</span> <span class="o">=</span> <span class="n">e</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">exception</span> <span class="o">=</span> <span class="kc">None</span></div></div>
+
+
+<div class="viewcode-block" id="win_timeout"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.win_timeout">[docs]</a><span class="k">def</span> <span class="nf">win_timeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Decorator for adding a timeout to a link send.&quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="nf">win_timeout_proxy</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+      <span class="n">worker</span> <span class="o">=</span> <span class="n">MethodThread</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">worker</span>
+      <span class="n">worker</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">worker</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span><span class="p">(</span><span class="s2">&quot;timeout error in pipe send&quot;</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="n">worker</span><span class="o">.</span><span class="n">exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">worker</span><span class="o">.</span><span class="n">exception</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">worker</span><span class="o">.</span><span class="n">result</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+  <span class="k">return</span> <span class="n">win_timeout_proxy</span></div>
+
+
+<div class="viewcode-block" id="Link"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link">[docs]</a><span class="k">class</span> <span class="nc">Link</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Link class. All connections between Blocks should be made with this.</span>
+
+<span class="sd">  It creates a pipe and is used to transfer information between Blocks.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    You can add one or multiple :ref:`Modifiers` to modify the transferred</span>
+<span class="sd">    value.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Link.__init__"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">input_block</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">output_block</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">condition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+               <span class="n">action</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;warn&quot;</span><span class="p">,</span>
+               <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;link&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sets the instance attributes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      input_block:</span>
+<span class="sd">      output_block:</span>
+<span class="sd">      condition: Children class of :class:`links.Condition`, for backward</span>
+<span class="sd">        compatibility only. Can be a single condition or a :obj:`list` of</span>
+<span class="sd">        conditions that will be executed in the given order.</span>
+<span class="sd">      modifier:</span>
+<span class="sd">      timeout (:obj:`float`, optional): Timeout for the :meth:`send` method.</span>
+<span class="sd">      action (:obj:`str`, optional): Action to perform in case of a</span>
+<span class="sd">        :exc:`TimeoutError` during the :meth:`send` method. Should be in:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;warn&#39;, &#39;kill&#39;, &#39;NoWarn&#39;,</span>
+
+<span class="sd">        any other value would be for debugging.</span>
+<span class="sd">      name (:obj:`str`, optional): Name of a link to recognize it on timeout.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># For compatibility (condition is deprecated, use modifier)</span>
+    <span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">modifier</span> <span class="o">=</span> <span class="n">condition</span>
+    <span class="c1"># --</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_</span> <span class="o">=</span> <span class="n">Pipe</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">external_trigger</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">modifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">modifiers</span> <span class="o">=</span> <span class="n">modifier</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">modifier</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">modifier</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">modifiers</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">=</span> <span class="n">action</span>
+    <span class="k">if</span> <span class="kc">None</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">input_block</span><span class="p">,</span> <span class="n">output_block</span><span class="p">]:</span>
+      <span class="n">input_block</span><span class="o">.</span><span class="n">add_output</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+      <span class="n">output_block</span><span class="o">.</span><span class="n">add_input</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Link.send"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.send">[docs]</a>  <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Sends the value, or a modified value if you pass it through a modifier.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">send_timeout</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;warn&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;WARNING : Timeout error in pipe send! Link name: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;kill&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Killing Link : &quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="k">raise</span>
+      <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;NoWarn&quot;</span><span class="p">:</span>
+        <span class="k">pass</span>
+      <span class="k">else</span><span class="p">:</span>  <span class="c1"># for debugging !!</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception in link send </span><span class="si">%s</span><span class="s2"> : </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+      <span class="k">raise</span></div>
+
+<div class="viewcode-block" id="Link.send_timeout"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.send_timeout">[docs]</a>  <span class="nd">@win_timeout</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">send_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Method for sending data with a given timeout on the link.&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">modifiers</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modifiers</span><span class="p">:</span>
+          <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="s1">&#39;evaluate&#39;</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">copy</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+          <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">mod</span><span class="p">(</span><span class="n">copy</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+          <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception in link </span><span class="si">%s</span><span class="s2"> : </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">closed</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+      <span class="k">raise</span></div>
+
+<div class="viewcode-block" id="Link.recv"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.recv">[docs]</a>  <span class="nd">@error_if_string</span>  <span class="c1"># Recv will raise an error if a string is received</span>
+  <span class="k">def</span> <span class="nf">recv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocking</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Receives data.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      If ``blocking`` is :obj:`False`, returns :obj:`None` if there is no</span>
+<span class="sd">      data.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      blocking (:obj:`bool`, optional): Enables (:obj:`True`) or disables</span>
+<span class="sd">        (:obj:`False`) blocking mode.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      If ``blocking`` is :obj:`True`, :meth:`recv` method will wait until data</span>
+<span class="sd">      is available in the pipe and return the received data. Otherwise, it will</span>
+<span class="sd">      check if there is data available to return, or return :obj:`None` if the</span>
+<span class="sd">      pipe is empty.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">blocking</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">poll</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+
+    <span class="k">except</span> <span class="ne">TimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;warn&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;WARNING : Timeout error in pipe send! Link name: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;kill&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Killing Link </span><span class="si">%s</span><span class="s2"> : </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+        <span class="k">raise</span>
+      <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;NoWarn&quot;</span><span class="p">:</span>
+        <span class="k">pass</span>
+      <span class="k">else</span><span class="p">:</span>  <span class="c1"># for debugging !!</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EXCEPTION in link </span><span class="si">%s</span><span class="s2"> : </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">closed</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+      <span class="k">raise</span></div>
+
+  <span class="k">def</span> <span class="nf">poll</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">poll</span><span class="p">():</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">recv_bytes</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Link.recv_last"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.recv_last">[docs]</a>  <span class="k">def</span> <span class="nf">recv_last</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocking</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Returns only the LAST value in the pipe, dropping all the others.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      If ``blocking`` is :obj:`False`, will return :obj:`None` if there is no</span>
+<span class="sd">      data waiting.</span>
+
+<span class="sd">      If ``blocking`` is :obj:`True`, will wait for at least one data.</span>
+
+<span class="sd">    Warning:</span>
+<span class="sd">      Unlike :meth:`recv`, default is NON blocking.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">blocking</span><span class="p">:</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">poll</span><span class="p">():</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="Link.recv_chunk"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.recv_chunk">[docs]</a>  <span class="k">def</span> <span class="nf">recv_chunk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Allows you to receive a chunk of data.</span>
+
+<span class="sd">    If ``length`` `&gt; 0` it will return a :obj:`dict` containing :obj:`list` of</span>
+<span class="sd">    the last length received data.</span>
+
+<span class="sd">    If ``length`` `= 0`, it will return all the waiting data until the pipe is</span>
+<span class="sd">    empty.</span>
+
+<span class="sd">    If the pipe is already empty, it will wait to return at least one value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">:</span>
+      <span class="n">ret</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ret</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">length</span> <span class="ow">or</span> <span class="p">(</span><span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll</span><span class="p">()):</span>
+      <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>  <span class="c1"># Here, we need to send our data first</span>
+      <span class="k">except</span> <span class="n">CrappyStop</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>  <span class="c1"># To re-raise on next call</span>
+        <span class="k">break</span>
+      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="n">ret</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Got data without label &quot;</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="Link.recv_delay"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.recv_delay">[docs]</a>  <span class="k">def</span> <span class="nf">recv_delay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delay</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Useful for blocks that don&#39;t need data all so frequently.</span>
+
+<span class="sd">    It will continuously receive data for a given delay and return them as a</span>
+<span class="sd">    single :obj:`dict` containing :obj:`list` of the values.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      All the :meth:`recv` calls are blocking so this method will take AT LEAST</span>
+<span class="sd">      ``delay`` seconds to return, but it could be more since it may wait for</span>
+<span class="sd">      data.</span>
+
+<span class="sd">      Also, it will return at least one reading.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>  <span class="c1"># If we get CrappyStop at this instant, no data loss</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">:</span>
+      <span class="n">ret</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ret</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+    <span class="k">while</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">delay</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>  <span class="c1"># Here, we need to send our data first</span>
+      <span class="k">except</span> <span class="n">CrappyStop</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;stop&quot;</span><span class="p">)</span>  <span class="c1"># To re-raise on next call</span>
+        <span class="k">break</span>
+      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="n">ret</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Got data without label &quot;</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="Link.recv_chunk_nostop"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.Link.recv_chunk_nostop">[docs]</a>  <span class="k">def</span> <span class="nf">recv_chunk_nostop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Experimental feature, to be used in :meth:`finish` methods to recover</span>
+<span class="sd">    the final remaining data (possibly after a stop signal).&quot;&quot;&quot;</span>
+
+    <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">poll</span><span class="p">():</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+          <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">r</span></div></div>
+
+
+<div class="viewcode-block" id="link"><a class="viewcode-back" href="../../../crappydocs/links.html#crappy.links.link.link">[docs]</a><span class="k">def</span> <span class="nf">link</span><span class="p">(</span><span class="n">in_block</span><span class="p">,</span> <span class="n">out_block</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot;Function that links two blocks.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    For the object, see :ref:`Link`.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">Link</span><span class="p">(</span><span class="n">input_block</span><span class="o">=</span><span class="n">in_block</span><span class="p">,</span> <span class="n">output_block</span><span class="o">=</span><span class="n">out_block</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How to use C++ designed hardware drivers with Crappy ? &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation" href="../documentation.html" />
+    <link rel="prev" title="How to generate a signal with CRAPPY ?" href="generators.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="generators.html">How to generate a signal with CRAPPY ?</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to use C++ designed hardware drivers with Crappy ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-bind-c-c-with-crappy">How to bind C/C++ with Crappy?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-example">First example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-c-code-hello-cpp">The C++ code (hello.cpp)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-the-binding-to-crappy">Adding the binding to Crappy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#a-more-oriented-object-module">A more oriented object module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">Tutorials</a> &raquo;</li>
+        
+      <li>How to use C++ designed hardware drivers with Crappy ?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tutorials/c.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use-c-designed-hardware-drivers-with-crappy">
+<h1>How to use C++ designed hardware drivers with Crappy ?<a class="headerlink" href="#how-to-use-c-designed-hardware-drivers-with-crappy" title="Permalink to this headline">¶</a></h1>
+<p>There is a lot of hardware only available for C++ or C platforms, but it can be easily bound with Python. Here we will give you an example on how to bind C language to make it object oriented (as used in Python).</p>
+<div class="section" id="how-to-bind-c-c-with-crappy">
+<h2>How to bind C/C++ with Crappy?<a class="headerlink" href="#how-to-bind-c-c-with-crappy" title="Permalink to this headline">¶</a></h2>
+<p>Here is detailed a complete example on how to bind C and C++ language with Python and add it to the Crappy package. Linux and Windows are both used for building.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is not a C++ tutorial, a few programming notions are used here, please refer to the tutorials
+below if you are not a C or C++ developer. /n C++ tutorials:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>openclassrooms (fr)</p></li>
+<li><p>cplusplus (en)</p></li>
+</ul>
+</div></blockquote>
+<p>C tutorials:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>openclassroom (fr)</p></li>
+<li><p>cprogramming (en)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<p>Under Linux, you must install the python-dev package to ensure that you can use the Python.h library in the C or C++ code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+<p>Under Windows, there is no python-dev package, but the python installer for Windows will install a subdirectory in the python dir directory:</p>
+<blockquote>
+<div><p>C:Pythoninclude which contains the Python.h.</p>
+</div></blockquote>
+</div>
+<div class="section" id="first-example">
+<h2>First example<a class="headerlink" href="#first-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-c-code-hello-cpp">
+<h3>The C++ code (hello.cpp)<a class="headerlink" href="#the-c-code-hello-cpp" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Python header contains all the functions definitions to handle python object in C/C++.
+#include &lt;Python.h&gt;
+// Header that defines the standard input/output stream objects.
+#include &lt;iostream&gt;
+// define the namespace to use.
+using namespace std;
+// The functions bound with python have to return a PyObject understandable in Python.
+static PyObject* hello(PyObject* self, PyObject* args){
+    const char* name;
+    // it parses the args argument and look for a string
+    // and set the name var with the parsed value.
+    // if it fails, PyArg_ParseTuple returns False, True otherwise.
+    // returning NULL directly allows to raise an exception in Python.
+    if(!PyArg_ParseTuple(args, &quot;s&quot;, &amp;name))
+        return NULL;
+    cout &lt;&lt; &quot;Hello &quot; &lt;&lt; name &lt;&lt; endl;
+    // This should be a void function, so we return the Python None.
+    Py_RETURN_NONE;
+}
+// definition of a PyMethodDef object (defined in the python library)
+// contains the functions definition to be bound with python.
+static PyMethodDef HelloMethods[] =
+{
+    {&quot;hello&quot;, hello, METH_VARARGS, &quot;Say hello to somebody.&quot;},
+    {NULL, NULL, 0, NULL}
+};
+PyMODINIT_FUNC inithelloModule(void){
+    (void) Py_InitModule(&quot;helloModule&quot;, HelloMethods);
+}
+</pre></div>
+</div>
+<p>Each functions to bind have to return a PyObject pointer. Then, if a function needs to get arguments, they a passed to args, and first parsed in the function with PyArgs_ParseTuple. If the argument parsed is not a char it returns NULL, returning a NULL alows to directly raise a Python error. Here there is no need to return an object, so we return None (equivalent of C++ NULL).</p>
+<p>Then, to bind the hello function we need to create a PyMethodDef which contains the function definition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">hello</span><span class="p">,</span> <span class="n">METH_VARARGS</span><span class="p">,</span> <span class="s2">&quot;Say hello to somebody.&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The first element will be the name of the function in Python. The second element is the function to bind. The third element is METH_VARARGS if the function gets arguments, or METH_NOARGS otherwise. The last element corresponds to a description of the function, to appear in the function help.</p>
+</div>
+<div class="section" id="adding-the-binding-to-crappy">
+<h3>Adding the binding to Crappy<a class="headerlink" href="#adding-the-binding-to-crappy" title="Permalink to this headline">¶</a></h3>
+<p>To use the hello method defined in hello.cpp, we need to compile our project. This is automatically supported by the distutil package used to create the Crappy package.</p>
+<p>We have to use the Extension module in distulil.core.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">helloModule</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="s1">&#39;technical.helloModule&#39;</span><span class="p">,</span>
+                     <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sources/hello/hello.cpp&#39;</span><span class="p">],</span>
+                     <span class="n">extra_compile_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;-l&quot;</span><span class="p">,</span> <span class="s2">&quot;python2.7&quot;</span><span class="p">])</span>
+<span class="n">extentions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">helloModule</span><span class="p">)</span>
+<span class="n">Extension</span> <span class="n">takes</span> <span class="n">several</span> <span class="n">argument</span><span class="p">,</span> <span class="n">the</span> <span class="n">first</span> <span class="n">one</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">full</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">extension</span><span class="p">,</span> <span class="n">including</span> <span class="nb">any</span>
+<span class="n">packages</span><span class="o">.</span> <span class="n">Not</span> <span class="n">a</span> <span class="n">filename</span> <span class="ow">or</span> <span class="n">pathname</span><span class="p">,</span> <span class="n">but</span> <span class="n">Python</span> <span class="n">dotted</span> <span class="n">name</span><span class="o">.</span> <span class="n">Here</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">put</span> <span class="n">the</span> <span class="n">extension</span> <span class="ow">in</span>
+<span class="n">technical</span><span class="p">,</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">our</span> <span class="n">module</span> <span class="k">as</span> <span class="n">crappy</span><span class="o">.</span><span class="n">technical</span><span class="o">.</span><span class="n">helloModule</span><span class="p">,</span> <span class="n">so</span> <span class="n">the</span> <span class="n">extension</span> <span class="n">name</span> <span class="ow">is</span>
+<span class="s1">&#39;technical.helloModule&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here, we called the extension helloModule, so the init method must be defined as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PyMODINIT_FUNC</span> <span class="n">inithelloModule</span><span class="p">(</span><span class="n">void</span><span class="p">){</span>
+    <span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="n">Py_InitModule</span><span class="p">(</span><span class="s2">&quot;helloModule&quot;</span><span class="p">,</span> <span class="n">HelloMethods</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>the name of the function must be: init+[the name of your extension]: inithelloModule.
+Py_initModule must initialize a module with the same name “hellModule”.</p>
+</div>
+<p>Extensions is just a list containing all the extensions to build, so we must add the helloModule to it.</p>
+<p>Finally, we import our module in technical/__init__.py.</p>
+<p>Now we can build our module with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>The module helloModule.so will end up in /usr/local/lib/python2.7/dist-packages/crappy2-X.X.X-py2.7-linux-x86_64.egg/crappy2/technical and a helloModule.py file will be created to allow the import of the module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__bootstrap__</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">__bootstrap__</span><span class="p">,</span> <span class="n">__loader__</span><span class="p">,</span> <span class="vm">__file__</span>
+    <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">pkg_resources</span><span class="o">,</span> <span class="nn">imp</span>
+    <span class="vm">__file__</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="s1">&#39;helloModule.so&#39;</span><span class="p">)</span>
+    <span class="n">__loader__</span> <span class="o">=</span> <span class="kc">None</span><span class="p">;</span> <span class="k">del</span> <span class="n">__bootstrap__</span><span class="p">,</span> <span class="n">__loader__</span>
+    <span class="n">imp</span><span class="o">.</span><span class="n">load_dynamic</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span><span class="vm">__file__</span><span class="p">)</span>
+<span class="n">__bootstrap__</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>So we can now simply use our module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">crappy2</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">crappy2</span><span class="o">.</span><span class="n">technical</span><span class="o">.</span><span class="n">helloModule</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="s2">&quot;Crappy&quot;</span><span class="p">)</span>
+<span class="n">Hello</span> <span class="n">Crappy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="a-more-oriented-object-module">
+<h2>A more oriented object module<a class="headerlink" href="#a-more-oriented-object-module" title="Permalink to this headline">¶</a></h2>
+<p>Let’s try to define a class that is similar to the following python class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hello</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Crappy&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="s1">&#39;hello &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>we first need to define the functions to construct our future class:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a new method</p></li>
+<li><p>a constructor</p></li>
+<li><p>a destructor And a structure which will contain the class attributes.</p></li>
+</ul>
+</div></blockquote>
+<p>Here, the struct contains two elements. The first, PyObject_HEAD must always be defined, it represent the type of object. The second element represent our attribute ‘name’.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">defines</span> <span class="n">a</span> <span class="n">struct</span> <span class="n">to</span> <span class="n">build</span> <span class="n">our</span> <span class="n">Python</span> <span class="n">module</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">similar</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">dict</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">class</span><span class="o">.</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+    <span class="n">PyObject_HEAD</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Hello</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The new method parses the arguments and keywords arguments, to initialize the structure defined before, which will be passed as first argument for each method (similar to the python self).:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// This function will be called at the creation of our Python class, it allocates memory, parses the
+arguments and returns
+// the self struct.
+static PyObject *Hello_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
+{
+    Hello *self;
+    self = (Hello *)type-&gt;tp_alloc(type, 0);
+    static char *kwlist[] = {&quot;name&quot;, NULL};
+    if (self != NULL) {
+        if (! PyArg_ParseTupleAndKeywords(args, kwds, &quot;|s&quot;, kwlist, &amp;self-&gt;name)){
+                return NULL;
+        }
+    }
+    return (PyObject *)self;
+}
+</pre></div>
+</div>
+<p>The constructor parses the arguments and keywords arguments. The “name” argument is optional: “|s” string or nothing; name is set by default to “Crappy”.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>static int Hello_init(Hello *self, PyObject *args, PyObject *kwds)
+{
+    static char *kwlist[] = {&quot;name&quot;, NULL};
+    self-&gt;name = &quot;Crappy&quot;;
+    if (! PyArg_ParseTupleAndKeywords(args, kwds, &quot;|s&quot;, kwlist, &amp;self-&gt;name)){
+            return NULL;
+    }
+    return 0;
+}
+static void Hello_dealloc(Hello* self)
+{
+    self-&gt;ob_type-&gt;tp_free((PyObject*)self);
+}
+</pre></div>
+</div>
+<p>We then define our two methods like before:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To return a value, we need to use the Py_BuildValue function, to convert C++ type to python type:
+this way, we directly get a understandable python object.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PyObject</span><span class="o">*</span>
+<span class="n">Hello_get</span><span class="p">(</span><span class="n">Hello</span> <span class="o">*</span><span class="bp">self</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">Py_BuildValue</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">PyObject</span><span class="o">*</span>
+<span class="n">Hello_print</span><span class="p">(</span><span class="n">Hello</span> <span class="o">*</span><span class="bp">self</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Hello &quot;</span> <span class="o">&lt;&lt;</span> <span class="bp">self</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">Py_RETURN_NONE</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>To define a class which can be bound with Python, we need to define its structure, with a PyTypeObject. We have to define:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>which function is the constructor</p></li>
+<li><p>which one is the destructor, the new method…</p></li>
+<li><p>what is the name of the class</p></li>
+<li><p>its size</p></li>
+<li><p>its methods</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">PyMethodDef</span> <span class="n">Hello_methods</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="s2">&quot;say_hello&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">Hello_print</span><span class="p">,</span> <span class="n">METH_NOARGS</span><span class="p">,</span>
+     <span class="s2">&quot;Say hello to somebody.&quot;</span><span class="p">},</span>
+     <span class="p">{</span><span class="s2">&quot;get_name&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">PyCFunction</span><span class="p">)</span><span class="n">Hello_get</span><span class="p">,</span> <span class="n">METH_NOARGS</span><span class="p">,</span>
+     <span class="s2">&quot;Return the name attribute.&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="n">NULL</span><span class="p">}</span>
+<span class="p">};</span>
+<span class="n">static</span> <span class="n">PyMethodDef</span> <span class="n">module_methods</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="n">NULL</span><span class="p">}</span>
+<span class="p">};</span>
+<span class="n">static</span> <span class="n">PyTypeObject</span> <span class="n">helloType</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">PyObject_HEAD_INIT</span><span class="p">(</span><span class="n">NULL</span><span class="p">)</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">ob_size</span><span class="o">*/</span>
+    <span class="s2">&quot;Hello&quot;</span><span class="p">,</span>             <span class="o">/*</span><span class="n">tp_name</span><span class="o">*/</span>
+    <span class="n">sizeof</span><span class="p">(</span><span class="n">Hello</span><span class="p">),</span>             <span class="o">/*</span><span class="n">tp_basicsize</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_itemsize</span><span class="o">*/</span>
+    <span class="p">(</span><span class="n">destructor</span><span class="p">)</span><span class="n">Hello_dealloc</span><span class="p">,</span> <span class="o">/*</span><span class="n">tp_dealloc</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_print</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_getattr</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_setattr</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_compare</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_repr</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_as_number</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_as_sequence</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_as_mapping</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_hash</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_call</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_str</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_getattro</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_setattro</span><span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span><span class="n">tp_as_buffer</span><span class="o">*/</span>
+    <span class="n">Py_TPFLAGS_DEFAULT</span> <span class="o">|</span> <span class="n">Py_TPFLAGS_BASETYPE</span><span class="p">,</span> <span class="o">/*</span><span class="n">tp_flags</span><span class="o">*/</span>
+    <span class="s2">&quot;Hello objects&quot;</span><span class="p">,</span>           <span class="o">/*</span> <span class="n">tp_doc</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                     <span class="o">/*</span> <span class="n">tp_traverse</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                     <span class="o">/*</span> <span class="n">tp_clear</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                     <span class="o">/*</span> <span class="n">tp_richcompare</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                     <span class="o">/*</span> <span class="n">tp_weaklistoffset</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                     <span class="o">/*</span> <span class="n">tp_iter</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                     <span class="o">/*</span> <span class="n">tp_iternext</span> <span class="o">*/</span>
+    <span class="n">Hello_methods</span><span class="p">,</span>             <span class="o">/*</span> <span class="n">tp_methods</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>             <span class="o">/*</span> <span class="n">tp_members</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span> <span class="n">tp_getset</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span> <span class="n">tp_base</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span> <span class="n">tp_dict</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span> <span class="n">tp_descr_get</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span> <span class="n">tp_descr_set</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span> <span class="n">tp_dictoffset</span> <span class="o">*/</span>
+    <span class="p">(</span><span class="n">initproc</span><span class="p">)</span><span class="n">Hello_init</span><span class="p">,</span>      <span class="o">/*</span> <span class="n">tp_init</span> <span class="o">*/</span>
+    <span class="mi">0</span><span class="p">,</span>                         <span class="o">/*</span> <span class="n">tp_alloc</span> <span class="o">*/</span>
+    <span class="n">Hello_new</span><span class="p">,</span>                 <span class="o">/*</span> <span class="n">tp_new</span> <span class="o">*/</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Finally, as we did in the first example, the init method has to be defined:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Py_InitModule3</span> <span class="n">creates</span> <span class="n">the</span> <span class="n">module</span> <span class="ow">and</span> <span class="n">returns</span> <span class="n">its</span> <span class="n">instance</span> <span class="p">(</span><span class="n">here</span> <span class="n">empty</span><span class="p">)</span><span class="o">.</span>
+<span class="n">We</span> <span class="n">can</span> <span class="n">add</span> <span class="n">our</span> <span class="n">created</span> <span class="n">objects</span><span class="p">,</span> <span class="n">here</span> <span class="n">helloType</span> <span class="n">which</span> <span class="n">defines</span> <span class="n">our</span> <span class="n">class</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When returning an object, it returns a reference to it, each object has a reference counter that is
+automatically created for memory management issue, to know how many different places there are that have
+a reference to an object. When an object’s reference count becomes 0, the object is automatically
+deallocated. You have to take care of it when dealing with C-C++/Python bindings. (With
+Py_INCREF, Py_DECREF). Please see Python C-api documentation for more details.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PyMODINIT_FUNC</span>
+<span class="n">inithelloModule</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span><span class="p">{</span>
+        <span class="n">PyObject</span><span class="o">*</span> <span class="n">m</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">PyType_Ready</span><span class="p">(</span><span class="o">&amp;</span><span class="n">helloType</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;unable to install ximea module&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">Py_InitModule3</span><span class="p">(</span><span class="s2">&quot;helloModule&quot;</span><span class="p">,</span> <span class="n">module_methods</span><span class="p">,</span>
+                           <span class="s2">&quot;hello C++ module.&quot;</span><span class="p">);</span>
+        <span class="n">Py_INCREF</span><span class="p">(</span><span class="o">&amp;</span><span class="n">helloType</span><span class="p">);</span>
+        <span class="n">PyModule_AddObject</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">PyObject</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">helloType</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">catch</span> <span class="p">(</span> <span class="n">const</span> <span class="n">std</span><span class="p">::</span><span class="n">exception</span> <span class="o">&amp;</span> <span class="n">e</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="p">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="o">.</span><span class="n">what</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">hello</span> <span class="o">=</span> <span class="n">crappy2</span><span class="o">.</span><span class="n">technical</span><span class="o">.</span><span class="n">helloModule</span><span class="o">.</span><span class="n">Hello</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">hello</span><span class="o">.</span>
+<span class="n">hello</span><span class="o">.</span><span class="n">get_name</span>   <span class="n">hello</span><span class="o">.</span><span class="n">say_hello</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">hello</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s1">&#39;world&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">hello</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="n">Hello</span> <span class="n">world</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">hello</span> <span class="o">=</span> <span class="n">crappy2</span><span class="o">.</span><span class="n">technical</span><span class="o">.</span><span class="n">helloModule</span><span class="o">.</span><span class="n">Hello</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">hello</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="n">Hello</span> <span class="n">Crappy</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">hello</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="s1">&#39;Crappy&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="generators.html" class="btn btn-neutral float-left" title="How to generate a signal with CRAPPY ?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

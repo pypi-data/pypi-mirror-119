@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.blocks.machine &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.blocks.machine</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.blocks.machine</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">Block</span>
+<span class="kn">from</span> <span class="nn">..actuator</span> <span class="kn">import</span> <span class="n">actuator_list</span>
+
+
+<div class="viewcode-block" id="Machine"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.machine.Machine">[docs]</a><span class="k">class</span> <span class="nc">Machine</span><span class="p">(</span><span class="n">Block</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;To drive a machine with a one or more :ref:`Actuators`.</span>
+
+<span class="sd">  Takes a :obj:`list` of :obj:`dict`, containing the information to create each</span>
+<span class="sd">  actuator. Each key will either stand for a parameter, or else they are</span>
+<span class="sd">  transferred to the actuator.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Machine.__init__"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.machine.Machine.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">actuators</span><span class="p">,</span>
+               <span class="n">common</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">freq</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+               <span class="n">time_label</span><span class="o">=</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span>
+               <span class="n">spam</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the args and initializes the parent class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      actuators (:obj:`list`): The :obj:`list` of the :ref:`Actuators` of the</span>
+<span class="sd">        machine. It contains one or several :obj:`dict`, whose mandatory keys</span>
+<span class="sd">        are described below. The other keys will be passed to the actuator as</span>
+<span class="sd">        arguments.</span>
+<span class="sd">      common (:obj:`dict`, optional): The keys of this :obj:`dict` will be</span>
+<span class="sd">        common to all of the actuators. However if this conflicts with an</span>
+<span class="sd">        already existing key for an actuator, the latter will prevail.</span>
+<span class="sd">      freq (:obj:`float`, optional): The looping frequency of the block.</span>
+<span class="sd">      time_label (:obj:`str`, optional): If reading data from one or more</span>
+<span class="sd">        actuators, the time will be returned under this label.</span>
+<span class="sd">      spam (:obj:`bool`, optional): If :obj:`True`, a command is sent on each</span>
+<span class="sd">        loop of the block, else it is sent every time a value is received.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      - ``actuators`` keys:</span>
+
+<span class="sd">        - ``type`` (:obj:`str`): The name of the actuator to instantiate.</span>
+<span class="sd">        - ``cmd`` (:obj:`str`): The label of the input to drive the axis.</span>
+<span class="sd">        - ``mode`` (:obj:`str`, default: `&#39;speed&#39;`): Can be either `&#39;speed&#39;` or</span>
+<span class="sd">          `&#39;position&#39;`. Will either call :meth:`set_speed` or</span>
+<span class="sd">          :meth:`set_position` to drive the actuator.</span>
+<span class="sd">        - ``speed`` (:obj:`float`): If mode is `&#39;position&#39;`, the speed of the</span>
+<span class="sd">          axis.</span>
+<span class="sd">        - ``pos_label`` (:obj:`str`): If set, the block will return the value</span>
+<span class="sd">          of :meth:`get_position` with this label.</span>
+<span class="sd">        - ``speed_label`` (:obj:`str`): If set, the block will return the value</span>
+<span class="sd">          of :meth:`get_speed` with this label.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Block</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">common</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">common</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">time_label</span> <span class="o">=</span> <span class="n">time_label</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="p">[{}</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">setting</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">,</span> <span class="n">actuators</span><span class="p">):</span>
+      <span class="n">d</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">common</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd&#39;</span><span class="p">):</span>
+        <span class="n">setting</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+      <span class="k">if</span> <span class="s1">&#39;mode&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">)</span>
+        <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;speed&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;speed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;speed&#39;</span><span class="p">]</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;speed&#39;</span>
+      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;pos_label&#39;</span><span class="p">,</span> <span class="s1">&#39;speed_label&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="n">setting</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+          <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+      <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span></div>
+
+<div class="viewcode-block" id="Machine.prepare"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.machine.Machine.prepare">[docs]</a>  <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">actuators</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">setting</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">:</span>
+      <span class="c1"># Open each actuators with its associated dict of settings</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">actuators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actuator_list</span><span class="p">[</span><span class="n">setting</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()](</span>
+        <span class="o">**</span><span class="n">setting</span><span class="p">[</span><span class="s1">&#39;kwargs&#39;</span><span class="p">]))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">actuators</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">()</span></div>
+
+  <span class="k">def</span> <span class="nf">send_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">to_send</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">actuator</span><span class="p">,</span> <span class="n">setting</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actuators</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">):</span>
+      <span class="k">if</span> <span class="s1">&#39;pos_label&#39;</span> <span class="ow">in</span> <span class="n">setting</span><span class="p">:</span>
+        <span class="n">to_send</span><span class="p">[</span><span class="n">setting</span><span class="p">[</span><span class="s1">&#39;pos_label&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">actuator</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+      <span class="k">if</span> <span class="s1">&#39;speed_label&#39;</span> <span class="ow">in</span> <span class="n">setting</span><span class="p">:</span>
+        <span class="n">to_send</span><span class="p">[</span><span class="n">setting</span><span class="p">[</span><span class="s1">&#39;speed_label&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">actuator</span><span class="o">.</span><span class="n">get_speed</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">to_send</span> <span class="o">!=</span> <span class="p">{}:</span>
+      <span class="n">to_send</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_label</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to_send</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Machine.begin"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.machine.Machine.begin">[docs]</a>  <span class="k">def</span> <span class="nf">begin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">send_data</span><span class="p">()</span></div>
+
+  <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spam</span><span class="p">:</span>
+      <span class="n">recv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_last</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">recv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv_all_last</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">actuator</span><span class="p">,</span> <span class="n">setting</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">actuators</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;speed&#39;</span> <span class="ow">and</span> <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">recv</span><span class="p">:</span>
+        <span class="n">actuator</span><span class="o">.</span><span class="n">set_speed</span><span class="p">(</span><span class="n">recv</span><span class="p">[</span><span class="n">setting</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]])</span>
+      <span class="k">elif</span> <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;position&#39;</span> <span class="ow">and</span> <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">recv</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="n">actuator</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="n">recv</span><span class="p">[</span><span class="n">setting</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]],</span> <span class="n">setting</span><span class="p">[</span><span class="s1">&#39;speed&#39;</span><span class="p">])</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+          <span class="n">actuator</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="n">recv</span><span class="p">[</span><span class="n">setting</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]])</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">send_data</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Machine.finish"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.machine.Machine.finish">[docs]</a>  <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actuators</span><span class="p">:</span>
+      <span class="n">actuator</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+      <span class="n">actuator</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

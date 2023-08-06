@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.t7Streamer &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.t7Streamer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.t7Streamer</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">labjack</span> <span class="kn">import</span> <span class="n">ljm</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+  <span class="n">ljm</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;ljm&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Please install Labjack LJM and the ljm Python module&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="T7_streamer"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.t7Streamer.T7_streamer">[docs]</a><span class="k">class</span> <span class="nc">T7_streamer</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Class to use stream mode with Labjack T7 devices.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    For single modes, see :ref:`Labjack T7`.</span>
+
+<span class="sd">    You can use :ref:`IOBlock` with ``streamer=True`` to read data at high</span>
+<span class="sd">    frequency from the Labjack. Streamer mode makes the Labjack unavailable for</span>
+<span class="sd">    any other operation (single acquisition, `DAC` or `DIO`).</span>
+
+<span class="sd">    You can specify each channel as a :obj:`dict`, allowing to set</span>
+<span class="sd">    channel-specific settings such as gain, offset (computed on the host</span>
+<span class="sd">    machine as this feature is not available on board with streamer mode),</span>
+<span class="sd">    range and ability to zero the reading at startup.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="T7_streamer.__init__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.t7Streamer.T7_streamer.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">device</span><span class="o">=</span><span class="s1">&#39;ANY&#39;</span><span class="p">,</span>
+               <span class="n">connection</span><span class="o">=</span><span class="s1">&#39;ANY&#39;</span><span class="p">,</span>
+               <span class="n">identifier</span><span class="o">=</span><span class="s1">&#39;ANY&#39;</span><span class="p">,</span>
+               <span class="n">channels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">scan_rate</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span>
+               <span class="n">scan_per_read</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+               <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the args and initializes the parent class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      device (:obj:`str`, optional): The type of the device to open. Possible</span>
+<span class="sd">        values include:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;ANY&#39;, &#39;T7&#39;, &#39;T4&#39;, &#39;DIGIT&#39;</span>
+
+<span class="sd">        Only tested with `&#39;T7&#39;` in Crappy.</span>
+<span class="sd">      connection (:obj:`str`, optional): How is the Labjack connected ?</span>
+<span class="sd">        Possible values include:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;ANY&#39;, &#39;TCP&#39;, &#39;USB&#39;, &#39;ETHERNET&#39;, &#39;WIFI&#39;</span>
+
+<span class="sd">      identifier (:obj:`str`, optional): Something to identify the Labjack. It</span>
+<span class="sd">        can be a serial number, an IP address, or a device name.</span>
+<span class="sd">      channels (:obj:`list`, optional): Channels to use and their settings. It</span>
+<span class="sd">        must be a :obj:`list` of :obj:`dict`.</span>
+<span class="sd">      scan_rate (:obj:`int`, optional): The acquisition frequency in Hz for the</span>
+<span class="sd">        channels. Note that the sample rate (`scan_rate * num of chan`) cannot</span>
+<span class="sd">        exceed `100000`. If it is too high it will be lowered to the highest</span>
+<span class="sd">        possible value.</span>
+<span class="sd">      scan_per_read (:obj:`int`, optional): The number of points to read during</span>
+<span class="sd">        each loop.</span>
+<span class="sd">      resolution (:obj:`int`, optional): The resolution index for all channels.</span>
+<span class="sd">        The bigger this value the better the resolution, but the lower the</span>
+<span class="sd">        speed. The possible range is either `1` to `8` or to `12` according to</span>
+<span class="sd">        the model.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      - ``channels`` keys:</span>
+
+<span class="sd">        - name (:obj:`str`): The name of the channel according to Labjack&#39;s</span>
+<span class="sd">          naming convention. Ex: `&#39;AIN0&#39;`. This will be used to define the</span>
+<span class="sd">          direction (in/out) and the available settings.</span>
+
+<span class="sd">          It can be:</span>
+<span class="sd">            - `AINx`: An analog input, if gain and/or offset is given, the</span>
+<span class="sd">              integrated slope mechanism will be used with the extended</span>
+<span class="sd">              features registers. It can also be used for thermocouples (see</span>
+<span class="sd">              below). You can use any EF by using the ``write_at_open`` and</span>
+<span class="sd">              ``to_read`` keys if necessary.</span>
+<span class="sd">            - `(T)DACx`: An analog output, you can specify gain and/or offset.</span>
+<span class="sd">            - `(E/F/C/M IOx)`: Digital in/outputs. You can specify the</span>
+<span class="sd">              direction.</span>
+
+<span class="sd">        - gain (:obj:`float`, default: `1`): A numeric value that will multiply</span>
+<span class="sd">          the given value for inputs and outputs.</span>
+<span class="sd">        - offset (:obj:`float`, default: `0`): Will be added to the value.</span>
+
+<span class="sd">          For inputs:</span>
+<span class="sd">          ::</span>
+
+<span class="sd">            returned_value = gain * measured_value + offset</span>
+
+<span class="sd">          For outputs:</span>
+<span class="sd">          ::</span>
+
+<span class="sd">            set_value = gain * given_value + offset.</span>
+
+<span class="sd">          Where `measured_value` and `set_values` are in Volts.</span>
+
+<span class="sd">        - make_zero (:obj:`bool`): AIN only, if :obj:`True` the input value</span>
+<span class="sd">          will be evaluated at startup and the offset will be adjusted to</span>
+<span class="sd">          return `0` (or the offset if any).</span>
+<span class="sd">        - range (:obj:`float`, default: `10`): The range of the acquisition in</span>
+<span class="sd">          Volts. A range of `x` means that values can be read  between `-x` and</span>
+<span class="sd">          `x` Volts. The possible values are:</span>
+<span class="sd">          ::</span>
+
+<span class="sd">            0.01, 0.1, 1, 10</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">connection</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">identifier</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;AIN0&#39;</span><span class="p">}]</span> <span class="k">if</span> <span class="n">channels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span> <span class="o">=</span> <span class="n">scan_rate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">scan_per_read</span> <span class="o">=</span> <span class="n">scan_per_read</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">resolution</span> <span class="o">=</span> <span class="n">resolution</span>
+
+    <span class="n">default</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gain&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;make_zero&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span> <span class="o">=</span> <span class="mi">100000</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Labjack] Warning! scan_rate is too high! Sample rate cannot &quot;</span>
+          <span class="s2">&quot;exceed 100kS/s, lowering samplerate to&quot;</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span><span class="p">,</span> <span class="s2">&quot;samples/s&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">:</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">d</span><span class="p">}</span>
+      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">,</span> <span class="s1">&#39;make_zero&#39;</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">default</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+      <span class="k">if</span> <span class="s1">&#39;to_write&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_write&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+      <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_write&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;_RANGE&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;range&#39;</span><span class="p">]))</span>
+      <span class="n">d</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">nameToAddress</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span></div>
+
+  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">openS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+    <span class="n">names</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">:</span>
+      <span class="k">if</span> <span class="s2">&quot;to_write&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;to_write&#39;</span><span class="p">]:</span>
+          <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+          <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="c1"># names.append(&quot;STREAM_NUM_ADDRESSES&quot;); values.append(len(self.channels))</span>
+    <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;STREAM_SCANRATE_HZ&quot;</span><span class="p">)</span>
+    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span><span class="p">)</span>
+    <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;STREAM_RESOLUTION_INDEX&quot;</span><span class="p">)</span>
+    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resolution</span><span class="p">)</span>
+    <span class="n">ljm</span><span class="o">.</span><span class="n">eWriteNames</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="n">names</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+    <span class="n">scan_rate</span> <span class="o">=</span> <span class="n">ljm</span><span class="o">.</span><span class="n">eReadName</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="s2">&quot;STREAM_SCANRATE_HZ&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">scan_rate</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Labjack] Actual scan_rate:&quot;</span><span class="p">,</span> <span class="n">scan_rate</span><span class="p">,</span>
+          <span class="s2">&quot;instead of&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span> <span class="o">=</span> <span class="n">scan_rate</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;make_zero&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">]):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Labjack] Please wait during offset evaluation...&quot;</span><span class="p">)</span>
+      <span class="n">off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval_offset</span><span class="p">()</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;make_zero&#39;</span> <span class="ow">in</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;make_zero&#39;</span><span class="p">]:</span>
+          <span class="n">c</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">off</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Number of data points (to rebuild time)</span>
+
+<div class="viewcode-block" id="T7_streamer.get_data"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.t7Streamer.T7_streamer.get_data">[docs]</a>  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Short version, only used for :meth:`InOut.eval_offset`.&quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span> <span class="o">+</span> <span class="n">ljm</span><span class="o">.</span><span class="n">eReadNames</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">),</span>
+                              <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">])</span></div>
+
+  <span class="k">def</span> <span class="nf">start_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">ljm</span><span class="o">.</span><span class="n">eStreamStart</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_per_read</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">),</span>
+        <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;to_read&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">stream_t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">stop_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">ljm</span><span class="o">.</span><span class="n">eStreamStop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">get_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ljm</span><span class="o">.</span><span class="n">eStreamRead</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">//</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chan_list</span><span class="p">):</span>
+      <span class="n">r</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;gain&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">r</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">]</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stream_t0</span> <span class="o">+</span> \
+        <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scan_rate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+=</span> <span class="n">r</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">ljm</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

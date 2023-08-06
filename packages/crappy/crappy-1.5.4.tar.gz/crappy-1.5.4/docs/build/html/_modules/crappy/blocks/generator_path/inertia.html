@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.blocks.generator_path.inertia &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.blocks.generator_path.inertia</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.blocks.generator_path.inertia</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.path</span> <span class="kn">import</span> <span class="n">Path</span>
+
+
+<div class="viewcode-block" id="Inertia"><a class="viewcode-back" href="../../../../crappydocs/blocks.html#crappy.blocks.generator_path.inertia.Inertia">[docs]</a><span class="k">class</span> <span class="nc">Inertia</span><span class="p">(</span><span class="n">Path</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Used to lower/higher the output command by integrating an input over time.</span>
+
+<span class="sd">  Let `f(t)` be the input signal, `v(t)` the value of the output, `m` the</span>
+<span class="sd">  inertia and `t0` the beginning of this path. `K` is a chosen constant.</span>
+
+<span class="sd">  Then the output value for this path will be:</span>
+<span class="sd">  ::</span>
+
+<span class="sd">    v(t) = v(t0) - K * [I(t0 -&gt; t)f(t)dt] / m</span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Inertia.__init__"><a class="viewcode-back" href="../../../../crappydocs/blocks.html#crappy.blocks.generator_path.inertia.Inertia.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span> <span class="n">inertia</span><span class="p">,</span>
+               <span class="n">flabel</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="mi">30</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">tlabel</span><span class="o">=</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the args and initializes parent class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      time:</span>
+<span class="sd">      cmd:</span>
+<span class="sd">      condition (:obj:`str`): Condition to meet to end this path. See</span>
+<span class="sd">        :ref:`generator path` for more info.</span>
+<span class="sd">      inertia (:obj:`float`): This is the virtual inertia of the process. The</span>
+<span class="sd">        higher it is, the slower the `(in/de)` crease will be. In the above</span>
+<span class="sd">        formula, it is the value of `m`.</span>
+<span class="sd">      flabel (:obj:`str`): The name of the label of the value to integrate.</span>
+<span class="sd">      const (:obj:`float`, optional): The value of `K` in the formula above.</span>
+<span class="sd">        The default value is meant to send `rpm` with inertia in `kg.m²` and</span>
+<span class="sd">        torque in `N.m`. If sending `rad/s`, use ``const=1``.</span>
+<span class="sd">      tlabel (:obj:`str`, optional): The name of the label of time for the</span>
+<span class="sd">        integration.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">          The data received by ``flabel`` and ``tlabel`` must correspond. In</span>
+<span class="sd">          other word, there must be exactly the same number of values received</span>
+<span class="sd">          by these two labels at any instant (i.e. they must come from the same</span>
+<span class="sd">          parent block).</span>
+
+<span class="sd">      value:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Path</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">cmd</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_condition</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">inertia</span> <span class="o">=</span> <span class="n">inertia</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">flabel</span> <span class="o">=</span> <span class="n">flabel</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tlabel</span> <span class="o">=</span> <span class="n">tlabel</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">const</span> <span class="o">=</span> <span class="n">const</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">inertia</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">cmd</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">value</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">last_t</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+  <span class="k">def</span> <span class="nf">get_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+      <span class="k">raise</span> <span class="ne">StopIteration</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tlabel</span><span class="p">]:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_t</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># If it is the first call, we cannot use the first data point, since we</span>
+        <span class="c1"># don&#39;t have the previous time (I use left rectangle integration)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tlabel</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="c1"># If we have only one point, save it and return,</span>
+          <span class="c1"># first value will be returned on the next call</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">last_t</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+          <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
+        <span class="c1"># else: drop the first point and keep going</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">flabel</span><span class="p">][</span><span class="mi">1</span><span class="p">:])</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">last_t</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tlabel</span><span class="p">]</span>  <span class="c1"># We have a previous point: use it</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">flabel</span><span class="p">])</span>
+      <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">:])])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">const</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dt</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span>  <span class="c1"># The actual integration</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">last_t</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

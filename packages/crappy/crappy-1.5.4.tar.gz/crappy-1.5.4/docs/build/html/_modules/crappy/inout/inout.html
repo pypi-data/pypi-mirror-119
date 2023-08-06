@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.inout &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.inout</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.inout</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">DefinitionError</span>
+
+
+<div class="viewcode-block" id="MetaIO"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.inout.MetaIO">[docs]</a><span class="k">class</span> <span class="nc">MetaIO</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot; Metaclass that will define all IO objects.</span>
+
+<span class="sd">  All IO classes should be of this type.</span>
+
+<span class="sd">  To do so, simply add ``__metaclass__ = MetaIO`` in the class definition.</span>
+<span class="sd">  (Obviously, you must import this Metaclass first.)</span>
+
+<span class="sd">  MetaIO is a MetaClass: we will NEVER do ``c = MetaIO(...)``.</span>
+
+<span class="sd">  The :meth:`__init__` is used to init the classes of type MetaIO (with</span>
+<span class="sd">  ``__metaclass__ = MetaIO`` as a class attribute) and NOT an instance of</span>
+<span class="sd">  MetaClass.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">classes</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># This dict will keep track of all the existing cam classes</span>
+  <span class="c1"># Attention: It keeps track of the CLASSES, not the instances !</span>
+  <span class="c1"># If a class is defined without these</span>
+  <span class="n">IOclasses</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Classes that are inputs and outputs</span>
+  <span class="n">Oclasses</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Classes that only outputs</span>
+  <span class="n">Iclasses</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Classes that only inputs</span>
+  <span class="n">needed_methods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="s2">&quot;close&quot;</span><span class="p">]</span>
+
+  <span class="c1"># methods, it will raise an error</span>
+
+  <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dict_</span><span class="p">):</span>
+    <span class="c1"># print &quot;[MetaIO.__new__] Creating class&quot;,name,&quot;from metaclass&quot;,mcs</span>
+    <span class="k">return</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dict_</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dict_</span><span class="p">):</span>
+    <span class="c1"># print &quot;[MetaIO.__init__] Initializing&quot;,cls</span>
+    <span class="nb">type</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dict_</span><span class="p">)</span>  <span class="c1"># This is the important line</span>
+    <span class="c1"># It creates the class, the same way we could do this:</span>
+    <span class="c1"># MyClass = type(name,bases,dict_)</span>
+    <span class="c1"># bases is a tuple containing the parents of the class</span>
+    <span class="c1"># dict is the dict with the methods</span>
+
+    <span class="c1"># MyClass = type(&quot;MyClass&quot;,(object,),{&#39;method&#39;: do_stuff})</span>
+    <span class="c1"># is equivalent to</span>
+    <span class="c1"># class MyClass(object):</span>
+    <span class="c1">#   def method():</span>
+    <span class="c1">#       do_stuff()</span>
+
+    <span class="c1"># Check if this class hasn&#39;t already been created</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">MetaIO</span><span class="o">.</span><span class="n">classes</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="n">DefinitionError</span><span class="p">(</span><span class="s2">&quot;Cannot redefine &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; class&quot;</span><span class="p">)</span>
+    <span class="c1"># Check if mandatory methods are defined</span>
+    <span class="n">missing_methods</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">MetaIO</span><span class="o">.</span><span class="n">needed_methods</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">m</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_</span><span class="p">:</span>
+        <span class="n">missing_methods</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;InOut&quot;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">missing_methods</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">DefinitionError</span><span class="p">(</span><span class="s2">&quot;Class &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; is missing methods: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span>
+          <span class="n">missing_methods</span><span class="p">))</span>
+      <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;get_data&quot;</span> <span class="ow">in</span> <span class="n">dict_</span> <span class="ow">or</span> <span class="s2">&quot;get_stream&quot;</span> <span class="ow">in</span> <span class="n">dict_</span><span class="p">)</span>
+      <span class="n">o</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;set_cmd&quot;</span> <span class="ow">in</span> <span class="n">dict_</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">i</span> <span class="ow">and</span> <span class="n">o</span><span class="p">:</span>
+        <span class="n">MetaIO</span><span class="o">.</span><span class="n">IOclasses</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span>
+      <span class="k">elif</span> <span class="n">i</span><span class="p">:</span>
+        <span class="n">MetaIO</span><span class="o">.</span><span class="n">Iclasses</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span>
+      <span class="k">elif</span> <span class="n">o</span><span class="p">:</span>
+        <span class="n">MetaIO</span><span class="o">.</span><span class="n">Oclasses</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">DefinitionError</span><span class="p">(</span>
+          <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; needs at least get_data, get_stream or set_cmd method&quot;</span><span class="p">)</span>
+      <span class="n">MetaIO</span><span class="o">.</span><span class="n">classes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span></div>
+
+
+<span class="k">class</span> <span class="nc">InOut</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">MetaIO</span><span class="p">):</span>
+  <span class="nd">@classmethod</span>
+  <span class="k">def</span> <span class="nf">is_input</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;get_data&#39;</span><span class="p">)</span>
+
+  <span class="nd">@classmethod</span>
+  <span class="k">def</span> <span class="nf">is_output</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s1">&#39;set_cmd&#39;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">eval_offset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_input</span><span class="p">(),</span> <span class="s2">&quot;eval_offset only works for inputs!&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;eval_offset_delay&#39;</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">eval_offset_delay</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Default value</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">t0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval_offset_delay</span><span class="p">:</span>
+        <span class="k">break</span>
+      <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">()[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">table</span><span class="p">):</span>
+      <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

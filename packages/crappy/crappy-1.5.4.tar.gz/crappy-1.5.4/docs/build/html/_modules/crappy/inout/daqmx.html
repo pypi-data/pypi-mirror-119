@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.daqmx &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.daqmx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.daqmx</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">PyDAQmx</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">PyDAQmx</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;PyDAQmx&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_daqmx_devices_names"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.get_daqmx_devices_names">[docs]</a><span class="k">def</span> <span class="nf">get_daqmx_devices_names</span><span class="p">():</span>
+  <span class="sd">&quot;&quot;&quot;Get all connected daqmx devices.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">    A :obj:`list` of all connected daqmx devices.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="n">buffer_size</span> <span class="o">=</span> <span class="mi">4096</span>
+  <span class="n">buffer</span> <span class="o">=</span> <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">buffer_size</span><span class="p">)</span>
+  <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxGetSysDevNames</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">buffer_size</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)),</span> <span class="s2">&quot; devices detected: &quot;</span><span class="p">,</span> <span class="n">buffer</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">buffer</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">listify</span><span class="p">(</span><span class="n">stuff</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+  <span class="n">r</span> <span class="o">=</span> <span class="n">stuff</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stuff</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">stuff</span><span class="p">]</span> <span class="o">*</span> <span class="n">length</span>
+  <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="n">length</span><span class="p">,</span> <span class="s2">&quot;Invalid list length for &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">r</span>
+
+
+<div class="viewcode-block" id="Daqmx"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.Daqmx">[docs]</a><span class="k">class</span> <span class="nc">Daqmx</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Class to use DAQmx devices.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Daqmx.__init__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.Daqmx.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">device</span><span class="o">=</span><span class="s1">&#39;Dev1&#39;</span><span class="p">,</span>
+               <span class="n">channels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">gain</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+               <span class="nb">range</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+               <span class="n">make_zero</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">nperscan</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+               <span class="n">sample_rate</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+               <span class="n">out_channels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">out_gain</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">out_offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+               <span class="n">out_range</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the args and initializes the parent class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      device (:obj:`str`, optional): Name of the device to open.</span>
+<span class="sd">      channels (:obj:`list`, optional): Names or ids of the channels to read.</span>
+<span class="sd">      gain (:obj:`list`, optional): Gains to apply to each reading.</span>
+<span class="sd">      offset (:obj:`list`, optional): Offset to apply to each reading.</span>
+<span class="sd">      range (:obj:`list`, optional): Max value for the reading. Should be a</span>
+<span class="sd">        :obj:`list` of :obj:`float` in:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          0.5, 1., 2.5, 5.</span>
+
+<span class="sd">        Refer to the niDAQ api for more details.</span>
+
+<span class="sd">      make_zero (:obj:`list`, optional): If :obj:`True`, the average value on</span>
+<span class="sd">        the channel at opening will be evaluated and subtracted to the actual</span>
+<span class="sd">        reading.</span>
+<span class="sd">      nperscan (:obj:`int`, optional): If using streamer mode, number of</span>
+<span class="sd">        readings to acquire on each :meth:`get_stream` call.</span>
+<span class="sd">      sample_rate (:obj:`float`, optional): If using streamer mode, frequency</span>
+<span class="sd">        of acquisition when calling :meth:`get_stream`.</span>
+<span class="sd">      out_channels (:obj:`list`, optional): Names or ids of the output</span>
+<span class="sd">        channels.</span>
+<span class="sd">      out_gain (:obj:`list`, optional): Gains to apply to the commands.</span>
+<span class="sd">      out_offset (:obj:`list`, optional): Offset to apply to the commands.</span>
+<span class="sd">      out_range (:obj:`list`, optional): Max value of the output. Should be a</span>
+<span class="sd">        :obj:`list` of :obj:`float` in:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          0.5, 1., 2.5, 5.</span>
+
+<span class="sd">        Refer to the niDAQ api for more details.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      If an argument supposed to be a :obj:`list` is given as a single value,</span>
+<span class="sd">      this value will be applied to all channels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="c1"># For now, kwargs like in_gain are equivalent to gain</span>
+    <span class="c1"># (it is for consistency with out_gain, out_channels, etc...)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ai0&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">channels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">gain</span> <span class="o">=</span> <span class="n">gain</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="n">offset</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">range</span> <span class="o">=</span> <span class="nb">range</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">make_zero</span> <span class="o">=</span> <span class="n">make_zero</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nperscan</span> <span class="o">=</span> <span class="n">nperscan</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sample_rate</span> <span class="o">=</span> <span class="n">sample_rate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">out_channels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">out_channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_gain</span> <span class="o">=</span> <span class="n">out_gain</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_offset</span> <span class="o">=</span> <span class="n">out_offset</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_range</span> <span class="o">=</span> <span class="n">out_range</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_vars</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Daqmx.check_vars"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.Daqmx.check_vars">[docs]</a>  <span class="k">def</span> <span class="nf">check_vars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Turns the settings into :obj:`list` of the same length, each index</span>
+<span class="sd">    standing for one channel.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      If a :obj:`list` is given, simply checks the length. Else make a</span>
+<span class="sd">      :obj:`list` of the correct length containing only the given value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># IN channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> \
+      <span class="k">else</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">]</span>
+    <span class="n">nin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nin</span><span class="p">):</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ai&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">gain</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gain</span><span class="p">,</span> <span class="n">nin</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span> <span class="n">nin</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">range</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">range</span><span class="p">,</span> <span class="n">nin</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">make_zero</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">make_zero</span><span class="p">,</span> <span class="n">nin</span><span class="p">)</span>
+    <span class="c1"># OUT channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span> <span class="k">if</span> \
+        <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span>\
+        <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">]</span>
+    <span class="n">nout</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nout</span><span class="p">):</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ao&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_gain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">listify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_gain</span><span class="p">,</span> <span class="n">nout</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_offset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">listify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_offset</span><span class="p">,</span> <span class="n">nout</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">out_range</span> <span class="o">=</span> <span class="n">listify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_range</span><span class="p">,</span> <span class="n">nout</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">nin</span> <span class="o">+</span> <span class="n">nout</span><span class="p">,</span> <span class="s2">&quot;DAQmx has no in nor out channels!&quot;</span></div>
+
+  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxResetDevice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="c1"># IN channels</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">handle</span> <span class="o">=</span> <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">TaskHandle</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">nread</span> <span class="o">=</span> <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">int32</span><span class="p">()</span>
+      <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxCreateTask</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">))</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">):</span>
+        <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxCreateAIVoltageChan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">chan</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmx_Val_Cfg_Default</span><span class="p">,</span>
+                                 <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">range</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                 <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmx_Val_Volts</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">make_zero</span><span class="p">):</span>
+        <span class="n">off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval_offset</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">make_zero</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">make_zero</span><span class="p">):</span>
+          <span class="k">if</span> <span class="n">make_zero</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">off</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="c1"># OUT channels</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span> <span class="o">=</span> <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">TaskHandle</span><span class="p">()</span>
+      <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxCreateTask</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span><span class="p">))</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">chan</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">):</span>
+        <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxCreateAOVoltageChan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">chan</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                                 <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_range</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                 <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmx_Val_Volts</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxStartTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Daqmx.get_data"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.Daqmx.get_data">[docs]</a>  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns a :obj:`tuple` of length ``len(self.channels) + 1``.</span>
+
+<span class="sd">    First element is the time, others are readings of each channel.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_single</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span></div>
+
+<div class="viewcode-block" id="Daqmx.get_single"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.Daqmx.get_single">[docs]</a>  <span class="k">def</span> <span class="nf">get_single</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">npoints</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Reads the analog voltage on specified channels.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      npoints: Number of values to read. If :obj:`None`, will use the value of</span>
+<span class="sd">      `self.nperscan`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      A :obj:`tuple` of `len(self.channels) + 1` :obj:`list` of length</span>
+<span class="sd">      `npoints`. First list is the time, the others are the read voltages.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">npoints</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">npoints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nperscan</span>
+    <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxCfgSampClkTiming</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                          <span class="bp">self</span><span class="o">.</span><span class="n">sample_rate</span><span class="p">,</span> <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmx_Val_Rising</span><span class="p">,</span>
+                          <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmx_Val_FiniteSamps</span><span class="p">,</span>
+                          <span class="n">npoints</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxStartTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">),</span> <span class="n">npoints</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="c1"># DAQmx Read Code</span>
+    <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxReadAnalogF64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span>
+                       <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmx_Val_GroupByChannel</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
+                       <span class="n">npoints</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">),</span>
+                       <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nread</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="c1"># DAQmx Stop Code</span>
+    <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxStopTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+    <span class="c1"># Estimated starting of the acq</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="p">((</span>
+          <span class="n">t</span> <span class="o">+</span> <span class="n">t0</span><span class="p">)</span> <span class="o">-</span> <span class="n">npoints</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_rate</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">t1</span> <span class="o">+</span> <span class="n">i</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_rate</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">npoints</span><span class="p">)]]</span> \
+           <span class="o">+</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">gain</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>
+              <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">))]</span></div>
+
+<div class="viewcode-block" id="Daqmx.set_cmd"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.Daqmx.set_cmd">[docs]</a>  <span class="k">def</span> <span class="nf">set_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Set the output(s) to the specified value.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      Takes `n` arguments, `n` being the number of channels opened at</span>
+<span class="sd">      :meth:`__init__`. The ith argument is the value to set to the ith</span>
+<span class="sd">      channel.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_gain</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_offset</span>
+    <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxWriteAnalogF64</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span>
+        <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmx_Val_GroupByChannel</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Daqmx.close"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.daqmx.Daqmx.close">[docs]</a>  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Closes the connection.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">:</span>
+      <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxStopTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+      <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxClearTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span><span class="p">:</span>
+      <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxStopTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span><span class="p">)</span>
+      <span class="n">PyDAQmx</span><span class="o">.</span><span class="n">DAQmxClearTask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_handle</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

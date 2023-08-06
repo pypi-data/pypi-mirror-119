@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.inout.ni_daqmx &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.inout.ni_daqmx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.inout.ni_daqmx</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">.inout</span> <span class="kn">import</span> <span class="n">InOut</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">nidaqmx</span>
+  <span class="kn">from</span> <span class="nn">nidaqmx</span> <span class="kn">import</span> <span class="n">stream_readers</span><span class="p">,</span> <span class="n">stream_writers</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">nidaqmx</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;nidaqmx&quot;</span><span class="p">)</span>
+  <span class="n">stream_readers</span> <span class="o">=</span> <span class="n">stream_writers</span> <span class="o">=</span> <span class="n">nidaqmx</span>
+
+
+<div class="viewcode-block" id="Nidaqmx"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.ni_daqmx.Nidaqmx">[docs]</a><span class="k">class</span> <span class="nc">Nidaqmx</span><span class="p">(</span><span class="n">InOut</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Opens National Instrument devices using the NiDAQmx driver (Windows only).</span>
+
+<span class="sd">  This class can open `ai`, `ao` and `dio` channels on NI devices. It supports</span>
+<span class="sd">  continuous streaming on `ai` channels only. Streaming is not supported with</span>
+<span class="sd">  `ai` channels of different types.</span>
+
+<span class="sd">  It uses the :mod:`nidaqmx` python module by NI.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Nidaqmx.__init__"><a class="viewcode-back" href="../../../crappydocs/inouts.html#crappy.inout.ni_daqmx.Nidaqmx.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">channels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">samplerate</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+               <span class="n">nsamples</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Builds the different channels lists.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      channels (:obj:`list`, optional): A :obj:`list` of :obj:`dict` describing</span>
+<span class="sd">        all the channels to open. See the note below for details.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">          For `dio`, use `DevX/d[i/o] Y` to select `port(Y//8)/line(Y%8)` on</span>
+<span class="sd">          `DevX`.</span>
+
+<span class="sd">      samplerate (:obj:`float`, optional): If using stream mode, the samplerate</span>
+<span class="sd">        of the stream.</span>
+<span class="sd">      nsamples (:obj:`int`, optional): If using stream mode, the stream array</span>
+<span class="sd">        will be returned after reading ``nsamples`` samples. Defaults to</span>
+<span class="sd">        ``samplerate // 5``.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      - ``channels`` keys:</span>
+
+<span class="sd">        - name (:obj:`str`): The name of the channel to open. For dio, use</span>
+<span class="sd">          `diX` for digital input on line `X` and `doX` for digital output.</span>
+<span class="sd">        - type (:obj:`str`, default: &#39;voltage&#39;): The type of channel to open.</span>
+<span class="sd">          Ex: `&#39;thrmcpl&#39;`.</span>
+<span class="sd">        - All the other args will be given as kwargs to</span>
+<span class="sd">          `nidaqmx.Task.add_[a/d][i/o]_[type]_chan`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">InOut</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">thermocouple_type</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">B</span><span class="p">,</span>
+                              <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">E</span><span class="p">,</span>
+                              <span class="s2">&quot;J&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">J</span><span class="p">,</span>
+                              <span class="s2">&quot;K&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">K</span><span class="p">,</span>
+                              <span class="s2">&quot;N&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">N</span><span class="p">,</span>
+                              <span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">R</span><span class="p">,</span>
+                              <span class="s2">&quot;S&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">S</span><span class="p">,</span>
+                              <span class="s2">&quot;T&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ThermocoupleType</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+                              <span class="p">}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">TemperatureUnits</span><span class="o">.</span><span class="n">DEG_C</span><span class="p">,</span>
+                  <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">TemperatureUnits</span><span class="o">.</span><span class="n">DEG_F</span><span class="p">,</span>
+                  <span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">TemperatureUnits</span><span class="o">.</span><span class="n">DEG_R</span><span class="p">,</span>
+                  <span class="s2">&quot;K&quot;</span><span class="p">:</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">TemperatureUnits</span><span class="o">.</span><span class="n">K</span><span class="p">,</span>
+                  <span class="c1"># To be completed...</span>
+                  <span class="p">}</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Dev1/ai0&#39;</span><span class="p">}]</span> <span class="k">if</span> <span class="n">channels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">channels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span> <span class="o">=</span> <span class="n">samplerate</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span> <span class="o">=</span> <span class="n">nsamples</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span> <span class="o">/</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">streaming</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">di_channels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">do_channels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">:</span>
+      <span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;voltage&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+      <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ai&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span>
+      <span class="k">elif</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;ao&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;di&#39;</span><span class="p">):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">:])</span>
+        <span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;port</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span> <span class="o">//</span> <span class="mi">8</span><span class="p">),</span> <span class="s1">&#39;line</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">8</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">di_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;do&#39;</span><span class="p">):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">:])</span>
+        <span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;port</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span> <span class="o">//</span> <span class="mi">8</span><span class="p">),</span> <span class="s1">&#39;line</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">8</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">do_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Unknown channel in nidaqmx&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ai_chan_list</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="p">[])</span></div>
+
+  <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># AI</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ai_chan_list</span><span class="p">:</span>
+      <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;voltage&#39;</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;max_val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;max_val&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;min_val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;min_val&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+          <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s2">&quot;thermocouple_type&quot;</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thermocouple_type</span><span class="p">[</span><span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+          <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="s2">&quot;units&quot;</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span><span class="p">[</span><span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">Task</span><span class="p">()</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">ai_channels</span><span class="p">,</span>
+                <span class="s2">&quot;add_ai_</span><span class="si">%s</span><span class="s2">_chan&quot;</span> <span class="o">%</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid channel settings in nidaqmx:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+        <span class="k">raise</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">stream_in</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">chan_type</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">stream_in</span><span class="p">[</span><span class="n">chan_type</span><span class="p">]</span> <span class="o">=</span> \
+          <span class="n">stream_readers</span><span class="o">.</span><span class="n">AnalogMultiChannelReader</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">in_stream</span><span class="p">)</span>
+    <span class="c1"># AO</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_out</span> <span class="o">=</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">Task</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">stream_out</span> <span class="o">=</span> <span class="n">stream_writers</span><span class="o">.</span><span class="n">AnalogMultiChannelWriter</span><span class="p">(</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">t_out</span><span class="o">.</span><span class="n">out_stream</span><span class="p">,</span> <span class="n">auto_start</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="p">:</span>
+      <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;max_val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;max_val&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;min_val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;min_val&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_out</span><span class="o">.</span><span class="n">ao_channels</span><span class="o">.</span><span class="n">add_ao_voltage_chan</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="c1"># DI</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">di_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_di</span> <span class="o">=</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">Task</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">di_channels</span><span class="p">:</span>
+      <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_di</span><span class="o">.</span><span class="n">di_channels</span><span class="o">.</span><span class="n">add_di_chan</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">di_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">di_stream</span> <span class="o">=</span> <span class="n">stream_readers</span><span class="o">.</span><span class="n">DigitalMultiChannelReader</span><span class="p">(</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">t_di</span><span class="o">.</span><span class="n">in_stream</span><span class="p">)</span>
+
+    <span class="c1"># DO</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_do</span> <span class="o">=</span> <span class="n">nidaqmx</span><span class="o">.</span><span class="n">Task</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_channels</span><span class="p">:</span>
+      <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_do</span><span class="o">.</span><span class="n">do_channels</span><span class="o">.</span><span class="n">add_do_chan</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">do_stream</span> <span class="o">=</span> <span class="n">stream_writers</span><span class="o">.</span><span class="n">DigitalMultiChannelWriter</span><span class="p">(</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">t_do</span><span class="o">.</span><span class="n">out_stream</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">start_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Stream mode can only open one type of chan!&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>  <span class="c1"># Only one loop</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">timing</span><span class="o">.</span><span class="n">cfg_samp_clk_timing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span><span class="p">,</span>
+          <span class="n">sample_mode</span><span class="o">=</span><span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">AcquisitionType</span><span class="o">.</span><span class="n">CONTINUOUS</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">streaming</span> <span class="o">=</span> <span class="kc">True</span>
+
+  <span class="k">def</span> <span class="nf">stop_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">streaming</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">timing</span><span class="o">.</span><span class="n">cfg_samp_clk_timing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samplerate</span><span class="p">,</span>
+        <span class="n">sample_mode</span><span class="o">=</span><span class="n">nidaqmx</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">AcquisitionType</span><span class="o">.</span><span class="n">FINITE</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">get_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">streaming</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">start_stream</span><span class="p">()</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ai_chan_list</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">chan_type</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stream_in</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>  <span class="c1"># Will only loop once</span>
+      <span class="n">s</span><span class="o">.</span><span class="n">read_many_sample</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nsamples</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">time</span><span class="p">(),</span> <span class="n">a</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_out</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">streaming</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">stop_stream</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t_in</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">t_out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">sum</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span><span class="o">.</span><span class="n">values</span><span class="p">()]),))</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">chan_type</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stream_in</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="n">s</span><span class="o">.</span><span class="n">read_one_sample</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span><span class="p">[</span><span class="n">chan_type</span><span class="p">])])</span>
+      <span class="n">i</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ai_channels</span><span class="p">[</span><span class="n">chan_type</span><span class="p">])</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">di_channels</span><span class="p">:</span>
+      <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">di_channels</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">di_stream</span><span class="o">.</span><span class="n">read_one_sample_multi_line</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+      <span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">set_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">stream_out</span><span class="o">.</span><span class="n">write_one_sample</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="p">)],</span>
+        <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_channels</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">do_stream</span><span class="o">.</span><span class="n">write_one_sample_multi_line</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ao_channels</span><span class="p">):],</span>
+                 <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">do_channels</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.blocks.camera &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.blocks.camera</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.blocks.camera</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">platform</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">Block</span>
+<span class="kn">from</span> <span class="nn">..camera</span> <span class="kn">import</span> <span class="n">camera_list</span>
+<span class="kn">from</span> <span class="nn">..tool</span> <span class="kn">import</span> <span class="n">Camera_config</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">SimpleITK</span> <span class="k">as</span> <span class="nn">Sitk</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">Sitk</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">PIL</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">PIL</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">cv2</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">cv2</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;opencv-python&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Camera"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.camera.Camera">[docs]</a><span class="k">class</span> <span class="nc">Camera</span><span class="p">(</span><span class="n">Block</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Reads images from a camera object, saves and/or sends them to another</span>
+<span class="sd">  block.</span>
+
+<span class="sd">  It can be triggered by an other block, internally, or try to run at a given</span>
+<span class="sd">  framerate.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Camera.__init__"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.camera.Camera.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">camera</span><span class="p">,</span>
+               <span class="n">save_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">fps_label</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">img_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{self.loops:06d}</span><span class="s2">_{t-self.t0:.6f}&quot;</span><span class="p">,</span>
+               <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;tiff&#39;</span><span class="p">,</span>
+               <span class="n">save_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">save_backend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">input_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">no_loop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the args and initializes parent class.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      camera (:obj:`str`): The name of the camera to control. See</span>
+<span class="sd">        :ref:`Cameras` for an exhaustive list of available ones.</span>
+<span class="sd">      save_folder (:obj:`str`, optional): The directory to save images to. If</span>
+<span class="sd">        it doesn&#39;t exist it will be created. If :obj:`None` the images won&#39;t be</span>
+<span class="sd">        saved.</span>
+<span class="sd">      verbose (:obj:`bool`, optional): If :obj:`True`, the block will print the</span>
+<span class="sd">        number of `loops/s`.</span>
+<span class="sd">      labels (:obj:`list`, optional): Names of the labels for respectively time</span>
+<span class="sd">        and the frame.</span>
+<span class="sd">      fps_label (:obj:`str`, optional): If set, ``self.max_fps`` will be set to</span>
+<span class="sd">        the value received by the block with this label.</span>
+<span class="sd">      img_name (:obj:`str`, optional): Template for the name of the image to</span>
+<span class="sd">        save. It is evaluated as an `f-string`.</span>
+<span class="sd">      ext (:obj:`str`, optional): Extension of the image. Make sure it is</span>
+<span class="sd">        supported by the saving backend.</span>
+<span class="sd">      save_period (:obj:`int`, optional): Will save only one in `x` images.</span>
+<span class="sd">      save_backend (:obj:`str`, optional): Module to use to save the images.</span>
+<span class="sd">        The supported backends are: :mod:`sitk` (SimpleITK), :mod:`cv2`</span>
+<span class="sd">        (OpenCV) and :mod:`pil` (Pillow). If :obj:`None`, will try :mod:`sitk`</span>
+<span class="sd">        and then :mod:`cv2` if not successful.</span>
+<span class="sd">      transform (:obj:`function`, optional): Function to be applied on the</span>
+<span class="sd">        image before sending. It will not be applied on the saved images.</span>
+<span class="sd">      input_label (:obj:`str`, optional): If specified, the image will not be</span>
+<span class="sd">        read from a camera object but from this label.</span>
+<span class="sd">      config (:obj:`bool`, optional): Show the popup for config ?</span>
+<span class="sd">      **kwargs: Any additional specific argument to pass to the camera.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Block</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">niceness</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span> <span class="o">=</span> <span class="n">save_folder</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,</span> <span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">labels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fps_label</span> <span class="o">=</span> <span class="n">fps_label</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">img_name</span> <span class="o">=</span> <span class="n">img_name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="o">=</span> <span class="n">ext</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">save_period</span> <span class="o">=</span> <span class="n">save_period</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">save_backend</span> <span class="o">=</span> <span class="n">save_backend</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">input_label</span> <span class="o">=</span> <span class="n">input_label</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">no_loop</span> <span class="o">=</span> <span class="n">no_loop</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">camera_name</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cam_kw</span> <span class="o">=</span> <span class="n">kwargs</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera_name</span> <span class="ow">in</span> <span class="n">camera_list</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_label</span><span class="p">,</span>\
+        <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> camera does not exist!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_backend</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">Sitk</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_backend</span> <span class="o">=</span> <span class="s2">&quot;cv2&quot;</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_backend</span> <span class="o">=</span> <span class="s2">&quot;sitk&quot;</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_backend</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;cv2&quot;</span><span class="p">,</span> <span class="s2">&quot;sitk&quot;</span><span class="p">,</span> <span class="s2">&quot;pil&quot;</span><span class="p">],</span>\
+        <span class="s2">&quot;Unknown saving backend: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_backend</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">save</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;save_&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_backend</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">loops</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+<div class="viewcode-block" id="Camera.prepare"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.camera.Camera.prepare">[docs]</a>  <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">send_img</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="s1">&#39;win&#39;</span> <span class="ow">in</span> <span class="n">platform</span> <span class="k">else</span> <span class="s1">&#39;/&#39;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">sep</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span> <span class="o">+=</span> <span class="n">sep</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span><span class="p">):</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span><span class="p">)</span>
+      <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span><span class="p">),</span>\
+            <span class="s2">&quot;Error creating &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ext_trigger</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fps_label</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_label</span><span class="p">))</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="c1"># Exception to the usual inner working of Crappy:</span>
+      <span class="c1"># We receive data from the link BEFORE the program is started</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">ref_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">recv</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_label</span><span class="p">]</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="n">camera_list</span><span class="p">[</span><span class="s1">&#39;Camera&#39;</span><span class="p">]()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">max_fps</span> <span class="o">=</span> <span class="mi">30</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">get_image</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ref_img</span><span class="p">)</span>
+      <span class="k">return</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="n">camera_list</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">camera_name</span><span class="p">]()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">cam_kw</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">:</span>
+      <span class="n">conf</span> <span class="o">=</span> <span class="n">Camera_config</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="p">)</span>
+      <span class="n">conf</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+    <span class="c1"># Sending the first image before the actual start</span>
+    <span class="k">if</span> <span class="n">send_img</span><span class="p">:</span>
+      <span class="n">t</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_img</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">img</span><span class="p">])</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_loop</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop</span></div>
+
+  <span class="nd">@staticmethod</span>
+  <span class="k">def</span> <span class="nf">save_sitk</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Sitk</span><span class="o">.</span><span class="n">GetImageFromArray</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">Sitk</span><span class="o">.</span><span class="n">WriteImage</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+
+  <span class="nd">@staticmethod</span>
+  <span class="k">def</span> <span class="nf">save_cv2</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+
+  <span class="nd">@staticmethod</span>
+  <span class="k">def</span> <span class="nf">save_pil</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+    <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Camera.get_img"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.camera.Camera.get_img">[docs]</a>  <span class="k">def</span> <span class="nf">get_img</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Waits the appropriate time/event to read an image, reads it, saves it if</span>
+<span class="sd">    asked to, applies the transformation and increases counter.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_label</span><span class="p">:</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+      <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;t(s)&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_label</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext_trigger</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fps_label</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">poll</span><span class="p">():</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">max_fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">recv</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">fps_label</span><span class="p">]</span>
+      <span class="n">t</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>  <span class="c1"># NOT constrained to max_fps</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>  <span class="c1"># wait for a signal</span>
+      <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+      <span class="n">t</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">get_image</span><span class="p">()</span>  <span class="c1"># self limiting to max_fps</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">loops</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">loops</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_period</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span> <span class="o">+</span>
+          <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;f&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">img_name</span><span class="p">))</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;.</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
+      <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">img</span></div>
+
+  <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_img</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">([</span><span class="n">t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span><span class="p">,</span> <span class="n">img</span><span class="p">])</span>
+
+<div class="viewcode-block" id="Camera.finish"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.camera.Camera.finish">[docs]</a>  <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

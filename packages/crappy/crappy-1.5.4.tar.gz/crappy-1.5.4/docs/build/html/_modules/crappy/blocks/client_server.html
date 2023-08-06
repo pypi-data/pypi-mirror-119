@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.blocks.client_server &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.blocks.client_server</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.blocks.client_server</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">Block</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="kn">import</span> <span class="nn">queue</span>
+<span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">paho.mqtt.client</span> <span class="k">as</span> <span class="nn">mqtt</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">mqtt</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;paho.mqtt.client&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Client_server"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.client_server.Client_server">[docs]</a><span class="k">class</span> <span class="nc">Client_server</span><span class="p">(</span><span class="n">Block</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Block for exchanging data on a local network using the MQTT protocol.</span>
+
+<span class="sd">  This block can send data to an MQTT broker, receive data from this broker by</span>
+<span class="sd">  subscribing to its topics, and also launch the Mosquitto broker.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Client_server.__init__"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.client_server.Client_server.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">broker</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+               <span class="n">address</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+               <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1148</span><span class="p">,</span>
+               <span class="n">init_output</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">topics</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">cmd_labels</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">labels_to_send</span><span class="p">:</span>
+               <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Checks arguments validity and sets the instance attributes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      broker (:obj:`bool`, optional): If :obj:`True`, starts the Mosquitto </span>
+<span class="sd">        broker during the prepare loop and stops it during the finish loop. If</span>
+<span class="sd">        Mosquitto is not installed a :exc:`FileNotFoundError` is raised.</span>
+<span class="sd">      address (optional): The network address on which the MQTT broker is</span>
+<span class="sd">        running.</span>
+<span class="sd">      port (:obj:`int`, optional): A network port on which the MQTT broker is</span>
+<span class="sd">        listening.</span>
+<span class="sd">      init_output (:obj:`dict`, optional): A :obj:`dict` containing for each</span>
+<span class="sd">        label in ``topics`` the first value to be sent in the output link. Must</span>
+<span class="sd">        be given if ``topics`` is not :obj:`None`.</span>
+<span class="sd">      topics (:obj:`list`, optional): A :obj:`list` of :obj:`str` and/or </span>
+<span class="sd">        :obj:`tuple` of :obj:`str`. Each string corresponds to the name of a </span>
+<span class="sd">        crappy label to be received from the broker. Each element of the list </span>
+<span class="sd">        is considered to be the name of an MQTT topic, to which the client </span>
+<span class="sd">        subscribes. After a message has been received on that topic, the block </span>
+<span class="sd">        returns for each label in the topic (i.e. each string in the tuple) the </span>
+<span class="sd">        corresponding data from the message.</span>
+<span class="sd">      cmd_labels (:obj:`list`, optional): A :obj:`list` of :obj:`str` and/or </span>
+<span class="sd">        :obj:`tuple` of :obj:`str`. Each string corresponds to the name of a </span>
+<span class="sd">        crappy label to send to the broker. Each element of the list is </span>
+<span class="sd">        considered to be the name of an MQTT topic, in which the client </span>
+<span class="sd">        publishes. Grouping labels in a same topic (i.e. strings in a same </span>
+<span class="sd">        tuple) allows to keep the synchronization between signals coming from a </span>
+<span class="sd">        same block, as they will be published together in a same message. This </span>
+<span class="sd">        is mostly useful for sending a signal along with its timeframe.</span>
+<span class="sd">      labels_to_send (:obj:`list`, optional): A :obj:`list` of :obj:`str` </span>
+<span class="sd">        and/or :obj:`tuple` of :obj:`str`. Allows to rename the labels before </span>
+<span class="sd">        publishing data. The structure of ``labels_to_send`` should be the </span>
+<span class="sd">        exact same as ``cmd_labels``, with each label in ``labels_to_send`` </span>
+<span class="sd">        replacing the corresponding one in ``cmd_labels``. This is especially </span>
+<span class="sd">        useful for transferring several signals along with their timestamps, as </span>
+<span class="sd">        the label ``&#39;t(s)&#39;`` should not appear more than once in the topics </span>
+<span class="sd">        list of the receiving block.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      - ``broker``:</span>
+<span class="sd">        In order for the block to run, an MQTT broker must be running at the</span>
+<span class="sd">        specified address on the specified port. If not, an</span>
+<span class="sd">        :exc:`ConnectionRefusedError` is raised. The broker can be started and</span>
+<span class="sd">        stopped manually by the user independently of the execution of crappy.</span>
+<span class="sd">        It also doesn&#39;t need to be Mosquitto, any other MQTT broker can be</span>
+<span class="sd">        used.</span>
+
+<span class="sd">      - ``topics``:</span>
+<span class="sd">        The presence of the same label in multiple topics will most likely lead </span>
+<span class="sd">        to a data loss.</span>
+
+<span class="sd">      - ``cmd_labels``:</span>
+<span class="sd">        It is not possible to group signals coming from different blocks in a</span>
+<span class="sd">        same topic.</span>
+
+<span class="sd">      - ``labels_to_send``:</span>
+<span class="sd">        Differences in the structure of ``labels_to_send`` and ``cmd_labels``</span>
+<span class="sd">        will not always raise an error, but may lead to a data loss.</span>
+
+<span class="sd">      - **Single-value tuples**:</span>
+<span class="sd">        Single-value tuples can be shortened as strings.</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          topics=[(&#39;cmd1&#39;,), (&#39;cmd2&#39;,)]</span>
+<span class="sd">          cmd_labels=[(&#39;cmd1&#39;,), (&#39;cmd2&#39;,)]</span>
+<span class="sd">          labels_to_send=[(&#39;cmd1&#39;,), (&#39;cmd2&#39;,)]</span>
+
+<span class="sd">        is equivalent to</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          topics=[&#39;cmd1&#39;, &#39;cmd2&#39;]</span>
+<span class="sd">          cmd_labels=[&#39;cmd1&#39;, &#39;cmd2&#39;]</span>
+<span class="sd">          labels_to_send=[&#39;cmd1&#39;, &#39;cmd2&#39;]</span>
+
+
+<span class="sd">    Examples:</span>
+<span class="sd">      - ``topics``:</span>
+<span class="sd">        If</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          topics=[(&#39;t1&#39;, &#39;cmd1&#39;), &#39;sign&#39;]</span>
+
+<span class="sd">        the client will subscribe to the topics</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          (&#39;t1&#39;, &#39;cmd1&#39;)</span>
+<span class="sd">          (&#39;sign&#39;,)</span>
+
+<span class="sd">        The block will return data associated with the labels</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;t1&#39;, &#39;cmd1&#39;</span>
+<span class="sd">          &#39;sign&#39;</span>
+
+
+<span class="sd">      - ``cmd_labels``:</span>
+<span class="sd">        If</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          cmd_labels=[(&#39;t1&#39;, &#39;cmd1&#39;), &#39;sign&#39;]</span>
+
+<span class="sd">        the client will publish data in the form of</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          [[t1_0, cmd1_0], [t1_1, cmd1_1], ...]</span>
+<span class="sd">          [[sign_0], [sign_1], ...]</span>
+
+<span class="sd">        in the topics</span>
+<span class="sd">        ::</span>
+
+<span class="sd">           (&#39;t1&#39;, &#39;cmd1&#39;)</span>
+<span class="sd">           (&#39;sign&#39;,)</span>
+
+
+<span class="sd">      - ``labels_to_send``:</span>
+<span class="sd">        If</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          cmd_labels=[(&#39;t(s)&#39;, &#39;cmd&#39;), &#39;sign&#39;]</span>
+<span class="sd">          labels_to_send=[(&#39;t1&#39;, &#39;cmd1&#39;), &#39;sign&#39;]</span>
+
+<span class="sd">        the data from labels</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;t(s)&#39;, &#39;cmd&#39;</span>
+
+<span class="sd">        will be published in the topic</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          (&#39;t1&#39;, &#39;cmd1&#39;)</span>
+
+<span class="sd">        and the data from label</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &#39;sign&#39;</span>
+
+<span class="sd">        in the topic</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          (&#39;sign&#39;,)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Block</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">niceness</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">stop_mosquitto</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">broker</span> <span class="o">=</span> <span class="n">broker</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">init_output</span> <span class="o">=</span> <span class="n">init_output</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="o">=</span> <span class="n">topics</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span> <span class="o">=</span> <span class="n">cmd_labels</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span> <span class="o">=</span> <span class="n">labels_to_send</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_output_reader</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on_connect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_connect</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">on_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_message</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">reconnect_delay_set</span><span class="p">(</span><span class="n">max_delay</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] WARNING: client-server block is neither an input &quot;</span>
+            <span class="s2">&quot;nor an output !&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">last_out_val</span> <span class="o">=</span> <span class="n">init_output</span></div>
+
+<div class="viewcode-block" id="Client_server.prepare"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.client_server.Client_server.prepare">[docs]</a>  <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reorganizes the labels lists, starts the broker and connects to it.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Preparing for receiving data</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">outputs</span><span class="p">,</span> <span class="s2">&quot;topics are specified but there&#39;s no output link &quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="o">=</span> <span class="p">[(</span><span class="n">topic</span><span class="p">,)</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">topic</span> <span class="k">for</span>
+                     <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span><span class="p">]</span>
+
+      <span class="c1"># The buffer for received data is a dictionary of queues</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span> <span class="o">=</span> <span class="p">{</span><span class="n">topic</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span> <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span><span class="p">}</span>
+
+      <span class="c1"># Placing the initial values in the queues</span>
+      <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_output</span><span class="p">,</span> <span class="s2">&quot;init_output values should be provided&quot;</span>
+      <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span><span class="p">[</span><span class="n">topic</span><span class="p">]</span><span class="o">.</span><span class="n">put_nowait</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">init_output</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+                                                <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init_output values should be provided for each label&quot;</span><span class="p">)</span>
+          <span class="k">raise</span>
+
+    <span class="c1"># Preparing for publishing data</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">,</span> <span class="s2">&quot;cmd_labels are specified but there&#39;s no input link &quot;</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span> <span class="o">=</span> <span class="p">[(</span><span class="n">topic</span><span class="p">,)</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">topic</span>
+                         <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span><span class="p">]</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span><span class="p">):</span>
+          <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span><span class="p">[</span><span class="n">i</span><span class="p">],)</span>
+
+        <span class="c1"># Preparing to rename labels to send using a dictionary</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span><span class="p">),</span> <span class="s2">&quot;Either a label_to_send should be given for &quot;</span> \
+                            <span class="s2">&quot;every cmd_label, or none should be given &quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span> <span class="o">=</span> <span class="p">{</span><span class="n">cmd_label</span><span class="p">:</span> <span class="n">label_to_send</span> <span class="k">for</span>
+                               <span class="n">cmd_label</span><span class="p">,</span> <span class="n">label_to_send</span> <span class="ow">in</span>
+                               <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span><span class="p">)}</span>
+
+    <span class="c1"># Starting the broker</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">broker</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_launch_mosquitto</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[Client_server] Waiting for Mosquitto to start&#39;</span><span class="p">)</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="c1"># Connecting to the broker</span>
+    <span class="n">try_count</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="n">keepalive</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">break</span>
+      <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] Impossible to reach the given address, &quot;</span>
+              <span class="s2">&quot;aborting&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+      <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">gaierror</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] Invalid address given, please check the &quot;</span>
+              <span class="s2">&quot;spelling&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+      <span class="k">except</span> <span class="ne">ConnectionRefusedError</span><span class="p">:</span>
+        <span class="n">try_count</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">try_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] Connection refused, the broker may not be &quot;</span>
+                <span class="s2">&quot;running or you may not have the rights to connect&quot;</span><span class="p">)</span>
+          <span class="k">raise</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">loop_start</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Client_server.loop"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.client_server.Client_server.loop">[docs]</a>  <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Receives data from the broker and/or sends data to the broker.</span>
+
+<span class="sd">    The received data is then sent to the crappy blocks connected to this one.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="sd">&quot;&quot;&quot;Loop for receiving data</span>
+<span class="sd">    Each queue in the buffer is checked once: if not empty then the first list </span>
+<span class="sd">    of data is popped. This data is then associated to the corresponding </span>
+<span class="sd">    labels in dict_out. dict_out is finally returned if not empty. All the </span>
+<span class="sd">    labels should be returned at each loop iteration, so a buffer stores the </span>
+<span class="sd">    last value for each label and returns it if no other value was received.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">dict_out</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span><span class="p">[</span><span class="n">topic</span><span class="p">]</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
+          <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span><span class="p">[</span><span class="n">topic</span><span class="p">]</span><span class="o">.</span><span class="n">get_nowait</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">data_list</span><span class="p">):</span>
+              <span class="n">dict_out</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+          <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+            <span class="k">pass</span>
+      <span class="c1"># Updating the last_out_val buffer, and completing dict_out before</span>
+      <span class="c1"># sending data if necessary</span>
+      <span class="k">if</span> <span class="n">dict_out</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_out</span><span class="p">:</span>
+              <span class="n">dict_out</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_out_val</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">last_out_val</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">dict_out</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">dict_out</span><span class="p">)</span>
+
+    <span class="sd">&quot;&quot;&quot;Loop for sending data</span>
+<span class="sd">    Data is first received as a list of dictionaries. For each topic, trying to </span>
+<span class="sd">    find a dictionary containing all the corresponding labels. Once this </span>
+<span class="sd">    dictionary has been found, its data is published as a list of list of </span>
+<span class="sd">    values.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">received_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">recv_chunk</span><span class="p">()</span> <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="k">else</span> <span class="p">{}</span> <span class="k">for</span> <span class="n">link</span>
+                       <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">]</span>
+      <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd_labels</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">dic</span> <span class="ow">in</span> <span class="n">received_data</span><span class="p">:</span>
+          <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">label</span> <span class="ow">in</span> <span class="n">dic</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels_to_send</span><span class="p">[</span><span class="n">topic</span><span class="p">]),</span>
+                <span class="n">payload</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+                  <span class="p">[</span><span class="n">dic</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">]),</span> <span class="n">qos</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">topic</span><span class="p">),</span>
+                                  <span class="n">payload</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+                                    <span class="p">[</span><span class="n">dic</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span>
+                                     <span class="n">topic</span><span class="p">]),</span>
+                                  <span class="n">qos</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">break</span></div>
+
+<div class="viewcode-block" id="Client_server.finish"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.client_server.Client_server.finish">[docs]</a>  <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Disconnects from the broker and stops it.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Disconnecting from the broker</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">loop_stop</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+
+    <span class="c1"># Stopping the broker</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">broker</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">proc</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">proc</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[Client_server] Mosquitto terminated with return code&#39;</span><span class="p">,</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">proc</span><span class="o">.</span><span class="n">returncode</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop_mosquitto</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+      <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[Client_server] Subprocess did not terminate in time&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">proc</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span></div>
+
+  <span class="k">def</span> <span class="nf">_launch_mosquitto</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Starts Mosquitto in a subprocess.&quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;mosquitto&#39;</span><span class="p">,</span> <span class="s1">&#39;-p&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">)],</span>
+                                   <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                                   <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] Mosquitto is not installed !&quot;</span><span class="p">)</span>
+      <span class="k">raise</span>
+
+  <span class="k">def</span> <span class="nf">_output_reader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads the output strings from Mosquitto&#39;s subprocess.&quot;&quot;&quot;</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_mosquitto</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">proc</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[Mosquitto] </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s1">&#39;Error: Address already in use&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mosquitto is already running on this port&#39;</span><span class="p">)</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_on_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Buffers the received data.</span>
+
+<span class="sd">    The received message consists in a list of lists of values. Data is placed</span>
+<span class="sd">    in the right buffer according to the topic, in the form of lists of values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">data_points</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">payload</span><span class="p">)):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buffer_output</span><span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">topic</span><span class="p">)]</span><span class="o">.</span><span class="n">put_nowait</span><span class="p">(</span>
+          <span class="nb">list</span><span class="p">(</span><span class="n">data_points</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">pickle</span><span class="o">.</span><span class="n">UnpicklingError</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] Warning ! Message raised UnpicklingError, &quot;</span>
+            <span class="s2">&quot;ignoring it&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">_on_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">rc</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Automatically subscribes to the topics when connecting to the broker.&quot;&quot;&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] Connected with result code &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">rc</span><span class="p">))</span>
+
+    <span class="c1"># Subscribing on connect, so that it automatically resubscribes when</span>
+    <span class="c1"># reconnecting after a connection loss</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">topics</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">topic</span><span class="p">),</span> <span class="n">qos</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Client_server] Subscribed to&quot;</span><span class="p">,</span> <span class="n">topic</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">loop_start</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

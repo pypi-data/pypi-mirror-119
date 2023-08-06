@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.tool.videoextenso &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.tool.videoextenso</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.tool.videoextenso</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Pipe</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">.._global</span> <span class="kn">import</span> <span class="n">OptionalModule</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">cv2</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">cv2</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;opencv-python&quot;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">skimage.filters</span> <span class="kn">import</span> <span class="n">threshold_otsu</span>
+  <span class="kn">from</span> <span class="nn">skimage.morphology</span> <span class="kn">import</span> <span class="n">label</span>
+  <span class="kn">from</span> <span class="nn">skimage.measure</span> <span class="kn">import</span> <span class="n">regionprops</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">ImportError</span><span class="p">):</span>
+  <span class="n">label</span> <span class="o">=</span> <span class="n">OptionalModule</span><span class="p">(</span><span class="s2">&quot;skimage&quot;</span><span class="p">,</span> <span class="s2">&quot;Please install scikit-image to use&quot;</span>
+  <span class="s2">&quot;Video-extenso&quot;</span><span class="p">)</span>
+  <span class="n">threshold_otsu</span> <span class="o">=</span> <span class="n">regionprops</span> <span class="o">=</span> <span class="n">label</span>
+
+
+<div class="viewcode-block" id="LostSpotError"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.LostSpotError">[docs]</a><span class="k">class</span> <span class="nc">LostSpotError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+  <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="overlapping"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.overlapping">[docs]</a><span class="k">def</span> <span class="nf">overlapping</span><span class="p">(</span><span class="n">box1</span><span class="p">,</span> <span class="n">box2</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Returns :obj:`True` if `box1` and `box2` are overlapping or included in</span>
+<span class="sd">  each other&quot;&quot;&quot;</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">box1</span><span class="p">[::</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">box2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">box2</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">box1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">box2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">box2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">box1</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">box1</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">box2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">box2</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">box1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">box2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">box2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">box1</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+  <span class="c1"># Inclusion</span>
+  <span class="k">for</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="ow">in</span> <span class="p">((</span><span class="n">box1</span><span class="p">,</span> <span class="n">box2</span><span class="p">),</span> <span class="p">(</span><span class="n">box2</span><span class="p">,</span> <span class="n">box1</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b1</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="ow">and</span> \
+         <span class="p">(</span><span class="n">b1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">b1</span><span class="p">[</span><span class="mi">3</span><span class="p">]):</span>
+      <span class="k">return</span> <span class="kc">True</span>
+  <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="Video_extenso"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Video_extenso">[docs]</a><span class="k">class</span> <span class="nc">Video_extenso</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;The basic VideoExtenso class.</span>
+
+<span class="sd">  It will detect the spots, save the initial position, and return the measured</span>
+<span class="sd">  deformation in the most simple way:</span>
+
+<span class="sd">    - It will always return a :obj:`list` of the spots coordinates (in pixel).</span>
+<span class="sd">    - It will return `Exx`, `Eyy`, projections of the length of the bounding</span>
+<span class="sd">      box of the spot on each axis, divided by its original length.</span>
+
+<span class="sd">  Note:</span>
+<span class="sd">    Can detect 2,3 or 4 spots.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Video_extenso.__init__"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Video_extenso.__init__">[docs]</a>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">white_spots</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">update_thresh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">num_spots</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+               <span class="n">safe_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">border</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+               <span class="n">min_area</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+               <span class="n">blur</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sets the arguments.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      white_spots: Set to :obj:`True` if the spots are lighter than the</span>
+<span class="sd">        surroundings, else set to :obj:`False`.</span>
+<span class="sd">      update_thresh: Should the threshold be updated in each round ? If so</span>
+<span class="sd">        there are lower chances to lose the spots but there will be more noise</span>
+<span class="sd">        in the measurement.</span>
+<span class="sd">      num_spots: The number of spots to detect. Helps for spot detection and</span>
+<span class="sd">        allows to force detection of a given number of spots (`&quot;auto&quot;` works</span>
+<span class="sd">        fine most of the time). Can be set to:</span>
+<span class="sd">        ::</span>
+
+<span class="sd">          &quot;auto&quot;, 2, 3, 4</span>
+
+<span class="sd">      safe_mode: If set to :obj:`False`, it will try hard to catch the spots</span>
+<span class="sd">        when losing them. Could result in incoherent values without crash. Set</span>
+<span class="sd">        to :obj:`True` when security is a concern.</span>
+<span class="sd">      border: The number of pixels that will be added to the limits of the</span>
+<span class="sd">        boundingbox.</span>
+<span class="sd">      min_area: Filters regions with an area smaller than this value among the</span>
+<span class="sd">        selected regions.</span>
+<span class="sd">      blur: Median blur to be added to the image to smooth out irregularities</span>
+<span class="sd">        and make detection more reliable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">white_spots</span> <span class="o">=</span> <span class="n">white_spots</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">update_thresh</span> <span class="o">=</span> <span class="n">update_thresh</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">num_spots</span> <span class="o">=</span> <span class="n">num_spots</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">safe_mode</span> <span class="o">=</span> <span class="n">safe_mode</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">border</span> <span class="o">=</span> <span class="n">border</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">min_area</span> <span class="o">=</span> <span class="n">min_area</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">blur</span> <span class="o">=</span> <span class="n">blur</span>
+    <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_spots</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s2">&quot;Invalid number of spots!&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fallback_mode</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">consecutive_overlaps</span> <span class="o">=</span> <span class="mi">0</span></div>
+    <span class="c1"># This number of pixel will be added to the window sending the</span>
+    <span class="c1"># spot image to the process</span>
+
+<div class="viewcode-block" id="Video_extenso.detect_spots"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Video_extenso.detect_spots">[docs]</a>  <span class="k">def</span> <span class="nf">detect_spots</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">ox</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Detects the spots in `img`, subframe of the full image.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">      `ox` and `oy` represent the offset of the subframe in the full image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Finding out how many spots we should detect</span>
+    <span class="c1"># If L0 is already saved, we have already counted the spots, else</span>
+    <span class="c1"># see the num_spot parameter</span>
+    <span class="c1"># img = rank.median(img, np.ones((15, 15), dtype=img.dtype))</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">blur</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">blur</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">blur</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">white_spots</span><span class="p">:</span>
+      <span class="n">bw</span> <span class="o">=</span> <span class="n">img</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">bw</span> <span class="o">=</span> <span class="n">img</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span>
+    <span class="c1"># bw = dilation(bw,np.ones((3, 3), dtype=img.dtype))</span>
+    <span class="c1"># bw = erosion(bw,np.ones((3, 3), dtype=img.dtype))</span>
+    <span class="n">bw</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">bw</span><span class="p">)</span>
+    <span class="c1"># Is it really useful?</span>
+    <span class="c1"># bw[0, :] = bw[-1, :] = bw[:, 0] = bw[:, -1] = -1</span>
+    <span class="n">reg_prop</span> <span class="o">=</span> <span class="n">regionprops</span><span class="p">(</span><span class="n">bw</span><span class="p">)</span>
+    <span class="c1"># Remove the regions that are clearly not spots</span>
+    <span class="n">reg_prop</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reg_prop</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">solidity</span> <span class="o">&gt;</span> <span class="o">.</span><span class="mi">8</span><span class="p">]</span>
+    <span class="c1"># Remove the too small regions (150 is reeally tiny)</span>
+    <span class="n">reg_prop</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reg_prop</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">area</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_area</span><span class="p">]</span>
+    <span class="n">reg_prop</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">area</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="n">r1</span> <span class="o">=</span> <span class="n">reg_prop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">)):</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="n">reg_prop</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">overlapping</span><span class="p">(</span><span class="n">r1</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">],</span> <span class="n">r2</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Overlap&quot;</span><span class="p">)</span>
+          <span class="k">if</span> <span class="n">r1</span><span class="o">.</span><span class="n">area</span> <span class="o">&gt;</span> <span class="n">r2</span><span class="o">.</span><span class="n">area</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">reg_prop</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+          <span class="k">else</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">reg_prop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+          <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+          <span class="k">break</span>
+      <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_spots</span> <span class="o">==</span> <span class="s1">&#39;auto&#39;</span><span class="p">:</span>
+      <span class="c1"># Remove the smallest region until we have a valid number</span>
+      <span class="c1"># and all of them are larger than &quot;min_area&quot; pix</span>
+      <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+        <span class="k">del</span> <span class="n">reg_prop</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not spots found!&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_spots</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found only&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">),</span>
+              <span class="s2">&quot;spots when expecting&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_spots</span><span class="p">)</span>
+        <span class="k">return</span>
+      <span class="n">reg_prop</span> <span class="o">=</span> <span class="n">reg_prop</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">num_spots</span><span class="p">]</span>  <span class="c1"># Keep the largest ones</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Detected&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">reg_prop</span><span class="p">),</span> <span class="s2">&quot;spots&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reg_prop</span><span class="p">:</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">centroid</span>
+      <span class="n">d</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">oy</span> <span class="o">+</span> <span class="n">y</span>
+      <span class="n">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ox</span> <span class="o">+</span> <span class="n">x</span>
+      <span class="c1"># l1 = r.major_axis_length</span>
+      <span class="c1"># l2 = r.minor_axis_length</span>
+      <span class="c1"># s, c = np.sin(r.orientation) ** 2, np.cos(r.orientation) ** 2</span>
+      <span class="c1"># lx = (l1 * c + l2 * s) / 2</span>
+      <span class="c1"># ly = (l1 * s + l2 * c) / 2</span>
+      <span class="c1"># d[&#39;bbox&#39;] = d[&#39;y&#39;] - ly,d[&#39;x&#39;] - lx,d[&#39;y&#39;] + ly,d[&#39;x&#39;] + lx</span>
+      <span class="c1"># d[&#39;bbox&#39;] = d[&#39;min_col&#39;], d[&#39;min_row&#39;], d[&#39;max_col&#39;], d[&#39;max_row&#39;]</span>
+      <span class="c1"># d[&#39;bbox&#39;] = tuple([int(i + .5) for i in d[&#39;bbox&#39;]])</span>
+      <span class="n">d</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">oy</span><span class="p">,</span> <span class="n">ox</span><span class="p">)[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">)</span></div>
+
+  <span class="k">def</span> <span class="nf">save_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;spot_list&quot;</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You must select the spots first!&quot;</span><span class="p">)</span>
+      <span class="k">return</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;tracker&quot;</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">start_tracking</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">l0y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">l0x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">num_spots</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Video_extenso.enlarged_window"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Video_extenso.enlarged_window">[docs]</a>  <span class="k">def</span> <span class="nf">enlarged_window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns the slices to get the window around the spot.&quot;&quot;&quot;</span>
+
+    <span class="n">s1</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">window</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">),</span>
+        <span class="nb">min</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">window</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">))</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">window</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">),</span>
+        <span class="nb">min</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">window</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">border</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span></div>
+
+<div class="viewcode-block" id="Video_extenso.start_tracking"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Video_extenso.start_tracking">[docs]</a>  <span class="k">def</span> <span class="nf">start_tracking</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Will spawn a process per spot, which goal is to track the spot and</span>
+<span class="sd">    send the new coordinate after each update.&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">:</span>
+      <span class="n">i</span><span class="p">,</span> <span class="n">o</span> <span class="o">=</span> <span class="n">Pipe</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tracker</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">white_spots</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">white_spots</span><span class="p">,</span>
+                      <span class="n">thresh</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_thresh</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span><span class="p">,</span>
+                      <span class="n">safe_mode</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">safe_mode</span><span class="p">,</span> <span class="n">blur</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">blur</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Video_extenso.get_def"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Video_extenso.get_def">[docs]</a>  <span class="k">def</span> <span class="nf">get_def</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The &quot;heart&quot; of the videoextenso.</span>
+
+<span class="sd">    Will keep track of the spots and return the computed deformation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;l0x&quot;</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;L0 not saved, saving it now.&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">save_length</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">):</span>
+      <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">enlarged_window</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">],</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+      <span class="c1"># print(&quot;DEBUG: win is&quot;, s[&#39;bbox&#39;], &quot;sending&quot;, win)</span>
+      <span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(((</span><span class="n">win</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">win</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">),</span> <span class="n">img</span><span class="p">[</span><span class="n">win</span><span class="p">]))</span>
+    <span class="n">ol</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">):</span>
+      <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+      <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop_tracking</span><span class="p">()</span>
+        <span class="k">raise</span> <span class="n">LostSpotError</span><span class="p">(</span><span class="s2">&quot;Tracker returned&quot;</span><span class="o">+</span><span class="n">r</span><span class="p">)</span>
+      <span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">)</span>
+      <span class="n">lst</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+      <span class="c1"># Please excuse me for the following line,</span>
+      <span class="c1"># understand: &quot;if this box overlaps any existing box&quot;</span>
+      <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">overlapping</span><span class="p">(</span><span class="n">a_b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a_b</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;bbox&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">a_b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span> <span class="n">lst</span><span class="p">)]):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">safe_mode</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Overlapping!&quot;</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">stop_tracking</span><span class="p">()</span>
+          <span class="k">raise</span> <span class="n">LostSpotError</span><span class="p">(</span><span class="s2">&quot;[safe mode] Overlap&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Overlap! Reducing spot window...&quot;</span><span class="p">)</span>
+        <span class="n">ol</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">s</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span>
+                     <span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span>
+                     <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span>
+                     <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">continue</span>
+      <span class="n">s</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+      <span class="c1"># print(&quot;DEBUG updating spot to&quot;, s)</span>
+    <span class="k">if</span> <span class="n">ol</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">consecutive_overlaps</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">consecutive_overlaps</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Too many overlaps, I give up!&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">LostSpotError</span><span class="p">(</span><span class="s2">&quot;Multiple overlaps&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">consecutive_overlaps</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spot_list</span><span class="p">]</span>
+    <span class="n">eyy</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">l0y</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">exx</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">l0x</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">[</span><span class="mi">100</span> <span class="o">*</span> <span class="n">eyy</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">exx</span><span class="p">]</span></div>
+
+  <span class="k">def</span> <span class="nf">stop_tracking</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">:</span>
+      <span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">((</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;stop&quot;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Tracker"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Tracker">[docs]</a><span class="k">class</span> <span class="nc">Tracker</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Process tracking a spot for videoextensometry.&quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pipe</span><span class="p">,</span> <span class="n">white_spots</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">safe_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">blur</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">Process</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span> <span class="o">=</span> <span class="n">pipe</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">white_spots</span> <span class="o">=</span> <span class="n">white_spots</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">safe_mode</span> <span class="o">=</span> <span class="n">safe_mode</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">blur</span> <span class="o">=</span> <span class="n">blur</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fallback_mode</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">thresh</span> <span class="o">==</span> <span class="s1">&#39;auto&#39;</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">auto_thresh</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">auto_thresh</span> <span class="o">=</span> <span class="kc">False</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span> <span class="o">=</span> <span class="n">thresh</span>
+
+<div class="viewcode-block" id="Tracker.run"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Tracker.run">[docs]</a>  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># print(&quot;DEBUG: process starting, thresh=&quot;, self.thresh)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">offset</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+      <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+        <span class="k">break</span>
+      <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">break</span>
+      <span class="n">oy</span><span class="p">,</span> <span class="n">ox</span> <span class="o">=</span> <span class="n">offset</span>
+      <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+      <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">LostSpotError</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fallback</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+          <span class="k">raise</span> <span class="n">LostSpotError</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fallback_mode</span> <span class="o">=</span> <span class="kc">False</span>
+      <span class="n">r</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">oy</span>
+      <span class="n">r</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">ox</span>
+      <span class="n">miny</span><span class="p">,</span> <span class="n">minx</span><span class="p">,</span> <span class="n">maxy</span><span class="p">,</span> <span class="n">maxx</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span>
+      <span class="c1"># print(&quot;DEBUG: bbox=&quot;, r[&#39;bbox&#39;])</span>
+      <span class="n">r</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">miny</span> <span class="o">+</span> <span class="n">oy</span><span class="p">,</span> <span class="n">minx</span> <span class="o">+</span> <span class="n">ox</span><span class="p">,</span> <span class="n">maxy</span> <span class="o">+</span> <span class="n">oy</span><span class="p">,</span> <span class="n">maxx</span> <span class="o">+</span> <span class="n">ox</span>
+      <span class="c1"># print(&quot;DEBUG: new bbox=&quot;, r[&#39;bbox&#39;])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">r</span><span class="p">)</span></div>
+    <span class="c1"># print(&quot;DEBUG: Process terminating&quot;)</span>
+
+  <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">blur</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">blur</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">blur</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_thresh</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">white_spots</span><span class="p">:</span>
+      <span class="n">bw</span> <span class="o">=</span> <span class="p">(</span><span class="n">img</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">bw</span> <span class="o">=</span> <span class="p">(</span><span class="n">img</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="c1"># cv2.imshow(self.name, bw * 255)</span>
+    <span class="c1"># cv2.waitKey(5)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="o">.</span><span class="mi">1</span> <span class="o">*</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">bw</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">.</span><span class="mi">8</span> <span class="o">*</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reevaluating threshold!!&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ratio:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">bw</span><span class="p">)</span> <span class="o">/</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;old:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;new:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">moments</span><span class="p">(</span><span class="n">bw</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="n">r</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;m10&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;m00&#39;</span><span class="p">]</span>
+      <span class="n">r</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;m01&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">m</span><span class="p">[</span><span class="s1">&#39;m00&#39;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">bw</span><span class="p">)</span>
+    <span class="c1"># if (h, w) == img.shape:</span>
+    <span class="c1">#  return -1</span>
+    <span class="n">r</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+<div class="viewcode-block" id="Tracker.fallback"><a class="viewcode-back" href="../../../crappydocs/tools.html#crappy.tool.videoextenso.Tracker.fallback">[docs]</a>  <span class="k">def</span> <span class="nf">fallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Called when the spots are lost.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">safe_mode</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">fallback_mode</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fallback_mode</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Fallback failed&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;[safe mode] Could not compute barycenter&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">fallback_mode</span> <span class="o">=</span> <span class="kc">False</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fallback_mode</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loosing spot! Trying to reevaluate threshold...&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">thresh</span> <span class="o">=</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">img</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

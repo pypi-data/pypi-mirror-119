@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Block &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Actuators" href="actuators.html" />
+    <link rel="prev" title="Welcome to Crappy !" href="../welcome.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../welcome.html">Welcome to Crappy !</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actuators.html">Actuators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blocks.html">Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cameras.html">Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifiers.html">Modifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inouts.html">In / Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="links.html">Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../welcome.html">Welcome to Crappy !</a> &raquo;</li>
+        
+      <li>Block</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/crappydocs/block.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-crappy.blocks.block">
+<span id="block"></span><h1>Block<a class="headerlink" href="#module-crappy.blocks.block" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.blocks.block.</span></span><span class="sig-name descname"><span class="pre">Block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block" title="Permalink to this definition">¶</a></dt>
+<dd><p>This represent a Crappy block, it must be parent of all the blocks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.add_input">
+<span class="sig-name descname"><span class="pre">add_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.add_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.add_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <a class="reference internal" href="links.html#module-crappy.links.link"><span class="std std-ref">Link</span></a> as an input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.add_output">
+<span class="sig-name descname"><span class="pre">add_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.add_output"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.add_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a <a class="reference internal" href="links.html#module-crappy.links.link"><span class="std std-ref">Link</span></a> as an output.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.all_are">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">all_are</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.all_are"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.all_are" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> only if all processes status are <cite>s</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.begin">
+<span class="sig-name descname"><span class="pre">begin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.begin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.begin" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <a class="reference internal" href="#crappy.blocks.block.Block.main" title="crappy.blocks.block.Block.main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">main()</span></code></a> is not overridden, this method will be called first,
+before entering the main loop.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.drop">
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.drop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.drop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will clear the inputs of the blocks.</p>
+<p>This method performs like <a class="reference internal" href="#crappy.blocks.block.Block.get_last" title="crappy.blocks.block.Block.get_last"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_last()</span></code></a>, but returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>
+instantly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.finish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <a class="reference internal" href="#crappy.blocks.block.Block.main" title="crappy.blocks.block.Block.main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">main()</span></code></a> is not overridden, this method will be called upon exit
+or after a crash.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.get_all_last">
+<span class="sig-name descname"><span class="pre">get_all_last</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.get_all_last"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.get_all_last" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the data from all links of the block.</p>
+<p>It is almost the same as <a class="reference internal" href="#crappy.blocks.block.Block.get_last" title="crappy.blocks.block.Block.get_last"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_last()</span></code></a>, but will return all the data
+that goes through the links (as <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>).</p>
+<p>Also, if multiple links have the same label, only the last link’s value
+will be kept.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.get_last">
+<span class="sig-name descname"><span class="pre">get_last</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.get_last"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.get_last" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the latest value of each labels from all inputs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unlike the <code class="docutils literal notranslate"><span class="pre">recv</span></code> methods of <a class="reference internal" href="links.html#module-crappy.links.link"><span class="std std-ref">Link</span></a>, this method is NOT guaranteed
+to return all the data going through the links!</p>
+<p>It is meant to get the latest values, discarding all the previous ones
+(for a displayer for example).</p>
+<p>Its mode of operation is completely different since it can operate on
+multiple inputs at once.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>, optional) – A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> containing ll the concerned
+inputs. If <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> it will operate on all the input links at once.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first call may be blocking until it receives data, all the others
+will return instantaneously, giving the latest known reading.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.handle_freq">
+<span class="sig-name descname"><span class="pre">handle_freq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.handle_freq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.handle_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>For block with a given number of <cite>loops/s</cite> (use <code class="docutils literal notranslate"><span class="pre">freq</span></code> attribute to
+set it).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.launch">
+<span class="sig-name descname"><span class="pre">launch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.launch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.launch" title="Permalink to this definition">¶</a></dt>
+<dd><p>To start the <a class="reference internal" href="#crappy.blocks.block.Block.main" title="crappy.blocks.block.Block.main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">main()</span></code></a> method, will call <code class="xref py py-meth docutils literal notranslate"><span class="pre">Process.start()</span></code> if
+needed.</p>
+<p>Once the process is started, calling launch will set the starting time and
+actually start the main method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>t0</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>) – Time to set as starting time of the block (mandatory,
+in seconds after epoch).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is where you define the main loop of the block.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If not overridden, will raise an error.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.poll">
+<span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.poll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.poll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells if any input link has pending data</p>
+<p>Returns True if l.poll() is True for any input link l.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.prepare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.prepare" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will be run when creating the process, but before the actual start.</p>
+<p>The first code to be run in the new process, will only be called once and
+before the actual start of the main launch of the blocks.</p>
+<p>It can remain empty and do nothing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.prepare_all">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">prepare_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.prepare_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.prepare_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts all the blocks processes (<code class="docutils literal notranslate"><span class="pre">block.prepare</span></code>), but not the main
+loop.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.recv_all">
+<span class="sig-name descname"><span class="pre">recv_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.recv_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.recv_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives new data from all the inputs (not as chunks).</p>
+<p>It will simply call <code class="xref py py-meth docutils literal notranslate"><span class="pre">Pipe.recv()</span></code> on all non empty links and return a
+single <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the same label comes from multiple links, it may be overridden !</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.recv_all_delay">
+<span class="sig-name descname"><span class="pre">recv_all_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll_delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.recv_all_delay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.recv_all_delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to wait for data, but continuously reading all the links to make
+sure that it does not block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> where each entry is what would have been returned by
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Link.recv_chunk()</span></code> on each link.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.recv_all_last">
+<span class="sig-name descname"><span class="pre">recv_all_last</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.recv_all_last"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.recv_all_last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like recv_all, but drops older data to return only the latest value</p>
+<p>This method avoids Pipe congestion that can be induced by recv_all when the
+receiving block is slower than the block upstream</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.renice_all">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">renice_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high_prio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.renice_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.renice_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will renice all the blocks processes according to <code class="docutils literal notranslate"><span class="pre">block.niceness</span></code>
+value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">high_prio</span></code> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a>, blocks with a negative niceness value
+will be ignored.</p>
+<p>This is to avoid asking for the <code class="docutils literal notranslate"><span class="pre">sudo</span></code> password since only root can
+lower the niceness of processes.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to be run in sub-process; can be overridden in sub-class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>To send the data to all blocks downstream.</p>
+<p>Send has 2 ways to operate. You can either build the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> yourself,
+or you can define <code class="docutils literal notranslate"><span class="pre">self.labels</span></code> (usually time first) and call send with a
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>. It will then map them to the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ONLY <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> can go through links.</p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.status">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#crappy.blocks.block.Block.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the status of the block, from the process itself or the parent.</p>
+<p>It can be:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>“idle”</cite>: Block not started yet.</p></li>
+<li><p><cite>“initializing”</cite>: <code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code> was called and <a class="reference internal" href="#crappy.blocks.block.Block.prepare" title="crappy.blocks.block.Block.prepare"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare()</span></code></a> is not
+over yet.</p></li>
+<li><p><cite>“ready”</cite>: <a class="reference internal" href="#crappy.blocks.block.Block.prepare" title="crappy.blocks.block.Block.prepare"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prepare()</span></code></a> is over, waiting to start <a class="reference internal" href="#crappy.blocks.block.Block.main" title="crappy.blocks.block.Block.main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">main()</span></code></a> by
+calling <a class="reference internal" href="#crappy.blocks.block.Block.launch" title="crappy.blocks.block.Block.launch"><code class="xref py py-meth docutils literal notranslate"><span class="pre">launch()</span></code></a>.</p></li>
+<li><p><cite>“running”</cite>: <a class="reference internal" href="#crappy.blocks.block.Block.main" title="crappy.blocks.block.Block.main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">main()</span></code></a> is running.</p></li>
+<li><p><cite>“done”</cite>: <a class="reference internal" href="#crappy.blocks.block.Block.main" title="crappy.blocks.block.Block.main"><code class="xref py py-meth docutils literal notranslate"><span class="pre">main()</span></code></a> is over.</p></li>
+<li><p><cite>“error”</cite>: An error occurred and the block stopped.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.blocks.block.Block.stop_all">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">stop_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#Block.stop_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.Block.stop_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops all the blocks (<code class="docutils literal notranslate"><span class="pre">crappy.stop</span></code>).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crappy.blocks.block.renice">
+<span class="sig-prename descclassname"><span class="pre">crappy.blocks.block.</span></span><span class="sig-name descname"><span class="pre">renice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">niceness</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/blocks/block.html#renice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.blocks.block.renice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to renice a process.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only works in Linux.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user must be allowed to use <code class="docutils literal notranslate"><span class="pre">sudo</span></code> to renice with a negative value.
+May thus ask for a password for negative values.</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="actuators.html" class="btn btn-neutral float-right" title="Actuators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../welcome.html" class="btn btn-neutral float-left" title="Welcome to Crappy !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,964 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Actuators &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Blocks" href="blocks.html" />
+    <link rel="prev" title="Block" href="block.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../welcome.html">Welcome to Crappy !</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="block.html">Block</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Actuators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.actuator">Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.biaxe">Biaxe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.biotens">Biotens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.cmDrive">CM Drive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.fakemotor">Fakemotor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.motorkit_pump">Motorkit pump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.oriental">Oriental</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.pololu_tic">Pololu Tic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crappy.actuator.servostar">Servostar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="blocks.html">Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cameras.html">Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifiers.html">Modifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inouts.html">In / Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="links.html">Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../welcome.html">Welcome to Crappy !</a> &raquo;</li>
+        
+      <li>Actuators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/crappydocs/actuators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="actuators">
+<h1>Actuators<a class="headerlink" href="#actuators" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-crappy.actuator.actuator">
+<span id="actuator"></span><h2>Actuator<a class="headerlink" href="#module-crappy.actuator.actuator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.actuator.MetaActuator">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.actuator.</span></span><span class="sig-name descname"><span class="pre">MetaActuator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/actuator.html#MetaActuator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.actuator.MetaActuator" title="Permalink to this definition">¶</a></dt>
+<dd><p>This metaclass will just check if the actuator are defined properly.</p>
+<p>They must have at least an <code class="docutils literal notranslate"><span class="pre">open</span></code>, a <code class="docutils literal notranslate"><span class="pre">stop</span></code>, a <code class="docutils literal notranslate"><span class="pre">close</span></code> and either a
+<code class="docutils literal notranslate"><span class="pre">set_speed</span></code> or a <code class="docutils literal notranslate"><span class="pre">set_position</span></code> method.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.biaxe">
+<span id="biaxe"></span><h2>Biaxe<a class="headerlink" href="#module-crappy.actuator.biaxe" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.biaxe.Biaxe">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.biaxe.</span></span><span class="sig-name descname"><span class="pre">Biaxe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">38400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biaxe.html#Biaxe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biaxe.Biaxe" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class creates an axis and opens the corresponding serial port.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biaxe.Biaxe.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">38400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biaxe.html#Biaxe.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biaxe.Biaxe.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – Path to the corresponding serial port, e.g
+<cite>‘/dev/ttyS4’</cite>.</p></li>
+<li><p><strong>baudrate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional) – Set the corresponding baud rate.</p></li>
+<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – Serial timeout.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biaxe.Biaxe.clear_errors">
+<span class="sig-name descname"><span class="pre">clear_errors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biaxe.html#Biaxe.clear_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biaxe.Biaxe.clear_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset errors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biaxe.Biaxe.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biaxe.html#Biaxe.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biaxe.Biaxe.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the designated port.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biaxe.Biaxe.set_speed">
+<span class="sig-name descname"><span class="pre">set_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biaxe.html#Biaxe.set_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biaxe.Biaxe.set_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Re-define the speed of the motor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">=</span> <span class="mf">0.002</span> <span class="n">mm</span><span class="o">/</span><span class="n">s</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.biotens">
+<span id="biotens"></span><h2>Biotens<a class="headerlink" href="#module-crappy.actuator.biotens" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.biotens.</span></span><span class="sig-name descname"><span class="pre">Biotens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">19200</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the connection, and initialise the Biotens.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should only use this class to communicate with the Biotens.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">19200</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – Path to connect to the serial port.</p></li>
+<li><p><strong>baudrate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional) – Set the corresponding baud rate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens.clear_errors">
+<span class="sig-name descname"><span class="pre">clear_errors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens.clear_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens.clear_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears error in motor registers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens.get_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads current position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Current position of the motor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens.reset_position">
+<span class="sig-name descname"><span class="pre">reset_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens.reset_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens.reset_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuators goes out completely, in order to set the initial position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens.set_position">
+<span class="sig-name descname"><span class="pre">set_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens.set_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens.set_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pilot in position mode, needs speed and final position to run
+(in <cite>mm/min</cite> and <cite>mm</cite>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens.set_speed">
+<span class="sig-name descname"><span class="pre">set_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens.set_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens.set_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pilot in speed mode, requires speed in <cite>mm/min</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.Biotens.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#Biotens.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.Biotens.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the motor.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.convert_to_byte">
+<span class="sig-prename descclassname"><span class="pre">crappy.actuator.biotens.</span></span><span class="sig-name descname"><span class="pre">convert_to_byte</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#convert_to_byte"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.convert_to_byte" title="Permalink to this definition">¶</a></dt>
+<dd><p>This functions converts decimal into bytes.</p>
+<p>Mandatory in order to send or read anything into/from MAC Motors registers.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crappy.actuator.biotens.convert_to_dec">
+<span class="sig-prename descclassname"><span class="pre">crappy.actuator.biotens.</span></span><span class="sig-name descname"><span class="pre">convert_to_dec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/biotens.html#convert_to_dec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.biotens.convert_to_dec" title="Permalink to this definition">¶</a></dt>
+<dd><p>This functions converts bytes into decimals.</p>
+<p>Mandatory in order to send or read anything into/from MAC Motors registers.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.cmDrive">
+<span id="cm-drive"></span><h2>CM Drive<a class="headerlink" href="#module-crappy.actuator.cmDrive" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.cmDrive.</span></span><span class="sig-name descname"><span class="pre">CM_drive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a new default serial port for communication with a CMdrive actuator.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9600</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – Path to connect to the serial port.</p></li>
+<li><p><strong>baudrate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional) – Set the corresponding baud rate.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.clear_errors">
+<span class="sig-name descname"><span class="pre">clear_errors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.clear_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.clear_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset errors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the designated port.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.get_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for the physical position of the motor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Physical position of the motor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.move_home">
+<span class="sig-name descname"><span class="pre">move_home</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.move_home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.move_home" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the position to zero.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the serial communication, before reopening it to set displacement
+to zero.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.set_position">
+<span class="sig-name descname"><span class="pre">set_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relative'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.set_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.set_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pilot in position mode, needs speed and final position to run
+(in <cite>mm/min</cite> and <cite>mm</cite>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.set_speed">
+<span class="sig-name descname"><span class="pre">set_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.set_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.set_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pilot in speed mode, requires speed in <cite>mm/min</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.cmDrive.CM_drive.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/cmDrive.html#CM_drive.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.cmDrive.CM_drive.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the motor motion.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.fakemotor">
+<span id="fakemotor"></span><h2>Fakemotor<a class="headerlink" href="#module-crappy.actuator.fakemotor" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.fakemotor.Fake_motor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.fakemotor.</span></span><span class="sig-name descname"><span class="pre">Fake_motor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inertia</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">torque</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_speed</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_speed</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/fakemotor.html#Fake_motor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.fakemotor.Fake_motor" title="Permalink to this definition">¶</a></dt>
+<dd><p>To run test programs without a physical actuator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A virtual motor driven by a voltage, you can set its properties with the
+args. It has the same methods as a real motor: <code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code>,
+<a class="reference internal" href="#crappy.actuator.fakemotor.Fake_motor.set_speed" title="crappy.actuator.fakemotor.Fake_motor.set_speed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_speed()</span></code></a>, <a class="reference internal" href="#crappy.actuator.fakemotor.Fake_motor.get_speed" title="crappy.actuator.fakemotor.Fake_motor.get_speed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_speed()</span></code></a>, <a class="reference internal" href="#crappy.actuator.fakemotor.Fake_motor.get_position" title="crappy.actuator.fakemotor.Fake_motor.get_position"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_position()</span></code></a>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.fakemotor.Fake_motor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inertia</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">torque</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">2e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_speed</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_speed</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/fakemotor.html#Fake_motor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.fakemotor.Fake_motor.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inertia</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – Inertia of the motor (<cite>kg.m²</cite>).</p></li>
+<li><p><strong>torque</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – A torque applied on the axis (<cite>N.m</cite>).</p></li>
+<li><p><strong>kv</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – The electrical constant of the motor
+(<cite>t/min/V</cite>).</p></li>
+<li><p><strong>rv</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – The solid friction.</p></li>
+<li><p><strong>fv</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – The fluid friction.</p></li>
+<li><p><strong>sim_speed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – Speed factor of the simulation.</p></li>
+<li><p><strong>initial_speed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – (<cite>rpm</cite>)</p></li>
+<li><p><strong>initial_pos</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – (turns)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.fakemotor.Fake_motor.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/fakemotor.html#Fake_motor.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.fakemotor.Fake_motor.get_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the motor position.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.fakemotor.Fake_motor.get_speed">
+<span class="sig-name descname"><span class="pre">get_speed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/fakemotor.html#Fake_motor.get_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.fakemotor.Fake_motor.get_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the motor speed (rpm).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.fakemotor.Fake_motor.set_speed">
+<span class="sig-name descname"><span class="pre">set_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/fakemotor.html#Fake_motor.set_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.fakemotor.Fake_motor.set_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the motor <cite>cmd</cite> in volts.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.fakemotor.Fake_motor.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/fakemotor.html#Fake_motor.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.fakemotor.Fake_motor.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the motor rpm.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Supposes <cite>u</cite> is constant for the interval <cite>dt</cite>.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.motorkit_pump">
+<span id="motorkit-pump"></span><h2>Motorkit pump<a class="headerlink" href="#module-crappy.actuator.motorkit_pump" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.motorkit_pump.Motorkit_pump">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.motorkit_pump.</span></span><span class="sig-name descname"><span class="pre">Motorkit_pump</span></span><a class="reference internal" href="../_modules/crappy/actuator/motorkit_pump.html#Motorkit_pump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.motorkit_pump.Motorkit_pump" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Motorkit_pump actuator is meant for controlling two DC pumps and a
+valve using Adafruit’s DC hat for Raspberry Pi.</p>
+<p>It is a basic actuator that can only inflate, deflate or do nothing. The
+communication with the hat is over I2C.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>May work on other boards than Raspberry Pi supporting I2C, assuming a proper
+wiring.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.motorkit_pump.Motorkit_pump.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/motorkit_pump.html#Motorkit_pump.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.motorkit_pump.Motorkit_pump.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not much to do here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.motorkit_pump.Motorkit_pump.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/motorkit_pump.html#Motorkit_pump.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.motorkit_pump.Motorkit_pump.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just stops the motor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.motorkit_pump.Motorkit_pump.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/motorkit_pump.html#Motorkit_pump.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.motorkit_pump.Motorkit_pump.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simply creates the Motorkit object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.motorkit_pump.Motorkit_pump.set_speed">
+<span class="sig-name descname"><span class="pre">set_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/motorkit_pump.html#Motorkit_pump.set_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.motorkit_pump.Motorkit_pump.set_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls the pumps and the valve so that they either inflate or deflate.</p>
+<p>The input range is from <cite>-12</cite> (deflate at full speed) to <cite>12</cite> (inflate at
+full speed).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>volt</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>) – The voltage to supply to the motor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.motorkit_pump.Motorkit_pump.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/motorkit_pump.html#Motorkit_pump.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.motorkit_pump.Motorkit_pump.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the speed to <cite>0</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.oriental">
+<span id="oriental"></span><h2>Oriental<a class="headerlink" href="#module-crappy.actuator.oriental" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.oriental.Oriental">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.oriental.</span></span><span class="sig-name descname"><span class="pre">Oriental</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">115200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">14.285714285714285</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/oriental.html#Oriental"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.oriental.Oriental" title="Permalink to this definition">¶</a></dt>
+<dd><p>To drive an axis with an oriental motor through a serial link.</p>
+<p>The current setup moves at <cite>.07mm/min</cite> with <cite>“VR 1”</cite>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.oriental.Oriental.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">115200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/dev/ttyUSB0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">14.285714285714285</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/oriental.html#Oriental.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.oriental.Oriental.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>baudrate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional) – Set the corresponding baud rate.</p></li>
+<li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – Path to connect to the serial port.</p></li>
+<li><p><strong>gain</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – The gain for speed commands.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.oriental.Oriental.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/oriental.html#Oriental.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.oriental.Oriental.get_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads current position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Current position of the motor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.oriental.Oriental.set_position">
+<span class="sig-name descname"><span class="pre">set_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/oriental.html#Oriental.set_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.oriental.Oriental.set_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pilot in position mode, needs speed and final position to run
+(in <cite>mm/min</cite> and <cite>mm</cite>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.oriental.Oriental.set_speed">
+<span class="sig-name descname"><span class="pre">set_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/oriental.html#Oriental.set_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.oriental.Oriental.set_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pilot in speed mode, requires speed in <cite>mm/min</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.oriental.Oriental.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/oriental.html#Oriental.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.oriental.Oriental.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the motor.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.pololu_tic">
+<span id="pololu-tic"></span><h2>Pololu Tic<a class="headerlink" href="#module-crappy.actuator.pololu_tic" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Find_serial_number">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.pololu_tic.</span></span><span class="sig-name descname"><span class="pre">Find_serial_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Find_serial_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Find_serial_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class used for finding USB devices matching a given serial number, using
+the <code class="xref py py-meth docutils literal notranslate"><span class="pre">usb.core.find()</span></code> method.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.pololu_tic.</span></span><span class="sig-name descname"><span class="pre">Pololu_tic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps_per_mm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_accel</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_shutoff</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_command_timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'USB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unrestricted_current_limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_function</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_polarity</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for controlling Pololu’s Tic stepper motor divers.</p>
+<p>The Pololu_tic Actuator block is meant for controlling a Pololu Tic stepper
+motor driver. It can be driven in both speed and position. Several Tic models
+are supported. The length unit is the millimeter (<cite>mm</cite>), and time unit is the
+second (<cite>s</cite>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Only for Linux users:</strong> In order to drive the Tic, the appropriate udev
+rule should be set. This is done automatically when installing <cite>ticcmd</cite>,
+or can be done using the <cite>udev_rule_setter</cite> utility in <code class="docutils literal notranslate"><span class="pre">crappy</span></code>’s <cite>util</cite>
+folder. It is also possible to add it manually by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;SUBSYSTEM==\&quot;usb\&quot;, ATTR{idVendor}==\&quot;1ffb\&quot;, MODE=\&quot;0666\&quot;&quot; | sudo tee pololu.rules &gt; /dev/null 2&gt;&amp;1
+</pre></div>
+</div>
+<p>in a shell opened in <code class="docutils literal notranslate"><span class="pre">/etc/udev/rules.d</span></code>.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps_per_mm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_accel</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_shutoff</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_command_timeout</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'USB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unrestricted_current_limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_function</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin_polarity</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks args validity, finds the right device, reads the current limit
+tables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps_per_mm</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>) – The number of full steps needed for the
+motor to travel <cite>1mm</cite>. This varies according to the motor model, and
+can be deduced from the datasheet or directly measured. This value is
+usually between <cite>50</cite> and <cite>500</cite>.</p></li>
+<li><p><strong>current_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>) – The maximum current the motor is able to
+withstand, in mA. It is usually around <cite>1A</cite> for small stepper motors,
+and can go up to a few Amps. The maximum allowed <code class="docutils literal notranslate"><span class="pre">current_limit</span></code>
+value depends on the Tic model. The Tic 36v4 default maximum current
+limit can be increased using the <code class="docutils literal notranslate"><span class="pre">unrestricted_current_limit</span></code>
+parameter.</p></li>
+<li><p><strong>step_mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional) – Sets the number of microsteps used for
+driving the motor. This number is always a power of <cite>2</cite>. The minimum
+number of microsteps is <cite>1</cite> (full steps), and the maximum depends on
+the Tic model. All models however support modes <cite>1</cite> to <cite>8</cite>. The block
+manages speed and length conversions so that changing the step mode
+doesn’t affect the motor behaviour.</p></li>
+<li><p><strong>max_accel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – The maximum allowed acceleration for
+the motor, in <cite>mm/s²</cite>. When asked to reach a given speed or position,
+the motor accelerates at this rate. It also corresponds to the maximum
+allowed deceleration. Usually doesn’t need to be changed.</p></li>
+<li><p><strong>t_shutoff</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – The <a class="reference internal" href="#crappy.actuator.pololu_tic.Pololu_tic" title="crappy.actuator.pololu_tic.Pololu_tic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pololu_tic</span></code></a> block
+features an auto-shutoff thread that deenergizes the motor after a
+period of <cite>t_shutoff</cite> seconds of inactivity. The timer counts in steps
+of <cite>0.1s</cite>, which is thus the maximum precision for this setting. When
+set to <cite>0</cite>, this feature is disabled and the motor remains energized
+until the <a class="reference internal" href="#crappy.actuator.pololu_tic.Pololu_tic.close" title="crappy.actuator.pololu_tic.Pololu_tic.close"><code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code></a> method is called.</p></li>
+<li><p><strong>config_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – The path of the config file to be
+loaded to the Tic. It only works if <code class="docutils literal notranslate"><span class="pre">backend</span></code> is ‘ticcmd’. The config
+file contains some specific settings that can only be accessed this way
+using the ‘ticcmd’ backend. Not necessary for most applications.</p></li>
+<li><p><strong>serial_number</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – The serial number of the Tic to be
+controlled. It must be given as a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, and it is an 8-digits
+number. Allows to control the right device if several Tic of the same
+model are connected. Otherwise an error is raised.</p></li>
+<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – <p>The model of the Tic to be controlled.
+Available models are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;T825&#39;</span><span class="p">,</span> <span class="s1">&#39;T824&#39;</span><span class="p">,</span> <span class="s1">&#39;T500&#39;</span><span class="p">,</span> <span class="s1">&#39;N825&#39;</span><span class="p">,</span> <span class="s1">&#39;T249&#39;</span><span class="p">,</span> <span class="s1">&#39;36v4&#39;</span>
+</pre></div>
+</div>
+<p>Allows to control the right device if several Tic of different models
+are connected. Otherwise an error is raised.</p>
+</p></li>
+<li><p><strong>reset_command_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – Enables or disables the
+<cite>reset_command_timeout</cite> thread. It can only be disabled if <code class="docutils literal notranslate"><span class="pre">backend</span></code>
+is ‘USB’. This thread pings the Tic every <cite>0.5s</cite>, so that it doesn’t
+block due to a Command Timeout error. This feature is a safety to
+prevent the motor from running indefinitely if the USB connection is
+down, so it is better not to disable it. When disabled the Tic never
+raises Command Timeout errors, and a bit of memory if freed because of
+the thread not running.</p></li>
+<li><p><strong>backend</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – <p>The backend for communicating with the
+Tic. Available backends are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;USB&#39;</span><span class="p">,</span> <span class="s1">&#39;ticcmd&#39;</span>
+</pre></div>
+</div>
+<p>They both communicate over USB, but ‘ticcmd’ requires Pololu’s firmware
+to be installed. Some features are specific to each backend.</p>
+</p></li>
+<li><p><strong>unrestricted_current_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional) – Enables or disables
+the unrestricted current limit feature. Only works if <code class="docutils literal notranslate"><span class="pre">backend</span></code> is
+‘USB’, and for the 36v4 Tic model. When disabled, the maximum current
+allowed is <cite>3939mA</cite>. If enabled, it goes up to <cite>9095mA</cite>. The Tic should
+however be cooled in order to withstand currents higher than <cite>3939mA</cite>.</p></li>
+<li><p><strong>pin_function</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>, optional) – <p>Allows setting the Tic GPIO
+functions. It is a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> whose keys are the pin names, and values
+are the functions. Only works if <code class="docutils literal notranslate"><span class="pre">backend</span></code> is <cite>‘USB’</cite>. Only the pins
+indicated in <code class="docutils literal notranslate"><span class="pre">pin_function</span></code> are set, the others are left in their
+previous state. The available pins are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;SCL&#39;</span><span class="p">,</span> <span class="s1">&#39;SDA&#39;</span><span class="p">,</span> <span class="s1">&#39;TX&#39;</span><span class="p">,</span> <span class="s1">&#39;RX&#39;</span><span class="p">,</span> <span class="s1">&#39;RC&#39;</span>
+</pre></div>
+</div>
+<p>and can be set to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Default&#39;</span><span class="p">,</span> <span class="s1">&#39;Kill switch&#39;</span><span class="p">,</span> <span class="s1">&#39;Limit switch forward&#39;</span><span class="p">,</span> <span class="s1">&#39;Limit switch reverse&#39;</span>
+</pre></div>
+</div>
+<p>The GPIO functions remain set as long as they are not changed by the
+user, so for a given setup it is only necessary to set them once.</p>
+</p></li>
+<li><p><strong>pin_polarity</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>, optional) – <p>Allows setting the polarity of the
+GPIOs used as switches. It is a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>, whose keys are the pin
+names, and values are the pin polarities. Only works if <code class="docutils literal notranslate"><span class="pre">backend</span></code> is
+<cite>‘USB’</cite>. Only the pins indicated in <code class="docutils literal notranslate"><span class="pre">pin_function</span></code> are set, the
+others are left in their previous state. The available pins are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;SCL&#39;</span><span class="p">,</span> <span class="s1">&#39;SDA&#39;</span><span class="p">,</span> <span class="s1">&#39;TX&#39;</span><span class="p">,</span> <span class="s1">&#39;RX&#39;</span><span class="p">,</span> <span class="s1">&#39;RC&#39;</span>
+</pre></div>
+</div>
+<p>and can be set to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Active high&#39;</span><span class="p">,</span> <span class="s1">&#39;Active low&#39;</span>
+</pre></div>
+</div>
+<p>The GPIO polarities remain set as long as they are not changed by the
+user, so for a given setup it is only necessary to set them once.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">current_limit</span></code>:
+If the <code class="docutils literal notranslate"><span class="pre">current_limit</span></code> setting is higher than the motor max current,
+there’s a risk of overheating and damaging the motor !</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">steps_per_mm</span></code>:
+If you have to measure this value, it can be done easily following this
+procedure. Set <code class="docutils literal notranslate"><span class="pre">steps_per_mm</span></code> to <cite>spm</cite> (<cite>100</cite> should be fine), and
+<code class="docutils literal notranslate"><span class="pre">step_mode</span></code> to <cite>sm</cite> (<cite>8</cite> should be fine). Run a crappy program
+for moving the motor from position <cite>0</cite> to position <cite>p</cite> (a few tenth of
+millimeters should be fine). The motor will reach an actual position
+<cite>ap</cite> that can be measured. The actual <code class="docutils literal notranslate"><span class="pre">steps_per_mm</span></code> value <cite>aspm</cite> for
+this motor can be calculated as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aspm</span> <span class="o">=</span> <span class="n">spm</span> <span class="o">*</span> <span class="n">p</span> <span class="o">/</span> <span class="n">ap</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_mode</span></code>:
+Increasing the number of microsteps allows to reduce the noise, the
+vibrations, and improve the precision. However the more microsteps, the
+lower the maximum achievable speed for the motor. Chances that the
+motor misses microsteps are also higher when the number of microsteps
+is high.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t_shutoff</span></code>:
+This functionality was originally added for long assays in temperature
+controlled environments, so that the motor doesn’t unnecessarily heat
+the setup when inactive. In other assays, it may still be useful for
+reducing the noise, the electromagnetic interference, or the energy
+consumption.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">serial_number</span></code>:
+Serial numbers can be accessed using the <cite>lsusb</cite> command in Linux
+shell, or running <code class="docutils literal notranslate"><span class="pre">ticcmd</span> <span class="pre">--list</span></code> if <cite>ticcmd</cite> is installed. This
+number is also printed during <a class="reference internal" href="#crappy.actuator.pololu_tic.Pololu_tic.__init__" title="crappy.actuator.pololu_tic.Pololu_tic.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a> if only one device is
+connected and <code class="docutils literal notranslate"><span class="pre">serial_number</span></code> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model</span></code>:
+The model is written on the Tic board, and can be accessed by running
+<code class="docutils literal notranslate"><span class="pre">ticcmd</span> <span class="pre">--list</span></code> in a shell if <cite>ticcmd</cite> is installed. It is also
+printed during <a class="reference internal" href="#crappy.actuator.pololu_tic.Pololu_tic.__init__" title="crappy.actuator.pololu_tic.Pololu_tic.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a> if only one device is connected and
+<code class="docutils literal notranslate"><span class="pre">model</span></code> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
+<li><p><strong>Pins settings</strong>:
+The pin functions and polarity can also be set independently from
+<code class="docutils literal notranslate"><span class="pre">crappy</span></code> before starting the assay, in the <cite>ticgui</cite>.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the motor, joins the threads and deenergizes the motor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.get_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the current motor position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> – The position in mm</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.get_speed">
+<span class="sig-name descname"><span class="pre">get_speed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.get_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.get_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the current motor speed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a> – The speed in mm/s</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the communication, the motor parameters and starts the threads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.set_position">
+<span class="sig-name descname"><span class="pre">set_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.set_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.set_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a position command to the motor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>) – The position to reach in <cite>mm</cite></p></li>
+<li><p><strong>speed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>, optional) – The speed at which the motor should move
+to the given position, in <cite>mm/s</cite></p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">speed</span></code>:
+The only way to reach a position at a given speed is to change the
+maximum speed. The Tic will try to accelerate to the maximum speed but
+may remain slower if it doesn’t have time to do so before reaching the
+given position.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.set_speed">
+<span class="sig-name descname"><span class="pre">set_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.set_speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.set_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a speed command to the motor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>speed</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>) – The speed the motor should reach</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.pololu_tic.Pololu_tic.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="reference internal" href="../_modules/crappy/actuator/pololu_tic.html#Pololu_tic.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.pololu_tic.Pololu_tic.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the speed to <cite>0</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crappy.actuator.servostar">
+<span id="servostar"></span><h2>Servostar<a class="headerlink" href="#module-crappy.actuator.servostar" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">crappy.actuator.servostar.</span></span><span class="sig-name descname"><span class="pre">Servostar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">38400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'serial'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar" title="Permalink to this definition">¶</a></dt>
+<dd><p>To drive and configure a servostar variator through a serial
+connection.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">38400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'serial'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the instance attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – Path to connect to the serial port.</p></li>
+<li><p><strong>baudrate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional) – Set the corresponding baud rate.</p></li>
+<li><p><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional) – Can be <cite>‘analog’</cite> or <cite>‘serial’</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar.clear_errors">
+<span class="sig-name descname"><span class="pre">clear_errors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar.clear_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar.clear_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears error in motor registers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar.get_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads current position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Current position of the motor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar.set_mode_analog">
+<span class="sig-name descname"><span class="pre">set_mode_analog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar.set_mode_analog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar.set_mode_analog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the analog input as setpoint.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar.set_mode_serial">
+<span class="sig-name descname"><span class="pre">set_mode_serial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar.set_mode_serial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar.set_mode_serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the serial input as setpoint.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar.set_position">
+<span class="sig-name descname"><span class="pre">set_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar.set_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar.set_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go to the position specified at the given speed and acceleration.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crappy.actuator.servostar.Servostar.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/crappy/actuator/servostar.html#Servostar.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#crappy.actuator.servostar.Servostar.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the motor.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="blocks.html" class="btn btn-neutral float-right" title="Blocks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="block.html" class="btn btn-neutral float-left" title="Block" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

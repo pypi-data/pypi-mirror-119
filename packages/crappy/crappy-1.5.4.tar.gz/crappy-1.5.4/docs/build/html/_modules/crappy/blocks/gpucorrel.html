@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>crappy.blocks.gpucorrel &mdash; Crappy 1.5.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Crappy
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../whatiscrappy.html">What is Crappy ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../welcome.html">Welcome to Crappy !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">Bug reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License information</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Crappy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crappy.blocks.gpucorrel</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crappy.blocks.gpucorrel</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">..tool</span> <span class="kn">import</span> <span class="n">GPUCorrel</span> <span class="k">as</span> <span class="n">GPUCorrel_tool</span>
+<span class="kn">from</span> <span class="nn">.camera</span> <span class="kn">import</span> <span class="n">Camera</span>
+
+
+<div class="viewcode-block" id="GPUCorrel"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.gpucorrel.GPUCorrel">[docs]</a><span class="k">class</span> <span class="nc">GPUCorrel</span><span class="p">(</span><span class="n">Camera</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;This block uses the :ref:`GPU Correl` class.</span>
+
+<span class="sd">  See the documentation of :ref:`GPU Correl` to have more information about the</span>
+<span class="sd">  arguments specific to this class.</span>
+
+<span class="sd">  It will try to identify the deformation parameters for each fields. If you</span>
+<span class="sd">  use custom fields, you can use ``labels=(...)`` to name the data sent through</span>
+<span class="sd">  the link. If no labels are specified, custom fields will be named by their</span>
+<span class="sd">  position.</span>
+
+<span class="sd">  The reference image is only taken once, when the :meth:`start` method is</span>
+<span class="sd">  called (after dropping the first image).</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">camera</span><span class="p">,</span>
+               <span class="n">fields</span><span class="p">,</span>
+               <span class="n">save_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">fps_label</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+               <span class="n">img_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{self.loops:06d}</span><span class="s2">_{t-self.t0:.6f}&quot;</span><span class="p">,</span>
+               <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;tiff&#39;</span><span class="p">,</span>
+               <span class="n">save_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">save_backend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">input_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">config</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+               <span class="n">cam_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">discard_lim</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+               <span class="n">discard_ref</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+               <span class="n">imgref</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ready</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">cam_kw</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="n">fields</span>
+    <span class="c1"># Kwargs to be given to the camera BLOCK</span>
+    <span class="c1"># ie save_folder, config, etc... but NOT the labels</span>
+
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;save_folder&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">save_folder</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;verbose&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">verbose</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;fps_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fps_label</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;img_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">img_name</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;ext&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ext</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;save_period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">save_period</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;save_backend&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">save_backend</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;transform&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">transform</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;input_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_label</span>
+    <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">cam_kw</span><span class="p">[</span><span class="s1">&#39;verbose&#39;</span><span class="p">]</span>  <span class="c1"># Also, we keep the verbose flag</span>
+    <span class="k">if</span> <span class="n">cam_kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">cam_kw</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cam_kwargs</span><span class="p">)</span>
+    <span class="n">Camera</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="o">**</span><span class="n">cam_kw</span><span class="p">)</span>
+    <span class="c1"># A function to apply to the image</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">cam_kw</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;transform&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">discard_lim</span> <span class="o">=</span> <span class="n">discard_lim</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">discard_ref</span> <span class="o">=</span> <span class="n">discard_ref</span>
+    <span class="c1"># If the residual of the image exceeds &lt;discard_lim&gt; times the</span>
+    <span class="c1"># average of the residual of the last &lt;discard_ref&gt; images,</span>
+    <span class="c1"># do not send the result (requires res=True)</span>
+
+    <span class="c1"># Creating the tuple of labels (to name the outputs)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;t(s)&#39;</span><span class="p">,)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">)):</span>
+      <span class="c1"># If explicitly named with labels=(...)</span>
+      <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">+=</span> <span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],)</span>
+      <span class="c1"># Else if we got a default field as a string,</span>
+      <span class="c1"># use this string (ex: fields=(&#39;x&#39;, &#39;y&#39;, &#39;r&#39;, &#39;exx&#39;, &#39;eyy&#39;))</span>
+      <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">+=</span> <span class="p">(</span><span class="n">fields</span><span class="p">[</span><span class="n">i</span><span class="p">],)</span>
+      <span class="c1"># Custom field and no label given: name it by its position...</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">+=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),)</span>
+
+    <span class="c1"># Handle res parameters: if true, also return the residual</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;res&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">res</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">+=</span> <span class="p">(</span><span class="s2">&quot;res&quot;</span><span class="p">,)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">imgref</span> <span class="o">=</span> <span class="n">imgref</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">gpu_correl_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">gpu_correl_kwargs</span><span class="p">[</span><span class="s1">&#39;fields&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span>
+
+<div class="viewcode-block" id="GPUCorrel.prepare"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.gpucorrel.GPUCorrel.prepare">[docs]</a>  <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">Camera</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">send_img</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">correl</span> <span class="o">=</span> <span class="n">GPUCorrel_tool</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">gpu_correl_kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">loops</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">nloops</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">res_hist</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">imgref</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">set_orig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imgref</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)))</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">set_orig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imgref</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GPUCorrel.begin"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.gpucorrel.GPUCorrel.begin">[docs]</a>  <span class="k">def</span> <span class="nf">begin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">last_t</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">imgref</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">return</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">read_image</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">set_orig</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">set_orig</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">save_folder</span> <span class="o">+</span> <span class="s2">&quot;img_ref_</span><span class="si">%.6f</span><span class="s2">.tiff&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span><span class="p">))</span></div>
+
+  <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">loops</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">nloops</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Correl block] processed&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nloops</span> <span class="o">/</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_t</span><span class="p">),</span> <span class="s2">&quot;ips&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">last_t</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_img</span><span class="p">()</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">t0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">get_disp</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">res</span><span class="p">:</span>
+      <span class="n">out</span> <span class="o">+=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">get_res</span><span class="p">()]</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">discard_lim</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res_hist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_hist</span> <span class="o">+</span> <span class="p">[</span><span class="n">out</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res_hist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_hist</span><span class="p">[</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">discard_ref</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_hist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">discard_lim</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_hist</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Correl block] Residual too high, not sending values&quot;</span><span class="p">)</span>
+          <span class="k">return</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GPUCorrel.finish"><a class="viewcode-back" href="../../../crappydocs/blocks.html#crappy.blocks.gpucorrel.GPUCorrel.finish">[docs]</a>  <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">correl</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+    <span class="n">Camera</span><span class="o">.</span><span class="n">finish</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
