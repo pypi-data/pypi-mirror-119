@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: wagtail-blog2
+Version: 0.0.1
+Summary: Simple and customizable blog app for wagtail
+Home-page: https://github.com/pupattan/wagtail_blog_app
+Author: Pulak Pattanayak
+Author-email: pkbsdmp@gmail.com
+License: MIT
+Description: # wagtail_blog_app
+        Simple  and customizable blog app for wagtail 
+        
+Keywords: django wagtail blog app
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
