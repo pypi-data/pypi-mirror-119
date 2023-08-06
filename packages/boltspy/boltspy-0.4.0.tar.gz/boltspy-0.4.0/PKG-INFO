@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: boltspy
+Version: 0.4.0
+Summary: BOLTS Open Library for Technical Specifications
+Home-page: http://www.boltsparts.org/
+Author: Bernd Hahnebach
+Author-email: bernd@bimstatik.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+#### BOLTS PythonPackage distribution
++ [source on github](https://github.com/boltsparts/BOLTS)
++ [webpage](http://www.boltsparts.org/)
+
+
