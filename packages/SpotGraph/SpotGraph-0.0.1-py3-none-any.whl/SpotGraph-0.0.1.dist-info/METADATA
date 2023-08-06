@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: SpotGraph
+Version: 0.0.1
+Summary: Tools for dealing with smFISH spots and nuclei
+Home-page: https://github.com/GFleishman/SpotGraph
+Author: Greg M. Fleishman
+Author-email: greg.nli10me@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: zarr
+Requires-Dist: numcodecs
+Requires-Dist: ClusterWrap
+Requires-Dist: dask
+Requires-Dist: dask[array]
+Requires-Dist: dask[delayed]
+Requires-Dist: dask[distributed]
+Requires-Dist: networkx
+
+UNKNOWN
+
+
