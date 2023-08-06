@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: xresponse
+Version: 0.0.3
+Summary: Reusable Responses and Error responses for xKern APIs
+Home-page: UNKNOWN
+Author: Haider Ali
+Author-email: neo@xkern.net
+License: UNKNOWN
+Keywords: django,djangorestframework,responses,xkern
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Description-Content-Type: text/markdown
+Requires-Dist: django
+Requires-Dist: djangorestframework
+
+#XResponse
+
+XResponse is a very simple package that has some reusable responses for DRF to be used throughout the apis built at xKern.
+
+##Usage
+
+Add the following line to your settings.py module
+
+```
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'my_project.my_app.utils.custom_exception_handler'
+}
+```
+
+
+
+
