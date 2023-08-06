@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: rsaw
+Version: 0.5
+Summary: RSAW, Random Stuff API Wrapper
+Home-page: https://eliang.gitbook.io/rsaw/
+Author: Elian Galdamez
+Author-email: elian.galdamez510@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+#About Docs @ https://eliang.gitbook.io/rsaw/ , a api wrapper for Random Stuff API. (ASYNC mode still in works also some endpoints are not coverd)
+
+
