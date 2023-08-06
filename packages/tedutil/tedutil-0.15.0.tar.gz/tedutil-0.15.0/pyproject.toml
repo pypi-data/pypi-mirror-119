@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "tedutil"
+version = "0.13.0"
+description = "Varius Greek functions"
+authors = ["Ted Lazaros <tedlaz@gmail.com>"]
+license = "GPL"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.3"
+flake8 = "^3.9.1"
+autopep8 = "^1.5.6"
+rope = "^0.19.0"
+black = "^21.4b2"
+coverage = "^5.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
