@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: lemmy3
+Version: 3.0.0a0
+Summary: Lemmy lemmatizer
+Home-page: https://github.com/spacy-hu/lemmy
+License: MIT
+Keywords: nlp,lemmy,lemmatizer,spacy
+Author: Gyorgy Orosz
+Author-email: gyorgy@orosz.link
+Requires-Python: >=3.7.1,<4.0.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Dist: conllu (>=4.4.1,<5.0.0)
+Requires-Dist: spacy (>=3.1.0,<4.0.0)
+Requires-Dist: srsly (>=2.4.1,<3.0.0)
+Requires-Dist: typer (>=0.3.2,<0.4.0)
+Description-Content-Type: text/markdown
+
+# 🤘 Lemmy3
+
+Lemmy3 is an experimental fork of [Lemmy](https://github.com/sorenlind/lemmy)
+
+It has been refactored in object-oriented manner, the codebase is extended with type-hints and spacy-compatible serialization, and a simple frequency-based disambiguation method is added. The tool comes with a command line interface (`lemmy`) for training lemmatizer models.

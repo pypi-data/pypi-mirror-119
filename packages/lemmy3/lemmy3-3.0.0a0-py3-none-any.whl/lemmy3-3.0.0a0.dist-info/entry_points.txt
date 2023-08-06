@@ -1,0 +1,3 @@
+[console_scripts]
+lemmy=lemmy.cli.__main__:app
+
