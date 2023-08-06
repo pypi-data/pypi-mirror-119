@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: heyvi
+Version: 0.0.5
+Summary: Project Vi
+Home-page: https://github.com/visym/heyvi
+Author: Visym Labs
+Author-email: info@visym.com
+License: UNKNOWN
+Download-URL: https://github.com/visym/heyvi/archive/0.0.5.tar.gz
+Keywords: computer vision machine learning ML CV privacy video image
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Provides-Extra: all
+License-File: LICENSE
+
+[![PyPI version](https://badge.fury.io/py/heyvi.svg)](https://badge.fury.io/py/heyvi)  
+
+# Project Vi
+
+Visym Analytics
+
+
+
+
+
