@@ -1,0 +1,15 @@
+LICENSE,sha256=QwLJnWVu0hRQaa1C94mb_BsYUoqtEKDgBdzbmPSE0HM,1069
+ecoindex_cli/__init__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+ecoindex_cli/cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ecoindex_cli/cli/app.py,sha256=jQMVMbVCLBgeMhLXBd5P-zSulPSq37OQ30dzkRki5lk,5496
+ecoindex_cli/cli/arguments_handler.py,sha256=zGvtROxNyuBXxMQxvpmxF9QALpWqc_wM53D-VxN0vpk,2379
+ecoindex_cli/crawl.py,sha256=kprOqjG5QAMjvjnErVtMAF01BWoqMsEqQXpSLdaG3uY,781
+ecoindex_cli/files.py,sha256=lJygPefUhdWKTaN1p7KdPE7rmA2lH9REHoXg6AKJLCw,847
+ecoindex_cli/report/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ecoindex_cli/report/report.py,sha256=yiDi_sW0wpyzCZ4FQWz5st0482srTPiTDqyTfWJoWL8,3770
+ecoindex_cli/report/template.html,sha256=J8_9qd_FnoihTFdxRxj3B_-d0eN2kRp1qLQ3QAqjGYQ,7978
+ecoindex_cli-2.0.1.dist-info/entry_points.txt,sha256=z6DJD_78LyLBCMUAhXAg4buB2Mh1h-XZVPsjeAQpDKo,57
+ecoindex_cli-2.0.1.dist-info/LICENSE,sha256=QwLJnWVu0hRQaa1C94mb_BsYUoqtEKDgBdzbmPSE0HM,1069
+ecoindex_cli-2.0.1.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+ecoindex_cli-2.0.1.dist-info/METADATA,sha256=5eWO6jmVK-0TCMgoKX1rinTNF6E_f9wBQqFRiFuu_nM,8752
+ecoindex_cli-2.0.1.dist-info/RECORD,,
