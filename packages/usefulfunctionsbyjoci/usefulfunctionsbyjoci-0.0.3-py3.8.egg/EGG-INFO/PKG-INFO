@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: usefulfunctionsbyjoci
+Version: 0.0.3
+Summary: Useful functions
+Home-page: UNKNOWN
+Author: Joci12
+Author-email: <csutak.jozsef.lorant.86@gmail.com>
+License: UNKNOWN
+Description: # Package info
+        this package contains some useful functions
+        # Made By Joci
+        this package is maked by joci
+        # Functions
+        average(), this is return average
+        diff(), this is return difference of 2 number
+        isanagram(), check is anagram or not
+        ispalindrome(), check is palindrome or not
+        isprime(), check the number is prime or not, return a bool
+        list_printer(), list items from a list
+        nearestpalindrome(), nearest palindrome for integer
+        # Version
+        current version:0.0.2
+        
+Keywords: python,useful,function,usefull functions,joci,package
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown

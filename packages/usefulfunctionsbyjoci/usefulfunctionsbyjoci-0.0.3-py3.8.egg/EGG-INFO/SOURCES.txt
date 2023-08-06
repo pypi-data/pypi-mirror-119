@@ -1,0 +1,14 @@
+setup.py
+usefulfunctionsbyjoci/__init__.py
+usefulfunctionsbyjoci/average.py
+usefulfunctionsbyjoci/difference.py
+usefulfunctionsbyjoci/function.py
+usefulfunctionsbyjoci/isanagram.py
+usefulfunctionsbyjoci/ispalindrome.py
+usefulfunctionsbyjoci/isprime.py
+usefulfunctionsbyjoci/list_items.py
+usefulfunctionsbyjoci/nearestpalindrome.py
+usefulfunctionsbyjoci.egg-info/PKG-INFO
+usefulfunctionsbyjoci.egg-info/SOURCES.txt
+usefulfunctionsbyjoci.egg-info/dependency_links.txt
+usefulfunctionsbyjoci.egg-info/top_level.txt
