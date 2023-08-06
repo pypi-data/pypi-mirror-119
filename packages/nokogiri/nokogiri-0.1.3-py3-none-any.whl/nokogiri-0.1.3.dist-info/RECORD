@@ -1,0 +1,10 @@
+cell/__init__.py,sha256=joH5du9FadSIiyxRMHzifQ-of3llDHONm_mCfUbxD6U,1156
+nokogiri/__init__.py,sha256=Ad_4m5tpasR94yh0WOprBGTUpa5ltt1yN_jh5h1buWI,165
+nokogiri/cell.py,sha256=joH5du9FadSIiyxRMHzifQ-of3llDHONm_mCfUbxD6U,1156
+nokogiri/helloworld.py,sha256=K5ab-PnKT2Yc2NWwFigor85rwWvdiew7murAZxPF5bQ,42
+nokogiri/nokogiri.py,sha256=K5ab-PnKT2Yc2NWwFigor85rwWvdiew7murAZxPF5bQ,42
+nokogiri-0.1.3.dist-info/LICENSE,sha256=d5ciXwkpkt1FUcTOWRLufwnDfDolZpNGmgk8-yIDIOQ,1064
+nokogiri-0.1.3.dist-info/METADATA,sha256=20WCxM_ADXjaJcKQu61bIOYR5iERktik97T7XKTyG_c,322
+nokogiri-0.1.3.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+nokogiri-0.1.3.dist-info/top_level.txt,sha256=xorveBh3IttGRee-hdZ5yEf6DHCSXy-RNr4DOoDH5t4,9
+nokogiri-0.1.3.dist-info/RECORD,,
