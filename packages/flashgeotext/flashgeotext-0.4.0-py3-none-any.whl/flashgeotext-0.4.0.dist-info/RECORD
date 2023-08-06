@@ -1,0 +1,12 @@
+LICENSE,sha256=-Z5ZBuMQC2cA404GFcsET3UlaU_z87YrVRH4kJRGbLI,1060
+flashgeotext/__init__.py,sha256=42STGor_9nKYXumfeV5tiyD_M8VdcddX7CEexmibPBk,22
+flashgeotext/geotext.py,sha256=gm7AoSfcJ45B0RFz_4Nz2NN_0VpJRRdhHZyPs6kporI,4873
+flashgeotext/lookup.py,sha256=6Y-pmrtBTRQsS-OBNp8JWBfJXcpEK_C7oTAeLycBrXM,7397
+flashgeotext/resources/cities.json,sha256=LUGHpVizuCKVTc4X24atCsybFSklZMwtpVqj_rLv7Rg,1503911
+flashgeotext/resources/countries.json,sha256=VYtArpT3rad3vspjpCRsxY-7M6NRZyqvFe0IHiDr4Uk,17030
+flashgeotext/resources/scripts.json,sha256=QwjsGp1LvF0AgDQ7WCF9f4NZSdTqLC7gYkJSbVuSfJU,46940
+flashgeotext/settings.py,sha256=q7RN4btDuTTit0Tze5dWivWRx-8UPMwcLxOzHYUkk9Q,438
+flashgeotext-0.4.0.dist-info/LICENSE,sha256=-Z5ZBuMQC2cA404GFcsET3UlaU_z87YrVRH4kJRGbLI,1060
+flashgeotext-0.4.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+flashgeotext-0.4.0.dist-info/METADATA,sha256=d2xgsiJ8l85awzicYXstulqnwu0RlcUBhtaWxNJsyak,4263
+flashgeotext-0.4.0.dist-info/RECORD,,
