@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: discwrappy
+Version: 0.4-alpha
+Summary: A Python wrapper for the Discord API
+Home-page: https://github.com/JeffTheModder/DiscWrappy
+Author: Jeff Morris
+Author-email: jeffreyjr.morris@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/JeffTheModder/DiscWrappy/archive/refs/tags/v_0.4-alpha.tar.gz
+Description: UNKNOWN
+Keywords: Discord,API,wrapper,python,library
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python
