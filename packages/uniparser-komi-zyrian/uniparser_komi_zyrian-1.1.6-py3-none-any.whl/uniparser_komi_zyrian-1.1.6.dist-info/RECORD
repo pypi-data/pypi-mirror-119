@@ -1,0 +1,16 @@
+uniparser_komi_zyrian/__init__.py,sha256=neCvX4YUxhJSpY600aVBp48S3AmQrbKcpq82odiBVHY,2446
+uniparser_komi_zyrian/data_nodiacritics/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+uniparser_komi_zyrian/data_nodiacritics/bad_analyses.txt,sha256=m4L1_N4IZLXFBmIBaz5HG4lf4AhJyk1FOWS7jX82h04,1079
+uniparser_komi_zyrian/data_nodiacritics/lex_rules.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+uniparser_komi_zyrian/data_nodiacritics/lexemes.txt,sha256=2SKa4daCN0IsbN3uXIqLaaRLOcAdkhX51Kn0tmlYXVg,5945383
+uniparser_komi_zyrian/data_nodiacritics/paradigms.txt,sha256=8M3TlR-bU8_lOmFkK02XeVvpyopdI0B5TwzqqYTKb5s,97711
+uniparser_komi_zyrian/data_strict/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+uniparser_komi_zyrian/data_strict/bad_analyses.txt,sha256=m4L1_N4IZLXFBmIBaz5HG4lf4AhJyk1FOWS7jX82h04,1079
+uniparser_komi_zyrian/data_strict/lex_rules.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+uniparser_komi_zyrian/data_strict/lexemes.txt,sha256=f6vZMsBKn4tG3EXiR-W8uOBiwlq1xXLABRE13jpDEMc,5704479
+uniparser_komi_zyrian/data_strict/paradigms.txt,sha256=RiIGnjlxn3hAP3JoIneZFLbMUrifCLvFsc81yoVtyVY,89766
+uniparser_komi_zyrian-1.1.6.dist-info/LICENSE,sha256=4gqnyJhqJGklvHOvPea5zgpq0faAZihPA0DoKaNYsyw,1090
+uniparser_komi_zyrian-1.1.6.dist-info/METADATA,sha256=wkhkpsYUUTZs9dTUU92v10q4py2GRac0f34OUWNSWkw,4339
+uniparser_komi_zyrian-1.1.6.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+uniparser_komi_zyrian-1.1.6.dist-info/top_level.txt,sha256=uOePDfvvZNiA-870fECXVDhQOoHvYDD9PWV1Rx4GvtA,22
+uniparser_komi_zyrian-1.1.6.dist-info/RECORD,,
