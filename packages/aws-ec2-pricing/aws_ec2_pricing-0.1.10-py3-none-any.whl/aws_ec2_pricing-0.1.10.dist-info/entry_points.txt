@@ -1,0 +1,3 @@
+[console_scripts]
+ec2pricing=ec2pricing:cli
+
