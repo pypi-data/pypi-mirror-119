@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: seasonable
+Version: 2021.9.1
+Summary: API abstractions
+Home-page: UNKNOWN
+License: BSD 3-Clause License
+Platform: UNKNOWN
+Provides-Extra: test
+Provides-Extra: lint
+Provides-Extra: doc
+
+Seasonable
+==========
+
+APIs for all kinds of web services.
+
+**Note:**
+The
+:code:`examples`
+and
+:code:`tests`
+subpackages are not officially part of the API.
+
+
