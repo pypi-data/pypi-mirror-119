@@ -1,0 +1,34 @@
+# Data Model
+
+```mermaid
+    erDiagram
+        USER ||--o{ EXPERIMENT : owns        
+        EXPERIMENT {
+            string experiment_id
+            string name
+            struct configuration
+        }
+        EXPERIMENT ||--o{ RUN : have
+        RUN {
+            string run_id
+            timestamp started_at
+            struct configuration
+        }
+        RUN ||--o{ ITERATION : contains
+        ITERATION {
+            string iteration_id
+            int index
+            float figure_of_merit
+        }
+        PARAMETER {
+            string name
+            float value
+        }
+        ITERATION ||--o{ PARAMETER : evaluates
+        PULSE {
+            string name
+            array times
+            array values
+        }
+        ITERATION ||--o{ PULSE : evaluates
+```
