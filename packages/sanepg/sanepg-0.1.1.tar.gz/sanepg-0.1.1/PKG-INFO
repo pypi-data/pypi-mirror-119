@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: sanepg
+Version: 0.1.1
+Summary: Python 3 Tornado asynchronous pyscopg2 driver
+Home-page: https://github.com/shawcx/sanepg
+Author: Matthew Shaw
+Author-email: mshaw.cx@gmail.com
+License: MIT
+Description: 
+        sanepg
+        ------
+        
+        Currently very alpha status
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
