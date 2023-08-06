@@ -1,0 +1,12 @@
+chardet>=3.0.0
+attrs!=20.1.0,>=19.2
+
+[docs]
+Sphinx>=3.3.1
+sphinx-rtd-theme>=0.5.0
+doc8>=0.8.1
+
+[testing]
+commoncode
+pytest>=6
+pytest-xdist>=2

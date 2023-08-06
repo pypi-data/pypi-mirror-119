@@ -1,0 +1,16 @@
+{
+  "package": "libudev1",
+  "status": "install ok installed",
+  "priority": "optional",
+  "section": "libs",
+  "installed-size": "227",
+  "maintainer": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+  "architecture": "amd64",
+  "multi-arch": "same",
+  "source": "systemd",
+  "version": "237-3ubuntu10.22",
+  "depends": "libc6 (>= 2.25)",
+  "description": "libudev shared library\n This library provides access to udev device information.",
+  "homepage": "https://www.freedesktop.org/wiki/Software/systemd",
+  "original-maintainer": "Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>"
+}
