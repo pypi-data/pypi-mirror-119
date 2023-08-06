@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+varpool.egg-info/PKG-INFO
+varpool.egg-info/SOURCES.txt
+varpool.egg-info/dependency_links.txt
+varpool.egg-info/top_level.txt

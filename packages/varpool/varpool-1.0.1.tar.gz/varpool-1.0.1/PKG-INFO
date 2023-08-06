@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: varpool
+Version: 1.0.1
+Summary: a pool to save vars in one process and an object share to different processes
+Home-page: UNKNOWN
+Author: Yang Jiacheng
+Author-email: 2290906844@qq.com
+License: apache 2.0
+Platform: UNKNOWN
+License-File: LICENSE
+
+UNKNOWN
+
