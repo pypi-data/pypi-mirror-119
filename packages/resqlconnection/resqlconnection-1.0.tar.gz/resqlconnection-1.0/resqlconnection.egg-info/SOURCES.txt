@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+RESqlConnection/__init__.py
+RESqlConnection/example_of_use.py
+RESqlConnection/methods.py
+RESqlConnection/sql_connection.py
+resqlconnection.egg-info/PKG-INFO
+resqlconnection.egg-info/SOURCES.txt
+resqlconnection.egg-info/dependency_links.txt
+resqlconnection.egg-info/not-zip-safe
+resqlconnection.egg-info/requires.txt
+resqlconnection.egg-info/top_level.txt
