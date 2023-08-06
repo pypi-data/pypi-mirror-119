@@ -1,0 +1,7 @@
+Metadata-Version: 1.1
+Name: modulegraph2
+Version: 2.2
+Summary: A module import dependency graph for Python projects.
+Home-page: https://modulegraph2.readthedocs.io/
+Author: Ronald Oussoren
+Author-email: ronaldoussoren@mac.com

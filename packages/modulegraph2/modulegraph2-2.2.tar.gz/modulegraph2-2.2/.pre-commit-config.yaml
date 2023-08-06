@@ -1,0 +1,48 @@
+default_language_version:
+    python: python3.9
+repos:
+  - repo: https://github.com/psf/black
+    rev: 21.9b0
+    hooks:
+      - id: black
+        # override until resolved: https://github.com/ambv/black/issues/402
+        files: \.pyi?$
+        types: []
+        exclude: ^testsuite/.*/
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.9.2
+    hooks:
+      - id: flake8
+        exclude: ^testsuite/.*/
+        additional_dependencies:
+        - flake8-bugbear
+        - flake8-deprecated
+        - flake8-comprehensions
+        - flake8-isort
+        - flake8-quotes
+        - flake8-mutable
+        - flake8-todo
+
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.9.3
+    hooks:
+      - id: isort
+        exclude: ^testsuite/.*/
+        additional_dependencies: [toml]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.910
+    hooks:
+    - id: mypy
+      exclude: ^testsuite/.*/
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^testsuite/.*/
+      - id: end-of-file-fixer
+        exclude: ^testsuite/.*/
+      - id: debug-statements
+        exclude: ^testsuite/.*/
