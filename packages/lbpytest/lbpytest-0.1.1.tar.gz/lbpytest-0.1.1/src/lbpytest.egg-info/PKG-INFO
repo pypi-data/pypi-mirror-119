@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: lbpytest
+Version: 0.1.1
+Summary: Utilities for Python-driven integration tests at LINBIT
+Home-page: https://github.com/LINBIT/lbpytest
+Author: Christoph Böhmwalder
+Author-email: christoph.boehmwalder@linbit.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/LINBIT/lbpytest/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# lbpytest
+
+Utilities for Python-driven integration tests at LINBIT
+
+
