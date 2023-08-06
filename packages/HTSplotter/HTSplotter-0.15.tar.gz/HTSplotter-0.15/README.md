@@ -1,0 +1,139 @@
+# HTSplotter
+
+HTSplotter allows an end-to-end data processing and analysis of chemical and genetic in vitro perturbation screens. It also available as a [web tool](https://htsplotter.cmgg.be/). 
+HTSplotter is tailored to analyse drug, drug combination, genetic perturbagen and combinations of genetic-chemical perturbagen screens. 
+These experiments can be conducted either in real-time or as with endpoint readout. HTSplotter identifies the type of experimental setup through a conditional statement algorithm. It then performs a normalization and, in case of a drug screen, drug combination or genetic-chemical perturbagen experiment, identifies the dose-response relationship for each drug alone. Additionally, synergism or antagonism of drug or genetic-chemical combination screens is determined through the BI method. Finally, results are plotted and exported as PDF files, allowing a fast biological interpretation of the data.
+
+
+All python library usage information is in this page, however, complementary information and example files can be found at the [website manual](https://htsplotter.cmgg.be/) or at [HTSplotter GitHub](https://github.com/CBIGR/HTSplotter).
+
+## Install
+```
+pip install HTSplotter
+```
+## Uninstall
+```
+pip uninstall HTSplotter
+```
+## Import HTSplotter library
+```
+import HTSplotter as HTSP
+```
+
+## Running Analysis
+
+The HTSplotter analysis can be made by introducing the input data from the shell or it can read the inputs from an input file. This allows the integration of HTSplotter into other scripts and the grouping of various analyses into a single run, even in the case of different input directories, readouts, units, effect and in case of biological replicates.
+ In both cases, the Analyser object must be initialized:
+
+```
+hts = HTSP.Analyser()
+```
+
+### Setting up inputs from shell
+
+To setup the inputs, the attributes of the Analyser object must be changed to the proper ones:
+
+```
+# set main directory path
+hts.main_folder = 'path/to/main/folder/'
+
+# set readout information, e.g.: confluency, impedance, fluorescence, ...
+hts.information_readout = 'confluency'
+
+# set readout units, e.g. %, area, Å _mÅ _/Wel, ... 
+hts.readout_units = '%'
+
+# in case of biological replicate analysis give a file name, otherwise set to 0
+hts.file_name_br = 0
+
+# list of file names
+hts.files_list = ['drugscreen_1timepoint.txt', 'drug_combination_screen_1timepoint.txt']
+
+# =0 not biological replicate (default); =1 biological replicate
+hts.biological_replicate = 0
+
+# =0 no user validation (default); =1 user validation
+hts.userinput = 0
+
+# =0 inhibition (default); =1 enhancement
+hts.expected_effect = 0
+```
+
+By default, all input files, log files (information extracted) and output files are set to the main folder path. However, these can be changed to diferent paths to ease data organization: 
+
+```
+# set input files path
+hts.input_path = 'path/to/input/files/'
+
+# set path for extracted information from the headers
+hts.information_extracted = 'path/to/information/extracted/files/'
+
+# set path for extracted information from the headers
+hts.results_path = 'path/to/output/files/'
+```
+
+For more information on the input fields, please visit [HTSplotter website](https://htsplotter.cmgg.be/).
+To run the analysis, after all inputs have been set, you must use the execute() routine:
+
+```
+# execute analysis
+htsplotter.execute()
+```
+
+### Setting up inputs from input file
+
+The input data can be introduced into an input file, where several analysis blocks can be set with different characteristics. Setting up HTSplotter in this way allows the sequential execution of several execute() routines, for each input data block.
+Each analysis block must end with #. Bellow is the example of an input file with two input blocks:
+
+```
+path/to/to/main/directory/                             # add your directory path
+path/to/input/files/directory/                         # input path directory
+path/to/information/extracted/files/directory          # information_extracted path directory
+path/to/output/files/directory/                        # output_results path directory
+0                                                      # =0 not biological replicate (default); =1 biological replicate
+0                                                      # =0 no user validation (default); =1 user validation
+confluency                                             # information_readout e.g.: confluency, impedance, fluorescence, ...
+%                                                      # readout_units e.g. %, area, Å _mÅ _/Wel, ... 
+0                                                      # =0 inhibition (default); =1 enhancement
+0                                                      # file_name_br file name
+drug_combination_screen_1timepoint.txt                 # file 1
+end                                                    # file 2 (if end, stop reading)
+#
+path/to/to/main/directory/                             # add your directory path
+path/to/input/files/directory/                         # input path directory
+path/to/information/extracted/files/directory          # information_extracted path directory
+path/to/output/files/directory/                        # output_results path directory
+1                                                      # =0 not biological replicate (default); =1 biological replicate
+0                                                      # =0 no user validation (default); =1 user validation
+confluency                                             # information_readout e.g.: confluency, impedance, fluorescence, ...
+area                                                   # readout_units e.g. %, area, Å _mÅ _/Wel, ... 
+0                                                      # =0 inhibition (default); =1 enhancement
+drug_screen_biological_replicate.txt                   # file_name_br file name
+drug_screen_over_time_br1.txt			       # file 1
+drug_screen_over_time_br2.txt			       # file 2
+end                                                    # file 3 (if end, stop reading)
+#
+``` 
+
+More than one file can be processed in the same analysis block. These can be added in the file1, file2, ..., fileN lines, where the last line must have the "end" string. These files will be processed with the same characteristics as the ones in the respective analysis block.
+The paths to input files, log files (information extracted) and output files directories can be set as relative paths from the main directory by adding 'main_dir + ' at the beginning of the lines:
+```
+main_dir + relative/path/to/input/files/directory/                         # input path directory
+main_dir + relative/path/to/information/extracted/files/directory          # information_extracted path directory
+main_dir + relative/path/to/output/files/directory/                        # output_results path directory
+```
+If these lines only contain 'main_dir', the directories will be considered the same as the main directory.
+
+For more information on the input fields, please visit [HTSplotter website](https://htsplotter.cmgg.be/).
+
+To run all the analysis blocks, use the execute_from_file() routine:
+
+```
+hts.execute_from_file('path/to/input/file/filename.txt')
+```
+![](https://github.com/CBIGR/HTSplotter/blob/main/images/HTSplotter_scheme_GITHUB.png?raw=true)
+
+
+
+
+ 
