@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+versioneer.py
+mlrun_connect/__init__.py
+mlrun_connect/_version.py
+mlrun_connect/azure.py
+mlrun_connect.egg-info/PKG-INFO
+mlrun_connect.egg-info/SOURCES.txt
+mlrun_connect.egg-info/dependency_links.txt
+mlrun_connect.egg-info/not-zip-safe
+mlrun_connect.egg-info/requires.txt
+mlrun_connect.egg-info/top_level.txt
