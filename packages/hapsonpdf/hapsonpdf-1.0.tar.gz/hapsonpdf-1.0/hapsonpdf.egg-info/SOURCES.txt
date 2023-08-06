@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+hapsonpdf.egg-info/PKG-INFO
+hapsonpdf.egg-info/SOURCES.txt
+hapsonpdf.egg-info/dependency_links.txt
+hapsonpdf.egg-info/top_level.txt
