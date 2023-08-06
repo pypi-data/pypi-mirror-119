@@ -1,0 +1,3 @@
+pysmarthome~=2.0
+requests
+wakeonlan
