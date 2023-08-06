@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/IUBConfiguration/IUBConfiguration.py
+src/IUBConfiguration/__init__.py
+src/IUBConfiguration.egg-info/PKG-INFO
+src/IUBConfiguration.egg-info/SOURCES.txt
+src/IUBConfiguration.egg-info/dependency_links.txt
+src/IUBConfiguration.egg-info/top_level.txt
