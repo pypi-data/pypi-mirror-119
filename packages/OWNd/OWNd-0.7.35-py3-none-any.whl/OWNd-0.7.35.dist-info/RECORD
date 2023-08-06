@@ -1,0 +1,11 @@
+OWNd/__init__.py,sha256=KPBbvPhzlx1_KpnAoSznQ3iq2HBZn8TD5lBJSDw-gKU,22
+OWNd/__main__.py,sha256=ryvjEZrXg6WUlKdk0l5bwkvUjmEGiZJhdHqrR1GGmU0,3442
+OWNd/connection.py,sha256=aW7FWU2Or6hh3OhVTg3XB6mBkrZLdZeB3NWW-k2Ab-o,24111
+OWNd/discovery.py,sha256=FtQ2IGyUyVPMX9MNjNEQH8QK75ovpLajnNIqVqFYXik,10304
+OWNd/message.py,sha256=QMwRzVq3z_8A7yvWG_jYuvlMdHkZDSyfDb-PaT1OXRo,77522
+OWNd-0.7.35.dist-info/DESCRIPTION.rst,sha256=JpaBaE7uy2wtlqswcpT0DjHfrY-J7Gtp-OT0lInXw7g,365
+OWNd-0.7.35.dist-info/METADATA,sha256=3ZB0TlOwIsx8Jp5IxAVYKAXWZEPldLOYprk6nbXL6vI,927
+OWNd-0.7.35.dist-info/RECORD,,
+OWNd-0.7.35.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+OWNd-0.7.35.dist-info/metadata.json,sha256=e6dd2OvsEo8xVmwev19FDXbVBe4ePRH_wAa57ZjELqM,738
+OWNd-0.7.35.dist-info/top_level.txt,sha256=D92FFLTdbtC4i0MpYlggWGn3Eh7A3vrgBajWbJzlJc0,5
