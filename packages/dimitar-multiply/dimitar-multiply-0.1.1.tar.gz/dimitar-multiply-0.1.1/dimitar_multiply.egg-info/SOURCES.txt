@@ -1,0 +1,9 @@
+README.md
+setup.py
+dimitar_multiply/__init__.py
+dimitar_multiply/multiplication.py
+dimitar_multiply.egg-info/PKG-INFO
+dimitar_multiply.egg-info/SOURCES.txt
+dimitar_multiply.egg-info/dependency_links.txt
+dimitar_multiply.egg-info/requires.txt
+dimitar_multiply.egg-info/top_level.txt
