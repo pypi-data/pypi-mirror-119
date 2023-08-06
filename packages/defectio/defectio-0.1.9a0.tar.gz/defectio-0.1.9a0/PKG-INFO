@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: defectio
+Version: 0.1.9a0
+Summary: Wrapper for Revolt API
+Home-page: https://github.com/Darkflame72/defectio
+License: MIT
+Author: Leon Bowie
+Author-email: leon@bowie-co.nz
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: AsyncIO
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Dist: aiofiles (>=0.7.0,<0.8.0)
+Requires-Dist: aiohttp (>=3.7.4,<4.0.0)
+Requires-Dist: msgpack (>=1.0.2,<2.0.0)
+Requires-Dist: orjson (>=3.6.3,<4.0.0)
+Requires-Dist: ulid-py (>=1.1.0,<2.0.0)
+Project-URL: Documentation, https://defectio.readthedocs.io
+Project-URL: Repository, https://github.com/Darkflame72/defectio
+Description-Content-Type: text/markdown
+
+# Defectio
+
+![revolt-api](https://img.shields.io/npm/v/revolt-api?label=Revolt%20API)[![Documentation Status](https://readthedocs.org/projects/defectio/badge/?version=latest)](https://defectio.readthedocs.io/en/latest/?badge=latest)
+
+**defectio** is a direct implementation of the entire Revolt API and provides a way to authenticate and start communicating with Revolt servers. It is currently in active development so not all features are yet implemented. Similar interface to discord.py
+
+## Example Usage
+
+```python3
+import defectio
+
+client = defectio.Client()
+
+
+@client.event
+async def on_ready():
+    print("We have logged in.")
+
+
+@client.event
+async def on_message(message: defectio.Message):
+    if message.author == client.user:
+        return
+    if message.content.startswith("$hello"):
+        await message.channel.send("Hello!")
+
+
+client.run("")
+```
+
+## Contribute
+
+Join our server [here](https://app.revolt.chat/invite/FfbwgFDk)
+
+## License
+
+Licensed under an MIT license
+
+Based on discord.py by Rapptz [here](https://github.com/Rapptz/discord.py)
+
