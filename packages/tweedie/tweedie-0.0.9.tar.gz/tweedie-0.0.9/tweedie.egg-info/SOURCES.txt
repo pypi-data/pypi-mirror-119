@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+versioneer.py
+tweedie/__init__.py
+tweedie/_version.py
+tweedie/tweedie_dist.py
+tweedie.egg-info/PKG-INFO
+tweedie.egg-info/SOURCES.txt
+tweedie.egg-info/dependency_links.txt
+tweedie.egg-info/not-zip-safe
+tweedie.egg-info/requires.txt
+tweedie.egg-info/top_level.txt
