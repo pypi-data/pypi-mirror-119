@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/plusplus/__init__.py
+src/plusplus/patching.py
+src/plusplus/wrappers.py
+src/plusplus.egg-info/PKG-INFO
+src/plusplus.egg-info/SOURCES.txt
+src/plusplus.egg-info/dependency_links.txt
+src/plusplus.egg-info/requires.txt
+src/plusplus.egg-info/top_level.txt

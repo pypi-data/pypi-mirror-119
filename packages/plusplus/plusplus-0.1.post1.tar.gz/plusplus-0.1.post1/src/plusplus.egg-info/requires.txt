@@ -1,0 +1,5 @@
+bytecode>=0.12.0
+
+[dev]
+pytest
+pytest-cov
