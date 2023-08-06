@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pyportall
+Version: 0.0.9
+Summary: Portall Python SDK
+Home-page: UNKNOWN
+Author: Daniel Carrión
+Author-email: dcarrion@inspide.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pyportall
+
+Python SDK to Portall's data and services.
+
+Please take a look at the [documentation](https://inspide.github.io/pyportall/) to get set up.
+
+
