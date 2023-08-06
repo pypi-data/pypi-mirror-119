@@ -1,0 +1,13 @@
+airflow/providers/microsoft/psrp/__init__.py,sha256=mlJxuZLkd5x-iq2SBwD3mvRQpt3YR7wjz_nceyF1IaI,787
+airflow/providers/microsoft/psrp/get_provider_info.py,sha256=BXv057UI6eqYCS-ZXrRRnnaKam9PR7Z_FXMeiMnZ0GE,2154
+airflow/providers/microsoft/psrp/hooks/__init__.py,sha256=mlJxuZLkd5x-iq2SBwD3mvRQpt3YR7wjz_nceyF1IaI,787
+airflow/providers/microsoft/psrp/hooks/psrp.py,sha256=O9SlqSnNeHYKb3Yc5NdjVquWaIAYl2iqdvd9-s-ZC_4,4107
+airflow/providers/microsoft/psrp/operators/__init__.py,sha256=mlJxuZLkd5x-iq2SBwD3mvRQpt3YR7wjz_nceyF1IaI,787
+airflow/providers/microsoft/psrp/operators/psrp.py,sha256=oX0D8XC7oEhC4Pnyt5dsh2cmyFozQq-kr6nuxbd5WVI,2294
+apache_airflow_providers_microsoft_psrp-1.0.1.dist-info/LICENSE,sha256=gXPVwptPlW1TJ4HSuG5OMPg-a3h43OGMkZRR1rpwfJA,10850
+apache_airflow_providers_microsoft_psrp-1.0.1.dist-info/METADATA,sha256=JKOWOY_6kHt3JdnJgrzCqydBUNVRaLaq-buQ0PnWL8Y,4448
+apache_airflow_providers_microsoft_psrp-1.0.1.dist-info/NOTICE,sha256=m-6s2XynUxVSUIxO4rVablAZCvFq-wmLrqV91DotRBw,240
+apache_airflow_providers_microsoft_psrp-1.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+apache_airflow_providers_microsoft_psrp-1.0.1.dist-info/entry_points.txt,sha256=VKgi7Cq90SSymfGK0I6obNW04IS4GVBW04pCYdQgecc,112
+apache_airflow_providers_microsoft_psrp-1.0.1.dist-info/top_level.txt,sha256=OeMVH5md7fr2QQWpnZoOWWxWO-0WH1IP70lpTVwopPg,8
+apache_airflow_providers_microsoft_psrp-1.0.1.dist-info/RECORD,,
