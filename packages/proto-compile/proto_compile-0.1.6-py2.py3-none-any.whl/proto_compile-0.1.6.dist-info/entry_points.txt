@@ -1,0 +1,3 @@
+[console_scripts]
+proto-compile = proto_compile.cli:proto_compile
+
