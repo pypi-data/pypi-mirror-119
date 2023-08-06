@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: flaskbb-plugin-portal
+Version: 1.2.0
+Summary: A portal plugin for FlaskBB
+Home-page: https://flaskbb.org
+Author: FlaskBB Team
+Author-email: peter.justin@outlook.com
+License: BSD
+Project-URL: Code, https://github.com/flaskbb/flaskbb-plugin-portal
+Project-URL: Issue Tracker, https://github.com/flaskbb/flaskbb-plugin-portal/issues
+Keywords: flaskbb plugin portal
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Environment :: Plugins
+Classifier: Framework :: Flask
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+
+# Portal Plugin for FlaskBB
+
+This plugin provides a simple portal for FlaskBB.
+
+In addition to the settings that can be changed via the management panel,
+one setting has to be added (if desired) to your ``flaskbb.cfg``:
+```python
+PLUGIN_PORTAL_URL_PREFIX="/yourportalurlprefix"
+```
+This setting allows you to change the URL of the portal from the default
+value of ``/portal`` to something else. Be sure to **not** change it to something that
+could conflict with one of the ``URL_PREFIX``es of FlaskBB.
+
+
+# Installation
+
+This plugin can be installed from PyPI via:
+```bash
+$ pip install flaskbb-plugin-portal
+```
+
+
+# License
+
+``flaskbb-plugin-portal`` is licensed under the
+[BSD License](https://github.com/flaskbb/flaskbb-plugin-portal/blob/master/LICENSE).
+
+
+# Links
+
+* [FlaskBB Website](https://flaskbb.org)
+* [Source Code](https://github.com/flaskbb/flaskbb-plugin-portal)
+* [Issue Tracker](https://github.com/flaskbb/flaskbb-plugin-portal/issues)
+
+
