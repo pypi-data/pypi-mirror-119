@@ -1,0 +1,16 @@
+beka@ git+https://github.com/c65sdn/beka.git@master
+chewie@ git+https://github.com/c65sdn/chewie.git@master
+faucet@ git+https://github.com/c65sdn/faucet.git@e7d113224f9104175be26d83557bb20c8bd28851#egg=faucet
+grpcio-tools==1.40.0
+grpcio==1.40.0
+influxdb>=2.12.0
+msgpack==1.0.2
+networkx>=1.9
+pbr==5.5.1
+prometheus_client==0.11.0
+prometheus_client==0.11.0
+protobuf==3.17.3
+pytricia
+pyyaml==5.4.1
+pyyaml==5.4.1
+ryu@ git+https://github.com/c65sdn/ryu.git@master
