@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: env-proxy
+Version: 0.1.0
+Summary: Creates a class used to query environmental variables with typehinting a conversion to basic Python types.
+License: MIT
+Author: Tomas Votava
+Author-email: info@tomasvotava.eu
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
