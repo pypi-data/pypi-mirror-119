@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/opni_nats/__init__.py
+src/opni_nats/nats_wrapper.py
+src/opni_nats.egg-info/PKG-INFO
+src/opni_nats.egg-info/SOURCES.txt
+src/opni_nats.egg-info/dependency_links.txt
+src/opni_nats.egg-info/requires.txt
+src/opni_nats.egg-info/top_level.txt
