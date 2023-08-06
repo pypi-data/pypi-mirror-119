@@ -1,0 +1,3 @@
+[console_scripts]
+saaltfiish_boilerplate = saaltfiish_boilerplate.cli:main
+
