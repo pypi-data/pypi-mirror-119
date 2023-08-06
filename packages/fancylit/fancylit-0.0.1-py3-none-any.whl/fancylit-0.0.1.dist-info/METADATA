@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: fancylit
+Version: 0.0.1
+Summary: Contains pre-packaged Streamlit code to render fancy visualizations, run modeling tasks, and data exploration
+Home-page: https://github.com/banjtheman/fancylit
+Author: Hacktoberfest
+Author-email: hacktoberfest@gmail.com
+Maintainer: The community
+Maintainer-email: hacktoberfest@gmail.com
+License: Apache 2
+Keywords: visualization,machine learning,streamlit,data science
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.4, <4
+Description-Content-Type: text/markdown
+Requires-Dist: streamlit
+Requires-Dist: yellowbrick
+Requires-Dist: altair
+Requires-Dist: pandas
+Requires-Dist: plotly
+
+# Fancylit
+Fancylit is a python module that contains pre-packaged Streamlit code to render fancy visualizations, run modeling tasks, and data exploration  
+
+
