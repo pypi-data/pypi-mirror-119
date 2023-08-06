@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "rootbridge"
+version = "0.0.1"
+description = "Bridge to the social networks."
+authors = ["Angelo Gladding <angelo@lahacker.net>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+sh = "^1.14.2"
+understory = "^0.0.67"
+
+[tool.poetry.dev-dependencies]
+black = "^21.8b0"
+isort = "^5.9.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
