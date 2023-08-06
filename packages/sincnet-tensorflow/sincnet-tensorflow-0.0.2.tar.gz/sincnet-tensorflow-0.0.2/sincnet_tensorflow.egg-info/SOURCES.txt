@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+sincnet_tensorflow/__init__.py
+sincnet_tensorflow/sincnet_tensorflow.py
+sincnet_tensorflow.egg-info/PKG-INFO
+sincnet_tensorflow.egg-info/SOURCES.txt
+sincnet_tensorflow.egg-info/dependency_links.txt
+sincnet_tensorflow.egg-info/requires.txt
+sincnet_tensorflow.egg-info/top_level.txt
