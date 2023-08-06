@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/nikkiepy/__init__.py
+src/nikkiepy/crypt.py
+src/nikkiepy/files.py
+src/nikkiepy/sockets.py
+src/nikkiepy.egg-info/PKG-INFO
+src/nikkiepy.egg-info/SOURCES.txt
+src/nikkiepy.egg-info/dependency_links.txt
+src/nikkiepy.egg-info/top_level.txt
