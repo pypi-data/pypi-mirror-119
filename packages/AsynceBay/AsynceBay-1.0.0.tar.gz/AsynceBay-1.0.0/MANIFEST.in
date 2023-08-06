@@ -1,0 +1,3 @@
+include CHANGES.md
+prune venv1
+exclude requirements.txt
