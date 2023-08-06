@@ -1,0 +1,14 @@
+urge/__init__.py,sha256=bu7EvTyVyKZKT0zVsXGAo4ECzuWH5epR5n2vO7AE9T0,262
+urge/actions.py,sha256=fVYNcv1hwzTE9PTZkpAaL0lpqq7GhpB6THOZ0dbc9WE,2717
+urge/base.py,sha256=IYHM6QQkzARgb6PV2sfv_Q7CcrHhFBue8amy2zq4XyU,2956
+urge/utils.py,sha256=1I6iV-esIygxaqGBKsVhqT26rrknJkA82BUjflFaWZg,1284
+urge/procs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+urge/procs/browser.py,sha256=FafYrZuLIA34VEYo74d8TqkaP1jmiIg7yLBDsquuv6U,1729
+urge/procs/fileoperation.py,sha256=6xjm1pFpsvPtqyDSbJxm3gTRG31QZcfnTlnjlf2LjfI,3366
+urge/procs/memegen.py,sha256=rxFNbZYY1ZY6ks-buxZ0C0wiTRw_NEMpUJ18fhW0nH0,3160
+urge/procs/weather.py,sha256=WL_YHsg_m9KA13i1vBWBMIiottZ1oe_8o9E-E3fZgug,868
+urge/procs/youdao.py,sha256=IWZsRkudbNtdO3xxXENYTsWa4-zQtBxjBuCii3Zcsog,4899
+urge-0.4.4.dist-info/METADATA,sha256=8QMy7LchfVrkvlRx1yNqwdBFaRgTD-JqzbwAbMcyHWQ,880
+urge-0.4.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+urge-0.4.4.dist-info/top_level.txt,sha256=8AYuDRJkKpEd2PXHeoiz5fNXKTtcjFFruA4gzw4NS-g,16
+urge-0.4.4.dist-info/RECORD,,
