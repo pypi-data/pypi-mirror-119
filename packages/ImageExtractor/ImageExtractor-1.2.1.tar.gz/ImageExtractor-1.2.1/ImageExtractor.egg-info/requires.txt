@@ -1,0 +1,8 @@
+apscheduler
+configparser
+python-dateutil
+requests
+selenium
+urllib3
+webdriver-manager
+zipp
