@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.cfg
+src/aidutils/__init__.py
+src/aidutils/example.py
+src/aidutils.egg-info/PKG-INFO
+src/aidutils.egg-info/SOURCES.txt
+src/aidutils.egg-info/dependency_links.txt
+src/aidutils.egg-info/top_level.txt
