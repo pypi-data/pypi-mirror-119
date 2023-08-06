@@ -1,0 +1,14 @@
+README.md
+setup.py
+airflow_provider_appops.egg-info/PKG-INFO
+airflow_provider_appops.egg-info/SOURCES.txt
+airflow_provider_appops.egg-info/dependency_links.txt
+airflow_provider_appops.egg-info/entry_points.txt
+airflow_provider_appops.egg-info/requires.txt
+airflow_provider_appops.egg-info/top_level.txt
+appops/__init__.py
+appops/hooks/__init__.py
+appops/hooks/admob.py
+appops/hooks/oauth2discoveryapi.py
+appops/operators/__init__.py
+appops/operators/admob_to_postgres.py
