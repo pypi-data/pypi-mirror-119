@@ -1,0 +1,10 @@
+LICENSE
+README.md
+autobackuper.py
+setup.py
+autobackuper.egg-info/PKG-INFO
+autobackuper.egg-info/SOURCES.txt
+autobackuper.egg-info/dependency_links.txt
+autobackuper.egg-info/entry_points.txt
+autobackuper.egg-info/requires.txt
+autobackuper.egg-info/top_level.txt
