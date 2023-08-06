@@ -1,0 +1,7 @@
+voila~=0.2.11
+
+[dev]
+invoke~=1.6
+ipywidgets~=7.6
+pylint~=2.10
+widget-periodictable~=2.1
