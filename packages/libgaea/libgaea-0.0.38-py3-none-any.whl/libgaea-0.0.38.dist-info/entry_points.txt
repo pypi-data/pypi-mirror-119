@@ -1,0 +1,8 @@
+[console_scripts]
+build_linux=gaea:build_linux
+build_macos=gaea:build_macos
+build_windows=gaea:build_windows
+
+[web.apps]
+gaea=gaea.__web__:app
+
