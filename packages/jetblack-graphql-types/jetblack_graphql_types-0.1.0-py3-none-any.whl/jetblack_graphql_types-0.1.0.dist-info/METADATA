@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: jetblack-graphql-types
+Version: 0.1.0
+Summary: Serialization for JSON and XML using typing
+Home-page: https://github.com/rob-blackbourn/jetblack-graphql-types
+License: Apache-2.0
+Keywords: serialization,jetblack,json,xml,typing
+Author: Rob Blackbourn
+Author-email: rob.blackbourn@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: graphql-core (>=3.1.6,<4.0.0)
+Requires-Dist: jetblack-iso8601 (>=1.0,<2.0)
+Project-URL: Repository, https://github.com/rob-blackbourn/jetblack-graphql-types
+Description-Content-Type: text/markdown
+
+# jetblack-graphql-types
+
+Types for graphql
+
