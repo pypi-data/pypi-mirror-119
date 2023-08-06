@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: fabfiles
+Version: 0.1.0
+Summary: Reusable automation tasks and scripts based on fab-classic: cloud provisiotning, docker, etc.
+Home-page: https://github.com/minireference/fabfiles
+Author: Ivan Savov
+Author-email: ivan@minireference.com
+License: MIT license
+Keywords: fabfiles
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fab-classic
+
+fabfiles
+========
+[![PyPI](https://img.shields.io/pypi/v/fabfiles.svg)](https://pypi.python.org/pypi/fabfiles)
+[![build](https://img.shields.io/travis/minireference/fabfiles.svg)](https://travis-ci.com/minireference/fabfiles)
+[![docs](https://readthedocs.org/projects/fabfiles/badge/?version=latest)](https://fabfiles.readthedocs.io/en/latest/?version=latest)
+
+
+Reusable automation tasks and scripts based on fab-classic: cloud provisiotning, docker, etc.
+
+* Documentation: https://fabfiles.readthedocs.io
+
+
+
+History
+=======
+
+0.1.0 (2021-09-14)
+------------------
+- Basic package setup
+- First release on PyPI
+
+
+
+
