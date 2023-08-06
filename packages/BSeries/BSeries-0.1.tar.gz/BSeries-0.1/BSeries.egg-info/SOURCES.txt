@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+setup.py
+BSeries/__init__.py
+BSeries/bs.py
+BSeries/test_trees.py
+BSeries/trees.py
+BSeries/util.py
+BSeries.egg-info/PKG-INFO
+BSeries.egg-info/SOURCES.txt
+BSeries.egg-info/dependency_links.txt
+BSeries.egg-info/requires.txt
+BSeries.egg-info/top_level.txt
