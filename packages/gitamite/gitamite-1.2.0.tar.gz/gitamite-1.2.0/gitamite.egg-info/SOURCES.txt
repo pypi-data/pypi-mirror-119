@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+gitamite/__init__.py
+gitamite/glearn.py
+gitamite/helper.py
+gitamite/moodle.py
+gitamite.egg-info/PKG-INFO
+gitamite.egg-info/SOURCES.txt
+gitamite.egg-info/dependency_links.txt
+gitamite.egg-info/requires.txt
+gitamite.egg-info/top_level.txt
