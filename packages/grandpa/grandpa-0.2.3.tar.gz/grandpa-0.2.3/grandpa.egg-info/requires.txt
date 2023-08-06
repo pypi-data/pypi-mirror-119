@@ -1,0 +1,7 @@
+setuptools
+wheel
+imageio
+numpy
+opencv-python-headless
+Pillow
+psutil
