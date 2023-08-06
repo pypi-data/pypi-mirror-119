@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+caterpillar_pytest/__init__.py
+caterpillar_pytest/main.py
+caterpillar_pytest.egg-info/PKG-INFO
+caterpillar_pytest.egg-info/SOURCES.txt
+caterpillar_pytest.egg-info/dependency_links.txt
+caterpillar_pytest.egg-info/entry_points.txt
+caterpillar_pytest.egg-info/requires.txt
+caterpillar_pytest.egg-info/top_level.txt
