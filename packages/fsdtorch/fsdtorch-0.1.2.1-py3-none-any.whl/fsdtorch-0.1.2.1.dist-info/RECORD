@@ -1,0 +1,5 @@
+fsdtorch/__init__.py,sha256=LevsQW6Vllpo-ebyKZCFfjMRO-QQYyYN9RX6ALhHrlg,27
+fsdtorch/inference.py,sha256=vmfOPyCs0DBkgV3_O2UPPAVsxVubzH_MYYGBenX-oF4,2781
+fsdtorch-0.1.2.1.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+fsdtorch-0.1.2.1.dist-info/METADATA,sha256=-2wWsLsOPgpv5DvkLj9BdPXCFiOuoYFOt5FQhc9fwrw,596
+fsdtorch-0.1.2.1.dist-info/RECORD,,
