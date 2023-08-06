@@ -1,0 +1,12 @@
+Pillow
+fastai
+fastcore
+jupyter
+numpy
+packaging
+pandas
+pip
+tk
+wheel
+
+[dev]
