@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: histo_confusion_factor_ijhwlee
+Version: 0.0.2
+Summary: Package for calculating confusion factor between histograms
+Home-page: https://github.com/ijhwlee/histo_confusion_factor
+Author: Hyung Won Lee
+Author-email: ijgwlee@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/ijhwlee/histo_confusion_factor/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+This is a sample package for confusion factor for histograms
+
