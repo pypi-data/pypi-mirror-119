@@ -1,0 +1,10 @@
+CHANGELOG.md,sha256=apwpmUwm1m0I3_Y-wd3zZGLARPQoG23UP_hQaIhqIKU,1167
+corgy/__init__.py,sha256=XjjQ45i3Qpeor5mTfmG4MptsbICcSeluTiH9yE52IYQ,218
+corgy/_corgy.py,sha256=v47qVfu2ptShzHSbPn1KkPQBREYxvbaJIzTECuBeXWo,17938
+corgy/_helpfmt.py,sha256=r-o0p--3ZOYzhGHXMFJZ1PJeIq28kO1D9iKLkVglsDI,23264
+corgy/_version.py,sha256=Mlm4Gvmb_6yQxwUbv2Ksc-BJFXLPg9H1Vt2iV7wXrA4,22
+corgy/types.py,sha256=VwavcNLMoz3Md4guUD07mE3SGybZAyPpFODlcA9YUv4,5767
+corgy-1.2.1.dist-info/LICENSE,sha256=ffaY6GJuiYWDboUnN5AISBIIbXes9w6qVoVXpI6gUF4,1072
+corgy-1.2.1.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+corgy-1.2.1.dist-info/METADATA,sha256=n857YKXAfIrmlaLICdcaCrtFUar3X5ty-zgYd0LsF3s,2672
+corgy-1.2.1.dist-info/RECORD,,
