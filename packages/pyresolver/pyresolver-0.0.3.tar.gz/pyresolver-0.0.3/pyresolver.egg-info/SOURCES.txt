@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+pyresolver/__init__.py
+pyresolver/_exception_helper.py
+pyresolver/_ioc.py
+pyresolver/_ioc_base.py
+pyresolver/exceptions.py
+pyresolver/interfaces.py
+pyresolver.egg-info/PKG-INFO
+pyresolver.egg-info/SOURCES.txt
+pyresolver.egg-info/dependency_links.txt
+pyresolver.egg-info/top_level.txt
+tests/__init__.py
+tests/pyresolver/__init__.py
+tests/pyresolver/test_base.py
