@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: olivia-django-authtools
+Version: 1.0.0
+Summary: Custom user model app for Django featuring email as username and class-based views for authentication.
+Home-page: https://github.com/nguyencg/django-authtools.git
+Author: phongtran
+Author-email: phong.tran@paradox.ai
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/x-rst
+Requires-Dist: Django (>=1.11)
+
+Custom user model app for Django featuring email as username and class-based views for authentication.
+
+
