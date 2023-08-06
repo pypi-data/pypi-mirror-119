@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: fasttsfeatures
+Version: 0.0.1
+Summary: Scalable time series features computation
+Home-page: https://github.com/Nixtla/fasttsfeatures/tree/master/
+Author: Nixtla and contributors
+Author-email: fede.garza.ramirez@gmail.com
+License: MIT License
+Keywords: time series,features,static features,temporal features
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# FastTSFeatures
+> Scale the computation of static or temporal time-series.
+
+
+## Install
+
+`pip install fasttsfeatures`
+
+## How to use
+
+For the moment you need to upload your dataset to s3.
+The response will be written in s3 as well.
+
+```python
+from fasttsfeatures.core import TSFeatures
+```
+
+```python
+tsfeatures = TSFeatures()
+```
+
+```python
+resp = tsfeatures.calculate_features_from_url(url=f's3://tsfeatures-api-public/train.csv', freq=7, kind='static')
+```
+
+
