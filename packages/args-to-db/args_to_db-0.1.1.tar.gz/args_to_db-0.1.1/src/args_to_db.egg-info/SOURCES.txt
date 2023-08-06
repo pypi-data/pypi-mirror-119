@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/args_to_db/__init__.py
+src/args_to_db/args.py
+src/args_to_db/result.py
+src/args_to_db/run.py
+src/args_to_db/util.py
+src/args_to_db.egg-info/PKG-INFO
+src/args_to_db.egg-info/SOURCES.txt
+src/args_to_db.egg-info/dependency_links.txt
+src/args_to_db.egg-info/requires.txt
+src/args_to_db.egg-info/top_level.txt
