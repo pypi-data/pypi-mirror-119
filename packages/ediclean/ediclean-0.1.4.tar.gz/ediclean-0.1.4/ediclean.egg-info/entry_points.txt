@@ -1,0 +1,3 @@
+[console_scripts]
+ediclean = ediclean.__main__:main
+
