@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: amc-cropper
+Version: 0.0.1
+Summary: Crops AMC files to descired length based on provided fps, start, and end whole seconds. Works through command line.
+Home-page: https://github.com/UomoCaffeLatte/AMCCrop
+Author: Nikhil Reji
+Author-email: Nikhil.Reji@live.co.uk
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Topic :: Software Development :: Libraries
+Description-Content-Type: text/markdown
+Requires-Dist: AsfAmc-Parser
+
+# AMC Cropping Tool
+
+Author: Nikhil Reji
+
+Crops AMC files to descired length based on provided fps, start, and end whole seconds. Works through command line.
+
+For asf/amc v1.1 standard.
+
+## features:
+-   Crop AMC file based on seconds.
+-   Save to new parsed AMC file.
+-   Thorough validation of all arguments.
+-   Soft mode: Will not override existing files.
+-   Command line driven.
+
+## Dependencies:
+-   [AsfAmc-Parser](https://pypi.org/project/asfamc-parser/)
+-   Python 3.6 +
+
+## Compatability
+Only tested on Windows 10.
+
+## Example
+
+Example working directory the programm will execute in.
+
+- Documents
+  - test.amc
+  - cropped
+    - README.md
+
+In an open command line in the prefered working directory:
+```cmd
+    python -m amccrop -i test -o testcropped -fps 30 -s 2 -e 5
+```
+
+where:
+    -m  :   tells python to find installed module.
+    -i  :   input amc relative filepath including filename, excluding format.
+    -o  :   output amc relative file path including filename, excluding format.
+    -fps    :   frame rate per second 
+    -s  :   start seconds, whole integer.
+    -e  :   end seconds, whole integer.
+
