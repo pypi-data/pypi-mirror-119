@@ -1,0 +1,250 @@
+#!/usr/bin/env python
+
+"""
+File for running the `ds` instructor tools.
+"""
+
+import os
+import sys
+import argparse
+from dscreate.utils import *
+from dscreate.create import *
+from traitlets.config.loader import PyFileConfigLoader
+from nbgrader.apps import NbGraderAPI
+
+# ============================= PARSE ARGUMENTS ==================================
+parser = argparse.ArgumentParser(description='Flatiron Data Science Instructor Tools')
+
+parser.add_argument('command', choices=['create', 'generate', 'edit', 'share'],
+                    help='''
+
+                    create    – Positional argument. 
+                                This command splits a curriculum `index.ipynb` notebook into lesson and solution notebooks, 
+                                and pushes the changes to github.  
+                             
+                             Default: An `index.ipynb` on a `curriculum` branch is split.
+                                      The student facing cells of the notebook are placed in an `index.ipynb` file on the master branch
+                                      The solution cells of the notebook are placed in an `index.ipynb` file on the solution branch
+                            
+                             -dir:   When this flag is used git branches are not used, and solution files are placed
+                                     in a hidden folder called `.solution_files`. Instead of a `curriculum` branch,
+                                     the lesson should developed in a `curriculum.ipynb` notebook.
+                                     The student facing cells of the notebook are placed in an `index.ipynb` file within the cwd
+                                     The solution cells are placed in an `index.ipynb` file within the `.solution_files` directory
+                                     The `curriculum.ipynb` file is deleted. See `edit` for restoring the curriculum notebook.
+
+                    generate  – Positional argument. 
+                                This command is used to generate READMEs 
+                                for the release and source notebooks of an nbgrader assignment. 
+
+                               This command:
+                                - Generates an assignment using the NbGrader API
+                                - Converts the source notebook to markdown and saves as a README on the master branch
+                                - Merges the master branch into the solution branch
+                                - Converts the release notebook to mardown and saves as a README on the master branch
+                                - Pushes changes
+
+                    edit      – Positional argument.
+                                This command generates a `curriculum.ipynb` notebook using the files
+                                inside the `.solution_files` directory. 
+
+                    share     – Positional argument.
+                                Requirement: A third positional argument in the form of a url pointing to a github notebook
+
+                                A url that opens the jupyter notebook in an illumidesk server is copied to the 
+                                user's clipboard.
+                    ''')
+
+parser.add_argument('-dir', action='store_true', default=False, dest='dir',
+                    help='''
+                    'Optional argument. When used, a curriculum notebook will be split within the assignment directory rather than 
+                    across branches. Solution files are placed in a .solution_files folder
+                    within the cwd. This split method can be useful when compiling multiple lessons within a single directory. 
+                    ''')
+
+args, kwargs = parser.parse_known_args()
+
+color = Color()                            
+
+# TODO add a begin command that allows sets up an assignment directory with the correct files. 
+# if args.command == "begin":
+#     begin()
+#     print()
+#     print(color.BOLD, color.CYAN, '💻 Lesson directory created! Curriculum materials should be developed in the curriculum.ipynb file!', color.END)
+#     print()
+
+# ============================ DIRECTORY SPLIT ====================================
+if args.command == "create" and args.dir:
+    splitter = SplitNotebook(filename='curriculum.ipynb', dir=True)
+    lesson_cells, solution_cells = splitter.split_notebook()
+    
+    solution_dir = '.solution_files'
+    if not os.path.isdir(solution_dir):
+        os.mkdir(solution_dir)
+    
+    solution_path = os.path.join(solution_dir, 'index')
+    splitter.write_notebook(solution_path, solution_cells)
+    splitter.write_notebook('index', lesson_cells)
+    os.remove("curriculum.ipynb")
+    generate_readme('index.ipynb',  'README')
+    generate_readme(solution_path + '.ipynb', 
+                    solution_dir + os.sep + 'README')
+    print()
+    print(color.BOLD, color.CYAN, '📒 Solution and Lesson Notebooks have been created!', color.END)
+    print()
+    print(color.BOLD, color.GREEN, 'To access the curriculum notebook, run ds -curriculum', color.END)
+    print()
+# ========================== BRANCH SPLIT ========================================
+elif args.command == "create":
+
+    # Ensure a curriculum branch exists
+    branches = os.path.join('.git', 'refs', 'heads')
+    if 'curriculum' not in os.listdir(branches):
+        raise ValueError('A curriculum branch must exist.')
+
+    # Create a git controller
+    repo = GitModel()
+
+    # Ensure the curriculum branch is checked out
+    if repo.active_branch.name.lower() != 'curriculum':
+        print()
+        raise ValueError(f'You are currently on {repo.active_branch.name}.\nPlease checkout the curriculum branch.')
+
+    # Generate Curriculum Readme
+    generate_readme('index.ipynb', 'README')
+
+    # Commit curriculum changes
+    print('Commiting curriculum changes...')
+    splitter = SplitNotebook()
+    commit_msg = repo.get_commit_message()
+    repo.add_and_commit(commit_msg)
+
+    # Create master if doesn't exist
+    if 'master' not in os.listdir(branches):
+        print('Creating a master branch...')
+        solution = repo.create_head('master')
+        origin = repo.remote()
+        origin.push('master')
+
+    # Create solution if doesn't exist
+    if 'solution' not in os.listdir(branches):
+        print('Creating a solution branch...')
+        solution = repo.create_head('solution')
+        origin = repo.remote()
+        origin.push('solution')
+
+    # Split notebook
+    print('Splitting notebook...')
+    lesson_cells, solution_cells = splitter.split_notebook()
+
+    # Update master branch
+    print('Updating master branch...')
+    repo.git.checkout('master')
+    repo.git.checkout('curriculum', '.')
+    splitter.write_notebook('index', lesson_cells)
+    generate_readme('index.ipynb','README')
+    repo.add_and_commit(commit_msg)
+
+    # Update solution branch
+    print('Updating solution branch...')
+    repo.git.checkout('solution')
+    repo.git.checkout('curriculum', '.')
+    splitter.write_notebook('index', solution_cells)
+    generate_readme('index.ipynb', 'README')
+    repo.add_and_commit(commit_msg)
+
+    # Push changes
+    print('Pushing changes to remote...')
+    repo.git.push('origin', 'master')
+    repo.git.push('origin', 'solution')
+    repo.git.push('origin', 'curriculum')
+
+    # End on curriculum
+    repo.git.checkout('Curriculum')
+    print('Complete!')
+
+# ======================= REGENERATE curriculum.ipynb (dir split) =========================
+if args.command == "edit":
+    generator = GenerateCurriculum()
+    generator.main()
+    print()
+    print(color.BOLD, color.CYAN, '📒 Curriculum Notebook has been generated!', color.END)
+    print()    
+
+if args.command == "share":
+    share = ShareNotebook()
+    share.main(kwargs[0])
+    print()
+    print(color.BOLD, color.CYAN, '📋 An Illumidesk link has been added to your clipboard!', color.END)
+    print()
+
+# =============================== NBGRADER SPLIT =======================================
+if args.command == 'generate':
+
+    ASSIGNMENT = os.getcwd().split(os.sep)[-1]
+
+    # create a config object to specify options for nbgrader
+    top_directory = get_nbgrader_directory()
+    config_path = os.path.join(top_directory, 'nbgrader_config.py')
+    config_loader = PyFileConfigLoader(config_path)
+    config = config_loader.load_config()
+    config.pop('IncludeHeaderFooter', None)
+
+    # Connect to api
+    api = NbGraderAPI(config=config)
+
+    # Generate Assignment
+    print('Generating assignment...')
+    results = api.generate_assignment(ASSIGNMENT)
+    if not results['success']:
+        raise ValueError(results['log'])
+
+    # Generate source readme
+    print('Generating source readme...')
+    source_path = os.path.join(top_directory, 'source', ASSIGNMENT)
+    source_notebook_path = os.path.join(source_path, 'index.ipynb')
+    if not os.path.isfile(source_notebook_path):
+        raise ValueError('The assignment notebook must be named index.ipynb')
+    # Save source readme to master branch
+    generate_readme(source_notebook_path, 'README' )
+
+    # Create a git interface
+    repo = GitModel()
+
+    # Create a solution branch if it doesn't exist
+    if 'solution' not in os.listdir('.git/refs/heads'):
+        print('Creating a solution branch...')
+        solution = repo.create_head('solution')
+        origin = repo.remote()
+        origin.push('solution')
+
+    # Commit changes to master branch
+    repo.add_and_commit(commit_msg='Update source readme')
+    
+    # Merge master into solution
+    repo.merge_solution()
+
+    # Checkout master branch
+    repo.git.checkout("master")
+
+    # Create release readme
+    print('Generating release readme...')
+    release_path = os.path.join(top_directory, 'release', ASSIGNMENT)
+    release_notebook_path = os.path.join(release_path, 'index.ipynb')
+
+    # Save release readme to master branch
+    generate_readme(release_notebook_path, 'README')
+
+    # Commit changes to master branch
+    repo.add_and_commit(commit_msg="Update release readme")
+
+    # Push changes
+    print('Pushing changes to master branch...')
+    repo.git.push("origin", "master")
+    repo.git.checkout("solution")
+    print('Pushing changes to solution branch...')
+    repo.git.push("origin", "solution")
+
+    # End on master branch
+    repo.git.checkout('master')
+
