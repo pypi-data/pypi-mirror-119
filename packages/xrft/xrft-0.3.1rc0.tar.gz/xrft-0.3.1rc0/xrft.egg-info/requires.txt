@@ -1,0 +1,14 @@
+xarray
+dask
+numpy
+pandas
+scipy
+setuptools
+
+[all]
+pytest>=6.2.2
+pytest-cov
+
+[test]
+pytest>=6.2.2
+pytest-cov
