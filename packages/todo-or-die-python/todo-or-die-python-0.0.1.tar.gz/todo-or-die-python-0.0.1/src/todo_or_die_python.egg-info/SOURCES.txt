@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/todo_or_die/__init__.py
+src/todo_or_die/exceptions.py
+src/todo_or_die/main.py
+src/todo_or_die/version.py
+src/todo_or_die_python.egg-info/PKG-INFO
+src/todo_or_die_python.egg-info/SOURCES.txt
+src/todo_or_die_python.egg-info/dependency_links.txt
+src/todo_or_die_python.egg-info/top_level.txt
