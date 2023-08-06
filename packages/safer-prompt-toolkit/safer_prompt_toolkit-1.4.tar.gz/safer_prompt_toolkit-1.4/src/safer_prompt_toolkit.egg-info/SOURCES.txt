@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/safer_prompt_toolkit/__init__.py
+src/safer_prompt_toolkit/_safer_prompt_toolkit.py
+src/safer_prompt_toolkit.egg-info/PKG-INFO
+src/safer_prompt_toolkit.egg-info/SOURCES.txt
+src/safer_prompt_toolkit.egg-info/dependency_links.txt
+src/safer_prompt_toolkit.egg-info/requires.txt
+src/safer_prompt_toolkit.egg-info/top_level.txt
