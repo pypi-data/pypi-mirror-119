@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+src/BioCAT.egg-info/PKG-INFO
+src/BioCAT.egg-info/SOURCES.txt
+src/BioCAT.egg-info/dependency_links.txt
+src/BioCAT.egg-info/requires.txt
+src/BioCAT.egg-info/top_level.txt
