@@ -1,0 +1,12 @@
+monitor_air_quality/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+monitor_air_quality/monitor_air_quality.py,sha256=k7X9Q3w63nKlQwRFSxDsh33HNr5fZvKuEv7ezZF68Jo,18694
+monitor_air_quality/monitor_air_quality_config.example.yaml,sha256=73KUkmCHSrSVqDkRu24PzCX0yxGeyAwiCIUo_ltEGKM,881
+monitor_air_quality/deprecated/pysds011_active_mode.py,sha256=SFFwVm2e8YXUjt3tpOj4eSt0LV29hP-KA6TLp--RaSM,670
+monitor_air_quality/deprecated/use_serial_directly.py,sha256=4bOEYmw2wRUVygJ2JaRix_LJnlsfVYV8-PLzTJMu3y0,473
+monitor_air_quality/deprecated/using_sds011_library.py,sha256=K-2RwoKjM_f1hG5Z4WuIeXCbJQPSlxPWlJbb4SCNfao,418
+monitor_air_quality-2.0.0.dist-info/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+monitor_air_quality-2.0.0.dist-info/METADATA,sha256=k5RTcZGkdlY7IUT4AO0KDyVErZPE351T1Z5nQq4Spjk,5217
+monitor_air_quality-2.0.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+monitor_air_quality-2.0.0.dist-info/entry_points.txt,sha256=yOMH_uNsE32FbrAJiWH4vSMeJkd5OfWMberwKgpE92g,86
+monitor_air_quality-2.0.0.dist-info/top_level.txt,sha256=xMfmgE6A1yEAQSi2fMrh2xpVNGbfGNKvO6SJCafoK3c,20
+monitor_air_quality-2.0.0.dist-info/RECORD,,
