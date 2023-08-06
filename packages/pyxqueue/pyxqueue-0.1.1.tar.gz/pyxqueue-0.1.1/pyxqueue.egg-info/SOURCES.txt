@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+pyxqueue.py
+setup.cfg
+pyxqueue.egg-info/PKG-INFO
+pyxqueue.egg-info/SOURCES.txt
+pyxqueue.egg-info/dependency_links.txt
+pyxqueue.egg-info/requires.txt
+pyxqueue.egg-info/top_level.txt
