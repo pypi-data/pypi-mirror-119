@@ -1,0 +1,10 @@
+numpy
+pandas
+pillow
+wordcloud
+nltk
+networkx
+scipy
+python-vlc
+stop-words
+pygtkspellcheck
