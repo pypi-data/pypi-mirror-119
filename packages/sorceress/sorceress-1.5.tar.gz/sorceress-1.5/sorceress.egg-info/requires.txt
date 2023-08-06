@@ -1,0 +1,12 @@
+opencv-python
+numpy
+colour-science
+imageio
+matplotlib
+Pillow
+
+[dev]
+imageio
+pytest
+pytest-cov
+flake8
