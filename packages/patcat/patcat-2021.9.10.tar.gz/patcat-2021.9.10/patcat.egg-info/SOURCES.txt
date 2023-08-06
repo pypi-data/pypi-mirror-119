@@ -1,0 +1,7 @@
+setup.py
+pat/__init__.py
+pat/pat.py
+patcat.egg-info/PKG-INFO
+patcat.egg-info/SOURCES.txt
+patcat.egg-info/dependency_links.txt
+patcat.egg-info/top_level.txt
