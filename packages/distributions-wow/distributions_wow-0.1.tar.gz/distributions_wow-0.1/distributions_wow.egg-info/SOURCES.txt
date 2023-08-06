@@ -1,0 +1,10 @@
+setup.py
+distributions_wow/Binomialdistribution.py
+distributions_wow/Gaussiandistribution.py
+distributions_wow/Generaldistribution.py
+distributions_wow/__init__.py
+distributions_wow.egg-info/PKG-INFO
+distributions_wow.egg-info/SOURCES.txt
+distributions_wow.egg-info/dependency_links.txt
+distributions_wow.egg-info/not-zip-safe
+distributions_wow.egg-info/top_level.txt
