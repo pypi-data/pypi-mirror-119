@@ -1,0 +1,11 @@
+[project]
+requires-python = ">=3.6"
+
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "cmake>=3.18",
+    "ninja",
+    "scikit-build>=0.12.0",
+]
