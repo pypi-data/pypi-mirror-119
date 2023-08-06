@@ -1,0 +1,24 @@
+{% extends 'spid_base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block page_title %}
+    <title>
+        {% trans "Error" %}
+    </title>
+{% endblock page_title %}
+
+{% block container %}
+    <div class="callout danger">
+        <div class="callout-title">
+            Errore di autenticazione
+        </div>
+        <p>
+            <p>{{ spid_error.message|default:'Accesso negato' }}</p>
+            {% if spid_error.troubleshoot %}
+                <p>{{ spid_error.troubleshoot|default:'' }}</p>
+            {% endif %}
+        </p>
+    </div>
+{% endblock %}

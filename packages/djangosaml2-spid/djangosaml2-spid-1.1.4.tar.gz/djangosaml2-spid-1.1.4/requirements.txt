@@ -1,0 +1,10 @@
+django>=2.2.24,<4.0
+
+# hint before: pip install -U setuptools
+cffi
+
+# django saml2 SP
+djangosaml2>=1.0.0
+
+# For command update_idps.py
+requests
