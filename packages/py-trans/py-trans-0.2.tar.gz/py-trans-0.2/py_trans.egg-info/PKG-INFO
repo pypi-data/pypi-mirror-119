@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: py-trans
+Version: 0.2
+Summary: Free python library to translate text to different languages.
+Home-page: https://github.com/Itz-fork/py-trans
+Author: Itz-fork
+Author-email: itz-fork@users.noreply.github.com
+License: MIT
+Download-URL: https://github.com/Itz-fork/py-trans
+Description: # py-trans
+        Free Python library for translate text into different languages.
+        
+        ## Supported Engines
+        For now py-trans supported for two translate engines (providers)
+        - [Google Translate](https://translate.google.com/) - "google"
+        - [LibreTranslate](https://libretranslate.com/) - "libre"
+        - [translate.com](https://www.translate.com/) - "translate.com"
+        
+        ## Installation
+        **Install from pypi**
+        ```
+        pip3 install py-trans
+        ```
+        **Install from source**
+        ```
+        pip install git+https://github.com/Itz-fork/py-trans.git
+        ```
+        
+        ## Usage
+        Some example code snippet to use py-trans
+        
+        ```python
+        from py_trans import PyTranslator
+        
+        # Create an instance of py_trans
+        x = PyTranslator(provider="google")
+        
+        print(x.translate("Hi", "si"))
+        ```
+        
+        ## Docs
+        For now there is no documentation, but still you can get some help using Docstrings. Use below code for it.
+        ```python
+        from py_trans import PyTranslator
+        
+        print(help(PyTranslator.translate))
+        ```
+Keywords: python,translator,py-trans
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Multimedia
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
