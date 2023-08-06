@@ -1,0 +1,79 @@
+"""
+Placeholders:
+    VENV_NAME       tell depsland what venv folder name to create.
+    REQUIREMENTS    list[str]. list of requirements with specifiers.
+    VENV_ID         venv id.
+    LAUNCHER        main launcher name.
+    OFFLINE         bool[False]. set pip offline mode.
+    LOCAL_DIR       str. if offline enabled, the local should be a valid path
+                    which contains '*.whl' files.
+    INVISIBLE       show console or not.
+See `pyportable_installer.main_flow.step3.step3_3.create_launcher
+    ._create_depsland_setup`
+
+Workflow:
+    1. import depsland
+    2. depsland create venv
+    3. generate exe
+    4. delete setup.bat
+"""
+import os
+import sys
+
+from os.path import abspath, dirname, exists, normpath
+from shutil import move
+
+os.chdir(dirname(__file__))
+
+assert os.getenv('DEPSLAND')
+sys.path.insert(0, os.getenv('DEPSLAND'))
+
+try:
+    from depsland import launch
+    from depsland.setup import bat_2_exe
+    from lk_utils import loads, dumps, find_files
+except ImportError as e:
+    raise e
+
+
+def main(offline={OFFLINE}, local=r'{LOCAL_DIR}'):
+    if offline:
+        assert exists(local)
+        from depsland import default_pip
+        from depsland.path_struct import src_struct
+        default_pip.change_pip_options(offline=True)
+        for fp, fn in find_files(local, fmt='zip'):
+            i = fp
+            o = f'{{src_struct.downloads}}/{{fn}}'
+            if not exists(o):
+                move(i, o)
+
+    # create depsland venv
+    venv_dir = launch(
+        "{VENV_NAME}",
+        {REQUIREMENTS},
+        venv_id="{VENV_ID}"
+    )
+
+    # generate launcher
+    launcher = loads('{LAUNCHER}.bat')
+    launcher = launcher.format(PYTHON=normpath(f'{{venv_dir}}/python.exe'))
+    dumps(launcher, '{LAUNCHER}.bat')
+
+    if exists('launcher.ico'):
+        icon = abspath('launcher.ico')
+    else:
+        icon = ''
+    bat_2_exe(abspath('{LAUNCHER}.bat'), abspath('../{LAUNCHER}.exe'),
+              icon, '{INVISIBLE}')
+
+    # remove setup file
+    move('../setup.bat', './setup.bat')
+    # os.remove('../setup.bat')
+
+
+try:
+    main()
+except Exception as e:
+    print('Error', e)
+    input('Press enter or close the window ...')
