@@ -1,0 +1,17 @@
+elexon/__init__.py,sha256=SWNxHUMdIGXwO1kFpOkaHaK4VQlci5heUOHgYR4IITo,59
+elexon/__main__.py,sha256=pjv2TtczTko0_HjiDqClgtvFi_ZLYETzMjCl9r1t-4o,376
+elexon/elexon.py,sha256=b82-qfjKZxx6mJOUrNopeM1rNDDIwaBEBT-jNz1jg3s,6719
+elexon/exceptions.py,sha256=yoVpRkEaMgiDx-ZeqVKwpvCdTsNzk9XAx6s_w5mVZsk,230
+elexon/methods.py,sha256=QyJYlFlbL09dwDbIUFrHwAdyzXfE1X0VTZ3ZBfytv7w,13175
+elexon/parsers.py,sha256=rIgPC8J7H_EAazRW468pBf8wrR__2y52Sy6TNvum1vI,1842
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_elexon.py,sha256=FFYCQrRPeqjz9TAxQlH8sMAwUgc_JXAFOrT4zM0wpic,67
+tests/test_exceptions.py,sha256=EHHfpOzkihOIGmLJrPa3xnDYi8wrC3kleeAl8LtyVGQ,692
+tests/test_methods.py,sha256=toNsVTvpC5Xp283GI4BY-jHBqWmmVwilzGJOvY5VDE4,42
+tests/test_parsers.py,sha256=G2VYHi8hZySAoTBfTySvE7xEaGglaABcLAVOt85egKA,622
+elexon-0.2.3.dist-info/LICENSE,sha256=fqQchGTa0UM0qALblWJhpG6U14FKNYCBPGFlNAbvIIo,1073
+elexon-0.2.3.dist-info/METADATA,sha256=kx3x5IlC6KvRlk-MamOiVoHeRgjg4iqpVd8exiCSw9o,2205
+elexon-0.2.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+elexon-0.2.3.dist-info/entry_points.txt,sha256=dRUVVL_FFkPhADhuND-C67_yQ2dPU8oC8M075iTEYYU,49
+elexon-0.2.3.dist-info/top_level.txt,sha256=Fk8VO0eJVKuv_BQBE_maPrUbchrRsO2CvQuJrYJLI7o,13
+elexon-0.2.3.dist-info/RECORD,,
