@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+test2doc/__init__.py
+test2doc/base.py
+test2doc.egg-info/PKG-INFO
+test2doc.egg-info/SOURCES.txt
+test2doc.egg-info/dependency_links.txt
+test2doc.egg-info/not-zip-safe
+test2doc.egg-info/top_level.txt
+test2doc/tests/__init__.py
+test2doc/tests/base_test.py
