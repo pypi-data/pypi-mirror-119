@@ -1,0 +1,3 @@
+[console_scripts]
+c-sar-denarius = c_sar_denarius.cli:cli
+
