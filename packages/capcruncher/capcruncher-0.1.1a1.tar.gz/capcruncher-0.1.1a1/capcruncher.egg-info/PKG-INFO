@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: capcruncher
+Version: 0.1.1a1
+Summary: An end-to-end solution for processing Capture-C Tri-C and Tiled-C data
+Home-page: https://github.com/sims-lab/CapCruncher.git
+Author: asmith
+Author-email: alastair.smith@ndcls.ox.ac.uk
+License: GNU GENERAL PUBLIC LICENSE Version 3
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Description-Content-Type: text/markdown
+Provides-Extra: stats
+Provides-Extra: plotting
+License-File: LICENSE
+
+# CapCruncher
+
+[![Documentation Status](https://readthedocs.org/projects/capcruncher/badge/?version=latest)](https://capcruncher.readthedocs.io/en/latest/?badge=latest)
+[![codecov](https://codecov.io/gh/sims-lab/CapCruncher/branch/master/graph/badge.svg?token=RHIGNMGX09)](https://codecov.io/gh/sims-lab/CapCruncher)
+![CI](https://github.com/sims-lab/capture-c/actions/workflows/python-template.yml/badge.svg)
+[![Anaconda-Server Badge](https://anaconda.org/bioconda/capcruncher/badges/installer/conda.svg)](https://conda.anaconda.org/bioconda)
+[![DOI](https://zenodo.org/badge/224631087.svg)](https://zenodo.org/badge/latestdoi/224631087)
+
+
+
+## Analysis software for Capture-C, Tri-C and Tiled-C data.
+
+CapCruncher is a tool designed to automate the processing of Capture-C, Tri-C and Tiled-C data from FASTQ files. The package is entirely written in python and  consists of an end-to-end data processing pipline and supporting command line interface to enable finer grained control. The pipeline provided is fast, robust and  scales from a laptop to a computational cluster. 
+
+For further information see the [documentation](https://capcruncher.readthedocs.io/en/latest/)
+
+
