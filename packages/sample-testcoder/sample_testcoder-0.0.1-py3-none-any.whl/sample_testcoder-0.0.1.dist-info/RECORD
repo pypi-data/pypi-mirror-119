@@ -1,0 +1,9 @@
+sample_testcoder/__init__.py,sha256=zaNed-6qO3OkpOOkMyyLKzkkh6YyrUSGvzhstFClI8U,25
+sample_testcoder/hello.py,sha256=b0kCUr5nFlzyorjyrioDbYrzvzQfFa6wx5vIZZJAbhc,54
+sample_testcoder/calculations/__init__.py,sha256=xJRXw_RfG_cQYJ7SHksAS8XIsgyTmM1SDbmukHt9Qpg,50
+sample_testcoder/calculations/add.py,sha256=NvzC2YUkWjJneQtOCfShKRMXg9F5HfGbHrL4-xW9wnU,28
+sample_testcoder/calculations/subtract.py,sha256=HDdSkC48Jdv0RAmVXZYxWpao4QLxgXdQWWlxPaWH4tY,37
+sample_testcoder-0.0.1.dist-info/METADATA,sha256=aNGxq0QY7KJnIE_6bBD0BFICzUOihWrxVv97vBBU1ak,587
+sample_testcoder-0.0.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+sample_testcoder-0.0.1.dist-info/top_level.txt,sha256=Lu4bVpDPmmRCOmDIY2rysjd8hlbBlI_VoQkmZhqvWIQ,17
+sample_testcoder-0.0.1.dist-info/RECORD,,
