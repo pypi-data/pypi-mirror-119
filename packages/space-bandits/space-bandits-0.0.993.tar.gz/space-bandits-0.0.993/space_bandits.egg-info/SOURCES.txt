@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+space_bandits/__init__.py
+space_bandits/bandit_algorithm.py
+space_bandits/bayesian_nn.py
+space_bandits/contextual_dataset.py
+space_bandits/linear.py
+space_bandits/neural_bandit_model.py
+space_bandits/neural_linear.py
+space_bandits/toy_problem.py
+space_bandits.egg-info/PKG-INFO
+space_bandits.egg-info/SOURCES.txt
+space_bandits.egg-info/dependency_links.txt
+space_bandits.egg-info/requires.txt
+space_bandits.egg-info/top_level.txt
