@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: jwcf
+Version: 0.0.dev18
+Summary: JWST calibration field catalogs
+Home-page: http://stsci.edu
+Author: Space Telescope Science Institute
+Author-email: help@stsci.edu
+License: Aura
+Platform: UNKNOWN
+Requires-Python: >=3.5
+
+JWST calibration field catalogs
+
