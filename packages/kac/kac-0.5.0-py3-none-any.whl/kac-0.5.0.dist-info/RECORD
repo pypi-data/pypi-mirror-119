@@ -1,0 +1,13 @@
+kac/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kac/changelog/__init__.py,sha256=bXgjSBD4wehwtehR2Tdg0WA2fgYooBFtgPAms6eaXkQ,74
+kac/changelog/changelog.py,sha256=Lldbmf_5HNg75h69kGafUkohuo2KIOkRMsLeexP92ck,6580
+kac/changelog/release.py,sha256=JBIwKKXiZ80Q-irESucVAPhNqEDm3teW3RP5rrPajgs,3599
+kac/changelog/util.py,sha256=7lH9EAwQ74GF85o1WHrbeewlLWCz6MSDrW9LMF5GEc8,377
+kac/kac.py,sha256=U5ztvYors1nqBXPEUiKZI5dL6GDb5CzCYMjzzYKX8pM,5073
+kac/templates/CHANGELOG.md,sha256=UJULq9Q7kf_GDNK16gm7eXZTZTLrsbbW_20OjfV6DtI,456
+kac/util.py,sha256=Ls8ESlw64ERJ49TNmXBLRAaFI0SMgTJ_Lq0rFQmau0U,739
+kac-0.5.0.dist-info/entry_points.txt,sha256=5yVLFGjOdAIQy6KVNiSFUqKWUWlE7l1xCe96nKgcFZI,35
+kac-0.5.0.dist-info/LICENSE,sha256=_thvsXK0uVZvlciFuCJcYFy8h5Esmhms87Q2ItYCzaw,1066
+kac-0.5.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+kac-0.5.0.dist-info/METADATA,sha256=EbhRK2To741V3nXFkIniIx4tctICWHgzaaPtA1PZCH8,1748
+kac-0.5.0.dist-info/RECORD,,
