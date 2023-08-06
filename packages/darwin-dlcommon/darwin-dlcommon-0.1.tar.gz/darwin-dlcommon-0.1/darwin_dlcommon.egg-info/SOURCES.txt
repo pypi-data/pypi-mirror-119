@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+darwin-dlcommon/__init__.py
+darwin_dlcommon.egg-info/PKG-INFO
+darwin_dlcommon.egg-info/SOURCES.txt
+darwin_dlcommon.egg-info/dependency_links.txt
+darwin_dlcommon.egg-info/not-zip-safe
+darwin_dlcommon.egg-info/top_level.txt
