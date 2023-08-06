@@ -1,0 +1,5 @@
+requests
+upt>=0.6
+
+[test]
+requests-mock

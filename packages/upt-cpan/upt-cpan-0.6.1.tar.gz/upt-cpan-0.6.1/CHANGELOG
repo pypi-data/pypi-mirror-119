@@ -1,0 +1,53 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+Based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
+
+## [0.6.1] - 2021-09-09
+### Fixed
+- CPANFrontend.parse now always returns the package version as a string.
+- Raise proper exceptions when data is missing for a specific release.
+
+## [0.6] - 2019-12-16
+### Added
+- Add support for parsing a specific version of a package
+
+## [0.5] - 2019-06-09
+### Added
+- Parse "configure" and "build" phases
+
+### Removed
+- The download_urls field is no longer available
+
+## [0.4] - 2018-02-08
+### Added
+- Return the source tarball as a upt.Archive
+
+### Deprecated
+- The use of download_urls has been deprecated
+
+## [0.3] 2018-04-04
+## Added
+- Gather requirements
+
+## [0.2.2] 2018-03-09
+## Fixed
+- Do not generate universal wheels
+- Fix URL for the upt project in README.md
+
+## [0.2.1] 2018-03-07
+### Fixed
+- Include README.md
+- Make sure the test requirements appear in the wheel
+
+## [0.2] 2018-03-05
+### Added
+- Try to guess license information
+
+## [0.1.1] 2018-03-02
+### Fixed
+- Fix the homepage URL
+
+## [0.1] 2018-03-02
+### Added
+- Initial CPAN frontend
