@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+TestPypiIonut/__init__.py
+TestPypiIonut/main.py
+TestPypiIonut.egg-info/PKG-INFO
+TestPypiIonut.egg-info/SOURCES.txt
+TestPypiIonut.egg-info/dependency_links.txt
+TestPypiIonut.egg-info/top_level.txt
