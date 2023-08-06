@@ -1,0 +1,13 @@
+License
+README.md
+pyproject.toml
+setup.cfg
+man/anagram.6.gz
+src/anagram/__init__.py
+src/anagram/main.py
+src/pnu_anagram.egg-info/PKG-INFO
+src/pnu_anagram.egg-info/SOURCES.txt
+src/pnu_anagram.egg-info/dependency_links.txt
+src/pnu_anagram.egg-info/entry_points.txt
+src/pnu_anagram.egg-info/requires.txt
+src/pnu_anagram.egg-info/top_level.txt
