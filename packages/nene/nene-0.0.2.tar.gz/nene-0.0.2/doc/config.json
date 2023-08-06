@@ -1,0 +1,15 @@
+{
+    "site_name": "Nene",
+    "description": "A static site generator",
+    "language": "en",
+    "repository": "leouieda/nene",
+    "menu": [
+        ["About", "/about"]
+    ],
+    "ignore": [
+        "README.md"
+    ],
+    "copy": [
+      ".nojekyll"
+    ]
+}
