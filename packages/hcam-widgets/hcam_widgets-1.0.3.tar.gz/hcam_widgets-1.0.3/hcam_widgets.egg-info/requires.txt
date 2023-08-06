@@ -1,0 +1,7 @@
+astropy
+requests
+twisted
+hcam_devices>=0.3.0
+matplotlib
+scipy
+autobahn
