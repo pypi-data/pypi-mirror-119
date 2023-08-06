@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: mobilenumvalidator
+Version: 0.0.2
+Summary: A basic Australian mobile number validation
+Home-page: UNKNOWN
+Author: Ajay Ganapathy
+Author-email: iajay543@gmail.com
+License: MIT
+Keywords: validator,mobile,number
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+
+This package involves a basic validator function which cleans, validates and formats an Aus mobile number.
+
+
+Change Log 
+==========
+
+0.0.1 (04/09/2021)
+------------------
+- First Release
+- Basic cleaning, validation and formatting
+
+0.0.2 (09/09/2021)
+------------------
+- Second Release
+- Added logics to format the number with the relevant area code as per state
+
+
+

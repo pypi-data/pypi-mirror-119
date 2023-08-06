@@ -1,0 +1,13 @@
+Change Log 
+==========
+
+0.0.1 (04/09/2021)
+------------------
+- First Release
+- Basic cleaning, validation and formatting
+
+0.0.2 (09/09/2021)
+------------------
+- Second Release
+- Added logics to format the number with the relevant area code as per state
+

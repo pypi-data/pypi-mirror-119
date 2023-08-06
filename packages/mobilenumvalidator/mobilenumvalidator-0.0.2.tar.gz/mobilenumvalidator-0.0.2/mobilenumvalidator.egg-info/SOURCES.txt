@@ -1,0 +1,13 @@
+CHANGELOG.txt
+LICENSE.txt
+MANIFEST.in
+README.txt
+read.txt
+requirements.txt
+setup.py
+test.py
+mobilenumvalidator/__init__.py
+mobilenumvalidator.egg-info/PKG-INFO
+mobilenumvalidator.egg-info/SOURCES.txt
+mobilenumvalidator.egg-info/dependency_links.txt
+mobilenumvalidator.egg-info/top_level.txt
