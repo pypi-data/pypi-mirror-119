@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: pyodstibmivb
+Version: 0.9.3
+Summary: A Python wrapper for the Stib-Mivb opendata API
+Home-page: https://gitlab.com/EmilV2/pyodstibmivb
+Author: Emil Vanherp
+Author-email: emil@vanherp.me
+License: MIT License
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: aiohttp (>=3.5.4)
+
+# pyODStibMivb
+
+[![pipeline status](https://gitlab.com/Emilv2/pyodstibmivb/badges/master/pipeline.svg)](https://gitlab.com/Emilv2/pyodstibmivb/commits/master)
+[![codecov](https://codecov.io/gl/Emilv2/pyodstibmivb/branch/master/graph/badge.svg)](https://codecov.io/gl/Emilv2/pyodstibmivb)
+[![PyPI version](https://badge.fury.io/py/pyodstibmivb.svg)](https://badge.fury.io/py/pyodstibmivb)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyodstibmivb.svg)](https://pypi.org/project/pyodstibmivb/)
+[![PyPI - License](https://img.shields.io/pypi/l/pyodstibmivb.svg)](https://choosealicense.com/licenses/mit/)
+[![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
+
+
+A Python wrapper for the Opendata API of Stib-Mivb public transport of brussels. Based on pyRail.
+
+Made because the API that pystibmivb uses [will be deprecated](https://opendata.stib-mivb.be/store/forum/topic/9b0a4ae4-5978-4ac2-b2f8-acaf8e2068d4).
+
+
+You need to get a key from https://opendata.stib-mivb.be/store/subscriptions and subscribe to the api's [here](https://opendata.stib-mivb.be/store/apis/info).
+
+The api-key has an expiration time and you can use a private key to request a new one, but that just looks overcomplicated. Set the expiration date to several years and you should be good to go.
+If you're willing to add code for this you can make a pull request.
+
+
+There is no convienent way to get a stop id from a name, so for convenience sake you can find stops and route info in the gtfs folder as of 2019-06-03. This information shouldn't change to often for newer information see the Stib-Mivb Opendata website on how to download them or get it from [OpenMobilityData](https://transitfeeds.com/p/societe-des-transports-intercommunaux-de-bruxelles/527/latest).
+
+
