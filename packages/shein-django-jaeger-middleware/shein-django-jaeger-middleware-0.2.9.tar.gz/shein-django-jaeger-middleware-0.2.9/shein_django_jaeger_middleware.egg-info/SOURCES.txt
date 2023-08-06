@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+shein_django_jaeger_middleware/__init__.py
+shein_django_jaeger_middleware/middleware.py
+shein_django_jaeger_middleware/requests.py
+shein_django_jaeger_middleware.egg-info/PKG-INFO
+shein_django_jaeger_middleware.egg-info/SOURCES.txt
+shein_django_jaeger_middleware.egg-info/dependency_links.txt
+shein_django_jaeger_middleware.egg-info/not-zip-safe
+shein_django_jaeger_middleware.egg-info/requires.txt
+shein_django_jaeger_middleware.egg-info/top_level.txt
