@@ -1,0 +1,14 @@
+COPYING
+README.md
+pyproject.toml
+setup.py
+bin/pyhid-usb-relay
+src/pyhid_usb_relay/__init__.py
+src/pyhid_usb_relay/controller.py
+src/pyhid_usb_relay/exceptions.py
+src/pyhid_usb_relay/find.py
+src/pyhid_usb_relay.egg-info/PKG-INFO
+src/pyhid_usb_relay.egg-info/SOURCES.txt
+src/pyhid_usb_relay.egg-info/dependency_links.txt
+src/pyhid_usb_relay.egg-info/requires.txt
+src/pyhid_usb_relay.egg-info/top_level.txt
