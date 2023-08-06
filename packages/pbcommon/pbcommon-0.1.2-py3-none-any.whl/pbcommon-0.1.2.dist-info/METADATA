@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: pbcommon
+Version: 0.1.2
+Summary: Piggy Bank Common Code
+Home-page: UNKNOWN
+Author: Hayden Smith
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: pytz (==2021.1)
+
+UNKNOWN
+
