@@ -1,0 +1,11 @@
+[console_scripts]
+salvia = salvia.cmds.salvia:main
+salvia_farmer = salvia.server.start_farmer:main
+salvia_full_node = salvia.server.start_full_node:main
+salvia_full_node_simulator = salvia.simulator.start_simulator:main
+salvia_harvester = salvia.server.start_harvester:main
+salvia_introducer = salvia.server.start_introducer:main
+salvia_timelord = salvia.server.start_timelord:main
+salvia_timelord_launcher = salvia.timelord.timelord_launcher:main
+salvia_wallet = salvia.server.start_wallet:main
+
