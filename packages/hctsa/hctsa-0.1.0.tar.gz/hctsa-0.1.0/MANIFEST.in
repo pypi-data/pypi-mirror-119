@@ -1,0 +1,18 @@
+#documentation
+
+#Python folders
+recursive-include hctsa/descriptive *
+recursive-include hctsa/preparation *
+recursive-include hctsa/pipeline *
+recursive-include hctsa/exceptions *
+recursive-include hctsa/visualization *
+
+#Single files
+include hctsa/app.py
+include hctsa/MakeFile
+include hctsa/__init__.py
+
+#Misc
+include README.md
+include setup.cfg
+include setup.py

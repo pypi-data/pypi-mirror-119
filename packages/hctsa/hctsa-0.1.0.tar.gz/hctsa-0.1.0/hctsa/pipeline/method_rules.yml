@@ -1,0 +1,24 @@
+  start: ['zscore','standard','point_absdiff_transformation', 'point_slope_transformation', 'merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'corr']
+
+  methods:
+    # Merge Methods
+    merge_sum: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    merge_mean: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    merge_subtract: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    merge_multiply: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    merge_divide: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'zscore', 'standard', 'rolling_mean', 'rolling_std', 'point_absdiff_transformation', 'point_slope_transformation', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    # Non-Merge Methods
+    zscore: ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr'] 
+    standard: ['rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    rolling_mean: ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    rolling_std: ['confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']          
+    point_absdiff_transformation: ['zscore', 'standard', 'rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    point_slope_transformation: ['zscore', 'standard', 'rolling_mean', 'rolling_std', 'confidence_interval', 'value_distribution', 'simple_descriptive_analysis', 'sns_line_plot_series', 'corr']
+    value_distribution: []
+    confidence_interval: ['sns_line_plot_ci']
+    simple_descriptive_analysis: []
+    sns_line_plot_series: []
+    sns_line_plot_ci: []
+    corr: []
+
+  merge_methods: ['merge_sum', 'merge_subtract', 'merge_multiply', 'merge_divide', 'merge_mean', 'corr']

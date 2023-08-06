@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: hctsa
+Version: 0.1.0
+Summary: Human-Centered TimeSeries Analysis Package
+Home-page: https://github.com/AndreSeku/humancenteredTSA
+Author: Andre Sekulla
+Author-email: andreseku@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/AndreSeku/humancenteredTSA/archive/refs/tags/0.1.0.zip
+Description: UNKNOWN
+Keywords: timeseries,analysis,hcml
+Platform: UNKNOWN
