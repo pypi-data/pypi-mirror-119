@@ -1,0 +1,7 @@
+README.md
+setup.py
+BaseCls/__init__.py
+BaseCls.egg-info/PKG-INFO
+BaseCls.egg-info/SOURCES.txt
+BaseCls.egg-info/dependency_links.txt
+BaseCls.egg-info/top_level.txt
