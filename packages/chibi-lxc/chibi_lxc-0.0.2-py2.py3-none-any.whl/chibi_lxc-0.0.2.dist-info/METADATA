@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: chibi-lxc
+Version: 0.0.2
+Summary: definition of lxc containers using python
+Home-page: https://github.com/dem4ply/chibi_lxc
+Author: dem4ply
+Author-email: dem4ply@gmail.com
+License: WTFPL
+Keywords: chibi_lxc
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: Public Domain
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Dist: chibi (>=0.8.2)
+Requires-Dist: chibi-donkey (>=1.0.0)
+Requires-Dist: chibi-command (>=0.2.3)
+Requires-Dist: python-hosts
+
+=========
+chibi_lxc
+=========
+
+
+.. image:: https://img.shields.io/pypi/v/chibi_lxc.svg
+        :target: https://pypi.python.org/pypi/chibi_lxc
+
+.. image:: https://img.shields.io/travis/dem4ply/chibi_lxc.svg
+        :target: https://travis-ci.org/dem4ply/chibi_lxc
+
+.. image:: https://readthedocs.org/projects/chibi-lxc/badge/?version=latest
+        :target: https://chibi-lxc.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+
+
+
+definition of lxc containers using python
+
+
+* Free software: WTFPL
+* Documentation: https://chibi-lxc.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+
+=======
+History
+=======
+
+0.0.1 (2020-04-05)
+------------------
+
+* First release on PyPI.
+
+
