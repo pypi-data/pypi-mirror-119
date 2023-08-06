@@ -1,0 +1,3 @@
+[console_scripts]
+jira2branch = reader.__main__:cli
+
