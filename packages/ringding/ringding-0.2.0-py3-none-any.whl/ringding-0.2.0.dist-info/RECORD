@@ -1,0 +1,16 @@
+_ringding/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+_ringding/messages.py,sha256=qtcnexdFgOjGAX4-kA79E6SpeBhcLdBjB7OZXfS0JgY,676
+_ringding/server.py,sha256=shHEUvPx29JEPUV7PcZrycS1njU3Sm08bPRbKV5cyeI,5037
+_ringding/client/UnidentifiedClient.py,sha256=TtUQ4-OmRRukQ3mL__M6XOm3KAd9x_h2MC5epm9cJ1I,1178
+_ringding/client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+_ringding/client/base.py,sha256=cmElQ19dg9UHKXRTEg1MnYsNfRgmBXMqWR5OJzbRF8s,1769
+_ringding/client/rdclient.py,sha256=GVmdh47HuLn-Fv2p2mvA7dQ3XxxcNK9C7IV1tW4xbNk,3046
+_ringding/ws/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+_ringding/ws/wsserver.py,sha256=yNskPjuf48Y-HQWgmr9c-V_IO9AWEUdh5HyZRIs1wH0,11824
+ringding/__init__.py,sha256=iRUyK843o9PY2h-ZJLBRri0EvLrwdeijHAKFSVfwIZQ,280
+ringding/datatypes.py,sha256=ei7spzS1GOhZ2C4-cUyAP7JYY5CodvD5HrlzSNvJqHo,578
+ringding-0.2.0.dist-info/LICENSE,sha256=qWLVrTHOE3ECzhPJLnpyi40vP_qwGtr4u4QiU7Ici54,1066
+ringding-0.2.0.dist-info/METADATA,sha256=hTzxcQ0vIhtPoPcB7XUKp0Y6-SpCFTNhgCgQ-D9toCQ,5225
+ringding-0.2.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+ringding-0.2.0.dist-info/top_level.txt,sha256=-bS5I44N1qoEBED997du0hQiBNQkETtXLCCUeZT7chU,19
+ringding-0.2.0.dist-info/RECORD,,
