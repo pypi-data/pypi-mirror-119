@@ -1,0 +1,13 @@
+connio>=0.2
+
+[all]
+sinstruments>=1.3
+scpi-protocol>=0.2
+pytango
+
+[simulator]
+sinstruments>=1.3
+scpi-protocol>=0.2
+
+[tango]
+pytango
