@@ -1,0 +1,3 @@
+recursive-include tknote *
+global-exclude *.py[cod]
+include VERSION
