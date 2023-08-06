@@ -1,0 +1,15 @@
+{% extends "archetypes/_layout.html" %}
+{% import "archetypes/_layout_wip.html" as layout with context %}
+{% import "archetypes/doran-the-siege-tower.json" as deck_json %}
+
+{% block meta %}
+<meta property="decklist" content='{{ deck_json | tojson }}' />
+{% endblock %}
+
+{% block moxfield %}
+lKs_gO5aLkiut4EyNzfTLA
+{% endblock %}
+
+{% block archetype %}
+{{ layout.wip() }}
+{% endblock %}
