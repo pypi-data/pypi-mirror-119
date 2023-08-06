@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "stupid-python-package"
+version = "0.0.3"
+description = "The Stupidist python package for testing poerty build and publish"
+authors = ["Süleyman ERGEN <suleymanergen32@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

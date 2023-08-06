@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: stupid-python-package
+Version: 0.0.3
+Summary: The Stupidist python package for testing poerty build and publish
+Author: Süleyman ERGEN
+Author-email: suleymanergen32@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
