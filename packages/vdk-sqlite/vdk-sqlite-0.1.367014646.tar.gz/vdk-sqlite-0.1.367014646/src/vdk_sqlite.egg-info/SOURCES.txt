@@ -1,0 +1,11 @@
+README.md
+setup.py
+src/taurus/vdk/ingest_to_sqlite.py
+src/taurus/vdk/sqlite_connection.py
+src/taurus/vdk/sqlite_plugin.py
+src/vdk_sqlite.egg-info/PKG-INFO
+src/vdk_sqlite.egg-info/SOURCES.txt
+src/vdk_sqlite.egg-info/dependency_links.txt
+src/vdk_sqlite.egg-info/entry_points.txt
+src/vdk_sqlite.egg-info/requires.txt
+src/vdk_sqlite.egg-info/top_level.txt

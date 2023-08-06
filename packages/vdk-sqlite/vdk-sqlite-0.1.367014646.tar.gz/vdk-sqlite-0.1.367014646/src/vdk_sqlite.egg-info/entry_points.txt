@@ -1,0 +1,3 @@
+[vdk.plugin.run]
+vdk-sqlite = taurus.vdk.sqlite_plugin
+
