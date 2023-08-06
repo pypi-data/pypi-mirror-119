@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: gtw-apu-ppt
+Version: 0.0.1
+Summary: Berikut ini adalah deskripsi singkat bagaimana cara kerja dari gateway untuk apu-ppt
+Home-page: https://github.com/asyrofist/gtw_apu_ppt
+Author: asyrofist (Rakha Asyrofi)
+Author-email: rakhasyrofist@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/asyrofist/gtw_apu_ppt/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Berikut ini data file yang digunakan manrisk dan departemen kepatuhan untuk memonitoring transaksi mencurigakan (APU-PPT)
+
