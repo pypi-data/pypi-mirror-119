@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: PyGL-Astroids
+Version: 0.0.3
+Summary: Asteroids clone written using pyglet.
+Home-page: https://github.com/Woldstn/PyGL-Astroids
+Author: Zach Pierog
+Author-email: woldstn@live.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Woldstn/PyGL-Astroids/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyGL-Astroids
+An Asteroids clone written using Pyglet.
+This was mostly an experiment with the sliding mechanic of the ship. I ended up using the same mechanic in the game I made using Godot for Godot Wild Jam #36 (https://www.newgrounds.com/portal/view/811129).
+
+### Installation instructions
+To play, simply install the package using the command below in the command prompt or terminal.<br>
+`pip install PyGL-Astroids`<br>
+Then, use the following command to run the package.<br>
+`python -m pygl_astroids`
+
+### Controls
+* Turn left - Left Arrow (←)
+* Turn right - Right Arrow (→)
+* Move forward - Up Arrow (↑)
+* Move backward - Down Arrow (↓)
+* Fire - Space
+
