@@ -1,0 +1,14 @@
+portal/__init__.py,sha256=4CYcQvW9tZGlQ1Td6udgp4saFFlH51-tKSXhmYOqJMg,1813
+portal/views.py,sha256=B0k48lj86X7LLPvb4_mV8mDRXOwp9vNuHlI_PZ6-Y0E,2780
+portal/templates/index.html,sha256=WFZ0sHifumY_dFl795tp44bQzBc3LKrsuqxazkH2U80,5213
+portal/templates/navigation_snippet.html,sha256=tAqILWS-G1yk5OGLW5AOGHTio7bejezB5IzkxjRkQeo,174
+portal/translations/messages.pot,sha256=vEGlCT3-85BO8wn90SbNHcOsO9R-sMTrSbmprWcOtVI,923
+portal/translations/de/LC_MESSAGES/messages.po,sha256=8zsG2OtN2vaoG9p0dJFr3qRtZZilW9_xTMJ-J4UwH94,1110
+portal/translations/en/LC_MESSAGES/messages.po,sha256=GpJsdxNB9hyvtdFmASZm5ZdDBwRkYZZ6Gqy70Y8YdWs,969
+portal/translations/ru/LC_MESSAGES/message.po,sha256=8BLZqRdlZDExL0telwq1WnFyMcmiBZrqNRmLkn9IMqs,1166
+portal/translations/zh_CN/LC_MESSAGES/messages.po,sha256=jFo4KSSdh6Kq8Co1ga3sfebuDIHOxJKYs12931pL3eA,1147
+flaskbb_plugin_portal-1.2.0.dist-info/METADATA,sha256=_Qz89uPSoMD8IO63G8cB-BxPzL5fn6TjwZnTNet6Yig,1963
+flaskbb_plugin_portal-1.2.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+flaskbb_plugin_portal-1.2.0.dist-info/entry_points.txt,sha256=an_bNC630FaaF5KbWcLX2YWEkeGkYy1BuQnBc5iNmKA,35
+flaskbb_plugin_portal-1.2.0.dist-info/top_level.txt,sha256=FOYo25x7M9MxzagEKz6kD2d0akPKhFnFhOguR6yr70A,7
+flaskbb_plugin_portal-1.2.0.dist-info/RECORD,,
