@@ -1,0 +1,11 @@
+demo_energy_consumption/__init__.py,sha256=ubyvx-_WkcSXMAIEqZC5alypt4eA3HwhPY50i6BltoM,669
+demo_energy_consumption/cli.py,sha256=itPSyr0hGh8_WU_5p7MrzATJ3_iJY0Oo0j-X8GoSOUQ,463
+demo_energy_consumption/demo_energy_consumption.py,sha256=OtzVbo-JefRFy5QlhxdWNtB__DqZrERc5UoFPvwy2rw,1937
+demo_energy_consumption/query_execution.py,sha256=UxXsTpo6_522YZ6yEeuL84Yhe0TKogUXUETV0modYIU,597
+demo_energy_consumption-0.2.3.dist-info/AUTHORS.rst,sha256=an1b9PI5VHCDJmiLEbYae3orwe0kwLzCoIKOlXM2n6E,174
+demo_energy_consumption-0.2.3.dist-info/LICENSE,sha256=4Z7oiOImA-7b9xUserPiuRWk6HYQ12zOFU2i10STVTA,1092
+demo_energy_consumption-0.2.3.dist-info/METADATA,sha256=FMXO5X2HACRad9ZmQXTk3TZOLsUlTwqXvXm8U3WwBso,2253
+demo_energy_consumption-0.2.3.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+demo_energy_consumption-0.2.3.dist-info/entry_points.txt,sha256=6MWTlprFqY3kWOAqOjDfGL2HL2UD8kicknCi9W0t35c,78
+demo_energy_consumption-0.2.3.dist-info/top_level.txt,sha256=FZeVH0hwTHkc7zL1_EmEiva6Rox-x0P7KghNjWqt6uo,24
+demo_energy_consumption-0.2.3.dist-info/RECORD,,
