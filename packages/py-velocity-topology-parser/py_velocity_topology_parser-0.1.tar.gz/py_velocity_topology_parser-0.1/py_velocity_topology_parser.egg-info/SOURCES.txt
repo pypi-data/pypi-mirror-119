@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+py_velocity_topology_parser/VelocityTopologyParser.py
+py_velocity_topology_parser/__init__.py
+py_velocity_topology_parser.egg-info/PKG-INFO
+py_velocity_topology_parser.egg-info/SOURCES.txt
+py_velocity_topology_parser.egg-info/dependency_links.txt
+py_velocity_topology_parser.egg-info/requires.txt
+py_velocity_topology_parser.egg-info/top_level.txt
+py_velocity_topology_parser.egg-info/zip-safe

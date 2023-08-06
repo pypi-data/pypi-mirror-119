@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: py_velocity_topology_parser
+Version: 0.1
+Summary: velocity_topology_parser: topology parser for .xml,.tbml or string
+Home-page: https://github.com/waripoornima/velocity_topology_parser
+Author: Poornima Wari
+Author-email: poornima.wari@spirent.com
+License: http://www.opensource.org/licenses/mit-license.php
+Keywords: Velocity API
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+
+See https://github.com/waripoornima/velocity_topology_parser
+
