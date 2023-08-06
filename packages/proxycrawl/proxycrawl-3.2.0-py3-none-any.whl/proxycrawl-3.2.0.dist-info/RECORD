@@ -1,0 +1,13 @@
+proxycrawl/__init__.py,sha256=C2loEbSc1CM38zkObKoyTps3MlkJLVocAkKuMyrDG-Y,314
+proxycrawl/base_api.py,sha256=vmIsSzHQEBQbCE5KZcCsCgXiAecNUzmCSvJXs4s9x6c,4193
+proxycrawl/crawling_api.py,sha256=yrVWPszigza7949CDpe4r0tufpXei0TSDA8vQofMvfk,796
+proxycrawl/leads_api.py,sha256=CgZ68ilKKIMNWr-nZHb0DzMnJRRvLWHcKQWFTdVP25w,437
+proxycrawl/proxycrawl_api.py,sha256=jdV08B-TBjhc7r1Hu5c0QvHhRqE95pVeIAzfRS-GnGw,171
+proxycrawl/scraper_api.py,sha256=afWzmW_eW0kawB_zB7-wUS1I-v1LC4TWPBIafw4fbFg,525
+proxycrawl/screenshots_api.py,sha256=X_3k7Og7zPVmJYN9aVDW_uu9Kv_aO8ykLxOyVHz-aDk,1605
+proxycrawl/storage_api.py,sha256=w5VCb9ofmDKvm8bTwByHje8sWwaiRp90UbDOhh7Cbh0,2774
+proxycrawl-3.2.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+proxycrawl-3.2.0.dist-info/METADATA,sha256=VeNrjtL0q5ELIYGAkxBqcnU3PhSPZFrTifwwULzcBuQ,9103
+proxycrawl-3.2.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+proxycrawl-3.2.0.dist-info/top_level.txt,sha256=hmj68YBRddJjiD_NkEKRYC5wCrzHGxDKHLOnFPb_sAg,11
+proxycrawl-3.2.0.dist-info/RECORD,,
