@@ -1,0 +1,15 @@
+scumprogrammer/InterfaceCli.py,sha256=jATJZR-7bGl0zH2BM4x_GhM80BRJJrmCakG81QICmcE,1240
+scumprogrammer/InterfaceWeb.py,sha256=cK4s6YvGBzCeVReWdWv7h5sIy8JNuYQ1yubFQaAeyAM,2880
+scumprogrammer/OpenHdlc.py,sha256=UOJjm-JYIatOAAfG_lkvwid2b9q543qNpUotMss_qzM,5009
+scumprogrammer/ScumConnector.py,sha256=MtrrfY4UXydAo64ymRkdri61E_VHU4AMwQRxWU1wFFU,1132
+scumprogrammer/ScumUtils.py,sha256=meGyINn229kWiiuhbzAC73aJbWStepxy5TprNJq0XGw,503
+scumprogrammer/VERSION.py,sha256=hrHPZHnYS6nEufPcteM-o0Zo90yfbQmsq2Uxqeb4dic,17
+scumprogrammer/__init__.py,sha256=JZAadcmrQ06hqnnUen00oLzKOh9PicqvyphG6cHE2Lc,526
+scumprogrammer/__main__.py,sha256=YUg5YHobJsZvLvLpD8ch5T48_f4CLfRCt1beazPKUQM,70
+scumprogrammer/static/scum.jpg,sha256=ZfhN3nb22KK4XHbwHGJrb2yFU-uzYeqcrEZjzAoHPFY,89939
+scumprogrammer/views/index.tpl,sha256=8ijgsZ65Go0XcgU9OeXEqjsFsXlQIgx7YLTn4OH88fg,55
+scumprogrammer-0.0.5.dist-info/METADATA,sha256=LAuSF5ULyhWwV4aOSF-6Pgah13Ad5b8_nPWSKWTdwdc,1471
+scumprogrammer-0.0.5.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+scumprogrammer-0.0.5.dist-info/entry_points.txt,sha256=cATgpyovqVyNlRKNP4D1eSCJvgi9cTGcRnYrO7ML82E,60
+scumprogrammer-0.0.5.dist-info/top_level.txt,sha256=0XZUmdSoT3F5couU1yIqHnKo9tT4lI2oyZYtdBP5Xt0,15
+scumprogrammer-0.0.5.dist-info/RECORD,,
