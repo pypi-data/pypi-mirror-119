@@ -1,0 +1,15 @@
+absl-py
+clu
+dataclasses
+flax
+gym
+grpcio
+jax
+jaxlib
+numpy
+optax
+tfp-nightly[jax]<=0.13.0.dev20210422
+
+[develop]
+pytest
+transforms3d
