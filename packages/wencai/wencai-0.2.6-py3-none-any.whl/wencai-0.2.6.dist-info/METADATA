@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: wencai
+Version: 0.2.6
+Summary: this is a wencai crawler to get message
+Home-page: https://upload.pypi.org/allenyzx/
+Author: allen yang
+Author-email: allenyzx@163.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Text Processing :: Indexing
+Classifier: Topic :: Utilities
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: requests (>=2.14.2)
+Requires-Dist: beautifulsoup4 (>=4.5.1)
+Requires-Dist: PyExecJS (>=1.5.1)
+
+UNKNOWN
+
+
