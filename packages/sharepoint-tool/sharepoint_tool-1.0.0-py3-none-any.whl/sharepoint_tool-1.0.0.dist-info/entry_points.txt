@@ -1,0 +1,3 @@
+[console_scripts]
+sp-tool = sp_tool.tool.main:main
+
