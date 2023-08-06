@@ -1,0 +1,17 @@
+README.md
+setup.py
+convmodel/__init__.py
+convmodel/__main__.py
+convmodel/app.py
+convmodel/cli.py
+convmodel/model.py
+convmodel/tokenizer.py
+convmodel/trainer.py
+convmodel.egg-info/PKG-INFO
+convmodel.egg-info/SOURCES.txt
+convmodel.egg-info/dependency_links.txt
+convmodel.egg-info/requires.txt
+convmodel.egg-info/top_level.txt
+convmodel/data/__init__.py
+convmodel/data/conv_dataset.py
+convmodel/data/training.py
