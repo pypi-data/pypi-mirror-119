@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+tencent_bkbase_datalake/__init__.py
+tencent_bkbase_datalake/tables.py
+tencent_bkbase_datalake.egg-info/PKG-INFO
+tencent_bkbase_datalake.egg-info/SOURCES.txt
+tencent_bkbase_datalake.egg-info/dependency_links.txt
+tencent_bkbase_datalake.egg-info/not-zip-safe
+tencent_bkbase_datalake.egg-info/requires.txt
+tencent_bkbase_datalake.egg-info/top_level.txt
+tencent_bkbase_datalake/lib/datalake-sdk-4.0.1-with-dependencies.jar
