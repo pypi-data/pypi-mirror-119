@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+src/Pytorch_Easy.py
+src/Pytorch_Easy.egg-info/PKG-INFO
+src/Pytorch_Easy.egg-info/SOURCES.txt
+src/Pytorch_Easy.egg-info/dependency_links.txt
+src/Pytorch_Easy.egg-info/requires.txt
+src/Pytorch_Easy.egg-info/top_level.txt

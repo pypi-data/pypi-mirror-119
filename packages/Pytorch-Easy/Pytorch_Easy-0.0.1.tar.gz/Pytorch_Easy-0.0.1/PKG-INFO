@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: Pytorch_Easy
+Version: 0.0.1
+Summary: This is a simple script that help to train pytorch model
+Home-page: UNKNOWN
+Author: Dhusor
+License: UNKNOWN
+Keywords: Pytorch Easy
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+UNKNOWN
+
