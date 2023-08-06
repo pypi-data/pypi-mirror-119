@@ -1,0 +1,57 @@
+stackvar
+========
+
+Dispatch function’s parameters through the callstack omitting arguments
+on intermediary functions.
+
+Example
+-------
+
+.. code:: python
+
+   import stackvar
+
+   def test():
+       """
+       Dispatching stack variables to function parameters
+       """
+       # sending within a context
+       with stackvar.send(receiving_function, foo_value='sent'):
+           intermediary_func1()
+       # passing parameter
+       receiving_function(foo_value='passed')
+       # using the default value
+       intermediary_func1()
+       receiving_function()
+
+
+   def intermediary_func1():
+       intermediary_func2()
+     
+   def intermediary_func2():
+       receiving_function()
+
+   @stackvar.receive()
+   def receiving_function(foo_value: stackvar.Variable = 'default'):
+       print(f'foo_value={foo_value}')
+
+   if __name__ == '__main__':
+       test()
+
+Will output
+
+::
+
+   foo_value=sent
+   foo_value=passed
+   foo_value=default
+   foo_value=default
+
+Installing
+----------
+
+https://pypi.org/project/stackvar/
+
+::
+
+   pip install -U stackvar
