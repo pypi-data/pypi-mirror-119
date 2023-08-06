@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+AniManga/Manga.py
+AniManga/__init__.py
+AniManga/helpers/MangaHelpers.py
+AniManga/helpers/__init__.py
+Async_Animanga.egg-info/PKG-INFO
+Async_Animanga.egg-info/SOURCES.txt
+Async_Animanga.egg-info/dependency_links.txt
+Async_Animanga.egg-info/requires.txt
+Async_Animanga.egg-info/top_level.txt
