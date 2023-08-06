@@ -1,0 +1,13 @@
+README.md
+setup.py
+algebra/__init__.py
+algebra/algebra.py
+algebra/cli.py
+algebra/influence_interval.py
+algebra/simple.py
+algebra/utils.py
+mutalyzer_algebra.egg-info/PKG-INFO
+mutalyzer_algebra.egg-info/SOURCES.txt
+mutalyzer_algebra.egg-info/dependency_links.txt
+mutalyzer_algebra.egg-info/entry_points.txt
+mutalyzer_algebra.egg-info/top_level.txt
