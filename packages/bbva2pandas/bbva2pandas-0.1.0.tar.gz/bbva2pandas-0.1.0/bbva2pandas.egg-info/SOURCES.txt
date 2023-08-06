@@ -1,0 +1,15 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+bbva2pandas/__init__.py
+bbva2pandas/file_handler.py
+bbva2pandas/report_parser.py
+bbva2pandas.egg-info/PKG-INFO
+bbva2pandas.egg-info/SOURCES.txt
+bbva2pandas.egg-info/dependency_links.txt
+bbva2pandas.egg-info/requires.txt
+bbva2pandas.egg-info/top_level.txt
+bin/bbva2pandas
