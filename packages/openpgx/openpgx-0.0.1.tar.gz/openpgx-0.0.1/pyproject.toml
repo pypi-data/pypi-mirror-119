@@ -1,0 +1,22 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "openpgx"
+version = "0.0.1"
+description = "PGx tool for converting star alleles of pharmacogenes to gene-drug recommendations"
+authors = [
+	{name = "Monika Krzyżanowska", email = "monigenomi@gmail.com"},
+	{name = "Adam Stankiewicz", email = "sheerun@sher.pl"}
+]
+readme = "README.md"
+classifiers = [
+	"License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+	"Topic :: Scientific/Engineering :: Bio-Informatics"
+]
+keywords = ["pgx", "pharmacogenomics", "cpic", "dpwg", "fda"]
+requires-python = ">=3.8"
+
+[project.urls]
+Home = "https://openpgx.com"
