@@ -1,0 +1,3 @@
+[vdk.plugin.run]
+vdk-ingest-file = vdk.internal.ingest_file_plugin
+
