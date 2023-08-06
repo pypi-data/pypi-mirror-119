@@ -1,0 +1,82 @@
+{
+    "name": "preconditioner_fsm",
+    "states": [
+        {
+            "name": "idle",
+            "on_enter": [
+                "safety_routine"
+            ]
+        },
+        {
+            "name": "blank",
+            "on_enter": [
+                "load_blank_routine"
+            ]
+        },
+        {
+            "name": "sample",
+            "on_enter": [
+                "load_sample_routine"
+            ]
+        },
+        {
+            "name": "measurement",
+            "on_enter": [
+                "measurement_routine"
+            ]
+        }
+    ],
+    "transitions": [
+        {
+            "trigger": "safety",
+            "source": "idle",
+            "dest": "idle"
+        },
+        {
+            "trigger": "load_blank",
+            "source": "idle",
+            "dest": "blank"
+        },
+        {
+            "trigger": "conduct_measurement",
+            "source": "blank",
+            "dest": "measurement"
+        },
+        {
+            "trigger": "safety",
+            "source": "blank",
+            "dest": "idle"
+        },
+        {
+            "trigger": "load_sample",
+            "source": "idle",
+            "dest": "sample"
+        },
+        {
+            "trigger": "safety",
+            "source": "sample",
+            "dest": "idle"
+        },
+        {
+            "trigger": "conduct_measurement",
+            "source": "sample",
+            "dest": "measurement"
+        },
+        {
+            "trigger": "safety",
+            "source": "measurement",
+            "dest": "idle"
+        },
+        {
+            "trigger": "load_blank",
+            "source": "measurement",
+            "dest": "blank"
+        },
+        {
+            "trigger": "load_sample",
+            "source": "measurement",
+            "dest": "sample"
+        }
+    ],
+    "initial": "idle"
+}

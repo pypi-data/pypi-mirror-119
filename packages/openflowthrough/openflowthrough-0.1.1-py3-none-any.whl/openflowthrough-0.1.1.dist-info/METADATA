@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: openflowthrough
+Version: 0.1.1
+Summary: Software for controlling the Open Flow-through sampling device.
+Home-page: https://github.com/drewmee/openflowthrough
+Author: Drew Meyers
+Author-email: drewm@mit.edu
+License: MIT license
+Keywords: openflowthrough
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Requires-Python: >=3.6
+Requires-Dist: pyFirmata (>=1.1.0)
+Requires-Dist: transitions (==0.8.8)
+Provides-Extra: develop
+Requires-Dist: twine (>=3.2.0) ; extra == 'develop'
+Requires-Dist: pre-commit (>=2.8.2) ; extra == 'develop'
+Provides-Extra: docs
+Requires-Dist: sphinx (>=3.2.0) ; extra == 'docs'
+Requires-Dist: sphinx-automodapi (>=0.12) ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme (>=0.5.0) ; extra == 'docs'
+Requires-Dist: msmb-theme (>=1.2.0) ; extra == 'docs'
+Requires-Dist: nbsphinx (>=0.7.1) ; extra == 'docs'
+Requires-Dist: sphinx-copybutton (>=0.3.0) ; extra == 'docs'
+Requires-Dist: black (>=20.8b1) ; extra == 'docs'
+Requires-Dist: isort (>=5.4.2) ; extra == 'docs'
+Requires-Dist: rstcheck (>=3.3.1) ; extra == 'docs'
+Provides-Extra: tests
+Requires-Dist: pytest (>=3) ; extra == 'tests'
+
+=================
+openflowthrough
+=================
+
+
+.. image:: https://img.shields.io/pypi/v/openflowthrough.svg
+        :target: https://pypi.python.org/pypi/openflowthrough
+
+.. image:: https://readthedocs.org/projects/openflowthrough/badge/?version=latest
+        :target: https://openflowthrough.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+Software for controlling the Open Flow-through sampling device.
+
+Installation
+------------
+
+Install via pip:
+
+$ pip install openflowthrough [--upgrade]
+
+Documentation
+-------------
+
+Full documentation can be found here.
+
+Dependencies for Local Development
+----------------------------------
+
+If you wish to build the local documentation or run unit tests, there are a few additional dependencies. Those can be installed by:
+
+pip install -e ".[docs, tests, develop]"
+
+License
+-------
+
+This library is licensed under the MIT license. The full text of the license can be found in this repository at LICENSE.txt.
+
