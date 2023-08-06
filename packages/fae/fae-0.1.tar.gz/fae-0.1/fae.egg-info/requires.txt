@@ -1,0 +1,6 @@
+torch
+numpy
+opencv-python
+jiwer
+gdown
+dtk
