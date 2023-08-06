@@ -1,0 +1,3 @@
+[console_scripts]
+lihim=lihim.main:app
+
