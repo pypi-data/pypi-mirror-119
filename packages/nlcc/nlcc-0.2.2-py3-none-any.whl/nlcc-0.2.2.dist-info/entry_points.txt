@@ -1,0 +1,6 @@
+
+        [console_scripts]
+        nlcc=nlcc.main:main
+        nlcc-eval=nlcc.main:eval
+        nlcc-prompts=nlcc.main:prompts
+            
