@@ -1,0 +1,10 @@
+gestalt/__init__.py,sha256=a6lhgtkSBkB2MGXvJGB6koo_I50k-fLlhd5W2pezeG0,24469
+gestalt/provider.py,sha256=NRKR4r49egW_4Xg38DPpKfmhWiPcVQ8BtTGZmGueqIs,583
+gestalt/vault.py,sha256=Ou70rNR7Sb6NQRP43LmQv3V8NGOVrbbSKjHx5Khi2dM,3335
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_gestalt.py,sha256=PaorbkXKZc4Fy6EZdvQfgtCQ9C0iTCHigVLJvXrNFYk,14143
+gestalt_cfg-2.0.3.dist-info/LICENSE,sha256=mzLSJeOxQO855kmPFzFyX5lZvSl6pmlzxM9JXBPB_yM,1082
+gestalt_cfg-2.0.3.dist-info/METADATA,sha256=ymqZIrNxuWhL9mW0Gy8P9BUxb_GZNyf383y1dNAz7S4,10510
+gestalt_cfg-2.0.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+gestalt_cfg-2.0.3.dist-info/top_level.txt,sha256=Z4bd2n4of2NaP8LXCuEWjJZ5Pn5sn77bGItmsBaS6bQ,14
+gestalt_cfg-2.0.3.dist-info/RECORD,,
