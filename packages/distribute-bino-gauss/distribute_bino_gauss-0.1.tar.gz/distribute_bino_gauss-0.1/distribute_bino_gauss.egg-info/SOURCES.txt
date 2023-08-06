@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+distribute_bino_gauss/__init__.py
+distribute_bino_gauss/binomial_distribution.py
+distribute_bino_gauss/gaussian_distribution.py
+distribute_bino_gauss/general_distribution.py
+distribute_bino_gauss.egg-info/PKG-INFO
+distribute_bino_gauss.egg-info/SOURCES.txt
+distribute_bino_gauss.egg-info/dependency_links.txt
+distribute_bino_gauss.egg-info/not-zip-safe
+distribute_bino_gauss.egg-info/top_level.txt
