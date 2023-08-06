@@ -1,0 +1,11 @@
+mopidy_pidi/__init__.py,sha256=GQyZWY8500H-fMhf16NLnKsSg4sSmmYBrIHS0RZU158,1332
+mopidy_pidi/brainz.py,sha256=dYJWfXStnBs0ANaq6zf8qnvGUo_mtQnpysr9Erg543U,5170
+mopidy_pidi/ext.conf,sha256=yD24ao-__d2UEsPLTwK3mJP2p2RTjEGrPfwZyFuyNvg,71
+mopidy_pidi/frontend.py,sha256=mlVaB5m37NESh7wSjwzbZPX8gU9PzO_VG4FhTDAp6Lo,9489
+mopidy_pidi/plugin.py,sha256=2VXMWITvPQdkxi1BiahwH337fb-N8uk_cLT3Zn9n9pM,1481
+mopidy_pidi-1.0.4.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+mopidy_pidi-1.0.4.dist-info/METADATA,sha256=zJ8bOx-EpiYQZeufGEsCsTTqDJPe_gYuSHABN1Va36o,4228
+mopidy_pidi-1.0.4.dist-info/WHEEL,sha256=kGT74LWyRUZrL4VgLh6_g12IeVl_9u9ZVhadrgXZUEY,110
+mopidy_pidi-1.0.4.dist-info/entry_points.txt,sha256=GBQ4zV2shf3lzq8lntKv1zTYo4pBJ4uzpiZp79E5CvY,43
+mopidy_pidi-1.0.4.dist-info/top_level.txt,sha256=x1cAUv14yWD2PGWB-N5EReFMMEpEdMUZt_iIAQckC8w,12
+mopidy_pidi-1.0.4.dist-info/RECORD,,
