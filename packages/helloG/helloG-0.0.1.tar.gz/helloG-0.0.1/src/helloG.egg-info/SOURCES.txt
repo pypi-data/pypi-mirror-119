@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/helloG.py
+src/helloG.egg-info/PKG-INFO
+src/helloG.egg-info/SOURCES.txt
+src/helloG.egg-info/dependency_links.txt
+src/helloG.egg-info/requires.txt
+src/helloG.egg-info/top_level.txt
