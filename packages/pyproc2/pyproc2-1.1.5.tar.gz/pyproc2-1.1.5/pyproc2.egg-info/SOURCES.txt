@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+pyproc2/__init__.py
+pyproc2/error.py
+pyproc2/ttyptywr.py
+pyproc2.egg-info/PKG-INFO
+pyproc2.egg-info/SOURCES.txt
+pyproc2.egg-info/dependency_links.txt
+pyproc2.egg-info/top_level.txt
