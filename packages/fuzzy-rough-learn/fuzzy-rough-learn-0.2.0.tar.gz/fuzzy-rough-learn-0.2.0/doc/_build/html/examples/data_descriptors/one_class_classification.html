@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>One class classification &mdash; fuzzy-rough-learn 0.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/fuzzy-rough-learn.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/js/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Feature selection with FRFS" href="../preprocessors/frfs.html" />
+    <link rel="prev" title="Multilabel classification with FRONEC" href="../classifiers/fronec.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> fuzzy-rough-learn
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">fuzzy-rough-learn API</a></li>
+</ul>
+<p><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Classifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#data-descriptors">Data descriptors</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">One class classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#preprocessors">Preprocessors</a></li>
+</ul>
+<p><span class="caption-text">Additional Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Release history</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fuzzy-rough-learn</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Classifiers</a> &raquo;</li>
+        
+      <li>One class classification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/examples/data_descriptors/one_class_classification.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-examples-data-descriptors-one-class-classification-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="one-class-classification">
+<span id="sphx-glr-examples-data-descriptors-one-class-classification-py"></span><h1>One class classification<a class="headerlink" href="#one-class-classification" title="Permalink to this headline">¶</a></h1>
+<p>Data descriptors generalise knowledge about a target class of data to the whole attribute space.
+This can be used to predict whether new data instances belong to the target class or not,
+or to identify which new instances should be subjected to further inspection.
+This type of binary classification is known as <em>one-class classification</em>,
+<em>semi-supervised outlier detection</em>, <em>semi-supervised anomaly detection</em>, or <em>novelty detection</em>.
+In principle, there is no good or bad way to generalise the target class, this can only be evaluated empirically.
+In practice, we want a good balance between variance and bias.</p>
+<p>The following graphs illustrate the behaviour of the data descriptors in fuzzy-rough-learn,
+with their default hyperparameter values as established in <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.
+Note that the predicted scores have been converted to quantiles
+to obtain clear contour lines that illustrate how the predicted scores taper off.</p>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0031320321001783">Lenz OU, Peralta D, Cornelis C (2021).
+Average Localised Proximity: A new data descriptor with good default one-class classification performance.
+Pattern Recognition, vol 118, no 107991.
+doi: 10.1016/j.patcog.2021.107991</a></p>
+</dd>
+</dl>
+<img alt="../../_images/sphx_glr_one_class_classification_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_one_class_classification_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/oliver/code/fuzzy-rough-learn/examples/data_descriptors/one_class_classification.py:94: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">frlearn.data_descriptors</span> <span class="kn">import</span> <a href="../../generated/frlearn.data_descriptors.ALP.html#frlearn.data_descriptors.ALP" title="View documentation for frlearn.data_descriptors.ALP"><span class="n">ALP</span></a><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.CD.html#frlearn.data_descriptors.CD" title="View documentation for frlearn.data_descriptors.CD"><span class="n">CD</span></a><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.IF.html#frlearn.data_descriptors.IF" title="View documentation for frlearn.data_descriptors.IF"><span class="n">IF</span></a><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.MD.html#frlearn.data_descriptors.MD" title="View documentation for frlearn.data_descriptors.MD"><span class="n">MD</span></a><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.NND.html#frlearn.data_descriptors.NND" title="View documentation for frlearn.data_descriptors.NND"><span class="n">NND</span></a><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.LNND.html#frlearn.data_descriptors.LNND" title="View documentation for frlearn.data_descriptors.LNND"><span class="n">LNND</span></a><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.LOF.html#frlearn.data_descriptors.LOF" title="View documentation for frlearn.data_descriptors.LOF"><span class="n">LOF</span></a><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.SVM.html#frlearn.data_descriptors.SVM" title="View documentation for frlearn.data_descriptors.SVM"><span class="n">SVM</span></a>
+
+
+<span class="c1"># Sample attribute space, to use as test data</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="View documentation for numpy.meshgrid"><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+
+<span class="c1"># Generate training data</span>
+<span class="n">rng</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng" title="View documentation for numpy.random.default_rng"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span></a><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">X_train</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.r_.html#numpy.r_" title="View documentation for numpy.r_"><span class="n">np</span><span class="o">.</span><span class="n">r_</span></a><span class="p">[</span><span class="mi">1</span> <span class="o">*</span> <span class="n">X</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">X</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">X</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Initialise data descriptors to include</span>
+<span class="n">data_descriptors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;ALP&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.ALP.html#frlearn.data_descriptors.ALP" title="View documentation for frlearn.data_descriptors.ALP"><span class="n">ALP</span></a><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;CD&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.CD.html#frlearn.data_descriptors.CD" title="View documentation for frlearn.data_descriptors.CD"><span class="n">CD</span></a><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;IF&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.IF.html#frlearn.data_descriptors.IF" title="View documentation for frlearn.data_descriptors.IF"><span class="n">IF</span></a><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;LNND&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.LNND.html#frlearn.data_descriptors.LNND" title="View documentation for frlearn.data_descriptors.LNND"><span class="n">LNND</span></a><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;LOF&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.LOF.html#frlearn.data_descriptors.LOF" title="View documentation for frlearn.data_descriptors.LOF"><span class="n">LOF</span></a><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;MD&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.MD.html#frlearn.data_descriptors.MD" title="View documentation for frlearn.data_descriptors.MD"><span class="n">MD</span></a><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;NND&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.NND.html#frlearn.data_descriptors.NND" title="View documentation for frlearn.data_descriptors.NND"><span class="n">NND</span></a><span class="p">()),</span>
+    <span class="p">(</span><span class="s1">&#39;SVM&#39;</span><span class="p">,</span> <a href="../../generated/frlearn.data_descriptors.SVM.html#frlearn.data_descriptors.SVM" title="View documentation for frlearn.data_descriptors.SVM"><span class="n">SVM</span></a><span class="p">()),</span>
+<span class="p">]</span>
+
+<span class="c1"># Calculate number of rows</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_descriptors</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">//</span> <span class="n">cols</span>
+
+<span class="c1"># Create plot layout with square subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="View documentation for matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">cols</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">rows</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">box_aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="p">)</span>
+
+<span class="c1"># Iterate over data descriptors</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">clf</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_descriptors</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">i</span> <span class="o">//</span> <span class="n">cols</span><span class="p">][</span><span class="n">i</span> <span class="o">%</span> <span class="n">cols</span><span class="p">]</span>
+
+    <span class="c1"># Create model and query for scores</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">clf</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.c_.html#numpy.c_" title="View documentation for numpy.c_"><span class="n">np</span><span class="o">.</span><span class="n">c_</span></a><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+
+    <span class="c1"># Transform scores into their respective centile</span>
+    <span class="n">centiles</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.quantile.html#numpy.quantile" title="View documentation for numpy.quantile"><span class="n">np</span><span class="o">.</span><span class="n">quantile</span></a><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">))</span>
+    <span class="n">Z</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.searchsorted.html#numpy.searchsorted" title="View documentation for numpy.searchsorted"><span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span></a><span class="p">(</span><span class="n">centiles</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c1"># Plot contours</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="View documentation for numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">PuBu</span><span class="p">)</span>
+
+    <span class="c1"># Plot training data</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Set axis limits and delete ticks and legends</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlim.html#matplotlib.pyplot.xlim" title="View documentation for matplotlib.pyplot.xlim"><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span></a><span class="p">((</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylim.html#matplotlib.pyplot.ylim" title="View documentation for matplotlib.pyplot.ylim"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">((</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># Delete spare subfigures</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data_descriptors</span><span class="p">))</span> <span class="o">%</span> <span class="n">cols</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">delaxes</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.822 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-data-descriptors-one-class-classification-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/aca857df6bb01344ed1b0c4572e64cba/one_class_classification.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">one_class_classification.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/da9b01d259bfb85d468ad810d7ae41f3/one_class_classification.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">one_class_classification.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../preprocessors/frfs.html" class="btn btn-neutral float-right" title="Feature selection with FRFS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../classifiers/fronec.html" class="btn btn-neutral float-left" title="Multilabel classification with FRONEC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019–2021, Oliver Urs Lenz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
