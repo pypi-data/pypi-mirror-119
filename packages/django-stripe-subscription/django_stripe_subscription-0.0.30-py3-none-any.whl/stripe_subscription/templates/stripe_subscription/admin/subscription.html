@@ -1,0 +1,124 @@
+{% load static epoch_to_date cents_to_usd humanize %}
+
+<fieldset class="module aligned ">
+    <h2>Subscription</h2>
+    {% if not object %}
+    <div class="form-row">
+        <div>
+            <label>Information not available</label>
+        </div>
+    </div>
+    {% else %}
+    <p class="help" style="margin-left:0;padding:5px 0">This information not hosted on CRM side and provided via Stripe API</p>
+
+    <div class="form-row">
+        <div>
+            <label>Status</label>
+            <div class="readonly">
+                {{ object.status}}
+            </div>
+            <p class="help">
+            Possible values are <b>incomplete</b>, <b>incomplete_expired</b>, <b>trialing</b>, <b>active</b>, <b>past_due</b>, <b>canceled</b>, or <b>unpaid</b>
+            </p>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Amount</label>
+            <div class="readonly">
+                ${{ object.plan.amount|cents_to_usd }} / {{ object.items.data.0.price.recurring.interval }}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Latest Invoice</label>
+            <div class="readonly">
+                {{ object.latest_invoice }}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Billing cycle</label>
+            <div class="readonly">
+                {{ object.plan.interval_count }}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Created at</label>
+            {% with object.created|epoch_to_date as dt %}
+            <div class="readonly">
+                {{ dt }}
+            </div>
+            <p class="help">
+                {{ dt|naturaltime }}
+            </p>
+            {% endwith %}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Trial start</label>
+            {% with object.trial_start|epoch_to_date as dt %}
+            <div class="readonly">
+                {{ dt }}
+            </div>
+            <p class="help">
+            {{ dt|naturaltime }}
+            </p>
+            {% endwith %}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Trial end</label>
+            {% with object.trial_end|epoch_to_date as dt %}
+            <div class="readonly">
+                {{ dt }}
+            </div>
+            <p class="help">
+            {{ dt|naturaltime }}
+            </p>
+            {% endwith %}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Current period start</label>
+            {% with object.current_period_start|epoch_to_date as dt %}
+            <div class="readonly">
+                {{ dt }}
+            </div>
+            <p class="help">
+            {{ dt|naturaltime }}
+            </p>
+            {% endwith %}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div>
+            <label>Current period end</label>
+            {% with object.current_period_end|epoch_to_date as dt %}
+            <div class="readonly">
+                {{ dt }}
+            </div>
+            <p class="help">
+            {{ dt|naturaltime }}
+            </p>
+            {% endwith %}
+        </div>
+    </div>
+
+    {% endif %}
+</fieldset>
