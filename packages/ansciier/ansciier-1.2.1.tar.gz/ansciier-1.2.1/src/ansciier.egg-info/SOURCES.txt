@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/ansciier/Ansciier.py
+src/ansciier/__init__.py
+src/ansciier/__main__.py
+src/ansciier/options.py
+src/ansciier.egg-info/PKG-INFO
+src/ansciier.egg-info/SOURCES.txt
+src/ansciier.egg-info/dependency_links.txt
+src/ansciier.egg-info/entry_points.txt
+src/ansciier.egg-info/requires.txt
+src/ansciier.egg-info/top_level.txt
