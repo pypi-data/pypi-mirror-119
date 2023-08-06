@@ -1,0 +1,17 @@
+CHANGELOG.txt
+LICENSE.txt
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+gifpy/__init__.py
+gifpy/categories.py
+gifpy/errors.py
+gifpy/gif.py
+gifpy/gifpy.py
+gifpy/media.py
+gifpy.egg-info/PKG-INFO
+gifpy.egg-info/SOURCES.txt
+gifpy.egg-info/dependency_links.txt
+gifpy.egg-info/requires.txt
+gifpy.egg-info/top_level.txt
