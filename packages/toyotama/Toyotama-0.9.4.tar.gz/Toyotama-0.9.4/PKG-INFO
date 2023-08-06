@@ -1,0 +1,20 @@
+Metadata-Version: 1.2
+Name: Toyotama
+Version: 0.9.4
+Summary: CTF library
+Home-page: UNKNOWN
+Author: Laika
+Author-email: laika@albina.cc
+Maintainer: Laika
+Maintainer-email: laika@albina.cc
+License: UNKNOWN
+Download-URL: https://pypi.org/project/toyotama
+Project-URL: Source Code, https://github.com/Laika/Toyotama
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.9.*, <4
