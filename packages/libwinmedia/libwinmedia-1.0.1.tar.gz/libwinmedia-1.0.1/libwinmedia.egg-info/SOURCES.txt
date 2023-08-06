@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+libwinmedia/__init__.py
+libwinmedia/library.py
+libwinmedia/media.py
+libwinmedia/nativecontrols.py
+libwinmedia/player.py
+libwinmedia/playlist.py
+libwinmedia/tags.py
+libwinmedia.egg-info/PKG-INFO
+libwinmedia.egg-info/SOURCES.txt
+libwinmedia.egg-info/dependency_links.txt
+libwinmedia.egg-info/requires.txt
+libwinmedia.egg-info/top_level.txt
