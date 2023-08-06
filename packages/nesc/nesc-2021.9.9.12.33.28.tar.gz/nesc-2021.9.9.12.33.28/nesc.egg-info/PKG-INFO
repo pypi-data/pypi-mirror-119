@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: nesc
+Version: 2021.9.9.12.33.28
+Summary: ai for nesc
+Home-page: https://github.com/Jie-Yuan/nesc
+Author: Betterme
+Author-email: yuanjie@example.com
+License: MIT license
+Keywords: nesc
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+<h1 align = "center">:rocket: nesc :rocket:</h1>
+
+
+
+![image](https://img.shields.io/pypi/v/nesc.svg)
+![image](https://img.shields.io/travis/Jie-Yuan/nesc.svg)
+![image](https://readthedocs.org/projects/nesc/badge/?version=latest)
+
+
+
+---
+# Install
+```python
+pip install -U nesc
+```
+
+# Usages
+
+---
+# TODO
+
+
+=======
+History
+=======
+
+0.0.0 (2021-09-04)
+------------------
+
+* First release on PyPI.
+
+
