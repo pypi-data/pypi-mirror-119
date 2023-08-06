@@ -1,0 +1,12 @@
+.gitignore
+LICENSE.txt
+README.rst
+setup.py
+r00file/__init__.py
+r00file/tools.py
+r00file.egg-info/PKG-INFO
+r00file.egg-info/SOURCES.txt
+r00file.egg-info/dependency_links.txt
+r00file.egg-info/top_level.txt
+r00file/parse/__init__.py
+r00file/parse/gmail.py
