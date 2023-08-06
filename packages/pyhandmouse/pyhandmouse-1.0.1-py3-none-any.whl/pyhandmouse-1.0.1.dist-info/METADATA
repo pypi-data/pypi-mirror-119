@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pyhandmouse
+Version: 1.0.1
+Summary: Hand Mouse using Python
+Home-page: https://github.com/heewinkim/pyhandmouse
+Author: HEESEUNG KIM
+Author-email: heewin.kim@gmail.com
+License: MIT
+Download-URL: https://github.com/heewinkim/pyhandmouse/archive/master.zip
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: mediapipe (==0.8.7.2)
+Requires-Dist: PyAutoGUI (==0.9.53)
+Requires-Dist: opencv-python (==4.5.2.54)
+Requires-Dist: utilpack
+
+pyhandmouse
+
+카메라로 손을 포착하여 클릭을 하는 앱 입니다.
+현재는 단순한 단일클릭과 뷰하는 화면만 있습니다. 
+추후 더블클릭,드래그, 정교해진 뷰화면 등 다양하게 개발할 예정입니다.
+
+
