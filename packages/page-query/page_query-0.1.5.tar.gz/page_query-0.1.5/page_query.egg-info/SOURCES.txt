@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+page_query/__init__.py
+page_query/main.py
+page_query.egg-info/PKG-INFO
+page_query.egg-info/SOURCES.txt
+page_query.egg-info/dependency_links.txt
+page_query.egg-info/entry_points.txt
+page_query.egg-info/requires.txt
+page_query.egg-info/top_level.txt
+page_query/rule/__init__.py
+page_query/rule/manual_file_urls.py
+page_query/rule/manual_http_urls.py
+page_query/rule/manual_http_urls_glob_md.py
