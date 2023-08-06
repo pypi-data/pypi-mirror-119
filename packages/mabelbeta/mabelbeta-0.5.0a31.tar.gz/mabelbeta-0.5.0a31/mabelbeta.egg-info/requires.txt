@@ -1,0 +1,8 @@
+orjson
+python-dateutil
+bitarray
+zstandard
+lz4
+pydantic
+siphashc
+fastnumbers
