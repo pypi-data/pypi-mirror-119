@@ -1,0 +1,10 @@
+tidycsv/__init__.py,sha256=FLw_HJUZsgMWEPxRs05gIuRpbC05386ldkso_zwTSEg,184
+tidycsv/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tidycsv/core/parsing.py,sha256=Y1ewm032Ad9e63FwBgApE4wjQvbzKrItPUqthL9q7No,2468
+tidycsv/interface.py,sha256=z1EqGECR_xRy_MMiZowhmUMK_IAD-LpZac_8KM3JtZY,2432
+tidycsv/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tidycsv/utils/customobjs.py,sha256=JqAFaz-H7O3TIzDC46D0L65rycsgvLnFNtmnllkSwE0,2428
+tidycsv-0.1.2.dist-info/LICENSE,sha256=NdQEniXVfCg4U0Pf4DJ8vS-jG77RLpTW5G1x-8tqQM0,1079
+tidycsv-0.1.2.dist-info/WHEEL,sha256=SrtnPGVTMeYWttls9xnWA01eUhCZ3ufFdJUYb1J3r-U,83
+tidycsv-0.1.2.dist-info/METADATA,sha256=xSl-eJCYSceQvV94eW8LuVdRw0zl5gxeytEICHSTwiY,3875
+tidycsv-0.1.2.dist-info/RECORD,,
