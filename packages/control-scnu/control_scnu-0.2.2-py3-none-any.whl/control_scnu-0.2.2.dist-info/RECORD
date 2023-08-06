@@ -1,0 +1,12 @@
+control/Hareware_1.pyd,sha256=j1jSgT46lJPRnfCUTgiNyLEl_yDvxG2kyYNs_GxrsRs,181760
+control/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+control/gpio.pyd,sha256=exC-iP3QUtaRCA4LHM83yhe3And3kC5JdPSYeXmtp2I,193024
+control/machine_learning.pyd,sha256=X6-6-JnB7Onmp4LTGww5gT4kvmuqjQ0zypU3cyeipwQ,210944
+control/shijue.pyd,sha256=sPmrI04fQd1hhdAQM8PyhdGMkxFcYonW-MwvsbDQtXY,205312
+control/shijue1.pyd,sha256=N5b-PBNFQMOLQs86J0cCWH3EbNceCQH7mHPUlptu8-E,270336
+control/yuyin.pyd,sha256=WpF21jLTxOHTHq5XcCpRL1LfrzTjluuw-9sht8c0_KA,117248
+control_scnu-0.2.2.dist-info/LICENSE.txt,sha256=7mOohYgoi4n--2rY1DssvV_GbL114BMh4XQsystChrY,1072
+control_scnu-0.2.2.dist-info/METADATA,sha256=orVaaQbz_pKFP-kPUKXzZ4UHYewJZklx9I5cguYWTg8,1473
+control_scnu-0.2.2.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+control_scnu-0.2.2.dist-info/top_level.txt,sha256=Ln8fep3T-Cdl0pfWZyNLkfimj6U0vH5qagTHf_7hI3Y,8
+control_scnu-0.2.2.dist-info/RECORD,,
