@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: python-pip
+Version: 0.33
+Summary: Python PIP Wrapper
+Home-page: https://github.com/jpraychev/python-pip
+Author: Jordan Raychev
+Author-email: jpraychev@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/jpraychev/python-pip/issues
+Platform: Linux/Windows/MacOS
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Python PIP Wrapper
+
+## Installation
+---
+### 1. Install package from PyPi
+```
+pip install python-pip
+```
+
+### 2. Create a virtual environment
+```
+python -m venv venn
+```
+
+### 3. Activate the virtual environment
+```
+./venv/Scripts/activate
+```
+
+### 4. Install all required libraries
+```
+There are no requirements at the moment
+```
+
+### 5. Usage
+```
+from python_pip import pip
+```
+
+```
+# Initialize object
+pip = pip.PIP()
+print(pip.version)
+```
+
+```
+# Install a package
+pip.install(package_name='requests')
+```
+
+```
+# Uninstall a package
+pip.uninstall(package_name='requests')
+```
+
+## Contributing
+You are welcome to contribute to the repo as you like
+
+## Authors and acknowledgment
+Jordan Raychev
+
+Email: jpraychev at gmail dot com
+
+Website: https://jraychev.com
+
+## License
+See LICENSE file
+
