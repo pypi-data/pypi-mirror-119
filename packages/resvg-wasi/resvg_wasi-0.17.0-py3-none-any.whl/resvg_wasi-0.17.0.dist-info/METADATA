@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: resvg-wasi
+Version: 0.17.0
+Summary: resvg SVG renderer and normalizer
+Home-page: UNKNOWN
+Author: jaseg
+Author-email: pypi@jaseg.de
+License: MPLv2.0
+Project-URL: Source Code, https://git.jaseg.de/resvg-wasi
+Project-URL: Bug Tracker, https://github.com/jaseg/resvg-wasi/issues
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: appdirs (~=1.4)
+Requires-Dist: wasmtime (>=0.28)
+Requires-Dist: importlib-resources ; python_version < "3.9"
+
+UNKNOWN
+

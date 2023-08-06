@@ -1,0 +1,8 @@
+resvg_wasi/__init__.py,sha256=Z9G0bRfiKBh4OVS8VugOFlykA_N-qt3e89IX7btvM8I,2138
+resvg_wasi/resvg.wasm,sha256=xNcL9jr77ybl4uG0roiQTkyorChJHWlidNhxZRluwgU,4161929
+resvg_wasi/usvg.wasm,sha256=xLIBL61QJeRrgSjbOaQz4gHU2FbnjJ6i7UoESD3LMQ4,3438029
+resvg_wasi-0.17.0.dist-info/METADATA,sha256=paASwqkxjEcXbDT081kObklBeA7bdkbLJ9vl6GzBOug,594
+resvg_wasi-0.17.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+resvg_wasi-0.17.0.dist-info/entry_points.txt,sha256=hPFHVdVh7VSTbaw541wlw4uxoEUfUuNraSdJDgzjbuA,85
+resvg_wasi-0.17.0.dist-info/top_level.txt,sha256=i2HCMyL61_ExCugrbvtoJuspL2_4n2Hui_A9Feh6tgc,11
+resvg_wasi-0.17.0.dist-info/RECORD,,

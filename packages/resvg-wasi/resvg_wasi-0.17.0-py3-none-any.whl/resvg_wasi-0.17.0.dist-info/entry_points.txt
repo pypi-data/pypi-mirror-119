@@ -1,0 +1,4 @@
+[console_scripts]
+wasi-resvg = resvg_wasi:run_resvg
+wasi-usvg = resvg_wasi:run_usvg
+
