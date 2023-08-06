@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: coding-foo
+Version: 1.0.0
+Summary: pypi test pkg
+Home-page: https://e.coding.net/codingcorp/coding-artifacts-demo.git
+Author: coding
+Author-email: coding@coding.com
+License: MIT
+Download-URL: https://codingcorp.coding.net/p/mayday/artifacts/297/pypi/package/471/version/5772
+Keywords: PyPI,artifacts,Python
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# simple hello world python package
+
+hello world
+
+
