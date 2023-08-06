@@ -1,0 +1,299 @@
+.. image:: https://readthedocs.org/projects/bcdi/badge/?version=latest
+.. image:: https://deepsource.io/gh/carnisj/bcdi.svg/?label=active+issues&show_trend=true&token=N3Z0cklmQrG8kzZOVwGJhLd9
+
+BCDI: tools for pre(post)-processing Bragg and forward coherent X-ray diffraction imaging data
+==============================================================================================
+
+Introduction
+============
+
+BCDI stands for *Bragg coherent X-ray diffraction imaging*. It can be used for:
+
+* pre-processing BCDI and forward CDI data (masking aliens, detector gaps ...) before
+  phase retrieval
+
+* post-processing phased data (phase offset and phase ramp removal, averaging,
+  apodization, ...)
+
+* data analysis on diffraction data (stereographic projection, angular
+  cross-correlation analysis, domain orientation fitting ...)
+
+* data analysis on phased data (resolution calculation, statistics on the retrieved
+  strain ...)
+
+* simulation of diffraction intensity (including noise, detector gaps, displacement
+  field ...)
+
+* creating figures for publication using templates
+
+
+BCDI as a python toolkit
+========================
+
+BCDI can be used as a python library with the following main modules:
+
+1) :mod:`bcdi.algorithms`: PSF and image deconvolution using Richardson-Lucy algorithm
+
+2) :mod:`bcdi.facet_recognition`: Stereographic projection of a diffraction peak or a
+   reconstructed crystal. Automatic detection of reconstructed facets and statistics on
+   facet strain.
+
+3) :mod:`bcdi.experiment`: definition of the experimental geometry
+   (beamline, setup, detector, diffractometer...).
+
+4) :mod:`bcdi.graph` : generation of plots using predefined templates.
+
+5) :mod:`bcdi.postprocessing`: methods for post-processing the complex output
+   of a phasing algorithm.
+
+6) :mod:`bcdi.preprocessing`: methods for pre-processing the diffraction
+   intensity in Bragg CDI or forward CDI geometry.
+
+7) :mod:`bcdi.simulation`: in BCDI geometry, calculation of the diffraction intensity
+   based on FFT or kinematical sum. It can include a displacement field, noise,
+   detector gaps etc... In forward CDI geometry, calculation of the Bragg peak
+   positions in 3D for a mesocrystal, knowing the unit cell and unit cell parameter.
+
+8) :mod:`bcdi.utils`: data loading, fitting functions ...
+
+9) :mod:`bcdi.xcca`: X-ray cross-correlation analysis related methods
+
+Acknowledgment and third party packages
+=======================================
+
+We would like to acknowledge the following packages:
+
+* xrayutilities: (c) Dominik Kriegner, Eugen Wintersberger.
+  See: J. Appl. Cryst. 46, 1162-1170 (2013).
+
+* nxsReady: (c) Andrea Resta @ SOLEIL SIXS
+
+* image_registration.py: original code from Xianhui Xiao @ APS Sector 2.
+  See: Opt. Lett. 33, 156-158 (2008).
+
+* Some functions were adapted from PyNX: (c) Vincent Favre-Nicolin.
+  See: http://ftp.esrf.fr/pub/scisoft/PyNX/ and J. Appl. Cryst. 49, 1842-1848 (2016).
+
+The following third-party packages are required:
+
+* numpy, scipy, scikit-image, matplotlib, pyqt5, vtk, h5py, hdf5plugin, fabio,
+  silx, xrayutilities
+
+* lmfit: for scripts performing fits
+
+* pytest: to run the tests
+
+* pytables: to load the devices dictionnary for SIXS data
+
+* moviepy, `imagemagick <https://imagemagick.org>`_ or
+  `ffmpeg <http://ffmpeg.zeranoe.com/builds/>`_ for creating movies
+
+Download & Installation
+=======================
+
+BCDI is available from:
+ * Python Package Index: ``pip install bcdi``
+ * `Most updated version on GitHub <https://github.com/carnisj/>`_
+ * upgrade your version with the latest changes from GitHub:
+   ``pip install --upgrade git+https://github.com/carnisj/bcdi.git``
+
+Not that there are issues with installing scikit-image within an Anaconda environment.
+In such situation, the workaround is to create instead a virtual environment using pip.
+
+Please send feedback in `GitHub <https://github.com/carnisj/>`_.
+
+Changelog
+=========
+
+.. include:: ../HISTORY.rst
+  :end-before: Version 0.1.0
+
+See the full  :doc:`Changelog<changelog>`
+
+Citation & Bibliography
+=======================
+
+If you use BCDI for scientific work, please consider including a citation
+(DOI: 10.5281/zenodo.3257616).
+
+License
+=======
+The BCDI library is distributed with a CeCILL-B license
+(an open-source license similar to the FreeBSD one).
+See http://cecill.info/licences/Licence_CeCILL-B_V1-en.html
+
+Documentation
+=============
+
+The documentation is available at: https://bcdi.readthedocs.io/en/latest/
+
+
+BCDI.algorithms: psf and image deconvolution algorithms
+=======================================================
+
+.. bcdi.algorithms section
+
+Description
+-----------
+
+This module includes routines using Richardson-Lucy deconvolution algorithm.
+
+.. bcdi.algorithms end
+
+BCDI.experiment: class and methods defining the experimental setup
+==================================================================
+
+.. bcdi.experiment section
+
+Description
+-----------
+
+This module provides classes and methods for the definition of the experimental setup.
+The geometry of the following beamlines is implemented:
+
+ * ID01 (ESRF)
+ * P10 (PETRA III)
+ * CRISTAL (SOLEIL)
+ * SIXS (SOLEIL)
+ * NANOMAX (MAX IV)
+ * 34ID-C (APS): only for postprocessing
+
+The following detectors are implemented:
+
+ * Maxipix
+ * Timepix
+ * Merlin
+ * Eiger2M
+ * Eiger4M
+ * Dummy (user-defined pixel size and pixel number)
+
+The following classes are implemented:
+
+ * Beamline and corresponding child classes (one per supported beamline)
+ * Detector and corresponding child classes (one per supported detector)
+ * Diffractometer and corresponding child classes (one per supported beamline)
+ * RotationMatrix: used in methods from Diffractometer to generate rotation matrices
+ * Setup
+
+In scripts, the initial step is to declare a detector instance and a setup instance with
+the related parameters (see the class documentation). The beamline and the
+diffractometer are not meant to be instantiated directly, this is done internally in
+Setup.
+
+
+.. bcdi.experiment end
+
+BCDI.facet_recognition: automatic facet detection in BCDI 3D reconstructions
+============================================================================
+
+.. bcdi.facet_recognition section
+
+Description
+-----------
+
+This module provides tools for plotting the stereographic projection of a diffraction
+peak or an object. There is also a script for facet detection on a reconstructed
+object, and for calculating statistics on facet strain. After meshing the object,
+facets are found using a density estimation of mesh triangles normals, followed by
+,watershed segmentation.
+See Carnis et al. Small 17, 2007702 (2021)
+https://doi.org/10.1002/smll.202007702
+
+.. bcdi.facet_recognition end
+
+BCDI.graph: plotting utilities
+==============================
+
+.. bcdi.graph section
+
+Description
+-----------
+
+This module provides methods to plot 2D and 3D data using templates, and to save it
+as a .vti file.
+
+.. bcdi.graph end
+
+BCDI.preprocessing: preprocessing utilities on the diffraction data before phasing
+==================================================================================
+
+.. bcdi.preprocessing section
+
+Description
+-----------
+
+This module provides methods used for pre-processing phased data. For example (but
+not limited to): centering, hotpixels removal, filtering, masking...
+
+.. bcdi.preprocessing end
+
+BCDI.postprocessing: postprocessing utilities on the complex object after phasing
+=================================================================================
+
+.. bcdi.postprocessing section
+
+Description
+-----------
+
+This module provides methods used for post-processing phased data. For example (but
+not limited to): phase offset and ramp removal, centering, cropping, padding,
+aligning reconstructions, filtering...
+
+.. bcdi.postprocessing end
+
+BCDI.publication: utilities to make formatted figure for publication
+====================================================================
+
+.. bcdi.publication section
+
+Description
+-----------
+
+This module provides scripts with templates for figures that can be used in
+presentations.
+
+.. bcdi.publication end
+
+BCDI.simulation: simulation of diffraction patterns
+===================================================
+
+.. bcdi.simulation section
+
+Description
+-----------
+
+In Bragg geometry, calculation of the diffraction intensity based on FFT or
+kinematical sum. It can include a displacement field, noise, detector gaps etc...
+In forward CDI geometry, calculation of the Bragg peak positions in 3D for a
+mesocrystal, knowing the unit cell and unit cell parameter. It can be used to fit
+experimental data.
+See Carnis et al. Scientific Reports 9, 17357 (2019)
+https://doi.org/10.1038/s41598-019-53774-2
+
+.. bcdi.simulation end
+
+BCDI.utils: various utilities for data analysis
+===============================================
+
+.. bcdi.utils section
+
+Description
+-----------
+
+Various non-specific utilities for i/o, fitting, array registration, parameter
+validation...
+
+.. bcdi.utils end
+
+BCDI.xcca: X-ray cross-correlation analysis
+===========================================
+
+.. bcdi.xcca section
+
+Description
+-----------
+
+This module provides methods to calculate the angular cross-correlation function for
+a 3D reciprocal space dataset.
+
+.. bcdi.xcca end
