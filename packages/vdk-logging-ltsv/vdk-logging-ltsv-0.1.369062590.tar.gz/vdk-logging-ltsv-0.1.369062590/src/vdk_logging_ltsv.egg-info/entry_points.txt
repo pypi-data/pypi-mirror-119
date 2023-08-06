@@ -1,0 +1,3 @@
+[vdk.plugin.run]
+vdk-logging-ltsv = vdk.internal.logging_ltsv
+
