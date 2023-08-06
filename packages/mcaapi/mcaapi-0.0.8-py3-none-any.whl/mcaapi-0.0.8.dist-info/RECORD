@@ -1,0 +1,11 @@
+mcaapi/APItoken.py,sha256=__U1BcAdNCs1fjwIgIJZ4BCIUfpcGIyf56x8HmtMpzw,1458
+mcaapi/__init__.py,sha256=eZdlv2LuCkGfQ7bZBPXzeUJXi1n7M8IKBFuHiluqBv4,115
+mcaapi/input.py,sha256=6MzbLKcgDITWg-jyUXFkZN0qTevFs9Lk5eI8jBKwZhA,218
+mcaapi/inputs.py,sha256=sG_56wPCpOYn0UxwtnQ6MviDXByRVY9pNjsdMATNtrA,155
+mcaapi/library.py,sha256=7gpamksj4ouzw5BvViPQsaec1Japib1USbBlvwQshmc,70
+mcaapi/mcaapi.py,sha256=3Kp_YNu-2wKDACfHvGau8Fqh-R0l5oGhNA478LyX_Xk,25612
+mcaapi/tests.py,sha256=a7LcKCJD_WtlQylW_ks0ynQ55yiNk-jk3pxuuRbuLug,1601
+mcaapi-0.0.8.dist-info/METADATA,sha256=bLq1YkXBEPEZWxFGIFn3SyMFNz-LG2WbjZabfGTYWsM,9176
+mcaapi-0.0.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+mcaapi-0.0.8.dist-info/top_level.txt,sha256=h4NBO1WstkFrS_2UqaGUD57BKWVWya2hDFKD3aBlxmo,7
+mcaapi-0.0.8.dist-info/RECORD,,
