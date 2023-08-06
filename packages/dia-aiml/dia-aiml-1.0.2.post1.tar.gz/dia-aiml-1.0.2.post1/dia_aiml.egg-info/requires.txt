@@ -1,0 +1,17 @@
+boto3
+botocore
+ciso8601
+deprecation
+Keras
+numpy
+pandas
+psycopg2
+PyNomaly
+pyod
+PyWavelets
+PyYAML
+requests
+scikit-learn
+scipy
+tqdm
+tslearn
