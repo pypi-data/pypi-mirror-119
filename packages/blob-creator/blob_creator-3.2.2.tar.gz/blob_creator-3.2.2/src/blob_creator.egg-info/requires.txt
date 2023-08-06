@@ -1,0 +1,11 @@
+openpyxl
+pandas
+numpy
+matplotlib
+Pillow
+names
+svglib
+reportlab
+wetransfer
+pyocclient
+requests
