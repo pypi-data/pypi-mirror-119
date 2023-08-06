@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: django-light
+Version: 0.1.0.post1
+Summary: Disable dark mode in Django admin UI.
+Home-page: https://github.com/frnhr/django-light
+Author: Fran Hrzenjak
+Author-email: fran@changeset.hr
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+file: README.md
+
