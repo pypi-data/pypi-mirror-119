@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "xivapyi"
+version = "0.1.0"
+description = "An async python3 wrapper around the XIVAPI for Final Fantasy XIV."
+homepage = "https://github.com/Jonxslays/xivapyi"
+repository = "https://github.com/Jonxslays/xivapyi"
+readme = "README.md"
+authors = ["Jonxslays"]
+license = "BSD-3-Clause"
+packages = [
+    { include = "xivapyi" },
+    { include = "xivapyi/py.typed" },
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Framework :: AsyncIO",
+    "Framework :: aiohttp",
+    "License :: OSI Approved :: BSD License",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Games/Entertainment :: Role-Playing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6,<=3.10"
+aiohttp = "^3.7.4.post0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.910"
+pytest = "^6.2.5"
+nox = "^2021.6.12"
+flake8 = "^3.9.2"
+len8 = {git = "https://github.com/parafoxia/len8.git", rev = "develop"}
+
+[tool.poetry.dev-dependencies.black]
+python = ">=3.6.2,<=3.10"
+version = "^21.8b0"
+
+[tool.poetry.dev-dependencies.isort]
+python = ">=3.6.1,<=3.10"
+version = "^5.9.3"
+
+[tool.mypy]
+strict = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
