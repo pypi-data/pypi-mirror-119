@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/list2csv/__init__.py
+src/list2csv/list2csv.py
+src/list2csv.egg-info/PKG-INFO
+src/list2csv.egg-info/SOURCES.txt
+src/list2csv.egg-info/dependency_links.txt
+src/list2csv.egg-info/top_level.txt
