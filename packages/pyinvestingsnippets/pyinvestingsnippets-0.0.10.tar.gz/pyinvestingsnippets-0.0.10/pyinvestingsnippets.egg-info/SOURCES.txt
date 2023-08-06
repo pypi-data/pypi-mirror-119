@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+pyinvestingsnippets/__init__.py
+pyinvestingsnippets/drawdown.py
+pyinvestingsnippets/wealthindex.py
+pyinvestingsnippets.egg-info/PKG-INFO
+pyinvestingsnippets.egg-info/SOURCES.txt
+pyinvestingsnippets.egg-info/dependency_links.txt
+pyinvestingsnippets.egg-info/entry_points.txt
+pyinvestingsnippets.egg-info/not-zip-safe
+pyinvestingsnippets.egg-info/requires.txt
+pyinvestingsnippets.egg-info/top_level.txt
