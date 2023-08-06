@@ -1,0 +1,9 @@
+airt/__init__.py,sha256=TjiO2tTsJBZmqoHDbKIHeqzPsfIrrlPHy1PMB2RJZO4,26
+airt/_nbdev.py,sha256=QPbM0xIUF6wlg6FZgV5_cf4FCWFPfFz_lRYz2jpxtPA,985
+airt/client.py,sha256=tgeqt1RaePwfYBhv_GlS37iO2_e8HEw_Hql3rFphYgs,30049
+airt_client-2021.9.4.dist-info/LICENSE,sha256=AIoSvFSyZW2FvOnRow37N7G7s2BGaJH5x-8h4JBPFAA,11351
+airt_client-2021.9.4.dist-info/METADATA,sha256=zuao4euOj6SVPY_HzbzbbwOWYim5Br9B90RFws8Aec8,6611
+airt_client-2021.9.4.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+airt_client-2021.9.4.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+airt_client-2021.9.4.dist-info/top_level.txt,sha256=_QcNYaDk0ObAJDdq3po5zIiB6fAjfN_KUhXaWWlN-p4,5
+airt_client-2021.9.4.dist-info/RECORD,,
