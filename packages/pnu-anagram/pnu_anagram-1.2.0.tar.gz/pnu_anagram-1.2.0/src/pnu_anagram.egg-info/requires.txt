@@ -1,0 +1,3 @@
+dict-fr-ABU
+dict-fr-AU-DELA
+dict-fr-Wordscapes
