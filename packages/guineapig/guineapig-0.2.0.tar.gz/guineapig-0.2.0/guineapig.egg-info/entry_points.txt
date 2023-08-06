@@ -1,0 +1,4 @@
+
+            [console_scripts]
+            guineapig=guineapig.main:main
+        

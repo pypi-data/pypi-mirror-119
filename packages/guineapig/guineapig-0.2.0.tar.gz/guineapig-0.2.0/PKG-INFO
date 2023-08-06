@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: guineapig
+Version: 0.2.0
+Summary: CLI for tracking pocket money
+Home-page: https://github.com/bichanna/guineapig
+Author: bichanna
+Author-email: nobu.bichanna@gmail.com
+License: MIT
+Description: 
+        Usage↓
+        https://github.com/bichanna/guineapig
+        
+Keywords: guineapig,python
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Development Status :: 4 - Beta
+Description-Content-Type: text/markdown
