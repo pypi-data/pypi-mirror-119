@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+fABBA/__init__.py
+fABBA/aggregation.py
+fABBA/chainApproximation.py
+fABBA/digitization.py
+fABBA/setup.py
+fABBA/symbolic_representation.py
+fABBA.egg-info/PKG-INFO
+fABBA.egg-info/SOURCES.txt
+fABBA.egg-info/dependency_links.txt
+fABBA.egg-info/requires.txt
+fABBA.egg-info/top_level.txt
