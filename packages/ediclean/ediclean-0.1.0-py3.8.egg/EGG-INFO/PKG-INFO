@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: ediclean
+Version: 0.1.0
+Summary: Clean UN/EDIFACT PAXLST files from unsupported characters.
+Home-page: https://github.com/goOICT/edicat
+Author: Zoltan Janota
+Author-email: zoltan.janota@un.org
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/goOICT/edicat/issues
+Project-URL: Source, https://github.com/goOICT/edicat
+Description: # ediclean
+        A Python package to stip unsupported characters from UN/EDIFACT PAXLST messages
+        
+Keywords: paxlst edifact un/edifact
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Text Processing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
