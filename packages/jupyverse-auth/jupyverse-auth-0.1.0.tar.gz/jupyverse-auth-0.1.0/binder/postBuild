@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+pip install -e .
+
+jupyter labextension develop . --overwrite
+jlpm run build
+jupyter labextension list
+jupyter lab build
