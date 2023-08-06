@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+Layers/tensorflow_wavelets.egg-info/PKG-INFO
+Layers/tensorflow_wavelets.egg-info/SOURCES.txt
+Layers/tensorflow_wavelets.egg-info/dependency_links.txt
+Layers/tensorflow_wavelets.egg-info/top_level.txt
