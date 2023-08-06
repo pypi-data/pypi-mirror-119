@@ -1,0 +1,13 @@
+templateapp/__init__.py,sha256=47DbfpaJ5z5RZf7rwvJAs4vp4k3LBI576dUYpTkFEjY,427
+templateapp/__main__.py,sha256=vNsU-rf50bTGJVeUHIUYphMVgkeH4AzhhgEp1lI7vTc,70
+templateapp/application.py,sha256=tMD3ncoWMQunVaqLwSlrV22-0Eq8e7vaImOSI_pfLmA,79853
+templateapp/config.py,sha256=di_egTIAfcNfZDWmznvhK8fspvopuY7QPo5yVerpYPQ,204
+templateapp/core.py,sha256=bEvYlijtrRBikOI2fQ-Aw8ADcTEgyELKiDIGs4F95VE,22060
+templateapp/exceptions.py,sha256=2HFaaxCKDLugwLATDlJ6F2gW7F765nFzXWdAoSaxpG8,495
+templateapp/main.py,sha256=dMZFtEQAklGTjtJPJhBbAfWrAyOzX1kvF4sh224pZL8,2004
+templateapp-0.1.3.dist-info/LICENSE,sha256=qnliEXg2fq5rHbfkl0FhKj8hnoGk_gHGYyhNpv8-wmk,1559
+templateapp-0.1.3.dist-info/METADATA,sha256=-6eR9PLuSyP9sImhcLQvifLqIC9yYecQmMiccHhjVso,1267
+templateapp-0.1.3.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+templateapp-0.1.3.dist-info/entry_points.txt,sha256=9z8BJVEJm2NTi4oZU5giBOBSOicRiIAzen_oXn0LJ6E,66
+templateapp-0.1.3.dist-info/top_level.txt,sha256=_nFQHpqoTuo-0p-SDrMWwFnh8RZaBkXJhL_fmAoGc80,12
+templateapp-0.1.3.dist-info/RECORD,,
