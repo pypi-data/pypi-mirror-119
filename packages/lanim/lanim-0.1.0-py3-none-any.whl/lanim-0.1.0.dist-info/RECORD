@@ -1,0 +1,16 @@
+lanim/__main__.py,sha256=MzPrFqxNODJ7RSz4DmNlRdiGdxNcl8OXM7w6nuchYqc,2246
+lanim/anim.py,sha256=QPIe9PwKdOIS0XY5ISrJsqquppauoFNXRFZNxD8Qdac,9572
+lanim/easings.py,sha256=i6-dwYAb2jTZtrgvNz2WJBDtiX4JMY0qIIBLbePQtpU,3991
+lanim/examples/showcase.py,sha256=dRrn8Y7nlSWx5z3kmeaQ7gsHW5IouFsqeXMgI83ijO0,5516
+lanim/latex.py,sha256=j_i8fVkeO7HbZOTIjg0xrGBa7tVUKmy_RyNaGyF2lZI,2776
+lanim/pil_graphics.py,sha256=s2HUJNhYrJeWXjI38R-qF6g0G1wvSwMEgT-26EDNt4A,10583
+lanim/pil_machinery.py,sha256=gAE75h7fk1D-tQdtKbGlQzz9srIglg0AtVWFJxxM1jw,1683
+lanim/pil_types.py,sha256=fMsb4RhHeN5Kru1FqovccKc1JYigh3W6HFzajATYqn8,17245
+lanim/pil_utils.py,sha256=CqqahIoyGOFBQf03X_7RTEeBKnkOM9X9XsqIcrMw82c,1719
+lanim/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lanim/standalone.py,sha256=PKX2StsPvMRMUbsT8xQw5PkpmM9nzCW5jAe8Xiul1Yk,2925
+lanim/threaded_cache.py,sha256=gSHUDLxTsYfUrB1DOOTBbfbcK-8nHOoPgfvwHI1KNTg,2268
+lanim-0.1.0.dist-info/LICENSE,sha256=LHC9px3567-asBIikhZ1raze9QOyDjIoSROD2EiPQf0,1057
+lanim-0.1.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+lanim-0.1.0.dist-info/METADATA,sha256=vUuPBzkz8av-YRcW93FxblA3OuufXWgJOsRuEXp-qHY,1510
+lanim-0.1.0.dist-info/RECORD,,
