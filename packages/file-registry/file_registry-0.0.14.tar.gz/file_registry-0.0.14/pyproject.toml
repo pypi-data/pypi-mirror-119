@@ -1,0 +1,8 @@
+[build-system]
+install_requires=['peppercorn', 'pandas']
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "pandas",
+]
+build-backend = "setuptools.build_meta"
