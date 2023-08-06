@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/nanobuild/__init__.py
+src/nanobuild.egg-info/PKG-INFO
+src/nanobuild.egg-info/SOURCES.txt
+src/nanobuild.egg-info/dependency_links.txt
+src/nanobuild.egg-info/top_level.txt
