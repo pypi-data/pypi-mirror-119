@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: objxmlmodify
+Version: 1.0.0
+Summary: Allows you to modify objects via XML
+Home-page: UNKNOWN
+Author: Alan Bagel
+Author-email: jiuprogrammer@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.0.0
+
+Allows you to modify objects via XML. I don't know where I got this idea from. :)
+
