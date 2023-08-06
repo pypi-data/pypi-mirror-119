@@ -1,0 +1,15 @@
+LICENSE
+README.rst
+setup.py
+frozen_box/__init__.py
+frozen_box/exception.py
+frozen_box/frozen_class.py
+frozen_box.egg-info/PKG-INFO
+frozen_box.egg-info/SOURCES.txt
+frozen_box.egg-info/dependency_links.txt
+frozen_box.egg-info/top_level.txt
+test/test_bool_frozen.py
+test/test_data_security.py
+test/test_get_item.py
+test/test_split_queries.py
+test/test_type_cast.py

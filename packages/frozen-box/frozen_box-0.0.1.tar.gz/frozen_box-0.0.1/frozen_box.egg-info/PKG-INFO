@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: frozen-box
+Version: 0.0.1
+Summary: Store Python objects in a immutable manner and provide fast attribute lookup
+Home-page: https://github.com/leavers/frozen
+Author: Leavers
+Author-email: leavers930@gmail.com
+License: MIT
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+Frozen is a container that:
+
+* makes internal object immutable;
+* supports dot notation access.
+
+Example:
+
+.. code-block:: python
+
+    from frozen import freeze
+
+    person = {
+        'name': 'Mike',
+        'age': 17,
+        'scores': {
+            'math': [{
+                'name': 'test 1',
+                'score': 87,
+                'sub_score': {
+                    'part 1': 25,
+                    'part 2': 22,
+                    'part 3': 40
+                }
+            }, {
+                'name': 'test 2',
+                'score': 92,
+                'sub_score': {
+                    'part 1': 30,
+                    'part 2': 23,
+                    'part 3': 39
+                }
+            }]
+        }
+    }
+
+    frozen = freeze(person)
+    print(frozen['scores.math.1.sub_score.part 3'])  # 39
+    print(frozen.scores.math[1].sub_score['part 3'])  # 39
+
