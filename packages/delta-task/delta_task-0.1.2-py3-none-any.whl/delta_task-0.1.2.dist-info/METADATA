@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: delta-task
+Version: 0.1.2
+Summary: delta framework
+Home-page: https://github.com/delta-mpc/delta
+Author: miaohong
+Author-email: 73902525@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: requests (~=2.25.1)
+Requires-Dist: pytest (~=6.2.4)
+Requires-Dist: cloudpickle (==1.6.0)
+
+UNKNOWN
+
