@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/QAutoScrollLabel/__init__.py
+src/QAutoScrollLabel.egg-info/PKG-INFO
+src/QAutoScrollLabel.egg-info/SOURCES.txt
+src/QAutoScrollLabel.egg-info/dependency_links.txt
+src/QAutoScrollLabel.egg-info/top_level.txt
