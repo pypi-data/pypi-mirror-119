@@ -1,0 +1,9 @@
+django_advance_dumpdata/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_advance_dumpdata/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_advance_dumpdata/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_advance_dumpdata/management/commands/dumpdata_advance.py,sha256=e2uE5674gOxSKoj1YITkTQ_kneBm9gSY-vt1m-lvoSk,3811
+django_advance_dumpdata-0.0.1.dist-info/LICENCE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+django_advance_dumpdata-0.0.1.dist-info/METADATA,sha256=WanTuH4IUjxgJsaZVur64oj9KN1gwnJHsneQfQ44f2M,3443
+django_advance_dumpdata-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+django_advance_dumpdata-0.0.1.dist-info/top_level.txt,sha256=kUUEEjWbA3pTqGP8DdUl6ruRFPMvSzmlp2KyOZqYU_Y,24
+django_advance_dumpdata-0.0.1.dist-info/RECORD,,
