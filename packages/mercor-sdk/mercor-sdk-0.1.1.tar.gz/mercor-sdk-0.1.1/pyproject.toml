@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "mercor-sdk"
+version = "0.1.1"
+description = "Software development kit for the Mercor trading API"
+license = "MIT"
+authors = ["Mercor Finance LLC"]
+readme = "README.md"
+packages = [
+    {include = "mercor_sdk"}
+]
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+backoff = "^1.11.1"
+eth-typing = "^2.2.2"
+pydantic = "^1.8.2"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.910"
+pytest = "^6.2.5"
+black = "^21.8b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+ignore_missing_imports = true
