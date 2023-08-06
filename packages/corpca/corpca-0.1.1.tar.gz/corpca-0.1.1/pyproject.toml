@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "corpca"
+version = "0.1.1"
+description = ""
+authors = ["Aiga SUZUKI <tochikuji@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+scikit-learn = "^0.24.2"
+numpy = "^1.21.2"
+
+[tool.poetry.dev-dependencies]
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
