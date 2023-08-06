@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: migrations-ml
+Version: 0.0.13
+Summary: Migrations.ML advanced bond risk analytics data REST API wrapper.
+Home-page: https://migrations.ml
+Author: Jacques Nel
+Author-email: jacques.nel@migrations.ml
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: Other/Proprietary License
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Natural Language :: English
+Classifier: Topic :: Office/Business :: Financial
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
