@@ -1,0 +1,11 @@
+baserow/__init__.py,sha256=BPWXiQ57yC1e2H2MaRdCl63XZqeE0sNJUrn4Jd6WbW0,85
+baserow/client.py,sha256=X4CbpxaiR9ETXZpV9ATeLK6DmRprRQS6ntZsLda46vI,5625
+baserow/field_types.py,sha256=KL2E1xJ39RP8P3XKIInmEobYoZYrglUodMXvyGPWK_Y,981
+baserow/filter.py,sha256=lI-SoNPC0MuISp_ThWyhTcX-C2NU1IWBTXnSk5z8gAs,3880
+baserow/types.py,sha256=S-zB4f3vXwbnJ0xJOePV1wZ7VKmYTt_kMeWEJRMIBbE,1062
+baserow_client-0.1.0.dist-info/LICENSE.txt,sha256=DWcTMuhLaPQZurKHQT2h7S8qmLCOEKgGuZ_kTIgjSiI,1002
+baserow_client-0.1.0.dist-info/METADATA,sha256=5FuaYdJp_SU4xRx-skHO_NYWA20kP3MqfWjtwNzLsSA,1142
+baserow_client-0.1.0.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+baserow_client-0.1.0.dist-info/top_level.txt,sha256=TM6srgfYqYFA8kKha7i9kYjx_NjrZf3Oti6vu7r_RxI,8
+baserow_client-0.1.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+baserow_client-0.1.0.dist-info/RECORD,,
