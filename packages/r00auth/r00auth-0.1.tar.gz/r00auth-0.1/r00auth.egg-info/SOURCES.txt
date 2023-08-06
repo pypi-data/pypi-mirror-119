@@ -1,0 +1,9 @@
+.gitignore
+LICENSE.txt
+README.rst
+__init__.py
+setup.py
+r00auth.egg-info/PKG-INFO
+r00auth.egg-info/SOURCES.txt
+r00auth.egg-info/dependency_links.txt
+r00auth.egg-info/top_level.txt
