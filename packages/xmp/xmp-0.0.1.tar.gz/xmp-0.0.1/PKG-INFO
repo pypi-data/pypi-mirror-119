@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: xmp
+Version: 0.0.1
+Summary: xmp is execute Python code in Markdown code block.
+Home-page: https://github.com/hashzmr/xmp
+License: MIT
+Author: hashzmr
+Author-email: rhashizume7729@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Project-URL: Repository, https://github.com/hashzmr/xmp
