@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: mitorch
+Version: 0.1.1
+Summary: MiTorch training framework
+Home-page: https://github.com/shonohs/mitorch
+Author: shono
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Requires-Dist: albumentations
+Requires-Dist: jsons
+Requires-Dist: mitorch-models
+Requires-Dist: pymongo
+Requires-Dist: pytorch-lightning (~=1.4.5)
+Requires-Dist: requests
+Requires-Dist: scikit-learn
+Requires-Dist: tenacity
+Requires-Dist: torchvision (>=0.5.0)
+Requires-Dist: torch (~=1.9.0)
+
+UNKNOWN
+
+
