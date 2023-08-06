@@ -1,0 +1,10 @@
+sllib/__init__.py,sha256=KUDenGtVGpPL-VP1kmvTRKdbh3NQHz_XGvinrGCTV3k,330
+sllib/definitions.py,sha256=uZ7DCQCPhI0d3LVp2kX2w4TpxTzslzyNEjUBqNTFtRY,5102
+sllib/frame.py,sha256=uUM-x5O_-GPhnTdfgexeffBl88m3ryw1uAWJrEWhGbk,10171
+sllib/header.py,sha256=ZSWYe3BnLoy_IwcDF2Joa44Jbo9ECSL6N9aGA1hQQ8A,1175
+sllib/reader.py,sha256=QSfGevWCCWifLWJNJBIBmMNXB5f0lm93nPnpPPUXG7U,1016
+sllib-0.2.1.dist-info/LICENSE,sha256=Hh8dWTb9X77QMavzMdUxTiQ1n61Q0jx7U3RaMwQvDi0,1090
+sllib-0.2.1.dist-info/METADATA,sha256=0wMu9KsY4seUMOC6FgpC8GvQKEk8IMxQKUINMqj6jtM,2173
+sllib-0.2.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+sllib-0.2.1.dist-info/top_level.txt,sha256=WXd2leVI2YVgrP56UNZdjfttpLjBDxghm82gIh5libE,6
+sllib-0.2.1.dist-info/RECORD,,
