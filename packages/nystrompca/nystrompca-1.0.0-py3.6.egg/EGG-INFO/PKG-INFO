@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: nystrompca
+Version: 1.0.0
+Summary: Kernel PCA with the Nyström method
+Home-page: UNKNOWN
+Author: Fredrik Hallgren
+Author-email: fredrik.hallgren@ucl.ac.uk
+License: UNKNOWN
+Description: ... 
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
