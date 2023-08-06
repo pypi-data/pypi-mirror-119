@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+requirements.txt
+setup.py
+meco/__init__.py
+meco/_version.py
+meco/meco.py
+meco.egg-info/PKG-INFO
+meco.egg-info/SOURCES.txt
+meco.egg-info/dependency_links.txt
+meco.egg-info/not-zip-safe
+meco.egg-info/requires.txt
+meco.egg-info/top_level.txt
+test/__init__.py
+test/test_eco.py
