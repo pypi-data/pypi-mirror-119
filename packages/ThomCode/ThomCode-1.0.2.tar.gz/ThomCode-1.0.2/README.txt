@@ -1,0 +1,56 @@
+import ThomCode as tc
+
+list = [7,4,6,3,2,1,10,5,8,9]
+X = [[1,2,3],[4,5,6],[7,8,9]]
+Y = [[9,8,7],[6,5,4],[3,2,1]]
+list_answers = []
+
+tc.getInteger                      # zelfde functie als bij pcinput
+tc.getFloat                        # zelfde functie als bij pcinput
+tc.getString                       # zelfde functie als bij pcinput
+tc.getLetter                       # zelfde functie als bij pcinput
+
+a = tc.CircleCir(1) 	          # berekend omtrek cirkel met straal 1
+b = tc.CircleSurf(1) 	          # berekend oppervlakte cirkel met straal 1
+c = tc.SphereVol(1) 	          # berekend inhoud bol met straal 1
+d = tc.pi                          # geeft pi tot 15 getallen achter de komma
+e = tc.sqrt(9) 				# geeft de wortel van 9
+f = tc.factorial(5)                # berekend faculteit 5 (1*2*3*4*5)
+g = tc.fibonacci(100) 	          # geeft fibonacci frequentie in lijst tot het getal 100
+h = tc.phythagoras(3,4)            # berekend de lange zijde van een 90 graden driehoek met de zijdes 3 en 4
+i = tc.radians(100)                # zet graden om naar radialen
+j = tc.degrees(100)                # zet radialen om naar graden
+k = tc.Sort_list(list) 	          # zet de lijst op volgorde van klein naar groot
+l = tc.NumList(12)                 # geeft lijst tot het getal 12
+m = tc.alphabetList                # geeft lijst met het alfabet    
+n = tc.PrimeList(100) 	          # geeft lijst met priemgetallen tot 100
+o = tc.PrimeChecker(97)            # controleert of 97 een priem getal is
+p = tc.RandomMatrix(3,2,4,9)       # geeft een matrix van 3x2 met random waardes tussen de 4 en 9
+q = tc.ArrayMultiplier(X,Y)        # vermenigvuldigd 2 matrices met elkaar (matrix1 kolom moet zelfde hoeveel hebben als matrix2 rij)
+r = tc.ArraySum(X,Y)               # telt 2 matrices bij elkaar op (matrices moeten gelijke formaat hebben)
+s = tc.Arrayminus(X,Y)             # trekt 2 matrices van elkaar af (matrices moeten gelijke formaat hebben)
+
+list_answers.append(a)
+list_answers.append(b)
+list_answers.append(c)
+list_answers.append(d)
+list_answers.append(e)
+list_answers.append(f)
+list_answers.append(g)
+list_answers.append(h)
+list_answers.append(i)
+list_answers.append(j)
+list_answers.append(k)
+list_answers.append(l)
+list_answers.append(m)
+list_answers.append(n)
+list_answers.append(o)
+list_answers.append(p)
+list_answers.append(q)
+list_answers.append(r)
+list_answers.append(s)
+
+
+for i in range (19):
+     print ("antwoord",m[i],"=",list_answers[i])
+

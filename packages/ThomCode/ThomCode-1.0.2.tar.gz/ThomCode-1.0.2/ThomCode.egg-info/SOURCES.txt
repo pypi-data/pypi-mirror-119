@@ -1,0 +1,10 @@
+CHANGELOG.txt
+LICENCE.txt
+MANIFEST.in
+README.txt
+setup.py
+ThomCode/__init__.py
+ThomCode.egg-info/PKG-INFO
+ThomCode.egg-info/SOURCES.txt
+ThomCode.egg-info/dependency_links.txt
+ThomCode.egg-info/top_level.txt
