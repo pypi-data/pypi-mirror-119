@@ -1,0 +1,5 @@
+setup.py
+QuickMiner.egg-info/PKG-INFO
+QuickMiner.egg-info/SOURCES.txt
+QuickMiner.egg-info/dependency_links.txt
+QuickMiner.egg-info/top_level.txt
