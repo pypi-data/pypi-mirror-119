@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: odc-stac
+Version: 0.2.0a4
+Summary: Tooling for converting STAC metadata to ODC data model
+Home-page: https://github.com/opendatacube/odc-tools/
+Author: Open Data Cube
+Author-email: 
+Maintainer: Open Data Cube
+Maintainer-email: 
+License: Apache License 2.0
+Platform: any
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: affine
+Requires-Dist: datacube (>=1.8.5)
+Requires-Dist: jinja2
+Requires-Dist: numpy
+Requires-Dist: odc-io
+Requires-Dist: pandas
+Requires-Dist: pystac (<2,>=1.0.0)
+Requires-Dist: toolz
+Requires-Dist: xarray
+
+odc.stac
+========
+
+Tooling for converting STAC metadata to ODC data model.
+
+Installation
+------------
+
+```
+pip install odc-stac
+```
+
+Usage
+-----
+
+TODO
+
+
