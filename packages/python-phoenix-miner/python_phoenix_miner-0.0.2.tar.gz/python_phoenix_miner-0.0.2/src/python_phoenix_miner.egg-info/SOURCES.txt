@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/python_phoenix_miner/__init__.py
+src/python_phoenix_miner/base_client.py
+src/python_phoenix_miner/phoenix_client.py
+src/python_phoenix_miner.egg-info/PKG-INFO
+src/python_phoenix_miner.egg-info/SOURCES.txt
+src/python_phoenix_miner.egg-info/dependency_links.txt
+src/python_phoenix_miner.egg-info/top_level.txt
+src/python_phoenix_miner/controllers/__init__.py
+src/python_phoenix_miner/controllers/miner.py
+src/python_phoenix_miner/models/__init__.py
+src/python_phoenix_miner/models/miner/__init__.py
+src/python_phoenix_miner/models/miner/extended_stats.py
+src/python_phoenix_miner/models/miner/stats.py
