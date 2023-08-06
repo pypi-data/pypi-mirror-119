@@ -1,0 +1,10 @@
+aws_transcription_grouper/__init__.py,sha256=V978taczlgxzKBu-oJWpvQiXd0m3Fm3cW67FHRTfWr8,147
+aws_transcription_grouper/cli.py,sha256=FXsdjlRuqF0flfSfYUX557vEu0CgbDZ8YtHe4Ye-4-w,632
+aws_transcription_grouper/grouper.py,sha256=P62pEd8-aP8gHv1i61hoElT9VilviEPXAXCIkv7S1p0,992
+aws_transcription_grouper-0.1.0.dist-info/AUTHORS.rst,sha256=coIwJrJlVmZ5FftSFbOld4nNa7EnUKyZHxUINRzaVrs,160
+aws_transcription_grouper-0.1.0.dist-info/LICENSE,sha256=lfe0HFTECMKT5_atOx7PVO0HwV1GoP30A1qy9e0_7rs,1071
+aws_transcription_grouper-0.1.0.dist-info/METADATA,sha256=p-zIK05FFpvQbP8IwKg4FyXqzwI2iQL1h17_PeED0_0,2019
+aws_transcription_grouper-0.1.0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+aws_transcription_grouper-0.1.0.dist-info/entry_points.txt,sha256=Bg8oG_lF508PcqUbqogIcLZzZcW_8CwYfSqZKK_K9wQ,64
+aws_transcription_grouper-0.1.0.dist-info/top_level.txt,sha256=9r2-mec9za8rVc5_KDIoMRYpmwGiWka8VdpftGtko_w,26
+aws_transcription_grouper-0.1.0.dist-info/RECORD,,
