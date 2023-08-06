@@ -1,0 +1,4 @@
+tracardi_plugin_sdk
+aiomysql
+pydantic
+tracardi
