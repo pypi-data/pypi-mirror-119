@@ -1,0 +1,17 @@
+# Misc
+include pyproject.toml
+
+# Include the README
+include *.md
+
+# Include the license file
+include LICENSE
+
+# datset
+include dataset/carbon4.csv
+include dataset/north_west2020/*.csv
+include dataset/caiso2020/*.csv
+include dataset/isone2020/*.csv
+
+# Include the data files
+recursive-include dataset *
