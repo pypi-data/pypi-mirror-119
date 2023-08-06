@@ -1,0 +1,12 @@
+binsreg/__init__.py,sha256=L-7aYLxer2mxZUnchi6l2LJd_xNtHSMf0TSoofaqpng,189
+binsreg/binsglm.py,sha256=s0X1UL1nbsNKnu0EwyUNNWqgBxIkDpfF-cPXWYOjV7s,61421
+binsreg/binspwc.py,sha256=gS4eKffUKnyX_AqLnxjgmJxFbsuvSyu5X4S9A52RoFs,30171
+binsreg/binsqreg.py,sha256=MFnLDoeek345F98a6fl0aghhlZcnjyv15xmQTFtujPM,54161
+binsreg/binsreg.py,sha256=XMtpha_UvdpTcucA6UA_sIAmbYfcx4vEptDQGyutps0,54563
+binsreg/binsregselect.py,sha256=M08zs2zBrABtSzHUKN9D4i0WJ8MXQoo29mdhOQY-ufY,16365
+binsreg/binstest.py,sha256=nD2GEZ6iLmEa6Xs_EEyQMvFmlFsmjnPqPF8_fo5Mk1w,34645
+binsreg/funs.py,sha256=lmJ2MLXwsp0LD1MjtRXWdNvFUSg0etBrKKjuw1jUfLo,42921
+binsreg-1.0.0.dist-info/METADATA,sha256=isWRy_mqh3ADGZXQIbRJsd37ODVfKERX4EsqYK7-t5Y,3981
+binsreg-1.0.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+binsreg-1.0.0.dist-info/top_level.txt,sha256=-9dYQrH4TIgkOOs0uYWgft9cZ7ACNn4N7svkJ4ug5kA,8
+binsreg-1.0.0.dist-info/RECORD,,
