@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: climaf
+Version: 2.0.1.0
+Summary: CliMAF: a Climate Model Assessment Framework.
+Home-page: https://github.com/rigoudyg/climaf
+Author: Stéphane Sénési
+Author-email: 
+License: CeCILL-C license
+Keywords: python climate model
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
+License-File: LICENSE.rst
+Requires-Dist: six
+Requires-Dist: Cython
+Requires-Dist: netCDF4
+Requires-Dist: numpy
+Requires-Dist: sphinx (==1.8.5)
+Requires-Dist: netcdftime
+Requires-Dist: cftime
+Requires-Dist: matplotlib
+Requires-Dist: cartopy
+Requires-Dist: python-dateutil
+Requires-Dist: natsort
+
+CliMAF : a Climate Model Assessment Framework
+---------------------------------------------
+
+CliMAF doc is available at `Readthedocs
+<http://climaf.readthedocs.org/>`_ , which includes `installation instructions <http://climaf.readthedocs.org/en/latest/installing.html>`_
+
+The aim of CliMAF is to allow for an actual, **easy, collaborative development of climate model outputs assessment suites by climate scientists with varied IT background**, and to ultimately share such suites for the benefit of the Climate Science. 
+
+It is basically a scriptable way to process NetCDF `CF compliant
+<http://cfconventions.org/>`_ climate model outputs 
+
+CliMAF was designed by Stéphane Sénési, who also developped most of the code before version 2.
+
