@@ -1,0 +1,10 @@
+habaform/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+habaform/apply.py,sha256=K5IC48nWnt9NGx448sXgfMAJtXU27c5-E5NjWMKj5Tk,5111
+habaform/main.py,sha256=o_iY2yH7PVc1JwZbh7vPVM0RjreDyqfjOSwLK6q9zSA,903
+habaform/parse.py,sha256=MM80Lb7CR7mjJCDzWxWMaBaqO_iW21vJiZMg52dqmd0,1702
+habaform/plan.py,sha256=sjLd1c1G6wcpTQ9G1x-iLrdwkJlc_yysMnt0qwSQbFw,3866
+habaform-0.0.1.dist-info/METADATA,sha256=HEp_QqieFNEvbJJ-FUf_LqHa7IOrIR93cyupviEH8G8,4145
+habaform-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+habaform-0.0.1.dist-info/entry_points.txt,sha256=ItCbOcz19FByaL3ii3ZYJQpCPmMct-pSba6QxV-dF74,49
+habaform-0.0.1.dist-info/top_level.txt,sha256=bU-d4RGKogi5tzIH19Pb3FZAt1Nm6KwAmDY2AB9x_98,9
+habaform-0.0.1.dist-info/RECORD,,

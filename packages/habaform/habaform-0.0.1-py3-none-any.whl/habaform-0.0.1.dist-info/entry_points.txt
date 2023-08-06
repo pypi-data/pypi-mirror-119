@@ -1,0 +1,3 @@
+[console_scripts]
+habaform = habaform.main:main
+
