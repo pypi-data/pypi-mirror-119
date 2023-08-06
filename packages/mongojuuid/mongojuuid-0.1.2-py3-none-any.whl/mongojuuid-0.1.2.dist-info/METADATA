@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: mongojuuid
+Version: 0.1.2
+Summary: CLI to convert BinData Subtype 3 to JUUID and vice-versa
+Home-page: https://github.com/luxmeter/mongojuuid
+License: MIT
+Keywords: mongo,uuid,java
+Author: Mustafa Caylak
+Author-email: mustafa.caylak@web.de
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: typer (>=0.3.2,<0.4.0)
+Project-URL: Repository, https://github.com/luxmeter/mongojuuid
+Description-Content-Type: text/markdown
+
+# Mongo Java UUID Converter
+
+Tool to convert Mongo BinData format to Java UUIDs and vice-versa. 
+It behaves like the Java Mongo Driver which transmits the bytes of the [most and least significant bits in little endian format](https://jira.mongodb.org/browse/JAVA-403).
+
+[I used this snippet from the Mongo C# Driver as reference](https://github.com/mongodb/mongo-csharp-driver/blob/master/uuidhelpers.js).
+I added some comments to explain the bitwise operations if you want to take a look into the source code.
+
+## Prerequisites
+
+Python 3.8 installed.
+
+## Installation
+
+### For End-User
+
+Use [Pipx to download and install the application in a virtual environment](https://github.com/pypa/pipx) or do it yourself with Pip and [virtualenv](https://virtualenvwrapper.readthedocs.io/en/latest/install.html):
+
+```bash
+# use either pipx
+pipx install --pip-args=--pre mongojuuid==0.1.1
+
+# or alternatively pip 
+python3 -m pip install --pre mongojuuid==0.1.1
+```
+
+# Usage
+
+## CLI
+
+The python installation ships with an executable named `mongojuuid`.
+Alternatively use `python3 -m mongojuuid`
+
+### Convert to Java UUID
+
+```bash
+>mongojuuid to-uuid 'BinData(3, "gJZnXl0vT+OXdGUUfuRraQ==")'
+e34f2f5d-5e67-9680-696b-e47e14657497
+```
+
+### Convert to BinData
+
+```bash
+>mongojuuid to-bindata e34f2f5d-5e67-9680-696b-e47e14657497
+BinData(3, "gJZnXl0vT+OXdGUUfuRraQ==")
+```
