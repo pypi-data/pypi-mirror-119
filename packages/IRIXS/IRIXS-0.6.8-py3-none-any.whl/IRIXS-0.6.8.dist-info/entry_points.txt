@@ -1,0 +1,4 @@
+[console_scripts]
+irixs_oneshot = IRIXS.oneshot:main
+p01plot = IRIXS.p01plot:main
+
