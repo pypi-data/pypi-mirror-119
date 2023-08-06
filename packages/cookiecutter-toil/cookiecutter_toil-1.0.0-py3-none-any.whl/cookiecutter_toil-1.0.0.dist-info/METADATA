@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: cookiecutter-toil
+Version: 1.0.0
+Summary: 🍪 A cookiecutter for the creation of toil pipelines.
+Home-page: https://github.com/papaemmelab/cookiecutter-toil
+Author: Juan S. Medina, Juan E. Arango
+License: BSD
+Keywords: cookiecutter,toil
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cookiecutter (>=1.7.3)
+Provides-Extra: test
+Requires-Dist: pytest-cov (>=2.12.1) ; extra == 'test'
+Requires-Dist: binaryornot (>=0.4.4) ; extra == 'test'
+Requires-Dist: pytest (>=6.2.5) ; extra == 'test'
+Requires-Dist: pytest-cookies (>=0.6.1) ; extra == 'test'
+Requires-Dist: tox (>=3.24.3) ; extra == 'test'
+
+📘 learn more about this project on [GitHub](https://github.com/papaemmelab/cookiecutter-toil)!
+
