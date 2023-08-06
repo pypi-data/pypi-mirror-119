@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: probeye
+Version: 1.0.0
+Summary: A general framework for setting up parameter estimation problems.
+Home-page: UNKNOWN
+Author: Alexander Klawonn
+Author-email: alexander.klawonn@bam.de
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: emcee
+Requires-Dist: tabulate
+Provides-Extra: lint_type_checks
+Requires-Dist: pre-commit ; extra == 'lint_type_checks'
+Provides-Extra: tests
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: coverage[toml] ; extra == 'tests'
+
+# probeye
+A general framework for setting up parameter estimation problems, and providing an interface for solving them via Bayesian (e.g. MCMC) or frequentist (e.g. maximum likelihood) methods.
+
+
