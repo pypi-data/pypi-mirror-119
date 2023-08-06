@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/pybbox2/__init__.py
+src/pybbox2/bbox_api.py
+src/pybbox2/bbox_api_endpoints.py
+src/pybbox2/bbox_requests.py
+src/pybbox2.egg-info/PKG-INFO
+src/pybbox2.egg-info/SOURCES.txt
+src/pybbox2.egg-info/dependency_links.txt
+src/pybbox2.egg-info/top_level.txt

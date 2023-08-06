@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pybbox2
+Version: 0.2.3
+Summary: A thin API wrapper for the french Bouygues router Bbox
+Home-page: https://github.com/Salamandar/pybbox2
+Author: Salamandar
+Author-email: felix@piedallu.me
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Salamandar/pybbox2/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# PyBbox2
+
+![Bbox](http://www.bbox-actus.com/img/upload/bbox-sensation-adsl-modem.jpg)
+
+This is a API wrapper for the french Bouygues router Bbox.
+
+This aims to provide both a thin wrapper (but still handling authentication), AND
+a full callable API.
+
+
