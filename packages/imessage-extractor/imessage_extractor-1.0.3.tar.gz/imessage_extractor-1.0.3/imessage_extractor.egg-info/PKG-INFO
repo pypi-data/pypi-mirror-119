@@ -1,0 +1,20 @@
+Metadata-Version: 1.2
+Name: imessage-extractor
+Version: 1.0.3
+Summary: Extract local iMessage data to a Postgres database or flat textfiles
+Home-page: https://github.com/tsouchlarakis/imessage_extractor
+Author: Andoni Sooklaris
+Author-email: andoni.sooklaris@gmail.com
+License: MIT license
+Description: UNKNOWN
+Keywords: imessage_extractor
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
