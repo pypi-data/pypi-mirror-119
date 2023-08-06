@@ -1,0 +1,11 @@
+README.md
+setup.py
+pihole_dashboard/__init__.py
+pihole_dashboard.egg-info/PKG-INFO
+pihole_dashboard.egg-info/SOURCES.txt
+pihole_dashboard.egg-info/dependency_links.txt
+pihole_dashboard.egg-info/requires.txt
+pihole_dashboard.egg-info/top_level.txt
+pihole_dashboard/font/font.ttf
+scripts/pihole-dashboard-clean-screen
+scripts/pihole-dashboard-draw
