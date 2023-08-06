@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+QuantumRNG.egg-info/PKG-INFO
+QuantumRNG.egg-info/SOURCES.txt
+QuantumRNG.egg-info/dependency_links.txt
+QuantumRNG.egg-info/requires.txt
+QuantumRNG.egg-info/top_level.txt
