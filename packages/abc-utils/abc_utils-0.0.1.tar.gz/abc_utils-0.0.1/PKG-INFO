@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: abc_utils
+Version: 0.0.1
+Summary: Utilities to work with the ABC dataset
+Home-page: https://github.com/artonson/abc-utils
+Author: Alexey Artemov
+Author-email: a.artemov@skoltech.ru
+Maintainer: Arseniy Bozhenko
+Maintainer-email: a.bozhenko@skoltech.ru
+License: UNKNOWN
+Project-URL: ABC Dataset, https://deep-geometry.github.io/abc-dataset/
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+![PyPI](https://img.shields.io/pypi/v/abc_utils)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/abc_utils)
+
+# abc-utils
+Utility library to work with the recently published ABC dataset
+
+
