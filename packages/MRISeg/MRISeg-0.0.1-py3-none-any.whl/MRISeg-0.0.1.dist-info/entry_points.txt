@@ -1,0 +1,5 @@
+[console_scripts]
+MRISeg = MRISeg.MRISeg:main
+MRISeg_infer = MRISeg.MRISeg:main_infer
+MRISeg_pre = MRISeg.MRISeg:main_preprocess
+
