@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: taminsdk
+Version: 0.1
+Summary: Unoffical Tamin SDK
+Home-page: https://github.com/mazafard/tamin-sdk
+Author: Mazafard
+Author-email: mazafard@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+
+Python library for Tamin.ir API
+=====================================
+
+This is a Python library for the `Tamin.ir
+API <https://Tamin.ir>`__. Using this, you can interact
+with Tamin.ir from your Python applications. It supports Python
+2.7 and Python 3 (3.6+). For more about information about the
+tamin.ir API, visit https://Tamin.ir.
+
+Please see `README <https://github.com/mazafard/tamin_sdk>`__ on the
+project page to get started.
+
+
