@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: DBTron
+Version: 0.0.1
+Summary: A Package Which allows to access and perform Operations on Different Relational and Non-Relational DataBases 
+Home-page: UNKNOWN
+Author: Suraj Jaiswal
+Author-email: <surajaiswal13@gmail.com>
+License: MIT
+Requires-Dist: os
+Requires-Dist: flask
+Requires-Dist: pandas
+Requires-Dist: pymongo
+Requires-Dist: json
+Requires-Dist: mysql-connector-python
+Requires-Dist: csv
+
+
+# DBTron
+
