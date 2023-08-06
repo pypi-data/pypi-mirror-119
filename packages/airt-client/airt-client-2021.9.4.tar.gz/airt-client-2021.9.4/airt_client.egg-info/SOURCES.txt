@@ -1,0 +1,16 @@
+CONTRIBUTING.md
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+airt/__init__.py
+airt/_nbdev.py
+airt/client.py
+airt_client.egg-info/PKG-INFO
+airt_client.egg-info/SOURCES.txt
+airt_client.egg-info/dependency_links.txt
+airt_client.egg-info/entry_points.txt
+airt_client.egg-info/not-zip-safe
+airt_client.egg-info/requires.txt
+airt_client.egg-info/top_level.txt
