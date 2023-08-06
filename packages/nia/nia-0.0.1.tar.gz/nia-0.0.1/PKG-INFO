@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: nia
+Version: 0.0.1
+Summary: Nature Inspired Optimization Algorithms
+Home-page: https://github.com/salar-shdk/nia
+Author: salar-shdk
+Author-email: amir.shdk@yahoo.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/salar-shdk/nia/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# NIA
+Nature Inspired Optimization Algorithms
+Supported Algorithms :  
+- [x] Genetic algorithm 
+- [ ] Differential Evolution  
+- [ ] Evolutionary Programming  
+- [ ] Artificial Immune System  
+- [ ] Clonal Selection Algorithm  
+- [ ] Biogeography-based  
+- [ ] Symbiotic Organisms Search  
+- [ ] Ant Colony Optimization  
+- [ ] Artificial Bee Colony  
+- [ ] Moth Flame Optimization Algorithm  
+- [ ] Cuckoo Search  
+- [ ] Green Herons Optimization Algorithm  
+- [ ] Bat Algorithm  
+- [ ] Whale Optimization Algorithm  
+- [ ] Krill Herd  
+- [ ] Fish-swarm Algorithm  
+- [ ] Grey Wolf Optimizer  
+- [ ] Shuffle frog-leaping Algorithm  
+- [ ] Cat Swarm Optimization  
+- [ ] Flower Pollination Algorithm  
+- [ ] Invasive Weed Optimization  
+- [ ] Water Cycle Algorithm  
+- [ ] Teaching–Learning-Based Optimization  
+- [x] Particle Swarm Optimization  
+- [ ] Simulated Annealing Algorithm  
+- [ ] Gravitational Search Algorithm  
+- [ ] Big Bang - Big Crunch  
+
+
