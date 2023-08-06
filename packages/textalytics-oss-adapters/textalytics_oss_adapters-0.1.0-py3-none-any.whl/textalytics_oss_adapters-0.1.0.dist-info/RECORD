@@ -1,0 +1,6 @@
+textalytics_spacy/spacy_entity_recognition.py,sha256=FJOiz1HVL-yvd94__fVL7s6nRCRNzOLWm6Hxorb4Zqo,1468
+textalytics_stanza/stanza_entity_recognition.py,sha256=Hx_ipvNzNrlbIGVH6ZFT6LBN5ntjIbklRqRwgocOrvw,1775
+textalytics_oss_adapters-0.1.0.dist-info/entry_points.txt,sha256=d-DgzOMENNfQ2VNMOztEgFpFxFffuOcwGl6KXc-ThuA,37
+textalytics_oss_adapters-0.1.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+textalytics_oss_adapters-0.1.0.dist-info/METADATA,sha256=E2Fxy02LvU7JtWxIcU3dBXcls_Hn4eGeC3HpNCZMeJM,529
+textalytics_oss_adapters-0.1.0.dist-info/RECORD,,
