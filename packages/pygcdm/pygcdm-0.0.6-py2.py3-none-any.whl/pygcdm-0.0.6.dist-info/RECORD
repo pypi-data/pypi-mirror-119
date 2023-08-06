@@ -1,0 +1,17 @@
+pygcdm/__init__.py,sha256=zRVY1Nn2zE8jhi1kaZ7uPbFhjm_0vAYb_z0avOVR7F0,94
+pygcdm/__main__.py,sha256=eI2_uqsvUN0WkowRMwtqII8ACPaUJUZcKtE9QyHXdG4,74
+pygcdm/netcdf_decode.py,sha256=N-5gHxKaiQOkSaWz8lZhat43YqRDyKI4Wb8KK74Em1Y,3972
+pygcdm/netcdf_encode.py,sha256=_qKUO4L41sz7k7eldmpKzgvOuC1Kqm4ivNIEWMomopw,9478
+pygcdm/netcdf_grpc.py,sha256=yhpEYq3Xt-75hkmHH8d9gHdwavytptHDxHjNNiWtAtQ,3745
+pygcdm/protogen/__init__.py,sha256=Il5Q9ATdX8yXqVxtP_nYqUhExzxPC_qk_WXQ_4h0exg,16
+pygcdm/protogen/gcdm_grid_pb2.py,sha256=xHpQM6CVD9JJNYx3wGSL0BwCE9eGgTNAwXe5YpeKRjc,65212
+pygcdm/protogen/gcdm_grid_pb2_grpc.py,sha256=1oboBPFxaTEXt9Aw7EAj8gXHDCNMhZD2VXqocC9l_gk,159
+pygcdm/protogen/gcdm_netcdf_pb2.py,sha256=-wNtHw2Guqsm6piMNhmvIrczlThlMBl9GWoSCoBBfBA,58140
+pygcdm/protogen/gcdm_netcdf_pb2_grpc.py,sha256=1oboBPFxaTEXt9Aw7EAj8gXHDCNMhZD2VXqocC9l_gk,159
+pygcdm/protogen/gcdm_server_pb2.py,sha256=4x1RJobFxBOTRprh_t1uB0ju_O2kx10saOb0gs5MtgI,3184
+pygcdm/protogen/gcdm_server_pb2_grpc.py,sha256=v08YLj4WIB0EtNY5wsc_8t9Dt4pgrxgBSb-B1ZMz4yE,7106
+pygcdm-0.0.6.dist-info/LICENSE,sha256=3u_-UGa3Lh6YH5QSqfx-RI_rHqaHUsKRHHTeNeI7Z-4,1525
+pygcdm-0.0.6.dist-info/METADATA,sha256=Iy7QnI26NrWw8LmrFNHKoVgYHofY6IlHwgx8U6OVm48,4278
+pygcdm-0.0.6.dist-info/WHEEL,sha256=Z-nyYpwrcSqxfdux5Mbn_DQ525iP7J2DG3JgGvOYyTQ,110
+pygcdm-0.0.6.dist-info/top_level.txt,sha256=RjVZyrLzz5Jw_6yRa5jLnOEw_-XEyOW1WD0p55t1KWE,7
+pygcdm-0.0.6.dist-info/RECORD,,
