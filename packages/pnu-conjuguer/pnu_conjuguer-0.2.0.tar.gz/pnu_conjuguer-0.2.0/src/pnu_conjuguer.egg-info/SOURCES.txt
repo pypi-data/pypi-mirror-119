@@ -1,0 +1,15 @@
+License
+README.md
+pyproject.toml
+setup.cfg
+man/conjuguer.1.gz
+src/conjuguer/__init__.py
+src/conjuguer/blank.py
+src/conjuguer/main.py
+src/conjuguer/verbs.py
+src/pnu_conjuguer.egg-info/PKG-INFO
+src/pnu_conjuguer.egg-info/SOURCES.txt
+src/pnu_conjuguer.egg-info/dependency_links.txt
+src/pnu_conjuguer.egg-info/entry_points.txt
+src/pnu_conjuguer.egg-info/requires.txt
+src/pnu_conjuguer.egg-info/top_level.txt
