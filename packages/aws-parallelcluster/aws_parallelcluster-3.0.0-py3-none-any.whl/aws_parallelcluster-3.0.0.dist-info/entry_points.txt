@@ -1,0 +1,3 @@
+[console_scripts]
+pcluster = pcluster.cli.entrypoint:main
+
