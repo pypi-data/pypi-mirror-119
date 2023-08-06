@@ -1,0 +1,15 @@
+wserver_compound/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wserver_compound/functions.py,sha256=uvJL1TGH97ksmYIrNwzMMVFvK9vSpwZqEAZ9EB5d9mk,8046
+wserver_compound/main.py,sha256=KIdD1ayhSDo92l_ioLN8F_IJNG9gRSnesBLMVfJoypc,14113
+wserver_compound/methods.py,sha256=kglIqtrpM1zM1o6YKKFdcjUpcJzp2yFxhsAeloZn7Zc,18963
+wserver_compound/settings.py,sha256=cdy2fL_cpA2WQdaEGEnzRhKbp6Gz_RVoKwR-bPomK_Y,347
+wserver_compound/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wserver_compound/tests/api_test.py,sha256=W1eBlR7f03KhkwRnowxkeG-T6ShG_z6QQZHAPlU_ijE,1930
+wserver_compound/tests/functions_test.py,sha256=tIAqUyReV2XVDuXw122kjhbWhqoYEZIrn6j8_-WnIJo,3084
+wserver_compound/tests/main_test.py,sha256=TV40ecPUd_PlNCDhOKCY5ZazO5rzC8HG6n4xjCKqrjM,1123
+wserver_compound/tests/methods_tests.py,sha256=TzI7AC_BWblnYcOROS90ZlwwWhQgOw9ETaQUjer9180,9759
+wserver_compound/tests/test_objects.py,sha256=1r3Eyz34yir_8_wRZMp85Jwq1b0KB6TSDJ7YerXoEAA,249
+wserver_compound-0.0.2.dist-info/METADATA,sha256=WDqIlPYXnQ6hky3XZUkPTuReOQhCFYMG4EUbd1ao9rM,783
+wserver_compound-0.0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+wserver_compound-0.0.2.dist-info/top_level.txt,sha256=0WLQ8y-zvBOfQw47hJRMUMVJg5Ffoy2P4N-ZlVCzSoo,17
+wserver_compound-0.0.2.dist-info/RECORD,,
