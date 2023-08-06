@@ -1,0 +1,12 @@
+google_cloud_mlflow/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+google_cloud_mlflow/_mlflow_model_gcp_deployment_utils.py,sha256=1cFdTBxPgNhRKBlyTnOXDitvA7m8msZk-VBfdKhz7bA,16799
+google_cloud_mlflow/_mlflow_models_docker_utils_patch.py,sha256=EdPPBZMOHfEt1M-F4uPsawRd5tYx6AC1ok_RIKrLR2U,4279
+google_cloud_mlflow/mlflow_model_deployment_plugin_for_google_cloud_vertex_ai.py,sha256=fjqFL7dRerbJepLYRleZ3cgcpZEI-WOc-iu_CGxBR3o,17260
+google_cloud_mlflow/mlflow_model_registry_plugin_for_google_cloud_storage.py,sha256=3K1h6s3T4U6HFX-nla1CxYl-skAzM_ZQdPNIxs_CJHQ,32980
+google_cloud_mlflow/pylint_bug_e1101.py,sha256=ec62RE74NHuVf1iPt3-GdDU5ZuoZG5YMmR8t5Czb9X0,121
+google_cloud_mlflow-0.0.4.dev1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+google_cloud_mlflow-0.0.4.dev1.dist-info/METADATA,sha256=rUUxs9Uli3hIE4kpuyx_nVomA0Zw73cHPQ3lI3H7K4E,3687
+google_cloud_mlflow-0.0.4.dev1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+google_cloud_mlflow-0.0.4.dev1.dist-info/entry_points.txt,sha256=QYAl-kL5zCV9b5OWtxOjl4tZfwM-WMyrw0i59cEBGh8,257
+google_cloud_mlflow-0.0.4.dev1.dist-info/top_level.txt,sha256=6cuSNQS_cxD-sjALrHuKDjC2MhtIwrLquF2zRV-I56o,20
+google_cloud_mlflow-0.0.4.dev1.dist-info/RECORD,,
