@@ -1,0 +1,5 @@
+{
+  "TenantRegistrationUrl": "https://api.cloudaeye.com/sso/",
+  "CentralizedMetricsUrl": "https://api.cloudaeye.com/observability",
+  "KubernetesProvisioningUrl": "https://api.cloudaeye.com/kubernetes"
+}

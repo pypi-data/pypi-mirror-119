@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: caeops
+Version: 0.0.1
+Summary: A CLI that works as a unified tool to manage your CloudAEye services
+Home-page: https://github.com/CloudAEye/caeops
+Author: CloudAEye
+Author-email: info@cloudaeye.com
+License: UNKNOWN
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Requires-Dist: setuptools ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+UNKNOWN
+
