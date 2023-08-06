@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+VERSION
+pyproject.toml
+setup.py
+src/casregnum.py
+src/casregnum.egg-info/PKG-INFO
+src/casregnum.egg-info/SOURCES.txt
+src/casregnum.egg-info/dependency_links.txt
+src/casregnum.egg-info/top_level.txt
+test/test.py
