@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: planetwatch
+Version: 0.1.1
+Summary: Code to make it easy to caluculate earnings, etc for planetwatch
+License: GNU General Public License v3.0
+Author: errantp
+Requires-Python: >=3.7,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: click
+Requires-Dist: pycoingecko (>=2.2.0,<3.0.0)
