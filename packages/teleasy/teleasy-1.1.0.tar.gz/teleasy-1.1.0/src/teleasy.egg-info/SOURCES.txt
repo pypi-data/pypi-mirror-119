@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/teleasy/__init__.py
+src/teleasy.egg-info/PKG-INFO
+src/teleasy.egg-info/SOURCES.txt
+src/teleasy.egg-info/dependency_links.txt
+src/teleasy.egg-info/top_level.txt
