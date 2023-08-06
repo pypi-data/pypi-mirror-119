@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+coif/__init__.py
+coif/coif.py
+coif.egg-info/PKG-INFO
+coif.egg-info/SOURCES.txt
+coif.egg-info/dependency_links.txt
+coif.egg-info/not-zip-safe
+coif.egg-info/requires.txt
+coif.egg-info/top_level.txt
