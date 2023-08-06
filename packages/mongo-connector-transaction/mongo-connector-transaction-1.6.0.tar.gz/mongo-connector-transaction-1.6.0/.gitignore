@@ -1,0 +1,15 @@
+*.pyc
+*~
+.DS_Store
+/test/data
+/test/logs
+/dist
+# IDE settings folders
+.idea/
+.vscode/
+*.log
+build/
+mongo_connector.egg-info
+mongo_connector_transaction.egg-info
+venv
+oplog.timestamp
