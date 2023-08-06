@@ -1,0 +1,4 @@
+
+        [swh.cli.subcommands]
+        dataset=swh.dataset.cli
+    
