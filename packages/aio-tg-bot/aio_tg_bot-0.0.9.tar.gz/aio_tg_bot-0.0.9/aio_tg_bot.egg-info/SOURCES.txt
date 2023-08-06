@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+aio_tg_bot/__init__.py
+aio_tg_bot/__main__.py
+aio_tg_bot/config.py
+aio_tg_bot/version.py
+aio_tg_bot.egg-info/PKG-INFO
+aio_tg_bot.egg-info/SOURCES.txt
+aio_tg_bot.egg-info/dependency_links.txt
+aio_tg_bot.egg-info/not-zip-safe
+aio_tg_bot.egg-info/requires.txt
+aio_tg_bot.egg-info/top_level.txt
