@@ -1,0 +1,12 @@
+neobulkmp/__init__.py,sha256=945PZeZ6WSLV0Cb8Zv_QcCl9NWhyAf0OWEJqeSfGZqM,73
+neobulkmp/cache_backend.py,sha256=79Q-sd-5d5BidB8LAfY4i4JyQL0OAMNc-nyKTLE_nyg,42332
+neobulkmp/cache_logger.py,sha256=THd2uewc5GBgI8Mxc9RdYzlULXr6jkXvOPFPdQvUefw,2044
+neobulkmp/manager.py,sha256=_ekMvHGz4GNGTHbczy4KH29-Enbksq6e7UTOutKTzIY,28203
+neobulkmp/manager_strategies.py,sha256=AT1GP3wycGkNboiI7cgRuv5E-AmPdM641U23xHgG-S0,4963
+neobulkmp/worker_base.py,sha256=hQ0sM4OdYDLiSup1pUpYXCwPVQfwAlmq-ZbF2UAJT9U,1088
+neobulkmp/worker_loading.py,sha256=_t1fwYpg1MGA6M7UM9egGtfCu1GnKT2VeiustdCc-JU,4798
+neobulkmp/worker_sourcing.py,sha256=UXRHv24iw0Nnz9hbcppyya6J1zmFkXzvfDCoEBDsvAU,1809
+neobulkmp-0.1.8.dist-info/METADATA,sha256=OavlQJav56ytkJBHZTok7-YgyKyvGShzVf8-TZGfg_k,521
+neobulkmp-0.1.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+neobulkmp-0.1.8.dist-info/top_level.txt,sha256=TT2ymEx4V5CJ6cS5SRqTXYkPgUynCoUeZ4Ie_Of16z8,10
+neobulkmp-0.1.8.dist-info/RECORD,,
