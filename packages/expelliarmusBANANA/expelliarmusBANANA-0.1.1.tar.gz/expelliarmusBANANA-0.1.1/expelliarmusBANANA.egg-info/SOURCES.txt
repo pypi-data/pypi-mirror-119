@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+expelliarmusBANANA/__init__.py
+expelliarmusBANANA.egg-info/PKG-INFO
+expelliarmusBANANA.egg-info/SOURCES.txt
+expelliarmusBANANA.egg-info/dependency_links.txt
+expelliarmusBANANA.egg-info/not-zip-safe
+expelliarmusBANANA.egg-info/top_level.txt
