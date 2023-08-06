@@ -1,0 +1,3 @@
+colorama
+dict-fr-AU-DELA
+dict-fr-ABU
