@@ -1,0 +1,11 @@
+setuptools
+zope.component
+zope.interface>=3.8.0
+zope.lifecycleevent
+zope.security
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[docs]
+Sphinx
