@@ -1,0 +1,415 @@
+Metadata-Version: 2.1
+Name: unitgrade-devel
+Version: 0.1.1
+Summary: A set of tools to develop unitgrade reports and evaluate them
+Home-page: https://lab.compute.dtu.dk/tuhe/unitgrade_private
+Author: Tue Herlau
+Author-email: tuhe@dtu.dk
+License: MIT
+Project-URL: Bug Tracker, https://lab.compute.dtu.dk/tuhe/unitgrade_private/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Unitgrade-devel
+**Note: This is the development version of unitgrade. If you are a student, please see http://gitlab.compute.dtu.dk/tuhe/unitgrade.**
+
+Unitgrade is an automatic report and exam evaluation framework that enables instructors to offer automatically evaluated programming assignments. 
+ Unitgrade is build on pythons `unittest` framework so that the tests can be specified in a familiar syntax and will integrate with any modern IDE. What it offers beyond `unittest` is the ability to collect tests in reports (for automatic evaluation) and an easy and 100% safe mechanism for verifying the students results and creating additional, hidden tests. A powerful cache system allows instructors to automatically create test-answers based on a working solution. 
+
+ - 100% Python `unittest` compatible
+ - No external configuration files: Just write a `unittest`
+ - No unnatural limitations: Use any package or framework. If you can `unittest` it, it works.   
+ - Tests are quick to run and will integrate with your IDE
+ - Cache and hint-system makes tests easy to develop
+ - Granular security model: 
+    - Students get public `unittests` for easy development of solutions
+    - Students use a tamper-resistant file to create submissions which are uploaded
+    - Instructors can automatically verify the students solution using a Docker VM and run hidden tests
+ - Automatic Moss anti-plagiarism detection
+ - CMU Autolab integration (Experimental)
+
+# Using unitgrade
+The examples can be found in the `/examples/` directory: https://gitlab.compute.dtu.dk/tuhe/unitgrade_private/examples
+
+## A simple example
+Unitgrade makes the following assumptions:
+ - Your code is in python
+ - Whatever you want to do can be specified as a `unittest`
+
+Although not required, it is recommended you maintain two version of the code: 
+ - A fully-working version (i.e. all tests pass)
+ - A public version distributed to students (some code removed))
+
+I use `codesnipper` (see http://gitlab.compute.dtu.dk/tuhe/snipper) to synchronize the two versions automatically.  
+Let's look at an example. Suppose our course is called `cs101`, in which case we make three files in our private folder `instructor`:
+```terminal
+instructor/cs101/homework.py # This contains the students homework
+instructor/cs101/report1.py  # This contains the tests
+instructor/cs101/deploy.py   # A private file to deploy the tests
+```
+
+### The homework
+The homework is just any old python code you would give to the students. For instance:
+```python
+def reverse_list(mylist): #!f
+    """
+    Given a list 'mylist' returns a list consisting of the same elements in reverse order. E.g.
+    reverse_list([1,2,3]) should return [3,2,1] (as a list).
+    """
+    return list(reversed(mylist))
+
+def add(a,b): #!f
+    """ Given two numbers `a` and `b` this function should simply return their sum:
+    > add(a,b) = a+b """
+    return a+b
+
+if __name__ == "__main__":
+    # Problem 1: Write a function which add two numbers
+    print(f"Your result of 2 + 2 = {add(2,2)}")
+    print(f"Reversing a small list", reverse_list([2,3,5,7]))
+```
+### The test: 
+The test consists of individual problems and a report-class. The tests themselves are just regular Unittest (we will see a slightly smarter idea in a moment). For instance:
+
+```python
+from looping import reverse_list, add
+import unittest
+
+
+class Week1(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 2), 4)
+        self.assertEqual(add(-100, 5), -95)
+
+    def test_reverse(self):
+        self.assertEqual(reverse_list([1, 2, 3]), [3, 2, 1])
+
+```
+A number of tests can be collected into a `Report`, which will allow us to assign points to the tests and use the more advanced features of the framework later. A complete, minimal example:
+
+```python
+from src.unitgrade2.unitgrade2 import Report
+from src.unitgrade2 import evaluate_report_student
+from looping import reverse_list, add
+import unittest
+
+
+class Week1(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 2), 4)
+        self.assertEqual(add(-100, 5), -95)
+
+    def test_reverse(self):
+        self.assertEqual(reverse_list([1, 2, 3]), [3, 2, 1])
+
+
+import cs101
+
+
+class Report1(Report):
+    title = "CS 101 Report 1"
+    questions = [(Week1, 10)]  # Include a single question for 10 credits.
+    pack_imports = [cs101]
+
+
+if __name__ == "__main__":
+    # Uncomment to simply run everything as a unittest:
+    # unittest.main(verbosity=2)
+    evaluate_report_student(Report1())
+```
+
+### Deployment
+The above is all you need if you simply want to use the framework as a self-check: Students can run the code and see how well they did. 
+In order to begin using the framework for evaluation we need to create a bit more structure. We do that by deploying the report class as follows:
+```python
+from report1 import Report1
+from unitgrade_private2.hidden_create_files import setup_grade_file_report
+from snipper import snip_dir
+import shutil
+
+if __name__ == "__main__":
+    setup_grade_file_report(Report1, minify=False, obfuscate=False, execute=False)
+
+    # Deploy the files using snipper: https://gitlab.compute.dtu.dk/tuhe/snipper
+    snip_dir.snip_dir(source_dir="../programs", dest_dir="../../students/programs", clean_destination_dir=True, exclude=['__pycache__', '*.token', 'deploy.py'])
+
+```
+ - The first line creates the `report1_grade.py` script and any additional data files needed by the tests (none in this case)
+ - The second line set up the students directory (remember, we have included the solutions!) and remove the students solutions. You can check the results in the students folder.
+
+### Using the framework as a student
+You can now upload the `student` directory to the students. The students can run their tests either by running `cs101.report1` in their IDE or by typing:
+```
+python -m cs101.report1
+```
+in the command line. This produces a detailed output of the test and the program is 100% compatible with a debugger. When the students are happy with their output they can run (using command line or IDE):
+```
+python -m cs101.report1_grade
+```
+This runs an identical set of tests, but produces a `.token` file the students can upload to get credit. 
+ - The `report1_grade.py` includes all tests and the main parts of the framework and is obfuscated by default. You can apply a much strong level of protection by using e.g. `pyarmor`.
+ - The `report1_token.token` file includes the outcome of the tests, the time taken, and all python source code in the package. In other words, the file can be used for manual grading, for plagirism detection and for detecting tampering. 
+ - You can easily use the framework to include output of functions. 
+ - See below for how to validate the students results 
+
+### How safe is Unitgrade?
+Cheating within the framework is probably best done by manually editing the `.token`-file or by creating a broken set of tests. This involves risk of being trivially detected, for instance because tests have the wrong runtime, but more importantly 
+the framework automatically pack all the used source code and so if a student is cheating, there is no way to hide it for an instructor who looks at the results. If the 
+program is used in conjunction with automatic plagiarism software, cheating therefore involves both breaking the framework, and creating 'false' solutions which statistically match other students solutions, and then hope nobody bothers to check the output. 
+ The bottom line is that I think plain old plagiarism is a much more significant risk, and one the framework reduces relative to other project work 
+by demanding the source code is included. 
+
+If this is not enough you have two options: You can either use `pyarmor` to create a **very** difficult challenge for a prospective hacker, or you can simply validate the students results as shown below.
+
+
+## Example 2: The framework
+One of the main advantages of `unitgrade` over web-based autograders it that tests are really easy to develop and maintain. To take advantage of this, we simply change the class the questions inherit from to `UTestCase` (this is still a `unittest.TestCase`) and we can make use of the chache system. As an example:
+
+```python 
+class Week1(UTestCase):
+    """ The first question for week 1. """
+    def test_add(self):
+        from cs102.homework1 import add
+        self.assertEqualC(add(2,2))
+        self.assertEqualC(add(-100, 5))
+
+    def test_reverse(self):
+        from cs102.homework1 import reverse_list
+        """ Reverse a list """ # Add a title to the test.
+        self.assertEqualC(reverse_list([1,2,3]))
+```
+Note we have changed the test-function to `self.assertEqualC` (the `C` is for cache) and dropped the expected result. What `unitgrade` will do
+is to evaluate the test *on the working version of the code*, compute the results of the test, and allow them to be available to the user. All this happens in the `deploy.py` script from before.
+
+There are other ways to send the output to the user. For instance:
+```python
+class Question2(UTestCase):
+    """ Second problem """
+    @cache
+    def my_reversal(self, ls):
+        # The '@cache' decorator ensures the function is not run on the *students* computer
+        # Instead the code is run on the teachers computer and the result is passed on with the
+        # other pre-computed results -- i.e. this function will run regardless of how the student happens to have
+        # implemented reverse_list.
+        from cs102.homework1 import reverse_list
+        return reverse_list(ls)
+
+    def test_reverse_tricky(self):
+        ls = ("butterfly", 4, 1)
+        ls2 = self.my_reversal( tuple(ls) ) # This will always produce the right result.
+        ls3 = self.my_reversal( tuple([1,2,3]) )  # Also works; the cache respects input arguments.
+        self.assertEqualC(self.my_reversal( tuple(ls2) )) # This will actually test the students code.
+        return ls
+```
+This code showcase the `@cache` decorator. What it does is it computes the output of the function on your computer and allows that 
+result to be availble to students (the input arguments must be immutable). This may seem odd, but it is very helpful 
+ - if you have exercises that depend on each other, and you want students to have access to the expected result of older methods which they may not have implemented correctly. 
+ - If you want to use functions the students write to set up appropriate tests without giving away the solution
+
+Furthermore, one of the test now has a return value, which will be automatically included in the `.token` file. 
+
+## Example 3: Hidden and secure tests
+To use `unitgrade` as a true autograder you both want security nobody tampered with your tests (or the `.token` files), and 
+also that the students implementations didn't just detect what input was being used and 
+return the correct answer. To do that you need hidden tests and external validation.
+
+Our new testclass looks like this:
+
+```python
+from src.unitgrade2.unitgrade2 import UTestCase, Report, hide
+from src.unitgrade2 import evaluate_report_student
+
+
+class Week1(UTestCase):
+    """ The first question for week 1. """
+
+    def test_add(self):
+        from cs103.homework1 import add
+        self.assertEqualC(add(2, 2))
+        self.assertEqualC(add(-100, 5))
+
+    @hide
+    def test_add_hidden(self):
+        # This is a hidden test. The @hide-decorator will allow unitgrade to remove the test.
+        # See the output in the student directory for more information.
+        from cs103.homework1 import add
+        self.assertEqualC(add(2, 2))
+
+
+import cs103
+
+
+class Report3(Report):
+    title = "CS 101 Report 3"
+    questions = [(Week1, 20)]  # Include a single question for 10 credits.
+    pack_imports = [cs103]
+
+
+if __name__ == "__main__":
+    evaluate_report_student(Report3())
+```
+
+This test is stored as `report3_complete.py`. Note the `@hide` decorator which will tell the framework that test (and all code) should be hidden from the user.
+
+In order to use the hidden tests, we first need a version for the students without them. This can be done by changing the `deploy.py` script as follows:
+
+```python
+def deploy_student_files():
+    setup_grade_file_report(Report3, minify=False, obfuscate=False, execute=False)
+    Report3.reset()
+
+    fout, ReportWithoutHidden = remove_hidden_methods(Report3, outfile="report3.py")
+    setup_grade_file_report(ReportWithoutHidden, minify=False, obfuscate=False, execute=False)
+    sdir = "../../students/cs103"
+    snip_dir(source_dir="../cs103", dest_dir=sdir, clean_destination_dir=True, exclude=['__pycache__', '*.token', 'deploy.py', 'report3_complete*.py'])
+    return sdir
+
+
+if __name__ == "__main__":
+    # Step 1: Deploy the students files and return the directory they were written to
+    student_directory = deploy_student_files()
+```
+This script first compiles the `report3_complete_grade.py`-script (which we will use) and then 
+remove the hidden methods and compiles the students script `report3_grade.py`-script. Finally, we synchronize with the s
+student folder, which now contains no traces of our hidden method -- not in any of the sources files or the data files. 
+
+The next step is optional, but we quickly simulate that the student runs his script and we get a link to the `.token` file:
+```python
+os.system("cd ../../students && python -m cs103.report3_grade")
+student_token_file = glob.glob(student_directory + "/*.token")[0]
+```
+This is the file we assume the student uploads. The external validation can be carried out as follows:
+
+```python
+def run_student_code_on_docker(Dockerfile, student_token_file):
+    token = docker_run_token_file(Dockerfile_location=Dockerfile,
+                          host_tmp_dir=os.path.dirname(Dockerfile) + "/tmp",
+                          student_token_file=student_token_file,
+                          instructor_grade_script="report3_complete_grade.py")
+    with open(token, 'rb') as f:
+        results = pickle.load(f)
+    return results
+
+if __name__ == "__main__":
+    # Step 3: Compile the Docker image (obviously you will only do this once; add your packages to requirements.txt).
+    Dockerfile = os.path.dirname(__file__) + "/../unitgrade-docker/Dockerfile"
+    os.system("cd ../unitgrade-docker && docker build --tag unitgrade-docker .")
+
+    # Step 4: Test the students .token file and get the results-token-file. Compare the contents with the students_token_file:
+    checked_token = run_student_code_on_docker(Dockerfile, student_token_file)
+
+    # Let's quickly compare the students score to what we got (the dictionary contains all relevant information including code).
+    with open(student_token_file, 'rb') as f:
+        results = pickle.load(f)
+    print("Student's score was:", results['total'])
+    print("My independent evaluation of the students score was", checked_token['total'])
+```
+
+These steps compile a Docker image (you can easily add whatever packages you need) and runs **our** `project3_complete_grade.py` script on the **students** source code (as taken from the token file). 
+
+The last lines load the result and compare the score -- in this case both will return 0 points, and any dissimilarity in the results should be immediate cause for concern.
+ - Docker prevents students from doing mailicious things to your computer and allows the results to be reproducible by TAs. 
+
+# Moss plagiarism detection
+You can easily apply Moss to the students token files.  First get moss from https://theory.stanford.edu/~aiken/moss/ and create two directories:
+```terminal
+whitelist/   # Whitelisted files. Code from these files are part of the handouts to students
+submissions/ # Where you dump student submissions.
+```
+The whitelist directory is optional, and the submissions directory contains student submissions (one folder per student):
+```terminal
+/submissions/<student-id-1>/..
+/submissions/<student-id-2>/..
+```
+The files in the whitelist/student directory can be either `.token` files (which are unpacked) or python files, and they may contain subdirectories: Everything will be unpacked and flattened. The simplest way to set it up is simply to download all files from DTU learn as a zip-file and unzip it somewhere.
+When done just call moss as follows:
+```python 
+from unitgrade_private2.plagiarism.mossit import moss_it, get_id
+
+if __name__ == "__main__":
+    # Extract the moss id from the perl script:
+    id = get_id("../../../02465private/admin/moss.pl")
+
+    # moss_id should be a string containing an integer, i.e. "2434222134".
+    moss_it(whitelist_dir="whitelist", submissions_dir="student_submissions", moss_id=id)
+
+```
+This will generate a report. You can view the example including the report here: https://lab.compute.dtu.dk/tuhe/unitgrade_private/-/tree/master/examples/example_moss
+
+# Smart hinting
+To help students get started, unitgrade will collect hints to solve failed tests from across the codebase and display them. Consider the following homework where two problems depends on each other and the 
+instructor has given a couple of hints: (example taken from `example_hints`): 
+```python
+def find_primes(n): #!f
+    """
+    Return a list of all primes up to (and including) n
+    Hints:
+        * Remember to return a *list* (and not a tuple or numpy ndarray)
+        * Remember to include n if n is a prime
+        * The first few primes are 2, 3, 5, ...
+    """
+    primes = [p for p in range(2, n+1) if is_prime(n) ]
+    return primes
+
+def is_prime(n): #!f
+    """
+    Return true iff n is a prime
+    Hints:
+        * A number if a prime if it has no divisors
+        * You can check if k divides n using the modulo-operator. I.e. n % k == True if k divides n.
+    """
+    for k in range(2, n):
+        if k % n == 0:
+            return False
+    return True
+
+```
+The report_file is simply as follows:
+```python
+from unitgrade2 import Report, UTestCase, evaluate_report_student
+from homework1 import find_primes
+import homework1
+
+class Week1(UTestCase):
+    def test_find_all_primes(self):
+        """
+        Hints:
+            * Insert a breakpoint and check what your function find_primes(4) actually outputs
+        """
+        self.assertEqual(find_primes(4), [2,3])
+
+class Report1Hints(Report):
+    title = "CS 106 Report 1"
+    questions = [(Week1, 10)]  # Include a single question for 10 credits.
+    pack_imports = [homework1] # Unitgrade will recursively include all .py files from "cs101flat"
+
+if __name__ == "__main__":
+    evaluate_report_student(Report1Hints())
+
+```
+
+When students run this homework it will fail and display the hints from the two methods:
+![alt text|small](https://gitlab.compute.dtu.dk/tuhe/unitgrade_private/-/raw/master/docs/hints.png)
+
+What happens behind the scenes is that a code-coverage tool is run on the instructors computer
+to determine which methods are actually used in solving a problem, and then the hint-texts of those methods (and none other) are 
+collected and displayed. This feature requires no external configuration; simply write `Hints:` in the source code. 
+
+# Citing
+```bibtex
+@online{unitgrade_devel,
+	title={Unitgrade-devel (0.1.0): \texttt{pip install unitgrade-devel}},
+	url={https://lab.compute.dtu.dk/tuhe/unitgrade_private},
+	urldate = {2021-09-08}, 
+	month={9},
+	publisher={Technical University of Denmark (DTU)},
+	author={Tue Herlau},
+	year={2021},
+}
+```
+
