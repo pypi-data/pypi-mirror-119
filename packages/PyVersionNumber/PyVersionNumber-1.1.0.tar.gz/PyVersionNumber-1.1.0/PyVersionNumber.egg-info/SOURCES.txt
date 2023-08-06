@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+PyVersionNumber/__init__.py
+PyVersionNumber/version_number.py
+PyVersionNumber.egg-info/PKG-INFO
+PyVersionNumber.egg-info/SOURCES.txt
+PyVersionNumber.egg-info/dependency_links.txt
+PyVersionNumber.egg-info/top_level.txt
