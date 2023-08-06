@@ -1,0 +1,7 @@
+README.md
+setup.py
+DiscordHoloApi/__init__.py
+discord_holo_api.egg-info/PKG-INFO
+discord_holo_api.egg-info/SOURCES.txt
+discord_holo_api.egg-info/dependency_links.txt
+discord_holo_api.egg-info/top_level.txt
