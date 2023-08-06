@@ -1,0 +1,4 @@
+lxml
+fugashi
+unidic_lite
+beautifulsoup4>=4.9.1
