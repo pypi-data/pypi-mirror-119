@@ -1,0 +1,12 @@
+cannai/__init__.py,sha256=1DMiP6P0BPwU9f9q9RuRv6mYA3QdEpW6pmYkXDOY0vY,195
+cannai/cannai_class.py,sha256=J2FnrSB2SH8K0BTi7K-eQy_zo4yD5nSXT9g_SoU9jHQ,17406
+cannai/version.py,sha256=Wz0CND-0g1HBu7w7PBn6viUoOzhf4KYq9wWl1wVJ-q4,996
+cannai/model_compare/__init__.py,sha256=GDhQse4NWCyjZe45nyWZT2mZDb-5APqGo2IKDhQCAYg,51
+cannai/model_compare/base.py,sha256=F8CksEHu1_xlJsOw2YfUjuqZ2CvwuDKYFo13432Q9ao,173
+cannai/model_compare/cal_score.py,sha256=cyUt-3AXP9EIx6snhm9A_C4-L5KD2P00S5ehSLPxKD0,5830
+cannai/model_compare/multiclass.py,sha256=-l0owvr298twZPQy8E-b20ADUJXK6lHbjmOo35WgiGI,25539
+cannai-0.3.80.dist-info/LICENCE.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cannai-0.3.80.dist-info/METADATA,sha256=Eby1vWaNHq0f8KOpsEgG8MTG9lWxXn7jR7i-KDdwN_U,518
+cannai-0.3.80.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+cannai-0.3.80.dist-info/top_level.txt,sha256=wO4lzhi17ZLvBsiGjlwQaHQmN3glrBJMIgnbwWz8hkQ,7
+cannai-0.3.80.dist-info/RECORD,,
