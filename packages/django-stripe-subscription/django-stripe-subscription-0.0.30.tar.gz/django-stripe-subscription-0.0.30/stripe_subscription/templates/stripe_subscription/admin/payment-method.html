@@ -1,0 +1,113 @@
+{% load static %}
+
+<style>
+.card-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-info .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+}
+
+.card-info .details .brand {
+    padding-bottom: 5px;
+}
+</style>
+
+<fieldset class="module aligned ">
+    <h2>Payment method </h2>
+    {% if not object %}
+    <div class="form-row">
+        <div>
+            <label>Information not available</label>
+        </div>
+    </div>
+    {% else %}
+    <p class="help" style="margin-left:0;padding:5px 0">This information not hosted on CRM side and provided via Stripe API</p>
+
+    {% if object.billing_details.name %}
+    <div class="form-row">
+        <div>
+            <label>Name</label>
+            <div class="readonly">{{ object.billing_details.name }}</div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="form-row">
+        <div>
+            <label for="">CARD</label>
+            <div class="readonly">
+                <div class="card-info">
+                    {% if object.card.wallet.type == 'apple_pay' %}
+                    <img
+                        src="{% static 'stripe_subscription/images/apple-pay.svg' %}"
+                        height="42px"
+                        style="margin: 15px 0"
+                        alt="{{ card.wallet.type }}">
+                    {% endif %}
+                    <img
+                        src="{% static 'stripe_subscription/images/cards/'|add:object.card.brand|add:'.png' %}"
+                        onerror="this.src = '{% static 'stripe_subscription/images/cards/credit_card.png' %}';"
+                        alt="{{ object.card.brand }}">
+                    <div class="details">
+                        <div class="brand">
+                            {{ object.card.brand|title }} expires {{ object.card.exp_month|stringformat:"02d" }} / {{ object.card.exp_year }}
+                        </div>
+                        <div class="last4">
+                            **** **** **** {{ object.card.last4 }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <label>3D secure supported</label>
+            <div class="readonly">
+                {% if object.card.three_d_secure_usage.supported %}
+                <img src="{% static 'admin/img/icon-yes.svg' %}" alt="True">
+                {% else %}
+                <img src="{% static 'admin/img/icon-no.svg' %}" alt="True">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% if object.billing_details.address.line1 %}
+    <div class="form-row">
+        <div>
+            <label>Billing Address</label>
+            <div class="readonly">
+                {% if object.billing_details.address %}
+                {% with object.billing_details.address as addr %}
+                {{ addr.line1 }}<br>
+                {% if addr.line2 %}{{ addr.line2 }}<br>{% endif %}
+                {{ addr.state }}, {{ addr.city }}, {{ addr.postal_code }}, {{ addr.country }}
+                {% endwith %}
+                {% else %}
+                -
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="form-row">
+        <div>
+            <label>Phone</label>
+            <div class="readonly">{{ object.billing_details.phone|default:'No phone number provided' }}</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div>
+            <label>Email</label>
+            <div class="readonly">{{ object.billing_details.email }}</div>
+        </div>
+    </div>
+    {% endif %}
+</fieldset>
