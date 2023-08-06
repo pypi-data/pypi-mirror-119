@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+pyaranet4.egg-info/PKG-INFO
+pyaranet4.egg-info/SOURCES.txt
+pyaranet4.egg-info/dependency_links.txt
+pyaranet4.egg-info/entry_points.txt
+pyaranet4.egg-info/top_level.txt
