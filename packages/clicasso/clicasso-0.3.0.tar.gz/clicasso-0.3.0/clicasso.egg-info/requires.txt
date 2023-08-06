@@ -1,0 +1,2 @@
+inflection<2,>=0.5.1
+pydantic<2,>=1.8.0
