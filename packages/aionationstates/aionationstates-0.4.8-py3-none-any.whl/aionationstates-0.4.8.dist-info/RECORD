@@ -1,0 +1,16 @@
+aionationstates/__init__.py,sha256=WLJt1ETEgESHsmDQEKCSd52MwgSiZJSmfSXZFO_Arjs,323
+aionationstates/happenings.py,sha256=AUth4jhNNtTHf1lqVBGAXMdy2lYhrY7vPJS3tbkASCk,32409
+aionationstates/nation_.py,sha256=WyjTAM2tYYUiFUFQ-TfeADY23D89z937rdcodjgfW9Y,33201
+aionationstates/ns_to_human.py,sha256=u7mIM0JF0ifSmrMl-SxVz0saZ4h3Z0MeMps8DmRKppI,64055
+aionationstates/ratelimit.py,sha256=BVNRR6IDq2A64EMhVmivInvjOkLvzXZrgDP_444Nh8Q,1609
+aionationstates/region_.py,sha256=bW1TFQqXc090YVJ5aStz5uxl7UalqLpDGNrDu038P_Q,19030
+aionationstates/session.py,sha256=JJn6s9937TFXJw2KC3iehK9ohj7eaS5rkykp7O93-jY,9139
+aionationstates/shared.py,sha256=1pd-l8-QLVeI_PeDmfuHspmi9rAt6Fl6DI0kCKw1rtA,13928
+aionationstates/utils.py,sha256=e1fKYM12VcghgZpS624dSTFwaofhOIjXAh_cYjvkbjM,6383
+aionationstates/wa_.py,sha256=4qba4iTEZfWs3A7E8xG6ePGyZaUvIZAQoIteTK44j6w,14206
+aionationstates/world_.py,sha256=YfnOwPdg3dxdCiOaJdeEwXSruCyV-19IOMEoOZwb_4A,15573
+aionationstates-0.4.8.dist-info/LICENSE,sha256=XUbe6iEM1FMC-qnNbfuG2-MqhPn_VO5xGHXizbCR72Y,35129
+aionationstates-0.4.8.dist-info/METADATA,sha256=WBFpZ-Nqi4_vJQEcYX-xXQllRmO9mEvehffpHbruAco,657
+aionationstates-0.4.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+aionationstates-0.4.8.dist-info/top_level.txt,sha256=yaZcqQbAu76gVJ0zGjw8oVs-rG4q1FeePkNiVHNwk8o,16
+aionationstates-0.4.8.dist-info/RECORD,,
