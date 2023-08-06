@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/bytefields/Bits.py
+src/bytefields/__init__.py
+src/bytefields.egg-info/PKG-INFO
+src/bytefields.egg-info/SOURCES.txt
+src/bytefields.egg-info/dependency_links.txt
+src/bytefields.egg-info/top_level.txt
