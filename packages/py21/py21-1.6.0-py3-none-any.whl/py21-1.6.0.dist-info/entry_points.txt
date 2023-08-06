@@ -1,0 +1,3 @@
+[console_scripts]
+blackjack = py21.cli:cli_main
+
