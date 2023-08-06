@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: utx
+Version: 0.0.3
+Summary: UTX will help you write application automated tests more easily!
+Home-page: UNKNOWN
+Author: lijiawei
+Author-email: 1456470136@qq.com
+License: Apache License
+Keywords: utx,airtest,pytest,ui,tools
+Platform: any
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console :: Curses
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tep (~=0.8.9)
+Requires-Dist: airtest (~=1.2.2)
+Requires-Dist: tenacity (~=8.0.1)
+Requires-Dist: allure-pytest (~=2.9.43)
+Requires-Dist: pocoui (~=1.0.83)
+Requires-Dist: tidevice (~=0.4.18)
+Requires-Dist: faker (~=4.18.0)
+Requires-Dist: jmespath (~=0.10.0)
+Requires-Dist: loguru (~=0.5.3)
+Requires-Dist: pytest-xdist (~=2.3.0)
+Requires-Dist: PyYAML (~=5.4.1)
+Requires-Dist: allure-python-commons (~=2.9.43)
+
+UTX will help you write application automated tests more easily!
+
