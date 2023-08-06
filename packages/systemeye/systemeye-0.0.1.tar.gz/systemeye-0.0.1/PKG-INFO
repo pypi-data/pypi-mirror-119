@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: systemeye
+Version: 0.0.1
+Summary: Some Tools for Data Curation, Analysis and System Identification
+Home-page: https://github.com/naraharisetti/
+Author: Pavan Kumar Naraharisetti
+Author-email: naraharisetti@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+Please see/click the Project links -> Homepage on the left for Instructions and Examples
+

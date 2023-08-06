@@ -1,0 +1,10 @@
+LICENSE.txt
+README.txt
+pyproject.toml
+setup.cfg
+src/systemeye/__init__.py
+src/systemeye/toolbox.py
+src/systemeye.egg-info/PKG-INFO
+src/systemeye.egg-info/SOURCES.txt
+src/systemeye.egg-info/dependency_links.txt
+src/systemeye.egg-info/top_level.txt
