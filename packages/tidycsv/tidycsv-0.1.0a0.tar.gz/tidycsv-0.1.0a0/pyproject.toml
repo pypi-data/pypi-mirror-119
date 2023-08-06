@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "tidycsv"
+version = "0.1.0a"
+description = "A minimalistic solution to messy CSV files."
+authors = ["Gustavo Magaña López <gmaganna.biomed@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.2.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pylint = "^2.8.2"
+black = "^21.5b0"
+ipython = "^7.23.1"
+pytest-randomly = "^3.7.0"
+pytest-cov = "^2.11.1"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
