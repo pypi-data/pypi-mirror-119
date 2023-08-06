@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: avaxtar
+Version: 0.0.3
+Summary: Identify if a Twitter account displays anti-vaccine sentiment.
+Home-page: UNKNOWN
+Author: Matheus Schmitz
+Author-email: mschmitz@usc.edu
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3

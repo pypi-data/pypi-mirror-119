@@ -1,0 +1,9 @@
+numpy
+pandas
+torch
+scikit-learn
+tweepy
+requests
+nltk
+tqdm
+gdown
