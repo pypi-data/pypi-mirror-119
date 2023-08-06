@@ -1,0 +1,4 @@
+umap-learn
+leidenalg
+scikit-learn
+matplotlib>=3.4.2
