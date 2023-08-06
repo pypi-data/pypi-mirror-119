@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: cog-reloader
+Version: 0.0.1
+Summary: A auto reloader cog for nextcord and discord.py
+Home-page: https://github.com/shahriyardx/cog-relaoder
+Author: Md Shahriyar Alam
+Author-email: mdshahriyaralam552@gmail.com
+License: MIT
+Description: # Cog reloader
+        Make reloading cogs easy while editing. Compitable with `nextcord` and `discord.py`
+        
+        # Warning
+        - Don't load this while bot is in production, Load only in development environment.
+        - This will not reload files that are not cog.
+        
+        # Installation
+        `pip install cog-reloader`
+        
+        # Usage
+        
+        ```python
+        from discord.ext import commands
+        
+        bot = commands.Bot(command_prefix='/')
+        
+        @bot.event
+        async def on_ready():
+            print(f'We have logged in as {bot.user}')
+        
+        bot.load_extension('cog_reloader') # make sure its an `_` not `-`
+        
+        TOKEN = 'TOKEN_HERE'
+        bot.run(TOKEN)
+        ```
+        
+        [Join Discord](https://discord.gg/7SaE8v2) For any kind of help
+Keywords: discord discord.py nextcord.py nextcord
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
