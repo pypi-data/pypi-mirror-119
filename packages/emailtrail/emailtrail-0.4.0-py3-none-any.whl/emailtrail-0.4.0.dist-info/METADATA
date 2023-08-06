@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: emailtrail
+Version: 0.4.0
+Summary: Analyse hops taken by an Email to reach you. Get structured information about each hop - Hostnames, Protocol used, Timestamp, and Delay
+License: MIT
+Author: Akshay Kumar
+Author-email: akshay.kmr4321@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: dateparser (>=1.0.0,<2.0.0)
+Requires-Dist: pytz (>=2021.1,<2022.0)
