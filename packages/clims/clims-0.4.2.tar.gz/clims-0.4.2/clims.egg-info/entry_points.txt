@@ -1,0 +1,15 @@
+[console_scripts]
+clims-aimsplot = clims.cli.aimsplot:aimsplot
+clims-configure = clims.cli.configure:clims_configure
+clims-frac2real = clims.cli.convert_coordinates:frac2real
+clims-phonopy-initialize = clims.cli.phonons:clims_initialize_phonopy
+clims-phonopy-postprocess = clims.cli.phonons:clims_post_process_phonopy
+clims-prepare-run = clims.cli.prepare_run:prepare_run
+clims-real2frac = clims.cli.convert_coordinates:real2frac
+clims-reinitialize-geometry = clims.cli.reinitialize_geometry:reinitialize_geometry
+clims-supercell = clims.cli.supercell:supercell
+clims-testsuite = clims.cli.testsuite:testsuite
+clims-unit-cell-info = clims.cli.unit_cell_info:unit_cell_info
+clims-wigner-seitz-cluster = clims.cli.wigner_seitz_cluster:construct
+clims-xyplot = clims.cli.xyplot:xyplot
+
