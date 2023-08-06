@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema targetNamespace="https://bids.neuroimaging.io/meta/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bids-meta="https://bids.neuroimaging.io/meta/1.0">
+    <xsd:element name="meta" type="bids-meta:Meta"></xsd:element>
+
+    <xsd:complexType name="RegexMatcher">
+    	<xsd:complexContent>
+    		<xsd:extension base="bids-meta:Meta">
+    			<xsd:attribute name="pattern" type="xsd:string"
+    				use="required">
+    			</xsd:attribute>
+
+    		</xsd:extension>
+    	</xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Meta"></xsd:complexType>
+</xsd:schema>
