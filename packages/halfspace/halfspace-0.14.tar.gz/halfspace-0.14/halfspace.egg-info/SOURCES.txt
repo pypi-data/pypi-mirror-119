@@ -1,0 +1,12 @@
+README.md
+setup.py
+halfspace/__init__.py
+halfspace/figure.py
+halfspace/theme.py
+halfspace.egg-info/PKG-INFO
+halfspace.egg-info/SOURCES.txt
+halfspace.egg-info/dependency_links.txt
+halfspace.egg-info/requires.txt
+halfspace.egg-info/top_level.txt
+images/dark.png
+images/light.png
