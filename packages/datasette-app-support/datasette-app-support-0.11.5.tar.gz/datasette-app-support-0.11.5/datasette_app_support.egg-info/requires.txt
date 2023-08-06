@@ -1,0 +1,9 @@
+datasette>=0.59a2
+sqlite-utils
+packaging
+
+[test]
+pytest
+pytest-asyncio
+black
+pytest-httpx
