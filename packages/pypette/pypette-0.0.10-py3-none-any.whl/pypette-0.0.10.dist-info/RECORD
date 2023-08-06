@@ -1,0 +1,9 @@
+pypette/__init__.py,sha256=GsfxJvQsC9v0AaTwZmZLmDtH8gcdOt9l9LTSXmoj8gs,362
+pypette/__version__.py,sha256=Sa_tb4err4cx2_J9pJvvVk77IvxXlMRCTjD1IywuLRU,540
+pypette/jobs.py,sha256=m6OU0Qy6PZoqYMGpwBdRM03UgVyNueIrJHIDZBakVnM,2793
+pypette/pipes.py,sha256=Hdo5e4wfbE0wBXvYV9vgolhdN_A_Mfcg_p8AIlJI8CY,9882
+pypette/threadwrapper.py,sha256=4XnmXLZUXnGVxTwnyKYFYqf8kqaE-hVbMUQ-J16aNa8,2240
+pypette-0.0.10.dist-info/LICENSE,sha256=WD6IfxDV95E7hZuYUAN5JtEoMJJtJVVKVuIbW3FQZRA,1073
+pypette-0.0.10.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+pypette-0.0.10.dist-info/METADATA,sha256=Qvnpg4Wb8JX6XGn0pnK2ewIiPkKiui-P03Sp3qzWtVc,751
+pypette-0.0.10.dist-info/RECORD,,
