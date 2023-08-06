@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+base_folder_atstaeff.egg-info/PKG-INFO
+base_folder_atstaeff.egg-info/SOURCES.txt
+base_folder_atstaeff.egg-info/dependency_links.txt
+base_folder_atstaeff.egg-info/top_level.txt
+libname/__init__.py
+libname/hello.py
