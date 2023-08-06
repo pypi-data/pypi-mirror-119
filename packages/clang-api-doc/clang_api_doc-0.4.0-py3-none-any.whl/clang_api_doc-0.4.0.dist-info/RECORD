@@ -1,0 +1,8 @@
+clang_api_doc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clang_api_doc/clang_api_doc.py,sha256=76OfxvmNfqksg_-fPpmBurxeO16um_AEYWP5Yr58AQg,6936
+clang_api_doc/cli.py,sha256=Flpl8bgR-EPyoJ9oRrSVqgbjKxdDeKB7wmRl71jT4kg,3302
+clang_api_doc-0.4.0.dist-info/entry_points.txt,sha256=MaqBZ0XkcpvvA8uhE80cF5AZJ8pAjt1S13Bc5SsgLoU,56
+clang_api_doc-0.4.0.dist-info/LICENSE,sha256=5vOwzj-z5Inrv7NzIAP17QbTE00jl1aYVjVoW7HQHU0,1071
+clang_api_doc-0.4.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+clang_api_doc-0.4.0.dist-info/METADATA,sha256=E7WIti0AyhXvzsnTmraSiNMLP_m0uUxFbOcLBsyStLQ,3105
+clang_api_doc-0.4.0.dist-info/RECORD,,
