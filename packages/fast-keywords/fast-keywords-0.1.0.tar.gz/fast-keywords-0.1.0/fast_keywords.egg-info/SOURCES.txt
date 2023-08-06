@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+fast_keywords.egg-info/PKG-INFO
+fast_keywords.egg-info/SOURCES.txt
+fast_keywords.egg-info/dependency_links.txt
+fast_keywords.egg-info/requires.txt
+fast_keywords.egg-info/top_level.txt
+res/keywords.txt
+res/tweets.csv
