@@ -1,0 +1,10 @@
+resiliparse/__init__.py,sha256=tcgP7XSmGulsSZsXOjU4xV_EmkAWjFkLbt7KHwWwj9M,593
+resiliparse/parse/__init__.py,sha256=LI8IoSTYXe2g2CGdD99vPZVkxzxnPF97zwly2QfBIos,798
+resiliparse/parse/cli.py,sha256=WNWc9wUsMHVGLG9G-u8Me2Vj6S8NPOd8m-_bTsAAXLc,5641
+resiliparse/parse/encoding.cp39-win_amd64.pyd,sha256=4TXx0gdObMOQuEq15J4gcq9Ua5a0psdNZ5bWfuA9b-0,104960
+resiliparse/parse/html.cp39-win_amd64.pyd,sha256=UhBfm9Zd7ZEBswGHbukav2dZ9163b7Kooe76E8N1Gyk,265216
+resiliparse/parse/http.cp39-win_amd64.pyd,sha256=NYy6Vkd692aGQwvl0WSAgeD1L8qsbZhk5BMiC5VgUEc,53760
+Resiliparse-0.4.2.dist-info/METADATA,sha256=uCfBrZO4yaN03sazzf7PA7UbeUmFieV47slQ8WycB0c,1904
+Resiliparse-0.4.2.dist-info/WHEEL,sha256=jr7ubY0Lkz_yXH9FfFe9PTtLhGOsf62dZkNvTYrJINE,100
+Resiliparse-0.4.2.dist-info/top_level.txt,sha256=iwOzBXN0My7I-RCfTJKD4IrJage9Z8lzzfMsOUJ62HU,12
+Resiliparse-0.4.2.dist-info/RECORD,,
