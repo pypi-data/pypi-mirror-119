@@ -1,0 +1,3 @@
+["BandPass", ["None", "delta", "theta", "alpha", "beta", "5-45 Hz", "3-30 Hz", "4-40 Hz", "2-45 Hz", "1-50 Hz", "7-13 Hz", "15-50 Hz", "1-100 Hz", "5-50 Hz"], "None"]
+["Notch", ["None", "50 Hz", "60 Hz"], "None"]
+["Mode", ["Fourier", "Welch"], "Fourier"]
