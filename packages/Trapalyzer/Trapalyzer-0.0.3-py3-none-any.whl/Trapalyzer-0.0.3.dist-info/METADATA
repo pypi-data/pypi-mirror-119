@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: Trapalyzer
+Version: 0.0.3
+Summary: Automatic feature detection and quantification for in-vitro NETosis experiments plugin for PartSeg
+Home-page: https://github.com/Czaki/Neutrofile_analysis
+Author: Grzegorz Bokota, Michał Ciach
+Author-email: g.bokota@uw.edu.pl, m_ciach@student.uw.edu.pl
+License: MIT
+Platform: UNKNOWN
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7
+Requires-Dist: PartSeg
+Requires-Dist: SimpleITK
+Requires-Dist: napari
+Requires-Dist: numpy
+
+UNKNOWN
+
