@@ -1,0 +1,6 @@
+requests
+pandas
+sqlalchemy
+pydantic
+aiohttp
+pydantic
