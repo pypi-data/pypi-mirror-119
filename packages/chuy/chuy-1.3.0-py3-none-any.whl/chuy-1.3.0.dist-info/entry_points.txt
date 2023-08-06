@@ -1,0 +1,3 @@
+[console_scripts]
+chuy=chuy:main
+
