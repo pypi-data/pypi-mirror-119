@@ -1,0 +1,12 @@
+README.md
+setup.py
+mailreceiver_webthing/__init__.py
+mailreceiver_webthing/app.py
+mailreceiver_webthing/mail_receiver_webthing.py
+mailreceiver_webthing/mailserver.py
+mailreceiver_webthing.egg-info/PKG-INFO
+mailreceiver_webthing.egg-info/SOURCES.txt
+mailreceiver_webthing.egg-info/dependency_links.txt
+mailreceiver_webthing.egg-info/entry_points.txt
+mailreceiver_webthing.egg-info/requires.txt
+mailreceiver_webthing.egg-info/top_level.txt
