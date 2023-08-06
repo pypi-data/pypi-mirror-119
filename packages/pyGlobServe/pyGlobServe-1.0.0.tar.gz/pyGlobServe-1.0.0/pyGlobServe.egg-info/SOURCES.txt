@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+pyGlobServe/__init__.py
+pyGlobServe.egg-info/PKG-INFO
+pyGlobServe.egg-info/SOURCES.txt
+pyGlobServe.egg-info/dependency_links.txt
+pyGlobServe.egg-info/requires.txt
+pyGlobServe.egg-info/top_level.txt
