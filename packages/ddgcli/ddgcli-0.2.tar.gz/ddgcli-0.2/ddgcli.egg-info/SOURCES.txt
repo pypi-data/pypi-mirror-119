@@ -1,0 +1,9 @@
+setup.py
+ddgcli/__init__.py
+ddgcli/main.py
+ddgcli.egg-info/PKG-INFO
+ddgcli.egg-info/SOURCES.txt
+ddgcli.egg-info/dependency_links.txt
+ddgcli.egg-info/entry_points.txt
+ddgcli.egg-info/requires.txt
+ddgcli.egg-info/top_level.txt
