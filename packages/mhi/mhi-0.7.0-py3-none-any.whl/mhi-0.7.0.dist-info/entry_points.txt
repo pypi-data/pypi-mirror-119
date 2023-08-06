@@ -1,0 +1,4 @@
+[console_scripts]
+mhi = mhi:main
+mhiWrap = mhi:cmd_main
+
