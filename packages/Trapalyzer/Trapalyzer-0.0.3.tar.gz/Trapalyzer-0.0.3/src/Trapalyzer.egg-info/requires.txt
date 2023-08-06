@@ -1,0 +1,4 @@
+PartSeg
+SimpleITK
+napari
+numpy

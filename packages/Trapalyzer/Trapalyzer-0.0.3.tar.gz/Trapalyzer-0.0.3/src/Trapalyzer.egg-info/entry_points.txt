@@ -1,0 +1,6 @@
+[napari.plugin]
+neuthrophil helpers = Trapalyzer
+
+[partseg.plugins]
+.neuthrophil_analysis = Trapalyzer
+
