@@ -1,0 +1,16 @@
+matplotlib>=2.0
+numpy
+pyqtgraph>=0.10.0
+scipy
+
+[docs]
+sphinx<2
+
+[tests]
+av
+coveralls
+neo>=0.10.0
+spikeinterface>=0.90.1
+pandas
+pytest
+pytest-cov
