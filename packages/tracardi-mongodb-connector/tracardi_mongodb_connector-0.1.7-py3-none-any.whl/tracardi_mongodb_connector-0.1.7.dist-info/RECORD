@@ -1,0 +1,12 @@
+tracardi_mongodb_connector/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tracardi_mongodb_connector/plugin.py,sha256=RiGiWIy2AIMjTg_4iuv-4tUjN8FW9MHQxAuZjJ76EEw,2146
+tracardi_mongodb_connector/model/client.py,sha256=JUTd5NNqduXK7nV9B7h79SzlovPTD5VIdsBlC8WDoHI,528
+tracardi_mongodb_connector/model/configuration.py,sha256=TZcEY7p4McTWUi2oSeo3GrakFHW_zPVcXCWaWbwA69o,340
+tracardi_mongodb_connector/model/__pycache__/client.cpython-38.pyc,sha256=H1waia9AEO9GK0FNGAgrxwV_PqJiO59gC5gMBmToVKQ,1074
+tracardi_mongodb_connector/model/__pycache__/configuration.cpython-38.pyc,sha256=OtN9URFeseeipnuoW2Z2CPCMYOlM7F_FU-OHSQwW_Os,971
+tracardi_mongodb_connector/test/manual/plugin.py,sha256=uvJ3Oe_2LdwZIw9sqhONfuF-BSlTLTihGMScjXwXUBo,391
+tracardi_mongodb_connector-0.1.7.dist-info/LICENSE.md,sha256=l3ZUNaXLxnJvPaG7GYQk8VW6uUE0meUyDOrd7QXXu28,1072
+tracardi_mongodb_connector-0.1.7.dist-info/METADATA,sha256=8wsWrK0LYiPYMY0bXgl1FlHHCeqNWClatPuHxexkDYo,674
+tracardi_mongodb_connector-0.1.7.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+tracardi_mongodb_connector-0.1.7.dist-info/top_level.txt,sha256=0On03tZDKA6g1waftWvtQ3MdYLr80UrgGKkmUuqxwE8,27
+tracardi_mongodb_connector-0.1.7.dist-info/RECORD,,
