@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+control/Hareware_1.pyd
+control/__init__.py
+control/gpio.pyd
+control/machine_learning.pyd
+control/shijue.pyd
+control/shijue1.pyd
+control/yuyin.pyd
+control_scnu.egg-info/PKG-INFO
+control_scnu.egg-info/SOURCES.txt
+control_scnu.egg-info/dependency_links.txt
+control_scnu.egg-info/requires.txt
+control_scnu.egg-info/top_level.txt
