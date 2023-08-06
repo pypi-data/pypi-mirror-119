@@ -1,0 +1,7 @@
+README.rst
+setup.py
+lzw_package.egg-info/PKG-INFO
+lzw_package.egg-info/SOURCES.txt
+lzw_package.egg-info/dependency_links.txt
+lzw_package.egg-info/test_case_execute.py
+lzw_package.egg-info/top_level.txt
