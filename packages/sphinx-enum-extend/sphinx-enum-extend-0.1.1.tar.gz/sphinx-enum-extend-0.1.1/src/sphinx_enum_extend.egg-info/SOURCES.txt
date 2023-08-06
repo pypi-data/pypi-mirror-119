@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/sphinx_enum_extend/__init__.py
+src/sphinx_enum_extend/sphinx_enum_extend.py
+src/sphinx_enum_extend.egg-info/PKG-INFO
+src/sphinx_enum_extend.egg-info/SOURCES.txt
+src/sphinx_enum_extend.egg-info/dependency_links.txt
+src/sphinx_enum_extend.egg-info/requires.txt
+src/sphinx_enum_extend.egg-info/top_level.txt
