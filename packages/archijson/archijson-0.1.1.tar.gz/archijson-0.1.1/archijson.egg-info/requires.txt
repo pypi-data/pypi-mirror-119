@@ -1,0 +1,4 @@
+schema
+python-socketio
+requests
+websocket-client
