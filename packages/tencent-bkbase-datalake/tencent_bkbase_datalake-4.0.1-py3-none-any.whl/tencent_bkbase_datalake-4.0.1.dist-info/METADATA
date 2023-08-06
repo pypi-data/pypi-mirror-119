@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: tencent-bkbase-datalake
+Version: 4.0.1
+Summary: python sdk for datalake
+Home-page: UNKNOWN
+Author: blueking
+Author-email: blueking@tencent.com
+License: MIT
+Keywords: bkbase,datalake,iceberg
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.5
+License-File: LICENSE
+Requires-Dist: JPype1 (>=1.0.2)
+
+sdk used to read/write data from/to datalake
+
