@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: aur_info
+Version: 0.2.1
+Summary: Retrieve package info from Arch User Repository (AUR).
+Home-page: https://www.techtum.dev
+Author: siphr
+Author-email: pypi@techtum.dev
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/siphr/aur-info
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+AUR-INFO
+--------
+Helper program to show package info for a package from Arch User Repository.
+
+Usage
+-----
+After downloading:
+
+```chmod +x aur_info.py```
+
+.., and then ...
+
+ ```aur_info.py -p <package_name>```
+
+ Notes
+------
+ Do ensure that the package_name is correct. To find packages use another tool call aur-search.
+
+
