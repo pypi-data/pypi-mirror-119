@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: urltool
+Version: 1.1.0a0
+Summary: A simple url shortener that made with python.
+Home-page: https://dev.kimseeun.site
+Author: Seeun Kim
+Author-email: seeun0917@naver.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3
+
+UNKNOWN
+
