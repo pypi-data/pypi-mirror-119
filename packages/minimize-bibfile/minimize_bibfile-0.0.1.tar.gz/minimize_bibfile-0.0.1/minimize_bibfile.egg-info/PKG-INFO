@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: minimize-bibfile
+Version: 0.0.1
+Summary: Python package to identify and remove duplicated or near-duplicated bib entries.
+Home-page: https://github.com/LucaCappelletti94/minimize_bibfile
+Author: Luca Cappelletti
+Author-email: cappelletti.luca94@gmail.com
+License: MIT
+Description: Minimize Bib file
+        =====================================
+        |pip| |downloads|
+        
+        Python package to identify and remove duplicated or near-duplicated bib entries.
+        
+        How do I install this package?
+        ----------------------------------------------
+        As usual, just download it using pip:
+        
+        .. code:: shell
+        
+            pip install minimize_bibfile
+        
+        
+        Usage example
+        ----------------------------------------------
+        To check if a bib file can be further minimized, just run:
+        
+        .. code:: python
+        
+            from minimize_bibfile import general_bib_check
+        
+            general_bib_check("path/to/my/bibfile.bib")
+        
+        This will help you find the duplicated entries hiding in your bibliographies.
+        
+        
+        .. |pip| image:: https://badge.fury.io/py/minimize-bibfile.svg
+            :target: https://badge.fury.io/py/minimize-bibfile
+            :alt: Pypi project
+        
+        .. |downloads| image:: https://pepy.tech/badge/minimize-bibfile
+            :target: https://pepy.tech/badge/minimize-bibfile
+            :alt: Pypi total project downloads 
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3

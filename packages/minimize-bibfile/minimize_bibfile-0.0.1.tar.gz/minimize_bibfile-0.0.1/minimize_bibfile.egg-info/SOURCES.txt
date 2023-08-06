@@ -1,0 +1,10 @@
+README.rst
+setup.py
+minimize_bibfile/__init__.py
+minimize_bibfile/__version__.py
+minimize_bibfile/checkers.py
+minimize_bibfile.egg-info/PKG-INFO
+minimize_bibfile.egg-info/SOURCES.txt
+minimize_bibfile.egg-info/dependency_links.txt
+minimize_bibfile.egg-info/requires.txt
+minimize_bibfile.egg-info/top_level.txt
