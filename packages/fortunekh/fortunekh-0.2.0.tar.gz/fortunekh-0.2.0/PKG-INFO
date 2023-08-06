@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: fortunekh
+Version: 0.2.0
+Summary: Fortunekh
+Author: Khalid CK
+Author-email: fr.ckhalid@gmail.com
+Requires-Python: >=3.8.1,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: toolz (>=0.11.1,<0.12.0)
+Project-URL: Documentation, https://fortunekh.readthedocs.io
+Description-Content-Type: text/markdown
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/KhalidCK/fortunekh)
+
+# README
+
+<!-- see readme-md-generator https://github.com/kefranabg/readme-md-generator -->
+
