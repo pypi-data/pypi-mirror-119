@@ -1,0 +1,4 @@
+[console_scripts]
+Aptester = Aptester.core:main
+aptester = Aptester.core:main
+
