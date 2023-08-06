@@ -1,0 +1,5 @@
+opencv-python>=4.2.0.32
+numpy>=1.18.4
+pdf2image==1.13.1
+pytesseract
+scikit-fuzzy
