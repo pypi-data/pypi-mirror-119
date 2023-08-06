@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/parse_xspec/__init__.py
+src/parse_xspec/models.py
+src/parse_xspec.egg-info/PKG-INFO
+src/parse_xspec.egg-info/SOURCES.txt
+src/parse_xspec.egg-info/dependency_links.txt
+src/parse_xspec.egg-info/top_level.txt
