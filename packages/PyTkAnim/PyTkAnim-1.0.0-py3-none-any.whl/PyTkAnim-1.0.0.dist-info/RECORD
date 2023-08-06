@@ -1,0 +1,13 @@
+pytkanim/__init__.py,sha256=So7iUaY5BU3pzw43RjC2gyZRe61zCpYCst6nBY7MyC8,3007
+pytkanim/normalAnims/NormalAnimX.py,sha256=67G6St76QnlNaAy37O2YAFOd4r-kHU2q0DpOcZyQul8,1845
+pytkanim/normalAnims/NormalAnimY.py,sha256=I2YXCxrbnVw_bhALR71JI_6qoxSqHQr6ctncjCbchEY,1898
+pytkanim/normalAnims/__init__.py,sha256=vFfVcTb0K-38FFamOevplEwQJPPlwfhb7n6gTXfl6GY,134
+pytkanim/slowAnims/SlowAnimX.py,sha256=e3AupiZ2h5w0uc4zNLEmvzvEThzwnmuXfEOJKPd6MQg,1809
+pytkanim/slowAnims/SlowAnimY.py,sha256=_8nnCDLZCaSVaq7UlrX9CA6JOuaXiryO6RaBvoXvztM,1782
+pytkanim/slowAnims/__init__.py,sha256=0g1fxETccMK6YZ4kDI9JZ1o_fwQ0ArHxR7JOeg0x2rU,120
+PyTkAnim-1.0.0.dist-info/LICENSE.txt,sha256=YNERa7SOoaDZdzKIqIC0o-6RY0wkwze0l2caHBitgGU,1157
+PyTkAnim-1.0.0.dist-info/METADATA,sha256=DWlzl402dyUtgv8XwXqBWT1plS6YqaOeevhfoAysmnY,3306
+PyTkAnim-1.0.0.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+PyTkAnim-1.0.0.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+PyTkAnim-1.0.0.dist-info/top_level.txt,sha256=xjfFNkiQoT5XObQbZVvd-Lbkw6kDCwODibYBdnmbAUY,49
+PyTkAnim-1.0.0.dist-info/RECORD,,
