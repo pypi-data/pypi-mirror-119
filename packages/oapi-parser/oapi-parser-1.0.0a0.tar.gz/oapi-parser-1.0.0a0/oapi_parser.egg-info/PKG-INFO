@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: oapi-parser
+Version: 1.0.0a0
+Summary: A simple Open API parser
+Home-page: UNKNOWN
+Author: Srikanth_Srigakolapu
+Author-email: srikanth.srigakolapu@gmail.com
+License: UNKNOWN
+Description: The OAPI_Parser is a simple and lightweight library to process your open api documents. Currently supporting both Json and Xml formats.
+Platform: UNKNOWN
+Requires-Python: >3.6
