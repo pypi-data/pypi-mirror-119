@@ -1,0 +1,12 @@
+dpmmlearn/__init__.py,sha256=gPtReKFiLVa9c5408cJnA8TgTo7s7Q4f92i1QSp5rsM,78
+dpmmlearn/__version__.py,sha256=xzks-N7RQ1RnQNkyLhmORJpXcdvXxz6OrNUpq6umEH0,24
+dpmmlearn/density.py,sha256=8TTadT60IEyUXZptehJuP5IerGqZ8KXIsO3vJvLtSBc,1141
+dpmmlearn/dpmm.py,sha256=M7QDj_oKcAw8oGw9zjcUNuM9mT3NmeumGhfW29BM3sk,11086
+dpmmlearn/probability.py,sha256=ijZFEbYnMw3fj5WQxzYASwI8Aajo9q_tDlAmbDocuHU,30179
+dpmmlearn/utils.py,sha256=PxcEkRMKtNdgH23C1pXPEJmEOFOvCPSEzUNzUivVPgg,2769
+dpmmlearn-0.0.1b1.dist-info/LICENSE,sha256=bjn2Qhk_ClmLW-UEXJlnteD8QogG-JNrVVVe0hdp38s,1061
+dpmmlearn-0.0.1b1.dist-info/LICENSE-3RD-PARTY,sha256=80ixqquubwB9mJuiAzPVMnRAHP3mfk902yyLi_QoUiw,1463
+dpmmlearn-0.0.1b1.dist-info/METADATA,sha256=bzISiRsrpxTmKirG9WqkVdN8ljjlfDZE-PDLcCh52CM,1607
+dpmmlearn-0.0.1b1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+dpmmlearn-0.0.1b1.dist-info/top_level.txt,sha256=nc4BI1H5cyXYyC_saHHbWQ1YnTxMi-Cua7GxLvf9aoM,10
+dpmmlearn-0.0.1b1.dist-info/RECORD,,
