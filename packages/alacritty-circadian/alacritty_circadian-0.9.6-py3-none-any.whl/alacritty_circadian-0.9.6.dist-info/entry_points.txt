@@ -1,0 +1,3 @@
+[console_scripts]
+alacritty-circadian = alacritty_circadian.alacritty_circadian:main
+
