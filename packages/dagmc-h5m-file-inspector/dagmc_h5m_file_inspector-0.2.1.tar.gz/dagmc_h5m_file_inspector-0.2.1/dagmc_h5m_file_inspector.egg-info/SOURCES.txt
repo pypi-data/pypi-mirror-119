@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+dagmc_h5m_file_inspector/__init__.py
+dagmc_h5m_file_inspector/core.py
+dagmc_h5m_file_inspector.egg-info/PKG-INFO
+dagmc_h5m_file_inspector.egg-info/SOURCES.txt
+dagmc_h5m_file_inspector.egg-info/dependency_links.txt
+dagmc_h5m_file_inspector.egg-info/top_level.txt
