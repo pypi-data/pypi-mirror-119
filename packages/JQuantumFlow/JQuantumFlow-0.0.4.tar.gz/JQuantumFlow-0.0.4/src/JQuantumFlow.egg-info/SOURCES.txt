@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/JQuantumFlow.egg-info/PKG-INFO
+src/JQuantumFlow.egg-info/SOURCES.txt
+src/JQuantumFlow.egg-info/dependency_links.txt
+src/JQuantumFlow.egg-info/top_level.txt
