@@ -1,0 +1,12 @@
+ni_python_styleguide/__init__.py,sha256=425E2wS0OEUiVKIU1GTOiMlCo9ed4f9f5fhHd0YNh84,74
+ni_python_styleguide/__main__.py,sha256=Vf0RpeDvzn7WJ_9THI9qwXfpQu0OEalp43ZEf-f8oXo,164
+ni_python_styleguide/_acknowledge_existing_errors/__init__.py,sha256=i7w_nqY3PNHK-uel82xK2wkzXO0g8aqLE1Zz3PcOx_0,3913
+ni_python_styleguide/_acknowledge_existing_errors/_lint_errors_parser.py,sha256=BpFuMbGvhpQzhrU4rNRLj1Xm7iZTuDNh0_4cD70KvJQ,2373
+ni_python_styleguide/_cli.py,sha256=qgtH0LnM4q26mSE58uX0G3GMf5fPIeO4m4d3fEKoGdU,5726
+ni_python_styleguide/config.ini,sha256=SxNXxhPBjN-2OAhQYxK0C2QA20u8VZ8dbig87wB8YbE,2592
+ni_python_styleguide/config.toml,sha256=2s4UM6AIDYxqFbaMsbqCtIzlgqFCC38z3x0waZw5e8g,279
+ni_python_styleguide-0.1.6.dist-info/entry_points.txt,sha256=3YAF7083bWKWrU7vXj0EbalZSUoy7QLvAQHMk3Mruvg,71
+ni_python_styleguide-0.1.6.dist-info/LICENSE,sha256=eoDQbpFCxhWGNw3598hEteUdI9FCAWoMVxhDVH_vMcs,1089
+ni_python_styleguide-0.1.6.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+ni_python_styleguide-0.1.6.dist-info/METADATA,sha256=nq0lG0duCV2wUHJ34BIysweqtgLOnpOD_SiXZ1PYZw8,3068
+ni_python_styleguide-0.1.6.dist-info/RECORD,,
