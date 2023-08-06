@@ -1,0 +1,3 @@
+[climetlab.sources]
+eumetsat-datastore = climetlab_eumetsat.eumetsat:EumetsatRetriever
+

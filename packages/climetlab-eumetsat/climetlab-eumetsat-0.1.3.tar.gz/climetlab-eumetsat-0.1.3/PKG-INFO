@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: climetlab-eumetsat
+Version: 0.1.3
+Summary: A dataset plugin for climetlab for the dataset eumetsat/mydataset.
+Home-page: https://github.com/ecmwf-lab/climetlab-eumetsat
+Author: Florian Pinault
+Author-email: florian.pinault@ecmwf.int
+License: Apache License Version 2.0
+Description: ## eumetsat
+        
+        A dataset plugin for climetlab for the dataset eumetsat/mydataset.
+        
+        
+        Features
+        --------
+        
+        In this README is a description of how to get the eumetsat.
+        
+        ## Datasets description
+        
+        There are two datasets: 
+        
+        ### 1 : `mydataset`
+        
+        
+        ### 2
+        TODO
+        
+        
+        ## Using climetlab to access the data (supports grib, netcdf and zarr)
+        
+        See the demo notebooks here (https://github.com/ecmwf-lab/climetlab-eumetsat/notebooks
+        
+        https://github.com/ecmwf-lab/climetlab-eumetsat/notebooks/demo_mydataset.ipynb
+        [nbviewer] (https://nbviewer.jupyter.org/github/climetlab_eumetsat/blob/main/notebooks/demo_mydataset.ipynb) 
+        [colab] (https://colab.research.google.com/github/climetlab_eumetsat/blob/main/notebooks/demo_mydataset.ipynb) 
+        
+        The climetlab python package allows easy access to the data with a few lines of code such as:
+        ```
+        
+        !pip install climetlab climetlab-eumetsat
+        import climetlab as cml
+        ds = cml.load_dataset(""eumetsat-mydataset", date='20201231',)
+        ds.to_xarray()
+        ```
+        
+Keywords: meteorology
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

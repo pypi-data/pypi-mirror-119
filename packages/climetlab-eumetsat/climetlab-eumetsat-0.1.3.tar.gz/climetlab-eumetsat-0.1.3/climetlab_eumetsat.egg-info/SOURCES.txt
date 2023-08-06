@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+climetlab_eumetsat/__init__.py
+climetlab_eumetsat/eumetsat.py
+climetlab_eumetsat.egg-info/PKG-INFO
+climetlab_eumetsat.egg-info/SOURCES.txt
+climetlab_eumetsat.egg-info/dependency_links.txt
+climetlab_eumetsat.egg-info/entry_points.txt
+climetlab_eumetsat.egg-info/requires.txt
+climetlab_eumetsat.egg-info/top_level.txt
+climetlab_eumetsat.egg-info/zip-safe
