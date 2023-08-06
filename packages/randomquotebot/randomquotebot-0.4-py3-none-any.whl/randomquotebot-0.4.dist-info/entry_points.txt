@@ -1,0 +1,3 @@
+[console_scripts]
+coloredquote = quotebot.command_line:coloredquote
+

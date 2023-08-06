@@ -1,0 +1,10 @@
+quotebot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+quotebot/command_line.py,sha256=42Zr2o7cWRc6fKQhXUiITqch5VQYkDdDlHdKodqmQZY,382
+quotebot/jamesbrown.py,sha256=VFZHuI0GsRmRbXmcjKaMzwXMvjUbpb-2vd3mcDXDPek,191
+quotebot/quotes.csv,sha256=o-2bcdM0benxOyf4ydk3lZ41gAwzNRXOLoXS_XlPrEc,165571
+quotebot/randomquotes.py,sha256=ulkuLNKgIYpmerZC-wHX7d2vxocZG0NGiGnWzvPGzzE,292
+randomquotebot-0.4.dist-info/METADATA,sha256=ARr6gKWRIsrAeygVbFB1l-hTfCJZ41_0kpVy-P0gojo,157
+randomquotebot-0.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+randomquotebot-0.4.dist-info/entry_points.txt,sha256=KJeYedKASO93oSKxwRPF8OE6KeMsINqOzHn5HYACrWQ,69
+randomquotebot-0.4.dist-info/top_level.txt,sha256=CwlQCKdsNRTUPMwk2NiUMEwdxzqa0OnGVCEF15s-n0A,9
+randomquotebot-0.4.dist-info/RECORD,,
