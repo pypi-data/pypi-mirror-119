@@ -1,0 +1,1 @@
+Berikut ini data file yang digunakan manrisk dan departemen kepatuhan untuk memonitoring transaksi mencurigakan (APU-PPT)
