@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: ccxt_1_56_19
+Version: 1.56.19
+Summary: A copy of project https://pypi.org/project/ccxt/1.56.19/
+Home-page: https://github.com/ccxt/ccxt
+Author: Antas
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+A copy of project https://pypi.org/project/ccxt/1.56.19/
+

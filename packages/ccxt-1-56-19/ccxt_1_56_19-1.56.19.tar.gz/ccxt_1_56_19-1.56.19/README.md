@@ -1,0 +1,1 @@
+A copy of project https://pypi.org/project/ccxt/1.56.19/
