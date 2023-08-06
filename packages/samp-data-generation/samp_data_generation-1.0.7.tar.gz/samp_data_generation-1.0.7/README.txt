@@ -1,0 +1,1 @@
+This python library handles synthetic data generation for the Omdena-SAMP project. It contains functions that perform data augmentation and generation for  object detection and PID symbol classification tasks using image annotations in various formats.
