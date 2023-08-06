@@ -1,0 +1,13 @@
+fortes_webservice_wrapper/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fortes_webservice_wrapper/_version.py,sha256=CTzn7bxHKMEacng1aPhIO1LjhxpVRSNW8ai7tshtDRU,18688
+fortes_webservice_wrapper/constants.py,sha256=sJjomf9iIJ3ABAY63EgzxpNCIHgFXTQDfTe2FS8IPjY,71
+fortes_webservice_wrapper/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fortes_webservice_wrapper/models/base.py,sha256=oQohZ0QNdrhdxi1nJni6Vm3cqbJd36Ezh6VsJP2G034,2353
+fortes_webservice_wrapper/wrapper/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fortes_webservice_wrapper/wrapper/fortes_ws.py,sha256=b7CQG2SSdeM-ldOdPZmDITQ7fic0dqmcLvb9-my8UIs,1095
+fortes_webservice_wrapper/wrapper/soap.py,sha256=TkGJMD9cnhm3WWHHaVLwHTplnYwzY3mJqrc-0bB7OCc,291
+fortes_webservice_wrapper-0.0.1.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+fortes_webservice_wrapper-0.0.1.dist-info/METADATA,sha256=_j_ksfwEUCHmPYTixTutP8Hc0SeB3qXfdoBBJY2C7Zw,1573
+fortes_webservice_wrapper-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+fortes_webservice_wrapper-0.0.1.dist-info/top_level.txt,sha256=zh55Ymz9ty8-LjduZO3j6nfVVnN_3jaW5vuc1iCAAPQ,26
+fortes_webservice_wrapper-0.0.1.dist-info/RECORD,,
