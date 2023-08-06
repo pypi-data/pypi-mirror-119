@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: driveshaft
+Version: 0.0.1
+Summary: Driveshaft is a framework for writing long processing applications in python
+Author-email: Alessio Sanfratello <sanfra90@gmail.com>
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Project-URL: Home, https://github.com/alesanfra/driveshaft
+
+# Driveshaft - write engines with simplicity
+
+Work in progress
