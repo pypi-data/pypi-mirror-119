@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: image-caption-generator-elizastarr
+Version: 0.1.2
+Summary: An LSTM image caption generator.
+Home-page: UNKNOWN
+Author: Eliza Starr
+Author-email: eliza.r.starr@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: ==3.8.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+This project was orignally completed as a jupyter notebook assignment for a Deep Learning course at the Technical University of Eindhoven, and is based on the paper [Show and Tell: A Neural Image Caption Generator](https://arxiv.org/abs/1411.4555) by Vinyals et al. in 2015.
+
