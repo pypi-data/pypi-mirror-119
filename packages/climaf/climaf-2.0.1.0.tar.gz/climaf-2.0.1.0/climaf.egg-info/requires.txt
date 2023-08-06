@@ -1,0 +1,11 @@
+six
+Cython
+netCDF4
+numpy
+sphinx==1.8.5
+netcdftime
+cftime
+matplotlib
+cartopy
+python-dateutil
+natsort
