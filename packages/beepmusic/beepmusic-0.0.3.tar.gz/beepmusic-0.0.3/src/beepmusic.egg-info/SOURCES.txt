@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/beepmusic/__init__.py
+src/beepmusic/__main__.py
+src/beepmusic/beepmusic.py
+src/beepmusic/musicLaw.py
+src/beepmusic/parser.py
+src/beepmusic.egg-info/PKG-INFO
+src/beepmusic.egg-info/SOURCES.txt
+src/beepmusic.egg-info/dependency_links.txt
+src/beepmusic.egg-info/top_level.txt
+src/beepmusic/builtin_musics/joy.bmc
+src/beepmusic/builtin_musics/蜜雪冰城.bmc
