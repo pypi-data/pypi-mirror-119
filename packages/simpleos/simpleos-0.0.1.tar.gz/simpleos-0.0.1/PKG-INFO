@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: simpleos
+Version: 0.0.1
+Summary: Simple OS
+Home-page: UNKNOWN
+Author: Ilia Kalygin
+Author-email: 
+License: MIT
+Keywords: simpleos
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+
+clear() - clears cmd
+location() - shows current location 
+pause() - 'Press any key to continue ...' phrase
+
+
+Change Log
+===========
+
+0.0.1 (09/09/2021)
+-------------------
+First release
+

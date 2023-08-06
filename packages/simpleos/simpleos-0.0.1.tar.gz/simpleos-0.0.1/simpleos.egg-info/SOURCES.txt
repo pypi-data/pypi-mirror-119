@@ -1,0 +1,10 @@
+CHANGELOG.txt
+LICENSE.txt
+MANIFEST.in
+README.txt
+setup.py
+simpleos/__init__.py
+simpleos.egg-info/PKG-INFO
+simpleos.egg-info/SOURCES.txt
+simpleos.egg-info/dependency_links.txt
+simpleos.egg-info/top_level.txt
