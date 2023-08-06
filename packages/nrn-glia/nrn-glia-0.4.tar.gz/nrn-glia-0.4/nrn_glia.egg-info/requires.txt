@@ -1,0 +1,10 @@
+setuptools
+requests
+packaging>=19.0
+appdirs
+errr
+nrn-patch>=3.0.0b0
+
+[dev]
+sphinx
+pre-commit
