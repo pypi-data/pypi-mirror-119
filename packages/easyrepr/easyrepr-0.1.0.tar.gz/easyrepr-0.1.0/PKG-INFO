@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: easyrepr
+Version: 0.1.0
+Summary: Python decorator to automatically generate repr strings
+Home-page: https://github.com/chrisbouchard/autorepr
+License: MIT
+Author: Chris Bouchard
+Author-email: chris@upliftinglemma.net
+Requires-Python: >=3.8,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Project-URL: Documentation, https://autorepr.readthedocs.io/
+Project-URL: Repository, https://github.com/chrisbouchard/autorepr
