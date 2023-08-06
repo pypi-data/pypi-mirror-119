@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: delft-physics-lab
+Version: 0.3
+Summary: delft physics lab
+Home-page: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: numpy (>=1.21)
+Requires-Dist: scipy (>=1.7.1)
+Requires-Dist: matplotlib (>=3.4.3)
+
+UNKNOWN
+
