@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+pysqlite/SqLiteDBStream.py
+pysqlite/__init__.py
+slite.egg-info/PKG-INFO
+slite.egg-info/SOURCES.txt
+slite.egg-info/dependency_links.txt
+slite.egg-info/requires.txt
+slite.egg-info/top_level.txt
