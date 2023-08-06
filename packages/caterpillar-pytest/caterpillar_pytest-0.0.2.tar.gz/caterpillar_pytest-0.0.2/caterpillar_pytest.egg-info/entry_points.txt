@@ -1,0 +1,3 @@
+[pytest11]
+caterpillar_pytest_pluggin = caterpillar_pytest.main
+

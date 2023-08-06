@@ -1,0 +1,5 @@
+pytest
+caterpillar_common
+allure-pytest
+pytest-rerunfailures
+pytest-xdist
