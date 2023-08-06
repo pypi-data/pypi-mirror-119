@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+dataclasses_configobj/__init__.py
+dataclasses_configobj/core.py
+dataclasses_configobj.egg-info/PKG-INFO
+dataclasses_configobj.egg-info/SOURCES.txt
+dataclasses_configobj.egg-info/dependency_links.txt
+dataclasses_configobj.egg-info/requires.txt
+dataclasses_configobj.egg-info/top_level.txt
