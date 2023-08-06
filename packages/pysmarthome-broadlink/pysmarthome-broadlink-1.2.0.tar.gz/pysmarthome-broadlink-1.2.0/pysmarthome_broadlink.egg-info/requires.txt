@@ -1,0 +1,2 @@
+pysmarthome~=2.2
+broadlink
