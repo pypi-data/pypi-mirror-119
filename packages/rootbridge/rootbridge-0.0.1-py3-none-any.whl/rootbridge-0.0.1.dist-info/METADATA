@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: rootbridge
+Version: 0.0.1
+Summary: Bridge to the social networks.
+Author: Angelo Gladding
+Author-email: angelo@lahacker.net
+Requires-Python: >=3.9,<3.10
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: sh (>=1.14.2,<2.0.0)
+Requires-Dist: understory (>=0.0.67,<0.0.68)
