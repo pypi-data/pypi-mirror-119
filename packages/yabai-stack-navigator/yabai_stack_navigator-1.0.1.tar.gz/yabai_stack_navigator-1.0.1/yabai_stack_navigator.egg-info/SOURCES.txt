@@ -1,0 +1,17 @@
+README.md
+main.py
+setup.py
+tests/__init__.py
+tests/test_yabai_layout_details.py
+tests/test_yabai_navigator.py
+tests/test_yabai_stacked_window_provider.py
+yabai_stack_navigator/__init__.py
+yabai_stack_navigator/yabai_layout_details.py
+yabai_stack_navigator/yabai_navigator.py
+yabai_stack_navigator/yabai_provider.py
+yabai_stack_navigator/yabai_stacked_window_provider.py
+yabai_stack_navigator.egg-info/PKG-INFO
+yabai_stack_navigator.egg-info/SOURCES.txt
+yabai_stack_navigator.egg-info/dependency_links.txt
+yabai_stack_navigator.egg-info/entry_points.txt
+yabai_stack_navigator.egg-info/top_level.txt
