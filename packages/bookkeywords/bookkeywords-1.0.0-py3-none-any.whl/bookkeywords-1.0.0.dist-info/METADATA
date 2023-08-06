@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: bookkeywords
+Version: 1.0.0
+Summary: Library To Check Keywords Using From User Input Pre-Define Library Book Keywords.
+Home-page: UNKNOWN
+Author: C
+Author-email: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: Jinja2 (==3.0.1)
+Requires-Dist: MarkupSafe (==2.0.1)
+Requires-Dist: Pygments (==2.10.0)
+Requires-Dist: SecretStorage (==3.3.1)
+Requires-Dist: atomicwrites (==1.4.0)
+Requires-Dist: attrs (==21.2.0)
+Requires-Dist: bleach (==4.1.0)
+Requires-Dist: blis (==0.7.4)
+Requires-Dist: catalogue (==2.0.6)
+Requires-Dist: certifi (==2021.5.30)
+Requires-Dist: cffi (==1.14.6)
+Requires-Dist: charset-normalizer (==2.0.4)
+Requires-Dist: click (==7.1.2)
+Requires-Dist: colorama (==0.4.4)
+Requires-Dist: cryptography (==3.4.8)
+Requires-Dist: cymem (==2.0.5)
+Requires-Dist: docutils (==0.17.1)
+Requires-Dist: idna (==3.2)
+Requires-Dist: importlib-metadata (==4.8.1)
+Requires-Dist: jeepney (==0.7.1)
+Requires-Dist: keyring (==23.1.0)
+Requires-Dist: more-itertools (==8.9.0)
+Requires-Dist: murmurhash (==1.0.5)
+Requires-Dist: numpy (==1.21.2)
+Requires-Dist: packaging (==21.0)
+Requires-Dist: pathy (==0.6.0)
+Requires-Dist: pkginfo (==1.7.1)
+Requires-Dist: pluggy (==1.0.0)
+Requires-Dist: preshed (==3.0.5)
+Requires-Dist: py (==1.10.0)
+Requires-Dist: pycparser (==2.20)
+Requires-Dist: pydantic (==1.8.2)
+Requires-Dist: pyparsing (==2.4.7)
+Requires-Dist: pytest-runner (==4.4)
+Requires-Dist: pytest (==4.4.1)
+Requires-Dist: readme-renderer (==29.0)
+Requires-Dist: requests-toolbelt (==0.9.1)
+Requires-Dist: requests (==2.26.0)
+Requires-Dist: rfc3986 (==1.5.0)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: smart-open (==5.2.1)
+Requires-Dist: spacy-legacy (==3.0.8)
+Requires-Dist: spacy (==3.1.2)
+Requires-Dist: srsly (==2.4.1)
+Requires-Dist: thinc (==8.0.10)
+Requires-Dist: tqdm (==4.62.2)
+Requires-Dist: twine (==3.4.2)
+Requires-Dist: typer (==0.3.2)
+Requires-Dist: typing-extensions (==3.10.0.2)
+Requires-Dist: urllib3 (==1.26.6)
+Requires-Dist: wasabi (==0.8.2)
+Requires-Dist: webencodings (==0.5.1)
+Requires-Dist: zipp (==3.5.0)
+
+UNKNOWN
+
+
