@@ -1,0 +1,9 @@
+pybbox2/__init__.py,sha256=olSgmDKXBGOI-Vo9L3NWgXMY4TRSGGlySt54qS8M7m0,51
+pybbox2/bbox_api.py,sha256=RyG6ubaWarsGADUj4B6CtGySBrYiMv4TynHp4WVjep8,1035
+pybbox2/bbox_api_endpoints.py,sha256=MJYFZBrWxkycK1z3DuoYLtEj3gLnLA5kk3ECr-kADWI,3185
+pybbox2/bbox_requests.py,sha256=XTXkOGZQTtXAbRaTuc29sg8wIrW6i5t-r50dNEQ9dsk,2826
+pybbox2-0.2.3.dist-info/LICENSE.txt,sha256=JnDuxqsqemVcg0xNOOyT43NJxn5iAiTjE7lijS9QY6c,481
+pybbox2-0.2.3.dist-info/METADATA,sha256=tGs8tGtMJpYREly1OVPJsYOIA2Lsbg9UJ4g49Pno9v8,810
+pybbox2-0.2.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+pybbox2-0.2.3.dist-info/top_level.txt,sha256=bQILX-SbW77LYFCCgBxCOJlssBi-jxoVqCFYS2e8P64,8
+pybbox2-0.2.3.dist-info/RECORD,,
