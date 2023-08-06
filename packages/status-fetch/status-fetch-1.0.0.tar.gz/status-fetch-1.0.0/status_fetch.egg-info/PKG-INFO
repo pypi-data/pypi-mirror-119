@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: status-fetch
+Version: 1.0.0
+Summary: Fetch the status of your website
+Home-page: https://github.com/status-hub/fetch/
+Author: Status
+License: GNU
+Description: 
+        # status-fetch
+        
+        
+        ### Instalation
+        
+        requirements:
+        
+        - pip
+        - python3
+        
+        ```sh
+        $ pip3 install status-fetch
+        ```
+        
+        ### Usage
+        
+        ```sh
+        $ status-fetch fetch
+        ```
+        
+        #### help
+        
+        ```
+        Usage: status-fetch [OPTIONS] COMMAND [ARGS]...
+        
+        Options:
+          -h, --help  Show this message and exit.
+        
+        Commands:
+          fetch
+        ```
+Keywords: status,status CLI,status-fetch,fetch
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
