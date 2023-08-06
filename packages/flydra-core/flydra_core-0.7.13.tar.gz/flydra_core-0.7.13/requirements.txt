@@ -1,0 +1,5 @@
+cgkit1
+pymvg
+adskalman
+
+# conda or system packages: numpy, scipy, pytables, tzlocal, six, nose
