@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: IOT3ApiClient
+Version: 1.0.0
+Summary: IOT3Client
+Home-page: UNKNOWN
+Author:  
+Author-email: author@example.com
+License: UNKNOWN
+Description: # IOT3
+        ``` python
+        import IOT3
+        
+        mything = IOT3.Thing(username="<Your Username>",
+                            thing = "<Thing Name>",
+                            dev_secret="<Dev Secret>",
+                            thing_secret="<Thing Secret>")
+        ```
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

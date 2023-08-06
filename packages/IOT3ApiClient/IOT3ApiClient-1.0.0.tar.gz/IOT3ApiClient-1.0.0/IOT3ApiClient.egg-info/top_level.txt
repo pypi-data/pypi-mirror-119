@@ -1,0 +1,6 @@
+IOT3
+certifi
+charset_normalizer
+idna
+requests
+urllib3
