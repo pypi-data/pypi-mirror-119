@@ -1,0 +1,3 @@
+durc~=2.0
+bs4
+requests
