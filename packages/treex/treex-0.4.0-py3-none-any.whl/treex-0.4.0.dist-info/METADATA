@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: treex
+Version: 0.4.0
+Summary: 
+Author: Cristian Garcia
+Author-email: cgarcia.e88@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PyYAML (>=5.4.1,<6.0.0)
+Requires-Dist: flax (>=0.3.4,<0.4.0)
+Requires-Dist: jax (>=0.2.18,<0.3.0)
+Requires-Dist: jaxlib (>=0.1.70,<0.2.0)
+Requires-Dist: optax (>=0.0.9,<0.0.10)
+Requires-Dist: rich (>=10.7.0,<11.0.0)
