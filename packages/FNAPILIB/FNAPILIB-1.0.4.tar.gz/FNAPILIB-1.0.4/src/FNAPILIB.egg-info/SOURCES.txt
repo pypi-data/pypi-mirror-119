@@ -1,0 +1,8 @@
+LICENCE.txt
+README.md
+setup.py
+src/FNAPILIB/__init__.PY
+src/FNAPILIB.egg-info/PKG-INFO
+src/FNAPILIB.egg-info/SOURCES.txt
+src/FNAPILIB.egg-info/dependency_links.txt
+src/FNAPILIB.egg-info/top_level.txt
