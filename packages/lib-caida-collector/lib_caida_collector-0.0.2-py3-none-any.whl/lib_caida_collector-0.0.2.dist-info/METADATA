@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: lib-caida-collector
+Version: 0.0.2
+Summary: Downloads Caida AS-Serial relationships into a database
+Home-page: https://github.com/jfuruness/lib_caida_collector.git
+Author: Justin Furuness, Matt Jaccino, Tony Zheng
+Author-email: jfuruness@gmail.com
+License: BSD
+Keywords: Furuness,BGP,Caida,Relationships,AS-Serial,Peers,Customers,Providers
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: lib-utils
+
+NEEDS DOCS
+
+
