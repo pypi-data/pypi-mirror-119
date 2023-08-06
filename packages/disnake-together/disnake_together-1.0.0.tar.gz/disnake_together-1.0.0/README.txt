@@ -1,0 +1,1 @@
+A 3rd party library to use discord's VC Party Games feature with disnake

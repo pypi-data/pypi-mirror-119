@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: disnake-together
+Version: 1.0.0
+Summary: A 3rd party library to use discord's VC Party Games feature with disnake
+Home-page: https://github.com/awesomehet2124/disnake-together
+Author: Het Naik
+Author-email: awesomehet@gmail.com
+License: MIT
+Keywords: disnake_together,disnake,disnake-vc-interactions
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Natural Language :: English
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+
+A 3rd party library to use discord's VC Party Games feature i.e YouTube together, Betrayal.io, Fishington.io, Chess in the park, Poker night
+

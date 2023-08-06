@@ -1,0 +1,11 @@
+LICENSE
+README.txt
+setup.py
+disnake_together/__init__.py
+disnake_together/disnakeTogether.py
+disnake_together/errors.py
+disnake_together.egg-info/PKG-INFO
+disnake_together.egg-info/SOURCES.txt
+disnake_together.egg-info/dependency_links.txt
+disnake_together.egg-info/requires.txt
+disnake_together.egg-info/top_level.txt
