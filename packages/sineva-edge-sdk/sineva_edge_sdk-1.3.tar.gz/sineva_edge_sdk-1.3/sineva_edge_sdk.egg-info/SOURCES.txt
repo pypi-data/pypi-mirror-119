@@ -1,0 +1,7 @@
+setup.py
+edgecom/__init__.py
+edgecom/edge_sdk.py
+sineva_edge_sdk.egg-info/PKG-INFO
+sineva_edge_sdk.egg-info/SOURCES.txt
+sineva_edge_sdk.egg-info/dependency_links.txt
+sineva_edge_sdk.egg-info/top_level.txt
