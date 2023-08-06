@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+setup.py
+cpyberry_pybencode.egg-info/PKG-INFO
+cpyberry_pybencode.egg-info/SOURCES.txt
+cpyberry_pybencode.egg-info/dependency_links.txt
+cpyberry_pybencode.egg-info/not-zip-safe
+cpyberry_pybencode.egg-info/top_level.txt
+docs/ja-jp/README.md
+docs/ja-jp/RELEASE_NOTES.md
+pybencode/__info__.py
+pybencode/__init__.py
+pybencode/bencode.py
