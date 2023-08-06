@@ -1,0 +1,5 @@
+util-hj3415>=0.2.5
+eval-hj3415>=0.2.4
+db-hj3415>=0.4.7
+Scrapy>=2.5.0
+html5lib>=1.1
