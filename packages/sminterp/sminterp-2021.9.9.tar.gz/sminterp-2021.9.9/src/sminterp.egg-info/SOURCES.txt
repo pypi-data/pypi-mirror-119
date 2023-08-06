@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/sminterp/ConvexSmooth.py
+src/sminterp/LocalSmoothInterpolator.py
+src/sminterp/__init__.py
+src/sminterp.egg-info/PKG-INFO
+src/sminterp.egg-info/SOURCES.txt
+src/sminterp.egg-info/dependency_links.txt
+src/sminterp.egg-info/top_level.txt
