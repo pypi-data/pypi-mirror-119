@@ -1,0 +1,11 @@
+danio/__init__.py,sha256=miwW_q5z7YLBw35GtbHkQraoEsPStwqPUo2-NKFYhrU,308
+danio/database.py,sha256=inYe7a4l6Ge1_O9k1VzJHzl2Yj-ITalqRPBBmQ3izn4,2386
+danio/exception.py,sha256=sjjpnClVR9-ldUwfn3l0lR1uv5y5oFbWuIpxChy3T8g,90
+danio/manage.py,sha256=hBWat2Jaw9mSxMzKzrdCkG9gj9MljvuomVtotiXzpqY,1045
+danio/model.py,sha256=AP90ky8xpF-TPz2skz8xR3UQaDaU-u3ywtZlwZ4v1DQ,6767
+danio/schema.py,sha256=h87gWX_AMI55G8FPbmpMtU9dP-87OZ8HgsZWQla7OPc,14303
+danio/utils.py,sha256=xS93PyaWln15mYLBpptJ1yECfBq3Lcqw7_MiaemP-tw,1709
+danio-0.2.0.dist-info/LICENSE,sha256=ZBg5favWXJiiX7H2kLI9zuQR8vTVseh_Sj8skWpQwkM,1516
+danio-0.2.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+danio-0.2.0.dist-info/METADATA,sha256=xMyXGVESe3QfzNOeqVIz247qIXhCB0h64kww5MUN5UE,396
+danio-0.2.0.dist-info/RECORD,,
