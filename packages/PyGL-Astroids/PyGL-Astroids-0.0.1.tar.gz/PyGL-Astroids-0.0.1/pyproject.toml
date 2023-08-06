@@ -1,0 +1,7 @@
+[build-system]
+requires = [
+    "pyglet",
+    "setuptools",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
