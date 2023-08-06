@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+novigi_airflow_customs/ novigi_excel_to_csv.py
+novigi_airflow_customs/ novigi_json_to_csv.py
+novigi_airflow_customs/ novigi_xls_to_csv_operator.py
+novigi_airflow_customs/__init__.py
+novigi_airflow_customs.egg-info/PKG-INFO
+novigi_airflow_customs.egg-info/SOURCES.txt
+novigi_airflow_customs.egg-info/dependency_links.txt
+novigi_airflow_customs.egg-info/requires.txt
+novigi_airflow_customs.egg-info/top_level.txt
