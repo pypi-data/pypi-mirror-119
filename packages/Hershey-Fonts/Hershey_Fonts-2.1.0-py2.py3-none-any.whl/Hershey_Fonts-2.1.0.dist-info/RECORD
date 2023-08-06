@@ -1,0 +1,11 @@
+HersheyFonts/HersheyFonts.py,sha256=9LgE6vvinAMBI8jK9RBXnFQSKNaJrqccDaMlqKLDB3U,91220
+HersheyFonts/__init__.py,sha256=OLgzADyQPZNjqDXDZ-nt7eyPPo59KyNL7GH3thhfPag,63
+HersheyFonts/__main__.py,sha256=6HPExSkNYZrdUvuM5rtnxYObi_l4WerM0Lk0how55DA,101
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_HersheyFonts.py,sha256=fwfTUsp2sPjm_7v_m73XR97biVrkW3ILjdODebbCpQw,4018
+Hershey_Fonts-2.1.0.dist-info/LICENSE,sha256=RmGDhEj5lMwFXf30b9-xgsUuDQSbHXHK7iEP7MGwQaM,1062
+Hershey_Fonts-2.1.0.dist-info/METADATA,sha256=lfCFd2Mfw_gsd_86_dP4rhidduYOuk2CUxPStCsa2zc,4572
+Hershey_Fonts-2.1.0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+Hershey_Fonts-2.1.0.dist-info/entry_points.txt,sha256=szi9OSlDeM-R5Kwbnl3gGj0I8QOQfSVG98Mtt4yP3So,143
+Hershey_Fonts-2.1.0.dist-info/top_level.txt,sha256=V14Zt7CKG2QYI3kBLPtDnJo96eUx7-Xf2eJiOnc0Urc,19
+Hershey_Fonts-2.1.0.dist-info/RECORD,,
