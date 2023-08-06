@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "simplethread"
+version = "1.0.1"
+authors = ["Andrew Malchuk <andrew.malchuk@yandex.ru>"]
+description = "Some useful utilities for Python's threading module"
+keywords = ["asynchronous", "concurrency", "python", "threading"]
+repository = "https://gitlab.com/amalchuk/simplethread"
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.9"
+pytest = "^6.2"
+coverage = { version = "^5.5", extras = ["toml"]}
+mypy = { version = ">=0.900, <=0.910", allow-prereleases = true }
+
+[tool.coverage.run]
+branch = true
+source = ["simplethread"]
+
+[tool.coverage.report]
+precision = 2
+skip_empty = true
+
+[tool.isort]
+profile = "google"
+forced_separate = ["_thread"]
+known_first_party = ["simplethread"]
+known_local_folder = ["tests"]
+line_length = 125
+
+[tool.mypy]
+disallow_untyped_calls = true
+follow_imports = "silent"
+ignore_missing_imports = true
+show_column_numbers = true
+show_error_codes = true
+sqlite_cache = true
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
