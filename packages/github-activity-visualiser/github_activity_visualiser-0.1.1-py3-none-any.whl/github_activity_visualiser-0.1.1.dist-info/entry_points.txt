@@ -1,0 +1,3 @@
+[console_scripts]
+visualiser=github_activity_visualiser.visualiser:cli
+
