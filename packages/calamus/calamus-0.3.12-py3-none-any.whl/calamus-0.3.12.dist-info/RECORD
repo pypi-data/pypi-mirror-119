@@ -1,0 +1,8 @@
+calamus/__init__.py,sha256=uzDtUmN3o6XGGV0Pkoi7vJCijlJJCOYCmLl8900CcXg,23
+calamus/fields.py,sha256=XZYRuZidX81Jdf9Bo-JoW_nt70Q0mgrppU6FR-HAi90,24877
+calamus/schema.py,sha256=ikghNdciTMxqSeC8TB0ecnsXr8CwCq-ZzqyDpaME29M,21531
+calamus/utils.py,sha256=pbl5mOMKTesHbO8wBsS5L29uhmjOvByNccCt_Q6QjMc,6155
+calamus-0.3.12.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+calamus-0.3.12.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+calamus-0.3.12.dist-info/METADATA,sha256=ImHgWttQzgDU_Wbg-B9AnTpwefIusbLHBUvuTV9H7d4,9588
+calamus-0.3.12.dist-info/RECORD,,
