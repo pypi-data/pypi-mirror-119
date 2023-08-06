@@ -1,0 +1,27 @@
+name: geovista-dev
+
+channels:
+  - conda-forge
+
+dependencies:
+
+# setup dependencies
+  - setuptools >=45
+  - setuptools-scm >=6.0
+
+# core dependencies
+  - cartopy
+  - pykdtree
+  - pyvista
+  - pyvistaqt
+
+# cmap dependencies
+  - cmocean
+  - colorcet
+
+# dev dependencies
+  - pip
+  - pre-commit
+
+# test dependencies
+  - pytest >=6.0

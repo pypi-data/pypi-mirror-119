@@ -1,0 +1,14 @@
+cartopy
+pykdtree
+pyvista
+pyvistaqt
+
+[cmap]
+cmocean
+colorcet
+
+[dev]
+pre-commit
+
+[test]
+pytest>=6.0

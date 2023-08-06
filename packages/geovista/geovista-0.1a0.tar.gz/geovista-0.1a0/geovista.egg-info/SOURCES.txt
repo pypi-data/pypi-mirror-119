@@ -1,0 +1,16 @@
+.gitignore
+.pre-commit-config.yaml
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+geovista/__init__.py
+geovista/_version.py
+geovista.egg-info/PKG-INFO
+geovista.egg-info/SOURCES.txt
+geovista.egg-info/dependency_links.txt
+geovista.egg-info/not-zip-safe
+geovista.egg-info/requires.txt
+geovista.egg-info/top_level.txt
+requirements/geovista.yml
