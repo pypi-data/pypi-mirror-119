@@ -1,0 +1,9 @@
+LICENSE
+README.md
+aur_info.py
+pyproject.toml
+setup.cfg
+aur_info.egg-info/PKG-INFO
+aur_info.egg-info/SOURCES.txt
+aur_info.egg-info/dependency_links.txt
+aur_info.egg-info/top_level.txt
