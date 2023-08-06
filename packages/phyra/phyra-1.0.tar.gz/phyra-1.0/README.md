@@ -1,0 +1,36 @@
+# Phyra CLI
+```pip install phyra```
+## Introducing
+Phyra is the next generation of [Elder-CLI](https://github.com/EterNomm/Elder-CLI) which has been discontinued. Now Phyra is an interactive CLI for programmers and everyone.
+
+## Features
+- Create and Delete Github Repository (Need Github personal credentials)
+- Weather information
+- Youtube Downloader
+- And many more (Coming soon)
+
+## Requirements
+- Python - https://www.python.org/
+- Pip - https://bootstrap.pypa.io/get-pip.py
+
+## Example Commands
+### Github 
+- ```phyra github create <repo name>```
+- ```phyra github delete <repo name>```
+
+### Weather
+- ```phyra weather -l <country/city> current```
+- ```phyra weather -l <country/city> forecast```
+
+### Youtube Downloader
+- ```pyhra ytdl -v <video link>```
+- ```pyhra ytdl --video <video link>```
+
+
+## Supported OS
+- Windows : ```Stable```
+- Linux : ```Not support``` I'll fix soon
+- MacOS : ```Uncertain``` (Need testers. Open issue if you want to be a tester)
+
+## About Phyra
+Phyra was born on September 12, 2021. Made in less than 1 month. Created by 1 person. Made by a 15 year old. Born exactly with the Developer's birthday. Made with care. Because this is his first big project. Introducing "Phyra"
