@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: aws-ec2-pricing
+Version: 0.1.8
+Summary: CLI tool to build SQLite table from AWS EC2 prices.
+Author: vduseev
+Author-email: vagiz@duseev.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: boto3 (>=1.18.40,<2.0.0)
+Requires-Dist: click (>=8.0.1,<9.0.0)
+Requires-Dist: prettytable (>=2.2.0,<3.0.0)
