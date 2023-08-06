@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+bassg/Generator.py
+bassg/__init__.py
+bassg/__main__.py
+bassg.egg-info/PKG-INFO
+bassg.egg-info/SOURCES.txt
+bassg.egg-info/dependency_links.txt
+bassg.egg-info/entry_points.txt
+bassg.egg-info/requires.txt
+bassg.egg-info/top_level.txt
