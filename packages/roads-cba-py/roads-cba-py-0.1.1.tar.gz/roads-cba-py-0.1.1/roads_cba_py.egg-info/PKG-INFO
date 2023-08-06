@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: roads-cba-py
+Version: 0.1.1
+Summary: A pure python implementation of a CBA analysis for road maintenance prioritisation
+Home-page: https://github.com/vnopenroads/roads-cba-py
+Author: Jamie Cook
+Author-email: jimi.cook@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# roads-cba-py - pure python module for the Cost Benefit Analysis Subsystem
+
+## 1. Initial setup
+This project requires:
+* Python >= 3.8
+* `pipenv` for Python virtual environment management
+
+### 1.2. Setup the repo
+* Clone this repository: `git clone URL`
+* After that, run `python -m pipenv shell` to activate the Python virtual environment for this project
+* Then run `pipenv install --dev` to install all required dependencies for this project. You would need to occasionally run this command as you fetch new updates from this repository
+
+
+
+
+
