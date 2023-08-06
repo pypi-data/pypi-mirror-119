@@ -1,0 +1,21 @@
+Metadata-Version: 1.2
+Name: pypet
+Version: 0.6.0
+Summary: A toolkit for numerical simulations to allow easy parameter exploration and storage of results.
+Home-page: https://github.com/SmokinCaterpillar/pypet
+Author: Robert Meyer
+Author-email: robert.meyer@alcemy.tech
+License: BSD
+Description: A toolkit for numerical simulations to allow easy parameter exploration and storage of results.
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
