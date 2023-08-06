@@ -1,0 +1,2 @@
+recursive-include introspection/inspector *
+recursive-include introspection/management *
