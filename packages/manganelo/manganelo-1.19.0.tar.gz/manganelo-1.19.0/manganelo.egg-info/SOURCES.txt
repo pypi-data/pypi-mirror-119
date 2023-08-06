@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+setup.py
+manganelo/__init__.py
+manganelo/chapterdownload.py
+manganelo/errors.py
+manganelo/siterequests.py
+manganelo/storypage.py
+manganelo/storysearch.py
+manganelo/utils.py
+manganelo.egg-info/PKG-INFO
+manganelo.egg-info/SOURCES.txt
+manganelo.egg-info/dependency_links.txt
+manganelo.egg-info/requires.txt
+manganelo.egg-info/top_level.txt
