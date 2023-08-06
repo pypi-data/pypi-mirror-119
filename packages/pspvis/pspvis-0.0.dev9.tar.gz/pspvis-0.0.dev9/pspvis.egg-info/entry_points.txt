@@ -1,0 +1,3 @@
+[console_scripts]
+pspvis = pspvis.__main__:main
+

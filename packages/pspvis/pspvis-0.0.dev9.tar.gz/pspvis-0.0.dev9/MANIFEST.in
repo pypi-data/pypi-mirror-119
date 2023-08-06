@@ -1,0 +1,22 @@
+include *.rst
+include *.yml
+include *.txt
+
+recursive-include pspvis *.png
+recursive-include pspvis *.yml
+
+recursive-include tests *.coveragerc
+recursive-include tests *.csv
+recursive-include tests *.tsv
+recursive-include tests *.yml
+
+recursive-include docs *.svg
+recursive-include docs *.bat
+recursive-include docs *.jpg
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs *.txt
+recursive-include docs Makefile
+
+recursive-exclude docs _*/**
+recursive-exclude tests *.xml

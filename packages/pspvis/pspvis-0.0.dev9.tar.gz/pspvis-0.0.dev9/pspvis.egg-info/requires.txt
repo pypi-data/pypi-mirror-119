@@ -1,0 +1,8 @@
+argcomplete
+matplotlib
+pandas
+psprint
+pyyaml
+sklearn
+toml
+ttkthemes
