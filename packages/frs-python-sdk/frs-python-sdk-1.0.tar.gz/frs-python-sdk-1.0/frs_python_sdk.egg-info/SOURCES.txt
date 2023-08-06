@@ -1,0 +1,5 @@
+setup.py
+frs_python_sdk.egg-info/PKG-INFO
+frs_python_sdk.egg-info/SOURCES.txt
+frs_python_sdk.egg-info/dependency_links.txt
+frs_python_sdk.egg-info/top_level.txt
