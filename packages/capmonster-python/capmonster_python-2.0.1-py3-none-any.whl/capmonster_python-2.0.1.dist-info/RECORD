@@ -1,0 +1,12 @@
+capmonster_python/__init__.py,sha256=9Sg0QapEaltnz6NMnZ5vwK7COcR9fesCHYRG-DoL660,241
+capmonster_python/capmonster.py,sha256=w0RNyZxvlkU_Gxk1ABrPz3JJavaFVXY19amcdMOVM1I,5279
+capmonster_python/fun_captcha.py,sha256=89oGNY_j1CvoRFH_Vb4uvT9LeHfMXUkYrI12P5wpDc4,1116
+capmonster_python/hcaptcha.py,sha256=Bwp809mQqhv5f0w11tH0X60XoJfgiqXDt63wGFurdqM,1437
+capmonster_python/image_to_text.py,sha256=wFFOeouaJSY5cCw61MefwXXkSWEU1pA8sTeWZy_MqAI,1829
+capmonster_python/recaptcha_v2.py,sha256=L0bdnsjeC4qYYNWBToWPLE1snPubT_a8mRATqm-wivQ,1073
+capmonster_python/recaptcha_v3.py,sha256=YQQOU8ja1ZcKo6KIraE8QEiaV9IfQx0J740dFBt0hkE,755
+capmonster_python/utils.py,sha256=10IAtWI_k92nTxbKwCdGTh_14U7vXZyXbQyteN0zDkM,1380
+capmonster_python-2.0.1.dist-info/METADATA,sha256=kW_lW4zZ8gyEfVWjTVe6KA19t-TmIodbv3VrC_ATOKw,3344
+capmonster_python-2.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+capmonster_python-2.0.1.dist-info/top_level.txt,sha256=QW5VEUvOJfzDxYpD7fSJtGfUxhM3m7U7LFcZ-wRpU70,18
+capmonster_python-2.0.1.dist-info/RECORD,,
