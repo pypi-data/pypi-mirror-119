@@ -1,0 +1,118 @@
+Metadata-Version: 2.1
+Name: electric-data-cli
+Version: 0.0.3
+Summary: Electric Data command line interface utility.
+Home-page: https://github.com/electric-data/electric-cli
+Author: Electric Data
+Author-email: info@electricdata.net
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.5
+License-File: LICENSE.md
+
+|Status| |License| |CircleCI|
+
+Electric Data CLI
+=================
+
+The Electric Data CLI is the command line interface utility for the
+`Electric Data <https://electricdata.net>`__ geo-distributed database
+hosting service. It’s developed in Python and the code is published
+under the `MIT
+License <https://github.com/electric-data/electric-cli/blob/master/LICENSE>`__
+at
+`github.com/electric-data/electric-cli <https://github.com/electric-data/electric-cli>`__.
+
+Develop
+-------
+
+You can install the CLI for local development by installing the
+dependencies into a Python3 environment and developing the egg:
+
+.. code:: sh
+
+   pip install -r requirements.txt
+   python setup.py develop
+
+This will install a ``electric`` binary in your local Python
+environment’s bin folder. You can check that this is on your path with
+e.g.:
+
+.. code:: sh
+
+   which electric
+
+Build
+-----
+
+If you want to build standalone binaries, you first need to install the
+extra development requirements:
+
+.. code:: sh
+
+   pip install -r dev-requirements.txt
+
+Then you can build a `Pex <https://pex.readthedocs.io>`__ executable
+using:
+
+.. code:: sh
+
+   python setup.py bdist_pex --bdist-all
+
+This will create a ``./dist/electric`` binary which you can copy and run
+anywhere on your system.
+
+Alternatively, you can build a standalone binary with an embedded Python
+interpretor using `PyOxidizer <https://pyoxidizer.readthedocs.io>`__:
+
+.. code:: sh
+
+   pyoxidizer run
+
+This will create a binary at ``./build/:target/debug/install/electric``
+that you can run on any machine with the same architecture and OS as
+your build machine.
+
+Usage
+-----
+
+Run the ``electric`` command without arguments or with the ``--help``
+flag for usage information:
+
+.. code:: sh
+
+   electric --help
+
+You can drill down into usage information for the resources / command
+groups and for individual commands, e.g.:
+
+.. code:: sh
+
+   electric auth --help
+   electric auth login --help
+
+Further `documentation is available on the Electric Data
+website <https://electricdata.net/docs>`__.
+
+Test
+----
+
+Running the tests requires ``nose`` and ``coverage``, included in the
+``dev-requirements.txt``.
+
+Then, run e.g.:
+
+.. code:: sh
+
+   nosetests --with-coverage --cover-package electric
+
+.. |Status| image:: https://img.shields.io/badge/status-alpha-red.svg
+.. |License| image:: https://img.shields.io/badge/license-MIT-green.svg
+   :target: LICENSE.md
+.. |CircleCI| image:: https://circleci.com/gh/electric-data/electric-cli/tree/main.svg?style=shield&circle-token=67d43361b7c2aa039a0eef39d3617a9f481e54c5
+   :target: https://circleci.com/gh/electric-data/electric-cli/tree/main
+
+
