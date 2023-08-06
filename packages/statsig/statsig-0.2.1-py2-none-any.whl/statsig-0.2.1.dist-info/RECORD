@@ -1,0 +1,13 @@
+statsig/__init__.py,sha256=5njE83QYutyTZJIUEyzT947b2XYXePzqJ95QBpNw1Oc,196
+statsig/dynamic_config.py,sha256=gwZfOJZJV-9CldUB3m152gq-Oyar1nJy9ksrPPoV_YQ,367
+statsig/statsig.py,sha256=QgijGj3VN8quSSX85qdJ0Z5h8ggJtvhaz97nTK-prok,2993
+statsig/statsig_event.py,sha256=1tLvKaR-2Wjwjo_lxr1LYPTIe1-2VGam2jtbd9JTw5U,615
+statsig/statsig_options.py,sha256=OCHKCJ3vrXyzokGxnZLyeZBQ_s9wIVbA4QM3wGgIPkk,454
+statsig/statsig_user.py,sha256=7RBKAAatz6SCNiCpmxBpr8a2D26hF-G9EGo3aXa8z4k,1087
+statsig/version.py,sha256=nx8uT9NOkkA2KzjU9Q36cvZlTi-7bCHVPIkXCQkwZf8,21
+statsig/shared/statsig.so,sha256=ZteLcJoKiXpfGsNw-ty40u6UEJfTzRCCIv3vVJJ-vH0,7733442
+statsig-0.2.1.dist-info/LICENSE,sha256=-fH1C5rRqJ5e0-McYE_xpfut0bqdnMxfJ3RDxYg4yKI,749
+statsig-0.2.1.dist-info/METADATA,sha256=zx9Qi3dlk_1OWgyzJdJsXeszkDg-7D2MEoZxjSqZw8g,1622
+statsig-0.2.1.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+statsig-0.2.1.dist-info/top_level.txt,sha256=M6c7QP-pbC-70m5YyP2tpr0MFpDJisoJt9Zp2DzTm1M,8
+statsig-0.2.1.dist-info/RECORD,,
