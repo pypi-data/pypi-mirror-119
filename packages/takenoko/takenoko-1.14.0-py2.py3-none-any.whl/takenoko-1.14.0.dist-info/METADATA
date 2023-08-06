@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: takenoko
+Version: 1.14.0
+Summary: takenoko
+Home-page: https://github.com/fuku2014/takenoko
+Author: arukisumaho
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+Requires-Dist: awscli (==1.20.35)
+Requires-Dist: nifcloud (==0.13.0)
+
+## takenoko
+
+
