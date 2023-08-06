@@ -1,0 +1,7 @@
+LICENSE
+setup.py
+src/fun.py
+src/ajm_j.egg-info/PKG-INFO
+src/ajm_j.egg-info/SOURCES.txt
+src/ajm_j.egg-info/dependency_links.txt
+src/ajm_j.egg-info/top_level.txt
