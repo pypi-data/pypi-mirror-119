@@ -1,0 +1,6 @@
+ccxt
+pandas
+plotly
+pycoingecko
+twine
+wheel
