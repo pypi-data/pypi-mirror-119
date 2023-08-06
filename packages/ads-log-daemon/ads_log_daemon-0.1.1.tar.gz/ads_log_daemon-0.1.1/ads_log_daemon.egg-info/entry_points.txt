@@ -1,0 +1,3 @@
+[console_scripts]
+ads-log-daemon = ads_log_daemon.client:main
+
