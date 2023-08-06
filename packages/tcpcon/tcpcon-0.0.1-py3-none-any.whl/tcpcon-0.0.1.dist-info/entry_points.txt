@@ -1,0 +1,3 @@
+[console_scripts]
+tcpcon = tcpcon.__main__:main
+
