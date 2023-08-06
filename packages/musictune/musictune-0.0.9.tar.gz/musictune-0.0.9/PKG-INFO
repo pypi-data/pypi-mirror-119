@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: musictune
+Version: 0.0.9
+Summary: Parallel image processing package
+Home-page: https://github.com/vibujithan/musictune
+Author: vibujithan
+Author-email: author@example.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/vibujithan/musictune/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# musictune
+
+Parallel image processing pipeline
+

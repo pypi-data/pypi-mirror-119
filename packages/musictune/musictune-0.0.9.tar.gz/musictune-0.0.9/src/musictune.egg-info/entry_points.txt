@@ -1,0 +1,6 @@
+[console_scripts]
+pzf2zarr = musictune.scripts.pzf2zarr:main
+start_cluster = musictune.scripts.start_cluster:main
+stitching = musictune.scripts.stitching:main
+zarr2tif = musictune.scripts.zarr2tif:main
+
