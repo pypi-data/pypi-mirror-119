@@ -1,0 +1,10 @@
+README.md
+setup.py
+EsOper.egg-info/PKG-INFO
+EsOper.egg-info/SOURCES.txt
+EsOper.egg-info/dependency_links.txt
+EsOper.egg-info/requires.txt
+EsOper.egg-info/top_level.txt
+esoper/Common.py
+esoper/EsOper.py
+esoper/__init__.py
