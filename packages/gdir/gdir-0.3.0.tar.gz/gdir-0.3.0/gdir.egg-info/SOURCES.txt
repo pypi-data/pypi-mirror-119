@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+gdir/__init__.py
+gdir/cctld.py
+gdir/directions.py
+gdir/gdir.py
+gdir.egg-info/PKG-INFO
+gdir.egg-info/SOURCES.txt
+gdir.egg-info/dependency_links.txt
+gdir.egg-info/entry_points.txt
+gdir.egg-info/requires.txt
+gdir.egg-info/top_level.txt
+gdir.egg-info/zip-safe
+img/gdir.gif
