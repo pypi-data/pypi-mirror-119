@@ -1,0 +1,10 @@
+Metadata-Version: 1.2
+Name: hklpy
+Version: 1.0.0
+Summary: Controls for using diffractometers within the Bluesky Framework: https://blueskyproject.io
+Home-page: https://github.com/bluesky/hklpy
+Maintainer: prjemian
+Maintainer-email: prjemian+hklpy@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
