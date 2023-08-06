@@ -1,0 +1,83 @@
+Metadata-Version: 2.1
+Name: emhass
+Version: 0.1.0
+Summary: An Energy Management System for Home Assistant
+Home-page: https://github.com/pypa/sampleproject
+Author: David HERNANDEZ
+Author-email: davidusb@gmail.com
+License: UNKNOWN
+Keywords: energy,management,optimization,hass
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# emhass
+
+EMHASS: Energy Management for Home Assistant
+
+## Context
+
+This module was conceived as an energy management optimization tool for residential electric power consumption and production systems.
+The goal is to optimize the energy use in order to maximize autoconsumption.
+The main study case is a household where we have solar panels, a grid connection and one or more controllable (and if possible deferrable) electrical loads. Including an energy storage system using batteries is also possible in the code.
+The package is highly configurable with an object oriented modular approach and a main configuration file defined by the user.
+EMHASS was designed to be integrated with Home Assistant, hence it's name. Installation instructions and exemple Home Assistant automation configurations are given below.
+
+The main dependencies of this project are PVLib to model power from a PV residential installation and the PuLP Python package to perform the actual optimizations using the Linear Programming approach.
+
+## Installation
+
+It is recommended to install on a virtual environment.
+For this you will need `virtualenv`, install it using:
+```
+sudo apt install python3-virtualenv
+```
+Then create and activate the virtual environment:
+```
+virtualenv -p /usr/bin/python3 emhassenv
+cd emhassenv
+source bin/activate
+```
+Install using the provided setup.py file:
+```
+python setup.py install
+```
+Or use the distribution files:
+```
+python3 -m pip install emhass
+```
+## Development
+
+Update the build package:
+```
+python3 -m pip install --upgrade build
+```
+And generate distribution archives with::
+```
+python3 -m build
+```
+To develop using Anaconda:
+```
+conda create --name emhass-dev python=3.8 pip=21.0.1
+```
+Then activate environment and install emhass using the provided setup.py file:
+```
+conda activate emhass-dev
+python setup.py install
+```
+... or the compiled whl file:
+```
+pip install emhass-X.X.X-py3-none-any.whl
+```
+Add more packages if needed, this is optional if using spyder:
+```
+conda install spyder-kernels
+```
+

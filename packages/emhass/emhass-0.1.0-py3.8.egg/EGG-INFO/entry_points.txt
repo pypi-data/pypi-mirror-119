@@ -1,0 +1,5 @@
+[console_scripts]
+dayahead-optim = emhass.command_line:dayahead_forecast_optim
+perfect-optim = emhass.command_line:perfect_forecast_optim
+publish-data = emhass.command_line:publish_data
+
