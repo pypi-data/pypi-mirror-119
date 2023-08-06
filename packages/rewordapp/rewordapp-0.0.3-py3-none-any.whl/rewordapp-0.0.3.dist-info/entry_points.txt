@@ -1,0 +1,3 @@
+[console_scripts]
+reword-app = rewordapp.application:execute
+
