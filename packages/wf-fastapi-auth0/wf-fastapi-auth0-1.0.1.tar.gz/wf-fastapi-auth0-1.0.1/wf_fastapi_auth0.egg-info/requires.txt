@@ -1,0 +1,9 @@
+requests
+fastapi
+auth0-python
+python-jose
+cachetools
+
+[development]
+autopep8>=1.5
+pylint>=2.10.2

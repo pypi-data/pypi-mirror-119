@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: wf-fastapi-auth0
+Version: 1.0.1
+Summary: Library to simplify adding Auth0 support to FastAPI.
+Home-page: https://github.com/WildflowerSchools/wf-fastapi-auth0
+Author: Paul DeCoursey
+Author-email: paul.decoursey@wildflowerschools.org
+License: UNKNOWN
+Description: Will get to this someday
+Keywords: auth,authentication,auth0,fastapi
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Provides-Extra: development
