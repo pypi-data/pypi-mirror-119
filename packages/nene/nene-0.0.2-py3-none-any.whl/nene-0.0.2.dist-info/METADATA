@@ -1,0 +1,119 @@
+Metadata-Version: 2.1
+Name: nene
+Version: 0.0.2
+Summary: "A no-frills static site generator"
+Home-page: https://github.com/leouieda/nene
+Author: Leonardo Uieda
+Author-email: leouieda@gmail.com
+License: MIT
+Project-URL: Documentation, https://github.com/leouieda/nene
+Project-URL: Release Notes, https://github.com/leouieda/nene/releases
+Project-URL: Bug Tracker, https://github.com/leouieda/nene/issues
+Project-URL: Source Code, https://github.com/leouieda/nene
+Keywords: html,markdown
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Text Processing :: Markup :: Markdown
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: myst-parser (>=0.15.0)
+Requires-Dist: jinja2 (>=3.0)
+Requires-Dist: pyyaml (>=5.4)
+Requires-Dist: livereload (>=2.6)
+Requires-Dist: click (>=8)
+Requires-Dist: rich (>=10.9)
+Provides-Extra: dev
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+Provides-Extra: lint
+Requires-Dist: black ; extra == 'lint'
+Requires-Dist: isort ; extra == 'lint'
+Requires-Dist: flake8 ; extra == 'lint'
+Requires-Dist: flake8-bugbear ; extra == 'lint'
+Requires-Dist: flake8-builtins ; extra == 'lint'
+Requires-Dist: flake8-comprehensions ; extra == 'lint'
+Requires-Dist: flake8-continuation ; extra == 'lint'
+Requires-Dist: flake8-copyright ; extra == 'lint'
+Requires-Dist: flake8-isort ; extra == 'lint'
+Requires-Dist: flake8-mutable ; extra == 'lint'
+Requires-Dist: flake8-print ; extra == 'lint'
+Requires-Dist: flake8-quotes ; extra == 'lint'
+Requires-Dist: flake8-simplify ; extra == 'lint'
+Requires-Dist: flake8-rst-docstrings ; extra == 'lint'
+Requires-Dist: flake8-docstrings ; extra == 'lint'
+Requires-Dist: pydocstyle ; extra == 'lint'
+
+# Nēnē: A no-frills static site generator
+
+[![Latest release on PyPI](https://img.shields.io/pypi/v/nene.svg?style=flat-square)][pypi]
+[![Compatible Python versions](https://img.shields.io/pypi/pyversions/nene.svg?style=flat-square)][pypi]
+
+Static website generators seem to be the favourite pass time of developers
+procrastinating on other more important projects.
+So of course, I wanted to try making my own!
+
+> *Nēnē* continues the long tradition of naming static site generators built in
+> Python after birds (the nēnē is a [goose endemic to Hawai'i][nene-goose]).
+
+## Why build another one?
+
+Mostly because I wanted to experiment with building command-line programs with
+[click][click] and [Rich][rich].
+But I also wanted something:
+
+* **No-frills:** I don't want fancy built-in templates, blogging frameworks,
+  etc. I'm mostly rolling my own templates.
+* **Templates have access to the entire content:** Not all generators allow any
+  page to have access to the entire website content. Yes this can cause
+  problems with memory, but memory is cheap and I need this feature.
+* **Allows templates in Markdown:** Using templating constructs in Markdown
+  source files is extremely useful. I've only ever seen this in [Urubu][urubu].
+* **Reads data from non-Markdown sources:** Most generators only allow data to
+  come into templates from Markdown source files. But sometimes data for
+  building a page would be more natural coming from JSON/YAML/etc.
+  [Eleventy][11ty] has this concept and I want to use it without figuring out
+  how to setup Nodejs.
+
+So I figured that it couldn't be that hard to build something with modern
+Python tools that had all of these things.
+And for once it actually wasn't!
+
+## Installing
+
+Nēnē is available from [PyPI][pypi] and can be installed with [pip][pip]:
+
+```bash
+python -m pip install nene
+```
+
+A conda-forge package may come in the future (or maybe not).
+
+## Documentation
+
+Currently being created with Nēnē itself to prove I'm not a hypocrite.
+
+## License
+
+Nēnē is free and open-source software distributed under the
+[MIT License](LICENSE.txt).
+
+[nene-goose]: https://www.nps.gov/havo/learn/nature/nene.htm
+[click]: https://github.com/pallets/click/
+[rich]: https://github.com/willmcgugan/rich/
+[urubu]: https://github.com/jandecaluwe/urubu
+[11ty]: https://github.com/11ty/eleventy
+[pypi]: https://pypi.org/project/nene/
+[pip]: https://github.com/pypa/pip
+
+
