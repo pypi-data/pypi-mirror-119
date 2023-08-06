@@ -1,0 +1,11 @@
+dlotter/__init__.py,sha256=lGnCd-TRxpXziWOqblJzJaSF2harztDPt4CB7JRHnsU,150
+dlotter/__main__.py,sha256=SWkfQ_1ddurOI_HsfL4XEE3BAQ86xCkDNTJGbXVJKpU,1430
+dlotter/arguments.py,sha256=l6iUN5h-K7YLghzRj-gXZti7kWxd3sie9Dz8w1ihYTQ,3445
+dlotter/plot.py,sha256=TiO8th0Ls9lh6N87KG5O4Ym8BeC2ip_rvwNtpxJKnso,7263
+dlotter/prepare.py,sha256=cwJUtfx2uh6LPh5I7K0TPq8w5oPH9NqmNwgAXdAuBVo,2353
+dlotter/read.py,sha256=AyoPi6E5KerUNGs3xN9Q4Ft2C_asguH6aggffkld0Z0,5252
+dlotter-0.0.2.dist-info/LICENSE,sha256=m8QgTfrWQy9ZyT19WCDMLzqWQDzzYhkqxSinbJCAEGc,1061
+dlotter-0.0.2.dist-info/METADATA,sha256=_3meX1uv8_BKguOzJteqSbTr4HGS7grIYSnYd_9F-GI,2108
+dlotter-0.0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+dlotter-0.0.2.dist-info/top_level.txt,sha256=c-BaKW8EtB5vYCSVFb-MQomm-IkYsipnbfU9fLMzlMQ,8
+dlotter-0.0.2.dist-info/RECORD,,
