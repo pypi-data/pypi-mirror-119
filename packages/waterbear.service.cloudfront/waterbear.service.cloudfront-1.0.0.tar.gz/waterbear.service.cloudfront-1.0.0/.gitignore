@@ -1,0 +1,29 @@
+# Python
+*.egg-info
+*__pycache__*
+build
+.pytest_cache/
+env/
+
+# VSCode
+cloudfront.code-workspace
+
+# Buildout
+bin
+eggs
+parts
+develop-eggs
+.installed.cfg
+profile.sh
+
+# macos
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Lambda
+lambda_dist/
+*.zip
+
+# VSCode
+.vscode/settings.json
