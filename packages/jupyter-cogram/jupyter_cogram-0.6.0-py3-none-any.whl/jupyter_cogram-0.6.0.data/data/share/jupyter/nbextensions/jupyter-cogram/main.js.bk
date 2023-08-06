@@ -1,0 +1,777 @@
+define([
+    'jquery',
+    'base/js/keyboard',
+    'require',
+    'base/js/namespace',
+    'notebook/js/cell',
+    'notebook/js/codecell',
+    'module'
+], function (
+    $,
+    keyboard,
+    requirejs,
+    Jupyter,
+    cell,
+    codecell,
+    module
+) {
+    "use strict";
+
+    const logPrefix = '[' + module.id + ']';
+    let auth_token;
+    let options = {
+        suggestion_opacity: 0.3,
+        suggestion_accept_delay: 3000,
+        modify_query_delay: 5000,
+        cursor_blink_rate: 530,
+        upgrade_message_timeout: 120000
+    }
+    let extension_state = {
+        is_open: false,
+        data: {},
+        last_submission: "",
+        current_choice_idx: undefined,
+        choices: [],
+        considering_choices: false,
+        suggestion_accept_timeout: undefined,
+        version_is_up_to_date: undefined
+    };
+    let Cell = cell.Cell;
+    let CodeCell = codecell.CodeCell;
+
+    let keycodes = keyboard.keycodes;
+    let specials = [
+        keycodes.enter,
+        keycodes.esc,
+        keycodes.backspace,
+        keycodes.tab,
+        keycodes.up,
+        keycodes.down,
+        // keycodes.left,
+        // keycodes.right,
+        keycodes.shift,
+        keycodes.ctrl,
+        keycodes.alt,
+        keycodes.meta,
+        keycodes.capslock,
+        // keycodes.space,
+        keycodes.pageup,
+        keycodes.pagedown,
+        keycodes.end,
+        keycodes.home,
+        keycodes.insert,
+        keycodes.delete,
+        keycodes.numlock,
+        keycodes.f1,
+        keycodes.f2,
+        keycodes.f3,
+        keycodes.f4,
+        keycodes.f5,
+        keycodes.f6,
+        keycodes.f7,
+        keycodes.f8,
+        keycodes.f9,
+        keycodes.f10,
+        keycodes.f11,
+        keycodes.f12,
+        keycodes.f13,
+        keycodes.f14,
+        keycodes.f15
+    ];
+
+    const prepareCode = code => {
+        // console.log(logPrefix, "Received code", code);
+        let out = []
+        // the generated code will start with `# ` instead of `## `
+        let lines = code.split('\n')
+
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i].trimEnd();
+
+            if (line.startsWith('# ')) {
+                line = line.replace('# ', '## ')
+                if (!line.endsWith(' ##')) {
+                    line += " ##"
+                }
+            }
+            out.push(line);
+        }
+
+        out = out.join("\n");
+        // console.log(logPrefix, "Returning prepared code", out);
+        return out;
+    }
+
+    const getCellContentUpToLastDoubleHash = (cell) => {
+        let text = cell.get_text();
+        const idx = text.lastIndexOf('##');
+        // console.log(logPrefix, "Have cell content up to last double hash", out);
+        return text.slice(0, idx + 2);
+    }
+
+    const getCursorPos = (text) => {
+        const lines = text.split('\n');
+        if (lines.length === 0) return [0, 0];
+
+        const row = lines.length;
+        const ch = lines.slice(-1)[0].length;
+        return [row, ch];
+    }
+
+    const setCursorForCell = (cell, text) => {
+        const [row, ch] = getCursorPos(text);
+        Jupyter.notebook.get_selected_cell().code_mirror.setCursor(row, ch);
+    }
+
+    const setCmOption = (cell, option, val) => {
+        cell.code_mirror.options[option] = val;
+    }
+
+    const toCommandModeAndReadOnly = (cell) => {
+        setCmOption(cell, 'readOnly', true);
+    }
+
+    const toEditModeAndReadOnlyOff = (cell) => {
+        setCmOption(cell, 'readOnly', false);
+    }
+
+    const setSuggestionOpacity = (cell, start, end, val) => {
+        let editor = cell.code_mirror;
+        console.log(logPrefix, "Setting opacity from", start, "to", end, "to", val);
+        editor.markText(start, end, { css: `opacity:${val}` })
+    }
+
+    const getMarkTextPosition = (text) => {
+        const startOfOpacity = getCursorPos(text);
+        return { line: startOfOpacity[0] - 1, ch: startOfOpacity[1] };
+    }
+
+    function code_exec_callback(query, response) {
+        extension_state.choices = response["message"];
+        extension_state.current_choice_idx = 0;
+        console.log(logPrefix, "starting insertion of first choice");
+        // displayHint();
+        insertChoice();
+    }
+
+    const clearSuggestionAcceptTimeout = () => {
+        if (extension_state.suggestion_accept_timeout !== undefined) {
+            clearTimeout(extension_state.suggestion_accept_timeout);
+        }
+    }
+
+    const ensureEditorInsertionComplete = (cell) => {
+        if (!extension_state.considering_choices) return;
+
+        const text = cell.get_text();
+        setCmOption(cell, 'cursorBlinkRate', options.cursor_blink_rate);
+        setCursorForCell(cell, text);
+        toEditModeAndReadOnlyOff(cell);
+        const endOfOpacity = getMarkTextPosition(text);
+        setSuggestionOpacity(cell, { line: 0, ch: 0 }, endOfOpacity, 1);
+        extension_state.considering_choices = false;
+        deleteHint();
+        extension_state.choices = []
+    }
+
+    const insertChoice = () => {
+        extension_state.considering_choices = true;
+        displayHint();
+        clearSuggestionAcceptTimeout();
+
+        let code = extension_state.choices[extension_state.current_choice_idx];
+        let cur_cell = Jupyter.notebook.get_selected_cell();
+        code = prepareCode(code);
+
+        const current_cell_content = getCellContentUpToLastDoubleHash(cur_cell);
+        const newCode = `${current_cell_content}\n\n${code}`;
+        cur_cell.set_text(newCode);
+        const startOfOpacity = getMarkTextPosition(current_cell_content + "\n\n");
+        const endOfOpacity = getMarkTextPosition(newCode);
+        setSuggestionOpacity(cur_cell, startOfOpacity, endOfOpacity, options.suggestion_opacity);
+
+        toCommandModeAndReadOnly(cur_cell);
+        setCmOption(cur_cell, 'cursorBlinkRate', -1);
+
+        extension_state.suggestion_accept_timeout = setTimeout(() => {
+            ensureEditorInsertionComplete(cur_cell);
+        }, options.suggestion_accept_delay);
+    }
+
+    function _get_cookie(name) {
+        // from tornado docs: http://www.tornadoweb.org/en/stable/guide/security.html
+        const r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+        return r ? r[1] : undefined;
+    }
+
+    const getQueriesFromCell = text => {
+        let queries = []
+        const lines = text.split('\n')
+
+        for (let i = 0; i < lines.length; i++) {
+
+            // only consider the first line
+            let out = lines[i];
+
+            // do not do anything if the line is empty
+            if (out === '') continue;
+
+            if (!out.startsWith('## ')) continue;
+
+            out = out.replace('## ', '');
+            out = out.replace(' #', '');
+
+            // for resubmissions we have to strip another `#`
+            if (out.endsWith('#')) {
+                out = out.substring(0, out.length - 1);
+                out = out.trim();
+            }
+            queries.push(out);
+            // console.log(logPrefix, `Have query from cell at line ${i}\n`, out);
+        }
+
+        // console.log(logPrefix, "Returning queries", queries)
+        return queries
+    }
+
+    const toggleSpinning = (spinningOn) => {
+        if (spinningOn) {
+            $("#cogram-spinner")
+                .addClass('fa-spin')
+                .css('color', 'orange');
+        } else {
+            $("#cogram-spinner")
+                .removeClass('fa-spin')
+                .css('color', 'green');
+        }
+    }
+
+    const sendCompletionQuery = () => {
+        const current_cell_index = Jupyter.notebook.get_selected_index()
+
+        // send previous cells
+        let cell_contents = Jupyter.notebook.get_cells().map(
+            x => x.get_text()
+        ).slice(0, current_cell_index + 1);
+
+        let last_cell_contents = cell_contents.pop();
+        // console.log(logPrefix, "Have cell contents", cell_contents)
+        // console.log(logPrefix, "Have last cell contents", last_cell_contents)
+        // console.log("Have cell contents for N cells: " + cell_contents.length)
+
+        const session_id = Jupyter.notebook.session.id;
+        const kernel_id = Jupyter.notebook.kernel.id;
+
+        const queries = getQueriesFromCell(last_cell_contents);
+        let payload = {
+            queries,
+            'cell_contents': cell_contents,
+            session_id,
+            kernel_id,
+            auth_token
+        }
+        // console.log(logPrefix, "Have query from cell", query);
+        const xsrf_token = _get_cookie('_xsrf')
+        $.post({
+            url: '/cogram',
+            data: JSON.stringify(payload),
+            headers: { 'X-XSRFToken': xsrf_token },
+            dataType: "json",
+            contentType: "application/json",
+            beforeSend: function (request) {
+                toggleSpinning(true);
+
+            },
+            success: function (response) {
+                code_exec_callback(payload, response);
+            },
+            error: handle_jupyter_cogram_error,
+            complete: function () {
+                toggleSpinning(false);
+            },
+        });
+    }
+
+    const check_valid_token_exists_callback = (data) => auth_token = data.auth_token;
+
+    const check_valid_token_exists_error_callback = (jqXHR, textStatus, errorThrown) => {
+        auth_token = undefined;
+        console.log(logPrefix, '`checkValidTokenExists` ajax error:', jqXHR, textStatus, errorThrown);
+    }
+
+    const checkValidTokenExists = () => {
+        console.log(logPrefix, "Checking if valid token exists...");
+        $.get({
+            url: '/token',
+            dataType: 'JSON',
+            async: false,
+            success: function (response) {
+                check_valid_token_exists_callback(response);
+                return true;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                check_valid_token_exists_error_callback(jqXHR, textStatus, errorThrown);
+                return false;
+            },
+        })
+
+        const success = auth_token !== undefined;
+        console.log(logPrefix, "check completed. success", success)
+        return success;
+    }
+
+    const checkIfVersionIsUpToDate = () => {
+        console.log(logPrefix, "Checking if version is up to date...");
+        $.get({
+            url: '/checkVersion',
+            dataType: 'JSON',
+            async: false,
+            success: function (response) {
+                extension_state.version_is_up_to_date = true;
+            },
+            error: checkVersionUpToDateErrorCallback,
+        })
+    }
+
+    const setUpgradeSpinner = () => {
+        $('#upgrade_button').html(`<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>`)
+    };
+
+    const upgradeButton = () => {
+        let upgradeButton = `<button id="upgrade_button" class="mui-btn mui-btn--primary">Upgrade</button>`
+        $('body').on('click', '#upgrade_button', () => {
+            setUpgradeSpinner();
+            runAutoUpgrade();
+        }
+        );
+        return upgradeButton;
+    }
+
+    const bigLb = () => `<div style="line-height:120%;"><br></div>`;
+
+    const checkVersionUpToDateErrorCallback = (jqXHR, textStatus, errorThrown) => {
+        extension_state.version_is_up_to_date = false;
+        let error_obj = JSON.parse(jqXHR.responseText);
+        console.log(logPrefix, error_obj)
+        let pypi_version = error_obj?.pypi_version
+        const install_command = `<span style="font-family:monospace">pip install -U jupyter-cogram</span>`
+        let msg = `<div class="mui--text-subhead">A new version of Jupyter Cogram is out  🎈` +
+            `<span class="mui--text-body2">${bigLb()}Click here to automatically upgrade to version ${pypi_version}</span></div>` +
+            upgradeButton() +
+            `<span class="mui--text-body1"><br>Alternatively, you can upgrade to ` +
+            `manually by running<br>${install_command} ` +
+            `<br>in your terminal. Afterwards, please restart your Jupyter ` +
+            `Notebook server.</span>`
+        showSuccessMessage(msg, options.upgrade_message_timeout)
+    }
+
+
+    const submitToken = (entered_token) => {
+        console.log(logPrefix, "Submitting token", entered_token);
+        let success = false;
+        let msg;
+        $.post({
+            url: '/token',
+            data: JSON.stringify({ "auth_token": entered_token }),
+            headers: { 'X-XSRFToken': _get_cookie('_xsrf') },
+            dataType: "json",
+            async: false,
+            contentType: "application/json",
+            success: function (response) {
+                auth_token = entered_token;
+                turnExtensionOn(true);
+                success = true;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let error_obj = JSON.parse(jqXHR.responseText);
+                msg = `Error ${jqXHR.status}: ${error_obj['error']}`
+                console.log('Have error msg from `submitToken()`', msg)
+            }
+        });
+        console.log(logPrefix, "Token submission completed. Success?", success);
+        return [success, msg];
+    }
+
+    let initialize = function () {
+        console.log(logPrefix, "Initializing extension...")
+        Jupyter.toolbar.add_buttons_group([
+            Jupyter.keyboard_manager.actions.register({
+                help: 'Launch jupyter-cogram',
+                icon: 'fas fa-link',
+                handler: toggle_jupyter_cogram_editor,
+
+            }, 'create-jupyter-cogram-from-notebook', 'Cogram')
+        ], 'cogram-button-group');
+        let iconUrl = "https://uploads-ssl.webflow.com/61294dc1bd225d7c490b4389/6131d7249979f73249363dd0_icon_black_64.png"
+        $('.fas.fa-link.fa').replaceWith(`<img id="cogram-button-logo" src="${iconUrl}" style="max-height:16px;"alt="Cogram">`);
+        build_cogram_status_info();
+    };
+
+    const turnExtensionOn = (on) => {
+        if (on) {
+            console.log(logPrefix, "Extension is off. Turning it on.")
+            $("#cogram-status").show();
+            extension_state.is_open = true;
+        } else {
+            console.log(logPrefix, "Extension is on. Turning it off.")
+            $("#cogram-status").hide();
+            extension_state.is_open = false;
+        }
+    }
+
+    const showInfoPanelWithContent = (infoPanelContent) => {
+        console.log('Showing panel with content', infoPanelContent)
+        $('#info-panel-content').remove()
+        $('#jupyter-cogram-info-panel').append(infoPanelContent);
+        $('#jupyter-cogram-info-panel').show();
+    }
+
+    function toggle_jupyter_cogram_editor() {
+        if (extension_state.is_open) {
+            turnExtensionOn(false);
+            return;
+        }
+        const valid_token_exists = checkValidTokenExists();
+        console.log(logPrefix, "Valid token exists:", valid_token_exists);
+        if (valid_token_exists) {
+            $("#jupyter-cogram-info-panel").hide();
+            turnExtensionOn(true);
+        } else {
+            showInfoPanelWithContent(tokenInteraction());
+            turnExtensionOn(false);
+        }
+        // turnExtensionOn(extension_state.is_open ? false : true);
+    }
+
+    const getCurrentLine = (cell) => {
+        const lines = cell.get_text().split('\n');
+        const line_idx = cell.code_mirror.getCursor().line;
+        return lines[line_idx];
+    }
+
+    const isFirstPromptCell = (cell) => {
+        const text = cell.get_text();
+        if (text === "") return false;
+
+        // it's a `first prompt` cell if there's only one line
+        // that starts with `##`
+        const line = getCurrentLine(cell);
+        return line.startsWith('## ') && line.endsWith(' #');
+    }
+
+    const isCompletePrompt = (cell) => {
+        const text = cell.get_text();
+        if (text === "") return false;
+
+        // it's a complete prompt if we're modifying a line that 
+        // starts and ends with hash
+        const line = getCurrentLine(cell);
+        return line.startsWith('## ') && line.endsWith(' ##');
+    }
+
+    function onlyModifierEvent(event) {
+        const key = keyboard.inv_keycodes[event.which];
+        return (
+            (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) &&
+            (key === 'alt' || key === 'ctrl' || key === 'meta' || key === 'shift')
+        );
+    }
+
+    function isCommandPlusEvent(event) {
+        return event.ctrlKey || event.metaKey;
+    }
+
+    function isLeftRightKey(event) {
+        const key_code = event.keyCode;
+        return (key_code === keyboard.keycodes.left) ||
+            (key_code === keyboard.keycodes.right);
+    }
+
+    const cycleThroughChoices = (event) => {
+        const is_right = event.keyCode === keyboard.keycodes.right;
+        const current_idx = extension_state.current_choice_idx
+        const n_choices = extension_state.choices.length;
+
+        if (n_choices === 1) return;
+
+        let newIndex;
+
+        // on right, let's increment the current
+        if (is_right)
+            newIndex = current_idx <= n_choices - 2 ? current_idx + 1 : 0
+        else
+            newIndex = current_idx > 0 ? current_idx - 1 : n_choices - 1
+
+        extension_state.current_choice_idx = newIndex;
+
+        // console.log(logPrefix,
+        //     `Have ${n_choices} choices. Set index from ${current_idx} to ${newIndex}`
+        // )
+    }
+
+    function patchCodeCellExecuteEvent() {
+        let original_codecell_execute_event = CodeCell.prototype.execute;
+        CodeCell.prototype.execute = function (stop_on_error) {
+            ensureEditorInsertionComplete(this);
+            return original_codecell_execute_event.apply(this, arguments);
+        }
+    }
+
+    function patchCellKeyevent() {
+        let origHandleCodemirrorKeyEvent = Cell.prototype.handle_codemirror_keyevent;
+        Cell.prototype.handle_codemirror_keyevent = function (editor, event) {
+            if (!extension_state.is_open) return;
+
+            const is_special_key = specials.indexOf(event.keyCode) !== -1;
+            const is_command_plus_event = isCommandPlusEvent(event);
+            console.log(logPrefix, "Handling keyevent", event.keyCode, "is special?", is_special_key, "command plus event?", is_command_plus_event);
+
+            // if the command, meta, or shift keys are pressed, just skip
+            if ((this instanceof CodeCell) && !is_special_key && !onlyModifierEvent(event) && !is_command_plus_event) {
+                // if a query is scheduled, we should delete it!
+                this.queryTimer && clearTimeout(this.queryTimer);
+
+                let cell = this;
+                // 51 is the hash key on UK keyboards
+                // 220 is the hash key on German keyboards
+                // 35 potentially elsewhere
+                if (extension_state.considering_choices && isLeftRightKey(event)) {
+                    cycleThroughChoices(event);
+                    insertChoice();
+                } else if (isFirstPromptCell(cell) &&
+                    [35, 51, 220].includes(event.keyCode)) {
+                    // event.preventDefault();
+                    sendCompletionQuery();
+                } else if (isCompletePrompt(cell)) {
+                    const queryDelay = options.modify_query_delay;
+                    console.log(logPrefix, `Scheduling query to run in ${queryDelay} ms`);
+                    this.queryTimer = setTimeout(sendCompletionQuery, queryDelay);
+                }
+
+            }
+            return origHandleCodemirrorKeyEvent.apply(this, arguments);
+        };
+    }
+
+    function handle_jupyter_cogram_error(jqXHR, textStatus, errorThrown) {
+        console.log('jupyter_cogram ajax error:', jqXHR, textStatus, errorThrown);
+        let error_obj = JSON.parse(jqXHR.responseText);
+        const error_msg = `${error_obj['message']}`
+        showAlertMessage(error_msg, 10000);
+    }
+
+
+    const make_dropright = () => {
+        return $(`<div class="mui-dropdown mui-dropdown--right">
+            <button class="mui-btn mui-btn--primary mui-btn--small mui-btn--flat" data-mui-toggle="dropdown">
+                Dropright
+                <span class="mui-caret mui-caret--right"></span>
+            </button>
+            <ul class="mui-dropdown__menu">
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+                <li><a href="#">Option 4</a></li>
+            </ul>
+        </div>`)
+    }
+
+    function build_cogram_status_info() {
+
+        let cogram_status_button = $('<button/>')
+            .attr('id', 'cogram-status')
+            .attr('class', 'btn btn-default')
+            .attr('title', 'Cogram status')
+            .attr('style', 'display: none;');
+
+        let cogram_spinner = $('<i/>')
+            .attr('id', 'cogram-spinner')
+            .attr('style', 'color: green;')
+            .attr('class', 'fa fa-circle-o-notch');
+
+        cogram_status_button.append(cogram_spinner);
+
+        $("#cogram-button-group").append(cogram_status_button);//.append(make_dropright());
+    }
+
+    const showAlertMessage = (msg, timeout = 2000) => {
+        const previousContent = $("#info-panel-content").html();
+        let alert_msg = $("<div class='mui--text-body2 alert-message'>" + msg + "</div>")
+        $("#info-panel-content").html(alert_msg);
+        showInfoPanel();
+        timeout && setTimeout(() => {
+            previousContent && $("#info-panel-content").html(previousContent);
+            $("#jupyter-cogram-info-panel").hide();
+        }, timeout)
+    }
+
+    const showSuccessMessage = (msg, timeout = 5000) => {
+        const previousContent = $("#info-panel-content").html();
+        let success_msg = $("<div class='mui--text-body2 success-message'>" + msg + "</div>")
+        $("#info-panel-content").html(success_msg);
+        showInfoPanel();
+        timeout && setTimeout(() => {
+            previousContent && $("#info-panel-content").html(previousContent);
+            $("#jupyter-cogram-info-panel").hide();
+        }, timeout)
+    }
+
+    const tokenInteraction = () => {
+        let textAreaDiv = $('<div id="info-panel-content"/>').text("Please submit your API token")
+        let form = $('<form id="token_submit_form"><div class="mui-textfield"><input type="text"' +
+            'name="api_token" placeholder="Your API token" spellcheck="false"' +
+            'class="mui--is-empty mui--is-pristine mui--is-touched">' +
+            '</div>' +
+            '<button id="cogram_token_submit" class="mui-btn mui-btn--primary" type="submit">Submit</button></form>');
+        textAreaDiv.append(form);
+
+        // Submit button click event handler
+        $('body').on('submit', '#token_submit_form', (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const [success, msg] = submitToken(form?.api_token?.value);
+            if (success) {
+                showSuccessMessage("Thanks, your token looks good 🎉", 2000)
+            } else {
+                showAlertMessage(msg, 5000);
+            }
+        })
+
+        return textAreaDiv;
+    }
+
+    let isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+
+
+    const getHintText = () => {
+        let symbol = isMac ? '⌘⏎' : 'Ctrl+⏎'
+        return extension_state.choices.length > 1 ?
+            `Next (→) &nbsp &nbsp Previous (←) &nbsp &nbsp Accept (${symbol})` :
+            `Accept (${symbol})`;
+    }
+
+    const buildHint = (hintText) => {
+        let hint = $('<div class="mui-panel" id="cogram-hint"/>')
+        let hints = $(`<div class="mui--text-body2" id="cogram-hint-text">${hintText}</div>`)
+        hint.append(hints);
+        $('.cell.code_cell.selected').prepend(hint);
+    }
+
+    const deleteHint = () => $('#cogram-hint').remove();
+
+    const displayHint = () => {
+        deleteHint();
+        buildHint(getHintText())
+    }
+
+    const showInfoPanel = () => $('#jupyter-cogram-info-panel').show();
+
+    const build_cogram_html = () => {
+        let cogram_token_int = $('<div/>').attr('id', 'jupyter-cogram-info-panel')
+            .attr('class', 'cogram_info_panel_display mui-panel mui--text-subhead mui--z2')
+            .attr('style', 'display: none;');
+
+        let closeButton = $("<div id='cogram_token_close'>x</div>")
+        cogram_token_int.append(closeButton).append($('<div id="info-panel-content"/>'));
+
+        // Close button click event handler
+        $('body').on('click', '#cogram_token_close', () => $("#jupyter-cogram-info-panel").hide());
+
+        // Disable jupyter shortcuts while query is being typed(to avoid them from triggering)
+        $('body').on('focus', '#jupyter-cogram-info-panel', () => Jupyter.keyboard_manager.disable());
+        $('body').on('blur', '#jupyter-cogram-info-panel', () => Jupyter.keyboard_manager.enable());
+
+        $("#site").prepend(cogram_token_int);
+    }
+
+    const load_css = (fname) => {
+        let link = document.createElement("link");
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = requirejs.toUrl(fname);
+        document.getElementsByTagName("head")[0].appendChild(link);
+    }
+
+    const checkValidTokenOrVersionUpdate = () => {
+        if (checkValidTokenExists()) {
+            checkIfVersionIsUpToDate()
+        } else {
+            showInfoPanelWithContent(tokenInteraction())
+        }
+    }
+
+    const refreshButton = () => {
+        let refreshButton = `<button id="refresh_button" class="mui-btn mui-btn--primary">Refresh</button>`
+        $('body').on('click', '#refresh_button', () => {
+            window.location.reload();
+        }
+        );
+        return refreshButton;
+    }
+    const autoUpgradeSuccessfulCallback = (response) => {
+        extension_state.version_is_up_to_date = true;
+        let msg = `<div class="mui--text-subhead">Successfully upgraded to version ${response?.new_version} 🎉` +
+            `<span class="mui--text-body2"><br>Please refresh your notebook:</span></div>` +
+            refreshButton()
+        showSuccessMessage(msg, options.upgrade_message_timeout)
+    }
+
+    const autoUpgradeErrorCallback = (jqXHR, textStatus, errorThrown) => {
+        extension_state.version_is_up_to_date = false;
+        let error_obj = JSON.parse(jqXHR.responseText);
+        extension_state.version_is_up_to_date = false;
+        console.log(logPrefix, "Auto upgrade error:", error_obj)
+        let msg = `<span class="mui--text-body2">${error_obj?.message}</span>`
+        showAlertMessage(msg, 10000)
+    }
+
+    const autoUpgrade = () => {
+        console.log(logPrefix, "Upgrading package");
+        return $.post({
+            url: '/upgrade',
+            headers: { 'X-XSRFToken': _get_cookie('_xsrf') },
+            dataType: "json",
+            contentType: "application/json",
+            success: autoUpgradeSuccessfulCallback,
+            error: autoUpgradeErrorCallback
+        });
+    }
+
+    const runAutoUpgrade = () => {
+        autoUpgrade()
+            .then(res => console.log(logPrefix, "`autoUpgrade()` result:", res))
+            .catch(err => console.log(logPrefix, "Error in `autoUpgrade()`:", err))
+
+    }
+
+    function load_jupyter_extension() {
+
+        load_css("//cdn.muicss.com/mui-0.10.3/css/mui.min.css");
+        load_css("./jupyter_cogram.css");
+
+        patchCellKeyevent();
+        patchCodeCellExecuteEvent();
+        build_cogram_html();
+
+        if (Jupyter.notebook.kernel) {
+            console.log(logPrefix, "Initialising with Kernel ready!")
+            initialize();
+            checkValidTokenOrVersionUpdate();
+        } else {
+            console.log(logPrefix, "Kernel not ready. Initialising later")
+            Jupyter.notebook.events.one('kernel_ready.Kernel',
+                () => {
+                    initialize()
+                    checkValidTokenOrVersionUpdate()
+                }
+            );
+        }
+
+
+    }
+
+    return {
+        load_jupyter_extension: load_jupyter_extension,
+        load_ipython_extension: load_jupyter_extension
+    };
+});
