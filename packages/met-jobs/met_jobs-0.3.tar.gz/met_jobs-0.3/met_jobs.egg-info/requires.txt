@@ -1,0 +1,8 @@
+pandas>=1.2.1
+scikit-learn>=0.24.1
+
+[scrape]
+requests
+beautifulsoup4
+tqdm
+lxml
