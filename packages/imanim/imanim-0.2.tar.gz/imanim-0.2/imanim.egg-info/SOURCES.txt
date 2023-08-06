@@ -1,0 +1,8 @@
+README.md
+setup.py
+imanim/__init__.py
+imanim.egg-info/PKG-INFO
+imanim.egg-info/SOURCES.txt
+imanim.egg-info/dependency_links.txt
+imanim.egg-info/requires.txt
+imanim.egg-info/top_level.txt
