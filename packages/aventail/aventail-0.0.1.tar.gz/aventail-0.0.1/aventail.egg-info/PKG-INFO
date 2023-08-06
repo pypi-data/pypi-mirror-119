@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: aventail
+Version: 0.0.1
+Summary: description
+Home-page: https://www.devron.ai/products
+Author: Devron
+Author-email: 
+License: license
+Description: # aventail-lite
+Keywords: python,aventail,federated learning
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6.*
+Description-Content-Type: text/markdown
