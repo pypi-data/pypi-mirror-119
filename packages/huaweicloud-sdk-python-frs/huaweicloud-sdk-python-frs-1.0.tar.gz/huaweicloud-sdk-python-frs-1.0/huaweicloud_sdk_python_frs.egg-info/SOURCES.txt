@@ -1,0 +1,5 @@
+setup.py
+huaweicloud_sdk_python_frs.egg-info/PKG-INFO
+huaweicloud_sdk_python_frs.egg-info/SOURCES.txt
+huaweicloud_sdk_python_frs.egg-info/dependency_links.txt
+huaweicloud_sdk_python_frs.egg-info/top_level.txt
