@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: omniblack.repo
+Version: 0.0.3
+Summary: Tooling for interacting with monorepos.
+License: AGPL-3.0-only
+Author: Terry Patterson
+Author-email: terryp@wegrok.net
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: anyio (>=3.3.0,<4.0.0)
+Requires-Dist: atpublic (>=2.3,<3.0)
+Requires-Dist: omniblack.model[yaml] (>=0.1.17,<0.2.0)
+Requires-Dist: python-box[ruamel.yaml,toml] (>=5.4.1,<6.0.0)
+Description-Content-Type: text/markdown
+
+# Omniblack Repo
+
+Omniblack Repo offers tools for interacting with a monorepo.
+

@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "omniblack.repo"
+version = "0.0.3"
+description = "Tooling for interacting with monorepos."
+authors = ["Terry Patterson <terryp@wegrok.net>"]
+license = "AGPL-3.0-only"
+readme ='./README.md'
+include = [
+    'omniblack/repo/*.py',
+    'omniblack/repo/model/*.yaml',
+    './README.md'
+]
+
+packages = [
+    {include = 'omniblack'},
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+anyio = "^3.3.0"
+atpublic = "^2.3"
+"omniblack.model" = {version = "^0.1.17", extras = ["yaml"]}
+python-box = {version = "^5.4.1", extras = ["ruamel.yaml", "toml"]}
+
+[tool.poetry.dev-dependencies]
+poetry = "^1.1.8"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
