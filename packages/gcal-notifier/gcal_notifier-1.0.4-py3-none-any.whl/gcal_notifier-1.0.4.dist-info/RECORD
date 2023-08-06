@@ -1,0 +1,14 @@
+gcal_notifier/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gcal_notifier/cli.py,sha256=ufFcDYPL6hD5Cn6edsAZ70hKdUARtv0BFaxIq4PKcBo,766
+gcal_notifier/config_reader.py,sha256=4dAmBLLltJySbCU4w9o9P3SIVcLB4y2MIGY7LjqRfjA,1642
+gcal_notifier/event_getter.py,sha256=ExTrlbEgwlnpfH9JPJsYUcY97dg36l4tAr6lPKU11zw,2791
+gcal_notifier/event_loader.py,sha256=bPe7j0GqgOmAJmk9zr8RPX18N49dzTW19tas1vuK2Tw,694
+gcal_notifier/event_reminder.py,sha256=1k5DZ03IFh69M7BXB31cbsQ2m3CQMgSq_ATktC448UI,1644
+gcal_notifier/event_saver.py,sha256=9O97NbBos-TC4UQbLa4AD4vyDq3_lNu0AadObU0gJlw,1704
+gcal_notifier/main.py,sha256=cD8Wsl3Eevn7slK1NSbVvx_4qNyEh1cuJql8fGn1FBc,826
+gcal_notifier/resources/pop.wav,sha256=VRyemjItKe-yRYK3Rl2MVgUzi9Jj1chOuTwUjPBkjUg,226002
+gcal_notifier/utils.py,sha256=cKp23xgSIeVZPNIIar0kXULTnqezxKKc7tIceZG4TTw,936
+gcal_notifier-1.0.4.dist-info/LICENSE.md,sha256=V0YIoMmh4N9armxzlgsZ-30KTkTw8sz9tnW000LZoHY,1069
+gcal_notifier-1.0.4.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+gcal_notifier-1.0.4.dist-info/METADATA,sha256=3YPzSZs4vAGjvWb2QFoYS8Zar9TXHYi56V8_Zkm4grs,607
+gcal_notifier-1.0.4.dist-info/RECORD,,
