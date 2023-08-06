@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+superimport/__init__.py
+superimport/_version.py
+superimport/superimport.py
+superimport.egg-info/PKG-INFO
+superimport.egg-info/SOURCES.txt
+superimport.egg-info/dependency_links.txt
+superimport.egg-info/requires.txt
+superimport.egg-info/top_level.txt
