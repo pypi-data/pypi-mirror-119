@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: tensorflow-wavelets
+Version: 1.0.13
+Summary: Tensorflow wavelet Layers
+Home-page: https://https://github.com/Timorleiderman/tensorflow-wavelets
+Author: Timor Leiderman
+Author-email: Timorleiderman@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Timorleiderman/tensorflow-wavelets/issues
+Keywords: Wavelets,Tensorflow
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tensorflow
+Requires-Dist: PyWavelets
+
+tensorflow-wavelets is an implementation of
+- *Multi Wavelets Transform Neural Networks Layer*
+- *Duel Tree Complex Wavelets Transform Layer*
+- *Discrete Wavelets Transform Layer*
+
+## Installation
+
+```
+pip install tensorflow-wavelets
+```
+# Usage
+```
+import tensorflow_wavelets.Layers.DWT as DWT
+import tensorflow_wavelets.Layers.DTCWT as DTCWT
+import tensorflow_wavelets.Layers.DMWT as DMWT
+```
+
+**Free Software, Hell Yeah!**
+
