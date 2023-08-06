@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+sdk/python/embeddinghub.egg-info/PKG-INFO
+sdk/python/embeddinghub.egg-info/SOURCES.txt
+sdk/python/embeddinghub.egg-info/dependency_links.txt
+sdk/python/embeddinghub.egg-info/top_level.txt
