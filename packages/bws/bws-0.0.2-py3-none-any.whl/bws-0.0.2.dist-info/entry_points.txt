@@ -1,0 +1,4 @@
+[console_scripts]
+bws=bws.cmd:bws_cli
+flit=flit:main
+
