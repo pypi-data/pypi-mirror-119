@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: omniblack.moneta
+Version: 0.0.1
+Summary: A changelog manager for omniblack.
+License: AGPL-3.0-only
+Author: Terry Patterson
+Author-email: Terryp@wegrok.net
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: GitPython (>=3.1.15,<4.0.0)
+Requires-Dist: anyio (>=3.0.1,<4.0.0)
+Requires-Dist: attrs (>=20.3.0,<21.0.0)
+Requires-Dist: more-itertools (>=8.8.0,<9.0.0)
+Requires-Dist: omniblack.repo (>=0.0.1,<0.0.2)
+Requires-Dist: parver (>=0.3.1,<0.4.0)
+Requires-Dist: ruamel.yaml (>=0.16.0,<0.17.0)
