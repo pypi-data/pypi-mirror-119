@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+scpt/__init__.py
+scpt/py.typed
+scpt.egg-info/PKG-INFO
+scpt.egg-info/SOURCES.txt
+scpt.egg-info/dependency_links.txt
+scpt.egg-info/not-zip-safe
+scpt.egg-info/top_level.txt
