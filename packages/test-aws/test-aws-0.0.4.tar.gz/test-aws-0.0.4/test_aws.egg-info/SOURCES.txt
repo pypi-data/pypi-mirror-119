@@ -1,0 +1,8 @@
+README.rst
+setup.py
+test_aws.egg-info/PKG-INFO
+test_aws.egg-info/SOURCES.txt
+test_aws.egg-info/dependency_links.txt
+test_aws.egg-info/requires.txt
+test_aws.egg-info/top_level.txt
+testaws/__init__.py
