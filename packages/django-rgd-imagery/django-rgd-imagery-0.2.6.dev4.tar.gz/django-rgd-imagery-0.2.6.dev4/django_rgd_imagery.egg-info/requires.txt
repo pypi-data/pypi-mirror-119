@@ -1,0 +1,17 @@
+bidict
+django-rgd
+large-image>=1.8.1.dev7
+large-image-source-gdal>=1.8.1.dev7
+large-image-source-pil>=1.8.1.dev7
+large-image-source-tiff>=1.8.1.dev7
+tifftools>=1.2.0
+numpy
+pystac
+shapely
+
+[worker]
+kwarray>=0.5.10
+kwcoco
+kwimage[headless]>=0.6.7
+large-image-converter
+rasterio
