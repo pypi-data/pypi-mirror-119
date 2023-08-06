@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: pulp-ostree
+Version: 2.0.0a1
+Summary: OSTree plugin for the Pulp Project
+Home-page: http://www.pulpproject.org
+Author: Pulp Project Developers
+Author-email: pulp-list@redhat.com
+License: GPLv2+
+Description: ![Pulp CI](https://github.com/pulp/pulp_ostree/workflows/Pulp%20CI/badge.svg)
+        
+        Pulp OSTree Plugin
+        ==================
+        
+        A Pulp plugin to support hosting your own OSTree.
+        
+        For more information, please see the [documentation](docs/index.rst) or the [Pulp project page](https://pulpproject.org/).
+        
+        How to File an Issue
+        --------------------
+        
+        
+        Visit [our tracker](https://pulp.plan.io/projects/pulp_ostree/issues/new) to file a `pulp_ostree` issue.
+        
+        
+        > **WARNING** Is this security related? If so, please follow the [Security Disclosures](https://docs.pulpproject.org/pulpcore/bugs-features.html#security-bugs) procedure.
+        
+        
+        Please set **only the fields in this table**. See [Redmine Fields](https://docs.pulpproject.org/pulpcore/bugs-features.html#redmine-fields) for more detailed
+        descriptions of all the fields and how they are used.
+        
+        | Field | Instructions |
+        | ----- | ----------- |
+        | Tracker | For a bug, select `Issue`, for a feature-request, choose `Story` |
+        | Subject | Strive to be specific and concise. |
+        | Description | This is the most important part! Please see [Description Field](https://docs.pulpproject.org/bugs-features.html#issue-description). |
+        | Category | Choose one if applicable, blank is OK. |
+        | Version | The version of pulp-ostree that you discovered the issue. |
+        | OS | Please select your operating system. |
+        | Tags | For searching. Select 0 or many, best judgement. |
+        
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
