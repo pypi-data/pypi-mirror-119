@@ -1,0 +1,14 @@
+caltechdata_api/__init__.py,sha256=oPrOUcOpjeeeMZKnhNN31PS3KJcP3DJZH5R8cz2JhoI,337
+caltechdata_api/caltechdata_edit.py,sha256=RLpH1tgHDrXNmGr6bS8CJY0zsEt6FqtFQ8wdyI99lyk,5556
+caltechdata_api/caltechdata_multipart.py,sha256=64YExb1oZIfY38FBgzGIku9kpl-i3mZ8UH6kRgJSk14,2867
+caltechdata_api/caltechdata_write.py,sha256=sQjjNrOejIeTvg02oVDhFJAJwSqIJShZtlmGS43pbAQ,3050
+caltechdata_api/customize_schema.py,sha256=6v0j_Q7UuqUZO7auE6M2m4-u2s93T5Mn7Xz5nxk8k_8,11013
+caltechdata_api/decustomize_schema.py,sha256=znUeEsA80SViEu3LC2GYIgDvFqqMNwI-DQiLWt4OBCE,20316
+caltechdata_api/download_file.py,sha256=IXObPtkS7mKFUViY1ik2X-nBiNB7V6k-Zj8zf01qAQI,1983
+caltechdata_api/get_files.py,sha256=sJTALiDEErcxPVnINfOAmzUCyMnrxHANkO8xC4bV924,1981
+caltechdata_api/get_metadata.py,sha256=Vx6I-S9THK65jr7UUAr35gF0_hIiNeX7YKtm3ZYTN24,3337
+caltechdata_api-0.3.0.dist-info/LICENSE,sha256=QvFsgOiOJGxfQjx34g5Fpw2twHYgiIqrcsp1AXxmZiM,1523
+caltechdata_api-0.3.0.dist-info/METADATA,sha256=1GjaHgVhJ4o1_N1m1eCrXI5dOdb-ZOB32VgI3yp96gQ,2827
+caltechdata_api-0.3.0.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+caltechdata_api-0.3.0.dist-info/top_level.txt,sha256=giC9aULvRY9HlV2IvaPZmwn1b46eLM1rbT3XqYiYOI0,16
+caltechdata_api-0.3.0.dist-info/RECORD,,
