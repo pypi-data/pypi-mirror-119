@@ -1,0 +1,5 @@
+setup.py
+fsf.egg-info/PKG-INFO
+fsf.egg-info/SOURCES.txt
+fsf.egg-info/dependency_links.txt
+fsf.egg-info/top_level.txt
