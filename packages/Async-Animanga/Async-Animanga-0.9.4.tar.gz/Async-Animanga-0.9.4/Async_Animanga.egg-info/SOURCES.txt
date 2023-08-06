@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+Async_Animanga/Anime.py
+Async_Animanga/Hentai.py
+Async_Animanga/Manga.py
+Async_Animanga/__init__.py
+Async_Animanga.egg-info/PKG-INFO
+Async_Animanga.egg-info/SOURCES.txt
+Async_Animanga.egg-info/dependency_links.txt
+Async_Animanga.egg-info/requires.txt
+Async_Animanga.egg-info/top_level.txt
+Async_Animanga/helpers/AnimeHelpers.py
+Async_Animanga/helpers/MangaHelpers.py
+Async_Animanga/helpers/__init__.py
