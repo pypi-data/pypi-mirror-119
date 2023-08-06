@@ -1,0 +1,7 @@
+proxy_validator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+proxy_validator/proxy_type.py,sha256=OA3UpV96IvbTA283DKQfNpTM9mURt05cgJFFDqhrtTA,172
+proxy_validator/settings.py,sha256=a_1dPxXh7krlQOmEyx90rTtnxiMrN53WBEl-iRL83SE,179
+proxy_validator/validator.py,sha256=zCINy_ft8cyugUiE31TMRydgddqUFZr2uhfoK1IfjJQ,2630
+proxy_validator-0.2.5.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+proxy_validator-0.2.5.dist-info/METADATA,sha256=mvoc3r1zZWDt4MMaIeZg5-QKkYqplMmNxkoIcHnPcxA,436
+proxy_validator-0.2.5.dist-info/RECORD,,
