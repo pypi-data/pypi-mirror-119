@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: open-this
+Version: 1.0.1
+Summary: A Python tiny package that opens Facebook, Youtube from terminal
+Home-page: https://github.com/iamdarshan7/OpenSocialMediaWithCLI
+Author: Darshan Thapa
+Author-email: darshanthapa872@gmail.com
+License: MIT
+Description: # Social Media Opener 
+        A Python Package to open the social media whose links are of the pattern https://<social-media-name>.com from your Command line Interface.
+        
+        # Usage
+        Following query will open the browser with the social-media you have written.
+        
+        '''
+        open-this <space> <social-media-name>
+        '''
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
