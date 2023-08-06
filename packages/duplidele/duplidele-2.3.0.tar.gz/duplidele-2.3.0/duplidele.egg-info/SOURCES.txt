@@ -1,0 +1,9 @@
+README.rst
+setup.py
+duplidele/__init__.py
+duplidele/duplidele.py
+duplidele.egg-info/PKG-INFO
+duplidele.egg-info/SOURCES.txt
+duplidele.egg-info/dependency_links.txt
+duplidele.egg-info/requires.txt
+duplidele.egg-info/top_level.txt
