@@ -1,0 +1,72 @@
+Metadata-Version: 1.1
+Name: fake_persian_name
+Version: 1.1.6
+Summary: A small Python library to generate fake Persian name.
+Home-page: https://github.com/ErfanRht/fake_persian_name
+Author: Erfan Rahmati
+Author-email: ErfanRht2005@gmail.com
+License: MIT
+Download-URL: https://github.com/ErfanRht/fake_persian_name/blob/master/dist/fake_persian_name-1.1.6.tar.gz
+Description: # fake_persian_name
+        
+        > A small Python library to generate fake Persian name.
+        
+        ## Instructions
+        
+        1. Install:
+        
+        ```
+        pip install fake_persian_name
+        ```
+        
+        2. Import the library:
+        
+        ```python
+        from fake_persian_name import fake_name as fpn
+        ```
+        
+        3. Generate a random Persian name:
+        
+        ```python
+        name = fpn.generate_name("random")
+        ```
+        
+        4. Generate a boy Persian name:
+        
+        ```python
+        name = fpn.generate_name("male")
+        ```
+        
+        5. Generate a girl Persian name:
+        
+        ```python
+        name = fpn.generate_name("female")
+        ```
+        
+        ## Issues
+        
+        Please file any issues, bugs or feature request [here](https://github.com/ErfanRht/fake_persian_name/issues).
+        
+        ## License
+        
+        This project is licensed under the [MIT License](https://github.com/ErfanRht/fake_persian_name/blob/master/LICENSE.txt)
+        
+        ## Author
+        
+        This Flutter package is developed by [Erfan Rahmati](https://github.com/ErfanRht).
+        
+Keywords: fake,persian,name,persian name,fake name
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
