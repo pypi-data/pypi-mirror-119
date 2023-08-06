@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+botamino_new.py.egg-info/PKG-INFO
+botamino_new.py.egg-info/SOURCES.txt
+botamino_new.py.egg-info/dependency_links.txt
+botamino_new.py.egg-info/requires.txt
+botamino_new.py.egg-info/top_level.txt
