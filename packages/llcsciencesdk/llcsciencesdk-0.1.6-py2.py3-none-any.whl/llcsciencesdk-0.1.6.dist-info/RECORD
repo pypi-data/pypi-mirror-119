@@ -1,0 +1,9 @@
+llcsciencesdk/__init__.py,sha256=pzXFdILAPib2hli_6ggKQfCaYYRfBSAiZG2QSa7pOW8,83
+llcsciencesdk/exceptions.py,sha256=V-FCxqQP9y32RA9QG8qORw-cet29S4srO0KhqJjHumc,1056
+llcsciencesdk/llc_api.py,sha256=mah50kmFQf1zkO-tuxWXsTYWgz9B-wgR5iYjwYO8cPA,3708
+llcsciencesdk/sample.py,sha256=1OWsddJ-XQY6zljI3FQOZkNdW0mKU0PmOMeL7urJ3yg,186
+llcsciencesdk/urls.py,sha256=Q9CB0kzNTNFwy7hxStRVqD8XHYBEwIEfBsCbqVRk-jw,697
+llcsciencesdk-0.1.6.dist-info/LICENSE,sha256=ISR1bCkh4XL2XhPLq1I3V0h6f0xKVKKKy4PtlDlc3cw,1080
+llcsciencesdk-0.1.6.dist-info/WHEEL,sha256=iTBNkFIR26Wnx2cg5455J1IIBEskRg4YJC9DJwgu-js,99
+llcsciencesdk-0.1.6.dist-info/METADATA,sha256=PdjkS8CjwB-VwwncWURiKpITat6ohnmGGUqr7xorhmI,1074
+llcsciencesdk-0.1.6.dist-info/RECORD,,
