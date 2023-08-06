@@ -1,0 +1,14 @@
+sql_cable/__init__.py,sha256=2ulaPzyPl5K-SMWwdtQ8kj8ggcR7Nv5fnKgYEObuTZo,4037
+sql_cable/columns.py,sha256=vF7bT5SJm53H50fHOSEuYc75r6lvQU6ugO0IfZHeIWU,4410
+sql_cable/migrations.py,sha256=PDX9YZT1qta5YPx_JLiBDvSaHJAGIm1qn2xEzUPHSbM,2113
+sql_cable/model.py,sha256=IHPLW8sLMHuQEIBl1gCGJqv5RFbJQ4JIQZFB-sIZ-jM,8104
+sql_cable/querys/__init__.py,sha256=-IqWlZiIWzR99k2rKBCnTZr6v7JSGvDaREU7cgRlEYY,88
+sql_cable/querys/delete.py,sha256=3hiexuqjf9EZcyic47lKxvqffoNtFmhrJSMw4xa4D3g,657
+sql_cable/querys/insert.py,sha256=sX1GGfZ4eyqA-A9Agw1Ad28eDPYWFdYj_ZFEwiGgqNg,1187
+sql_cable/querys/select.py,sha256=O0fX8YXMXoJQ5ZXE_Us3-y3gMBVyRkWqvQMv0uVL37M,6710
+sql_cable/querys/update.py,sha256=xk2DckgcYu-g2WHBKbpka7DUs9Y7PNbsteibYNen3Rk,1577
+sql_cable-0.2.7.dist-info/LICENSE,sha256=r8M6-TkTeCiK6cuTMQhCA_Hkf1qGE3E23VJwLrrbGsg,1089
+sql_cable-0.2.7.dist-info/METADATA,sha256=zN8yzqZZAxpf567LLpI8Wg18pRXALBypWvU1unl3O2U,791
+sql_cable-0.2.7.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+sql_cable-0.2.7.dist-info/top_level.txt,sha256=A0WnmGUjFdu_oOzyJXXUWmJy9Gln1va52rrQvMltS4Q,10
+sql_cable-0.2.7.dist-info/RECORD,,
