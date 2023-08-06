@@ -1,0 +1,11 @@
+src/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/cli.py,sha256=eIVpa7Kqaiv5-CFlcONwMXtp2fKVCNF_VItf2s4G1E0,600
+src/config.py,sha256=pjTTmSFNIUMqmPeWz0beH3jsbCwltppPBethOjhgPQk,2384
+src/console.py,sha256=lQfJqrml7U6yKavOK0pz8pQH0Afesys0WHQzb1HRTHI,1491
+src/fetch.py,sha256=ZQx_oCyVifMRdKnBN87GkUWBSvrRkckz9XYulAtRhN4,949
+src/history.py,sha256=ckr7yXFSbBwjN3vanwuRJn8XnDwdhnFyEzrCEVnVaV0,1165
+status_fetch-1.0.1.dist-info/METADATA,sha256=sPgzw3hSlewdTvHpoJBNq9f_LLopIowPm8l_KCxZTYg,709
+status_fetch-1.0.1.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+status_fetch-1.0.1.dist-info/entry_points.txt,sha256=FqxF9_nMePId71i3-cI351T4KsYDqtiGWFaYIX4r_wM,46
+status_fetch-1.0.1.dist-info/top_level.txt,sha256=74rtVfumQlgAPzR5_2CgYN24MB0XARCg0t-gzk6gTrM,4
+status_fetch-1.0.1.dist-info/RECORD,,
