@@ -1,0 +1,11 @@
+clonedetective/__init__.py,sha256=sXLh7g3KC4QCFxcZGBTpG2scR7hmmBsMjq6LqRptkRg,22
+clonedetective/_nbdev.py,sha256=tHBRGkZ0-w3xCKxN0TV0lensL1E3HKoJMEbdOHKEdBc,2459
+clonedetective/clone_analysis.py,sha256=uJILQ5UHUz8W_9ffB2-c-Nj6tcyjnhmXC60ernFSqao,3574
+clonedetective/clone_counters.py,sha256=2qHmlYkQ7_nMlfOhcSy7VrPSxLTbd1es2rKFQd4Ny7U,16368
+clonedetective/utils.py,sha256=mFjBeOemcjV9qjOGsWPuOemHeg8OBzcsaMOBcPkd00Q,18267
+clonedetective-0.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+clonedetective-0.0.1.dist-info/METADATA,sha256=EtFMEVxNIizLoT6c5fIiPbbXI82_IpgxPpLGtfrI7hU,3301
+clonedetective-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+clonedetective-0.0.1.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+clonedetective-0.0.1.dist-info/top_level.txt,sha256=LoLJeHsxB26MERKod8SE2gdYzvFWlhcLnwWmJau_RfY,15
+clonedetective-0.0.1.dist-info/RECORD,,
