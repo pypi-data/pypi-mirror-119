@@ -1,0 +1,17 @@
+crawler/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+crawler/app.py,sha256=MWOYeudRGy_JwBqcHRbwjnAX-d-3HvGuqspxSUybHiQ,189
+crawler/endpoints.py,sha256=BxEkVzwdcgguO1T8-xek-VDqEdnhAqM7M6_puV2CEds,1176
+crawler/settings.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scrapymims/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scrapymims/app.py,sha256=tRrjXq1l6T2imcCGnn6SqbWSFOvFkHCdwlLg2uD4kps,187
+scrapymims/endpoints.py,sha256=YRI0wNARrqmBZADtFJzoOjl3sSgD0ADAAR-T3fC8R3k,1311
+scrapymims/items.py,sha256=J_pUFWSyPWggnqGJ62ZpQdxsZlCGSCG2XzPErfka1Ms,961
+scrapymims/middlewares.py,sha256=1zvmAGR_825uUwYVEmDLe-7L2WPVYtmVt5iUZWX32MU,3656
+scrapymims/pipelines.py,sha256=60LNakz_r7zcBxJkMqWheQiNwGonhjughVg0xHHhAEQ,356
+scrapymims/settings.py,sha256=M9GW6yrhHiww9nF9YkqmVxQZCaEzh9_SvYrZRnisamg,3520
+scrapymims/spiders/__init__.py,sha256=ULwecZkx3_NTphkz7y_qiazBeUoHFnCCWnKSjoDCZj0,161
+scrapymims/spiders/images_spider.py,sha256=vqjrmITBGtSjTH4tcGLpfHmcO13oAOdACCrQ1bmbXQc,2561
+crawler_test-0.1.1.dist-info/METADATA,sha256=l9czbC5_oQ-qxrJ5gwegf0nNLNL6Hfg3rZEG3vnr_sc,319
+crawler_test-0.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+crawler_test-0.1.1.dist-info/top_level.txt,sha256=-zAX84nOMD5IqSxPLa8WFZeEd0cLAbCG1PtXVdCHuIY,8
+crawler_test-0.1.1.dist-info/RECORD,,
