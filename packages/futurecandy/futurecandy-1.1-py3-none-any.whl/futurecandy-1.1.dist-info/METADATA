@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: futurecandy
+Version: 1.1
+Summary: Project initialization utility for Linux.
+Home-page: https://dreamerslegacy.xyz/
+License: MIT
+Author: perpetualCreations
+Author-email: tchen0584@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: enquiries (>=0.1.0,<0.2.0)
+Requires-Dist: prompt-toolkit (>=3.0.20,<4.0.0)
+Requires-Dist: requests (>=2.26.0,<3.0.0)
+Project-URL: Repository, https://dreamerslegacy.xyz/git/perpetualCreations/futurecandy
+Description-Content-Type: text/markdown
+
+# futurecandy
+`><=><`
+
+Linux utility for launching projects in a single command.
+
+Run with `python -m futurecandy` or add a command alias to your shell RC file with `python -m futurecandy.extra` to run with command `futurecandy`.
+
+futurecandy will create directory `.futurecandy` in the user's home directory.
+Edit configuration files and hooks there.
+
+## Hooks
+Users may add their own hooks, by creating a file in directory `~/.futurecandy/hook`, with file extension `.hook.futurecandy`.
+
+Below is an example hook,
+```
+[meta]
+name = "LICENSE"
+description = "Hook for generating LICENSE files."
+
+[exec]
+script = "python -m futurecandy.hooks.License {}"
+want_path = True
+```
+
+Hooks must have a `meta` section with the name of the hook, and its description.
+This will appear on the hook selection menu.
+
+Followed is the `exec` section with a command to run, defined with property `script`.
+
+To specify the path to the project directory for the command, include `{}` as a placeholder in the `script` command, which will be replaced with the directory path, and set `want_path` to `True`.
+
+## Acknowledgements
+`gitignore.hook.futurecandy` based off of [perpetualCreations/auto-gitignore](https://github.com/perpetualCreations/auto-gitignore) forked from [Mux-Mastermann/auto-gitignore](https://github.com/Mux-Mastermann/auto-gitignore).
+
