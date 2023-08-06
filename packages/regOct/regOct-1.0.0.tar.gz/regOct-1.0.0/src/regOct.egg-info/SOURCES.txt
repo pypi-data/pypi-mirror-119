@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+src/regOct.egg-info/PKG-INFO
+src/regOct.egg-info/SOURCES.txt
+src/regOct.egg-info/dependency_links.txt
+src/regOct.egg-info/requires.txt
+src/regOct.egg-info/top_level.txt
+src/regoct/Structures.py
+src/regoct/Util.py
+src/regoct/Visualiser.py
+src/regoct/__init__.py
+src/regoct/octreeIO/__init__.py
+src/regoct/octreeIO/interface.py
+src/regoct/octreeIO/reader.py
+src/regoct/octreeIO/saveing.py
