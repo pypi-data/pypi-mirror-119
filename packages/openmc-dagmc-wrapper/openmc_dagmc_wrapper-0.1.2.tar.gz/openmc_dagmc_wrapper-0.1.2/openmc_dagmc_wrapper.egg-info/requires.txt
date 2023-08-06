@@ -1,0 +1,10 @@
+remove_dagmc_tags
+neutronics_material_maker
+vtk
+openmc_data_downloader
+matplotlib
+plotly
+defusedxml
+nbformat
+nbconvert
+dagmc_h5m_file_inspector
