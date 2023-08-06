@@ -1,0 +1,196 @@
+Metadata-Version: 2.1
+Name: delugerpc
+Version: 0.1.0
+Summary: Simple deluge JSON-RPC client.
+Home-page: https://github.com/foxe6/delugerpc
+Author: f̣ộx̣ệ6
+Author-email: foxe6@protonmail.com
+License: AGPL-3.0
+Keywords: deluge rpc client
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Utilities
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# DelugeRPC
+
+<badges>[![version](https://img.shields.io/pypi/v/delugerpc.svg)](https://pypi.org/project/delugerpc/)
+[![license](https://img.shields.io/pypi/l/delugerpc.svg)](https://pypi.org/project/delugerpc/)
+[![pyversions](https://img.shields.io/pypi/pyversions/delugerpc.svg)](https://pypi.org/project/delugerpc/)  
+[![donate](https://img.shields.io/badge/Donate-Paypal-0070ba.svg)](https://paypal.me/foxe6)
+[![powered](https://img.shields.io/badge/Powered%20by-UTF8-red.svg)](https://paypal.me/foxe6)
+[![made](https://img.shields.io/badge/Made%20with-PyCharm-red.svg)](https://paypal.me/foxe6)
+</badges>
+
+<i>Simple deluge JSON-RPC client.</i>
+
+# Hierarchy
+
+```
+delugerpc
+'---- deluge_rpc_api()
+    |---- core
+    |   |---- add_torrent_file_async()
+    |   |---- prefetch_magnet_metadata()
+    |   |---- add_torrent_file()
+    |   |---- add_torrent_files()
+    |   |---- add_torrent_url()
+    |   |---- add_torrent_magnet()
+    |   |---- remove_torrent()
+    |   |---- remove_torrents()
+    |   |---- get_session_status()
+    |   |---- force_reannounce()
+    |   |---- pause_torrent()
+    |   |---- pause_torrents()
+    |   |---- connect_peer()
+    |   |---- move_storage()
+    |   |---- pause_session()
+    |   |---- resume_session()
+    |   |---- is_session_paused()
+    |   |---- resume_torrent()
+    |   |---- resume_torrents()
+    |   |---- get_torrent_status()
+    |   |---- get_torrents_status()
+    |   |---- get_filter_tree()
+    |   |---- get_session_state()
+    |   |---- get_config()
+    |   |---- get_config_value()
+    |   |---- get_config_values()
+    |   |---- set_config()
+    |   |---- get_listen_port()
+    |   |---- get_proxy()
+    |   |---- get_available_plugins()
+    |   |---- get_enabled_plugins()
+    |   |---- enable_plugin()
+    |   |---- disable_plugin()
+    |   |---- force_recheck()
+    |   |---- set_torrent_options()
+    |   |---- set_torrent_trackers()
+    |   |---- get_path_size()
+    |   |---- create_torrent()
+    |   |---- upload_plugin()
+    |   |---- rescan_plugins()
+    |   |---- rename_files()
+    |   |---- rename_folder()
+    |   |---- queue_top()
+    |   |---- queue_up()
+    |   |---- queue_down()
+    |   |---- queue_bottom()
+    |   |---- glob()
+    |   |---- test_listen_port()
+    |   |---- get_free_space()
+    |   |---- get_external_ip()
+    |   |---- get_libtorrent_version()
+    |   |---- get_completion_paths()
+    |   |---- get_known_accounts()
+    |   |---- get_auth_levels_mappings()
+    |   |---- create_account()
+    |   |---- update_account()
+    |   '---- remove_account()
+    |---- daemon
+    |   |---- shutdown()
+    |   |---- get_method_list()
+    |   |---- get_version()
+    |   '---- authorized_call()
+    |---- autoadd
+    |   |---- set_options()
+    |   |---- enable_watchdir()
+    |   |---- disable_watchdir()
+    |   |---- set_config()
+    |   |---- get_config()
+    |   |---- get_watchdirs()
+    |   |---- add()
+    |   |---- remove()
+    |   |---- is_admin_level()
+    |   '---- get_auth_user()
+    |---- blocklist
+    |   |---- check_import()
+    |   |---- get_config()
+    |   |---- set_config()
+    |   '---- get_status()
+    |---- execute
+    |   |---- add_command()
+    |   |---- get_commands()
+    |   |---- remove_command()
+    |   '---- save_command()
+    |---- extractor
+    |   |---- set_config()
+    |   '---- get_config()
+    |---- label
+    |   |---- get_labels()
+    |   |---- add()
+    |   |---- remove()
+    |   |---- set_options()
+    |   |---- get_options()
+    |   |---- set_torrent()
+    |   |---- get_config()
+    |   '---- set_config()
+    |---- notifications
+    |   |---- set_config()
+    |   |---- get_config()
+    |   '---- get_handled_events()
+    |---- scheduler
+    |   |---- set_config()
+    |   |---- get_config()
+    |   '---- get_state()
+    |---- stats
+    |   |---- get_stats()
+    |   |---- get_totals()
+    |   |---- get_session_totals()
+    |   |---- set_config()
+    |   |---- get_config()
+    |   '---- get_intervals()
+    |---- toggle
+    |   |---- get_status()
+    |   '---- toggle()
+    |---- webui
+    |   |---- got_deluge_web()
+    |   |---- set_config()
+    |   '---- get_config()
+    |---- auth
+    |   |---- change_password()
+    |   |---- check_session()
+    |   |---- delete_session()
+    |   '---- login()
+    |---- web
+    |   |---- connect()
+    |   |---- connected()
+    |   |---- disconnect()
+    |   |---- update_ui()
+    |   |---- get_torrent_status()
+    |   |---- get_torrent_files()
+    |   |---- download_torrent_from_url()
+    |   |---- get_torrent_info()
+    |   |---- get_magnet_info()
+    |   |---- add_torrents()
+    |   |---- get_hosts()
+    |   |---- get_host_status()
+    |   |---- add_host()
+    |   |---- edit_host()
+    |   |---- remove_host()
+    |   |---- start_daemon()
+    |   |---- stop_daemon()
+    |   |---- get_config()
+    |   |---- set_config()
+    |   |---- get_plugins()
+    |   |---- get_plugin_info()
+    |   |---- get_plugin_resources()
+    |   |---- upload_plugin()
+    |   |---- register_event_listener()
+    |   |---- deregister_event_listener()
+    |   '---- get_events()
+    '---- webutils
+        '---- get_languages()
+```
+
+# Example
+
+## python
+See `test`.
+

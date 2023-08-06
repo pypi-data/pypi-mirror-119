@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+delugerpc/__init__.py
+delugerpc/core.py
+delugerpc/utils.py
+delugerpc.egg-info/PKG-INFO
+delugerpc.egg-info/SOURCES.txt
+delugerpc.egg-info/dependency_links.txt
+delugerpc.egg-info/top_level.txt
+test/test.py
