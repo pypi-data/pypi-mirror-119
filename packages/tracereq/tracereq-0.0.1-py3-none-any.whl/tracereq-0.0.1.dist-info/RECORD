@@ -1,0 +1,10 @@
+traceability/__init__.py,sha256=uR3XEB1nn9HJ880SCQ7J2u5cENKCCJO7UYyz-OI2TxI,213
+traceability/lda.py,sha256=8t5cIrqYvenyrbpoJ77vDDBa1HawxZt2q8IIIDPoNWM,4088
+traceability/lsa.py,sha256=0YR9-sF12ZGCSuZBbqA9yACD5YWSZaRMlj820wGcmSo,1605
+traceability/preprocessing_evaluation.py,sha256=VpXHiyTgIFLWvo9d_o7B7ZlpQts-nsC9tjlP7g5eEzY,3296
+traceability/vsm.py,sha256=o0zCl3CQisCOvtU516iARkb_Rgme-ouIlr7-f1xd20I,3858
+tracereq-0.0.1.dist-info/LICENSE,sha256=pbIMXbaorAIVW-fDch2tvtZRkVA3mz-UnXQqeCf4LDg,1086
+tracereq-0.0.1.dist-info/METADATA,sha256=vNdFv09lpzeRh_TNOscXJ5J0xJQlXHV6LvUPIqPUrgw,2195
+tracereq-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+tracereq-0.0.1.dist-info/top_level.txt,sha256=ceQ6fRTu9FFtz52KCH5EKBsftAoO1sjnCKRsozGXtKk,13
+tracereq-0.0.1.dist-info/RECORD,,
