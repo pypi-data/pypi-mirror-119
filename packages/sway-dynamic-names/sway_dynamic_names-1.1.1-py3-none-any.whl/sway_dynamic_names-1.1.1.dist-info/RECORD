@@ -1,0 +1,11 @@
+sway_dynamic_names/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sway_dynamic_names/__main__.py,sha256=DHQIqVxrqV9eEd76XaA3SH0DUO7KV_-b9N3Kchb19sw,152
+sway_dynamic_names/config.py,sha256=bp9-N7TszqFsE8HOgqtj5I6tmCBs7kvXHIiLBnRUcVw,4637
+sway_dynamic_names/daemon.py,sha256=QOt4fVkT0R_7IAUge6laC1mJzpZGK3zaJCmFRv115-s,2800
+sway_dynamic_names/default.yaml,sha256=vwrBbSHQOOAgbDiGo8S_Hrj1xhWLOn88I-3-TBMnNf4,300
+sway_dynamic_names-1.1.1.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+sway_dynamic_names-1.1.1.dist-info/METADATA,sha256=UHZzbAF642EL2V3WqaDEChqWfYnZDRmxUD5gsg8t2mM,3716
+sway_dynamic_names-1.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+sway_dynamic_names-1.1.1.dist-info/entry_points.txt,sha256=qHUE3z3DMmTR4gQzU6cejxGoHlHWhAjuGMf9gLscqJE,73
+sway_dynamic_names-1.1.1.dist-info/top_level.txt,sha256=PIzvQZARf4YAOiaDEwgddCngw9g17HV8JAPSPka0rRM,19
+sway_dynamic_names-1.1.1.dist-info/RECORD,,
