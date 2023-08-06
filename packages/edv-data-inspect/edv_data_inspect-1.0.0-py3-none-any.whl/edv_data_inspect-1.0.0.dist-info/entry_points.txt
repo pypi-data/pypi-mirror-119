@@ -1,0 +1,3 @@
+[console_scripts]
+edv-data-inspect = edv_data_inspect.edvRegex:main
+
