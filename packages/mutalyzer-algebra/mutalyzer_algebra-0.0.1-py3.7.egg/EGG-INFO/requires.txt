@@ -1,0 +1,1 @@
+normalizer@ git+ssh://git@github.com/mutalyzer/normalizer.git
