@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: rangerbotapi
+Version: 0.0.1
+Summary: Rangerbot api in python
+Home-page: UNKNOWN
+Author: Joci12
+Author-email: <csutak.jozsef.lorant.86@gmail.com>
+License: UNKNOWN
+Description: # Package info
+        rangerbot python api
+        # Made By Joci
+        a pip packaget joci csinalta
+        # Functions
+        getuserinfo('userid'), lekeri a user adatait
+        
+        getserverinfo('serverid'), lekeri a server adatait
+        
+        # Version
+        jelenlegi verzio: 0.0.1
+        
+Keywords: python,ranger,rangerbot,aki26,joci,package
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
