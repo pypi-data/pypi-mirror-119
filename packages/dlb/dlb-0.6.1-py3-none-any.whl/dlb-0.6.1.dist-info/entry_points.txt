@@ -1,0 +1,3 @@
+[console_scripts]
+dlb = dlb_launcher:main
+
