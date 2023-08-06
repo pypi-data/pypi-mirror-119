@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+signpdf2
+signpdf2/__init__.py
+signpdf2/create_tmp_file.py
+signpdf2/example.py
+signpdf2/file_utilities.py
+signpdf2/pdf_utilites.py
+signpdf2/sign_pdf.py
+signpdf2.egg-info/PKG-INFO
+signpdf2.egg-info/SOURCES.txt
+signpdf2.egg-info/dependency_links.txt
+signpdf2.egg-info/requires.txt
+signpdf2.egg-info/top_level.txt
