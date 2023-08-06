@@ -1,0 +1,11 @@
+nflnames/__init__.py,sha256=WkZRxuS2NB6AuSmhOqATgX6VQdAM2c4RuDZyvF0Knmo,44
+nflnames/players.py,sha256=YPNjlk2nFSgNwywf-d3qEzDV3GBiiubVTu9jIL7A5og,3095
+nflnames/teams.py,sha256=-Z4NtETna6GnVl-g8wMkxYFckdtAaDQaDruMxY0Q9mg,7700
+nflnames/data/master_players.csv,sha256=DGihHkF4N3nK_wxBqOROlID4L8l_rzkMFZ8UWMAa3rA,127714
+scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scripts/update_master_players.py,sha256=kCnZ-CRoZSfgJ8U0CEWe-J1kkP7eKIDWi24SEtFsUJk,1444
+nflnames-0.1.dist-info/LICENSE,sha256=aCSDKeE0zSnvxmzXTh3l12FUAig_odu1BDCUVlpWZis,1050
+nflnames-0.1.dist-info/METADATA,sha256=d4_2shjwtPO_wnLmEIOqEO26bOd--7KUoxXGxuRsC3c,240
+nflnames-0.1.dist-info/WHEEL,sha256=EVRjI69F5qVjm_YgqcTXPnTAv3BfSUr0WVAHuSP3Xoo,92
+nflnames-0.1.dist-info/top_level.txt,sha256=F4Uj5mxWkWTDBLlSLpVty1Mx53MCF-dlGzj8kXh9Kwo,17
+nflnames-0.1.dist-info/RECORD,,
