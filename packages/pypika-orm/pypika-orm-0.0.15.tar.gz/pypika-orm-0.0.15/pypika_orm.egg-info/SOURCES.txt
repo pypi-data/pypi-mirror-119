@@ -1,0 +1,14 @@
+README.md
+setup.cfg
+setup.py
+pypika_orm/__init__.py
+pypika_orm/dialects.py
+pypika_orm/fields.py
+pypika_orm/manager.py
+pypika_orm/model.py
+pypika_orm/query.py
+pypika_orm.egg-info/PKG-INFO
+pypika_orm.egg-info/SOURCES.txt
+pypika_orm.egg-info/dependency_links.txt
+pypika_orm.egg-info/requires.txt
+pypika_orm.egg-info/top_level.txt
