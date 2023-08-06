@@ -1,0 +1,4 @@
+[console_scripts]
+coolmatrix = matrix3:cool_matrix_cmd
+matrix = matrix3:matrix_cmd
+
