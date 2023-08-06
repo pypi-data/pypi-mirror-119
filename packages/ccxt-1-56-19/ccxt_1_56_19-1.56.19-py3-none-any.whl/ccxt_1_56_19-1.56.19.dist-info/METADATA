@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: ccxt-1-56-19
+Version: 1.56.19
+Summary: A copy of project https://pypi.org/project/ccxt/1.56.19/
+Home-page: https://github.com/ccxt/ccxt
+Author: Antas
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: yarl (==1.6.3)
+Requires-Dist: aiodns (>=1.1.1)
+Requires-Dist: aiohttp (<3.8,>=3.7.4)
+Requires-Dist: requests (>=2.18.4)
+Requires-Dist: cryptography (>=2.6.1)
+Requires-Dist: setuptools (>=38.5.1)
+Requires-Dist: certifi (>=2018.1.18)
+Requires-Dist: idna (>=2.0)
+Requires-Dist: multidict (>=4.0)
+Requires-Dist: pycares (>=4.0.0)
+Requires-Dist: attrs (>=17.3.0)
+Requires-Dist: chardet (<5.0,>=2.0)
+Requires-Dist: typing-extensions (>=3.6.5)
+Requires-Dist: async-timeout (<4.0,>=3.0)
+Requires-Dist: cffi (>=1.12)
+Requires-Dist: pycparser
+Requires-Dist: urllib3 (<1.27,>=1.21.1)
+Requires-Dist: charset-normalizer (~=2.0.0)
+
+A copy of project https://pypi.org/project/ccxt/1.56.19/
+
