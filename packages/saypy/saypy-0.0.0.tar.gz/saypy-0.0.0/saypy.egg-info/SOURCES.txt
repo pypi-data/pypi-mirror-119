@@ -1,0 +1,10 @@
+README.md
+setup.py
+saypy/__init__.py
+saypy/__main__.py
+saypy/core.py
+saypy.egg-info/PKG-INFO
+saypy.egg-info/SOURCES.txt
+saypy.egg-info/dependency_links.txt
+saypy.egg-info/entry_points.txt
+saypy.egg-info/top_level.txt

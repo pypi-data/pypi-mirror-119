@@ -1,0 +1,3 @@
+[console_scripts]
+saypy = saypy.__main__:main
+
