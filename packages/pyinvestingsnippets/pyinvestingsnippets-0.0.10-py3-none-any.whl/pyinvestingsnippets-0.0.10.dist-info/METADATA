@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: pyinvestingsnippets
+Version: 0.0.10
+Summary: UNKNOWN
+Home-page: https://pyinvestingsnippets.readthedocs.io/
+Author: InvestingSnippets
+Author-email: investingsnippets@gmail.com
+License: MIT License
+Project-URL: Bug Reports, https://github.com/investingsnippets/pyinvestingsnippets/issues
+Project-URL: Source, https://github.com/investingsnippets/pyinvestingsnippets
+Project-URL: Documentation, https://pyinvestingsnippets.readthedocs.io/
+Keywords: investing,financial-data
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+
+
+
+[![PyPI version](https://img.shields.io/pypi/v/pyinvestingsnippets.svg)](https://pypi.org/project/pyinvestingsnippets/)
+![Supported Python versions](https://img.shields.io/pypi/pyversions/pyinvestingsnippets.svg)
+[![Build Status](https://github.com/investingsnippets/pyinvestingsnippets/workflows/CI/badge.svg)](https://github.com/investingsnippets/pyinvestingsnippets/actions?query=workflow%3ACI)
+![CodeQL](https://github.com/investingsnippets/pyinvestingsnippets/workflows/CodeQL/badge.svg)
+
+
+
+# Python Module for Investing Snippets
+
+
