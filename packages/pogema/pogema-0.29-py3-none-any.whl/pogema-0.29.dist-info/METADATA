@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pogema
+Version: 0.29
+Summary: Partially Observable Grid Environment for Multi-Agent RL
+Home-page: https://github.com/Tviskaron/pogema
+Author: Alexey Skrynnik
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: gym (>=0.18.3)
+Requires-Dist: numpy (>=1.19.2)
+Requires-Dist: pydantic (>=1.8.2)
+Requires-Dist: drawSvg (>=1.8.2)
+Provides-Extra: numba
+Requires-Dist: numba (>=0.53.1) ; extra == 'numba'
+
+# Pogema env
+
