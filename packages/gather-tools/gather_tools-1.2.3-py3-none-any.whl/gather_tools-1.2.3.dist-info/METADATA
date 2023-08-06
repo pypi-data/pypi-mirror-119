@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: gather-tools
+Version: 1.2.3
+Summary: Gather Tools
+Home-page: UNKNOWN
+Author: Merreel
+Author-email: 1327444968@qq.com
+License: UNKNOWN
+Keywords: command,line,tool
+Platform: UNKNOWN
+Requires-Dist: selenium
+Requires-Dist: requests
+
+Example:
+
+
