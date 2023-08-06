@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: samp-data-generation
+Version: 1.0.8
+Summary: This python library handles synthetic data generation for the Omdena-SAMP project.
+Home-page: UNKNOWN
+Author: Samuel Nnitiwe Theophilus
+Author-email: nnitiwe@gmail.com
+License: MIT
+Keywords: object detection,synthetic data
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+License-File: LICENCE.txt
+
+This python library handles synthetic data generation for the Omdena-SAMP project. It contains functions that perform data augmentation and generation for  object detection and PID symbol classification tasks using image annotations in various formats.
+
+Change Log
+==========
+
+
+1.0.6 (05/09/2021)
+-------------------
+- First Release
+
+1.0.7 (08/09/2021)
+-------------------
+- Second Release
+
+1.0.8 (08/09/2021)
+-------------------
+- Latest Release
+
+

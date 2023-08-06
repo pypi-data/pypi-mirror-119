@@ -1,0 +1,12 @@
+CHANGELOG.txt
+LICENCE.txt
+MANIFEST.in
+README.txt
+setup.py
+samp_data_generation/__init__.py
+samp_data_generation.egg-info/PKG-INFO
+samp_data_generation.egg-info/SOURCES.txt
+samp_data_generation.egg-info/dependency_links.txt
+samp_data_generation.egg-info/requires.txt
+samp_data_generation.egg-info/top_level.txt
+samp_data_generation/.ipynb_checkpoints/__init__-checkpoint.py
