@@ -1,0 +1,9 @@
+pihole_dashboard/__init__.py,sha256=7w9wX3z6qGioz0GVtqorVOYapQ6ESa7fYpx_2zWi2j0,3696
+pihole_dashboard/font/font.ttf,sha256=O6XDgqfuaogxvfkBkq3c6r5ttCeKZ55n_n6cAia3Kc8,268280
+pihole_dashboard-1.0.1.data/scripts/pihole-dashboard-clean-screen,sha256=bi7YO2KHCUP9HK0UleCzkLepE1YWElviP0eZre9wRtc,1200
+pihole_dashboard-1.0.1.data/scripts/pihole-dashboard-draw,sha256=ur-_-YRxNcEavg5T_DF-X_8_2W00rncAvnxLY-wn1UE,784
+pihole_dashboard-1.0.1.dist-info/LICENSE.txt,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+pihole_dashboard-1.0.1.dist-info/METADATA,sha256=TFBSsfL3kSv_u9-F6VpK0ajZG7x7MQZC_uwdXHzm3sQ,4995
+pihole_dashboard-1.0.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+pihole_dashboard-1.0.1.dist-info/top_level.txt,sha256=CwD7gki6GRgQT-BRG_MDY8jSPnDAUhj1uU_WDjtbHr0,17
+pihole_dashboard-1.0.1.dist-info/RECORD,,
