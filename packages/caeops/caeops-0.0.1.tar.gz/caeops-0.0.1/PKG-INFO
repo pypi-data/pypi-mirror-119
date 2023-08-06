@@ -1,0 +1,180 @@
+Metadata-Version: 2.1
+Name: caeops
+Version: 0.0.1
+Summary: A CLI that works as a unified tool to manage your CloudAEye services
+Home-page: https://github.com/CloudAEye/caeops
+Author: CloudAEye
+Author-email: info@cloudaeye.com
+License: UNKNOWN
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+
+# Caeops command-line utility
+
+## Builds
+
+### Branch: dev
+![Build Status](https://codebuild.us-east-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZXA2Sjg1aHh5RjF3QzdnaUMxdVBvQjdjWXhlbVRwUXRaTFRtdjZzV1Fpdkx0ZFJtSnN1UDJnaWpiN3hJUisySmloby9yUUZaYUs2bkxsanhIYWRGSkRFPSIsIml2UGFyYW1ldGVyU3BlYyI6IlBPbHIrVkNiOEdlSDg5bnMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=dev)
+
+
+The **caeops** cli utility aims to provide clients with the ability to register themselves on CloudAEye SaaS platform.
+
+## Development setup
+
+The cli tool is based on the the same principle as **aws-cli**. It used a python executable. The main executable file then will include the python classes/libraries needed. In order to ensure that it's executable we have to make sure that -
+
+1. The following snippet at the top of file `caeops`. Also that python3 is executable from the command line. Replace `python3` with `python` if that's needed
+
+```
+#!/usr/bin/env python3
+```
+
+2. The file is executable
+
+```
+chmod +x caeops
+```
+
+3. The file path is in $PATH variable so it can be executed from everywhere _(optional)_.
+
+## Usage
+
+1. Simple Execution
+
+```
+caeops <command>
+```
+
+2. Execution with parameters
+
+```
+caeops <command> [parameter]
+```
+
+3. Execution with parameters and flags
+
+```
+caeops <command> [parameter] [--key1=value1] [--key2=value2]
+```
+
+4. Execution with parameters and filename
+
+```
+caeops <command> [parameter] [--file=values.txt]
+```
+
+The file given will contain all the flags. To view the format of file, check out sample.txt file in repository
+
+## Structure of utility
+
+The main executable file named `caeops` can be found in the root path of directory.
+
+1. The `Main()` class is being called whenever we execute any command.
+
+> To add any command, just add a function to Main() class with same name
+
+So, `caeops signup` will execute the signup() function under Main() class
+
+2. All configuration variables can be put into `config.json`. And this file can be fetched again from storage when we want to update the cli version
+
+CHANGES MADE -
+created a new route changeTempPassword to allow user to change their password and login simultaneously
+created a new file called detail.json so that user can just input the details easily
+the user will have to enter the value of userpoolid and client id in config.json after the register and it is approved by admin
+email will automatically be saved in config.ini when user registers
+
+added this line in requestlibs.py - TenantRegistrationUrl1 = data.get('TenantRegistrationUrl1', '')
+
+## Generating Documentation
+
+Documentation can be auto-generated from the doc strings of the python script. This project uses [tox](https://tox.readthedocs.io/en/latest/index.html) to generate the docs using [mkdocs](https://www.mkdocs.org/).
+
+- Build documentation
+```
+tox -e docs
+```
+
+- Serve the documentation locally
+```
+tox -e docs-serve
+```
+> This command serves the on http://localhost:8080
+
+Read more about [mkdocs with tox](https://tox.readthedocs.io/en/latest/example/documentation.html#mkdocs)
+See how to auto-wire the [documentation for your python class using mkdocstrings](https://mkdocstrings.github.io/usage/)
+
+
+## Running Tests
+
+This project makes use of pytest, unittest packages for writing all kinds of tests
+
+Anatomy of `tests`:
+    - **unit** : Contains unittests for all the caeops services (in progress)
+    - **functional** : Contains functional test for all the caeops services (yet to be implemented)
+    
+To run unittests, run the below command from project root:
+    ```
+    export TEST_USER_EMAIL=""
+    export TEST_USER_PASSWORD=""
+    export ES_NAME=""
+    tox -e unittests
+    ```     
+
+## Publishing Package
+
+This project makes use of `twine`, to publish the project as pip package
+
+Project is deployed to two indices:
+    - **testpypi** : All development related publishes will go to `testpypi` index
+    - **pypi** : All production related publishes will go to `pypi` index
+    
+To deploy packages, run the below command from project root:
+   - **Dev** mode: Publish package to test index  
+        ```
+        export TWINE_USERNAME="__token__"
+        export TWINE_PASSWORD="token-from-testpypi"
+        export TWINE_REPOSITORY="testpypi"
+        tox -e publish-dev
+        ```        
+   - **Prod** mode: Publish packages to original index  
+        ```
+        export TWINE_USERNAME="__token__"
+        export TWINE_PASSWORD="token-from-testpypi"
+        export TWINE_REPOSITORY="pypi"
+        tox -e publish-prod
+        ```     
+
+## CI/CD pipelines
+
+- This project uses AWS Codebuild to perform the continuous integration & delivery
+- The base branch to fork any new branch is `dev`. Any feature branch needs to be cloned from `dev` and merged
+  back to `dev`
+
+### How it works  
+
+#### Integration
+- Whenever a PR is created from feature branch to dev branch a build is triggered to run all the required tasks. 
+  The tasks that run on PR creation:
+      - unit tests
+      - functional tests (to be implemented)
+      - integration tests (to be implemented)
+      - code style (to be implemented)
+      - code analysis (to be implemented)
+  > Failure of any of these tasks would cause a build failure, and no PR with failed builds would be approved.  
+
+#### Delivery        
+- Once the dev branch is stable with above integration successful. A git release is created with an assosiated
+  `git tag`.   
+  The tasks that run on git tag creation:
+      - Building docs
+      - Publishing the docs to s3
+      - Building the project package
+      - Publishing the package to the required index
+  > Failure of any of these tasks would cause a build failure  
+       
+          
+
