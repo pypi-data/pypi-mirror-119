@@ -1,0 +1,9 @@
+fauxgrad/__init__.py,sha256=9oYihqQYBE9eYeNQsT0c7q9y2Eu27a9aYuwxp7N6RQ4,264
+fauxgrad/nn.py,sha256=6QXv-C9uYV0s6mNj48iAHE6Smu9ofdhyYVjBAO3qCWM,760
+fauxgrad/optim.py,sha256=_cLsTgbfmq-vIwBKU4ON_2GlFQorZQ0lZxv-Ciq-1Yw,307
+fauxgrad/utils.py,sha256=hXGEq8_2W2BW0H_-2tk929ysUZWSjr1b_vhUpPcKq2s,1889
+fauxgrad/value.py,sha256=I0c4t7pzvhq0QGM-4P_umNU7geIboShunxSJ0D4irp8,2107
+fauxgrad-0.1.dist-info/METADATA,sha256=2rZBX5RNBSvcns5zaghOkNqVHNfKxsTYrs49M-huIJI,1331
+fauxgrad-0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+fauxgrad-0.1.dist-info/top_level.txt,sha256=UrmvFK4mLgNxyZ-TIjRky3LbiHgSTNC8QDt2fMNOn18,9
+fauxgrad-0.1.dist-info/RECORD,,
