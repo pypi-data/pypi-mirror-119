@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: riotpy
+Version: 0.0.1
+Summary: Package for Riot API
+Home-page: https://github.com/header1213/riotpy
+Author: Daniel Lee
+Author-email: tworiver1213@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/header1213/riotpy
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# riotpy
+
+riotpy is a Python library for Riot API. Currently this is for only `SUMMONER-V4`, `SPECTATOR-V4`, and `MATCH-V5`.
+
+## How to use
+
+- First of all, you need to get Riot API key from https://developer.riotgames.com/.
+
+1. Set `riot` variable with `riot = riotpy.Riot('my_api_key')`
+2. Use functions with it like `riot.summoner(summonerName='hide on bush')`.
+3. Plus, use query strings by kwargs like `riot.match(puuid=puuid, start=0, count=1)
+
+
