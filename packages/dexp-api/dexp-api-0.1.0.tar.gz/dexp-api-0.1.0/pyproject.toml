@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dexp-api"
+version = "0.1.0"
+description = "In planning flexible and powerful discord api wrapper for python."
+authors = ["Bast <bast@fastmail.com>"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = {extras = ["speedups"], version = "^3.7.4"}
+coloredlogs = "^15.0.1"
+priority = "^2.0.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

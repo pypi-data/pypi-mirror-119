@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: dexp-api
+Version: 0.1.0
+Summary: In planning flexible and powerful discord api wrapper for python.
+Author: Bast
+Author-email: bast@fastmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiohttp[speedups] (>=3.7.4,<4.0.0)
+Requires-Dist: coloredlogs (>=15.0.1,<16.0.0)
+Requires-Dist: priority (>=2.0.0,<3.0.0)
