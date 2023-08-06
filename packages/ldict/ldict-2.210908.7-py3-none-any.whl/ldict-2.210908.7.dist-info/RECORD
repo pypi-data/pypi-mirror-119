@@ -1,0 +1,14 @@
+ldict/__init__.py,sha256=Cz9xu-sbH7gsM9fND1OnvSf7G0lNkSTrP-aHEQB2wso,313
+ldict/appearance.py,sha256=nijQRiNA65Cji4pmmchBcRrF_hWVwTGwvW-mi2XWOPQ,4450
+ldict/apply.py,sha256=wF_6Bj3BRyUOtC52steDAXWILlmEWWWhmbtevoHSUYo,9885
+ldict/cfg.py,sha256=xdH0V9B6vYjQYxKwftTQhTX-eyDTM1Mg2Jw46ANzcNM,1847
+ldict/customjson.py,sha256=6le8m_ryR6h9wIk50gcY-35xrk01iDeMADuzvpRTkXU,1921
+ldict/data.py,sha256=8m3UVuoNsQ2QCDtvLdfpcaFSyYY1_8C6xfRU1Rdx6Wk,5558
+ldict/exception.py,sha256=EtWVGe4Uvlpk1kc3cGaPwPWqNghm6YPZsJSK6zTYUQk,2488
+ldict/functionspace.py,sha256=YpZEnFQ17EHVApGMJ13LYDNo7wWzEbngHDEFjWjUgvQ,1639
+ldict/history.py,sha256=yQDsEHtczyEdcY0IkoDt31IvPgZNMFnSY18HlZGOV7U,6098
+ldict/lazy.py,sha256=DvsZbBevl3VW2B9W4YIsy8amOYGUHCnUmIxuTPHEUEA,1556
+ldict/ldict_.py,sha256=dqT9DFLj2HwDkwNljE7XAEcSKdxt2V9F4Ggsllpxv_k,15404
+ldict-2.210908.7.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+ldict-2.210908.7.dist-info/METADATA,sha256=ibRvMv0yKqWE9YLmYnHAkJB9krcICt5Mx4J4rTA4D-Q,9983
+ldict-2.210908.7.dist-info/RECORD,,
