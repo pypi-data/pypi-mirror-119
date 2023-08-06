@@ -1,0 +1,11 @@
+premark/__init__.py,sha256=NGwiMLxOHxv6jJhtsW3X5YnIanHwNaWup97gf8TO5hQ,318
+premark/cli.py,sha256=Cs2lKTjbpaJSErxMUq6BHaDVpQm8cxnE1kdPeSP5rao,3249
+premark/presentation.py,sha256=3kOv8Gd0SPnNmJpqMZ2m9Yof7j5pdObLY4egdjKPmh8,9720
+premark/templates/default.css,sha256=q8-oAsF8yJycq71bGvP-9achh7c-atM5ioWnEsY5V8A,420
+premark/templates/default.html,sha256=GYyz94fgTlSFgYz9DwxazxxOinhW5e2xJYZug_SkQg0,219
+Premark-0.0.9rc0.dist-info/LICENSE,sha256=osmfRMGckyJ7jd0ZmMR4nzRgqY9n1QmnagtNP1Yjh3w,1077
+Premark-0.0.9rc0.dist-info/METADATA,sha256=dTlOYrmxlpqNxhpt2-dtgvXo0Va1Rw8QBdcpzGJQ7YI,3238
+Premark-0.0.9rc0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+Premark-0.0.9rc0.dist-info/entry_points.txt,sha256=CyQ9bBwuA4okIJUU2Aa-SmH3ReErgrTA_KSe9JjVGEc,49
+Premark-0.0.9rc0.dist-info/top_level.txt,sha256=RqDGI38kR3xt5V0tBiHhC7xjePWgwevLywAQl_wjIns,8
+Premark-0.0.9rc0.dist-info/RECORD,,
