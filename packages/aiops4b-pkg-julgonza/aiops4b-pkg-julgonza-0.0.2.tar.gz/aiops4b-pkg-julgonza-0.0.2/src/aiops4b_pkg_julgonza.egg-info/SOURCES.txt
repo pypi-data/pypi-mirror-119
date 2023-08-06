@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/aiops4b_pkg_julgonza.egg-info/PKG-INFO
+src/aiops4b_pkg_julgonza.egg-info/SOURCES.txt
+src/aiops4b_pkg_julgonza.egg-info/dependency_links.txt
+src/aiops4b_pkg_julgonza.egg-info/top_level.txt
