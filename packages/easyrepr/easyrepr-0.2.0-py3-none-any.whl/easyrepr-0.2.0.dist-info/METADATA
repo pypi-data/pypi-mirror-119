@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: easyrepr
+Version: 0.2.0
+Summary: Python decorator to automatically generate repr strings
+Home-page: https://github.com/chrisbouchard/easyrepr
+License: MIT
+Author: Chris Bouchard
+Author-email: chris@upliftinglemma.net
+Requires-Python: >=3.8,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Project-URL: Documentation, https://easyrepr.readthedocs.io/
+Project-URL: Repository, https://github.com/chrisbouchard/easyrepr
+Description-Content-Type: text/markdown
+
+# easyrepr
+
+[![Read the Docs][rtd-badge]][rtd-link]
+
+Python decorator to automatically generate repr strings
+
+[rtd-badge]: https://readthedocs.org/projects/easyrepr/badge/
+[rtd-link]: https://easyrepr.readthedocs.io/en/latest/
+
+## Example
+
+```pycon
+>>> class UseEasyRepr:
+...     def __init__(self, foo, bar):
+...         self.foo = foo
+...         self.bar = bar
+...     @easyrepr
+...     def __repr__(self):
+...         ...
+...
+>>> x = UseEasyRepr(1, 2)
+>>> repr(x)
+'UseEasyRepr(foo=1, bar=2)'
+```
+
+## Installation
+
+```console
+$ pip install easyrepr
+```
+
