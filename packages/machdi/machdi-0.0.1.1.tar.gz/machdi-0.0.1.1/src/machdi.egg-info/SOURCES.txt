@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/machdi/__init__.py
+src/machdi/errors.py
+src/machdi/models.py
+src/machdi/preprocessing.py
+src/machdi.egg-info/PKG-INFO
+src/machdi.egg-info/SOURCES.txt
+src/machdi.egg-info/dependency_links.txt
+src/machdi.egg-info/top_level.txt
