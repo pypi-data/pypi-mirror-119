@@ -1,0 +1,117 @@
+Metadata-Version: 1.1
+Name: ThomCode
+Version: 1.0.8
+Summary: Solution to all your problems
+Home-page: UNKNOWN
+Author: Thom van Hamburg
+Author-email: Thomniville@gmail.com
+License: MIT
+Description: import ThomCode as tc
+        
+        - getInteger("text").......returns a text and gives the option to enter a whole number
+        - getFloat("text").........returns a text and gives the option to enter a number
+        - getString("text")........returns a text and gives the option to enter a single character
+        - getLetter("text")........returns a text and gives the option to enter a letter
+        
+        - CircleCir(1).............calculated circumference circle with radius 1
+        - CircleSurf(1)............calculates area circle with radius 1
+        - SphereVol(1).............calculated volume sphere with radius 1
+        - TriangleSurf(2,3)........calculates a triangle's area with base 2 and height 3
+        
+        - pi.......................gives pi up to 15 decimal places
+        - sqrt(9)..................returns the square root of 9
+        - factorial(5).............calculated factorial 5 (1*2*3*4*5)
+        - degrees(100).............converts radians to degrees
+        - radians(100).............converts degrees to radians
+        - phythagoras(3,4).........calculates the long side of a 90 degree triangle with sides 3 and 4
+        - BinomialCoef(5.4)........calculates the binomial coefficient of n=5 and k =3
+        
+        - FibonacciList(100).......returns fibonacci frequency in list up to number 100
+        - FibonacciNum(10).........returns the 1oth number in the fibonacci sequence (34)
+        - Sort_list(list)..........sorts the list from smallest to largest
+        - Reverse(list)............reverses the list but can also reverse text 
+        - NumList(12)..............returns list up to the number 12
+        - AlphabetList.............lists the alphabet
+        - AlphabetListCAP..........lists the alphabet in capitals
+        - PrimeList(100)...........returns list of prime numbers up to 100
+        - PrimeChecker(97).........checks if 97 is prime
+        
+        - RandomMatrix(3,2,4,9)....returns a 3x2 matrix with random values â€‹â€‹between 4 and 9
+        - MatrixMultiplier(X,Y)....multiplies 2 matrices together
+        - MatrixSum(X,Y)...........adds 2 matrices together (arrays must have equal size)
+        - MatrixSub(X,Y)...........subtracts 2 matrices (matrices must have equal size)
+        
+        change log
+        ===========
+        
+        1.0.0 (10/09/2021)
+        ------------------
+        - First Release
+        
+        1.0.1 (10/09/2021)
+        ------------------
+        - added NumberList function
+        - added FibonacciList function
+        - added AlphabetList function
+        - added PrimeList function
+        - added PrimeChecker function
+        - added ReverseList function
+        
+        1.0.2 (10/09/2021)
+        ------------------
+        - added RandomMatrix function
+        - added ArrayMultiplier function
+        - added ArraySum function
+        - added Arrayminus function
+        
+        1.0.3 (10/09/2021)
+        ------------------
+        - added BinomialCoef function
+        - fixed ArrayMultiplier bug
+        
+        1.0.4 (10/09/2021)
+        ------------------
+        - added BinomialCoef function
+        - changed ArraySum to MatrixSum
+        - changed ArrayMinus to MatrixMinus
+        - changed ArrayMultiplier to MatrixMultiplier 
+        
+        1.0.5 (10/09/2021)
+        ------------------
+        - added TriangleSurf function
+        - added AlphabetListCAP function
+        - added higher_lower_game
+        - changed MatrixMinus to MatrixSub
+        - translated README to english
+        - translated functions to english
+        
+        1.0.6 (11/09/2021)
+        ------------------
+        - added FibonacciNum function
+        - changed Fibonacci to FibonacciList
+        - changed ReverseList to reverse
+        - updated reverse for list and text
+        - updated README 
+        
+        1.0.7 (11/09/2021)
+        ------------------
+        - changed reverse to ReverseLT
+        - fixed ReverseLT bug
+        - updated README
+        
+        1.0.8 (11/09/2021)
+        ------------------
+        - fixed MatrixMultiplier bug
+        - changed ReverseLT to reversed
+        - updated reversed
+        - updated AlphabetList
+        - updated AlphabetListCAP
+        - updated NumberList
+        
+Keywords: ThomCode,pi,sqrt,factorial,prime,list,biominal coefficient,geometry,matrix,fibonacci sequence,game
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
