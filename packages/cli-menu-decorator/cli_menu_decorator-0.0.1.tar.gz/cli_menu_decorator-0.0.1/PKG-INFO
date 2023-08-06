@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: cli_menu_decorator
+Version: 0.0.1
+Summary: easy to use CLI builder using decorator @MenuItem on top of any function to be treated as a CLI Menu item
+Home-page: https://github.com/alhariri-hashem/pycli
+Author: Hashem Alhariri
+Author-email: hashem.m.alhariri@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/alhariri-hashem/pycli/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# cli_menu_decorator
+Easy to use cli menu builder using decorator @MenuItem on top of any function to be treated as a CLI Menu item
+
+

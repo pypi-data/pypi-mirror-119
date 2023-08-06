@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/cli_menu_decorator.egg-info/PKG-INFO
+src/cli_menu_decorator.egg-info/SOURCES.txt
+src/cli_menu_decorator.egg-info/dependency_links.txt
+src/cli_menu_decorator.egg-info/top_level.txt
+src/pyclimenu/__init__.py
+src/pyclimenu/cli_menu.py
+src/pyclimenu/menu.py
+src/pyclimenu/menu_item.py
+test/test.py
