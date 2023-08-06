@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+htm_pytorch/__init__.py
+htm_pytorch/htm_pytorch.py
+htm_pytorch.egg-info/PKG-INFO
+htm_pytorch.egg-info/SOURCES.txt
+htm_pytorch.egg-info/dependency_links.txt
+htm_pytorch.egg-info/requires.txt
+htm_pytorch.egg-info/top_level.txt
