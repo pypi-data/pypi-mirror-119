@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ComPyTool
+Version: 0.2.5
+Summary: A Python based tool to compare .bam and .vcf files using a SQLite3 database
+Home-page: https://github.com/KutzO/ComPy/
+Author: Oliver Kutz
+Author-email: Oliver.Kutz@uniklinikum-dresden.de
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+License-File: LICENSE.txt
+
+UNKNOWN
+
