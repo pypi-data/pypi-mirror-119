@@ -1,0 +1,12 @@
+frozen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+frozen/apps.py,sha256=6bhNofCIWensQGFWPYBtQGDKSY6fmiiiT1JphhqfkDk,91
+frozen/exceptions.py,sha256=6NmohLLELeqhfTzRhhJqO5MLBkc3kI47QjORoNBkixA,83
+frozen/fields.py,sha256=w8d8AbVfIAL7PFOV_m_XZg56sNsfVOTHxI0Ey4LU78U,7059
+frozen/models.py,sha256=myDt-oallUh5Pz3n-cbQV1Ozx97Pq2AMasmSfsC-Ius,6204
+frozen/serializers.py,sha256=LK0JsRZoTnl8Mv_IAQpkI6kacfl6LHEoZukSL8vWmYc,6028
+frozen/settings.py,sha256=QXiu020bns9mhz9n924Pr5CWQK9DtxZW6ckXDYnnalk,347
+frozen/types.py,sha256=Bq-BIq6h6QLg-v-dXctJoRUGGJDTAMIWA5prCP3jNlk,1415
+django_frozen_field-0.1b13.dist-info/LICENSE,sha256=iyD3BiPBbN6V4jA3WWq-yFZ30gqnZYKxChIEZaPNyd0,1065
+django_frozen_field-0.1b13.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+django_frozen_field-0.1b13.dist-info/METADATA,sha256=ACeMurfEQgmniZ1F7VlYCizWAO6mCzVg-u06hDvv4xc,9124
+django_frozen_field-0.1b13.dist-info/RECORD,,
