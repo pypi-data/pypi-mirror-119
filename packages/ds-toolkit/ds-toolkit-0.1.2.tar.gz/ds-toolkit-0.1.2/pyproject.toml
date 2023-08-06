@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "ds-toolkit"
+version = "0.1.2"
+description = "A toolkit full of random & helpful abilities"
+authors = ["David Silva <davidsilva2841+gitlab@gmail.com>"]
+readme = "README.md"
+homepage = "https://gitlab.com/davidsilva2841/ds-toolkit"
+repository = "https://gitlab.com/davidsilva2841/ds-toolkit"
+license = "MIT"
+classifiers = [
+	"Topic :: Utilities",
+	"Topic :: Text Processing :: General"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+bs4 = "^0.0.1"
+requests = "^2.26.0"
+PyPrind = "^2.11.3"
+python-magic = "^0.4.24"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
