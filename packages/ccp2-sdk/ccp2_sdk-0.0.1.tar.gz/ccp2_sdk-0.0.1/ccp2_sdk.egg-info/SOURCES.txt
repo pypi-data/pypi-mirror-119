@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+ccp2_sdk/__init__.py
+ccp2_sdk/robot.py
+ccp2_sdk.egg-info/PKG-INFO
+ccp2_sdk.egg-info/SOURCES.txt
+ccp2_sdk.egg-info/dependency_links.txt
+ccp2_sdk.egg-info/requires.txt
+ccp2_sdk.egg-info/top_level.txt
