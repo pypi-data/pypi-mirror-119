@@ -1,0 +1,6 @@
+zeep==2.5.0
+python-dateutil
+M2Crypto
+pytz
+unidecode==1.2.0
+BeautifulSoup4==4.9.3
