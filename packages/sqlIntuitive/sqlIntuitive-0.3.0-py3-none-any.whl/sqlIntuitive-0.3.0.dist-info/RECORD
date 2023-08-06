@@ -1,0 +1,16 @@
+sqlIntuitive/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive/coreDbSystems.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive/dbStructureAnalysis.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive/dbSystems.py,sha256=5Nh6Q4uwjT8jcboA1dyrYLaLr-wUIria5I_HcMt_dwQ,2907
+sqlIntuitive/exceptions.py,sha256=wItGO1WTrTznjuyXSW9VBTz2e_Tiq9p_i8s8lwk337g,163
+sqlIntuitive/inputDataValidation.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive/inputDataValidator.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive/sqlGeneration.py,sha256=fTaoa1zw-8iupQVg8LHN0o1ZHr9uBrhRg6X6D3YUSt8,5806
+sqlIntuitive/ext/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive/ext/customDatatypes/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive/ext/mirror/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlIntuitive-0.3.0.dist-info/LICENSE,sha256=ZmYzOfiwuSrkiKUxkY4pAAxvHOejtcQnlVExxZdi76o,1077
+sqlIntuitive-0.3.0.dist-info/METADATA,sha256=9rFjhw9zyZ6bdkysIhjZW_U0zSV7rOQi4GENN2hLWiU,264
+sqlIntuitive-0.3.0.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+sqlIntuitive-0.3.0.dist-info/top_level.txt,sha256=XAfsQMWoN34Gsd836AN3xRJgbnzgRsF_HRpwLo3R4rI,13
+sqlIntuitive-0.3.0.dist-info/RECORD,,
