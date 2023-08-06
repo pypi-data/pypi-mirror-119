@@ -1,0 +1,79 @@
+utmp/wtmp/btmp reader module for Python 3.x
+===========================================
+
+This project is a binary CPython 3.x module which allows you to interact with
+the user accounting databases ``utmp``, ``wtmp``, ``btmp``, and ``lastlog``,
+which keep track of the boot, login and logout events.
+
+It was developed for the `fingerd`_ project, which needs to know the last
+login date of a user, if the user is still logged in, on which line they are
+connected to the system, and so on. I decided to make my own module to
+manage these files.
+
+For now, the project is only available on Linux.
+
+For more information, you can consult the docs on `pyutmpx.touhey.pro
+<https://pyutmpx.touhey.pro/>`_.
+
+Quickstart
+----------
+
+A more thorough `onboarding guide`_ is available in the documentation;
+here are some basic instructions.
+
+Install the module by using the following command:
+
+.. code-block:: sh
+
+	python -m pip install pyutmpx
+
+List all entries in the ``utmp`` file:
+
+.. code-block:: python
+
+	import pyutmpx
+
+	for entry in pyutmpx.utmp:
+		print(entry)
+
+Get the last boot time:
+
+.. code-block:: python
+
+	import pyutmpx
+
+	for entry in pyutmpx.utmp:
+		if entry.type != pyutmpx.BOOT_TIME:
+			continue
+		print(f"Last boot time is {entry.time.isoformat()}")
+		exit()
+
+	print("No boot time on record.")
+
+Get the last login time and host for a given user:
+
+.. code-block:: python
+
+	import pyutmpx
+
+	uid = 1000
+
+	for entry in pyutmpx.lastlog:
+		if entry.uid != uid:
+			continue
+
+		print(f"Last login at {entry.time.isoformat()} on {entry.line} "
+			f"from {entry.host}")
+		exit()
+
+	print("No last login.")
+
+What is left to do
+------------------
+
+- Expand compatibility to other platforms, such as OpenBSD.
+- Add a list-like interface, with length and index.
+
+.. _fingerd: https://forge.touhey.fr/fingerd.git/
+.. _Single Unix Specification: http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/utmpx.h.html
+.. _onboarding guide: https://pyutmpx.touhey.pro/onboarding.html
