@@ -1,0 +1,108 @@
+/* PrismJS 1.24.1
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+go+java+json+lua+python+ruby+shell-session+sql+yaml */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+ .themedark {
+    /* Code blocks */
+    /* Inline code */
+  }
+  .themedark code[class*=language-],
+  .themedark pre[class*=language-] {
+    color: #ccc;
+    background: none;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  .themedark pre[class*=language-] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+  }
+  .themedark :not(pre) > code[class*=language-],
+  .themedark pre[class*=language-] {
+    background: #2d2d2d;
+  }
+  .themedark :not(pre) > code[class*=language-] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
+  }
+  .themedark .token.comment,
+  .themedark .token.block-comment,
+  .themedark .token.prolog,
+  .themedark .token.doctype,
+  .themedark .token.cdata {
+    color: #999;
+  }
+  .themedark .token.punctuation {
+    color: #ccc;
+  }
+  .themedark .token.tag,
+  .themedark .token.attr-name,
+  .themedark .token.namespace,
+  .themedark .token.deleted {
+    color: #e2777a;
+  }
+  .themedark .token.function-name {
+    color: #6196cc;
+  }
+  .themedark .token.boolean,
+  .themedark .token.number,
+  .themedark .token.function {
+    color: #f08d49;
+  }
+  .themedark .token.property,
+  .themedark .token.class-name,
+  .themedark .token.constant,
+  .themedark .token.symbol {
+    color: #f8c555;
+  }
+  .themedark .token.selector,
+  .themedark .token.important,
+  .themedark .token.atrule,
+  .themedark .token.keyword,
+  .themedark .token.builtin {
+    color: #cc99cd;
+  }
+  .themedark .token.string,
+  .themedark .token.char,
+  .themedark .token.attr-value,
+  .themedark .token.regex,
+  .themedark .token.variable {
+    color: #7ec699;
+  }
+  .themedark .token.operator,
+  .themedark .token.entity,
+  .themedark .token.url {
+    color: #67cdcc;
+  }
+  .themedark .token.important,
+  .themedark .token.bold {
+    font-weight: bold;
+  }
+  .themedark .token.italic {
+    font-style: italic;
+  }
+  .themedark .token.entity {
+    cursor: help;
+  }
+  .themedark .token.inserted {
+    color: green;
+  }
