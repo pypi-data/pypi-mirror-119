@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: koreanlist
+Version: 0.0.1
+Summary: A mirror package for koreanbots.
+Home-page: https://github.com/koreanbots/py-sdk
+Author: wonderlandpark
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+## This is a mirror package!
+
+Please install `koreanbots`
+
+

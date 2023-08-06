@@ -1,0 +1,7 @@
+README.md
+setup.py
+koreanlist.egg-info/PKG-INFO
+koreanlist.egg-info/SOURCES.txt
+koreanlist.egg-info/dependency_links.txt
+koreanlist.egg-info/requires.txt
+koreanlist.egg-info/top_level.txt
