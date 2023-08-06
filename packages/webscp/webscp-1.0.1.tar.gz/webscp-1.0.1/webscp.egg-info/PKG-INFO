@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: webscp
+Version: 1.0.1
+Summary: Scrape and email modules to an email id.
+Home-page: UNKNOWN
+Author: Govind Choudhary <govind2220000@gmail.com>, Sreejith Subhash <sreejithsubhash198@gmail.com>
+License: UNKNOWN
+Project-URL: Documentation, https://github.com/govind2220000/image_scraper
+Project-URL: Source, https://github.com/govind2220000/image_scraper
+Project-URL: Tracker, https://github.com/govind2220000/image_scraper/issues
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3
