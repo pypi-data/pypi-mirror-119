@@ -1,0 +1,45 @@
+# TOC
+* [PS1](#ps1-)
+   * [Installation](#installation-)
+   * [License](#license-)
+   * [Quickstart](#quickstart-)
+   * [PS1 Command](#ps1-command-)
+   * [Examples](#examples-)
+   * [Other Docs](#other-docs-)
+
+
+# PS1 [&#8593;](#toc)
+This program is meant to take the pain out of generating nice bash PS1 prompts.
+
+Pull requests welcome! And if you build an awesome theme, drop something in the [examples](https://github.com/shollingsworth/ps1/blob/main/src/ps1api/examples) folder!
+## Installation [&#8593;](#toc)
+To install this package from [pypy](https://pypi.org/project/ps1/) run the following command.
+
+
+```
+
+pip3 install ps1
+
+```
+
+## License [&#8593;](#toc)
+See: [LICENSE](https://github.com/shollingsworth/ps1/blob/main/LICENSE)
+## Quickstart [&#8593;](#toc)
+Here's an example to get you up and running!
+
+
+```
+
+pip3 install ps1
+
+export PS1="$(ps1 template -t parrot)"
+
+```
+
+## PS1 Command [&#8593;](#toc)
+__PS1__
+## Examples [&#8593;](#toc)
+__EXAMPLES__
+## Other Docs [&#8593;](#toc)
+* [Api Docs](https://shollingsworth.github.io/ps1/)
+* [Changelog](./CHANGELOG.md)
