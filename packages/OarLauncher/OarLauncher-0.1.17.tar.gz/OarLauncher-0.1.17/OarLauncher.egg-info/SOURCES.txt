@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+OarLauncher/__init__.py
+OarLauncher/array_job.py
+OarLauncher/dumpers.py
+OarLauncher/templates.py
+OarLauncher.egg-info/PKG-INFO
+OarLauncher.egg-info/SOURCES.txt
+OarLauncher.egg-info/dependency_links.txt
+OarLauncher.egg-info/top_level.txt
