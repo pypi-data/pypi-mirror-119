@@ -1,0 +1,11 @@
+attrs~=21.2.0
+
+[dev]
+black
+flake8
+isort
+
+[lint]
+black
+flake8
+isort
