@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: simeeg
+Version: 0.0.3.3
+Summary: Create artificial EEG data
+Home-page: UNKNOWN
+Author: rpb
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: mne
+Requires-Dist: numpy
+
+Create artificial EEG data
+
+
