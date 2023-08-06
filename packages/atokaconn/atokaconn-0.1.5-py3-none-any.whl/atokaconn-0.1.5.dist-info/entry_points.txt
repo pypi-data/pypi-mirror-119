@@ -1,0 +1,3 @@
+[console_scripts]
+atokaconn=atokaconn.cli.main:app
+
