@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: metavid
+Version: 0.1
+Summary: Tool for adding metastimuli to videos
+Home-page: https://github.com/dialectic/metavid
+Author: Dr. Rico Picone
+Author-email: rpicone@stmartin.edu
+License: UNKNOWN
+Description: # metavid
+        ---------
+        
+        A library of tools for creating/managing videos with metastimuli elements. 
+        
+        The purpose of metastimuli is to improve information retention by providing peripheral feedback and stimuli. There is a broader and nuanced rationale justifying the use of metastimuli[1]. Those looking to exploit metastimuli should be mindful of a sense of location and space, as that is the undergirding principle.
+        
+        
+        
+        [1] R. A. R. Picone, D. Webb, and B. Powell, “Metastimuli: An Introduction to PIMS Filtering,” in Augmented Cognition. Human Cognition and Behavior, vol. 12197, D. D. Schmorrow and C. M. Fidopiastis, Eds. Cham: Springer International Publishing, 2020, pp. 118–128. doi: 10.1007/978-3-030-50439-7_8.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Other Audience
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development
+Classifier: Topic :: Education :: Computer Aided Instruction (CAI)
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Description-Content-Type: text/markdown
