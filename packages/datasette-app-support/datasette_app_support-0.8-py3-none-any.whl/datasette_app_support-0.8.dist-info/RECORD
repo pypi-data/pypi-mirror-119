@@ -1,0 +1,10 @@
+datasette_app_support/__init__.py,sha256=o7g9QjmikHBCVxHeyCMLWYF_XYfWm8iTQ0JDeKX2hYU,9293
+datasette_app_support/static/sticky-footer.css,sha256=F6BcyzcPu_LnfJp-44yODHJXXGPD7xZZV7_EDTfaEFU,146
+datasette_app_support/templates/_table-table-plugin_directory-plugins.html,sha256=g9XB66IocrYE1WBZmfXuMFQ0Wjw9L2M5N8V0uoKDXYA,1429
+datasette_app_support/templates/database.html,sha256=1phfz61G2YKSuEpd3rfFqvr5hzYvBW97dTS9YjUcS2A,569
+datasette_app_support/templates/table-plugin_directory-plugins.html,sha256=VvW4qfGGMk3EobB9npQ-tgz0KlbEzrEGgE0DT2J_PEw,1550
+datasette_app_support-0.8.dist-info/METADATA,sha256=v-GnRDxxDEGgNs8hIQesfxooYlmLesv8CdkVwjhe6Do,4839
+datasette_app_support-0.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+datasette_app_support-0.8.dist-info/entry_points.txt,sha256=q7KiDah8U7YPYJIQeZ_1D5Is5ZHDpMdo3Z5zcQto6y8,49
+datasette_app_support-0.8.dist-info/top_level.txt,sha256=FdBLrGJ8X9bNp-y9AqHSQVOOyE_iSORgGKXRxgfhbyc,22
+datasette_app_support-0.8.dist-info/RECORD,,
