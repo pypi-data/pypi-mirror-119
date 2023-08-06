@@ -1,0 +1,14 @@
+resiliparse/itertools.cpython-39-x86_64-linux-gnu.so,sha256=Xgf-qO4OxGsNe9EGNePL1v6dzblKGhtQX4mFWLDtc7w,632800
+resiliparse/__init__.py,sha256=atGmpZoAgIja6HdW4SDRRJkKr143Zucm6Zg0-W1OdcE,580
+resiliparse/process_guard.cpython-39-x86_64-linux-gnu.so,sha256=yI23BZYX3Pbeg-uaW9rXkAc-bBOmNIErPKB5kDr1nCg,1170736
+resiliparse/parse/http.cpython-39-x86_64-linux-gnu.so,sha256=OJOfto5ghRajsyLOlMmtYkF6Fsa3ebNpsL__SzZLMyA,355648
+resiliparse/parse/cli.py,sha256=l3c7lby4g5q0vRTbFCXkeJ6jfFtHOrj6dim9zAob1MU,5513
+resiliparse/parse/encoding.cpython-39-x86_64-linux-gnu.so,sha256=gShLBfMhyIMNPllFxaKoyI4NC97SVro3PaJqfZX2Q4Y,695616
+resiliparse/parse/html.cpython-39-x86_64-linux-gnu.so,sha256=5f8Zh_VpX32vZxoCJ3UZZHSaOAtCQXHaWSvDjeNtFXk,2363440
+resiliparse/parse/__init__.py,sha256=wnfc_rW8YRoMMYaEnQrKnMwMBSo-3EI6ADuafOsHl-E,781
+Resiliparse-0.4.2.dist-info/RECORD,,
+Resiliparse-0.4.2.dist-info/METADATA,sha256=uCfBrZO4yaN03sazzf7PA7UbeUmFieV47slQ8WycB0c,1904
+Resiliparse-0.4.2.dist-info/WHEEL,sha256=ts1NGDem03kTrzsJp50lKy9cpDxDoGil0Q-wLa_TR_0,148
+Resiliparse-0.4.2.dist-info/top_level.txt,sha256=iwOzBXN0My7I-RCfTJKD4IrJage9Z8lzzfMsOUJ62HU,12
+Resiliparse.libs/liblexbor-e192d0ae.so.2.1.0,sha256=OPA3RBXBpnj6-8sR6bI8AYKHFt8tImomnJtGLTLTay0,7339280
+Resiliparse.libs/libuchardet-d105c2de.so.0.0.6,sha256=4h8VRm7xTK9G7KHupHGiLf9GLlVBmM_gsazAPizmdnU,148680
