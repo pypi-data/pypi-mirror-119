@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: endless-sky-bindings
+Version: 0.0.6
+Summary: Python bindings for Endless Sky C++ code
+Home-page: https://github.com/thomasballinger/endless-sky-bindings-python
+Author: Thomas Ballinger
+Author-email: thomasballinger@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+
