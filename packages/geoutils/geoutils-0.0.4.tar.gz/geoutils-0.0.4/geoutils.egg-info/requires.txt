@@ -1,0 +1,11 @@
+rasterio
+geopandas
+pyproj
+scipy
+matplotlib
+
+[:python_version < "3.8"]
+typing-extensions
+
+[rioxarray]
+rioxarray
