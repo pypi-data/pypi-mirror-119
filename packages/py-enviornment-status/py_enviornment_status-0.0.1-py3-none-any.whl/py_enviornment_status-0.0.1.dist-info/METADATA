@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: py-enviornment-status
+Version: 0.0.1
+Summary: Python Environment Package Status
+Home-page: UNKNOWN
+Author: Vamsee Achanta
+Author-email: <vamsee.achanta@aceengineer.com>
+License: UNKNOWN
+Keywords: python,first package
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+
+Python Environment Package Status helps in determining the package versions used and relative version/timeline to the latest/stable versions
+
+
