@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: python-multibar
+Version: 2.0.5
+Summary: Basic wrapper for static writing progress bars.
+Home-page: https://github.com/Animatea/python-multibar
+Author: DenyS
+License: Apache v2.0
+Download-URL: https://github.com/Animatea/python-multibar/archive/refs/heads/master.zip
+Project-URL: Documentation, https://app.gitbook.com/@denys111/s/python-multibar/
+Project-URL: Examples, https://github.com/Animatea/python-multibar/tree/master/examples
+Project-URL: Bug Tracker, https://github.com/Animatea/python-multibar/issues
+Keywords: PYTHON,PYTHON3,DISCORD,DISCORD-API,PROGRESS,PROGRESSBARS,PROGRESS BAR,PROGRESS BARS,SYNC,ASYNC
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Other Audience
+Classifier: Framework :: AsyncIO
+Classifier: Typing :: Typed
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+
+# [PRE-ALPHA RELEASE]
+![TOTAL LINES](https://img.shields.io/tokei/lines/github/Animatea/python-multibar)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+
