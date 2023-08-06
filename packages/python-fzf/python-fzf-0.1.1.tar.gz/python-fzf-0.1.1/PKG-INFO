@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: python-fzf
+Version: 0.1.1
+Summary: Python wrapper for fzf.
+Home-page: https://github.com/samedamci/python-fzf
+License: ISC
+Keywords: fzf,wrapper
+Author: samedamci
+Author-email: samedamci@disroot.org
+Requires-Python: >=3.9.2,<4.0.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved
+Classifier: License :: OSI Approved :: ISC License (ISCL)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Version Control
+Classifier: Topic :: Utilities
+Project-URL: Repository, https://github.com/samedamci/python-fzf
