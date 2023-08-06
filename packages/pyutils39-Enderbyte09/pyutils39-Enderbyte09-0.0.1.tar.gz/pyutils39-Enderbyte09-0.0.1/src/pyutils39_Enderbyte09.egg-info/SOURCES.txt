@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/pyutils39/__init__.py
+src/pyutils39/pyutils39.py
+src/pyutils39_Enderbyte09.egg-info/PKG-INFO
+src/pyutils39_Enderbyte09.egg-info/SOURCES.txt
+src/pyutils39_Enderbyte09.egg-info/dependency_links.txt
+src/pyutils39_Enderbyte09.egg-info/top_level.txt
