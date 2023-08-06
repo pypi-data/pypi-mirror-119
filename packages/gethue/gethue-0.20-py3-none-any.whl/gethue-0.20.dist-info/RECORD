@@ -1,0 +1,11 @@
+cli/__init__.py,sha256=74a6-CnbsZ35OC4LM3SFx-W0Y45LHJS3jDfSbSG8X7M,814
+cli/main.py,sha256=FXb2PqfzcNPpN4w3Aj_Shwqe0DChm20o1IgKhD2fISU,3842
+compose/__init__.py,sha256=FLXUDscvjugCPAo_gxWPdL9UTwsMS755fLxX8Sgt79M,791
+compose/manage.py,sha256=G1oCqSfwoehlcb-j5eNAiFKCJNH0cdb8Ua9bJeTHH_w,1589
+gethue-0.20.dist-info/LICENSE.txt,sha256=qr6MzP_umTnjjMxyVfoLSyY1yMsXfTozLgIlO1S5kF4,11349
+gethue-0.20.dist-info/METADATA,sha256=RBmUZMURnshp61HLRxG6jBoc5pAZqiGfEkG-CBtsgBs,3536
+gethue-0.20.dist-info/NOTICE.txt,sha256=rDZmDTe7Db32aCwmkn_9lt0o76slLGPmHNy3LMKsG8s,4520
+gethue-0.20.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+gethue-0.20.dist-info/entry_points.txt,sha256=uiWdiWZnYwc3cjRk7-WzOnTcSiEdx49pFc078rh45gQ,78
+gethue-0.20.dist-info/top_level.txt,sha256=X2OktF2uCw6iVQO4dzyQnMRJim5jPRAbvyoK65pHP4c,12
+gethue-0.20.dist-info/RECORD,,
