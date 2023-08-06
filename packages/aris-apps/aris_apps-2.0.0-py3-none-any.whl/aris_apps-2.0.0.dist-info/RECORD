@@ -1,0 +1,14 @@
+aris_apps/myapp/__init__.py,sha256=MOdRl-qzC_FXyERW77cdkGUp4YgdU_SsF6FGbnvyWJ8,571
+aris_apps/myapp/app.py,sha256=AHv-mZo79zblDo5S1xhAV6EGGljgBpxor3uuOgnNA7Y,32590
+aris_apps/myapp/utils.py,sha256=l8xgLNUMqwkKD3jD_bbm9lKMni504OD1Re5kk87V-6Q,4653
+aris_apps/myapp/config/mpl_settings_envelope.json,sha256=1h97SEDBaAd5N1nyXfDhILNLOLAQ1nAHp2DvO6LVMKI,2325
+aris_apps/myapp/config/mpl_settings_trajectory.json,sha256=UwyQfsQL7aPQ0-yUQXExQrfngjgp25KeOXaCPudlRMI,2307
+aris_apps/myapp/ui/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aris_apps/myapp/ui/resources_rc.py,sha256=m5XJQ9MuIicmAjrZvMH1hvWLVKQRFvdtB1nqHu0n3dg,1352322
+aris_apps/myapp/ui/ui_app.py,sha256=0NQGlCjNjpywHtSXUqns1iTxvRVDAmELo9hkLew2mz8,45310
+aris_apps-2.0.0.dist-info/LICENSE,sha256=5X8cMguM-HmKfS_4Om-eBqM6A1hfbgZf6pfx2G24QFI,35150
+aris_apps-2.0.0.dist-info/METADATA,sha256=Jt8Lj5jsETfj6YTaSYg5oyrj1Gly9f-Gfvil1ioC_uQ,3015
+aris_apps-2.0.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+aris_apps-2.0.0.dist-info/entry_points.txt,sha256=-5V_VeQzCHylp-vn2-kIrRLO5UCPToMTqGMQD_yfImQ,50
+aris_apps-2.0.0.dist-info/top_level.txt,sha256=odiS50vFwXlmz3sR_8e7JqjkfxI1lO373LKUQVRYunU,10
+aris_apps-2.0.0.dist-info/RECORD,,

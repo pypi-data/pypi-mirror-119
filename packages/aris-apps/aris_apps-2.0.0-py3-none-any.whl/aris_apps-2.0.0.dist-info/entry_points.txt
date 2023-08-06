@@ -1,0 +1,3 @@
+[gui_scripts]
+online_model = aris_apps.myapp:run
+
