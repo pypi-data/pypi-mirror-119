@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: RsAts1800c
+Version: 1.2.0.3
+Summary: ATS1800C Python instrument driver from Rohde & Schwarz
+Home-page: UNKNOWN
+Author: Rohde & Schwarz GmbH & Co. KG
+Author-email: Customer.Support@rohde-schwarz.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: PyVisa (>=1.11.3)
+
+Rohde & Schwarz ATS1800C Python instrument driver Version 1.0.0.2
+
+Version history:
+
+1.2.0.3 09/2021
+- Added Feed Switcher control interface 'feed_switcher'
+- Added new 'system' interface
+- Added Trigger output control for Elevation
+- Moved the following methods from general 'utilites' interface to a dedicated interface 'system': 
+  - get_current_status()
+  - preset()
+  - wait_for_movements_finish()
+  - Package require
+- Package requirements for pyvisa now contain minimum version of 1.11.3
+
+
+ 1.0.0.2 02/2020
+ - First version created
+
+
