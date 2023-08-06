@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: aserto
+Version: 0.1.3
+Summary: Aserto API client
+Home-page: https://github.com/aserto-dev/aserto-python/tree/HEAD/packages/aserto
+License: Apache-2.0
+Author: Aserto, Inc.
+Author-email: pypi@aserto.com
+Maintainer: authereal
+Maintainer-email: authereal@aserto.com
+Requires-Python: >=3.7,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Typing :: Typed
+Requires-Dist: aiohttp (>=3.7.4,<4.0.0)
+Requires-Dist: aserto-authorizer-grpc (>=0.2.2,<0.3.0)
+Requires-Dist: typing-extensions (>=3.10.0,<4.0.0)
+Project-URL: Documentation, https://github.com/aserto-dev/aserto-python/tree/HEAD/packages/aserto
+Project-URL: Repository, https://github.com/aserto-dev/aserto-python/tree/HEAD/packages/aserto
+Description-Content-Type: text/markdown
+
+# Aserto API client
+High-level client interface to Aserto's APIs.
+
+At the moment this only supports interacting with Aserto's [Authorizer service](https://docs.aserto.com/authorizer-guide/overview).
+## Installation
+### Using Pip
+```sh
+pip install aserto
+```
+### Using Poetry
+```sh
+poetry add aserto
+```
+## Usage
+```py
+from aserto import HostedAuthorizer, Identity
+from aserto.api.authorizer import AuthorizerClient
+
+
+client = AuthorizerClient(
+    tenant_id=ASERTO_TENANT_ID,
+    identity=Identity(type="NONE"),
+    authorizer=HostedAuthorizer(api_key=ASERTO_API_KEY, service_type="gRPC"),
+)
+
+result = await client.decision_tree(
+    decisions=["visible", "enabled", "allowed"],
+    policy_id=ASERTO_POLICY_ID,
+    policy_path_root=ASERTO_POLICY_PATH_ROOT,
+    policy_path_separator="DOT",
+)
+
+assert result == {
+    "GET.your.policy.path": {
+        "visible": True,
+        "enabled": True,
+        "allowed": False,
+    },
+}
+```
