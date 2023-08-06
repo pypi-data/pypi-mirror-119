@@ -1,0 +1,8 @@
+fps_kernels/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fps_kernels/models.py,sha256=BTr_sMknFRtmhUOBHu8pqaTIAoDKyIY5a1bPZyvmL8I,478
+fps_kernels/routes.py,sha256=2j7rlUqg1Qw869CvG2Z9QCmIwfGrlBoPMZAC5BTVDaQ,6076
+fps_kernels-0.0.2.dist-info/METADATA,sha256=iNGV9iO6Z4HVMiojMb_Ccku6v-DMvl2FWdy-dm418T0,218
+fps_kernels-0.0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+fps_kernels-0.0.2.dist-info/entry_points.txt,sha256=Maf_NSAyUMEHe-LkaaUmjerTwVHTi9vpbknoCrsAjgg,47
+fps_kernels-0.0.2.dist-info/top_level.txt,sha256=evndk2D9ZAuKepgDNsLjVuHKJIJ0BvV_NYZGOzksSn4,12
+fps_kernels-0.0.2.dist-info/RECORD,,
