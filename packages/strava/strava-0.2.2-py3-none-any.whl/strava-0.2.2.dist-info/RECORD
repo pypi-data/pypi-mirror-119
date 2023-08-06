@@ -1,0 +1,10 @@
+async_strava/__init__.py,sha256=MWONP7hqH6cNS3vEbqeDZmdBA436ux7Q-ys1K9QWKx0,45
+async_strava/attributes.py,sha256=y_CL22TBTaxuxdHYygnTIqEeXe7-REn4IEc_C_Y9xAM,228
+async_strava/exceptions.py,sha256=relf3C_76b2_0fA189oMzmBOJnDH9IluxHRjDZrHiF8,1255
+async_strava/strava.py,sha256=0jasR5ofJ0-6iStuL2dbZaDIJAHygf-JqA6inhiMFI0,26319
+strava-0.2.2.dist-info/LICENSE,sha256=t-jrr1H2oV1gxNk1oYPe7oLlm2Mhb_sGE8LsZkXIMss,1077
+strava-0.2.2.dist-info/METADATA,sha256=WmC_p7Vc76ft5cypHYLWpfvySNGClYnweT2-6K0NbNc,9369
+strava-0.2.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+strava-0.2.2.dist-info/top_level.txt,sha256=3JXWxDMrtULus8ySLh8y1NUY9ubMvq2diRS2WBvrtjY,13
+strava-0.2.2.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+strava-0.2.2.dist-info/RECORD,,
