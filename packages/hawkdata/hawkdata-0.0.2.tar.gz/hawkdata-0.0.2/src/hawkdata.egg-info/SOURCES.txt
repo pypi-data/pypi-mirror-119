@@ -1,0 +1,7 @@
+LICENSE
+pyproject.toml
+setup.cfg
+src/hawkdata.egg-info/PKG-INFO
+src/hawkdata.egg-info/SOURCES.txt
+src/hawkdata.egg-info/dependency_links.txt
+src/hawkdata.egg-info/top_level.txt
