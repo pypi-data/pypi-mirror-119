@@ -1,0 +1,12 @@
+aparse/__init__.py,sha256=XWE5MP2hB4SrQqTu_VHcdawhjGSemCWE2d32SclK1w8,539
+aparse/_handlers.py,sha256=uOlmzshxMHTwMTrLHwrG8OT2Zigl_ZdGVzKWUw8BEsM,5955
+aparse/_lib.py,sha256=hYSl62hX-xn_vgnEH0bEpDc7rsrOVGPshf8UVUPcME0,5272
+aparse/argparse.py,sha256=lrTiGVcyioIyPmrycazu3kAFaw5N5OT3oQzhHUqSXsg,9558
+aparse/click.py,sha256=TMEO4hUCFIlk8bLIJgGKw7QAmng10KzgjHggnh7634U,5746
+aparse/core.py,sha256=UXazRCqblU2COylCk6Gq6MadBw6AHVq_c966ty4CzDY,9233
+aparse/utils.py,sha256=M9HY3VzIiNP2Avaepx8IhPHaHtzZlGb7RPmZwDazmiU,7942
+aparse-0.0.7.dist-info/LICENSE,sha256=5JyWBbaZmmL4nIjPaDsAOwKp40hPB80Pd6tw109aqj8,1074
+aparse-0.0.7.dist-info/METADATA,sha256=6uSoNQH_WQBvQlGc5In1TEcKe_3WgGm8BJMI_fxRUNg,4101
+aparse-0.0.7.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+aparse-0.0.7.dist-info/top_level.txt,sha256=pC5zffZIU_XnSH-l10AKt3PsJhMud6nZhh5Ecu-Ngu8,7
+aparse-0.0.7.dist-info/RECORD,,
