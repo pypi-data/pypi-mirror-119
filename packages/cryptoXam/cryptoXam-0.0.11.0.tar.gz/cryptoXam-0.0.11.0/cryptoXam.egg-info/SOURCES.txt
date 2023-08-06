@@ -1,0 +1,8 @@
+README.md
+setup.py
+cryptoXam.egg-info/PKG-INFO
+cryptoXam.egg-info/SOURCES.txt
+cryptoXam.egg-info/dependency_links.txt
+cryptoXam.egg-info/requires.txt
+cryptoXam.egg-info/top_level.txt
+xambot/__init__.py
