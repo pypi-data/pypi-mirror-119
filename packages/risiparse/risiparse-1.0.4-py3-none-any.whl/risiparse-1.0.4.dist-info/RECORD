@@ -1,0 +1,12 @@
+risiparse/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+risiparse/html_to_pdf.py,sha256=5LTcS5oBCEy2LA33tn6whHyBLqQgZ85b0DUxlAAietI,1575
+risiparse/risiparse.py,sha256=AkVGhrmTiL477A0mjLagijaWN0MJthgzkySNq4XeTOA,15303
+risiparse/sites_selectors.py,sha256=NLw51v3wjOwvB4k7_Gu3OEVdA8jY6ata5SluAyYXe7o,872
+risiparse/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+risiparse/utils/utils.py,sha256=H9-Z-Ho_B18xEOPlAUD02qnnhAdr2wwpszLKohwiwew,6810
+risiparse-1.0.4.dist-info/LICENSE,sha256=jrnw81RZ_yvVPheSPBAF8Xqg_DomPjLcKlWitbkrsYw,35139
+risiparse-1.0.4.dist-info/METADATA,sha256=gYp3buvIEppFgMOOXipXZywENJBKubn3j2S8CepZAWw,4912
+risiparse-1.0.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+risiparse-1.0.4.dist-info/entry_points.txt,sha256=TepwshrzMacX2XJ_MWUl7Zm6QvkWJ7nthvZO9ssH7Es,56
+risiparse-1.0.4.dist-info/top_level.txt,sha256=JrFm9jpfy-akeea8sD-6YFsCH-beQ-2ZTtNlvlgvbqM,10
+risiparse-1.0.4.dist-info/RECORD,,
