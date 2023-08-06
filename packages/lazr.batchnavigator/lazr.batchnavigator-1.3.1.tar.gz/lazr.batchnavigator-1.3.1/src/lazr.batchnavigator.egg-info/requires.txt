@@ -1,0 +1,15 @@
+setuptools
+six
+zope.cachedescriptors
+zope.interface>=3.6.0
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[docs]
+Sphinx
+
+[test]
+testtools
+zope.publisher
+zope.testrunner
