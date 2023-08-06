@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: onnxcli
+Version: 0.0.1
+Summary: Lightweight Command Line Toolbox for ONNX
+Home-page: https://jackwish.net/onnxcli
+Author: 王振华(Zhenhua WANG)
+Author-email: i@jackwish.net
+License: Apache License 2.0
+Project-URL: Bug Reports, https://github.com/jackwish/onnxcli/issues
+Project-URL: Source, https://github.com/jackwish/onnxcli
+Keywords: onnx,deep-learning
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: <4,>=3.6.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: onnx
+
+Lightweight Command Line Toolbox for ONNX
+=========================================
+
+[![Build and Test](https://github.com/jackwish/onnxcli/workflows/Build%20and%20Test/badge.svg)](https://github.com/jackwish/onnxcli/actions?query=workflow%3A%22Build+and+Test%22)
+[![Sanity](https://github.com/jackwish/onnxcli/workflows/Sanity/badge.svg)](https://github.com/jackwish/onnxcli/actions?query=workflow%3ASanity)
+[![Coverage](https://codecov.io/gh/jackwish/onnxcli/branch/master/graph/badge.svg)](https://codecov.io/gh/jackwish/onnxcli)
+
+* Aims to improve your development or usage experience of ONNX.
+* Serves as a CLI wrapper for most cases.
+* Use it like `onnx infer-shape /path/to/model.onnx`.
+
+
+## License
+
+Apache License Version 2.0.
+
+
