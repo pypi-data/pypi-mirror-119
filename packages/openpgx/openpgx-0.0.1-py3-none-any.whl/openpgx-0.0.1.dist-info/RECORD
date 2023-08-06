@@ -1,0 +1,12 @@
+openpgx/__init__.py,sha256=oJBb--nPwz6D73gFmeSCvmuESj6q0MCgEK_qBp0pSaA,41
+openpgx/__main__.py,sha256=z2G_RoapPF3fJQimcqV4ATTpLQdT_HZXvQ_sOSN1ZuI,1255
+openpgx/cpic.py,sha256=KvVKK1RCSaIUwUfSKkFEtCLcE6sRuHxd1icPFWJ_ygw,11188
+openpgx/dpwg.py,sha256=9dRif_pnldtZQO2Kbr4QStJnCTgL8kz72qAaDv6qLAk,9471
+openpgx/dpwg.sh,sha256=vz9-gBJBHGSaAP9_6LtQJdqNbrJCvJ7_Ju7mVE1uRrs,147
+openpgx/fda.py,sha256=vvzl3gmHyEpPFi4zPk8HiTO_K-B0VXbJvQh4i51xB5w,2982
+openpgx/helpers.py,sha256=ZO8tJ7JweXaJ3DC_Yg4b56hxpMBx1P3tzsVqnwDVYDM,7325
+openpgx/openpgx.py,sha256=6xytFmVLRMLkDxRmB_lCxlXiBE3lfYZwrluPfSyOKvg,9531
+openpgx-0.0.1.dist-info/LICENSE,sha256=b8nnCcy_4Nd_v_okJ6mDKCvi64jkexzbSfIag7TR5mU,13827
+openpgx-0.0.1.dist-info/WHEEL,sha256=VUbF57hf4yRZWWrOOjp25Fr4BQX9EtnVSbnP2vNxHDM,81
+openpgx-0.0.1.dist-info/METADATA,sha256=GYNnSo8Uo91OMI4pm6iv5xmyXGIP0oWMdJVBf8khz-E,627
+openpgx-0.0.1.dist-info/RECORD,,

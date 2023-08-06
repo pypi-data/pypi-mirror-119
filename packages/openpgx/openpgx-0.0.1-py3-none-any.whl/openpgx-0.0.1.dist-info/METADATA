@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: openpgx
+Version: 0.0.1
+Summary: PGx tool for converting star alleles of pharmacogenes to gene-drug recommendations
+Keywords: pgx,pharmacogenomics,cpic,dpwg,fda
+Author-email: Monika Krzyżanowska <monigenomi@gmail.com>, Adam Stankiewicz <sheerun@sher.pl>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Project-URL: Home, https://openpgx.com
+
+# OpenPGx
+
+PGx tool for converting star alleles of pharmacogenes to gene-drug recommendations
+
