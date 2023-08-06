@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "wkt_poly_to_image"
+version = "0.1.1"
+description = "A python library to convert wkt polygons into raster images."
+authors = ["Bronson Brown-deVost <bronsonbdevost@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+homepage = "https://gitlab.com/bronsonbdevost/wkt_poly_to_image"
+repository = "https://gitlab.com/bronsonbdevost/wkt_poly_to_image"
+keywords = ["shapely", "raster", "convert"]
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.scripts]
+test = 'scripts:test'
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.11"
+Shapely = "^1.7.1"
+numpy = "^1.21.2"
+rasterio = "^1.2.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
