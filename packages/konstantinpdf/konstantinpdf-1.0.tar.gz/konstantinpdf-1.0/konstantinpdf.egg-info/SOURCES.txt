@@ -1,0 +1,9 @@
+LICENSE
+README
+setup.py
+konstantinpdf/__init__.py
+konstantinpdf/pdf2text.py
+konstantinpdf.egg-info/PKG-INFO
+konstantinpdf.egg-info/SOURCES.txt
+konstantinpdf.egg-info/dependency_links.txt
+konstantinpdf.egg-info/top_level.txt
