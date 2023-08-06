@@ -1,0 +1,6 @@
+websockets
+click
+requests
+flask
+APScheduler
+dnspython
