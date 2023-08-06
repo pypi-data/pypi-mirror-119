@@ -1,0 +1,266 @@
+MANIFEST.in
+MIT-LICENSE
+README.md
+setup.cfg
+setup.py
+blueprints/.DS_Store
+blueprints/controller/routes.tmpl.py
+blueprints/controller/template.tmpl.html.jinja
+blueprints/controller/[[ app_name ]]/controllers/[[ snake_name ]].tmpl.py
+blueprints/controller/[[ app_name ]]/controllers/__init__.append.py
+blueprints/model/[[ app_name ]]/models/[[ snake_name ]].tmpl.py
+blueprints/model/[[ app_name ]]/models/__init__.append.py
+blueprints/project/.DS_Store
+blueprints/project/Dockerfile.tmpl
+blueprints/project/Makefile.tmpl
+blueprints/project/README.tmpl.md
+blueprints/project/docker-compose.tmpl.yml
+blueprints/project/manage.tmpl.py
+blueprints/project/setup.py
+blueprints/project/setup.tmpl.cfg
+blueprints/project/uwsgi-dev.ini
+blueprints/project/wsgi.tmpl.py
+blueprints/project/.well-known/.keep
+blueprints/project/[[ app_name ]]/.DS_Store
+blueprints/project/[[ app_name ]]/__init__.py
+blueprints/project/[[ app_name ]]/app.tmpl.py
+blueprints/project/[[ app_name ]]/main.py
+blueprints/project/[[ app_name ]]/routes.py
+blueprints/project/[[ app_name ]]/config/__init__.py
+blueprints/project/[[ app_name ]]/config/development.tmpl.py
+blueprints/project/[[ app_name ]]/config/production.py
+blueprints/project/[[ app_name ]]/config/shared.tmpl.py
+blueprints/project/[[ app_name ]]/config/staging.py
+blueprints/project/[[ app_name ]]/config/testing.tmpl.py
+blueprints/project/[[ app_name ]]/config/__pycache__/__init__.cpython-39.pyc
+blueprints/project/[[ app_name ]]/config/__pycache__/development.cpython-39.pyc
+blueprints/project/[[ app_name ]]/config/__pycache__/production.cpython-39.pyc
+blueprints/project/[[ app_name ]]/config/__pycache__/shared.cpython-39.pyc
+blueprints/project/[[ app_name ]]/config/__pycache__/staging.cpython-39.pyc
+blueprints/project/[[ app_name ]]/config/__pycache__/testing.cpython-39.pyc
+blueprints/project/[[ app_name ]]/controllers/.DS_Store
+blueprints/project/[[ app_name ]]/controllers/__init__.py
+blueprints/project/[[ app_name ]]/controllers/application.py
+blueprints/project/[[ app_name ]]/controllers/auth.py
+blueprints/project/[[ app_name ]]/controllers/pages.py
+blueprints/project/[[ app_name ]]/controllers/forms/__init__.py
+blueprints/project/[[ app_name ]]/controllers/forms/auth.tmpl.py
+blueprints/project/[[ app_name ]]/controllers/forms/pwned.py
+blueprints/project/[[ app_name ]]/mailers/__init__.py
+blueprints/project/[[ app_name ]]/mailers/auth.py
+blueprints/project/[[ app_name ]]/mailers/__pycache__/__init__.cpython-39.pyc
+blueprints/project/[[ app_name ]]/mailers/__pycache__/auth.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/__init__.py
+blueprints/project/[[ app_name ]]/models/base.py
+blueprints/project/[[ app_name ]]/models/user.py
+blueprints/project/[[ app_name ]]/models/__pycache__/__init__.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/__pycache__/base.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/__pycache__/post.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/__pycache__/relation.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/__pycache__/topic.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/__pycache__/user.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/mixins/__init__.py
+blueprints/project/[[ app_name ]]/models/mixins/authenticable.tmpl.py
+blueprints/project/[[ app_name ]]/models/mixins/timestamped.py
+blueprints/project/[[ app_name ]]/models/mixins/__pycache__/__init__.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/mixins/__pycache__/authenticable.cpython-39.pyc
+blueprints/project/[[ app_name ]]/models/mixins/__pycache__/timestamped.cpython-39.pyc
+blueprints/project/[[ app_name ]]/services/__init__.py
+blueprints/project/[[ app_name ]]/services/auth_services.py
+blueprints/project/[[ app_name ]]/services/__pycache__/__init__.cpython-39.pyc
+blueprints/project/[[ app_name ]]/services/__pycache__/auth_services.cpython-39.pyc
+blueprints/project/[[ app_name ]]/services/__pycache__/posts_services.cpython-39.pyc
+blueprints/project/[[ app_name ]]/templates/.DS_Store
+blueprints/project/[[ app_name ]]/templates/auth/password_change.html.jinja
+blueprints/project/[[ app_name ]]/templates/auth/reset.html.jinja
+blueprints/project/[[ app_name ]]/templates/auth/reset_invalid.html.jinja
+blueprints/project/[[ app_name ]]/templates/auth/reset_sent.html.jinja
+blueprints/project/[[ app_name ]]/templates/auth/sign_in.html.jinja
+blueprints/project/[[ app_name ]]/templates/common/Button.html.jinja
+blueprints/project/[[ app_name ]]/templates/emails/password_reset.html.jinja
+blueprints/project/[[ app_name ]]/templates/layouts/application.html.jinja
+blueprints/project/[[ app_name ]]/templates/layouts/auth.html.jinja
+blueprints/project/[[ app_name ]]/templates/layouts/email.html.jinja
+blueprints/project/[[ app_name ]]/templates/pages/error.html.jinja
+blueprints/project/[[ app_name ]]/templates/pages/index.html.jinja
+blueprints/project/[[ app_name ]]/templates/pages/not_found.html.jinja
+blueprints/project/db/.DS_Store
+blueprints/project/db/migrations/__init__.py
+blueprints/project/db/migrations/script.py.mako
+blueprints/project/deploy/nginx.tmpl.conf
+blueprints/project/deploy/uwsgi.tmpl.ini
+blueprints/project/logs/.keep
+blueprints/project/requirements/dev-requirements.ini
+blueprints/project/requirements/prod-requirements.ini
+blueprints/project/requirements/requirements.ini
+blueprints/project/requirements/test-requirements.ini
+blueprints/project/static/.DS_Store
+blueprints/project/static/.eslintrc.js
+blueprints/project/static/package.json
+blueprints/project/static/postcss.config.js
+blueprints/project/static/tailwind.config.tmpl.js
+blueprints/project/static/webpack.config.js
+blueprints/project/static/public/favicon.ico
+blueprints/project/static/public/humans.txt
+blueprints/project/static/public/robots.txt
+blueprints/project/static/public/css/.keep
+blueprints/project/static/public/fonts/.keep
+blueprints/project/static/public/images/.keep
+blueprints/project/static/public/js/.keep
+blueprints/project/static/public/vendor/.keep
+blueprints/project/static/src/css/_base.css
+blueprints/project/static/src/css/_buttons.css
+blueprints/project/static/src/css/_components.css
+blueprints/project/static/src/css/_forms.css
+blueprints/project/static/src/css/_utilities.css
+blueprints/project/static/src/css/email.css
+blueprints/project/static/src/css/styles.css
+blueprints/project/static/src/js/scripts.js
+blueprints/project/tests/conftest.py
+blueprints/resource/routes.tmpl.py
+blueprints/resource/[[ app_name ]]/controllers/[[ snake_name ]].tmpl.py
+blueprints/resource/[[ app_name ]]/controllers/__init__.append.py
+blueprints/resource/[[ app_name ]]/templates/[[ snake_name ]]/edit.html.jinja
+blueprints/resource/[[ app_name ]]/templates/[[ snake_name ]]/index.html.jinja
+blueprints/resource/[[ app_name ]]/templates/[[ snake_name ]]/new.html.jinja
+blueprints/resource/[[ app_name ]]/templates/[[ snake_name ]]/show.html.jinja
+proper/.DS_Store
+proper/__init__.py
+proper/auth.py
+proper/constants.py
+proper/errors.py
+proper/local.py
+proper/request.py
+proper/response.py
+proper/static.py
+proper/status.py
+proper.egg-info/PKG-INFO
+proper.egg-info/SOURCES.txt
+proper.egg-info/dependency_links.txt
+proper.egg-info/entry_points.txt
+proper.egg-info/requires.txt
+proper.egg-info/top_level.txt
+proper/__pycache__/__init__.cpython-39.pyc
+proper/__pycache__/auth.cpython-39.pyc
+proper/__pycache__/constants.cpython-39.pyc
+proper/__pycache__/errors.cpython-39.pyc
+proper/__pycache__/local.cpython-39.pyc
+proper/__pycache__/request.cpython-39.pyc
+proper/__pycache__/response.cpython-39.pyc
+proper/__pycache__/static.cpython-39.pyc
+proper/__pycache__/status.cpython-39.pyc
+proper/app/__init__.py
+proper/app/app.py
+proper/app/cli.py
+proper/app/cli_run.py
+proper/app/default_config.py
+proper/app/error_handlers.py
+proper/app/errors_mixin.py
+proper/app/setup_mixin.py
+proper/app/__pycache__/__init__.cpython-39.pyc
+proper/app/__pycache__/app.cpython-39.pyc
+proper/app/__pycache__/cli.cpython-39.pyc
+proper/app/__pycache__/cli_run.cpython-39.pyc
+proper/app/__pycache__/default_config.cpython-39.pyc
+proper/app/__pycache__/error_handlers.cpython-39.pyc
+proper/app/__pycache__/errors_mixin.cpython-39.pyc
+proper/app/__pycache__/setup_mixin.cpython-39.pyc
+proper/app/templates/_context.html.jinja
+proper/app/templates/_debug-styles.css
+proper/app/templates/_prism.css
+proper/app/templates/_prism.js
+proper/app/templates/debug-error.html.jinja
+proper/app/templates/debug-not-found.html.jinja
+proper/app/templates/fallback-error.html
+proper/app/templates/fallback-forbidden.html
+proper/app/templates/fallback-not-found.html
+proper/app/templates/layout.html.jinja
+proper/cli/__init__.py
+proper/cli/welcome.py
+proper/cli/__pycache__/__init__.cpython-39.pyc
+proper/cli/__pycache__/welcome.cpython-39.pyc
+proper/controller/__init__.py
+proper/controller/base_channel.py
+proper/controller/base_controller.py
+proper/controller/__pycache__/__init__.cpython-39.pyc
+proper/controller/__pycache__/base_channel.cpython-39.pyc
+proper/controller/__pycache__/base_controller.cpython-39.pyc
+proper/generators/__init__.py
+proper/generators/controller.py
+proper/generators/mailer.py
+proper/generators/model.py
+proper/generators/project.py
+proper/generators/resource.py
+proper/generators/__pycache__/__init__.cpython-39.pyc
+proper/generators/__pycache__/controller.cpython-39.pyc
+proper/generators/__pycache__/mailer.cpython-39.pyc
+proper/generators/__pycache__/model.cpython-39.pyc
+proper/generators/__pycache__/project.cpython-39.pyc
+proper/generators/__pycache__/resource.cpython-39.pyc
+proper/helpers/__init__.py
+proper/helpers/cookies.py
+proper/helpers/digestor.py
+proper/helpers/dot.py
+proper/helpers/encoding.py
+proper/helpers/frozendict.py
+proper/helpers/headersdict.py
+proper/helpers/iterable.py
+proper/helpers/multidict.py
+proper/helpers/paginator.py
+proper/helpers/render.py
+proper/helpers/serializer.py
+proper/helpers/slugify.py
+proper/helpers/__pycache__/__init__.cpython-39.pyc
+proper/helpers/__pycache__/cookies.cpython-39.pyc
+proper/helpers/__pycache__/digestor.cpython-39.pyc
+proper/helpers/__pycache__/dot.cpython-39.pyc
+proper/helpers/__pycache__/encoding.cpython-39.pyc
+proper/helpers/__pycache__/frozendict.cpython-39.pyc
+proper/helpers/__pycache__/headersdict.cpython-39.pyc
+proper/helpers/__pycache__/iterable.cpython-39.pyc
+proper/helpers/__pycache__/multidict.cpython-39.pyc
+proper/helpers/__pycache__/paginator.cpython-39.pyc
+proper/helpers/__pycache__/render.cpython-39.pyc
+proper/helpers/__pycache__/serializer.cpython-39.pyc
+proper/helpers/__pycache__/slugify.cpython-39.pyc
+proper/middleware/README.md
+proper/middleware/__init__.py
+proper/middleware/dispatch.py
+proper/middleware/head.py
+proper/middleware/match.py
+proper/middleware/method_override.py
+proper/middleware/protect_from_forgery.py
+proper/middleware/redirect.py
+proper/middleware/session.py
+proper/middleware/__pycache__/__init__.cpython-39.pyc
+proper/middleware/__pycache__/dispatch.cpython-39.pyc
+proper/middleware/__pycache__/head.cpython-39.pyc
+proper/middleware/__pycache__/match.cpython-39.pyc
+proper/middleware/__pycache__/method_override.cpython-39.pyc
+proper/middleware/__pycache__/protect_from_forgery.cpython-39.pyc
+proper/middleware/__pycache__/redirect.cpython-39.pyc
+proper/middleware/__pycache__/session.cpython-39.pyc
+proper/parsers/__init__.py
+proper/parsers/parse_comma_separated.py
+proper/parsers/parse_cookies.py
+proper/parsers/parse_form_data.py
+proper/parsers/parse_http_date.py
+proper/parsers/parse_query_string.py
+proper/parsers/__pycache__/__init__.cpython-39.pyc
+proper/parsers/__pycache__/parse_comma_separated.cpython-39.pyc
+proper/parsers/__pycache__/parse_cookies.cpython-39.pyc
+proper/parsers/__pycache__/parse_form_data.cpython-39.pyc
+proper/parsers/__pycache__/parse_http_date.cpython-39.pyc
+proper/parsers/__pycache__/parse_query_string.cpython-39.pyc
+proper/router/__init__.py
+proper/router/base.py
+proper/router/resource.py
+proper/router/route.py
+proper/router/router.py
+proper/router/scope.py
+proper/router/__pycache__/__init__.cpython-39.pyc
+proper/router/__pycache__/base.cpython-39.pyc
+proper/router/__pycache__/resource.cpython-39.pyc
+proper/router/__pycache__/route.cpython-39.pyc
+proper/router/__pycache__/router.cpython-39.pyc
+proper/router/__pycache__/scope.cpython-39.pyc

@@ -1,0 +1,32 @@
+.PHONY: setup
+setup:  # Requires an active virtualenv
+	pip install -U pip wheel pip-tools
+	make reqs
+	pip install -r requirements/dev-requirements.txt
+	pip install -e .
+	cd static && npm install
+
+.PHONY: run
+run:
+	python manage.py run
+
+.PHONY: test
+test:
+	pytest -x [[ app_name ]]/tests
+
+.PHONY: lint
+lint:
+	flake8 --config=setup.cfg [[ app_name ]]
+
+.PHONY: db
+db:
+	rm db/[[ app_name ]].sqlite || true
+	python manage.py db upgrade
+
+.PHONY: reqs
+reqs:
+	pip-compile requirements/requirements.ini
+	pip-compile requirements/test-requirements.ini
+	pip-compile requirements/prod-requirements.ini
+	pip-compile requirements/dev-requirements.ini
+
