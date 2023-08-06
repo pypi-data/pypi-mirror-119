@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+Parsea/Parsea.py
+Parsea/Parsea.egg-info/PKG-INFO
+Parsea/Parsea.egg-info/SOURCES.txt
+Parsea/Parsea.egg-info/dependency_links.txt
+Parsea/Parsea.egg-info/top_level.txt
