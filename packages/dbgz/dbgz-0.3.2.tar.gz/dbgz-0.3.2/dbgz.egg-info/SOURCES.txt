@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+dbgz/__init__.py
+dbgz/bgzf.py
+dbgz/dbgz.py
+dbgz.egg-info/PKG-INFO
+dbgz.egg-info/SOURCES.txt
+dbgz.egg-info/dependency_links.txt
+dbgz.egg-info/top_level.txt
