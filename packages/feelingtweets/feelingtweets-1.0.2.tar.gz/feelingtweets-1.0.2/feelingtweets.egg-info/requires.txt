@@ -1,0 +1,6 @@
+pandas
+vaderSentiment
+textblob
+googletrans==4.0.0rc1
+nest_asyncio
+twint@ git+https://github.com/twintproject/twint.git#egg=twint
