@@ -1,0 +1,10 @@
+dataclasses
+matplotlib
+numpy
+pandas
+python-libsbml
+scipy
+black==21.5b0
+sympy
+tqdm
+ipywidgets
