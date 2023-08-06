@@ -1,0 +1,7 @@
+os
+flask
+pandas
+pymongo
+json
+mysql-connector-python
+csv
