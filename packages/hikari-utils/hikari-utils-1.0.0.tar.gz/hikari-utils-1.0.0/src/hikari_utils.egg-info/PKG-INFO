@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: hikari-utils
+Version: 1.0.0
+Summary: A bunch of utils for hikari
+Home-page: https://github.com/saicodev1/hikari-utils
+Author: palmtrww
+Author-email: palmsaico@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/saicodev1/hikari-utils/issues
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# hikari-utils
+A python package with utils for hikari
+
+
