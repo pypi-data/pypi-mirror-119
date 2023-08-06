@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pdm-bump
+Version: 0.4.0
+Summary: A plugin for PDM providing the ability to modify the version according to PEP440
+License: MIT
+Author-email: Carsten Igel <cig@bite-that-bit.de>
+Requires-Python: >=3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pdm~=1.8
+Requires-Dist: pep440-version-utils~=0.3
+Project-URL: homepage, https://github.com/carstencodes/pdm-bump
+Description-Content-Type: text/markdown
+
+# pdm-bump
+
+A small PEP440 compliant bump utility for the [Python development master](https://pdm.fming.dev/)
+
