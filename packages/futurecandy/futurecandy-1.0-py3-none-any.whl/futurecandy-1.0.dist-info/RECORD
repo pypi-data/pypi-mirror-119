@@ -1,0 +1,17 @@
+futurecandy/__main__.py,sha256=e5NjKkxkmSktFLscRFAODTQxmY0DC0vHXoBSpnxf0vA,2915
+futurecandy/candy.cfg,sha256=w5yvQkxyT3FC8u4zUxrIfuNZFQ7Vi5QK7RI3eSTeMAU,365
+futurecandy/extra.py,sha256=VmQkPMuLHqnYWk2oxk35LKMbNS-cskWNbAv6bZ6VhnU,668
+futurecandy/hooks/Git.py,sha256=1ClZ-hf0kM5QOeQEsbm3AMXiayJ9DwLLs6Noe-adaz0,453
+futurecandy/hooks/Gitignore.py,sha256=AETxKNM-ucJTvxAxecSqESZYPu8UFzvRpXw44rIEiIQ,1935
+futurecandy/hooks/Gitignore.py.gitignore,sha256=73XuqZ67jzSKsR7DRBXtvagXuEtvUDsednYIGHLATJY,2256
+futurecandy/hooks/License.py,sha256=dwRVA4jM7xwp3XOa7a0CFOCgvDmbrT_DWavBlGz1WSU,2739
+futurecandy/hooks/Venv.py,sha256=aVvEOZRAuKIVYIZJbAW8Hc19HdMjpZBQTWfPVcn0mjc,154
+futurecandy/hooks/auto-gitignore-LICENSE,sha256=FugTnWD3CcTAwbkSGSykRsACa1wjohf3VXu2_DumPX4,1066
+futurecandy/hooks/git.hook.futurecandy,sha256=gudMt8Dl9m8tucQMkfovj5Agt9f_fyE1UrYP_bokFco,153
+futurecandy/hooks/gitignore.hook.futurecandy,sha256=6HGwM5mLCSppDfqwOplqkh0fM7P_-q9DYLHBewzXz50,152
+futurecandy/hooks/license.hook.futurecandy,sha256=tb5BOZO0cawl3_K_zbC84U5xBQ-Gh79wPq49ZcS8zpM,150
+futurecandy/hooks/venv.hook.futurecandy,sha256=yGuozNdVqcqOlw1p170r_I2qQhgFutuF2BKnufPmJBI,161
+futurecandy-1.0.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+futurecandy-1.0.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+futurecandy-1.0.dist-info/METADATA,sha256=yRTeZQHArL3hpv17XRyLT8juF0hxBPi2sfiDuYNZk08,487
+futurecandy-1.0.dist-info/RECORD,,

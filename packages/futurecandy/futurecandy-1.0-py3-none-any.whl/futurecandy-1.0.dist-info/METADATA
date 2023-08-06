@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: futurecandy
+Version: 1.0
+Summary: Project initialization utility for Linux.
+License: MIT
+Author: perpetualCreations
+Author-email: tchen0584@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: enquiries (>=0.1.0,<0.2.0)
+Requires-Dist: prompt-toolkit (>=3.0.20,<4.0.0)
+Requires-Dist: requests (>=2.26.0,<3.0.0)
