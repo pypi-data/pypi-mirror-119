@@ -1,0 +1,2 @@
+[build-system]
+requires = ['pip>=21.0.0', 'wheel', 'jinja2', 'setuptools', 'cmake', 'ninja', 'requests', 'dune-fem==2.8.0rc1']
