@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: utx
+Version: 0.0.3
+Summary: UTX will help you write application automated tests more easily!
+Home-page: UNKNOWN
+Author: lijiawei
+Author-email: 1456470136@qq.com
+License: Apache License
+Keywords: utx,airtest,pytest,ui,tools
+Platform: any
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console :: Curses
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+UTX will help you write application automated tests more easily!
+
