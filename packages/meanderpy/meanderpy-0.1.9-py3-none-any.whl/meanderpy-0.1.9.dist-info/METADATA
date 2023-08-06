@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: meanderpy
+Version: 0.1.9
+Summary: meanderpy: a simple model of meandering
+Home-page: https://github.com/zsylvester/meanderpy
+Author: Zoltan Sylvester
+Author-email: zoltan.sylvester@beg.utexas.edu
+License: UNKNOWN
+Keywords: rivers,meandering,geomorphology,stratigraphy
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: numba
+Requires-Dist: pillow
+Requires-Dist: scikit-image
+Requires-Dist: tqdm
+
+'meanderpy' is a Python module that implements a simple numerical model of meandering, the one described by Howard & Knutson in their 1984 paper "Sufficient Conditions for River Meandering: A Simulation Approach". This is a kinematic model that is based on computing migration rate as the weighted sum of upstream curvatures; flow velocity does not enter the equation. Curvature is transformed into a 'nominal migration rate' through multiplication with a migration rate (or erodibility) constant.
+
+
