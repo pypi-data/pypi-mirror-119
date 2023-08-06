@@ -1,0 +1,10 @@
+tasking/__init__.py,sha256=0zkdDy7yMKqMEyHaVcmMIK5Sljfwe0eovVRYOesgEt4,381
+tasking/scheduler.py,sha256=H0oisI3XQiMBfcMQrV7zdM59_iH4-0v0HFiw6GH159s,5300
+tasking/task.py,sha256=AtK9r79se6ABAQLKDFyCboL8HRm4CAWoBJa0uudKs7w,1540
+tasking/version.py,sha256=GNw7l5GxQiZGdWtVry57XNiuWnn5rg_Cybr5cQrwTO4,367
+tasking-1.0.0.dist-info/AUTHORS.rst,sha256=qi6rztgOfqpfDHVM9Wy9GT6PevR5iw1q2z-OHqtkLkE,316
+tasking-1.0.0.dist-info/LICENSE,sha256=8mluVEVU5FGmJ1_8b2ClHrZB7S51lPClhHJu6rZlVeE,20838
+tasking-1.0.0.dist-info/METADATA,sha256=XeKYEoed5r1huQpZwaSerdQbS4gNsAD2K8cKcMuEmP4,2404
+tasking-1.0.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+tasking-1.0.0.dist-info/top_level.txt,sha256=_GGcUmUXCQ7BjlzzCQw2ghyYS-fT1zokG2KJAmd5fKo,8
+tasking-1.0.0.dist-info/RECORD,,
