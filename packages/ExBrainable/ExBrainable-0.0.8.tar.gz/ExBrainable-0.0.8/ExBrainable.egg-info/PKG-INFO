@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: ExBrainable
+Version: 0.0.8
+Summary: ExBrainable: An Open-Source GUI for CNN-based EEG Decoding and Model Interpretation
+Home-page: https://github.com/CECNL/ExBrainable
+Author: Ya-Lin Huang
+Author-email: yalinhuang.bt06@nycu.edu.tw
+License: UNKNOWN
+Keywords: eeg deep-learning brain-state-decoding
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+# ExBrainable
+1. Install Python >=3.7
+2. Install Pytorch from http://pytorch.org/
+
+2. Install ExBrainable GUI
+
+pip install ExBrainable 
+
+
+
+
