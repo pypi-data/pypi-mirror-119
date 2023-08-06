@@ -1,0 +1,10 @@
+beepmusic/__init__.py,sha256=X2NNWZI6sIbwY4QYwlkcZ8IswdmgrdHrbOy939yPllE,354
+beepmusic/__main__.py,sha256=RRY-y2BMjEU7meD7lU4ylHdVxi8DI_GRszcl2u9P97Y,170
+beepmusic/beepmusic.py,sha256=N43B6xSZd08dhUlUOJe-y-1UOyhvSNR8bKyUpvwjDcc,7447
+beepmusic/musicLaw.py,sha256=knPpeYxEFr8O1QT6OnJBTRLXTYk13yzZXB39ifnYPps,652
+beepmusic/parser.py,sha256=Z78236qUb7hZZDnfyCnleTX-Hd7sQsW5rKyzDWoPIvQ,4142
+beepmusic-0.0.2.dist-info/LICENSE,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+beepmusic-0.0.2.dist-info/METADATA,sha256=JG-pKDWuYzFyDKJS0Zs513Ow-EXaZYUTDkdqivpr3IU,1191
+beepmusic-0.0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+beepmusic-0.0.2.dist-info/top_level.txt,sha256=GbfQskbVjdKoF4aM8AGvxJsMJQVItR4yBWmLCz8TEso,10
+beepmusic-0.0.2.dist-info/RECORD,,
