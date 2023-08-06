@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: replay-rec
+Version: 0.6.0
+Summary: RecSys Library
+Home-page: https://github.com/sberbank-ai-lab/RePlay
+Author: Boris Shminke
+Author-email: Shminke.B.A@sberbank.ru
+Requires-Python: >=3.6.1,<4.0.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Typing :: Typed
+Requires-Dist: lightautoml
+Requires-Dist: lightfm
+Requires-Dist: llvmlite
+Requires-Dist: nevergrad
+Requires-Dist: numba
+Requires-Dist: numpy (<1.21)
+Requires-Dist: optuna
+Requires-Dist: pandas
+Requires-Dist: psutil
+Requires-Dist: pyspark
+Requires-Dist: pytorch-ignite
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: seaborn
+Requires-Dist: statsmodels
+Requires-Dist: torch
+Project-URL: Repository, https://github.com/sberbank-ai-lab/RePlay
+Description-Content-Type: text/markdown
+
+# RePlay
+
+RePlay is a library providing tools for all stages of creating a recommendation system, from data preprocessing to model evaluation and comparison.
+
+RePlay uses PySpark to handle big data.
+
+You can
+
+- Filter and split data
+- Train models
+- Optimize hyper parameters
+- Evaluate predictions with metrics
+- Combine predictions from different models
+- Create a two-level model
+
+
+## Docs
+
+[Documentation](https://sberbank-ai-lab.github.io/RePlay/)
+
+
+### Installation
+
+Use Linux machine with Python 3.6+ and Java 8+. 
+
+```bash
+pip install replay-rec
+```
+
+It is preferable to use a virtual environment for your installation.
+
