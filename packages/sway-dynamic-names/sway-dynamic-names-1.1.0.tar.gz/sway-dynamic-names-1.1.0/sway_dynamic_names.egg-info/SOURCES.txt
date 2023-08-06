@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+sway_dynamic_names/__init__.py
+sway_dynamic_names/__main__.py
+sway_dynamic_names/config.py
+sway_dynamic_names/daemon.py
+sway_dynamic_names/default.yaml
+sway_dynamic_names.egg-info/PKG-INFO
+sway_dynamic_names.egg-info/SOURCES.txt
+sway_dynamic_names.egg-info/dependency_links.txt
+sway_dynamic_names.egg-info/entry_points.txt
+sway_dynamic_names.egg-info/requires.txt
+sway_dynamic_names.egg-info/top_level.txt
