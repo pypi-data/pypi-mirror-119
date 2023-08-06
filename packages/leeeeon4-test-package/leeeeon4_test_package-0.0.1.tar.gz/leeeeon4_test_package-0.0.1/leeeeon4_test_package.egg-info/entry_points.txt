@@ -1,0 +1,3 @@
+[console_scripts]
+leeeeon4_test_package = leeeeon4_test_package.cli:main
+
