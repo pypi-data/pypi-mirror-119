@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pydebcontents
+Version: 0.2.0
+Summary: Utilities working with Debian repository Contents files
+Home-page: https://salsa.debian.org/stuart/pydebcontents/
+Author: Stuart Prescott
+Author-email: stuart@debian.org
+License: UNKNOWN
+Download-URL: https://salsa.debian.org/stuart/pyrebcontents/
+Platform: UNKNOWN
+Requires-Dist: python-debian
+
+UNKNOWN
+
+

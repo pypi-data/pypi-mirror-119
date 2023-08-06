@@ -1,0 +1,10 @@
+pydebcontents/__init__.py,sha256=Zn1KFblwuFHiDRdRAiRnDBRkbPttWh44jKa5zG2ov0E,22
+pydebcontents/cli.py,sha256=10sT7KhYIMNXcG75MT0rPMySht9zq_I55co5Sf5xKgU,5882
+pydebcontents/contents_dict.py,sha256=mYzDBrTSM96G4QMq22x5swsN7DWMF0yrxGZR2E-JQEg,4521
+pydebcontents/contents_file.py,sha256=3FBjs0smDGjzfYRVXnx6mEbjS5xEfWkeiT9iX1Y7r8c,7066
+pydebcontents/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pydebcontents-0.2.0.data/scripts/py-apt-file,sha256=mhF5YH_bn52aqw44-bPypD-25J5LvRpzFTFun0hIg4U,1670
+pydebcontents-0.2.0.dist-info/METADATA,sha256=rGauIp6_mqJI8lmFdr8NGsUz1OE9r_tADnfLOYcbaZ0,372
+pydebcontents-0.2.0.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+pydebcontents-0.2.0.dist-info/top_level.txt,sha256=KcsY4ijDoXGuQoVN_jJYYVYLK7Ew98fJoD1kWFvhaNo,14
+pydebcontents-0.2.0.dist-info/RECORD,,
