@@ -1,0 +1,11 @@
+fABBA/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fABBA/aggregation.py,sha256=IW6kCoVCN7iF4W7uKdKhpaT79VC-4mUxZLfkLbGbNkw,5219
+fABBA/chainApproximation.py,sha256=7RoO4bGbEXi-KPAXYh8A1PPPdILwfIJFyBliUKLkNe0,3934
+fABBA/digitization.py,sha256=O5GXLnWM8vo0GQqoNwGTM7NCk0YVyDBpU2ABNfUs-9s,7433
+fABBA/load_datasets.py,sha256=BaacnL4iJQfrOJRreZieYnbMApxEJMqQXokhh7ufrSQ,363
+fABBA/symbolic_representation.py,sha256=QNqIp0KhUJWdElRYBog80p5rN_X3fvG2bGmIltE3_A8,29349
+fABBA-0.0.4.dist-info/LICENSE,sha256=w5qW9E9Dc1SkWq1c5tE6c0k_fvzs2qkrSV0Z3jWwVWU,1563
+fABBA-0.0.4.dist-info/METADATA,sha256=wIsHwHNTX5DdXuMB__9Cl1E1D3rr7lmEjbl8snS93AM,3443
+fABBA-0.0.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+fABBA-0.0.4.dist-info/top_level.txt,sha256=RtRW2F1Pwo3T3t9Rj3rxtFxOLC5YPtb5S3_W12SH3XY,6
+fABBA-0.0.4.dist-info/RECORD,,
