@@ -1,0 +1,6 @@
+README.md
+setup.py
+cmc_csci046_sdasari8_containers.egg-info/PKG-INFO
+cmc_csci046_sdasari8_containers.egg-info/SOURCES.txt
+cmc_csci046_sdasari8_containers.egg-info/dependency_links.txt
+cmc_csci046_sdasari8_containers.egg-info/top_level.txt
