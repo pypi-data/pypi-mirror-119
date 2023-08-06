@@ -1,0 +1,13 @@
+.gitignore
+DEVELOP.md
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+pccs/__init__.py
+pccs/__main__.py
+pccs.egg-info/PKG-INFO
+pccs.egg-info/SOURCES.txt
+pccs.egg-info/dependency_links.txt
+pccs.egg-info/requires.txt
+pccs.egg-info/top_level.txt

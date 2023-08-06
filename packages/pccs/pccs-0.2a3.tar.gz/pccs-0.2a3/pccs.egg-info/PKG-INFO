@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: pccs
+Version: 0.2a3
+Summary: PCCS (Practical Color Coodinate System) package for Python
+Home-page: https://bitbucket.org/emptypage/pccs-python/
+Author: Masaaki Shibata
+Author-email: mshibata@emptypage.jp
+License: MIT
+Keywords: color,color-science,colour,colour-science,pccs,munsell
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+pccs-python
+===========
+
+PCCS library for Python
+-----------------------
+
+PCCS (Practical Color Coordinate System / 日本色研配色体系) is a color
+notation system which is developed by Japan Color Research Institute
+(日本色彩研究所) in 1966.
+
+This library provides conversions between PCCS and Munsell color system
+notation based on a scientific algorythm.
+
+
+Requirements
+------------
+
+- Python 3.9 or newer
+
+
+Examples
+--------
+
+
+References
+----------
+
+
+
