@@ -1,0 +1,16 @@
+imagedata
+importlib.metadata
+pydicom
+pynetdicom
+itk
+nibabel
+numpy
+scipy
+fs
+python-magic
+ghostscript
+imageio
+scandir
+pillow
+matplotlib
+flake8
