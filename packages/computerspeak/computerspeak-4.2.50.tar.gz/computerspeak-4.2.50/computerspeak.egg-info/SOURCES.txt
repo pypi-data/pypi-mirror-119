@@ -1,0 +1,8 @@
+License.txt
+setup.py
+computerspeak.egg-info/PKG-INFO
+computerspeak.egg-info/SOURCES.txt
+computerspeak.egg-info/dependency_links.txt
+computerspeak.egg-info/requires.txt
+computerspeak.egg-info/top_level.txt
+speak/__init__.py
