@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: kitefoil
+Version: 0.0.3
+Summary: Analyze kitefoil GPS tracks
+Home-page: https://github.com/benhamner/kitefoil
+Author: Ben Hamner
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/benhamner/kitefoil/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# kitefoil
+
+A python package for analyzing kitefoil GPS tracks
+
+
