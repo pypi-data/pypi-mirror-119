@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: confz
+Version: 0.2.0
+Summary: 
+Author: Silvan Melchior
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PyYAML (>=5.4.1,<6.0.0)
+Requires-Dist: pydantic (>=1.8.2,<2.0.0)
