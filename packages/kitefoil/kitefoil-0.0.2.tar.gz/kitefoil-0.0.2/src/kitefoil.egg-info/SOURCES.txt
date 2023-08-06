@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/kitefoil/__init__.py
+src/kitefoil/kitefoil.py
+src/kitefoil.egg-info/PKG-INFO
+src/kitefoil.egg-info/SOURCES.txt
+src/kitefoil.egg-info/dependency_links.txt
+src/kitefoil.egg-info/requires.txt
+src/kitefoil.egg-info/top_level.txt
