@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: pylint-blank-line-plugin
+Version: 0.1.1
+Summary: Plugin for pylint which checks blank line before and after return, yield, raise, break, continue statements  
+Home-page: https://github.com/winmasta
+License: MIT
+Keywords: pylint,blank,line,lint
+Author: Konstantin Shestakov
+Author-email: winmasta@yandex.ru
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 4 - Beta 
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Requires-Dist: pylint
+Project-URL: Repository, https://github.com/winmasta
+Description-Content-Type: text/markdown
+
+## Plugin for pylint which checks blank line before and after return, yield, raise, break, continue statements
+
+Install:
+```bash
+pip install pylint-blank-line-plugin
+```
+
+Usage:
+```bash
+pylint --load-plugins blank_line FILES_TO_CHECK
+```
+
