@@ -1,0 +1,10 @@
+fastwarc/__init__.py,sha256=nnaFAC-2x0BhCKEJOeHnvwdIbeUW4YXyUb1oVzDdllY,750
+fastwarc/cli.py,sha256=LYSuwi0k_J0MA1RSThRZK6C7rIlbUL2tB4Z0SnWWAjw,13946
+fastwarc/stream_io.cpython-37m-darwin.so,sha256=AmBp0AM_Ppkv24QlgfjRYH6WalJxXM5jEDwSkuF6DiQ,397976
+fastwarc/tools.cpython-37m-darwin.so,sha256=xNhdf1oSOJUgdVr9QHSM-dlGiy7AVNoqUEGqbWrC_Yo,166120
+fastwarc/warc.cpython-37m-darwin.so,sha256=4_vSwD8LXBd8-7xGSw-R9gETR4MDcJ7BfkYIuPS0cqM,365640
+FastWARC-0.4.1.dist-info/METADATA,sha256=omM9NdyotaHaZOZZ1dCkhAECcgUhVefqQLekM6Q1NsA,2171
+FastWARC-0.4.1.dist-info/WHEEL,sha256=SPFsdN-g7Osut7El6pRHojcroYU7REc1DdD4VXzi4B4,111
+FastWARC-0.4.1.dist-info/entry_points.txt,sha256=IW6T7e-kb8Wr7Jd1g3u6zzG5TRVPDbGb0izYCSPZQvY,48
+FastWARC-0.4.1.dist-info/top_level.txt,sha256=kd2NdQA_61TyRclx6gmvrHOEiEqZh8LDqGMxfmsOEDw,9
+FastWARC-0.4.1.dist-info/RECORD,,
