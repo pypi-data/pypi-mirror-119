@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: textalytics-oss-adapters
+Version: 0.1.0
+Summary: textalytics interface implementation for popular NLP open source libraries
+License: MIT
+Author: Manoj Bharadwaj
+Author-email: manoj@cloudcosmos.tech
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: spacy (>=3.1.2,<4.0.0)
+Requires-Dist: stanza (>=1.2.3,<2.0.0)
+Requires-Dist: textalytics-core (>=0.1.1,<0.2.0)
