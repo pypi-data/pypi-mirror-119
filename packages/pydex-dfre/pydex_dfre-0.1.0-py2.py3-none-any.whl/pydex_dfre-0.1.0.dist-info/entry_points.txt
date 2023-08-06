@@ -1,0 +1,3 @@
+[console_scripts]
+pydex_dfre = pydex_dfre.cli:main
+
