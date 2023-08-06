@@ -1,0 +1,3 @@
+[console_scripts]
+openspace = openspace.geoplanner:run
+
