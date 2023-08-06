@@ -1,0 +1,12 @@
+numpy
+scipy
+matplotlib
+emcee
+tabulate
+
+[lint_type_checks]
+pre-commit
+
+[tests]
+pytest
+coverage[toml]
