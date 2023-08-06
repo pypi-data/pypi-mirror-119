@@ -1,0 +1,69 @@
+{
+    "app_name": "",
+    "app_version": "0.1.0",
+    "description": "",
+    "author": "",
+    "build": {
+        "proj_dir": "",
+        "dist_dir": "dist/{app_name_lower}_{app_version}",
+        "launcher_name": "{app_name}",
+        "icon": "",
+        "target": [
+            {
+                "file": "",
+                "function": "main",
+                "args": [],
+                "kwargs": {}
+            }
+        ],
+        "readme": "",
+        "attachments": {},
+        "attachments_exist_scheme": "error",
+        "module_paths": [],
+        "venv": {
+            "enable_venv": true,
+            "python_version": "",
+            "mode": "source_venv",
+            "options": {
+                "depsland": {
+                    "venv_name": "{app_name_lower}_venv",
+                    "venv_id": "",
+                    "requirements": ""
+                },
+                "source_venv": {
+                    "path": ""
+                },
+                "pip": {
+                    "requirements": "",
+                    "pypi_url": "https://pypi.python.org/simple/",
+                    "local": "",
+                    "offline": false
+                },
+                "embed_python": {
+                    "path": ""
+                }
+            }
+        },
+        "compiler": {
+            "name": "pyportable_crypto",
+            "options": {
+                "pyarmor": {
+                    "liscense": "trial",
+                    "obfuscate_level": 0
+                },
+                "pyc": {
+                    "optimize_level": 0
+                },
+                "pyportable_crypto": {
+                    "key": "{random}"
+                },
+                "zipapp": {
+                    "password": ""
+                }
+            }
+        },
+        "enable_console": true
+    },
+    "note": "",
+    "pyportable_installer_version": "4.0.0a0"
+}
