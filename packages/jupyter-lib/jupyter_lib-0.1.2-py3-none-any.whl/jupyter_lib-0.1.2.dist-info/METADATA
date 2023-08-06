@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: jupyter-lib
+Version: 0.1.2
+Summary: Demo library (by Miha's organization)
+Home-page: https://jupyter-lib.readthedocs.io/
+Author: Dimitar Stefanov
+Author-email: example@email.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+### This is the simplest possible README.md file.
+
+
