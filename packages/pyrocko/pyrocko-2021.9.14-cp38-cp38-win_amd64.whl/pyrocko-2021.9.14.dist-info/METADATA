@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pyrocko
+Version: 2021.9.14
+Summary: A versatile seismology toolkit for Python.
+Home-page: https://pyrocko.org
+Author: The Pyrocko Developers
+Author-email: info@pyrocko.org
+License: GPLv3
+Requires-Dist: numpy (>=1.8)
+Requires-Dist: scipy
+Requires-Dist: pyyaml
+Requires-Dist: matplotlib
+Requires-Dist: requests
+Provides-Extra: gui_scripts
+Requires-Dist: PyQt5 ; extra == 'gui_scripts'
+
+Pyrocko is an open source seismology toolbox and library, written in the Python
+
+
