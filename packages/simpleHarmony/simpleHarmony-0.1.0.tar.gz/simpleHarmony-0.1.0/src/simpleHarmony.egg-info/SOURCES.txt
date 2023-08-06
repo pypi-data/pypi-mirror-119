@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/simpleHarmony/__init__.py
+src/simpleHarmony/simpleHarmony.py
+src/simpleHarmony.egg-info/PKG-INFO
+src/simpleHarmony.egg-info/SOURCES.txt
+src/simpleHarmony.egg-info/dependency_links.txt
+src/simpleHarmony.egg-info/top_level.txt
