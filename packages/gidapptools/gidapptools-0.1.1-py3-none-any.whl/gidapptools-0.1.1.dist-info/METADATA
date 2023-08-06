@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: gidapptools
+Version: 0.1.1
+Summary: WiP
+Author: brocaprogs
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: psutil
+Requires-Dist: urlextract
+Requires-Dist: yarl
+Requires-Dist: tzlocal
+Requires-Dist: pytz
+Project-URL: Source, https://github.com/Giddius/GidAppTools
+
+# GidAppTools
+
