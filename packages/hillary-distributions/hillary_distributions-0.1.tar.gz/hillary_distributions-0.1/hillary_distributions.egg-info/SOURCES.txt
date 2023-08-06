@@ -1,0 +1,13 @@
+README.md
+license.txt
+setup.cfg
+setup.py
+hillary_distributions/Binomialdistribution.py
+hillary_distributions/Gaussiandistribution.py
+hillary_distributions/Generaldistribution.py
+hillary_distributions/__init__.py
+hillary_distributions.egg-info/PKG-INFO
+hillary_distributions.egg-info/SOURCES.txt
+hillary_distributions.egg-info/dependency_links.txt
+hillary_distributions.egg-info/not-zip-safe
+hillary_distributions.egg-info/top_level.txt
