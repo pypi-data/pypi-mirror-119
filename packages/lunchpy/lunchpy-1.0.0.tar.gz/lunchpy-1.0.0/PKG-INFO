@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: lunchpy
+Version: 1.0.0
+Summary: An API wrapper for Lunch Money
+Home-page: https://github.com/Vyryn/lunchpy
+Author: Vyryn
+Author-email: Vyryn@protonmail.com
+License: GNU Lesser General Public License v3 (LGPLv3)
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENCE
+
+UNKNOWN
+
