@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+jawad_distributions/Binomialdistribution.py
+jawad_distributions/Gaussiandistribution.py
+jawad_distributions/Generaldistribution.py
+jawad_distributions/__init__.py
+jawad_distributions.egg-info/PKG-INFO
+jawad_distributions.egg-info/SOURCES.txt
+jawad_distributions.egg-info/dependency_links.txt
+jawad_distributions.egg-info/not-zip-safe
+jawad_distributions.egg-info/top_level.txt
