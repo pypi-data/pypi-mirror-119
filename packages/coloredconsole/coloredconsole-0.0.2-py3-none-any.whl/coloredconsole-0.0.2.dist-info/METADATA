@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: coloredconsole
+Version: 0.0.2
+Summary: Easy to use console coloring tool.
+Author: Andrew Bordis
+Author-email: andrewbordis@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
