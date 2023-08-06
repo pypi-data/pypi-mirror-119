@@ -1,0 +1,5 @@
+setup.py
+DiscBot.egg-info/PKG-INFO
+DiscBot.egg-info/SOURCES.txt
+DiscBot.egg-info/dependency_links.txt
+DiscBot.egg-info/top_level.txt
