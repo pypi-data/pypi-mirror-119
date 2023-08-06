@@ -1,0 +1,16 @@
+trexio.py,sha256=UQqHguezF2QMfHwdNOXZG5GRsZxiwZczdHdNqEFsByk,309248
+trexio.libs/libsz-60c3b967.so.2.0.1,sha256=SmnOW33l7eHZo1rDI1xKbLXovUf18FJ7ryJjJQ66HFE,37208
+trexio.libs/libhdf5-bbadd0c4.so.200.1.0,sha256=3DAUc3kgQG9ixAoNGwcKSuv7_dBc7TBuSqFKf36OrJU,4913472
+trexio.libs/libhdf5_hl-7fc0892f.so.200.0.1,sha256=oWOIuEn4FM5uPAXE1QZB5Nrbkj6R84iIkEId84MM__Y,189960
+trexio.libs/libaec-8db54129.so.0.0.10,sha256=O2RhrI5HZl-MRVnXXKXbTMcsv9CBsP5LwpgzssKaNEQ,119600
+trexio.libs/libz-745e0a09.so.1.2.7,sha256=qQL6_XYFNzGpn7FbxE6MCwxM96dzN4Ik8FXfgl_vPR8,96272
+pytrexio/_pytrexio.cpython-36m-x86_64-linux-gnu.so,sha256=k5q-aL85SXH0l9IfkThNHTpWKhiva7ZprvaOyHMZ-3g,5012000
+pytrexio/pytrexio.py,sha256=66wbsO_rjs70dsVGa9pXzBdc09aMLFVwiCwwy1x6mN4,121377
+pytrexio/_version.py,sha256=sXLh7g3KC4QCFxcZGBTpG2scR7hmmBsMjq6LqRptkRg,22
+pytrexio/__init__.py,sha256=T7_T21a1w_dmVMlCHUdMD78NVUeH13jHtaWYdMjLomg,35
+trexio-0.0.1.dist-info/top_level.txt,sha256=x9ItO8CmbK3kMcUDW77tg0Qw3bqNLh-1eTpj0MFLJ8Y,16
+trexio-0.0.1.dist-info/LICENSE,sha256=k5tNeJAI-NBDsIblFPsSmrEInq5s_3FoY2psbHoPKGc,1533
+trexio-0.0.1.dist-info/METADATA,sha256=ErkQ4Vfj380CIyjRl7II3YNIJ0cZTXEhhxTqgcxrbXQ,5174
+trexio-0.0.1.dist-info/AUTHORS,sha256=VRfGXsIKV-svRKRQCvG0i15L58SunXL6WG-4LuNqIAI,39
+trexio-0.0.1.dist-info/RECORD,,
+trexio-0.0.1.dist-info/WHEEL,sha256=CdtYEWrHtc5X47KcSSxmzTgyODOCt-se2tHGP9gLcoc,150
