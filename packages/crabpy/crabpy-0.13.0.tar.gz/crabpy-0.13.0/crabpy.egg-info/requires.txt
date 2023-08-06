@@ -1,0 +1,4 @@
+dogpile.cache
+requests
+six
+suds-py3>=1.4.4.1
