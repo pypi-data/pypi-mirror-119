@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: lhorizon
+Version: 1.1.1
+Summary: lhorizon helps you things in the solar system
+Home-page: https://github.com/millionconcepts/lhorizon.git
+Author: Million Concepts
+Author-email: mstclair@millionconcepts.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.9
+Provides-Extra: tests
+Provides-Extra: target
+Provides-Extra: examples
+Provides-Extra: benchmarks
+License-File: LICENSE
+
+UNKNOWN
+
