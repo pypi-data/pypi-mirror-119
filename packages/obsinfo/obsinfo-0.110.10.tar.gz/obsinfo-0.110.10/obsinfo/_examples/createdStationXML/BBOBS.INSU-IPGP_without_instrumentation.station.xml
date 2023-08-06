@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.1">
+  <Source>ObsPy</Source>
+  <Sender>Wayne Crawford, IPGP Email: crawford@ipgp.fr  Phones: 0033 01 83 95 76 63 </Sender>
+  <Module>obsinfo v0.110.8</Module>
+  <ModuleURI>https://gitlab.com/resif/obsinfo</ModuleURI>
+  <Created>2021-09-07T19:44:43.468977Z</Created>
+  <Network code="4G" startDate="2007-07-01T00:00:00.000000Z" endDate="2025-12-31T00:00:00.000000Z">
+    <Description>EMSO-MOMAR - EMSO-MOMAR</Description>
+    <Comment>
+      <Value>EXTRA ATTRIBUTES (for documentation only): </Value>
+    </Comment>
+    <Comment>
+      <Value>need_another_field: to show something else</Value>
+    </Comment>
+    <Comment>
+      <Value>and_yet_another: to show the phone number</Value>
+    </Comment>
+    <Operator>
+      <Agency>INSU-IPGP OBS Park</Agency>
+      <Contact>
+        <Name>Wayne Crawford</Name>
+        <Agency>INSU-IPGP</Agency>
+        <Email>crawford@ipgp.fr</Email>
+        <Phone>
+          <CountryCode>33</CountryCode>
+          <AreaCode>0</AreaCode>
+          <PhoneNumber>012-3456789</PhoneNumber>
+        </Phone>
+      </Contact>
+      <WebSite>http://ipgp.fr</WebSite>
+    </Operator>
+    <TotalNumberStations>2</TotalNumberStations>
+    <SelectedNumberStations>2</SelectedNumberStations>
+    <Station code="BB_1" startDate="2015-04-23T10:00:00.000000Z" endDate="2016-05-28T15:37:00.000000Z" restrictedStatus="unknown">
+      <Comment>
+        <Value>['clock correction linear_drift: [time_base: None, reference: None, start_sync_reference: None, start_sync_instrument: None, end_sync_reference: None, end_sync_instrument: None]']</Value>
+      </Comment>
+      <Latitude unit="DEGREES" minusError="0.00017986432118374611" plusError="0.00017986432118374611">37.2806</Latitude>
+      <Longitude unit="DEGREES" minusError="0.00016434108428" plusError="0.00016434108428">-32.234</Longitude>
+      <Elevation unit="METERS">-1950.0</Elevation>
+      <Site>
+        <Name>My favorite site</Name>
+      </Site>
+      <Vault>Sea floor</Vault>
+      <Geology>unknown</Geology>
+      <CreationDate>2015-04-23T10:00:00.000000Z</CreationDate>
+      <TerminationDate>2016-05-28T15:37:00.000000Z</TerminationDate>
+      <TotalNumberChannels>0</TotalNumberChannels>
+      <SelectedNumberChannels>0</SelectedNumberChannels>
+    </Station>
+    <Station code="BB_2" startDate="2015-04-23T10:00:00.000000Z" endDate="2016-05-28T15:37:00.000000Z" restrictedStatus="unknown">
+      <Comment>
+        <Value>['clock correction linear_drift: [time_base: None, reference: None, start_sync_reference: None, start_sync_instrument: None, end_sync_reference: None, end_sync_instrument: None]']</Value>
+      </Comment>
+      <Latitude unit="DEGREES" minusError="0.00017986432118374611" plusError="0.00017986432118374611">37.26049</Latitude>
+      <Longitude unit="DEGREES" minusError="0.000162837971582" plusError="0.000162837971582">-32.29756</Longitude>
+      <Elevation unit="METERS">-1887.0</Elevation>
+      <Site>
+        <Name>My other favorite site</Name>
+      </Site>
+      <Vault>Sea floor</Vault>
+      <Geology>unknown</Geology>
+      <CreationDate>2015-04-23T10:00:00.000000Z</CreationDate>
+      <TerminationDate>2016-05-28T15:37:00.000000Z</TerminationDate>
+      <TotalNumberChannels>0</TotalNumberChannels>
+      <SelectedNumberChannels>0</SelectedNumberChannels>
+    </Station>
+  </Network>
+</FDSNStationXML>
