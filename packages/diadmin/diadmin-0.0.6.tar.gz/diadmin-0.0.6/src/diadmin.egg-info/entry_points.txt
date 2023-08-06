@@ -1,0 +1,3 @@
+[console_scripts]
+diadmin = diadmin.dipolicies:main
+
