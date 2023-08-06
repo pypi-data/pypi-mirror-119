@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+HappySearch/__init__.py
+HappySearch.egg-info/PKG-INFO
+HappySearch.egg-info/SOURCES.txt
+HappySearch.egg-info/dependency_links.txt
+HappySearch.egg-info/top_level.txt
