@@ -1,0 +1,118 @@
+Metadata-Version: 2.1
+Name: YingMiYAML
+Version: 1.0.2
+Summary: UNKNOWN
+Home-page: https://www.yingmi.cn
+Author: liuyunfeng
+Author-email: liuyf@yingmi.cn
+License: UNKNOWN
+Project-URL: Source Code, https://git.frontnode.net/dapp/yingmi-yaml
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML (==5.4.1)
+
+# YAML配置文件读取工具
+
+- yaml语法支持
+- 支持多profile配置
+
+#### 安装
+```
+git clone git@git.frontnode.net:liuyf/yingmi-yaml.git
+cd yingmi-yaml
+pip install -e .
+```
+TODO：编译后上传到私有pypi仓库
+```
+python setup.py bdist_whell register -r yingmiyaml upload -r yingmiyaml
+```
+#### 示例
+
+- 配置文件
+
+```yaml
+# 全局
+app:
+  name: spark-kyc
+  server:
+    port: 8082
+  profile:
+    active: prod
+urls:
+  - baidu.com
+  - aliyun.com
+  - tencent.com
+
+# 不同profile
+---
+$profile: dev 
+mysql:
+  host: localhost
+  user: root
+  password: xxxx
+  db: testing
+
+---
+$profile: prod
+mysql:
+  host: localhost
+  user: root
+  password: xxxx
+  db: prod-db
+# profile中的与全局相同key会按key路径覆盖
+app:
+  server:
+    port: 80
+```
+
+这个yaml配置文件包含两个profile: prod, dev。
+1. 使用`---` 三横杠分割profile，每个profile使用
+2. 每个profile通过`$profile`字段命名
+3. 支持通过命令行指定profile：`--profile=dev`
+
+- 实例代码参考example.py
+
+```python
+
+import os
+from yingmi.yaml import YAML, get_yaml_config, get_nested_dict_value
+
+cur_dir = os.path.abspath(os.path.dirname(__file__))
+yaml_file = os.path.join(cur_dir, 'app.yml')
+
+if __name__ == '__main__':
+    # YAML对象可以重复使用
+    # 指定profile
+    yaml = YAML(yaml_file)
+    config = yaml.get_profile('prod')
+    print(config.get('mysql'))
+    config = yaml.get_profile('dev')
+    print(config['mysql'])
+
+    # 未指定profile参数时，会从命令行参数读取--profile，如果没有这个参数，则会读取配置文件中的app.profile.active字段
+    print('--- cmd argument or app.profile.active---')
+    config = yaml.get_profile()
+    print(config)
+
+    # 便利性函数 get_yaml_config(yaml_file, profile=None)
+    config = get_yaml_config(yaml_file)
+    print(config.get('mysql'))
+    print(config['app']['server']['port'])
+    print(get_nested_dict_value(config,'app.server.port'))
+    
+    #多级key直接读取
+    print(config['app.server.port'])
+    # 取list
+    print(config['urls'])
+    # 取list对象的某个下标
+    print(config['urls.[1]'])
+```
+
+
+
+
