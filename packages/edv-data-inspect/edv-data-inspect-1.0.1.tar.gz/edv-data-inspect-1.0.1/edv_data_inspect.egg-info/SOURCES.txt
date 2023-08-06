@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+edv_data_inspect/edvRegex.py
+edv_data_inspect.egg-info/PKG-INFO
+edv_data_inspect.egg-info/SOURCES.txt
+edv_data_inspect.egg-info/dependency_links.txt
+edv_data_inspect.egg-info/entry_points.txt
+edv_data_inspect.egg-info/requires.txt
+edv_data_inspect.egg-info/top_level.txt
