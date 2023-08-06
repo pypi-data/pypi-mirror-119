@@ -1,0 +1,33 @@
+Highlights:
+   - **CUDA backend**
+      - Fix CUDA error "allocate_global (DataType type) misaligned address" (#2863) (by **rocket**)
+   - **Language and syntax**
+      - Refine semantics of ti.any_arr (#2875) (by **Yi Xu**)
+      - Experimental SpMV and direct linear solvers (#2853) (by **FantasyVR**)
+      - Support fill, from_numpy, to_numpy for ti.ndarray (#2868) (by **Yi Xu**)
+   - **LLVM backend (CPU and CUDA)**
+      - Increase the number of arguments allowed in a kernel (#2886) (by **Yi Xu**)
+   - **Miscellaneous**
+      - Fix the path in conda_env.yaml (#2895) (by **Ce Gao**)
+
+Full changelog:
+   - [vulkan] Turn off Vulkan by default and add dev install instructions (#2897) (by **Dunfan Lu**)
+   - [Misc] Fix the path in conda_env.yaml (#2895) (by **Ce Gao**)
+   - [ci] Rollback buggy Dockerfile (by **Dunfan Lu**)
+   - [bug] [opt] Disable putting pointers into global tmp buffer (#2888) (by **Yi Xu**)
+   - [Llvm] Increase the number of arguments allowed in a kernel (#2886) (by **Yi Xu**)
+   - [gui] GGUI fix undefined variable (#2885) (by **Mingrui Zhang**)
+   - [ci] Build and Release Vulkan in CI/CD (#2881) (by **Dunfan Lu**)
+   - [Lang] Refine semantics of ti.any_arr (#2875) (by **Yi Xu**)
+   - [refactor] OpenGL program impl (#2878) (by **Dunfan Lu**)
+   - [refactor] Vulkan program impl (#2876) (by **Dunfan Lu**)
+   - Clean up sparse matrix (#2872) (by **squarefk**)
+   - Re-enable sfg test on CUDA (#2874) (by **Bo Qiao**)
+   - [refactor] Unify llvm_program_ and metal_program_ in Program class. (by **Ailing Zhang**)
+   - [refactor] Let LlvmProgramImpl inherit ProgramImpl. (by **Ailing Zhang**)
+   - [refactor] Init ProgramImpl from MetalProgramImpl. (by **Ailing Zhang**)
+   - [CUDA] [bug] Fix CUDA error "allocate_global (DataType type) misaligned address" (#2863) (by **rocket**)
+   - [Lang] Experimental SpMV and direct linear solvers (#2853) (by **FantasyVR**)
+   - [refactor] Get rid of some unnecessary get_current_program(). (by **Ailing Zhang**)
+   - [ci] Enable CI on pushing to master. (#2865) (by **Ailing**)
+   - [Lang] Support fill, from_numpy, to_numpy for ti.ndarray (#2868) (by **Yi Xu**)
