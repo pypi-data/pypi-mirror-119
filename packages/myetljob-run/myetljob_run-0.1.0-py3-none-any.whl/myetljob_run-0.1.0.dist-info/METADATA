@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: myetljob-run
+Version: 0.1.0
+Summary: My first ETL library
+Home-page: UNKNOWN
+Author: ygng
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: findspark
+Requires-Dist: pyspark
+Requires-Dist: delta-spark
+
+UNKNOWN
+
