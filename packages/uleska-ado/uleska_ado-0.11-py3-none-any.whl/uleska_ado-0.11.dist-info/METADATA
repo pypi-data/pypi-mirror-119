@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: uleska-ado
+Version: 0.11
+Summary: An ADO helper library for the Uleska DevSecOps Platform
+Home-page: https://github.com/uleska-demo/uleska-ado
+Author: Gary Robinson
+Author-email: gary.robinson@uleska.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# uleska-automate
+
+Uleska helper library for use with ADO
+
+```
+
+ ___  ___  ___       _______   ________  ___  __    ________     
+|\  \|\  \|\  \     |\  ___ \ |\   ____\|\  \|\  \ |\   __  \    
+\ \  \\\  \ \  \    \ \   __/|\ \  \___|\ \  \/  /|\ \  \|\  \   
+ \ \  \\\  \ \  \    \ \  \_|/_\ \_____  \ \   ___  \ \   __  \  
+  \ \  \\\  \ \  \____\ \  \_|\ \|____|\  \ \  \\ \  \ \  \ \  \ 
+   \ \_______\ \_______\ \_______\____\_\  \ \__\\ \__\ \__\ \__\
+    \|_______|\|_______|\|_______|\_________\|__| \|__|\|__|\|__|
+                                 \|_________|                    
+                                 
+                                 
+usage: uleska-ado [-h] --host HOST --organization ORGANIZATION --project
+                  PROJECT --token TOKEN [--filename FILENAME]
+
+Uleska ADO Work Item Generator. (Version 0.1)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --host HOST           Azure DevOps host to communicate with (e.g.
+                        dev.azure.com
+  --organization ORGANIZATION
+                        Organization string
+  --project PROJECT     Project string
+  --token TOKEN         Personal access token string (base64 encoded with
+                        username)
+  --filename FILENAME   File to read Uleska issues from, defaults to
+                        'output.json'
+
+ ```
+
+
+## Example usage:
+
+```
+# uleska-ado --host 'dev.azure.com' --organization 'my-org' --project 'my-project' --token 'as9823nklsflfs09awe2mjsdfms3NzJ6ZnI3bWtta3hyN3czcWVtZjZiN2NhNXp2M3Vx' 
+
+
+
