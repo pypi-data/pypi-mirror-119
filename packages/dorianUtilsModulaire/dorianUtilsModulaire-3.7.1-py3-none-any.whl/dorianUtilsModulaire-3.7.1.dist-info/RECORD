@@ -1,0 +1,17 @@
+dorianUtils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dorianUtils/comUtils.py,sha256=tHh-XEBqBxvjsCxrDRX4DWL2P3BIBPuJ7160Q2OINlc,17073
+dorianUtils/configFilesD.py,sha256=9Y02LHcb63FS99sql27bEe6a40r1UfTRQGc-vEsuyYY,28172
+dorianUtils/dashTabsD.py,sha256=SD80zwJv7zHLbTMaypJWyeV0VJ9GA32urxE-lWMc25g,29101
+dorianUtils/dateAfterDays.py,sha256=OdY2XDUjWjUZWTAopm54K9QAG-nudZoPN9_CSJOfN14,205
+dorianUtils/dccExtendedD.py,sha256=XYHKIAP8ysqt9Q9_bOwcRNLYUagkaQ-TUGCjb63d20Q,16051
+dorianUtils/mplExtended.py,sha256=kukctAyh8McqSn4_F1RNpp2ms9C1yZguuTOkSiY_028,5628
+dorianUtils/utilsD.py,sha256=rLgh4b4UiqKOy2AL8pmbtfY8G95-5T4ZxwvPnsl2CoM,39449
+dorianUtils/conf/colormaps.pkl,sha256=vK8zo3kFGong2BfZPNTANRzPs3_TPStf3GzwhpnBQ-M,990
+dorianUtils/conf/units.csv,sha256=9b6GTtOABBjb6GIejkYTp8O22mHJcQ6n_w7xvU4iHVM,341
+dorianUtils/sparkUtils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dorianUtils/sparkUtils/sparkDfUtils.py,sha256=4_P2mG-caRW5ZhXEvFD1bPXsb5vcpOg2oKTcyL72eOg,78273
+dorianUtils/sparkUtils/sparkSqlDumpLoader.py,sha256=Yd91TWmatrJfcm6JITQ98g9yHuaacmHzMmYAKDMnXnU,7831
+dorianUtilsModulaire-3.7.1.dist-info/METADATA,sha256=FCBxcdQA-q0rd5GZTU4Uj4pBZb8LyNVpPCGWo6s2bHs,1073
+dorianUtilsModulaire-3.7.1.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+dorianUtilsModulaire-3.7.1.dist-info/top_level.txt,sha256=mu8_Ej-M7NSG5jEJC1HDnVghkccQ2iX4jRaWvMWyR_w,12
+dorianUtilsModulaire-3.7.1.dist-info/RECORD,,
