@@ -1,0 +1,9 @@
+GravityLab-10.0.0.dist-info/RECORD,,
+GravityLab-10.0.0.dist-info/METADATA,sha256=c_dIIzHVKBqs2AQLVvO9TVdCXqCfZOSIF_8ehiGJ9nU,5840
+GravityLab-10.0.0.dist-info/LICENSE,sha256=QCJVqPt-1ZgNxWpTDW3LU4VaLkV8QdJHF6F1k6FooSI,1099
+GravityLab-10.0.0.dist-info/WHEEL,sha256=wXkxjsGQ2mWSVh8eia7EBosU7NS6ZQqbdzYn778x-yk,221
+GravityLab-10.0.0.dist-info/top_level.txt,sha256=91fdwv32LwHKIxEQhj2ploXuPs0IjCEkuQTtESlYMrU,11
+gravitylab/simulate.py,sha256=n1bfCEgzeJoPa_9oVZfp2l9ECUYyE2sLc0ah00QPPrA,3224
+gravitylab/__init__.py,sha256=_zXQs7zSNk37HIOBtTwHfGM5qR14kTEEp1z_WxDtdN4,86
+gravitylab/example.py,sha256=qw7pjcUm0KwOlMZXAuR_2oztPO-tll0VmyFm9cFmoa0,369
+gravitylab/solvers.cpython-36m-x86_64-linux-gnu.so,sha256=YW4dTlpl4-6JZCjJ40xvZrC6bsfXSfKPiN7EhHoObXQ,1265776
