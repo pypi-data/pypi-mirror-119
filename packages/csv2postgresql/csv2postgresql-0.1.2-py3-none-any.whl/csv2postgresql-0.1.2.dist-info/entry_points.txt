@@ -1,0 +1,3 @@
+[console_scripts]
+csv2postgresql=csv2postgresql:cli
+
