@@ -1,0 +1,34 @@
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored ./bearerTokenExample/py3/roPerf/bearerTokenExample-base/controllers/token_controller.py
+RefactoringTool: Files that were modified:
+RefactoringTool: ./bearerTokenExample/py3/roPerf/bearerTokenExample-base/controllers/token_controller.py
+--- ./bearerTokenExample/py3/roPerf/bearerTokenExample-base/controllers/token_controller.py	(original)
++++ ./bearerTokenExample/py3/roPerf/bearerTokenExample-base/controllers/token_controller.py	(refactored)
+@@ -179,19 +179,19 @@
+ 
+          pp = pprint.PrettyPrinter(indent=4)    
+ 
+-         if 'userId' in userInfoDict.keys():
++         if 'userId' in list(userInfoDict.keys()):
+              self.setUserId(userInfoDict['userId'])
+                             
+-         if 'userName' in userInfoDict.keys():
++         if 'userName' in list(userInfoDict.keys()):
+              self.setUserName(userInfoDict['userName'])
+                               
+-         if 'role' in userInfoDict.keys():
++         if 'role' in list(userInfoDict.keys()):
+              self.setRole(userInfoDict['role'])
+                           
+-         if 'acGroups' in userInfoDict.keys():
++         if 'acGroups' in list(userInfoDict.keys()):
+              self.setResGroupIds(userInfoDict['acGroups'])
+                                  
+-         if 'serviceBlackList' in userInfoDict.keys():
++         if 'serviceBlackList' in list(userInfoDict.keys()):
+              self.setServiceBlackList(userInfoDict['serviceBlackList'])
+ 
+      def selfAsDict(self):
