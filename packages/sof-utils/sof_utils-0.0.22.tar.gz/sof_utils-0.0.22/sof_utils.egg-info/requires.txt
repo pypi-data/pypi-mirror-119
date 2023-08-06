@@ -1,0 +1,4 @@
+pydicom
+pathlib
+tqdm
+tensorflow-datasets
