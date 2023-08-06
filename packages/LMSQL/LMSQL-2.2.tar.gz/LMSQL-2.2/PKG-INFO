@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: LMSQL
+Version: 2.2
+Summary: Библиотека для легкого использования mysql базы данных!
+Home-page: https://github.com/LORD-ME-CODE/LiteMYSQL
+Author: lordcodes
+Author-email: lordgrief176@gmail.com
+License: GPLv3
+Description: Подробнее читать на гит-хабе
+        https://github.com/LORD-ME-CODE/LiteMYSQL
+        
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+LMSQL/__init__.py
+LMSQL.egg-info/PKG-INFO
+LMSQL.egg-info/SOURCES.txt
+LMSQL.egg-info/dependency_links.txt
+LMSQL.egg-info/not-zip-safe
+LMSQL.egg-info/requires.txt
+LMSQL.egg-info/top_level.txt
