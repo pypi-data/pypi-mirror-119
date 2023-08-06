@@ -1,0 +1,2 @@
+asession
+package2pypi
