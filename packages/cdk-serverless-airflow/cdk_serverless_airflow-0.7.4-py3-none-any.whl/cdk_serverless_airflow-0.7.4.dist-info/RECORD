@@ -1,0 +1,9 @@
+cdk_serverless_airflow/__init__.py,sha256=XFfpe2XyB0Zkzir95CwbwYAZFR9mQgqI-qXHVVm1Mb0,6096
+cdk_serverless_airflow/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+cdk_serverless_airflow/_jsii/__init__.py,sha256=6jW96XQPx2j1QnZc075ZnyLryISMKgWSQkiLMpck2Wk,823
+cdk_serverless_airflow/_jsii/cdk-serverless-airflow@0.7.4.jsii.tgz,sha256=p9hVMyCLwu5Q_Bv-WKcH23hWpAOTgFkz5AmQFQRQC3U,552360
+cdk_serverless_airflow-0.7.4.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+cdk_serverless_airflow-0.7.4.dist-info/METADATA,sha256=LSLtSc8tuJYsX_f_dryKrfVyevRLnJzqUu8f8ZxRrI4,3278
+cdk_serverless_airflow-0.7.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+cdk_serverless_airflow-0.7.4.dist-info/top_level.txt,sha256=ynQEkzpJzTp3D2nFLyiuZdwc35_Tu48Pkc_o-hKXgfY,23
+cdk_serverless_airflow-0.7.4.dist-info/RECORD,,
