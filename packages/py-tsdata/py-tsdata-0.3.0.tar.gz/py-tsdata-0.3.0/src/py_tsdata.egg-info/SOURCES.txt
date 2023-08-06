@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/py_tsdata.egg-info/PKG-INFO
+src/py_tsdata.egg-info/SOURCES.txt
+src/py_tsdata.egg-info/dependency_links.txt
+src/py_tsdata.egg-info/requires.txt
+src/py_tsdata.egg-info/top_level.txt
+test/test_import.py
