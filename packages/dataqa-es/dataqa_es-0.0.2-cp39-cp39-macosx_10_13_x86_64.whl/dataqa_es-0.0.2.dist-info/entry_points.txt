@@ -1,0 +1,3 @@
+[console_scripts]
+dataqa_es=dataqa_es.start_es_server:main
+
