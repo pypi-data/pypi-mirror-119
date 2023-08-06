@@ -1,0 +1,6 @@
+summary: This data component downloads the ERA5 datasets for data analysis and visualization.
+url: https://github.com/gantian127/bmi_era5/
+author: Tian Gan
+email: gantian127@gmail.com
+version: 0.1
+license: MIT
