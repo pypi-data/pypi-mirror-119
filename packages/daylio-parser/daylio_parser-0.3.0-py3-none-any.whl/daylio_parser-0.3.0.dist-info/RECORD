@@ -1,0 +1,9 @@
+daylio_parser/__init__.py,sha256=QYSeCdxBzlIAD8sXL2vAilyZKyF98XHyEZS5ph-uWz0,38
+daylio_parser/config.py,sha256=Cygzx4h6DlCLM4OormQ4-8ETM_N5pVxvIa-leyUa7aQ,3289
+daylio_parser/parser.py,sha256=To4oubM2ItUyGLpeRBQDmO99o4Lb4JcDE8CSwY1IY0I,1810
+daylio_parser/plot.py,sha256=YzHq74E7V5MXMMah2VaaiHluoPEhRQ_0HgXJxflQm1w,3539
+daylio_parser/stats.py,sha256=toK0LbG0zSxeK1RFkl1Cn_7UQX_IDgHWCTpiPs9-1cA,6253
+daylio_parser-0.3.0.dist-info/LICENSE,sha256=4w5aN5WiZJdCRxe8aOEqM5cmu6O9i1iEhC2FdAGqEOw,1063
+daylio_parser-0.3.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+daylio_parser-0.3.0.dist-info/METADATA,sha256=J6uoIcvsGDe8QOgDrYWR_Pa3L_ZGF6PwCq47IFvlZUY,2459
+daylio_parser-0.3.0.dist-info/RECORD,,
