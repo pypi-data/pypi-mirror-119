@@ -1,0 +1,8 @@
+README.md
+setup.py
+mlpet/Datasets/MLPet.egg-info/PKG-INFO
+mlpet/Datasets/MLPet.egg-info/SOURCES.txt
+mlpet/Datasets/MLPet.egg-info/dependency_links.txt
+mlpet/Datasets/MLPet.egg-info/requires.txt
+mlpet/Datasets/MLPet.egg-info/top_level.txt
+mlpet/Datasets/MLPet.egg-info/SOURCES.txt
