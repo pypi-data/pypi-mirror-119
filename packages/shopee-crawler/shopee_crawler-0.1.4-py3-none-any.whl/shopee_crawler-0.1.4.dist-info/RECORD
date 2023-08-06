@@ -1,0 +1,12 @@
+shopee_crawler/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shopee_crawler/crawler.py,sha256=EllLzmxCvKOtTXTMjPkctI8UDfinKfy6q2MAZXLO63w,109
+shopee_crawler/toolkit/__init__.py,sha256=LfAf8XV4UgeGpsrGF5InH2rpyI4DnfGDNVXMqLG6ie4,183
+shopee_crawler/toolkit/crawl_by_cat_url.py,sha256=JYUpvyLajsWhvhlOxbDfJWsZQXZTdPM79BDD2nDZwl8,4057
+shopee_crawler/toolkit/crawl_by_search.py,sha256=GkboSZxHDETH-GjnepRdWSjNP8dVd6wJ1eipU-ckj-8,3849
+shopee_crawler/toolkit/crawl_by_shop_url.py,sha256=N2QpDcdh9WpupoOO87WfTsnURf-pEyaSlUK-7A17hZU,3945
+shopee_crawler/toolkit/crawl_cat_list.py,sha256=lcMoYctetBUpOgH-MAtibpVAFPNMk8Cp_4dZ_OQTNVo,1396
+shopee_crawler/toolkit/curl.py,sha256=fEywnCyH9OgPeNwSteoiYG5lwTvjuYCcLDaqHErdWys,979
+shopee_crawler-0.1.4.dist-info/METADATA,sha256=4YDX3cFcLhGscjj25EWVqBLLQTbIYXl47oEUDugW59I,1566
+shopee_crawler-0.1.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+shopee_crawler-0.1.4.dist-info/top_level.txt,sha256=Epr7_P1ETPGHaLr5V1n1OzdYIeya9YpJTzekehtAA-c,15
+shopee_crawler-0.1.4.dist-info/RECORD,,
