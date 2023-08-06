@@ -1,0 +1,7 @@
+appdirs==1.4.4
+toml==0.10.2
+
+[dev]
+pytest==6.2.5
+flake8==3.9.2
+autopep8==1.5.7
