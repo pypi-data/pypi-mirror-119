@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+copy = mkdocs_copy:CopyPlugin
+

@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: mkdocs-copy
+Version: 0.0.1
+Summary: A mkdocs plugin that lets you copy (and maybe transform) arbitrary doc files to the build.
+Home-page: https://github.com/chikamichi/mkdocs-copy
+Author: Jean-Denis Vauguet
+Author-email: jd@vauguet.fr
+License: MIT
+Keywords: mkdocs markdown file copy include export transform
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Documentation
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Text Processing :: Filters
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=2.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Copy files in your MkDocs build
+
+mkdocs-copy is a plugin for [MkDocs](https://www.mkdocs.org/) which allows you to copy _verbatim_ arbitrary files in your build.
+
+## Why?
+
+This plugin was created to solve https://github.com/mkdocs/mkdocs/issues/2139 (at least some use-cases affected by it). Basically it's a work-around for the following ([willingly](https://github.com/mkdocs/mkdocs/issues/2139#issuecomment-656659524)) hard-coded chunk in MkDocs' sources:
+
+``` python
+# mkdocs/structure/files.py used by 
+def get_files(config):
+    """ Walk the `docs_dir` and return a Files collection. """
+    files = []
+    exclude = ['.*', '/templates']
+
+    # ...
+```
+
+Note: one could achieve the same result using something like [mkdocs-gen-files](https://oprypin.github.io/mkdocs-gen-files/) or [mkdcos-simple-hooks](https://pypi.org/project/mkdocs-simple-hooks/), only with some more effort. The benefit of using mkdocs-copy dedicated plugin lies in its declarative API. It is also easily reusable.
+
+## Quick start
+
+Say you want to add .htaccess files (if defined for a given folder/path):
+
+``` yaml
+# mkdocs.yml config file
+plugins:
+  - mkdocs-copy:
+    add_per_path:
+      - .htaccess
+```
+
+
