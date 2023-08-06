@@ -1,0 +1,16 @@
+MANIFEST.in
+README.rst
+TITLE.txt
+lh-agpl3-LICENSE.txt
+setup.py
+bin/pkgBearerTokenExampleManage.py
+roPerf2/__init__.py
+roPerf2.bearerTokenExample.egg-info/PKG-INFO
+roPerf2.bearerTokenExample.egg-info/SOURCES.txt
+roPerf2.bearerTokenExample.egg-info/dependency_links.txt
+roPerf2.bearerTokenExample.egg-info/namespace_packages.txt
+roPerf2.bearerTokenExample.egg-info/not-zip-safe
+roPerf2.bearerTokenExample.egg-info/requires.txt
+roPerf2.bearerTokenExample.egg-info/top_level.txt
+roPerf2/bearerTokenExample/__init__.py
+roPerf2/bearerTokenExample/bearerTokenExample_pkgThis.py
