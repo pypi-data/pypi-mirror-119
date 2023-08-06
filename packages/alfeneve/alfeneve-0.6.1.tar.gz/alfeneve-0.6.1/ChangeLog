@@ -1,0 +1,63 @@
+CHANGES
+=======
+
+0.6.1
+-----
+
+* Update ChangeLog
+* Improve CLI output of whitelist entries
+* Clarify that ids should be comma separated
+* Print more friendly message in CLI on Exception
+* Be explicit about requiring a category or ids for properties
+
+0.6.0
+-----
+
+* Update ChangeLog
+* Document that Alfen is now a context manager
+* Add instructions on how to get the API credentials
+* Add .editorconfig
+* Test Python 3.9
+* Handle Interrupt when tailing logs gracefully
+* Restyle indentation
+* Update deprecated options
+* Clarify the default amount of log lines retrieved
+* Support version 2 properties and add ID to name mapping
+* Turn Alfen class into context manager for proper logout
+* Remove unused session parameter
+* Do not break on empty POST responses
+* Disable SSL verification by default, allow supplying custom verify certificate
+* Allow explicit configuration of API endpoint
+
+0.5.0
+-----
+
+* Add ChangeLog
+* Update public repository location
+* Move tests out of package and unmark universal wheel
+* Add README
+* Filter out empty categories
+* Move omniconf dependency to extras
+* Allow comma separated property ids
+* Automatically try to login once on Forbidden error
+* Work around issues with malformed NaN values
+* Do not assert expected cound of properties
+* Remove dependency pinning, we're a library
+* Fix flake8 error
+* Add logs follow mode
+* Add logs support
+* Add transactions support
+* Add whitelist support
+* Add CLI modes for printing categories and properties
+* Fix Flake8 errors
+* Replace tests with placeholder
+* Parse properties into objects
+* Add API client for reading categories and properties
+* Add dependency on requests
+* Apply MIT license to project
+
+0.0.1
+-----
+
+* Initial commit
+* Initial cookiecutter import
