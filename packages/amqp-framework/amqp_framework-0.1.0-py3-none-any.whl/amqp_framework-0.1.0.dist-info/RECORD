@@ -1,0 +1,11 @@
+amqp_framework/__init__.py,sha256=GsyTV5BI83YAZS9ae6kFnh8AMT8-4h7oEpVNnD7c6SQ,371
+amqp_framework/abstract_consumer.py,sha256=dOq7r_tSZ0I3a5ZREnV4tTRdiRPQZlpb4FBHK4Gi71U,4131
+amqp_framework/helpers.py,sha256=NOKmfQqVeO9vutX_cOqsBaX4rEDlyQm0n9Y82typz08,604
+amqp_framework/http_status.py,sha256=XyQAyYymO7OAZJZtRUzIGlP837G8vG0cSJOP6zYg_s4,7155
+amqp_framework/producer.py,sha256=Cf40E7NmMgVuz3xox3F8kT9IVySdtTujEIQOyEg0460,1779
+amqp_framework/request.py,sha256=eBy8f4ix4NsmYbsabzyApaov6sAfflaq8LuiMkseJtM,667
+amqp_framework/response.py,sha256=Pogk1h_swXHNQ-3kwP1FOWM-RH9neSdCEIUZml_DgmI,1508
+amqp_framework-0.1.0.dist-info/METADATA,sha256=uWMZXE3TUHjMXTmKHUFJpzvMPfwa69JKFyheA1WXiKg,927
+amqp_framework-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+amqp_framework-0.1.0.dist-info/top_level.txt,sha256=WlFOItQqc2G7lRNcDy1vMrOSaJI7zYRnSyVDYfJihk4,15
+amqp_framework-0.1.0.dist-info/RECORD,,
