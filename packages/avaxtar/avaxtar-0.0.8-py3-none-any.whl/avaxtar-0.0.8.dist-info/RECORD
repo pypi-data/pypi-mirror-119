@@ -1,0 +1,13 @@
+avaxtar/Avax_NN.py,sha256=oZsP5ZXl1lgw39cl0uLEEWpXJrRO0SVV1eTVAIqtFww,9328
+avaxtar/Avaxtar.py,sha256=hP1Foulnu2fG_ljX55AmE_gc6scihOZnDXK6JTF1YnM,9195
+avaxtar/DF_from_DICT.py,sha256=2i95mtq-OGewFcP3dNQ9Zhh4fvOpytPb3dKb5JWOyPo,17024
+avaxtar/Example.py,sha256=_2YLdGXFJn33aClbZ7gNZP4kwfz2Ew7DeWOOLIWw78k,458
+avaxtar/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+avaxtar/model_pytorch1.pt,sha256=KxOR33Ifgt9s4bv6GtiCNI07Q8BwVX6vJGjm08PLjoI,905221
+avaxtar/scaler1.joblib,sha256=SkVYXH7HFsaaWZEEE7zkyUwVDTo5Z3kSslrHcObRCgM,10111
+avaxtar-0.0.8.dist-info/LICENSE,sha256=I4GS1AF20zrXtKBFwQs6fH08SXdT109s57yLLOmOz9Q,1072
+avaxtar-0.0.8.dist-info/METADATA,sha256=raJdA6QHwX3ED3CqzAezRBqJxttS0JyrOgVVyyN5ras,588
+avaxtar-0.0.8.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+avaxtar-0.0.8.dist-info/dependency_links.txt,sha256=2X-vx_bMHi7vqkJMgtuIq4chKtFI6z91x8fHFXz48DA,67
+avaxtar-0.0.8.dist-info/top_level.txt,sha256=bvR47Y4g6SJrZIME3DyzRuC9mS5erhms7FkX6le4wLQ,37
+avaxtar-0.0.8.dist-info/RECORD,,
