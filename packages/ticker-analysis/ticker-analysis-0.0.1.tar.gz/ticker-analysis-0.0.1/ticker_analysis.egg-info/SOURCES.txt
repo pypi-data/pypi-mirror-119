@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+TickerAnalysis/TickerAnalysis.py
+TickerAnalysis/__init__.py
+ticker_analysis.egg-info/PKG-INFO
+ticker_analysis.egg-info/SOURCES.txt
+ticker_analysis.egg-info/dependency_links.txt
+ticker_analysis.egg-info/requires.txt
+ticker_analysis.egg-info/top_level.txt
