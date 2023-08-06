@@ -1,0 +1,11 @@
+wget
+tqdm
+numpy
+pyworld
+jyutping
+pypinyin
+tabulate
+pyperclip
+onnxruntime
+simpleaudio
+more-itertools
