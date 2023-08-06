@@ -1,0 +1,3 @@
+[console_scripts]
+bayscrape = bayscrape.__main__:main
+
