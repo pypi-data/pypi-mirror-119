@@ -1,0 +1,11 @@
+milvus_cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+milvus_cli/main.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+milvus_cli/utils.py,sha256=Fdssett4n4viWyMrH17RW1EUFdDlF--bjXgB9YLp-8Y,27828
+milvus_cli/scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+milvus_cli/scripts/milvus_cli.py,sha256=a-zHDZs-Br6JJUjr4CeuMe_rJe5eehlTDA79Jvmkskk,25380
+milvus_cli-0.1.6.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+milvus_cli-0.1.6.dist-info/METADATA,sha256=iwuEM6wsWObFpAIoHF44rWX83iyRYwY_OWoAMNzqKy4,18087
+milvus_cli-0.1.6.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+milvus_cli-0.1.6.dist-info/entry_points.txt,sha256=Rr2x2nIcP2dhxLCQHsNhUsbQis53PqixhD7r-WuvjiU,75
+milvus_cli-0.1.6.dist-info/top_level.txt,sha256=Jn9cQr11BNvNMksW9uLFWiSvPEeeMbL7A0VWvvo3gWI,11
+milvus_cli-0.1.6.dist-info/RECORD,,
