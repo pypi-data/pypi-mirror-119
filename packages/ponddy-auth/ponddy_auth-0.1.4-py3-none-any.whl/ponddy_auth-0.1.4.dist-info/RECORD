@@ -1,0 +1,9 @@
+ponddy_auth/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ponddy_auth/apps.py,sha256=vYN_EHGz77ao-XfB67HuSOA3vqNMkDZ5JVc15icXIWc,96
+ponddy_auth/authentication.py,sha256=xHZknAK_cMmgS_d1e7zvSOxVNQEQhud6iAH-OszhCnQ,3752
+ponddy_auth/permissions.py,sha256=ee1qdsgbarWWHkxFL4bpGZc0QZIiSIsHVqup5cA4GDc,1156
+ponddy_auth/utils.py,sha256=lPu6iCnHhP08WTFBg3RQiBEv_DGdaumTWGCWrK_MjVA,2283
+ponddy_auth-0.1.4.dist-info/METADATA,sha256=5C1Es04p1eJfopQy4KtSpHvD7yZ1aIpVLQTcAXLNtKM,3830
+ponddy_auth-0.1.4.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+ponddy_auth-0.1.4.dist-info/top_level.txt,sha256=ngKWOeZt56jz4DfT0pFQepWFiY4gKtIiQ4CATtLkWs8,12
+ponddy_auth-0.1.4.dist-info/RECORD,,
