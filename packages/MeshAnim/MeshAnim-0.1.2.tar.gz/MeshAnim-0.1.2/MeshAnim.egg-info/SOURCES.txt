@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+MeshAnim.egg-info/PKG-INFO
+MeshAnim.egg-info/SOURCES.txt
+MeshAnim.egg-info/dependency_links.txt
+MeshAnim.egg-info/top_level.txt
