@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+labirint_parse.egg-info/PKG-INFO
+labirint_parse.egg-info/SOURCES.txt
+labirint_parse.egg-info/dependency_links.txt
+labirint_parse.egg-info/entry_points.txt
+labirint_parse.egg-info/not-zip-safe
+labirint_parse.egg-info/top_level.txt
+labirint_parser/parser.py
