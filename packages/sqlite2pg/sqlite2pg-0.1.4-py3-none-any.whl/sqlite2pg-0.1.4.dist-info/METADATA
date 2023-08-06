@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: sqlite2pg
+Version: 0.1.4
+Summary: An SQLite3 to PostgreSQL database migration tool.
+Home-page: https://github.com/Jonxslays/sqlite2pg
+License: BSD-3-Clause
+Author: Jonxslays
+Requires-Python: >=3.6,<=3.10
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Database
+Classifier: Typing :: Typed
+Requires-Dist: aiofiles (>=0.7.0,<0.8.0)
+Requires-Dist: aiosqlite (>=0.17.0,<0.18.0)
+Requires-Dist: asyncpg (>=0.24.0,<0.25.0)
+Requires-Dist: click (>=8.0.1,<9.0.0)
+Requires-Dist: loguru (>=0.5.3,<0.6.0)
+Project-URL: Repository, https://github.com/Jonxslays/sqlite2pg
+Description-Content-Type: text/markdown
+
+# sqlite2pg
+
+An SQLite3 to PostgreSQL database migration tool.
+
+## WARNING
+
+This project is still in very early development, and will not be ready until the v1.0 release.
+Please refrain from using sqlite2pg for now. Thanks for reading.
+
+## Why sqlite2pg
+
+ - An easy to use command line interface.
+ - Options to accomodate different use cases.
+ - Complete full migrations, or just generate schema.
+
+## Installation
+
+sqlite2pg requires python 3.6 or greater.
+
+To get started:
+```bash
+pip install sqlite2pg
+```
+
+## License
+
+sqlite2pg is licensed under the [BSD 3-Clause License](https://github.com/Jonxslays/sqlite2pg/blob/master/LICENSE).
+

@@ -1,0 +1,3 @@
+[console_scripts]
+sqlite2pg=sqlite2pg.cli:main
+
