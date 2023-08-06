@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: simpleencrypt
+Version: 1.0.1
+Summary: SimpleEncrypt is a Cross-Language Encryption Library
+Home-page: UNKNOWN
+Author: Shreyas Nayak
+Author-email: <shreyasnayak21@gmail.com>
+License: UNKNOWN
+Description: 
+        # CPP_Library
+        
+        CPP_Library will have code for SimpleEncrypt shared library for python package, this will be wrapper library between CPP code and python.
+        
+        Install dependencies
+        
+        ```
+        sudo apt-get install libssl-dev openssl
+        ```
+        
+        ## Building SimpleEncrypt Python shared library
+        
+        ```
+        mkdir SimpleEncrypt_Python/CPP_Library/Build
+        cd SimpleEncrypt_Python/CPP_Library/Build
+        cmake ..
+        make
+        sudo make install
+        ```
+        
+        # Python_Package
+        
+Keywords: Encryption,Cross-Language Encryption
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Description-Content-Type: text/markdown
