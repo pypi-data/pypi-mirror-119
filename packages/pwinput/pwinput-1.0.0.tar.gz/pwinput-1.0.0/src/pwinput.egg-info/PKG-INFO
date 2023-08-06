@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pwinput
+Version: 1.0.0
+Summary: A cross-platform Python module that displays **** for password input. Works on Windows, unlike getpass. Formerly called stdiomask.
+Home-page: https://github.com/asweigart/pwinput
+Author: Al Sweigart
+Author-email: al@inventwithpython.com
+License: MIT
+Description: PWInput
+        ======
+        
+        A cross-platform Python module that displays **** for password input. Works on Windows, unlike getpass. Formerly called stdiomask.
+        
+        Installation
+        ------------
+        
+        To install with pip, run:
+        
+            pip install pwinput
+        
+        Quickstart Guide
+        ----------------
+        
+        TODO - fill this in later
+        
+        Contribute
+        ----------
+        
+        If you'd like to contribute to PWInput, check out https://github.com/asweigart/pwinput
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
