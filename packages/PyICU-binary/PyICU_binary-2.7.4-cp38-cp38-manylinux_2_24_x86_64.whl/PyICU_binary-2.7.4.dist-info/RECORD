@@ -1,0 +1,11 @@
+PyICU.py,sha256=7Epua5uUhubXDexBsIEaIc6Ws5nkiz0cro1V4krYYYA,1463
+_icu.cpython-38-x86_64-linux-gnu.so,sha256=ji6qh6PfwEs7pc2xLIMtHFwKTXL-tLMCKOTSNPYn1yg,5690152
+icu/__init__.py,sha256=1ltbDJrkm6Yf5K1HiPI8nGCTuDBop65VzbMhb2IkwGA,1545
+PyICU_binary.libs/libicudata-9907a82f.so.69.1,sha256=MCSdjfkQK04rprhrr8xMs_dl5dAfc2sKBmo-cgWBNj8,28672304
+PyICU_binary.libs/libicuuc-26104a65.so.69.1,sha256=o4ZJKcv5M43t4jKfnMHpxbt5AM1ZMhqvJj_cZJqW2WQ,2798880
+PyICU_binary.libs/libicui18n-8a89e2b7.so.69.1,sha256=lDNyVYzV0YYb9O81-dBQddpdXOSl79zTyGIEzFkS00U,5727144
+PyICU_binary-2.7.4.dist-info/LICENSE,sha256=dLut7k7jw6GsDs-9dLx85kBG3hzt30cX3JI4CcqP_OM,1284
+PyICU_binary-2.7.4.dist-info/top_level.txt,sha256=Gj-72XZAPkSgsPEa9-bHxAimNgZhufGgmxawCyf-80c,15
+PyICU_binary-2.7.4.dist-info/WHEEL,sha256=bQDS2UIU5ysnOurKICB87_FDaf-GAYOeCAZEt2ZU92E,112
+PyICU_binary-2.7.4.dist-info/RECORD,,
+PyICU_binary-2.7.4.dist-info/METADATA,sha256=ywm4lZ-dBGhaNj-2VzLlD2s-dYqK3Dq7hQpzFWhl6Bw,13372
