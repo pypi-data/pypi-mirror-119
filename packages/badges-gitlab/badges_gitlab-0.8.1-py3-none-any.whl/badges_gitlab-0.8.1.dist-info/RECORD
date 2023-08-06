@@ -1,0 +1,14 @@
+badges_gitlab/__init__.py,sha256=fAqK-DEC_V3WV2MAmgpRaVq-7FDuu1HwoIXy9ord1gM,39
+badges_gitlab/badges_api.py,sha256=LilPgdWctfuC9DR_mpzCBQWfDnPYHk6SHvMKFFbqoK0,6234
+badges_gitlab/badges_json.py,sha256=b6In2BUabljKsr-hBj3kGgZiNd5yQ7o2t_xCGgAV950,1471
+badges_gitlab/badges_static.py,sha256=yOfG2X4fsSzKw9NKCxVspodyINVwX7HVEz9rw_OO0dA,2398
+badges_gitlab/badges_svg.py,sha256=q7KcU3hWZN8_ubmbsTcS7zj_tNPDAuoJI_W1NoOdI1w,2139
+badges_gitlab/badges_test.py,sha256=v5of7Q79cLGbdwT3_XKnQi8QM2cH77pxNqP3lacjFbk,4469
+badges_gitlab/cli.py,sha256=crEv4Q8dQKL6uoOW7-1HMr5COUN0XCmnMnEcmbylDmc,3938
+badges_gitlab/read_pyproject.py,sha256=hRM6cIGMNah-n2AXfsrIfdE_nzq6h9vq5WCPqCXKEaw,1164
+badges_gitlab-0.8.1.dist-info/LICENSE,sha256=vJz8fxfwo1m7ee3_aiWVg1XJsza-JWzhpOmNcDK4ANk,1078
+badges_gitlab-0.8.1.dist-info/METADATA,sha256=Oo9g5vZ006Z90EffELM0rIlw4eQ8oAiXK90_O1foMWs,3237
+badges_gitlab-0.8.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+badges_gitlab-0.8.1.dist-info/entry_points.txt,sha256=rEN99gWm0U1wrOE9GFSN-T-_fgMwkqcah-EzreGcToU,58
+badges_gitlab-0.8.1.dist-info/top_level.txt,sha256=bsFRFc7Q86fIt-WvBOqE03tcFQbiZBjw07I1C3mV7vo,14
+badges_gitlab-0.8.1.dist-info/RECORD,,
