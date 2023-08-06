@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: smartmeter-datacollector-configurator
+Version: 0.4.0
+Summary: Smart Meter Data Collector
+Home-page: https://github.com/scs/smartmeter-datacollector-configurator
+Author: Supercomputing Systems AG
+Author-email: info@scs.ch
+License: BSD
+Project-URL: Source, https://github.com/scs/smartmeter-datacollector-configurator
+Project-URL: Bug Reports, https://github.com/scs/smartmeter-datacollector-configurator/issues
+Project-URL: Pull Requests, https://github.com/scs/smartmeter-datacollector-configurator/pulls
+Project-URL: SCS, https://www.scs.ch
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Typing :: Typed
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Smart Meter Data Collector Configurator
+
+<p align="center">
+    <a href="LICENSE"><img alt="License: BSD-3-Clause" src="https://img.shields.io/badge/license-3--clause%20BSD-green"></a> <a href="https://github.com/scs/smartmeter-datacollector-configurator/pulls"><img alt="Pull Requests Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a> <a href="https://github.com/scs/smartmeter-datacollector-configurator/pulls"><img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg"></a>
+    <br />
+    <img alt="Backend Python Code Checks" src="https://github.com/scs/smartmeter-datacollector-configurator/actions/workflows/backend-code-checks.yml/badge.svg?branch=master"> <img alt="Frontend Code Checks" src="https://github.com/scs/smartmeter-datacollector-configurator/actions/workflows/frontend-code-checks.yml/badge.svg?branch=master"> <a href="https://pypi.org/project/smartmeter-datacollector-configurator/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/smartmeter-datacollector"></a>
+</p>
+
+
