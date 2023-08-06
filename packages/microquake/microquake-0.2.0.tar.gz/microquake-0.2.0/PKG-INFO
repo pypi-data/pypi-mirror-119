@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: microquake
+Version: 0.2.0
+Summary: Python library that is an extension/expansion/adaptation of ObsPy to microseismic data
+License: MIT
+Keywords: seismology,mining,microseismic,signal processing,event location
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: cachier (>=1.2,<2.0)
+Requires-Dist: dunamai (>=0.8.0,<0.9.0)
+Requires-Dist: dxfwrite (>=1.2.1,<2.0.0)
+Requires-Dist: dynaconf (>=2.0,<3.0)
+Requires-Dist: h5py (>=2.10.0,<3.0.0)
+Requires-Dist: instResp (>=0.1.1,<0.2.0)
+Requires-Dist: ipdb (>=0.12.3,<0.13.0)
+Requires-Dist: librosa (>=0.7.1,<0.8.0)
+Requires-Dist: loguru (>=0.3.0,<0.4.0)
+Requires-Dist: microquake-hashwrap (>=0.0.4,<0.0.5)
+Requires-Dist: mplstereonet (>=0.5.0,<0.6.0)
+Requires-Dist: numba (>=0.48.0,<0.49.0)
+Requires-Dist: numpy (>=1.16,<2.0)
+Requires-Dist: obspy (>=1.1.1,<1.2.0)
+Requires-Dist: pytz (>=2019.1,<2020.0)
+Requires-Dist: rq (>=1.1,<2.0)
+Requires-Dist: scipy (>=1.3,<2.0)
+Requires-Dist: sqlalchemy-utils (>=0.36.1,<0.37.0)
+Requires-Dist: tensorflow (>=2.0,<3.0)
+Requires-Dist: vtk (>=8.1.2,<9.0.0)
+Requires-Dist: walrus (>=0.7.1,<0.8.0)
