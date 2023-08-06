@@ -1,0 +1,9 @@
+numpy
+pandas
+tqdm
+scipy
+jax
+numpyro
+pyarrow
+bs4
+vaex
