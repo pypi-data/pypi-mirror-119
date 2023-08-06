@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "modmail"
+version = "0.0.0a1"
+description = "A modmail bot for Discord. Python 3.8+ compatible."
+license = "MIT"
+authors = ["onerandomusername <genericusername414@gmail.com>"]
+readme = "README.md"
+keywords=['modmail','discord','discord bot']
+classifiers = [
+    'Development Status :: 1 - Planning',
+
+]
+repository = "https://github.com/discord-modmail/modmail"
+homepage = 'https://discord-modmail.readthedocs.io'
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
