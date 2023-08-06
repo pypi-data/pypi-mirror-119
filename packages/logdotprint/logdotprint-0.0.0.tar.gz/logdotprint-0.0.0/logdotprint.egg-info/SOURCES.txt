@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+logdotprint/__init__.py
+logdotprint.egg-info/PKG-INFO
+logdotprint.egg-info/SOURCES.txt
+logdotprint.egg-info/dependency_links.txt
+logdotprint.egg-info/top_level.txt
