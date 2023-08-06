@@ -1,0 +1,15 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "asterisk_doorphone"
+authors = [{name = "Jonatan Garbuyo", email = "jonatangarbuyo@gmail.com"}]
+readme = "README.md"
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+
+dependencies = [
+    "evdev==1.4.0",
+    "pick==1.0.0"
+]
