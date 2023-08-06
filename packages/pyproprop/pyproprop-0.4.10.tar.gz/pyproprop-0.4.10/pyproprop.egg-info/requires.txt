@@ -1,0 +1,14 @@
+numpy>=1.17
+sympy>=1.6
+titlecase>=2.2
+typing>=3.7
+
+[docs]
+sphinx>=3.2
+sphinx-autodoc-typehints>=1.11
+sphinx_rtd_theme>=0.5
+
+[tests]
+codecov>=2.1
+hypothesis>=5.26
+pytest>=6.0
