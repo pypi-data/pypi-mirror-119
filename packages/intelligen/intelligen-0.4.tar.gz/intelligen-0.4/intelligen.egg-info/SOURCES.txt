@@ -1,0 +1,12 @@
+README.md
+setup.py
+intelligen/AI.py
+intelligen/__init__.py
+intelligen/interpolate.py
+intelligen/linregress.py
+intelligen/numeric.py
+intelligen.egg-info/PKG-INFO
+intelligen.egg-info/SOURCES.txt
+intelligen.egg-info/dependency_links.txt
+intelligen.egg-info/requires.txt
+intelligen.egg-info/top_level.txt
