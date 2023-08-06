@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+battlenet_client/__init__.py
+battlenet_client/apis.py
+battlenet_client/client.py
+battlenet_client/constants.py
+battlenet_client/exceptions.py
+battlenet_client/util.py
+battlenet_client.egg-info/PKG-INFO
+battlenet_client.egg-info/SOURCES.txt
+battlenet_client.egg-info/dependency_links.txt
+battlenet_client.egg-info/requires.txt
+battlenet_client.egg-info/top_level.txt
+tests/__init__.py
+tests/test_credential.py
+tests/test_utils.py
