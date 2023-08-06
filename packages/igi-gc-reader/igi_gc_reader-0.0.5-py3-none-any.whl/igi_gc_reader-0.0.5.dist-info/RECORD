@@ -1,0 +1,17 @@
+igi_gc_reader/__init__.py,sha256=bTEQ36sE_NZuSmqw5-5xhtpa7ClD8LNwVdUk87uV24M,89
+igi_gc_reader/app.py,sha256=x_5PNUUVzZtZmQpmsSS1WJHKXiJsxsvAZcyXnVE9l_U,3659
+igi_gc_reader/sample_data.py,sha256=OwEECd--KEZ8is3SHyk5tuUUIwpl_QUQOTzPH4nTIAs,4203
+igi_gc_reader/status.py,sha256=9Que5sItzY_tmhaXrwoMq7YLgHJZtxJWQ6RW_MwXQ5Q,1178
+igi_gc_reader/writer.py,sha256=An4Cx-WaPkCsPIiU4sjCdKEYQ3YG6065aQProddmj6k,1515
+igi_gc_reader/reader/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+igi_gc_reader/reader/classification.py,sha256=vJkajKc2NcxSlWfSS7FdZq_MUBRKRS5gMQRUyJb2-3Q,1011
+igi_gc_reader/reader/context_data.py,sha256=NjCY3l7Ifs8Fhz83H1YQyK0DFOg_zJaZDKHKxshSwdE,6667
+igi_gc_reader/reader/excel_address.py,sha256=YX_6AhJmzwHUO5BJ2-635pNprS4p5ZiiEcokmZWdvIY,2820
+igi_gc_reader/reader/excel_reader.py,sha256=5-771G5624XSD-l9bf8yPIHR167R1NJsHSQH64EXWIY,4179
+igi_gc_reader/reader/gc_page.py,sha256=fNjeUEPIakclqN36q7H4r4a7-fX0IhgYHuoWYT7nGiw,9702
+igi_gc_reader/reader/gc_reader.py,sha256=avsJ9FVIOzvf-ovrlKVzLoaR6_BChSY6L-E8DDT0kC0,2629
+igi_gc_reader-0.0.5.dist-info/METADATA,sha256=cOK4V3aumL7F2cG6ejarGet_O47VfkrNMDvTpSzzAYE,1347
+igi_gc_reader-0.0.5.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+igi_gc_reader-0.0.5.dist-info/licence.txt,sha256=1YhFKdHSM3XT4EdCH-WQ2nzYI9tpUjpZQvQBg-zHCwo,1052
+igi_gc_reader-0.0.5.dist-info/top_level.txt,sha256=TPIkYl_MF1Wo4s8KKVAcwGJBQgimfQf5zFoOjx_-h5k,14
+igi_gc_reader-0.0.5.dist-info/RECORD,,
