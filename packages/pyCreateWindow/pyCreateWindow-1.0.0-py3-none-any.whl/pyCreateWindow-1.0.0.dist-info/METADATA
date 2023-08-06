@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: pyCreateWindow
+Version: 1.0.0
+Summary: pyCreateWindow - SujithSouryaYedida
+Home-page: UNKNOWN
+Author: SujithSouryaYedida
+Author-email: sujithsourya.yedida@gmail.com
+License: UNKNOWN
+Keywords: python,py,yedida,python tutorial,SujithSouryaYedida,create,window,create window,pyCreateWindow
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyQt5
+Requires-Dist: pyfiglet
+Requires-Dist: colorama
+Requires-Dist: pyQtWebEngine
+
+pyCreateWindow - is used to make a standalone apps from websites urls
+pyCreateWindow.info() - this is to know more information regarding the package
+pyCreateWindow.manual() - this is to get the manuel , or a guide book to use this package
+pyCreateWindow.create_window(x , y) - this is to create a window || So for that you need to use the following command : pyCreateWindow.create_window("url","name of the site")
+Package developer / Author : SujithSouryaYedida
+
