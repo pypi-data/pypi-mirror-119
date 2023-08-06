@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<object name="ims_indicator" meta_type="Dexterity FTI" i18n:domain="plone"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="title" i18n:translate="">Indicator</property>
+ <property name="description" i18n:translate="">IMSv4 Indicator</property>
+ <property name="icon_expr">string:${portal_url}/document_icon.png</property>
+ <property name="factory">ims_indicator</property>
+ <property
+    name="add_view_expr">string:${folder_url}/++add++ims_indicator</property>
+ <property name="link_target"></property>
+ <property name="immediate_view">view</property>
+ <property name="global_allow">False</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types">
+  <element value="Image"/>
+ </property>
+ <property name="allow_discussion">True</property>
+ <property name="default_view">view</property>
+ <property name="view_methods">
+  <element value="view"/>
+ </property>
+ <property name="default_view_fallback">False</property>
+ <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="klass">plone.dexterity.content.Container</property>
+ <property name="behaviors">
+  <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
+  <element value="plone.app.content.interfaces.INameFromTitle"/>
+  <element value="volto.blocks.fixed.layout"/>
+  <element value="eea.api.layout.interfaces.IFixedLayoutBlocks"/>
+  <element value="collective.taxonomy.generated.themes"/>
+  <element value="collective.taxonomy.generated.hog_users"/>
+  <element value="eea.dexterity.indicators.interfaces.IIndicator"/>
+  <element value="plone.app.lockingbehavior.behaviors.ILocking"/>
+ </property>
+ <property name="schema"></property>
+ <property
+    name="model_source">&lt;model xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns="http://namespaces.plone.org/supermodel/schema"&gt;
+    &lt;schema&gt;
+      &lt;field name="methodology" type="eea.schema.slate.field.SlateJSONField"&gt;
+        &lt;description&gt;Methodology for indicator calculation and for gap filling.&amp;#13;
+  Where relevant, include changes to methodology and subsequent implications for comparability. &amp;#13;
+  Also include uncertainties in relation to the indicator calculation and/or to gap filling) if these are considerable.&lt;/description&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Methodology&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name="Consultation_emails" type="zope.schema.Set"&gt;
+        &lt;description&gt;list of emails for the consultation phase&lt;/description&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Consultation emails&lt;/title&gt;
+        &lt;value_type type="zope.schema.Choice"&gt;
+          &lt;values/&gt;
+        &lt;/value_type&gt;
+      &lt;/field&gt;
+      &lt;fieldset name="euro_sdmx_metadata_structure" label="Supporting information" description="Information is structured according to the Euro-SDMX Metadata Structure (ESMS), used in the European Statistical System, as applicable to the EEA indicators."&gt;
+        &lt;field name="data_description" type="eea.schema.slate.field.SlateJSONField"&gt;
+          &lt;description&gt;Clear definition of the indicator, including references to standards and classifications&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Definition&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name="unit_of_measure" type="eea.schema.slate.field.SlateJSONField"&gt;
+          &lt;description&gt;Unit in which data values are measured.&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Unit of measure&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name="policy_relevance" type="eea.schema.slate.field.SlateJSONField"&gt;
+          &lt;description&gt;The degree to which the indicator meets current/potential needs of users&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Policy / environmental relevance&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name="DPSIR" type="zope.schema.Choice"&gt;
+          &lt;description&gt;DPSIR (drivers, pressures, state, impact and response model of intervention) is a causal framework for describing the interactions between society and the environment: Human impact on the environment and vice versa because of the interdependence of the components.&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;DPSIR&lt;/title&gt;
+          &lt;values&gt;
+            &lt;element&gt;Driving forces&lt;/element&gt;
+            &lt;element&gt;Pressure&lt;/element&gt;
+            &lt;element&gt;State&lt;/element&gt;
+            &lt;element&gt;Impact&lt;/element&gt;
+            &lt;element&gt;Response&lt;/element&gt;
+          &lt;/values&gt;
+        &lt;/field&gt;
+        &lt;field name="Typology" type="zope.schema.Choice"&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Typology&lt;/title&gt;
+          &lt;values&gt;
+            &lt;element&gt;Descriptive indicator (Type A - What is happening to the environment and to humans?)&lt;/element&gt;
+            &lt;element&gt;Performance indicator (Type B - Does it matter?)&lt;/element&gt;
+            &lt;element&gt;Efficiency indicator (Type C - Are we improving?)&lt;/element&gt;
+            &lt;element&gt;Policy-effectiveness indicator (Type D)&lt;/element&gt;
+            &lt;element&gt;Total welfare indicator (Type E - Are we on whole better off?)&lt;/element&gt;
+          &lt;/values&gt;
+        &lt;/field&gt;
+        &lt;field name="frequency_of_dissemination" type="zope.schema.Int"&gt;
+          &lt;default&gt;1&lt;/default&gt;
+          &lt;description&gt;Time interval at which the indicator is published (in years, from 1 to 5). E.g. use 1 if it is published yearly, 2 if it is published every 2 years and so on.&lt;/description&gt;
+          &lt;max&gt;5&lt;/max&gt;
+          &lt;min&gt;1&lt;/min&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Frequency of dissemination&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name="timeliness" type="eea.schema.slate.field.SlateJSONField"&gt;
+          &lt;description&gt; Length of time between data availability and the phenomenon described by the indicator&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Timeliness&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name="accuracy_and_reliability" type="eea.schema.slate.field.SlateJSONField"&gt;
+          &lt;description&gt;Closeness of computations or estimates to the unknown exact or true values that the statistics were intended to measure; closeness of the initial estimated value to the subsequent estimated value. Includes, among others, comparability (geographical and over time).&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Accuracy and uncertainties&lt;/title&gt;
+        &lt;/field&gt;
+      &lt;/fieldset&gt;
+      &lt;fieldset name="layout" label="Layout"&gt;
+        &lt;field name="blocks" type="plone.schema.jsonfield.JSONField"&gt;
+          &lt;default&gt;{u'794c9b24-5cd4-4b9f-a0cd-b796aadc86e8': {u'styles': {u'style_name': u'environment-theme-bg'}, u'fixedLayout': True, u'title': u'Content header', u'required': True, u'disableNewBlocks': True, u'as': u'section', u'disableInnerButtons': True, u'readOnlySettings': True, u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}, u'fixed': True, u'data': {u'blocks': {u'ddde07aa-4e48-4475-94bd-e1a517d26eab': {u'placeholder': u'Indicator title', u'fixed': True, u'disableNewBlocks': True, u'@type': u'title', u'required': True}, u'9f452ca7-172a-42e0-a699-8df0714c89f8': {u'styles': {u'align': u'full'}, u'align': u'full', u'@type': u'splitter'}, u'12d8c532-f7ad-43fe-ada7-330b2d7a7a39': {u'plaintext': u' Published: date \u2012 25min read ', u'required': True, u'disableNewBlocks': True, u'value': [{u'type': u'p', u'children': [{u'text': u''}, {u'type': u'sup', u'children': [{u'text': u'Published: '}, {u'type': u'mention', u'data': {u'widget': u'datetime', u'id': u'effective'}, u'children': [{u'text': u'date'}]}, {u'text': u' \u2012 25min read'}]}, {u'text': u''}]}], u'readOnly': True, u'fixed': True, u'@type': u'slate', u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}, u'ca212ba0-859e-4e67-b610-debe0d498b74': {u'fixedLayout': False, u'maxChars': u'500', u'required': True, u'disableNewBlocks': True, u'as': u'div', u'placeholder': u'Summary', u'title': u'Summary', u'disableInnerButtons': True, u'readOnlySettings': True, u'instructions': {u'data': u'&amp;lt;p&amp;gt;The summary tells the reader about the indicator trend over the examined period and whether or not it helps to achieve the associated policy objective, which can be either quantitative or directional.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;In the absence of a policy objective, it explains whether the trend is in the right or wrong direction in relation to the issue examined.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;If there has been an important change over the most recent period of the time series, e.g. over the last year, this is indicated too.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Furthermore, if there is a quantitative target, it also indicates whether we are on track to meet it and if not what are the reasons preventing that, e.g. socio-economic drivers, implementation gap etc.&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}, u'fixed': True, u'data': {u'blocks': {u'2679fdcc-60be-47ea-90b6-435837793600': {u'plaintext': u'', u'placeholder': u'Summary', u'@type': u'slate', u'value': [{u'type': u'p', u'children': [{u'text': u''}]}], u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}}, u'blocks_layout': {u'items': [u'2679fdcc-60be-47ea-90b6-435837793600']}}, u'@type': u'group', u'allowedBlocks': [u'slate']}}, u'blocks_layout': {u'items': [u'ddde07aa-4e48-4475-94bd-e1a517d26eab', u'ca212ba0-859e-4e67-b610-debe0d498b74', u'9f452ca7-172a-42e0-a699-8df0714c89f8', u'12d8c532-f7ad-43fe-ada7-330b2d7a7a39']}}, u'@type': u'group', u'allowedBlocks': []}, u'1bc4379d-cddb-4120-84ad-5ab025533b12': {u'title': u'Aggregate level assessment', u'maxChars': u'2000', u'required': True, u'disableNewBlocks': False, u'as': u'section', u'placeholder': u'Aggregate level assessment e.g. progress at global, EU level..', u'disableInnerButtons': True, u'readOnlySettings': True, u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Assessment text remains at&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;the relevant&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;aggregate level&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;(i.e.&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;global, EU, sectoral)&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;and addresses the following:\xa0&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;ol keys="dkvn8,e367c,f4lpb,9j981,7ai6k,3g3pd" depth="0"&amp;gt;&amp;lt;li&amp;gt;Explains in one or two sentences on the environmental rationale of the indicator, i.e. why it matters to the environment that we see an increase/decrease in the value measured.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Explains in one or two sentences the associated policy objective, which can be either quantitative or directional. More information on the policy objective and related references will be included in the supporting information section. Where there is no policy objective associated with the indicator, i.e. where the indicator addresses an issue that is important for future policy formulation, this text should explain instead why this issue is important.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;IF NECESSARY \u2014 Explains any mismatch between what the indicator tracks and what the policy objective/issue is.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Qualifies the historical trend (e.g. steady increase) and explains the key reasons (e.g. policies) behind it. If there is a quantitative target it explains if we are on track to meet it.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;IF NECESSARY \u2014 Explains any recent changes to the trend and why.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;IF NECESSARY \u2014 Describes what needs to happen to see adequate progress in future, for instance in order to remain on track to meet targets.\xa0&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Please cite your work if&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;necessary&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;using the EEA citation style (i.e.&amp;lt;/strong&amp;gt; &amp;lt;strong&amp;gt;EEA, 2020). A full reference list appears in the supporting information section.&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}, u'fixed': True, u'data': {u'blocks': {u'deb7e84d-d2c8-4491-90fa-3dc65fe02143': {u'plaintext': u'', u'required': True, u'value': [{u'type': u'p', u'children': [{u'text': u''}]}], u'fixed': True, u'@type': u'slate', u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}, u'b0279dde-1ceb-4137-a7f1-5ab7b46a782c': {u'required': True, u'fixed': True, u'disableNewBlocks': True, u'@type': u'dataFigure', u'instructions': {u'data': u'&amp;lt;p&amp;gt;figure instructions goes here&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}}, u'blocks_layout': {u'items': [u'b0279dde-1ceb-4137-a7f1-5ab7b46a782c', u'deb7e84d-d2c8-4491-90fa-3dc65fe02143']}}, u'@type': u'group', u'allowedBlocks': [u'slate']}, u'8cb090c3-7071-40b8-9c7b-aca2ca3d0ad9': {u'title_size': u'h3', u'readOnlyTitles': True, u'fixedLayout': True, u'non_exclusive': False, u'collapsed': True, u'required': True, u'disableNewBlocks': True, u'readOnly': False, u'title': u'Additional information', u'disableInnerButtons': True, u'readOnlySettings': True, u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}, u'fixed': True, u'data': {u'blocks': {u'ecdb3bcf-bbe9-4978-b5cf-0b136399d9f8': {u'selected': u'b142c252-337d-4f6e-8ed2-ff4c43601e2f', u'blocks': {u'd9aa8ed3-1c8a-4134-a324-663489a04473': {u'required': True, u'global': True, u'disableNewBlocks': True, u'readOnlySettings': True, u'fixed': True, u'placeholder': u'References and footnotes will appear here', u'@type': u'slateFootnotes', u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}}, u'@type': u'accordionPanel', u'blocks_layout': {u'items': [u'd9aa8ed3-1c8a-4134-a324-663489a04473']}, u'title': u'References and footnotes'}, u'546a7c35-9188-4d23-94ee-005d97c26f2b': {u'blocks': {u'b5381428-5cae-4199-9ca8-b2e5fa4677d9': {u'fixedLayout': True, u'fields': [{u'field': {u'widget': u'slate', u'id': u'data_description', u'title': u'Definition'}, u'showLabel': True, u'@id': u'62c471fc-128f-4eff-98f9-9e83d9643fc7'}, {u'field': {u'widget': u'slate', u'id': u'methodology', u'title': u'Methodology'}, u'showLabel': True, u'@id': u'ee67688d-3170-447a-a235-87b4e4ff0928'}, {u'field': {u'widget': u'slate', u'id': u'policy_relevance', u'title': u'Policy/environmental relevance'}, u'showLabel': True, u'@id': u'b8a8f01c-0669-48e3-955d-d5d62da1b555'}, {u'field': {u'widget': u'slate', u'id': u'accuracy_and_reliability', u'title': u'Accuracy and uncertainties'}, u'showLabel': True, u'@id': u'd71a80d1-0e65-46d9-8bd4-45aca22bc5dc'}, {u'field': {u'widget': u'slate', u'id': u'timeliness', u'title': u'Timeliness'}, u'showLabel': True, u'@id': u'a0744e80-597e-4d5e-b9c1-47637e48ea0c'}], u'required': True, u'disableNewBlocks': True, u'variation': u'default', u'readOnly': False, u'title': u'Supporting information', u'readOnlySettings': True, u'fixed': True, u'@type': u'metadataSection'}}, u'@type': u'accordionPanel', u'blocks_layout': {u'items': [u'b5381428-5cae-4199-9ca8-b2e5fa4677d9']}, u'title': u'Supporting information'}, u'309c5ef9-de09-4759-bc02-802370dfa366': {u'blocks': {u'e047340c-c02e-4247-89ab-5fec73aeb5d3': {u'gridSize': 12, u'fixedLayout': True, u'title': u'Metadata', u'required': True, u'disableNewBlocks': True, u'gridCols': [u'halfWidth', u'halfWidth'], u'readOnly': False, u'readOnlySettings': True, u'fixed': True, u'data': {u'blocks': {u'a8a2323e-32af-426e-9ede-1f17affd664c': {u'blocks': {u'fe145094-71e0-4b3d-82f3-e4d79ac13533': {u'fixedLayout': True, u'fields': [{u'field': {u'widget': u'choices', u'id': u'Typology', u'title': u'Typology'}, u'showLabel': True, u'@id': u'94d638f1-89e1-4f97-aa59-b89b565f60fb'}, {u'field': {u'widget': u'slate', u'id': u'unit_of_measure', u'title': u'Unit of measure'}, u'showLabel': True, u'@id': u'eaef9ff4-0f8d-4360-9d19-5c6a2fd2dd00'}, {u'field': {u'widget': u'integer', u'id': u'frequency_of_dissemination', u'title': u'Frequency of dissemination'}, u'showLabel': True, u'@id': u'089cd1a1-92d4-47e2-8f6e-4bdb358600fe'}], u'required': True, u'disableNewBlocks': True, u'variation': u'default', u'readOnly': False, u'title': u'Right column', u'readOnlySettings': True, u'fixed': True, u'@type': u'metadataSection'}}, u'blocks_layout': {u'items': [u'fe145094-71e0-4b3d-82f3-e4d79ac13533']}}, u'd9b41958-c17c-45f8-bae1-4140b537a033': {u'blocks': {u'2a56568a-10af-4a5b-8c73-22aa8cb734fe': {u'fixedLayout': True, u'fields': [{u'field': {u'widget': u'choices', u'id': u'DPSIR', u'title': u'DPSIR'}, u'showLabel': True, u'@id': u'48a20e0b-d3bd-41ac-aa06-e97c61071bd2'}, {u'field': {u'widget': u'array', u'id': u'taxonomy_themes', u'title': u'Themes'}, u'showLabel': True, u'@id': u'34ceb93f-b405-4afd-aeae-a05abd44d355'}, {u'field': {u'widget': u'tags', u'id': u'subjects', u'title': u'Tags'}, u'showLabel': True, u'@id': u'fd2cdb9e-5ddd-4b46-8382-0d687ce2883e'}], u'required': True, u'disableNewBlocks': True, u'variation': u'default', u'readOnly': False, u'title': u'Left column', u'readOnlySettings': True, u'fixed': True, u'@type': u'metadataSection'}}, u'blocks_layout': {u'items': [u'2a56568a-10af-4a5b-8c73-22aa8cb734fe']}}}, u'blocks_layout': {u'items': [u'd9b41958-c17c-45f8-bae1-4140b537a033', u'a8a2323e-32af-426e-9ede-1f17affd664c']}}, u'@type': u'columnsBlock', u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}}, u'@type': u'accordionPanel', u'blocks_layout': {u'items': [u'e047340c-c02e-4247-89ab-5fec73aeb5d3']}, u'title': u'Metadata'}}, u'blocks_layout': {u'items': [u'546a7c35-9188-4d23-94ee-005d97c26f2b', u'309c5ef9-de09-4759-bc02-802370dfa366', u'ecdb3bcf-bbe9-4978-b5cf-0b136399d9f8']}}, u'@type': u'accordion', u'allowedBlocks': []}, u'd060487d-88fc-4f7b-8ea4-003f14e0fb0c': {u'title': u'Disaggregate level assessment', u'maxChars': u'1000', u'required': True, u'disableNewBlocks': False, u'readOnly': False, u'as': u'section', u'placeholder': u'Disaggregate level assessment e.g. country, sectoral, regional level assessment', u'disableInnerButtons': True, u'readOnlySettings': True, u'instructions': {u'data': u'&amp;lt;ol keys="9bbul,b1sa2,171og,1c1t5" depth="0"&amp;gt;&amp;lt;li&amp;gt;Depending on the indicator context, this text can provide information at country level or, if this is not relevant, at some other level, e.g. sectoral, regional level.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;This text interprets the data represented in the chart, rather than describing results, i.e. it provides explanations for some of the results.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;The text related to progress at this level does not have to be comprehensive.&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;If there is no information that adds value to what is already visible there is no need to have any text.&amp;lt;/li&amp;gt;&amp;lt;/ol&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}, u'fixed': True, u'data': {u'blocks': {u'd3d49723-14e5-4663-b346-37ee3572f28d': {u'plaintext': u'', u'required': True, u'value': [{u'type': u'p', u'children': [{u'text': u''}]}], u'fixed': True, u'@type': u'slate', u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}, u'02ba4a04-fcfe-4968-806f-1dac3119cfef': {u'required': True, u'fixed': True, u'disableNewBlocks': True, u'@type': u'dataFigure', u'instructions': {u'data': u'&amp;lt;p&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/p&amp;gt;', u'content-type': u'text/html', u'encoding': u'utf8'}}}, u'blocks_layout': {u'items': [u'02ba4a04-fcfe-4968-806f-1dac3119cfef', u'd3d49723-14e5-4663-b346-37ee3572f28d']}}, u'@type': u'group', u'allowedBlocks': [u'slate']}}&lt;/default&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;blocks&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name="blocks_layout" type="plone.schema.jsonfield.JSONField"&gt;
+          &lt;default&gt;{u'items': [u'794c9b24-5cd4-4b9f-a0cd-b796aadc86e8', u'1bc4379d-cddb-4120-84ad-5ab025533b12', u'd060487d-88fc-4f7b-8ea4-003f14e0fb0c', u'8cb090c3-7071-40b8-9c7b-aca2ca3d0ad9']}&lt;/default&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;blocks_layout&lt;/title&gt;
+        &lt;/field&gt;
+      &lt;/fieldset&gt;
+      &lt;fieldset name="workflow" label="Workflow"&gt;
+        &lt;field name="Head_of group email" type="plone.schema.email.Email"&gt;
+          &lt;description&gt;email of the head of group (HoG)&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Head of group email&lt;/title&gt;
+        &lt;/field&gt;
+        &lt;field name="Consultation_members emails" type="zope.schema.TextLine"&gt;
+          &lt;description&gt;List of consultation members emails, separated by commas.&lt;/description&gt;
+          &lt;required&gt;False&lt;/required&gt;
+          &lt;title&gt;Consultation members emails&lt;/title&gt;
+        &lt;/field&gt;
+      &lt;/fieldset&gt;
+    &lt;/schema&gt;
+  &lt;/model&gt;</property>
+ <property name="model_file"></property>
+ <property name="schema_policy">dexterity</property>
+ <alias from="(Default)" to="(dynamic view)"/>
+ <alias from="edit" to="@@edit"/>
+ <alias from="sharing" to="@@sharing"/>
+ <alias from="view" to="(selected layout)"/>
+ <action title="View" action_id="view" category="object" condition_expr=""
+    description="" icon_expr="" link_target="" url_expr="string:${object_url}"
+    visible="True">
+  <permission value="View"/>
+ </action>
+ <action title="Edit" action_id="edit" category="object" condition_expr=""
+    description="" icon_expr="" link_target=""
+    url_expr="string:${object_url}/edit" visible="True">
+  <permission value="Modify portal content"/>
+ </action>
+</object>
