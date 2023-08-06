@@ -1,0 +1,12 @@
+ddapm_test_agent/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ddapm_test_agent/agent.py,sha256=jrTwn0c1AhGv9KCFoSwlalUruXxnvMMJyhTflGuYWok,16333
+ddapm_test_agent/checks.py,sha256=I9GkvueHC0MnIoKlPCEUMDcZ7uIQ9wD1Fbnt2XtSTIk,4966
+ddapm_test_agent/context.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ddapm_test_agent/snapshot.py,sha256=Cg3yrwkqDDP72pCHy70Xjxlc7DcPMU4tpPrTdpQj_FU,9538
+ddapm_test_agent/trace.py,sha256=Te_CdkFEeFvclVs-PG7hL9SX5QdSGv6ij_1cxLE0VZ4,6892
+ddapm_test_agent/trace_checks.py,sha256=wt0b7Hb1nVfsE1oA0EDCuvxNBa5lpztXg9lluQ3XQWo,1794
+ddapm_test_agent-0.2.dist-info/METADATA,sha256=nAENOMxmGMA4hwiuOEPeZBUX7ITmxA1JiNCwPPFn_9I,8734
+ddapm_test_agent-0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+ddapm_test_agent-0.2.dist-info/entry_points.txt,sha256=s_0BxWcNuzo7-EzJcd8rcKRFaZo1ph32sCI0vT8otKM,66
+ddapm_test_agent-0.2.dist-info/top_level.txt,sha256=A9jiKOrrg6VjFAk-mtlSVYN4wr0VsZe58ehGR6IW47U,17
+ddapm_test_agent-0.2.dist-info/RECORD,,
