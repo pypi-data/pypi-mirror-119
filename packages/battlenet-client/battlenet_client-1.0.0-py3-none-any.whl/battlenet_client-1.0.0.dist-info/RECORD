@@ -1,0 +1,16 @@
+battlenet_client/__init__.py,sha256=h5pdAH8LCgh4JnapDM7LkGWvYMX3kEisgop-ZPbPsdY,126
+battlenet_client/client.py,sha256=_uJJPxbJmRJ2TytZ-Rh9j1sRVhnnR9KEb2QLnX3inFw,8177
+battlenet_client/util.py,sha256=hYNz1a4c7IkoWNr6pKXo4ZllXcZeM3N_3hrOwlY03_8,1434
+battlenet_client/cache/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+battlenet_client/cache/mariadb.py,sha256=UJKe-XEL0Xke_vQvoq4LnB23EkGZkD1ChXZ6D0mjL20,7002
+battlenet_client/cache/mongo.py,sha256=cAJvSSNEs4HxDGhU-Zdg-6QM534GSLjv8X4ptVh9IDg,5647
+battlenet_client/cache/postgresql.py,sha256=2mFtJlN9NtflZYAllQZXDdZkXcNzaUHM9ZsvShBFocg,7137
+battlenet_client/cache/sqlite.py,sha256=SyRa5o6AxhIu-L3as32RjpoWhZZNuTQkcN3D1BmkeSM,4072
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/test_credential.py,sha256=I7zBzYIDHiN5_grik5RzhuD6krL20NNnWnSES9vGMRc,1025
+test/test_user_auth.py,sha256=v0MuncwPD236-3SPy-gmJL10kUFBUMN9i3OZ70NK2Gk,1694
+battlenet_client-1.0.0.dist-info/LICENSE,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+battlenet_client-1.0.0.dist-info/METADATA,sha256=wIX6Co-aK68Hiki9jrYDPoXKQlQmnG8mjUTeveEdzsM,2317
+battlenet_client-1.0.0.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+battlenet_client-1.0.0.dist-info/top_level.txt,sha256=WenBqZaRKHZ0kUnIzOQ69ryyfAu9WoerUK8H_1oGH70,22
+battlenet_client-1.0.0.dist-info/RECORD,,
