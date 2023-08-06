@@ -1,0 +1,6 @@
+setup.py
+taurus_vdk.egg-info/PKG-INFO
+taurus_vdk.egg-info/SOURCES.txt
+taurus_vdk.egg-info/dependency_links.txt
+taurus_vdk.egg-info/requires.txt
+taurus_vdk.egg-info/top_level.txt

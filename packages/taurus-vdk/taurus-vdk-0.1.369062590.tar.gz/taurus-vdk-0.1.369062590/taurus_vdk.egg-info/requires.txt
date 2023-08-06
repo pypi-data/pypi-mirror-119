@@ -1,0 +1,3 @@
+vdk-core
+vdk-plugin-control-cli
+vdk-trino
