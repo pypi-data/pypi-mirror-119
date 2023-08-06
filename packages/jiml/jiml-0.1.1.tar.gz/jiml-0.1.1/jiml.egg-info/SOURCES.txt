@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+jiml/__init__.py
+jiml.egg-info/PKG-INFO
+jiml.egg-info/SOURCES.txt
+jiml.egg-info/dependency_links.txt
+jiml.egg-info/requires.txt
+jiml.egg-info/top_level.txt
+jiml.egg-info/zip-safe
