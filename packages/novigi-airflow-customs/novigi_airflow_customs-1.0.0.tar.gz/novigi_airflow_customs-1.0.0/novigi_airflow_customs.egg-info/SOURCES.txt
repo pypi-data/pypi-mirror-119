@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.py
+novigi_airflow_customs/__init__.py
+novigi_airflow_customs.egg-info/PKG-INFO
+novigi_airflow_customs.egg-info/SOURCES.txt
+novigi_airflow_customs.egg-info/dependency_links.txt
+novigi_airflow_customs.egg-info/requires.txt
+novigi_airflow_customs.egg-info/top_level.txt
