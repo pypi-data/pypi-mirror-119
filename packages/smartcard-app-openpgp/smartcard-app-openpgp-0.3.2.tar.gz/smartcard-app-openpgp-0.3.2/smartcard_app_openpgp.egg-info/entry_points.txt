@@ -1,0 +1,5 @@
+[console_scripts]
+smartcard-openpgp-randpin-epaper = smartcard.app.openpgp.cli.randpin.epaper:main [randpin,ccid]
+smartcard-openpgp-simple = smartcard.app.openpgp.cli.simple:main [ccid]
+smartcard-openpgp-testtarget-gnuk = smartcard.app.openpgp.cli.test:gnuk [ccid]
+
