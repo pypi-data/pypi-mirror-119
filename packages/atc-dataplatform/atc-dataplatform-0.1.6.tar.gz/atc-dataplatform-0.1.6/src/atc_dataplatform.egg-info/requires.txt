@@ -1,0 +1,6 @@
+pyspark
+pyyaml
+sqlparse
+
+[dev]
+check-manifest
