@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: yamldb
+Version: 0.1.1
+Summary: A database with yaml files as backend
+Home-page: https://github.com/cloudmesh/yamldb
+Author: Gregor von Laszewski
+Author-email: laszewski@gmail.com
+License: Apache 2.0
+Description: YamlDB
+        ======
+        
+        ![https://img.shields.io/github/license/cloudmesh/yamldb](https://img.shields.io/github/license/cloudmesh/yamldb)
+        
+        [![image](https://img.shields.io/travis/TankerHQ/yamldb.svg?branch=main)](https://travis-ci.org/TankerHQ/cloudmesn-db)
+        
+        [![image](https://img.shields.io/pypi/pyversions/yamldb.svg)](https://pypi.org/project/yamldb)
+        
+        [![image](https://img.shields.io/pypi/v/yamldb.svg)](https://pypi.org/project/yamldb/)
+        
+        
+        YamlDB is an easy to use file based database using yaml as the format for the
+        data represented in the file. This makes it possible to quickly change and add
+        values in the file itself while it can than be loaded and used as dict in your
+        application.
+        
+        It had the ability to use dot notations for the keys instead of nested brackets.
+        It als creates parents if they do nt exist
+        
+        
+        ```
+        pip install yamldb
+        
+        db = YamlDB(filename="data.yml")
+        
+        db["a"] = "1"
+        db["b.c"] = "2"
+        
+        d = db.get("a.b.c.d", default=3)
+        
+        db.load()
+          reloads the file
+          
+        db.save()
+          saves the current db into the file
+        
+        db.search("a.*.c")
+           quries the db
+           see: https://jmespath.org/tutorial.html
+        ```
+        
+        ## Aalternatives
+        
+        * jmsepath: https://jmespath.org/
+        * TinyDB: https://tinydb.readthedocs.io/en/latest/index.html
+        * nsqlite: https://github.com/shaunduncan/nosqlite
+        * MongoDB:
+        * Codernity: ? http://labs.codernity.com/
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Database
+Classifier: Topic :: Database :: Database Engines/Servers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
