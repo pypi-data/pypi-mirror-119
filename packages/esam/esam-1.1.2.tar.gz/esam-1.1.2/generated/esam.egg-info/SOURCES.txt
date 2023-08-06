@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+generated/esam/__init__.py
+generated/esam/__main__.py
+generated/esam/esam.py
+generated/esam.egg-info/PKG-INFO
+generated/esam.egg-info/SOURCES.txt
+generated/esam.egg-info/dependency_links.txt
+generated/esam.egg-info/entry_points.txt
+generated/esam.egg-info/requires.txt
+generated/esam.egg-info/top_level.txt
