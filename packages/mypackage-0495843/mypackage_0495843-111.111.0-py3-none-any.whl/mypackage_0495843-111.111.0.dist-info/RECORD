@@ -1,0 +1,10 @@
+mypackage/__init__.py,sha256=0ZcbDLVFrn15H84MPx1DPy98Ecq5oe674AX7uRPOXpI,66
+mypackage/functions.py,sha256=lzT_ImP565L7I8TE4jsIyHf4q7xyL9e6vKXAp2eKcRQ,100
+mypackage/greet.py,sha256=iN6yyGYjHGgZJ8kZ6GNjrBMTMiOhS1KaTUq7iOs7Zd8,46
+mypackage-0495843/__init__.py,sha256=0ZcbDLVFrn15H84MPx1DPy98Ecq5oe674AX7uRPOXpI,66
+mypackage-0495843/functions.py,sha256=lzT_ImP565L7I8TE4jsIyHf4q7xyL9e6vKXAp2eKcRQ,100
+mypackage-0495843/greet.py,sha256=iN6yyGYjHGgZJ8kZ6GNjrBMTMiOhS1KaTUq7iOs7Zd8,46
+mypackage_0495843-111.111.0.dist-info/METADATA,sha256=dOM_O872mw4UBJtZlFWtppbxGGCaon9wROAwRBhZ8E4,225
+mypackage_0495843-111.111.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+mypackage_0495843-111.111.0.dist-info/top_level.txt,sha256=rSaE0TAFZV-5laCEg8EOnLTLhwu_3_PY-aCF7cG8mfY,18
+mypackage_0495843-111.111.0.dist-info/RECORD,,
