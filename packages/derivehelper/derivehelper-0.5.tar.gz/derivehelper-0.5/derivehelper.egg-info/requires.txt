@@ -1,0 +1,5 @@
+argon2_cffi
+cryptography
+bcrypt
+pynacl
+passlib
