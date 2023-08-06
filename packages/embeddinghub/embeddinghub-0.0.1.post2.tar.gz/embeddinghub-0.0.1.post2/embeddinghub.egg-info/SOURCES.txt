@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+embeddinghub.egg-info/PKG-INFO
+embeddinghub.egg-info/SOURCES.txt
+embeddinghub.egg-info/dependency_links.txt
+embeddinghub.egg-info/top_level.txt
+sdk/python/__init__.py
+sdk/python/embeddinghub.py
+sdk/python/offlinehub.py
+sdk/python/repl.py
