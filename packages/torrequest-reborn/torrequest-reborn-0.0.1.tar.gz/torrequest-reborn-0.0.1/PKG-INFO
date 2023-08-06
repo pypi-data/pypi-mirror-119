@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: torrequest-reborn
+Version: 0.0.1
+Summary: A simple interface for HTTP(s) requests over Tor
+Home-page: http://github.com/scuty2000/torrequest-reborn
+Author: Luca Scutigliani
+Author-email: lucascutigliani2@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

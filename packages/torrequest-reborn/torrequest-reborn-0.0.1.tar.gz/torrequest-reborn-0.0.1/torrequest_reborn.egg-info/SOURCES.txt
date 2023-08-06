@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+torrequest_reborn.egg-info/PKG-INFO
+torrequest_reborn.egg-info/SOURCES.txt
+torrequest_reborn.egg-info/dependency_links.txt
+torrequest_reborn.egg-info/not-zip-safe
+torrequest_reborn.egg-info/requires.txt
+torrequest_reborn.egg-info/top_level.txt
