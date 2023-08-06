@@ -1,0 +1,7 @@
+chalice>=1.22.3
+python-magic==0.4.22
+requests-toolbelt==0.9.1
+
+[layered]
+Jinja2==2.10
+Pillow==8.2.0
