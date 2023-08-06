@@ -1,0 +1,43 @@
+change log
+===========
+
+1.0.0 (10/09/2021)
+------------------
+- First Release
+
+1.0.1 (10/09/2021)
+------------------
+- added NumberList function
+- added FibonacciList function
+- added AlphabetList function
+- added PrimeList function
+- added PrimeChecker function
+- added ReverseList function
+
+1.0.2 (10/09/2021)
+------------------
+- added RandomMatrix function
+- added ArrayMultiplier function
+- added ArraySum function
+- added Arrayminus function
+
+1.0.3 (10/09/2021)
+------------------
+- added BinomialCoef function
+- fixed ArrayMultiplier bug
+
+1.0.4 (10/09/2021)
+------------------
+- added BinomialCoef function
+- changed ArraySum to MatrixSum
+- changed ArrayMinus to MatrixMinus
+- changed ArrayMultiplier to MatrixMultiplier 
+
+1.0.5 (10/09/2021)
+------------------
+- added TriangleSurf function
+- added AlphabetListCAP function
+- added higher_lower_game
+- changed MatrixMinus to MatrixSub
+- translated README to english
+- translated functions to english
