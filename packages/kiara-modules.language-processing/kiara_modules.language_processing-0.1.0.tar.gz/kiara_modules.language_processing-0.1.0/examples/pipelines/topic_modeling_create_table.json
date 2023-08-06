@@ -1,0 +1,98 @@
+{
+  "module_type_name": "topic_modeling_create_table",
+  "documentation": "Create table from folder of csv files.",
+  "steps": [
+    {
+      "module_type": "import.local_folder",
+      "step_id": "read_files_in_folder"
+    },
+    {
+      "module_type": "table.create.from_file_bundle",
+      "module_config": {
+        "columns": ["id", "rel_path", "file_name", "content"]
+      },
+      "step_id": "create_table_from_csvs",
+      "input_links": {
+        "files": "read_files_in_folder.file_bundle"
+      }
+    },
+    {
+      "module_type": "array.map",
+      "module_config": {
+        "module_type": "date.extract_from_string"
+      },
+      "step_id": "extract_date_from_file_name",
+      "input_links": {
+        "array": "create_table_from_csvs.table.file_name"
+      }
+    },
+    {
+      "module_type": "array.map",
+      "module_config": {
+        "module_type": "string.match_regex",
+        "module_config": {
+          "regex": "(\\w+\\d+)_\\d{4}-\\d{2}-\\d{2}_",
+          "only_first_match": true
+        }
+      },
+      "step_id": "extract_ref_from_file_name",
+      "input_links": {
+        "array": "create_table_from_csvs.table.file_name"
+      }
+    },
+    {
+      "module_type": "array.map",
+      "module_config": {
+        "module_type": "string.replace",
+        "module_config": {
+          "replacement_map": {
+            "sn85066408": "L\\'Italia",
+            "2012271201": "Cronaca Sovversiva"
+          }
+        }
+      },
+      "step_id": "lookup_publication_name",
+      "input_links": {
+        "array": "extract_ref_from_file_name.array"
+      }
+    },
+    {
+      "module_type": "array.map",
+      "module_config": {
+        "module_type": "date.range_check",
+        "input_name": "date"
+      },
+      "step_id": "create_date_range_filter",
+      "input_links": {
+        "array": "extract_date_from_file_name"
+      }
+    },
+    {
+      "module_type": "array.map",
+      "module_config": {
+        "module_type": "language.tokens.tokenize_text",
+        "input_name": "text"
+      },
+      "step_id": "tokenize_text_corpus",
+      "input_links": {
+        "array": "create_table_from_csvs.table.content"
+      }
+    },
+    {
+      "module_type": "table.merge",
+      "step_id": "merged_table",
+      "input_links": {
+        "sources": [
+          "create_table_from_csvs.table",
+          "extract_date_from_file_name.array",
+          "extract_ref_from_file_name.array",
+          "lookup_publication_name.array",
+          "tokenize_text_corpus.array"
+        ]
+      }
+    }
+  ],
+  "input_aliases": "auto",
+  "output_aliases": "auto"
+}
+

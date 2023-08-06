@@ -1,0 +1,12 @@
+[kiara.metadata_schemas]
+language_processing = kiara_modules.language_processing.metadata_schemas:metadata_schemas
+
+[kiara.modules]
+language = kiara_modules.language_processing:modules
+
+[kiara.pipelines]
+language = kiara_modules.language_processing.pipelines:pipelines
+
+[kiara.value_types]
+language_processing = kiara_modules.language_processing.value_types:value_types
+
