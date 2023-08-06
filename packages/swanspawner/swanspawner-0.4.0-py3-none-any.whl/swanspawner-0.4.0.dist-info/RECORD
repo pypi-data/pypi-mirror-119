@@ -1,0 +1,10 @@
+swanspawner/__init__.py,sha256=LVFRHKmAZQxzFOOJODyUeR0-6h4qN94g0KOdISqrrdU,98
+swanspawner/_version.py,sha256=d4K0l7uopgGMuR0PdtgVvOLAXeE-LKUPK_kQjRnIi1o,103
+swanspawner/swandockerspawner.py,sha256=ujoAnedYiK6M6dVxq-SNHWR-Blv_Rl467WX3iNWETCM,16747
+swanspawner/swankubespawner.py,sha256=rPJIwk2s33aYFVv9tXlU9xUQjyWrpW-0s4Df2fVQ77Q,1963
+swanspawner/swanspawner.py,sha256=L92VOnORXaQkIihQCWVGnAPRvu2PBLqF6-x0IaD9Zjo,9255
+swanspawner/templates/options_form_template.html,sha256=Tn2EWu3j_JRbfOe7J1GguAZd48z-cHFT86HBSRUI9T8,8122
+swanspawner-0.4.0.dist-info/METADATA,sha256=EHF_QW9AqFMGC9oNUfit6E3gaD4I4_9Oz0zidqBH7mw,3168
+swanspawner-0.4.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+swanspawner-0.4.0.dist-info/top_level.txt,sha256=Z6CKr7bg3HZGDmNE0mUnU1gX7AA3LBuYTeBAO8cTzl4,12
+swanspawner-0.4.0.dist-info/RECORD,,
