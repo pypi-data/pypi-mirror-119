@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "switchbot-client"
+version = "0.1.2"
+description = "A Python client library for SwitchBot API."
+license = "Apache-2.0 or MIT"
+authors = [
+    "Kazuhito Osabe <kzosabe@wip.place>"
+]
+readme = "README.md"
+repository = "https://github.com/kzosabe/switchbot-client"
+homepage = "https://github.com/kzosabe/switchbot-client"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+requests = "^2.0"
+PyYAML = "^5.1"
+
+[tool.poetry.dev-dependencies]
+black = ">=18.5b1"
+pylint = "^2.0"
+pytest = "^6.0"
+pytest-cov = "^2.0"
+pytest-mock = "^3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint."message control"]
+disable = ["C0114,C0115,C0116,R0903"]
+
+[tool.black]
+line-length = 100
