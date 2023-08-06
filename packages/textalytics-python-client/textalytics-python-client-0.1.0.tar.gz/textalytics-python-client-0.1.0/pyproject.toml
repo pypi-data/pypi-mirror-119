@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "textalytics-python-client"
+version = "0.1.0"
+description = "python client to interface with textalytics hosted nlp"
+authors = ["Manoj Bharadwaj <manoj@cloudcosmos.tech>"]
+license = "MIT"
+
+packages = [
+    { include="textalytics_client", from="." },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+textalytics-core = "^0.1.1"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[virtualenvs]
+in-project = true
+path = "./venv"
+
+[tool.poetry.scripts]
+test = 'scripts:test'
+
