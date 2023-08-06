@@ -1,0 +1,9 @@
+README.md
+__main__.py
+setup.py
+jira2branch.egg-info/PKG-INFO
+jira2branch.egg-info/SOURCES.txt
+jira2branch.egg-info/dependency_links.txt
+jira2branch.egg-info/entry_points.txt
+jira2branch.egg-info/requires.txt
+jira2branch.egg-info/top_level.txt
