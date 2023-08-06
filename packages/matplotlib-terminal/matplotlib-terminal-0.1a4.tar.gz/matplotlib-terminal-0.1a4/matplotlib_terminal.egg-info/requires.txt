@@ -1,0 +1,8 @@
+matplotlib
+img2unicode>=0.1a8
+
+[develop]
+pytest
+pytest-cov
+sphinx
+sphinx_autodoc_typehints
