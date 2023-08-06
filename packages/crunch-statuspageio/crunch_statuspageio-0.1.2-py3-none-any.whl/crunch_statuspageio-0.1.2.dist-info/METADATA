@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: crunch-statuspageio
+Version: 0.1.2
+Summary: Python client library for statuspage.io
+License: MIT
+Author: Adrien Pensart
+Author-email: adrien.pensart@corp.ovh.com
+Requires-Python: >=3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: munch (>=2.5.0,<3.0.0)
+Requires-Dist: requests (>=2.26.0,<3.0.0)
