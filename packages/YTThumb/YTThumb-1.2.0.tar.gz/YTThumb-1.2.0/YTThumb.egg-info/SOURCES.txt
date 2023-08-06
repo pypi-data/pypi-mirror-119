@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+YTThumb.egg-info/PKG-INFO
+YTThumb.egg-info/SOURCES.txt
+YTThumb.egg-info/dependency_links.txt
+YTThumb.egg-info/top_level.txt
+ytthumb/__init__.py
