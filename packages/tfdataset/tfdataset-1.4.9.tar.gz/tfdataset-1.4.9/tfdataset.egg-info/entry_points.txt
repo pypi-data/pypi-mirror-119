@@ -1,0 +1,5 @@
+[console_scripts]
+actdata = tfdataset.action_recognition_data:main
+objdata = tfdataset.objdect_detection_data:main
+vidal = tfdataset.cutter:main
+
