@@ -1,0 +1,7 @@
+.DS_Store
+.mypy_cache
+.pytest_cache
+.python-version
+__pycache__
+dist
+docs/_build
