@@ -1,0 +1,13 @@
+click
+numpy
+pandas>=0.23.4
+tqdm>=4.29.1
+torch
+
+[docs]
+sphinx
+sphinx-rtd-theme
+sphinx-click
+sphinx-autodoc-typehints
+sphinx_automodapi
+texext
