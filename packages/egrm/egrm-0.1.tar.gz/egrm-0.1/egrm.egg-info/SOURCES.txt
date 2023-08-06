@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+bin/trees2egrm
+egrm/__init__.py
+egrm/egrm.py
+egrm.egg-info/PKG-INFO
+egrm.egg-info/SOURCES.txt
+egrm.egg-info/dependency_links.txt
+egrm.egg-info/requires.txt
+egrm.egg-info/top_level.txt
+src/matrix.c
