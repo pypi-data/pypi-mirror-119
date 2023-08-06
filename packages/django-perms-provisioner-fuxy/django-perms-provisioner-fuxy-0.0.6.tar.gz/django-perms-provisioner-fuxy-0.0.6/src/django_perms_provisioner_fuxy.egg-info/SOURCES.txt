@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+src/django_perms_provisioner_fuxy/__init__.py
+src/django_perms_provisioner_fuxy.egg-info/PKG-INFO
+src/django_perms_provisioner_fuxy.egg-info/SOURCES.txt
+src/django_perms_provisioner_fuxy.egg-info/dependency_links.txt
+src/django_perms_provisioner_fuxy.egg-info/not-zip-safe
+src/django_perms_provisioner_fuxy.egg-info/requires.txt
+src/django_perms_provisioner_fuxy.egg-info/top_level.txt
+src/django_perms_provisioner_fuxy/management/__init__.py
+src/django_perms_provisioner_fuxy/management/schemas.py
+src/django_perms_provisioner_fuxy/management/commands/__init__.py
+src/django_perms_provisioner_fuxy/management/commands/dumpperms.py
+src/django_perms_provisioner_fuxy/management/commands/loadperms.py
