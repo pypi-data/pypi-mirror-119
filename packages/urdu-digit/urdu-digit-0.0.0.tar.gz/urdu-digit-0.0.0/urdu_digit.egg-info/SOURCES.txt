@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+urdu_digit.egg-info/PKG-INFO
+urdu_digit.egg-info/SOURCES.txt
+urdu_digit.egg-info/dependency_links.txt
+urdu_digit.egg-info/top_level.txt
