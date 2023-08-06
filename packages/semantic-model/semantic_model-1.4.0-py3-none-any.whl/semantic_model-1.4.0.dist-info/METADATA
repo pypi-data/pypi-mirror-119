@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: semantic-model
+Version: 1.4.0
+Summary: All data about data in one model
+Home-page: https://github.com/Attumm/semantic-model
+Author: Melvin Bijman
+Author-email: bijman.m.m@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Semantic-model
+All data about data in one model.
+The single source of truth about data in one model.
+
+
+### Display dsm model
+'''sh
+sudo docker run -i attumm/dsm_png:lastest < result.json > output.png
+'''
+
+
+
