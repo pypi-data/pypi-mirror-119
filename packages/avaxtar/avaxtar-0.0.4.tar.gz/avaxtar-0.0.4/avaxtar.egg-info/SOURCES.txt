@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+avaxtar/Avax_NN.py
+avaxtar/Avaxtar.py
+avaxtar/DF_from_DICT.py
+avaxtar/Example.py
+avaxtar/__init__.py
+avaxtar/model_pytorch1.pt
+avaxtar/scaler1.joblib
+avaxtar.egg-info/PKG-INFO
+avaxtar.egg-info/SOURCES.txt
+avaxtar.egg-info/dependency_links.txt
+avaxtar.egg-info/requires.txt
+avaxtar.egg-info/top_level.txt
