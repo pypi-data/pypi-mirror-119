@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: jocampo_log_service_proto
+Version: 0.0.1
+Summary: Python definitions for a basic Log Service
+Home-page: https://github.com/jocampo/log_service_proto
+Author: Jorge Ocampo
+Author-email: jorge.luis.ocampo.mascaro@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/jocampo/log_service_proto/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+- create a venv (py > 3.5 ish)
+- install dependencies
+- in the `python/` folder, run:
+```shell
+python ./compileProto.py
+```
+- output should be in the `log_service_proto/` folder
+
+packaging process:
+https://packaging.python.org/tutorials/packaging-projects/#uploading-your-project-to-pypi
+
+
+python3 -m pip install --upgrade build
+
+python3 -m pip install --upgrade twine
+
+test publish: python3 -m twine upload --repository testpypi dist/*
+    install: pip install -i https://test.pypi.org/simple/ jocampo-log-service-proto
+    use: 
+for realsies: 
+
+

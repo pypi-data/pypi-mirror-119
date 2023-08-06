@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+jocampo_log_service_proto.egg-info/PKG-INFO
+jocampo_log_service_proto.egg-info/SOURCES.txt
+jocampo_log_service_proto.egg-info/dependency_links.txt
+jocampo_log_service_proto.egg-info/top_level.txt
+log_service_proto/__init__.py
+log_service_proto/models/__init__.py
+log_service_proto/models/log_message_pb2.py
+log_service_proto/models/log_message_pb2_grpc.py
+log_service_proto/services/__init__.py
+log_service_proto/services/log_service_pb2.py
+log_service_proto/services/log_service_pb2_grpc.py
