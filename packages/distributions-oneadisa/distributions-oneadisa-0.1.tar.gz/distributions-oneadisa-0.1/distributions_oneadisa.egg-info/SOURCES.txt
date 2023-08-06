@@ -1,0 +1,10 @@
+setup.py
+distributions-oneadisa/Binomialdistribution.py
+distributions-oneadisa/Gaussiandistribution.py
+distributions-oneadisa/Generaldistribution.py
+distributions-oneadisa/__init__.py
+distributions_oneadisa.egg-info/PKG-INFO
+distributions_oneadisa.egg-info/SOURCES.txt
+distributions_oneadisa.egg-info/dependency_links.txt
+distributions_oneadisa.egg-info/not-zip-safe
+distributions_oneadisa.egg-info/top_level.txt
