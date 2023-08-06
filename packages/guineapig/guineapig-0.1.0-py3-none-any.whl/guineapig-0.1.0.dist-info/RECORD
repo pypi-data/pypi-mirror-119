@@ -1,0 +1,10 @@
+guineapig/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+guineapig/main.py,sha256=dXTSa29Z_bmPCwLkcitnDP5gb087PO5eQlQeYsOev50,3553
+guineapig/prompt.py,sha256=XP-2DVdBq-1qbFH7hXONBB2izpbNTe1-SWlcLIwWDfM,4731
+guineapig/utils.py,sha256=cdsx0w9gz1aTZ6vah0yOWBMU3czx6ukZ0z7eqT2Nm4o,501
+guineapig-0.1.0.dist-info/LICENSE.txt,sha256=Wr3O0yYpPEBsQhkw2TuF7n-Zox8cIqEIevZffuQ-z64,1068
+guineapig-0.1.0.dist-info/METADATA,sha256=UYQL72GUz9MK26f_8BWIIIFnW8qfvxAZaIgbjG2bl-0,614
+guineapig-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+guineapig-0.1.0.dist-info/entry_points.txt,sha256=c8F_68VLZ6DwlyVQGNOKGgGBweXgNLwVfJ4ksCNvOjM,81
+guineapig-0.1.0.dist-info/top_level.txt,sha256=xZy-mIEu6qJrMXyJBijamDD5rvCh1DhcmmqyM68ENjs,10
+guineapig-0.1.0.dist-info/RECORD,,
