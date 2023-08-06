@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: gain-with-hashi
+Version: 0.0.4
+Summary: Gain Followers On Instagram
+Home-page: UNKNOWN
+Author: kooriez
+Author-email: <hashid0003@gmail.com.com>
+License: UNKNOWN
+Keywords: python,instabot,ig_bot,insta py,instagram,auto followers
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+Requires-Dist: instabot
+
+Gain Followers On Instagram with @gain_with_hashi
+
+
