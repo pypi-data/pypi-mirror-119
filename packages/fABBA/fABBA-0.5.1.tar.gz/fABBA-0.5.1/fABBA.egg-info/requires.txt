@@ -1,0 +1,8 @@
+numpy>=1.21.1
+warnings
+tqdm
+pickle
+pandas
+collections
+logging
+matplotlib
