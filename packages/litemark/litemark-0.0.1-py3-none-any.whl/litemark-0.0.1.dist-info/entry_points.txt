@@ -1,0 +1,3 @@
+[console_scripts]
+litemark = litemark.__main__:main
+
