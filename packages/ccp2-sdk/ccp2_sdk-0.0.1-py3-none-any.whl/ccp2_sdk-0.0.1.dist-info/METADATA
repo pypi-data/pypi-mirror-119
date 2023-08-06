@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: ccp2-sdk
+Version: 0.0.1
+Summary: ccp2 serverless sdk
+Home-page: UNKNOWN
+Author: cyclone
+License: UNKNOWN
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: requests
+
+# ccp2_sdk-py
+
