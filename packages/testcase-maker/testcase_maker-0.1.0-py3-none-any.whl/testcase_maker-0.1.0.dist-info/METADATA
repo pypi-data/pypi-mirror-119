@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: testcase-maker
+Version: 0.1.0
+Summary: Competitive programming testcases made easy!
+Home-page: https://github.com/benwoo1110/testcase-maker
+Author: benwoo1110
+Author-email: wben1110@gmail.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: attrs (~=21.2.0)
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Provides-Extra: lint
+Requires-Dist: black ; extra == 'lint'
+Requires-Dist: flake8 ; extra == 'lint'
+Requires-Dist: isort ; extra == 'lint'
+
+# testcase-maker
+Competitive programming testcases made easy!
+
+W.I.P.
+
+
