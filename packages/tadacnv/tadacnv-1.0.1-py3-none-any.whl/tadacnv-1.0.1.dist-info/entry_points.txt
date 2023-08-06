@@ -1,0 +1,6 @@
+[console_scripts]
+annotate_cnvs = tadacnv.annotate_cnvs:main
+annotate_tads = tadacnv.annotate_tads:main
+classification_run = tadacnv.classification_run:main
+predict_variants = tadacnv.predict_variants:main
+
