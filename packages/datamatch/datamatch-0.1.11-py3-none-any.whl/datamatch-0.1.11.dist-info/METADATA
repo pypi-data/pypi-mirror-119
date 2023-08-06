@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: datamatch
+Version: 0.1.11
+Summary: Data matching utilities
+Home-page: https://github.com/pckhoi/datamatch
+Author: Khoi Pham
+Author-email: pckhoi@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/pckhoi/datamatch/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (>=1.18)
+Requires-Dist: pandas (>=1.2)
+Requires-Dist: python-Levenshtein (>=0.12)
+Requires-Dist: Unidecode (>=1.1)
+Requires-Dist: tqdm (>=4.61.1)
+
+# Datamatch
+
+[![pypi](https://img.shields.io/pypi/v/datamatch)](https://pypi.org/project/datamatch/)
+[![docs](https://readthedocs.org/projects/datamatch/badge/)](https://datamatch.readthedocs.io/en/latest/)
+[![release-workflow](https://github.com/pckhoi/datamatch/actions/workflows/taggedrelease.yml/badge.svg)](https://github.com/pckhoi/datamatch/actions/workflows/taggedrelease.yml)
+
+Datamatch is a library that facilitate data matching or entity resolution. It was used in New Orleans's [LLEAD project](https://github.com/ppact/processing).
+
+You can read the documentations [here](https://datamatch.readthedocs.io/en/latest/).
+
+## Choosing a version
+
+As this package is at the preproduction state, an increase in minor version-number represents breaking changes.
+
+
