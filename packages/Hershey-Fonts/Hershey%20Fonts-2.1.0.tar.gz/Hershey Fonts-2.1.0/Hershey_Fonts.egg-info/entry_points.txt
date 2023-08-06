@@ -1,0 +1,6 @@
+[console_scripts]
+HersheyFonts_demo = HersheyFonts.HersheyFonts:main_script
+
+[gui_scripts]
+HersheyFonts_demo = HersheyFonts.HersheyFonts:main
+
