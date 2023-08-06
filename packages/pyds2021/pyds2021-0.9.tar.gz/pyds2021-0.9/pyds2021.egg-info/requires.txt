@@ -1,0 +1,7 @@
+numpy
+seaborn
+sklearn
+datetime
+pandas
+seaborn
+matplotlib

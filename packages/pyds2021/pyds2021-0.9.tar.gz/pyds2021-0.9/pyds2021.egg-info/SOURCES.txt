@@ -1,0 +1,12 @@
+AUTHORS
+LICENSE.txt
+README.md
+setup.py
+pyds2021/LinReg.py
+pyds2021/__init__.py
+pyds2021/plot.py
+pyds2021.egg-info/PKG-INFO
+pyds2021.egg-info/SOURCES.txt
+pyds2021.egg-info/dependency_links.txt
+pyds2021.egg-info/requires.txt
+pyds2021.egg-info/top_level.txt
