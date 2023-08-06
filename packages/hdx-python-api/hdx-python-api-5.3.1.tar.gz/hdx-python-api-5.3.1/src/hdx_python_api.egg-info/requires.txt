@@ -1,0 +1,6 @@
+ckanapi>=4.6
+hdx-python-country>=3.0.2
+ndg-httpsclient
+pyasn1
+pyOpenSSL
+quantulum3
