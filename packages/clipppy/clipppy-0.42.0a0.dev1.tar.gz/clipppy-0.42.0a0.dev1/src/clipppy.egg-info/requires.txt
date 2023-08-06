@@ -1,0 +1,10 @@
+frozendict
+more-itertools
+ruamel.yaml
+pyro-ppl
+
+[docs]
+sphinx-autoapi
+
+[testing]
+pytest

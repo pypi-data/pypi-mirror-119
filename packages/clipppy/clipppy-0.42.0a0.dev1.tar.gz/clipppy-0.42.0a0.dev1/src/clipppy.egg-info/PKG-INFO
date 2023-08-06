@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: clipppy
+Version: 0.42.0a0.dev1
+Summary: Convenience Layer for Inference and Probabilistic Programming in Python
+Home-page: UNKNOWN
+Author: Kosio Karchev
+Author-email: kosioakarchev@gmail.com
+License: MIT
+Project-URL: GitHub, https://github.com/kosiokarchev/clipppy
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Intended Audience :: Science/Research
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: docs
+Provides-Extra: testing
+License-File: LICENSE.txt
+
+## Clipppy: a convenience layer for inference and probabilistic programming in Python
+#### (*prevously: Command Line Interface for Probabilistic Programming in PYthon*) 
+
+---
+
+[![Build Status](https://app.travis-ci.com/kosiokarchev/clipppy.svg?branch=master)](https://app.travis-ci.com/kosiokarchev/clipppy)
+[![Documentation Status](https://readthedocs.org/projects/clipppy/badge/?version=latest)](https://clipppy.readthedocs.io/en/latest/?badge=latest)
+
+---
+
+Clipppy does automatically some of the things you're fed up with while trying
+(very hard) not to be annoying in the meantime.
+
+Install it via
+```shell
+pip install -e .
+```
+after cloning the repo. This will (try to make sure) you have installed the
+dependencies ([`pyro-ppl`](https://pyro.ai/), and hence
+[`torch`](https://pytorch.org/), among others). Once that's done,
+[Read the Docs!](https://clipppy.readthedocs.org) to get started.
+
+---
+*This program is free software and comes with no warranty except that which can
+be reasonably expected of computer logic. It is, however, licensed under
+the GNU General Public Licence v3.0, which disallows closed source
+re-distribution and any such foul nonsense.*
+
+
