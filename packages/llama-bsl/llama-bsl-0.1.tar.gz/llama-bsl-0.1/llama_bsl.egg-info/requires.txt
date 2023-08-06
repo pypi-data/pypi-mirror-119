@@ -1,0 +1,10 @@
+pip>=10
+setuptools
+wheel
+pyserial
+
+[]
+intelhex
+
+[intelhex]
+python-magic
