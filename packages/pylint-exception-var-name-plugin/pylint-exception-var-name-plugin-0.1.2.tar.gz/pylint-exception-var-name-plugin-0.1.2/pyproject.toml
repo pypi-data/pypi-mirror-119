@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "pylint-exception-var-name-plugin"
+version = "0.1.2"
+description = "Plugin for pylint which allows to define and check variable name for exception"
+authors = ["Konstantin Shestakov <winmasta@yandex.ru>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/winmasta"
+repository = "https://github.com/winmasta"
+keywords = ["pylint", "exception", "lint"]
+classifiers = [
+    "Development Status :: 4 - Beta ",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+]
+include = ["LICENSE"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pylint = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
