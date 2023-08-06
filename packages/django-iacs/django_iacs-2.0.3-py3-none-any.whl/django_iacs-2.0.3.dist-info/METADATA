@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: django-iacs
+Version: 2.0.3
+Summary: iacs
+Home-page: https://broadtech.com.cn
+Author: Lee
+Author-email: canyun@live.com
+License: GNU General Public License v3.0
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Requires-Dist: redis (>=3.5.3)
+Requires-Dist: deprecated (>=1.2.12)
+Requires-Dist: mysqlclient (>=2.0.3)
+Requires-Dist: django (<4.0.0,>=3.2.5)
+Requires-Dist: djangorestframework (<4.0.0,>=3.12.4)
+Requires-Dist: channels (<4.0.0,>=3.0.4)
+Requires-Dist: channels-redis (<4.0.0,<4.0.0daphne>=3.0.2,>=3.0.3)
+Requires-Dist: django-filter (<3.0.0,>=2.4.0)
+Requires-Dist: channels-redis (<4.0.0,>=3.3.0)
+Requires-Dist: drf-yasg (>=1.20.0)
+
+UNKNOWN
+
+
