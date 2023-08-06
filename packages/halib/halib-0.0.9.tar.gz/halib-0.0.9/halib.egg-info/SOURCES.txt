@@ -1,0 +1,17 @@
+.gitignore
+LICENSE.txt
+README.md
+guide_publish_pip.pdf
+setup.py
+upload_command.txt
+halib/__init__.py
+halib/csvfile.py
+halib/filesys.py
+halib/jsonfile.py
+halib/listop.py
+halib/textfile.py
+halib/videofile.py
+halib.egg-info/PKG-INFO
+halib.egg-info/SOURCES.txt
+halib.egg-info/dependency_links.txt
+halib.egg-info/top_level.txt
