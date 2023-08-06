@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: laputan
+Version: 1.2.5
+Summary: laputan is now rapyuta
+Home-page: UNKNOWN
+License: UNKNOWN
+Description: # laputan is now rapyuta
+        
+        This package has been renamed. Use `pip install rapyuta` instead.
+        
+        New package: https://pypi.org/project/rapyuta/
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 7 - Inactive
+Description-Content-Type: text/markdown

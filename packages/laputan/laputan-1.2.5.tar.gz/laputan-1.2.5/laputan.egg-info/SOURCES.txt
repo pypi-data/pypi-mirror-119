@@ -1,0 +1,7 @@
+README.md
+setup.py
+laputan.egg-info/PKG-INFO
+laputan.egg-info/SOURCES.txt
+laputan.egg-info/dependency_links.txt
+laputan.egg-info/requires.txt
+laputan.egg-info/top_level.txt
