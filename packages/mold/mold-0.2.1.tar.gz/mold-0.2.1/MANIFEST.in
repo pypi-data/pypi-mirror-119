@@ -1,0 +1,6 @@
+graft src/mold
+graft tests
+graft docs
+prune docs/build
+include readme_pypi.rst
+global-exclude *.py[cod] __pycache__ *.so

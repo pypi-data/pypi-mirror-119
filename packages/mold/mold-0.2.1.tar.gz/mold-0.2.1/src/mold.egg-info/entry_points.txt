@@ -1,0 +1,6 @@
+[console_scripts]
+mold = mold.cli:main
+
+[mold.plugins]
+mold_builtin_plugins = mold.plugins
+
