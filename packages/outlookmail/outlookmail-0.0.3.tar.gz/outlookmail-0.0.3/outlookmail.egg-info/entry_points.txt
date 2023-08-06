@@ -1,0 +1,3 @@
+[console_scripts]
+outlookmail = outlookmail.cli:main
+
