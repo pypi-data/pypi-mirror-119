@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: hdpca
+Version: 0.1.5
+Summary: Hign Dimensional PCA. Including D2PCA and D2SquarePCA in 0.1.X versions.
+Home-page: https://gitee.com/rlge/hdpca
+Author: rileyge
+Author-email: rlge@live.com
+License: Apache 2.0
+Description: UNKNOWN
+Platform: UNKNOWN

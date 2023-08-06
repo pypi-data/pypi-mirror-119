@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+hdpca/__init__.py
+hdpca/_d2_pca.py
+hdpca/_d2_square_pca.py
+hdpca.egg-info/PKG-INFO
+hdpca.egg-info/SOURCES.txt
+hdpca.egg-info/dependency_links.txt
+hdpca.egg-info/requires.txt
+hdpca.egg-info/top_level.txt
+hdpca.egg-info/zip-safe
