@@ -1,0 +1,13 @@
+HALsn/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+HALsn/dataSupervisor.py,sha256=gTPnqixrkUH5EAU4GcF_D-mzKHvjkBReoqHC-M7oByY,6414
+HALsn/serialSupervisor.py,sha256=Pd2iSyPHfCHf0Wvxo22USsFPnD-GUsiPbmaDdB7q8BE,6856
+HALsn/maps/CFP3xx.py,sha256=dg7jh0kqLQOKyEAQrHje0gJZrCzgeWpm9aP48-foogU,7131
+HALsn/maps/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+HALsn/os/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+HALsn/os/os_setup.py,sha256=ueidFtJ2_VIu4wlAbRRW0_EubbQvtOevL-VT0uR3-Kc,5438
+HALsn-0.0.7.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+HALsn-0.0.7.dist-info/METADATA,sha256=h2Vxha80iZ5yMrnH1bdK1Q42RTIstVt2hAeBdZ_U2ww,414
+HALsn-0.0.7.dist-info/RECORD,,
+HALsn-0.0.7.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+HALsn-0.0.7.dist-info/metadata.json,sha256=KNvmpwPPcD6OWX3tmnjcgOWYLwZY-MN7dCwUThabr2A,518
+HALsn-0.0.7.dist-info/top_level.txt,sha256=UC8BolHwyNyUfoB0T1zuzTv2CX70gl1m6_E6SAQdWNM,6
