@@ -1,0 +1,3 @@
+[console_scripts]
+fortunekh=fortunekh.__main__:main
+
