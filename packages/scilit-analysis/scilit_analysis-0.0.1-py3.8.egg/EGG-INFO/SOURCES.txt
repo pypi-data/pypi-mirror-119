@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+scilit_analysis.egg-info/PKG-INFO
+scilit_analysis.egg-info/SOURCES.txt
+scilit_analysis.egg-info/dependency_links.txt
+scilit_analysis.egg-info/entry_points.txt
+scilit_analysis.egg-info/requires.txt
+scilit_analysis.egg-info/top_level.txt
+scilitanalysis/__init__.py
+scilitanalysis/analysis.py
+scilitanalysis/data_cleaning.py

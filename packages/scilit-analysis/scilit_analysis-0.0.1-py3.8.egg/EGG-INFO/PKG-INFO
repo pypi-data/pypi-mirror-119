@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: scilit-analysis
+Version: 0.0.1
+Summary: Automated scoping review and analysis of scientific literature on genes. Relies on pygetpapers and ami.
+Home-page: https://github.com/ShweataNHegde/scilitanalyis
+Author: Shweata N. Hegde
+Author-email: shweata.hegde@gmail.com
+License: MIT
+Description: # scilitanalyis
+        Automated scoping review and analysis of scientific literature on genes. Relies on pygetpapers and pyami.
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
