@@ -1,0 +1,12 @@
+lhapdf_management/__init__.py,sha256=0IIA3a2CoWs7f2R4LDAOPGt6BCA7n9g9PnFsBMCOLeI,562
+lhapdf_management/configuration.py,sha256=vGG5XCM8opK_w82pw4iVbfCGp0yhghgT3GOrPaRU9h4,2846
+lhapdf_management/management.py,sha256=sK0ukArJVeieQo0N8fOc0Qq-GzjFgMJtN6t5JUvDI9M,3623
+lhapdf_management/net_utilities.py,sha256=nqdztzBaKfihn56TfkmshanNx1ZDzTcXeeu-8dCr22c,3737
+lhapdf_management/pdfsets.py,sha256=IFViJk78nrq9Mv6qlHyaWj5_KU6ZDEDDVjCb8Vcosk4,4671
+lhapdf_management/scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lhapdf_management/scripts/lhapdf_script.py,sha256=SQivHdq1zfYEYvtAQr8TDXYMr8pRzS8PfpX38_fwh-w,4603
+lhapdf_management-0.1rc1.dist-info/METADATA,sha256=-IswoPV4cui77FiqKBO7BG5RPnAi-D_7sXD-l4cx_j0,3136
+lhapdf_management-0.1rc1.dist-info/WHEEL,sha256=4XJZVjDfua0z-KkQ_IRrmx7FbmCelKuL9GJcuxYiCtE,101
+lhapdf_management-0.1rc1.dist-info/entry_points.txt,sha256=ef_orlGvNbVV8gsTtCzwdn3_kVj9zx9WPg3RDZgEX44,84
+lhapdf_management-0.1rc1.dist-info/top_level.txt,sha256=BvhSbf6zC3HgDgUX-9P9e9caZsn2yltIgckR-FlpvPQ,18
+lhapdf_management-0.1rc1.dist-info/RECORD,,
