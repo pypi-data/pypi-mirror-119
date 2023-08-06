@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: pyVkBotApiV2
+Version: 1.0.0
+Summary: Python vk.com API wrapper
+Home-page: UNKNOWN
+Author: Airkek
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
