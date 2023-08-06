@@ -1,0 +1,6 @@
+fastapi==0.68.1
+uvicorn==0.15.0
+pydantic==1.8.2
+aiofiles==0.7.0
+gpiozero==1.6.2
+loguru==0.5.3
