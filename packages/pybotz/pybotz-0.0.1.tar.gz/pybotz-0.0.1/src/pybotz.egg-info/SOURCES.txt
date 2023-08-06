@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/botz/__init__.py
+src/botz/bot/__init__.py
+src/botz/bot/brain/__init__.py
+src/botz/bot/eyes/__init__.py
+src/botz/bot/feet/__init__.py
+src/botz/bot/hands/__init__.py
+src/ctxs/__init__.py
+src/ctxs/dbs/__init__.py
+src/pybotz.egg-info/PKG-INFO
+src/pybotz.egg-info/SOURCES.txt
+src/pybotz.egg-info/dependency_links.txt
+src/pybotz.egg-info/top_level.txt
