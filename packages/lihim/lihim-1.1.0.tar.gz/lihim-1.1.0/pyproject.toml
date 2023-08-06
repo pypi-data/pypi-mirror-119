@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "lihim"
+version = "1.1.0"
+description = "CLI for managing secret keys, tokens, sensitive and/or public key-value pairs."
+authors = ["Neil Van <nvq.alino@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = "^0.3.2"
+peewee = "^3.14.4"
+PyNaCl = "^1.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+mypy = "^0.910"
+black = "^21.8b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+lihim = "lihim.main:app"
