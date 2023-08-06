@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: curvlearn
+Version: 1.0.1
+Summary: Tensorflow based non-Euclidean deep learning framework
+License: Apache 2.0
+Author: zhirong.xzr
+Author-email: zhirong.xzr@alibaba-inc.com
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: tensorflow (>=1.15.0,<2.0.0)
