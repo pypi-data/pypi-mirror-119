@@ -1,0 +1,10 @@
+LICENSE.md
+README.md
+setup.py
+vidtest/__init__.py
+vidtest/pluto.py
+vidtest.egg-info/PKG-INFO
+vidtest.egg-info/SOURCES.txt
+vidtest.egg-info/dependency_links.txt
+vidtest.egg-info/requires.txt
+vidtest.egg-info/top_level.txt
