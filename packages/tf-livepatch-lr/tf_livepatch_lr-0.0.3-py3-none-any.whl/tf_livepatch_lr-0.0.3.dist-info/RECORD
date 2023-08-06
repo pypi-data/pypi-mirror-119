@@ -1,0 +1,8 @@
+tf_livepatch_lr/__init__.py,sha256=0C0w9vbhXDmu811A0sa1imGVDBPttTkiQjNyIrOBU6A,56
+tf_livepatch_lr/livepatch_lr.py,sha256=lNRFi00i7pnriBXL9mhvHCsu4SFVRL1skiJmCGhQYhg,1965
+tf_livepatch_lr/test/livepatch_lr.py,sha256=C0toUO4ZsGlW70Zlg06fVP7b4YLM65KWhZzAQuhzJUs,1841
+tf_livepatch_lr-0.0.3.dist-info/LICENSE.txt,sha256=9pTAe7Gk4dPRp9h8gmAPlkNfK77wEbJcQYoxkDwuD78,1074
+tf_livepatch_lr-0.0.3.dist-info/METADATA,sha256=P1q5vpUO5QMcgcKFfhPbKAQws7OTYb-DHzQKm8u5lK8,1359
+tf_livepatch_lr-0.0.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+tf_livepatch_lr-0.0.3.dist-info/top_level.txt,sha256=TvvDlgUhNykZInnDNym3C7z4TW0jkwUH2PxEJgq9VmY,16
+tf_livepatch_lr-0.0.3.dist-info/RECORD,,
