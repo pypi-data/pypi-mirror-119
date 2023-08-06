@@ -1,0 +1,11 @@
+LICENCE
+MANIFEST.in
+README.md
+setup.py
+hltv_data/__init__.py
+hltv_data/client.py
+hltv_data.egg-info/PKG-INFO
+hltv_data.egg-info/SOURCES.txt
+hltv_data.egg-info/dependency_links.txt
+hltv_data.egg-info/requires.txt
+hltv_data.egg-info/top_level.txt
