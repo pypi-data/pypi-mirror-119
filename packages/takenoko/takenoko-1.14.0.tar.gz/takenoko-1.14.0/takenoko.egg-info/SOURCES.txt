@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+bin/takenoko
+takenoko/__init__.py
+takenoko/__main__.py
+takenoko.egg-info/PKG-INFO
+takenoko.egg-info/SOURCES.txt
+takenoko.egg-info/dependency_links.txt
+takenoko.egg-info/not-zip-safe
+takenoko.egg-info/requires.txt
+takenoko.egg-info/top_level.txt
+takenoko/data/takenoko.json
+takenoko/data/takenoko/kinoko.json
