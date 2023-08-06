@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/PyAutoFact.egg-info/PKG-INFO
+src/PyAutoFact.egg-info/SOURCES.txt
+src/PyAutoFact.egg-info/dependency_links.txt
+src/PyAutoFact.egg-info/requires.txt
+src/PyAutoFact.egg-info/top_level.txt
+src/greenformer/__init__.py
+src/greenformer/auto_fact.py
+src/greenformer/lr_module.py
+src/greenformer/version.py
