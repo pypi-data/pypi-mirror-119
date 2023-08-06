@@ -1,0 +1,7 @@
+README.md
+setup.py
+PyPatt/__init__.py
+pypatt.egg-info/PKG-INFO
+pypatt.egg-info/SOURCES.txt
+pypatt.egg-info/dependency_links.txt
+pypatt.egg-info/top_level.txt

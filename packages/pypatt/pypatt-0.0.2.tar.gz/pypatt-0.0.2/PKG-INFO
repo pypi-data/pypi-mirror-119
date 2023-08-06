@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: pypatt
+Version: 0.0.2
+Summary: The elementary python pattern programs
+Home-page: UNKNOWN
+Author: k__rushi2.x.0 (Rushikesh Kundkar)
+Author-email: <r4002001005025k@gmail.com>
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: python,pattern programming,elementary programs
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
