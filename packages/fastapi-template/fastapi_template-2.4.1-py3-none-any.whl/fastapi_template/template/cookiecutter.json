@@ -1,0 +1,42 @@
+{
+  "project_name": {
+    "type": "string"
+  },
+  "project_description": {
+    "type": "string"
+  },
+  "db_info": {
+    "type": "dict"
+  },
+  "enable_redis": {
+    "type": "bool"
+  },
+  "ci_type": {
+    "type": "string"
+  },
+  "enable_alembic": {
+    "type": "bool"
+  },
+  "enable_kube": {
+    "type": "bool"
+  },
+  "kube_name": {
+    "type": "string"
+  },
+  "enable_routers": {
+    "type": "bool"
+  },
+  "add_dummy": {
+    "type": "bool"
+  },
+  "self_hosted_swagger": {
+    "type": "bool"
+  },
+  "_extensions": [
+    "cookiecutter.extensions.RandomStringExtension"
+  ],
+  "_copy_without_render": [
+    "*.js",
+    "*.css"
+  ]
+}
