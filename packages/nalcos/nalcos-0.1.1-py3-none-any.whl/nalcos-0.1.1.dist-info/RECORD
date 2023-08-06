@@ -1,0 +1,12 @@
+nalcos/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nalcos/_version.py,sha256=5xvN_gb61nKeq5TER5dSfcArTP3DVasZGN_MQq5dNpA,23
+nalcos/get_commits.py,sha256=VB0NiT_EjiBftGxHmcDxXih9kpG3uS7Vv-Nwz8bOEPU,6231
+nalcos/get_similar_commits.py,sha256=BxaZ_78jd82LP2C7xTlwNl5AzRBZu133amBnGxpLiwY,2407
+nalcos/nalcos.py,sha256=3cdaZAp7NM_GfycGB4_EwsYSxarURU4wCJzO2SSjDSw,4136
+nalcos/utils.py,sha256=Pfig0XN7Yi--PF8GVrTAZjH8Lo3HRCzyK0vXV0tEhLw,2741
+nalcos-0.1.1.dist-info/LICENSE,sha256=ISJEySo4Qi42iWUBMm4Cj6Vf7TfptiDiyxaE60Pe4GA,1091
+nalcos-0.1.1.dist-info/METADATA,sha256=ynwaouY1Cawtp1Tijun7eVZtWDZa_k-etKvVHFAHgA0,12206
+nalcos-0.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+nalcos-0.1.1.dist-info/entry_points.txt,sha256=glZvM2r9bG0tch-7pQ6tUJ3X90GUnF7z8Rk-PgGUu8g,47
+nalcos-0.1.1.dist-info/top_level.txt,sha256=VcuWSbQjOJcjm3Utv1qd3o3HYbUyX2M3PazlYcYGARI,7
+nalcos-0.1.1.dist-info/RECORD,,
