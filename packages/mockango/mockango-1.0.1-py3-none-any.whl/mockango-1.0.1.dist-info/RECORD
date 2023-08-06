@@ -1,0 +1,16 @@
+mockango/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mockango/apps.py,sha256=oEkCVU7egfqtaKrsjBpxsxLR9wOPUK4ZPR6nqRxTeuM,148
+mockango/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mockango/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mockango/management/commands/_private.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mockango/management/commands/generatedata.py,sha256=dVpxeaAwLVe9zkFQESgel_spbz3j9QKMz7q10kno-zc,1666
+mockango/tests.py,sha256=mrbGGRNg5jwbTJtWWa7zSKdDyeB4vmgZCRc2nk6VY-g,60
+mockango/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mockango/utils/constants.py,sha256=hC3HbT85COiGmG6fYBRxFILTLvvl0rs5w4AqNqCZIfc,1093
+mockango/utils/fixture.py,sha256=rVAOSzqCSCd3VprVkpfBtf8UCMDvQiMt6DD-DxVIjlM,3182
+mockango/utils/identifiers.py,sha256=cz0nefdWWa8g7fY1bRANRlbr1xn9Ud2ADrBuUXLwnng,7421
+mockango/utils/providers.py,sha256=ZNMJqPNRRJq1Wq99P9ZCtPlKpIGLSmUtAlxGzmsPFkE,1469
+mockango-1.0.1.dist-info/LICENSE,sha256=wsmNOI5QUCwc7M7_mVrm3oUNrbarjTpPjLHOXpH_WnY,1518
+mockango-1.0.1.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+mockango-1.0.1.dist-info/METADATA,sha256=vkHboRCCvMa-lubh3mzfYAGM_SA46J4Bz5mSPGLl1dQ,5514
+mockango-1.0.1.dist-info/RECORD,,
