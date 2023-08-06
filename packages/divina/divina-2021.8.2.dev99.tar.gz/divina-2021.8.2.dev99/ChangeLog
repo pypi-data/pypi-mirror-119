@@ -1,0 +1,169 @@
+CHANGES
+=======
+
+* update prod github action yaml
+* update prod github action yaml
+* update prod github action yaml
+* update prod github action yaml
+* update prod github action yaml
+* update prod github action yaml
+* update prod github action yaml
+* update prod github action yaml
+* update prod github action yaml
+* Build docs
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* add sphinx build github action
+* dataset and vision id's merged with paths, dataset profiles removed, documentation formatting
+* add docs
+* Set theme jekyll-theme-minimal
+* add docs
+* add docs
+* WIP: docker test image
+* WIP: docker test image
+* add pbr
+* WIP: docker test image
+* WIP: docker test image
+* WIP: docker test image
+* WIP: docker test image
+* WIP: point to test docker container
+* add pbr
+* WIP: add repo secrets
+
+2021.8.1
+--------
+
+* WIP: add repo secrets
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+
+0.1
+---
+
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* rebase on main
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: cleanup
+* WIP: add repo secrets
+* WIP: add repo secrets
+* WIP: add repo secrets
+* WIP: cleanup
+* WIP: cleanup
+* move models to seperate repo
+* formatting
+* adjust gha.yaml
+* adjust gha.yaml
+* add CI
+* tests passing and backoff implemented for intermittent access denied s3 errors
+* all initial tests pass
+* all tests pass with exception of dataset build remote
+* WIP: first CLI tests implemented
+* testing e2e docker setup
+* clean up requirements.txt
+* clean up gitignore
+* clean up requirements.txt
+* cleaning up repo
+* cleaning up repo
+* clean up commits
+* WIP
+* add cli
+* WIP
+* wip e2e tests
+* base integration tests implemented
+* more integration tests passing
+* adding everything
+* datasets abstracted to filepaths and profiles added
+* datasets implmemented
+* dask implemented in unit tests
+* WIP:packaging
+* incremental unit testing
+* first moto test passing
+* security group with ssh access enabled on partitioning EC2
+* fix naming with single partition
+* large dataset build works
+* base validation implemented with splits
+* WIP: about to start streaming in partitioning
+* base spark model implemented
+* WIP spark model implementation
+* partitioning implemented
+* WIP files decompressed and parsed
+* WIP encoding files during partitioning
+* s3 source copy implemented
+* modify source bucket policy for copy
+* data partition works on small dataset
+* ec2 cheapest instance WIP. still need to filter dedicated instance types
+* emr loads and saves s3. pip3 and python3 work
+* pyspark context available on EMR
+* emr cluster working
+* abstracted and made iam role creation optional - works
+* clean up data ingestion
+* first commit
+* first commit
