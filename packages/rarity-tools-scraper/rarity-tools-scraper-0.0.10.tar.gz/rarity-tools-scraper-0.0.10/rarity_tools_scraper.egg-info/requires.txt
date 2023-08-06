@@ -1,0 +1,5 @@
+dataclasses-json==0.5.5
+fake-useragent==0.1.11
+marshmallow==3.13.0
+requests==2.26.0
+typing==3.7.4.3
