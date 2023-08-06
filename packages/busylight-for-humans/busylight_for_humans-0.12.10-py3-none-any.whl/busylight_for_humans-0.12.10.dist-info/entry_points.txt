@@ -1,0 +1,3 @@
+[console_scripts]
+busylight=busylight.main:cli
+
