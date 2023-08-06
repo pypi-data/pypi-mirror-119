@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: hltv-data
+Version: 0.0.1
+Summary: HLTV.org data
+Home-page: https://github.com/dchoruzy/hltv-data
+Author: Dariusz Choruzy
+Author-email: dariusz.choruzy@gmail.com
+License: MIT License
+Project-URL: Bug Tracker, https://github.com/dchoruzy/hltv-data/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+UNKNOWN
+
