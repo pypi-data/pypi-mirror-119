@@ -1,0 +1,15 @@
+README.md
+setup.py
+src/__init__.py
+src/cli.py
+src/config.py
+src/console.py
+src/fetch.py
+src/history.py
+status_fetch.egg-info/PKG-INFO
+status_fetch.egg-info/SOURCES.txt
+status_fetch.egg-info/dependency_links.txt
+status_fetch.egg-info/entry_points.txt
+status_fetch.egg-info/not-zip-safe
+status_fetch.egg-info/requires.txt
+status_fetch.egg-info/top_level.txt

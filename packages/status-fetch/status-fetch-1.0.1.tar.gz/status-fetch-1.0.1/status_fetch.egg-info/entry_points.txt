@@ -1,0 +1,3 @@
+[console_scripts]
+status-fetch = src.cli:cli
+
