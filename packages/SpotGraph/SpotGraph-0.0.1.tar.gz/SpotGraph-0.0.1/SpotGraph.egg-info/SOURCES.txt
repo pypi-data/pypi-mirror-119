@@ -1,0 +1,11 @@
+README.md
+setup.py
+SpotGraph/__init__.py
+SpotGraph/formats.py
+SpotGraph/graphs.py
+SpotGraph/simple_metrics.py
+SpotGraph.egg-info/PKG-INFO
+SpotGraph.egg-info/SOURCES.txt
+SpotGraph.egg-info/dependency_links.txt
+SpotGraph.egg-info/requires.txt
+SpotGraph.egg-info/top_level.txt
