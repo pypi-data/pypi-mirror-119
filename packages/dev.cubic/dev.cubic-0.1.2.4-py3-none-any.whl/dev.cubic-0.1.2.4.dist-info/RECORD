@@ -1,0 +1,10 @@
+cubic/__init__.py,sha256=u5pDrqPc_Bqqb3UamRzhmYJvE5aHzTxFC5Q9DK2odk0,2717
+cubic/client/__init__.py,sha256=CXcWTlXFxQ5dnhUjIDgkNTiySD-d0VpMvWv9XyPpcWY,55
+cubic/client/file_client.py,sha256=u1NVMj5vcgzlD-yr_OipbwjezJAfpnO0bvaZ13Kxe2U,1223
+cubic/client/s3_client.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cubic/client/sqream_client.py,sha256=kDDYpur7_c9OmOxNYK40LaVZ2wGI4JZcJNTBBoGau3M,945
+cubic/rest/__init__.py,sha256=_1GkMOzqwNXMQd167nFUjnpG4y4yz-pKYgW2A887kTo,370
+dev.cubic-0.1.2.4.dist-info/METADATA,sha256=-Cslir-woHzDz7Hjy8zv2x5k7-PoYKUsu7ESU-revvM,191
+dev.cubic-0.1.2.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+dev.cubic-0.1.2.4.dist-info/top_level.txt,sha256=Af_hSIF-ufQkKmITnh8OlvF56syj3P6bAuTmuNAvXFU,6
+dev.cubic-0.1.2.4.dist-info/RECORD,,
