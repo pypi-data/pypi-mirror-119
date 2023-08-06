@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+sparselayer_tensorflow/__init__.py
+sparselayer_tensorflow/sparselayer_tensorflow.py
+sparselayer_tensorflow.egg-info/PKG-INFO
+sparselayer_tensorflow.egg-info/SOURCES.txt
+sparselayer_tensorflow.egg-info/dependency_links.txt
+sparselayer_tensorflow.egg-info/requires.txt
+sparselayer_tensorflow.egg-info/top_level.txt
