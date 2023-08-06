@@ -1,0 +1,11 @@
+README.md
+gcs_uploader.py
+license.txt
+setup.py
+PyUpdater_GCS_Plugin.egg-info/PKG-INFO
+PyUpdater_GCS_Plugin.egg-info/SOURCES.txt
+PyUpdater_GCS_Plugin.egg-info/dependency_links.txt
+PyUpdater_GCS_Plugin.egg-info/entry_points.txt
+PyUpdater_GCS_Plugin.egg-info/not-zip-safe
+PyUpdater_GCS_Plugin.egg-info/requires.txt
+PyUpdater_GCS_Plugin.egg-info/top_level.txt

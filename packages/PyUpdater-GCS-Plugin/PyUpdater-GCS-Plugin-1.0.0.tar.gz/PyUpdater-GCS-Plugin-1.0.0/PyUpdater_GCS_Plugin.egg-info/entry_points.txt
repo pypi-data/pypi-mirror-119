@@ -1,0 +1,3 @@
+[pyupdater.plugins.upload]
+gcs = gcs_uploader:GCSUploader
+
