@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mutalyzer-algebra
+Version: 0.1.0
+Summary: A library and CLI for A Boolean Algebra for Genetic Variants.
+Home-page: https://github.com/mutalyzer/algebra
+Author: Mark Santcroos
+Author-email: m.a.santcroos@lumc.nl
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
