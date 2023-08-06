@@ -1,0 +1,10 @@
+README.md
+setup.py
+DBTron/__init__.py
+DBTron/mongoDBOps.py
+DBTron/sqlOps.py
+DBTron.egg-info/PKG-INFO
+DBTron.egg-info/SOURCES.txt
+DBTron.egg-info/dependency_links.txt
+DBTron.egg-info/requires.txt
+DBTron.egg-info/top_level.txt
