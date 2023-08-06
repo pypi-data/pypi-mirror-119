@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/beepmusic/__init__.py
+src/beepmusic/__main__.py
+src/beepmusic/beepmusic.py
+src/beepmusic/musicLaw.py
+src/beepmusic/parser.py
+src/beepmusic.egg-info/PKG-INFO
+src/beepmusic.egg-info/SOURCES.txt
+src/beepmusic.egg-info/dependency_links.txt
+src/beepmusic.egg-info/top_level.txt
