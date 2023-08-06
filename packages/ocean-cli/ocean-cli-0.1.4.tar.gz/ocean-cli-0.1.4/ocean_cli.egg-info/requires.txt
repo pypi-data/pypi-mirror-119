@@ -1,0 +1,5 @@
+click~=8.0.1
+kubernetes~=18.20.0
+requests~=2.26.0
+pyyaml~=5.4.1
+sentry-sdk
