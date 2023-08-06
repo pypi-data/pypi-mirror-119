@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+PyTkAnim.egg-info/PKG-INFO
+PyTkAnim.egg-info/SOURCES.txt
+PyTkAnim.egg-info/dependency_links.txt
+PyTkAnim.egg-info/entry_points.txt
+PyTkAnim.egg-info/top_level.txt
+pytkanim/__init__.py
+pytkanim/normalAnims/NormalAnimX.py
+pytkanim/normalAnims/NormalAnimY.py
+pytkanim/normalAnims/__init__.py
+pytkanim/slowAnims/SlowAnimX.py
+pytkanim/slowAnims/SlowAnimY.py
+pytkanim/slowAnims/__init__.py
