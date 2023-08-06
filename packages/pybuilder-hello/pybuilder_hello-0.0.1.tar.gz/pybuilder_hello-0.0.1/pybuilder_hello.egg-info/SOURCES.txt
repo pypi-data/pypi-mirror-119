@@ -1,0 +1,8 @@
+setup.py
+pybuilder_hello/__init__.py
+pybuilder_hello.egg-info/PKG-INFO
+pybuilder_hello.egg-info/SOURCES.txt
+pybuilder_hello.egg-info/dependency_links.txt
+pybuilder_hello.egg-info/namespace_packages.txt
+pybuilder_hello.egg-info/top_level.txt
+pybuilder_hello.egg-info/zip-safe
