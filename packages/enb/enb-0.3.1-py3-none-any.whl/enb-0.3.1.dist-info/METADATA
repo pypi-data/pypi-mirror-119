@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: enb
+Version: 0.3.1
+Summary: Electronic notebook (enb): efficient and reproducible science
+Home-page: https://github.com/miguelinux314/experiment-notebook
+Author: Miguel Hernandez Cabronero, et al.
+Author-email: miguel.hernandez@uab.cat
+License: MIT License
+Download-URL: https://github.com/miguelinux314/experiment-notebook/archive/v0.3.1.tar.gz
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Natural Language :: English
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.6
+License-File: LICENSE.txt
+Requires-Dist: appdirs
+Requires-Dist: deprecation
+Requires-Dist: jinja2
+Requires-Dist: matplotlib
+Requires-Dist: numpngw
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: imageio
+Requires-Dist: pdf2image
+Requires-Dist: psutil
+Requires-Dist: ray[default]
+Requires-Dist: redis
+Requires-Dist: requests
+Requires-Dist: scipy
+Requires-Dist: sortedcontainers
+Requires-Dist: astropy
+
+Python library to obtain result tables based on a declarative approach
+
