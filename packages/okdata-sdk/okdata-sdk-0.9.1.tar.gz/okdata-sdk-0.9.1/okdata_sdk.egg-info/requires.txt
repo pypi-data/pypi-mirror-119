@@ -1,0 +1,4 @@
+PyJWT>=2.0.0
+jsonschema
+python-keycloak
+requests
