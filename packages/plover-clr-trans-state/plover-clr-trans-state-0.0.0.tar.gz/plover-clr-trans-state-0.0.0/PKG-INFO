@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: plover-clr-trans-state
+Version: 0.0.0
+Summary: Plover plugin that adds a command to clear the translation state
+Home-page: https://github.com/Kenny2github/plover-clr-trans-state
+Author: AbyxDev
+License: MIT
+Description: # plover-clr-trans-state
+        Adds a Plover command that clears the translation state (useful when switching applications).
+        
+        ## Usage
+        Add `{plover:clear_trans_state}` as the translation for a chord (recommendation: `KHR-R`).
+        
+        Chording `KHR-R` will reset the translation state to as if Plover had just started up.
+Keywords: plover plover_plugin
+Platform: UNKNOWN
+Classifier: Environment :: Plugins
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown

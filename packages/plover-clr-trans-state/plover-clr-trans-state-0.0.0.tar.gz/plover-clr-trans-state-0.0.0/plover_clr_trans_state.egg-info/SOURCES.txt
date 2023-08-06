@@ -1,0 +1,10 @@
+LICENSE
+README.md
+plover_clr_trans_state.py
+setup.cfg
+setup.py
+plover_clr_trans_state.egg-info/PKG-INFO
+plover_clr_trans_state.egg-info/SOURCES.txt
+plover_clr_trans_state.egg-info/dependency_links.txt
+plover_clr_trans_state.egg-info/entry_points.txt
+plover_clr_trans_state.egg-info/top_level.txt
