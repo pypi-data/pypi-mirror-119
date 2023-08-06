@@ -1,0 +1,3 @@
+[console_scripts]
+jatq = executors.main:package_cli
+

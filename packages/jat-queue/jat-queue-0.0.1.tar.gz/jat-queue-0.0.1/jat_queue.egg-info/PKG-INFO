@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: jat-queue
+Version: 0.0.1
+Summary: Just another task queue
+Home-page: https://github.com/VinayGb665/jat-queue
+Author: Vinay G B
+Author-email: vinaygb665@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/VinayGb665/jat-queue/issues
+Description: # Just Another Task Queue
+        
+        Bro I'll add something chill OK, just calm your tits down.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
