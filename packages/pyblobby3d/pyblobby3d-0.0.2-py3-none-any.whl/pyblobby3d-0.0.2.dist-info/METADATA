@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pyblobby3d
+Version: 0.0.2
+Summary: Python package for Blobby3D
+Home-page: https://github.com/SpaceOdyssey/Blobby3D
+Author: Mathew Varidel
+Author-email: mathew.varidel@sydney.edu.au
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/SpaceOdyssey/Blobby3D/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: dnest4
+
+UNKNOWN
+
