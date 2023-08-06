@@ -1,0 +1,5 @@
+[console_scripts]
+optimum_export = optimum.onnxruntime.convert:main
+optimum_export_optimize = optimum.onnxruntime.convert_and_optimize:main
+optimum_optimize = optimum.onnxruntime.optimize_model:main
+
