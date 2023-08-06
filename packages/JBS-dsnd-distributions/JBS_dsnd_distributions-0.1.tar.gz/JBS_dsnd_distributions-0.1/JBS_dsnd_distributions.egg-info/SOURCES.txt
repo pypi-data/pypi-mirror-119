@@ -1,0 +1,10 @@
+setup.py
+JBS_dsnd_distributions/Binomialdistribution.py
+JBS_dsnd_distributions/Gaussiandistribution.py
+JBS_dsnd_distributions/Generaldistribution.py
+JBS_dsnd_distributions/__init__.py
+JBS_dsnd_distributions.egg-info/PKG-INFO
+JBS_dsnd_distributions.egg-info/SOURCES.txt
+JBS_dsnd_distributions.egg-info/dependency_links.txt
+JBS_dsnd_distributions.egg-info/not-zip-safe
+JBS_dsnd_distributions.egg-info/top_level.txt
