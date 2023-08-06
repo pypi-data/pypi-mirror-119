@@ -1,0 +1,9 @@
+Flask-SocketIO~=5.0
+Flask>=0.9
+jsonschema~=3.2
+PyYAML~=5.4
+svarog<2.0.0,>=0.1.6
+
+[mock]
+Faker==8.11.0
+hypothesis_jsonschema==0.20.1
