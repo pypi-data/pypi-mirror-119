@@ -1,0 +1,11 @@
+notifications_client/__init__.py,sha256=mdBaxF8n_aifK-JGq6XhosA3OFkPYbAhmAQqNEGk9qU,535
+notifications_client/client.py,sha256=5O89VlDGENYemNfvK3u4-rs8RcAIIRqUXoIidmP0sPU,3442
+notifications_client/notifications.py,sha256=_iqf9fUYHDje7-RybFWACnW-EamOaZAsflRAN57l0L0,1872
+notifications_client/py.typed,sha256=rFKpTCovpEgH9Cv-mamRCd2BJeKym4e7v6_5ED8OnLU,9
+notifications_client/schema.py,sha256=zMfFnGfL7X0N2aSNDG6Ab4Mlzk6TlCPxFqQY4ZBObFI,3941
+notifications_client/version.py,sha256=bQjTWMTEXxSn-ClmteRrLZK5O8clkEm5hWVE-EZU2NA,188
+neuro_notifications_client-21.9.11.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+neuro_notifications_client-21.9.11.dist-info/METADATA,sha256=scgvAvwa3UkP3BG2VPJ-HK7T8kdI6F4DxrxfTpOJ22w,394
+neuro_notifications_client-21.9.11.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+neuro_notifications_client-21.9.11.dist-info/top_level.txt,sha256=C1i0k9cPrelgplFYBvizP8aA_2l2W6yvRJ0S4fNo6Ec,21
+neuro_notifications_client-21.9.11.dist-info/RECORD,,
