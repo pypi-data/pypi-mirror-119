@@ -1,0 +1,8 @@
+README.md
+setup.py
+django_odk/manage.py
+django_odk.egg-info/PKG-INFO
+django_odk.egg-info/SOURCES.txt
+django_odk.egg-info/dependency_links.txt
+django_odk.egg-info/requires.txt
+django_odk.egg-info/top_level.txt
