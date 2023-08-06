@@ -1,0 +1,100 @@
+Metadata-Version: 2.1
+Name: aoba-discord-bot
+Version: 0.1.12
+Summary: Aoba, the cutest Python Discord bot in all of GitHub.
+Home-page: https://github.com/douglascdev/aoba_discord_bot
+Author: Douglas Carvalho
+Author-email: douglasc.dev@gmail.com
+License: MIT license
+Keywords: aoba_discord_bot
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+================
+Aoba Discord Bot
+================
+
+.. image:: https://github.com/douglascdev/aoba_discord_bot/raw/main/aoba.png
+    :align: center
+
+
+.. image:: https://img.shields.io/pypi/v/aoba_discord_bot.svg
+        :target: https://pypi.python.org/pypi/aoba_discord_bot
+
+.. image:: https://img.shields.io/pypi/pyversions/aoba_discord_bot?color=
+        :target: https://pypi.org/project/aoba-discord-bot/
+
+.. image:: https://img.shields.io/travis/douglascdev/aoba_discord_bot.svg
+        :target: https://travis-ci.com/douglascdev/aoba_discord_bot
+
+.. image:: https://readthedocs.org/projects/aoba-discord-bot/badge/?version=latest
+        :target: https://aoba-discord-bot.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+.. image :: https://github.com/douglascdev/aoba_discord_bot/actions/workflows/codeql-analysis.yml/badge.svg?branch=main
+        :target: https://github.com/douglascdev/aoba_discord_bot/actions/workflows/codeql-analysis.yml
+        :alt: CodeQL
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+
+|
+
+
+.. image:: https://github.com/douglascdev/aoba_discord_bot/raw/main/aoba.gif
+    :align: center
+
+
+|
+
+
+Aoba is an open-source Discord bot made with Python, providing admin, osu! and anime functionalities.
+
+Please be aware that until version 1.0.0 is released the bot should not be considered stable.
+It's still very early in development and could have bugs that would cause problems to your server.
+
+* Free software: MIT license
+* Documentation: https://aoba-discord-bot.readthedocs.io.
+
+
+Features
+--------
+
+Aoba has the following modules/commands:
+
+- **Admin**: *ban, unban, custom_cmd, kick, prefix, purge*
+- **BotAdmin**: *announce, servers, shutdown, status*
+- **Osu**: *beatmaps_backup, score_pp*
+- **User**: *escape_markdown, help*
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.12 (2021-08-15)
+-------------------
+
+* Release on PyPI.
+
+
+
