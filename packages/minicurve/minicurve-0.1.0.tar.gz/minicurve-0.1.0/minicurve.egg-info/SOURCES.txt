@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+minicurve/__init__.py
+minicurve/curve.py
+minicurve/helpers.py
+minicurve/modsqrt.py
+minicurve/visualization.py
+minicurve.egg-info/PKG-INFO
+minicurve.egg-info/SOURCES.txt
+minicurve.egg-info/dependency_links.txt
+minicurve.egg-info/requires.txt
+minicurve.egg-info/top_level.txt
