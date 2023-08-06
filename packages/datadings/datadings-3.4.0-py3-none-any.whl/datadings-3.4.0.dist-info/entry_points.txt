@@ -1,0 +1,8 @@
+[console_scripts]
+datadings-bench = datadings.commands.bench:entry
+datadings-catmerge = datadings.commands.catmerge:entry
+datadings-sample = datadings.commands.sample:entry
+datadings-shuffle = datadings.commands.shuffle:entry
+datadings-split = datadings.commands.split:entry
+datadings-write = datadings.commands.write:entry
+
