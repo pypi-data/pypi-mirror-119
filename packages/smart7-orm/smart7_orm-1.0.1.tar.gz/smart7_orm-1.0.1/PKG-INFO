@@ -1,0 +1,141 @@
+Metadata-Version: 2.1
+Name: smart7_orm
+Version: 1.0.1
+Summary: tortoise-orm Tools.
+Home-page: https://gitee.com/hubertshelley/smart7-orm
+Author: Hubert Shelley
+Author-email: hubertshelley@163.com
+License: Apache Software License
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# Smart7_ORM
+
+![avatar](https://cdn.smart7.tech/static/img/Perfect7.png)
+
+## 项目依赖
+
+|  包名   | 版本  |
+|  ----  | ----  |
+| [tortoise-orm] |  ≥ 0.17.7 |
+| [aerich] | ≥ 0.5.8 |
+
+## 配置数据库
+
+### 0x01 项目根目录配置settings.py
+
+```python
+# mysql setting
+database = {
+    "db": 'MySQL',
+    "host": "localhost",
+    "username": "hubert",
+    "password": "hubert",
+    "db_name": "test_table",
+}
+```
+
+```python
+# PostgreSQL setting
+database = {
+    "db": 'PostgreSQL',
+    "host": "localhost",
+    "username": "hubert",
+    "password": "hubert",
+    "db_name": "test_table",
+}
+```
+
+```python
+# sqlite setting
+database = {
+    "db": 'SQLite',
+    "db_name": "test_table.db",
+}
+```
+
+### 0x02 自动获取模型所在包
+
+```python
+from smart7_orm.utils import discover_models
+
+model_list = discover_models()
+```
+
+### 0x03 数据库设置
+
+```python
+from smart7_orm.core import make_sql
+from smart7_orm.utils import discover_models
+
+TORTOISE_ORM = {
+    "connections": {"default": make_sql().get_url()},
+    "apps": {
+        "models": {
+            "models": ["aerich.models", *discover_models()],
+            "default_connection": "default",
+        },
+    },
+}
+```
+
+## 迁移数据库
+
+### 0x01 初始化迁移配置
+
+```shell
+aerich init
+```
+
+### 0x02 初始化数据库
+
+```shell
+aerich init-db
+```
+
+### 0x03 更新模型并进行迁移
+
+```shell
+aerich migrate
+```
+
+### 0x04 升级到最新版本
+
+```shell
+aerich upgrade
+```
+
+### 0x05 降级到指定版本
+
+```shell
+aerich downgrade
+```
+
+### 0x06 显示历史
+
+```shell
+aerich history
+```
+
+### 0x06 显示要迁移的头
+
+```shell
+aerich heads
+```
+
+更多请查看 [aerich] github
+
+[aerich]: https://github.com/tortoise/aerich
+
+[tortoise-orm]: https://tortoise-orm.readthedocs.io/en/latest
+
+
