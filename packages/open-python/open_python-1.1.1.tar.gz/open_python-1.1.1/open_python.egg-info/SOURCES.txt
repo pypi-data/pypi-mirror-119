@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+open_python/__init__.py
+open_python/__main__.py
+open_python.egg-info/PKG-INFO
+open_python.egg-info/SOURCES.txt
+open_python.egg-info/dependency_links.txt
+open_python.egg-info/requires.txt
+open_python.egg-info/top_level.txt
