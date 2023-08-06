@@ -1,0 +1,14 @@
+LICENCE
+README.rst
+pyproject.toml
+setup.py
+src/django_advance_dumpdata/__init__.py
+src/django_advance_dumpdata.egg-info/PKG-INFO
+src/django_advance_dumpdata.egg-info/SOURCES.txt
+src/django_advance_dumpdata.egg-info/dependency_links.txt
+src/django_advance_dumpdata.egg-info/not-zip-safe
+src/django_advance_dumpdata.egg-info/requires.txt
+src/django_advance_dumpdata.egg-info/top_level.txt
+src/django_advance_dumpdata/management/__init__.py
+src/django_advance_dumpdata/management/commands/__init__.py
+src/django_advance_dumpdata/management/commands/dumpdata_advance.py
