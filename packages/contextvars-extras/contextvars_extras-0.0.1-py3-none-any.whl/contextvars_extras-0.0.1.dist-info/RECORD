@@ -1,0 +1,15 @@
+contextvars_extras/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+contextvars_extras/args.py,sha256=PxQIORY3jnfx3xsXtPnNsgWC7PQeaFK21RVNsjldRV0,23853
+contextvars_extras/context.py,sha256=b1dZDCa2C2rJ7w4H7JfjTnuuQuVrSMGV1tOkEpo7QuA,10029
+contextvars_extras/context_async.py,sha256=QaW1rFrWUWrFR-PpUBdbXMA3RFauDe2hGOb-LpakIbU,2375
+contextvars_extras/descriptor.py,sha256=i9g60QkW3eV8A0sO5v91CelDngm6LaDguXfSWfkhuc0,26842
+contextvars_extras/integrations/__init__.py,sha256=rjOOAKL_ulc_XWdnWEiyKb_LyjefyP6kaRhxK52cVZ8,43
+contextvars_extras/integrations/flask.py,sha256=yJ-3q8IRnVYsFqWVNMVYa7xuKJI_U6Lk5ylEFBlVO5g,1938
+contextvars_extras/integrations/wsgi.py,sha256=gxnR1pvWTRXtF8Sx4z8eagQHvToikdLhuooVuH8PGVE,2367
+contextvars_extras/registry.py,sha256=xOnTaF74928vkpNm3laYA_o3nMaGvYBXjmCcuKJcv4c,21683
+contextvars_extras/registry_restore.py,sha256=g-ouUMf8FkgjOLFipUs4-4nqH534vc30EXbIcyBJ-Bk,3603
+contextvars_extras/util.py,sha256=_ZQSF4ww1GdWGR4pLfc-Ifq8mdKm2g7FoDGaG4zJbC0,5927
+contextvars_extras-0.0.1.dist-info/LICENSE,sha256=bOYogQIEfrOwxbnWcC1oYOvrQmorO0Lly8I4G46MM1w,1081
+contextvars_extras-0.0.1.dist-info/WHEEL,sha256=VN2eEg4PHbTOniXb-cCYQPc6zUTS4dAcATjlgU3q-Lo,83
+contextvars_extras-0.0.1.dist-info/METADATA,sha256=xAcYPNi4YopQY0guY2UPPvam4imIvPeJMYBW2egEDG4,384
+contextvars_extras-0.0.1.dist-info/RECORD,,
