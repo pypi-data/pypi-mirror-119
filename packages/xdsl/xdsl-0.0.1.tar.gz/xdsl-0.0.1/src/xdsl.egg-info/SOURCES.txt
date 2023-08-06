@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/xdsl/__init__.py
+src/xdsl/main.py
+src/xdsl.egg-info/PKG-INFO
+src/xdsl.egg-info/SOURCES.txt
+src/xdsl.egg-info/dependency_links.txt
+src/xdsl.egg-info/top_level.txt
