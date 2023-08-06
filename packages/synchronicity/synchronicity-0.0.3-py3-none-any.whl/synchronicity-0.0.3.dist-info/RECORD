@@ -1,0 +1,9 @@
+synchronicity/__init__.py,sha256=9iYiwQr5lo6Ovzbk-O32QazHRZ2cV1UGDNQcD8c9k7A,39
+synchronicity/synchronizer.py,sha256=o5O-oDeGX0gs379Thr0OfAHnvhyZTUV52Aoeez0Wi1E,5493
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/test_pickle.py,sha256=ewRDvPTF-ft82L-aiWOmlNAiKy65zfncqfC9izGZifk,366
+test/test_synchronicity.py,sha256=hYIuuUYlElEsf8Ub1_MeqwhVWfYmQaJdqcNHP4GdOXs,9127
+synchronicity-0.0.3.dist-info/METADATA,sha256=9P9W4o1lOc-YlqmCgjROF1JrLz5RxtKd0GiJPt6-qaQ,177
+synchronicity-0.0.3.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+synchronicity-0.0.3.dist-info/top_level.txt,sha256=9c4f3KZLwwFSC1glUBu1hEytmNWIlekVDzcPdxz5J3g,19
+synchronicity-0.0.3.dist-info/RECORD,,
