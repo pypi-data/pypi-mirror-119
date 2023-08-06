@@ -1,0 +1,15 @@
+bayscrape/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bayscrape/__main__.py,sha256=JXuJpD8VxT0u7XfqtRYGcaPFUHeofY65rY0BwGlXxfg,1120
+bayscrape/bsutils.py,sha256=ovOK73QVwqZbgWrPQigVwtyrkeqq4H23h_VNAK1Lqe4,748
+bayscrape/color.py,sha256=OZepy6isvjyXF8nFdSB9ASwu8xTk_SBqZ2EBzO3lGkQ,915
+bayscrape/comment.py,sha256=wMSt1utb2rzQD6S7FKfeMp7qf2_cYBGOjugGEKF_mp0,451
+bayscrape/details.py,sha256=Mjk_KAB-sbIs9QBsRESziMASSzQ5h2pUPM6vQx3TQhk,4558
+bayscrape/proxies.py,sha256=xkUG7p06LNf4E66Eez2FvYoOcOWRdL9nq6gjITOGEEA,932
+bayscrape/results.py,sha256=NlwvZ3-OP7S7Awq3knGl260jy6FkVexE7oovIchof6Y,5695
+bayscrape/soup.py,sha256=IvMSTUZCR67e5LxTHUmSeIUwwYzFgOt6WWlATgns2xg,6043
+bayscrape-1.1.3.dist-info/LICENSE,sha256=gcuuhKKc5-dwvyvHsXjlC9oM6N5gZ6umYbC8ewW1Yvg,35821
+bayscrape-1.1.3.dist-info/METADATA,sha256=zOGnrb96KTsNWPgAET28I28LQEd4LTtX-9dBmEvwDPQ,1900
+bayscrape-1.1.3.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+bayscrape-1.1.3.dist-info/entry_points.txt,sha256=C0C0RHIlH59jEt4sUZYmoEHvG_Jdc90tEvc5MjKRlo4,55
+bayscrape-1.1.3.dist-info/top_level.txt,sha256=VF7lciNqiB1gY95qE4ZOTQtCtvumNXxMekMVLvfEtBM,10
+bayscrape-1.1.3.dist-info/RECORD,,
