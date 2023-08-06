@@ -1,0 +1,13 @@
+Please select the severity of the above changes.
+The severity may be:
+    * patch
+    * minor
+    * major
+
+If you remove a line no release note will be generated for it.
+
+You may provide an indented message below each severity.
+If you do not provide a message your editor will be reopened
+to get the message.
+
+Lines starting with % are comments and will be ignored.

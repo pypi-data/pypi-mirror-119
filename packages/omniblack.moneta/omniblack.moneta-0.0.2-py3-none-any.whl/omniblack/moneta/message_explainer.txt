@@ -1,0 +1,4 @@
+Please enter the change message for ${package}.
+Lines starting with `%` will be ignored.
+
+On branch ${branch}
