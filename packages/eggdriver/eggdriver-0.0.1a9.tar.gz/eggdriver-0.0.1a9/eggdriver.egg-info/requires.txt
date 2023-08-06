@@ -1,0 +1,10 @@
+numpy
+tensorflow
+keras
+Colr
+
+[bs4]
+bs4
+
+[qiskit]
+qiskit
