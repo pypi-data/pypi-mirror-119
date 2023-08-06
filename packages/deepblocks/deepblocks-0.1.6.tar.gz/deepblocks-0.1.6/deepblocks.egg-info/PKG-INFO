@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: deepblocks
+Version: 0.1.6
+Summary: Useful PyTorch Layers
+Home-page: https://github.com/blurry-mood/Deep-Learning-Blocks
+Author: Ayoub Assis
+Author-email: assis.ayoub@gmail.com
+License: LICENSE
+Keywords: pytorch cnn layers
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Deep-Learning-Blocks
+A library with customized PyTorch layers and model components.
+
+## What's available for use:
+### **Layers**:
+* [Funnel ReLU](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/layers.md#funnel-relu-frelu)
+* [Flip-Invariant Conv2d](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/layers.md#flip-invariant-conv2d-layer)
+* [Squeeze-Excitation Block](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/layers.md#squeeze-excitation-block)
+* Custom Multi-Head Self-Attention
+
+### **Loss Functions**:
+* [Focal Loss](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/losses.md#focal-loss)
+* AUC Loss
+* KL divergence Loss
+  
+### **Regularizer**:
+* [Anti Correlation](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/regularizer.md#anti-correlation)
+
+### **Self-supervised Learning**:
+* [Barlow Twin](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/ssl.md#barlow-twin)
+* [DINO](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/ssl.md#dino)
+
+## **Optimizers**:
+* [SAN](https://github.com/blurry-mood/Deep-Learning-Blocks/blob/main/docs/optimizers.md##sharpness-aware-minimization-sam)
+
