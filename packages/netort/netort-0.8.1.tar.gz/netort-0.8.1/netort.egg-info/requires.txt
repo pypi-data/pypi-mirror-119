@@ -1,0 +1,9 @@
+cerberus
+numpy
+pandas<=1.2.5
+pathlib
+pyserial
+requests
+retrying
+six>=1.12.0
+typing
