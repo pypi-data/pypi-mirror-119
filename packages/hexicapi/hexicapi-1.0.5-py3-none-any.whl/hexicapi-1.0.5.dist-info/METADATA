@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: hexicapi
+Version: 1.0.5
+Summary: Tool for making servers.
+Home-page: UNKNOWN
+Author: Red
+Author-email: redtonehair@gmail.com
+License: UNKNOWN
+Keywords: python
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: pgerom
+Requires-Dist: pygame
+Requires-Dist: bottle
+
+API for making servers and clients to connect to those servers.
+
