@@ -1,0 +1,14 @@
+huffpress/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+huffpress/compress.py,sha256=rC6oel0DMydJemS4-0izVFwHjpZxoDxCjMFU7m6C9sI,9014
+huffpress/decompress.py,sha256=GRkaCtqO5IvwJp_7YfGlfg4heG5ub4eJQuTAzwRgYwE,6172
+huffpress/decorators.py,sha256=N_InCOBPyc3EAfgaRxzhFjooy9v7XXl6-OBsqvozCgs,2276
+huffpress/generic.py,sha256=Hz9l8Fs_rj10FDOp2hO7AU8pdcR0QAwUYyD-D6FaH44,1178
+huffpress/huffman/HuffNode.py,sha256=k2qvohX-Rk5825fux64hFzcX0lBcQbgz25aedBWFQa8,1695
+huffpress/huffman/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+huffpress/huffman/hfunctions.py,sha256=2LJPQaKmjTnmJMnOSyw9aDf2ITowpI5dYfc5AEKXGYo,11400
+huffpress/huffman/htypes.py,sha256=Bm2fTTWcxj_NJVLWo91hOrRUF0R9CRH-f79ApXIeLqo,2283
+huffpress-0.2.8.dist-info/LICENSE,sha256=Kgqb0h8SCHfqO5dbSia2fGXPNKzxIyQj2Mp2K2qU2ME,1072
+huffpress-0.2.8.dist-info/METADATA,sha256=v8ol_hVrrFYxHF8nQF8unHGe5ICgKIxdNOTkvfYO7tM,24264
+huffpress-0.2.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+huffpress-0.2.8.dist-info/top_level.txt,sha256=ZGnN96kjOEcf6EMD9vwJFORJ5juFGpYlVFkJBm9OSao,10
+huffpress-0.2.8.dist-info/RECORD,,
