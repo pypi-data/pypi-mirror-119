@@ -1,0 +1,3 @@
+[console_scripts]
+md-url-check=md_url_check.__main__:cli
+
