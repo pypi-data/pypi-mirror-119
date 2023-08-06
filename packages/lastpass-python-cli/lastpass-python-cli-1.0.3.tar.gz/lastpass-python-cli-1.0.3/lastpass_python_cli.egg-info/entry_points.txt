@@ -1,0 +1,3 @@
+[console_scripts]
+lpass = lastpass_python_cli:main
+
