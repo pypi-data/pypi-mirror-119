@@ -1,0 +1,14 @@
+python_phoenix_miner/__init__.py,sha256=ufYvy3j8aC6sAFpgqgycyKGr_yg3zal1ac0Cm7ftQP0,43
+python_phoenix_miner/base_client.py,sha256=MtLprsf5tj0zHEH6dBnkFnfHdZNN3XXNQRrhYP3u8Ek,1921
+python_phoenix_miner/phoenix_client.py,sha256=UD6bTPLOEjVC7jEbvxTTToTeViKUQMYuXp06d_XZl1A,961
+python_phoenix_miner/controllers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+python_phoenix_miner/controllers/miner.py,sha256=egZRIYS7ufHn-dO-zG9-jsSQWw5KkNINa9Apim3tx04,1395
+python_phoenix_miner/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+python_phoenix_miner/models/miner/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+python_phoenix_miner/models/miner/extended_stats.py,sha256=G_-hcE_xfG5Gy7CRKHRw8lukenZeFXh0hu9G10kWFg0,17844
+python_phoenix_miner/models/miner/stats.py,sha256=4NIh4fWb8RGik3vts7iC9ds_lS7XYQ7Xq2Hj3yJIZL0,9362
+python_phoenix_miner-0.0.2.dist-info/LICENSE,sha256=sECOJ__RTDNMHgcll5oDsIAyDJ-PI7LaSrdQ2jcmQaU,1076
+python_phoenix_miner-0.0.2.dist-info/METADATA,sha256=yes_W3IRiQnlUxdrbwa0UbcODquOBZZn8AZNTz4pJJo,1710
+python_phoenix_miner-0.0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+python_phoenix_miner-0.0.2.dist-info/top_level.txt,sha256=E5V7bDKEIoxGCZjXrW4W6FOsBSbVlDopwfuX_weGad8,21
+python_phoenix_miner-0.0.2.dist-info/RECORD,,
