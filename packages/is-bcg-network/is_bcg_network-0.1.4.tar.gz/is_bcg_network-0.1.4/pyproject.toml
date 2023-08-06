@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "is_bcg_network"
+version = "0.1.4"
+description = "one line import to know if you are running inside the BCG network"
+authors = ["Niels Freier <freier.niels@bcg.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+is_bcg_network = 'main:main'
