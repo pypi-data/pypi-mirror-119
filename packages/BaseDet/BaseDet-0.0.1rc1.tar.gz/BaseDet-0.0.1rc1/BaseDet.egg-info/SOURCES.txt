@@ -1,0 +1,7 @@
+README.md
+setup.py
+BaseDet/__init__.py
+BaseDet.egg-info/PKG-INFO
+BaseDet.egg-info/SOURCES.txt
+BaseDet.egg-info/dependency_links.txt
+BaseDet.egg-info/top_level.txt
