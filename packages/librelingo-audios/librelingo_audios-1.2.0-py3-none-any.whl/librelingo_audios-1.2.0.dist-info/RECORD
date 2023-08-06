@@ -1,0 +1,7 @@
+librelingo_audios/__init__.py,sha256=KfUAujmJ7FYpAmZVF94HszgV_pxnEBRawR9bMrMYOzY,84
+librelingo_audios/cli.py,sha256=6nr6B9jwgKa49SacNBiBEPzik7HeoE5I-Oet08IjkkQ,1374
+librelingo_audios/functions.py,sha256=Dnncwp-U2hvvNE8scrR46zDW3eazcJvNFqEHNQawMZ8,379
+librelingo_audios/update_audios.py,sha256=CC_2r2hisdo6rcrLpGRkH5am2zZHYIY7ZfYpJt775uE,5755
+librelingo_audios-1.2.0.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+librelingo_audios-1.2.0.dist-info/METADATA,sha256=ALhsXrw64rw0Eaw6uT3Pgu_zOLEfexHR-v78KloHzWc,526
+librelingo_audios-1.2.0.dist-info/RECORD,,
