@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+blec/__init__.py
+blec/__main__.py
+blec/__version__.py
+blec/_main.py
+blec.egg-info/PKG-INFO
+blec.egg-info/SOURCES.txt
+blec.egg-info/dependency_links.txt
+blec.egg-info/entry_points.txt
+blec.egg-info/requires.txt
+blec.egg-info/top_level.txt
+blec/tests/__init__.py
+blec/tests/test_blec.py
