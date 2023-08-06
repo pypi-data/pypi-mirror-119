@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h1 class="text-center">Registration Page!</h1>
+        <div class="container-fluid">
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+
+                {% if form.errors %}
+                    <p>There are errors in the form!</p>
+                {% endif %}
+
+                {{ form }}
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+{% endblock %}
