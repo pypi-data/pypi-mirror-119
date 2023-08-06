@@ -1,0 +1,10 @@
+PyYAML
+ansible<2.10,>=2.9
+confluent_kafka
+jinja2
+pygelf
+pyjwt
+requests
+six
+urllib3
+wheel
