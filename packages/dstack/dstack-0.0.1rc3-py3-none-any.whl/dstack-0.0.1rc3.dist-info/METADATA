@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: dstack
+Version: 0.0.1rc3
+Summary: A Command Line Interface for training models with https://dstack.ai
+Home-page: https://dstack.ai
+Author: peterschmidt85
+Author-email: team@dstack.ai
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: gitpython
+Requires-Dist: tabulate
+Requires-Dist: boto3
+Requires-Dist: colorama
+Requires-Dist: tqdm
+
+# dstack
+
+A Command Line Interface for training models with https://dstack.ai
+
