@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+piptest_patzold.egg-info/PKG-INFO
+piptest_patzold.egg-info/SOURCES.txt
+piptest_patzold.egg-info/dependency_links.txt
+piptest_patzold.egg-info/top_level.txt
