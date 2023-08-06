@@ -1,0 +1,10 @@
+faceted/__init__.py,sha256=7f0IyBKsQUtWXbPrz-t4spIDbcxGnqaofdTKs_TVG08,148
+faceted/_version.py,sha256=_SIV-Qv7Ia9vSStT7_RNzmBF234WsuqywWYxbfcEOOA,498
+faceted/faceted.py,sha256=L6vF-9zFQ6TrZ2T7JLe0saUcnEy0uU0BQTNyfCB3oEk,22555
+faceted/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+faceted/tests/test_faceted.py,sha256=sdhMjhhJC8atJr_mQ66dMzXx5LqSYz4HlZ3gKMppM88,25905
+faceted-0.2.1.dist-info/LICENSE,sha256=0H9Co_XgGqwcXC7FBqF8G_0k3QuP2VR8VQiSHeb5SDQ,1070
+faceted-0.2.1.dist-info/METADATA,sha256=JS3pS8F0zfC15_IDkhaFeX9pC_gpEjIOPZ9s4fs8O1o,2475
+faceted-0.2.1.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+faceted-0.2.1.dist-info/top_level.txt,sha256=tp1-GTSdS2kj4z7-5TffshU3rgM_ZVmXRaRTw4AfzeI,8
+faceted-0.2.1.dist-info/RECORD,,
