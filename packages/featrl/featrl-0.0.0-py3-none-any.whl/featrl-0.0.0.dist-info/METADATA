@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: featrl
+Version: 0.0.0
+Summary: featrl
+Home-page: https://github.com/BruceYanghy/FeatRL
+Author: Hongyang Yang
+Author-email: hy2500@columbia.edu
+License: MIT
+Keywords: Reinforcment Learning
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: setuptools (>=41.4.0)
+Requires-Dist: wheel (>=0.33.6)
+
+featrl
+
+
