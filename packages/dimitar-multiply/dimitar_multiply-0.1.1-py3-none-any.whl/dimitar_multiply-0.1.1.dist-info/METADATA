@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: dimitar-multiply
+Version: 0.1.1
+Summary: Demo library
+Home-page: https://dimitar-multiply.readthedocs.io/
+Author: Dimitar Stefanov
+Author-email: example@email.com
+License: MIT
+Requires-Dist: numpy
+
+This is Dimitar library.
+
+
