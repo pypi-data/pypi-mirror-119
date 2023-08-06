@@ -1,0 +1,8 @@
+README.md
+setup.py
+colorconsole99/colorconsole99.py
+colorconsole99.egg-info/PKG-INFO
+colorconsole99.egg-info/SOURCES.txt
+colorconsole99.egg-info/dependency_links.txt
+colorconsole99.egg-info/requires.txt
+colorconsole99.egg-info/top_level.txt
