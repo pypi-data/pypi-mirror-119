@@ -1,0 +1,3 @@
+glob
+img2pdf
+beautifulsoup4
