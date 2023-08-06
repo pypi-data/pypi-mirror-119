@@ -1,0 +1,19 @@
+Metadata-Version: 1.2
+Name: ApTester
+Version: 0.1.1
+Summary: Auto Tester for Competitive programming
+Home-page: https://github.com/HEKUCHAN/Auto-Python-Tester
+Author: Heitor Hirose
+Author-email: Heitorhirose@gmail.com
+License: MIT License
+Description: UNKNOWN
+Keywords: Image Registration
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Japanese
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.4
