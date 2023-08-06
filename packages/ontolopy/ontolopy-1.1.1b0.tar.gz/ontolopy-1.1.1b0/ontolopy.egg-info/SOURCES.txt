@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+setup.py
+ontolopy/__init__.py
+ontolopy/obo.py
+ontolopy/relations.py
+ontolopy/uberon.py
+ontolopy/version.py
+ontolopy.egg-info/PKG-INFO
+ontolopy.egg-info/SOURCES.txt
+ontolopy.egg-info/dependency_links.txt
+ontolopy.egg-info/requires.txt
+ontolopy.egg-info/top_level.txt
