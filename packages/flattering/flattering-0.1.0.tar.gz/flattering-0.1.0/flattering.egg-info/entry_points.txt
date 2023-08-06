@@ -1,0 +1,3 @@
+[console_scripts]
+flattering = flattering.cli:main
+

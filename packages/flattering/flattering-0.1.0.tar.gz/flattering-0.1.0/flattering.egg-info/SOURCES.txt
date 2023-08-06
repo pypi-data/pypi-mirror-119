@@ -1,0 +1,16 @@
+AUTHORS
+LICENSE
+README.md
+setup.cfg
+setup.py
+flattering/__init__.py
+flattering/__version__.py
+flattering/cli.py
+flattering.egg-info/PKG-INFO
+flattering.egg-info/SOURCES.txt
+flattering.egg-info/dependency_links.txt
+flattering.egg-info/entry_points.txt
+flattering.egg-info/requires.txt
+flattering.egg-info/top_level.txt
+tests/__init__.py
+tests/test_csv.py
