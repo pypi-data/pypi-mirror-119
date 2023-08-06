@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/ozekilibsrest/__init__.py
+src/ozekilibsrest.egg-info/PKG-INFO
+src/ozekilibsrest.egg-info/SOURCES.txt
+src/ozekilibsrest.egg-info/dependency_links.txt
+src/ozekilibsrest.egg-info/requires.txt
+src/ozekilibsrest.egg-info/top_level.txt
