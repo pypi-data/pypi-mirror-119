@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+thisisforyou.egg-info/PKG-INFO
+thisisforyou.egg-info/SOURCES.txt
+thisisforyou.egg-info/dependency_links.txt
+thisisforyou.egg-info/requires.txt
+thisisforyou.egg-info/top_level.txt
