@@ -1,0 +1,27 @@
+#map {
+    height: 500px;
+  }
+  
+  .leaflet-popup-content {
+    margin: 3px;
+  }
+  
+  .leaflet-popup-content p {
+    margin: 5px;
+  }
+  
+  .leaflet-tooltip {
+    padding: 3px;
+    max-width: 300px;
+    max-height: 50px;
+  }
+  
+  .leaflet-tooltip p {
+    margin: 0px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+  }
+  
+  .leaflet-container.crosshair-cursor-enabled {
+    cursor: crosshair;
+  }
