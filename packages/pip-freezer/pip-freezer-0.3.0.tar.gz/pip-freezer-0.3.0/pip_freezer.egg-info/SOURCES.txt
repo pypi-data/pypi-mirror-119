@@ -1,0 +1,16 @@
+AUTHORS.md
+HISTORY.md
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+pip_freezer.egg-info/PKG-INFO
+pip_freezer.egg-info/SOURCES.txt
+pip_freezer.egg-info/dependency_links.txt
+pip_freezer.egg-info/entry_points.txt
+pip_freezer.egg-info/not-zip-safe
+pip_freezer.egg-info/requires.txt
+pip_freezer.egg-info/top_level.txt
+pipfreezer/__init__.py
+pipfreezer/pipfreezer.py
