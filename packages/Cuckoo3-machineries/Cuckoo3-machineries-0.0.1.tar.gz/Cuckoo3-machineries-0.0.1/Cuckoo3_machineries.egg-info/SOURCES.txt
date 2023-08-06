@@ -1,0 +1,7 @@
+setup.py
+Cuckoo3_machineries.egg-info/PKG-INFO
+Cuckoo3_machineries.egg-info/SOURCES.txt
+Cuckoo3_machineries.egg-info/dependency_links.txt
+Cuckoo3_machineries.egg-info/not-zip-safe
+Cuckoo3_machineries.egg-info/requires.txt
+Cuckoo3_machineries.egg-info/top_level.txt
