@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+/Users/zoltan/Dropbox/Channels/meanderpy/meanderpy/meanderpy.py
+meanderpy/__init__.py
+meanderpy/code_for_getting_cutoff_dists_in_meanedrpy_3d_models.py
+meanderpy/meanderpy.py
+meanderpy.egg-info/PKG-INFO
+meanderpy.egg-info/SOURCES.txt
+meanderpy.egg-info/dependency_links.txt
+meanderpy.egg-info/requires.txt
+meanderpy.egg-info/top_level.txt
