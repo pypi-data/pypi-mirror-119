@@ -1,0 +1,8 @@
+README.md
+setup.py
+actual_module/__init__.py
+actual_module/hello_world.py
+actual_module.egg-info/PKG-INFO
+actual_module.egg-info/SOURCES.txt
+actual_module.egg-info/dependency_links.txt
+actual_module.egg-info/top_level.txt
