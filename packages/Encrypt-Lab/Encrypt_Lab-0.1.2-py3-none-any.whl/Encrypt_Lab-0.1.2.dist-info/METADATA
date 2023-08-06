@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: Encrypt-Lab
+Version: 0.1.2
+Summary: Encrypt
+Home-page: UNKNOWN
+Author: Aviv Gili
+Author-email: aviv.orly@netvision.net.il
+License: UNKNOWN
+Keywords: python
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: PyQt5
+
+Quatno,m Encrypt
+
