@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+black = "==20.8b1"
+grpcio = "*"
+isort = "*"
+mypy = "*"
+pandas = "*"
+protobuf = "*"
+pycodestyle = "*"
+pylint = "*"
+requests = "*"
+setuptools = "*"
+twine = "*"
+types-protobuf = "*"
+types-python-dateutil = "*"
+types-requests = "*"
+wheel = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
