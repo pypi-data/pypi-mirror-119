@@ -1,0 +1,8 @@
+include AUTHORS.md
+include HISTORY.md
+include LICENSE
+include README.md
+
+recursive-include docs *.md mkdocs.yml
+
+# recursive-include pipfreezer/data/*
