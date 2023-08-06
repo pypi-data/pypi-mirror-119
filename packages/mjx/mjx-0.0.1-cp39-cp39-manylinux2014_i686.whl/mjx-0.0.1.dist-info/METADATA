@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: mjx
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Mjx Project Team
+Author-email: koyamada-s@sys.i.kyoto-u.ac.jp
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: click
+Requires-Dist: google
+Requires-Dist: protobuf
+Requires-Dist: grpcio
+Requires-Dist: grpcio-tools
+Requires-Dist: tenhou-wall-reproducer
+Requires-Dist: rich
+Requires-Dist: gym
+Requires-Dist: pillow
+Requires-Dist: pettingzoo
+Requires-Dist: svgwrite
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
+UNKNOWN
+
