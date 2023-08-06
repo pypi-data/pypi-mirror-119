@@ -1,0 +1,3 @@
+[console_scripts]
+magic-identify = magicidentify.tools.magicidentifycli:main
+
