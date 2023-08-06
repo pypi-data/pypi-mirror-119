@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: insight-engine-schema-python
+Version: 0.1.17
+Summary: Rialtic insight engine schema in Python
+Home-page: https://rialtic.io
+License: Apache-2.0
+Keywords: rialtic,insight,engines,schema
+Author: Rialtic
+Author-email: engines.data@rialtic.io
+Requires-Python: >=3.7,<4.0
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: fhir.resources (>=6.0.0,<7.0.0)
+Project-URL: Repository, https://github.com/rialtic-community/insight-engine-schema-python
+Description-Content-Type: text/markdown
+
+# Rialtic insight engine schema in Python
+
+This repo contains translation of InsightEngine Request/Response schema to Python.
+It uses `fhir.resources` internally (see https://pypi.org/project/fhir.resources/).
+
+install with `pip install insight-engine-schema`
+
+
