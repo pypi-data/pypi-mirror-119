@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: overleaf-backup
+Version: 1.0.0
+Summary: Overleaf projects backup tool
+Home-page: https://github.com/BausPhi/overleaf-backup
+Author: Philipp Baus
+Author-email: kontakt@philippbaus.de
+License: UNKNOWN
+Keywords: Overleaf,Latex
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: requests
+
+
+    Backup your self-hosted Overleaf projects
+    
+
