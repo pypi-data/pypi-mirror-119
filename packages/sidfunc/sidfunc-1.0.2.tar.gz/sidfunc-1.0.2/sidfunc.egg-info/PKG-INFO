@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: sidfunc
+Version: 1.0.2
+Summary: siddharth functions
+Home-page: UNKNOWN
+Author: Siddharth Singh
+Author-email: siddharthsingh5010@gmail.com
+License: MIT
+Description: basic functions for pandas,numpy,visualizations
+        
+        Version 0.0.3
+        
+        Added descriptions in functions
+Keywords: basicfunctions
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3

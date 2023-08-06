@@ -1,0 +1,9 @@
+CHANGELOG.txt
+MANIFEST.in
+README.txt
+setup.py
+sidfunc/__init__.py
+sidfunc.egg-info/PKG-INFO
+sidfunc.egg-info/SOURCES.txt
+sidfunc.egg-info/dependency_links.txt
+sidfunc.egg-info/top_level.txt
