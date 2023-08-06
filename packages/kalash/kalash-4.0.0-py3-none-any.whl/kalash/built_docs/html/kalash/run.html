@@ -1,0 +1,3182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>kalash.run API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>kalash.run</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import unittest
+import argparse
+import xmlrunner
+import os.path
+import platform
+import inspect
+import webbrowser
+
+from unittest import TextTestRunner, TestLoader
+from unittest import TestResult
+from unittest.result import failfast
+from unittest.main import TestProgram
+
+from types import ModuleType
+from parameterized import parameterized
+from typing import Callable, Dict, Iterator, Optional, Tuple
+
+from .utils import get_ts
+from .filter import apply_filters
+from .smuggle import smuggle
+from .config import (Collector, CollectorArtifact, Config,
+                     PathOrIdForWhatIf, CliConfig, Trigger)
+from .test_case import TestCase
+from .log import close_all
+from .collectors import (_collect_test_case_v1_x, _collect_test_case_v2_0,
+                         _collect_test_case_from_module)
+
+kalash = ModuleType(&#39;kalash&#39;)
+
+
+__all__ = (
+    &#39;unittest&#39;, &#39;TextTestRunner&#39;, &#39;TestResult&#39;,
+    &#39;TestProgram&#39;, &#39;failfast&#39;, &#39;MetaLoader&#39;, &#39;main&#39;, &#39;TestCase&#39;,
+    &#39;get_ts&#39;, &#39;parameterized&#39;
+)
+
+# ====================
+# Public Utilities
+# ====================
+
+
+def find_my_yaml(filevar: str, path: str) -&gt; str:
+    &#34;&#34;&#34;
+    Figures out the path to the YAML file relative to a given
+    test script, should be used like:
+
+    ```python
+    YAML = find_my_yaml(__file__, &#34;../yamls/yaml.yaml&#34;)
+    ```
+
+    Args:
+        filevar (str): should always be set to `__file__`
+        path (str): relative path component that points to the YAML
+
+    Returns:
+        Normalized absolute path to the correct YAML file
+    &#34;&#34;&#34;
+    return os.path.normpath(
+        os.path.abspath(
+            os.path.join(os.path.dirname(filevar), path)
+        )
+    )
+
+
+# =============================================================================
+# ====================
+# COLLECTOR LOOKUP
+# ====================
+# all 1.x versions will map to v1_x function
+COLLECTOR_FUNC_LOOKUP: Dict[str, Collector] = \
+    {f&#39;1.{k}&#39;: _collect_test_case_v1_x for k in range(0, 10)}
+# all further declarations will be mapped manually
+COLLECTOR_FUNC_LOOKUP[&#39;2.0&#39;] = _collect_test_case_v2_0
+
+# =============================================================================
+
+
+def prepare_suite(
+    kalash_trigger: Trigger
+) -&gt; Iterator[CollectorArtifact]:
+    &#34;&#34;&#34;
+    Higher-order suite definition function.
+    As opposed to `Collector`, this function iterates over the
+    YAML config and calls `Collector` on a per-test basis.
+
+    This function calls `apply_filters`. If no filters are
+    provided the `kalash_test_loader` will be called directly,
+    otherwise the collected tests will be skimmed to match the
+    provided filters.
+
+    Args:
+        kalash_trigger (Trigger): `Trigger` object collecting
+            all configuration elements.
+
+    Yields:
+        One or more `CollectArtifact` elements.
+    &#34;&#34;&#34;
+
+    for test_idx, test_conf in enumerate(kalash_trigger.tests):
+
+        # set up path (if exists) and non-filter keys
+        path = test_conf.path
+
+        if not path:
+            path = &#39;.&#39;  # default to CWD
+
+        # recursive directory search can be set in a config or as a global flag when calling
+        no_recurse_from_file: Optional[bool] = test_conf.no_recurse
+        cli_config = kalash_trigger.cli_config
+        if no_recurse_from_file is not None:
+            cli_config.no_recurse = cli_config.no_recurse or no_recurse_from_file
+
+        yield apply_filters(
+            test_conf,
+            path,
+            COLLECTOR_FUNC_LOOKUP,
+            kalash_trigger
+        )
+
+
+class MetaLoader(TestLoader):
+
+    def __init__(
+        self,
+        yaml_path: str = None,
+        trigger: Optional[Trigger] = None,
+        local=True
+    ):
+        &#34;&#34;&#34;
+        Custom `TestLoader` for Kalash. This provides consistency
+        between running local and remote tests.
+
+        Args:
+            yaml_path (str): for backwards compatibility with Kalash YAML files,
+                set instantly to the `config_file_path` value
+            trigger (Optional[Trigger]): `Trigger` instance providing the
+                entire configuration model or `None` if the test is run
+                in a local context
+            local (bool): if True, run only this test even when `Trigger`
+                or `yaml_path` is provided when in local context
+        &#34;&#34;&#34;
+        if yaml_path and not trigger:
+            self._kalash_trigger = Trigger()
+            self._kalash_trigger.cli_config.file = yaml_path
+        elif yaml_path and trigger:
+            self._kalash_trigger.cli_config.file = yaml_path
+        elif not yaml_path and trigger:
+            self._kalash_trigger = trigger
+        else:
+            self._kalash_trigger = Trigger()
+        self._local = local
+        self.suite = unittest.TestSuite()
+
+    @property
+    def trigger(self) -&gt; Trigger:
+        &#34;&#34;&#34;Typesafe handler of `KalashYamlObj`.
+        Throws an Exception if the YAML object
+        hasn&#39;t been parsed correctly.
+        &#34;&#34;&#34;
+        if not self._kalash_trigger:
+            raise Exception(
+                &#34;No `Trigger` on this `MetaLoader` instance&#34;
+            )
+        else:
+            return self._kalash_trigger
+
+    def loadTestsFromKalashYaml(self) -&gt; CollectorArtifact:
+        &#34;&#34;&#34;Loads tests from associated YAML or `Trigger`&#34;&#34;&#34;
+        whatif_names: PathOrIdForWhatIf = []
+        for a in prepare_suite(
+            self.trigger
+        ):
+            one_suite, one_whatif_names = a
+            self.suite.addTests(one_suite)
+            whatif_names.extend(one_whatif_names)
+        return self.suite, list(set(whatif_names))
+
+    def loadTestsFromModule(self, module, *args, pattern=None, **kws):
+
+        def tests_generator(suite: unittest.TestSuite):
+            &#34;&#34;&#34;
+            Recursive test generator for unittest.TestSuite
+            (because a suite can contain other suites recursively).
+
+            Args:
+                suite (unittest.TestSuite): tests suite to pull tests from
+
+            Yields:
+                unittest test functions
+            &#34;&#34;&#34;
+            for test in suite:
+                if not type(test) is unittest.TestSuite:
+                    yield test
+                else:
+                    for t in tests_generator(test):
+                        yield t
+
+        if self.trigger.cli_config.file:
+            # parse YAML if provided
+            self._kalash_trigger = Trigger.infer_trigger(
+                self.trigger.cli_config
+            )
+
+        if self._local and self.trigger.cli_config.file:
+            # if YAML exists and isolated mode is on, make sure values from YAML can be injected
+            for test_idx, test_conf in enumerate(self.trigger.tests):
+                # find whether any block declares path that pertains to this module config
+                # or if the module is placed in any directory that should inherit config
+                from pathlib import Path
+                if test_conf.path:
+                    if type(test_conf.path) is str:
+                        path = Path(test_conf.path)
+                    elif type(test_conf.path) is list:
+                        path = Path(test_conf.path[0])
+                    else:
+                        path = Path(str(test_conf.path))
+                else:
+                    path = Path(&#39;.&#39;)
+                files = [os.path.abspath(str(f)) for f in path.glob(&#34;**/*&#34;)]
+                for file in files:
+                    if os.path.normcase(os.path.abspath(module.__file__)) == os.path.normcase(file):
+                        self.suite.addTests([
+                            suite for suite, _ in prepare_suite(
+                                self.trigger
+                            )
+                        ])
+        elif self.trigger.cli_config.file and not self._local:
+            # if not running in isolated mode and the YAML is provided, run all tests
+            # that are declared in the YAML
+            self.loadTestsFromKalashYaml()
+        else:
+            tests, _ = _collect_test_case_from_module(module, None)
+            # if no YAML provided just add tests from the current module to the suite
+            for test in tests_generator(tests):
+                # suite is defined globally
+                self.suite.addTest(test)
+        return self.suite
+
+    def _smuggle_fixture_module(self, is_setup: bool):
+        cfg_section: Config = self.trigger.config
+        if cfg_section:
+            relpath_to_script = cfg_section.setup if is_setup else cfg_section.teardown
+            if relpath_to_script:
+                p = os.path.abspath(relpath_to_script)
+                smuggle(p)
+
+    def one_time_setup(self):
+        &#34;&#34;&#34;Runs One-time-setup script&#34;&#34;&#34;
+        self._smuggle_fixture_module(True)
+
+    def one_time_teardown(self):
+        &#34;&#34;&#34;Runs One-time-teardown script&#34;&#34;&#34;
+        self._smuggle_fixture_module(False)
+
+
+# -----------------------------------------------------------------
+
+main = TestProgram
+
+# Exporting `unittest` components required in tests from `kalash`
+# results in testers not needing to touch unittest itself.
+# -----------------------------------------------------------------
+
+
+def run_test_suite(
+    loader: MetaLoader,
+    kalash_trigger: Trigger,
+    whatif_callback: Callable[[str], None] = print
+) -&gt; Tuple[Optional[xmlrunner.runner._XMLTestResult], int]:
+    &#34;&#34;&#34;Accepts a loader and a `Trigger` object
+    and triggers the test run.
+
+    Args:
+        loader (MetaLoader): `MetaLoader` instance extending
+            `unittest.TestLoader` with extra goodies
+        kalash_trigger (Trigger): `Trigger` instance which
+            directly translates to a YAML configuration file
+            or an equivalent Python file
+        whatif_callback (Callable[[str], None]): the function
+            to call when running in a what-if mode
+
+    Returns:
+        A tuple of (unittest Result object, return code) or
+            a tuple of (`None`, return code) when running
+            in the what-if mode
+    &#34;&#34;&#34;
+    suite, whatif_names = loader.loadTestsFromKalashYaml()
+
+    return_code = 0
+
+    if not kalash_trigger.cli_config.what_if:
+        loader.one_time_setup()
+        report = &#34;.&#34;
+        if kalash_trigger.config:
+            report = kalash_trigger.config.report
+        result: xmlrunner.runner._XMLTestResult = xmlrunner.XMLTestRunner(
+            output=report,
+            failfast=kalash_trigger.cli_config.fail_fast
+        ).run(suite)
+        loader.one_time_teardown()
+
+        # PRODTEST-4708 -&gt; Jenkins needs a non-zero return code
+        #                  on test failure
+        # return a valid return code depending on the result:
+        if len(result.failures) &gt; 0:
+            return_code = 1
+        elif len(result.errors) &gt; 0:
+            return_code = 2
+
+        return result, return_code
+
+    else:
+        for n in whatif_names:
+            whatif_callback(n)
+        return None, return_code
+
+
+def run(
+    kalash_trigger: Trigger,
+    whatif_callback: Callable[[str], None] = print
+) -&gt; int:
+    &#34;&#34;&#34;User-friendly alias of the `run_test_suite` command
+    for importable use in Python-based files.
+
+    Args:
+        kalash_trigger (Trigger): `Trigger` instance which
+            directly translates to a YAML configuration file
+            or an equivalent Python file
+        whatif_callback (Callable[[str], None]): the function
+            to call when running in a what-if mode
+
+    Returns:
+        Return code, 0 if all collected tests are passing.
+            A non-zero return code indicates failure.
+    &#34;&#34;&#34;
+    frame = inspect.stack()[1]
+    module = inspect.getmodule(frame[0])
+    module_path = module.__file__ if module else None
+    loader = MetaLoader(
+        module_path,
+        local=False,
+        trigger=kalash_trigger
+    )
+
+    _, return_code = run_test_suite(loader, kalash_trigger, whatif_callback)
+
+    close_all()
+
+    return return_code
+
+
+def make_loader_and_trigger_object(
+    config: CliConfig
+) -&gt; Tuple[MetaLoader, Trigger]:
+    &#34;&#34;&#34;Prepares a ``MetaLoader`` based
+    on the YAML file parameters.
+
+    Args:
+        cli_config (CliConfig): a `CliConfig` object representing
+            command-line parameters used to trigger the test run
+            modifying behavior of certain aspects of the application
+            like logging or triggering speculative runs instead of
+            real runs
+
+    Returns:
+        A tuple of (`MetaLoader` instance, `Trigger` instance)
+    &#34;&#34;&#34;
+    kalash_trigger = Trigger.infer_trigger(config)
+
+    loader = MetaLoader(
+        local=False,
+        trigger=kalash_trigger
+    )
+
+    return loader, kalash_trigger
+
+
+def docs():
+    &#34;&#34;&#34;Open bundled documentation in the web browser.&#34;&#34;&#34;
+    base_dir = os.path.dirname(__file__)
+    rel_docpath = [&#39;built_docs&#39;, &#39;html&#39;, &#39;kalash&#39;, &#39;index.html&#39;]
+    docpath = os.path.join(base_dir, *rel_docpath)
+    _platform = platform.system()
+    if _platform == &#34;Darwin&#34; or &#34;Linux&#34;:
+        url = f&#34;file://{os.path.join(docpath)}&#34;
+    elif _platform == &#34;Windows&#34;:
+        url = f&#34;file:\\\\\\{os.path.join(docpath)}&#34;
+    else:
+        raise SystemError(&#34;Web browser handler for this platform is not supported&#34;)
+    webbrowser.open(url, new=2)
+
+
+def main_cli():
+    &#34;&#34;&#34;
+    Main function. Expected to be run from CLI and used
+    only in automated context.
+    &#34;&#34;&#34;
+    config = CliConfig()
+
+    parser = argparse.ArgumentParser(description=&#39;Test automation runner&#39;)
+    subparsers = parser.add_subparsers()
+
+    parser.add_argument(
+        &#39;-sc&#39;, &#39;--spec-config&#39;,
+        type=str, help=&#39;Path to YAML specification YAML, default is `spec.yaml` &#39;
+                       &#39;from the package directory.&#39;
+    )
+    parser.add_argument(
+        &#39;-dd&#39;, &#39;--docs&#39;,
+        action=&#39;store_true&#39;, help=&#39;Display bundled documentation&#39;
+    )
+
+    # `run` subcommand:
+    parser_run = subparsers.add_parser(&#39;run&#39;, help=&#39;run an analysis&#39;)
+    parser_run.add_argument(
+        &#39;-f&#39;, &#39;--file&#39;,
+        type=str, help=&#39;Path to .kalash.yaml&#39;)
+    parser_run.add_argument(
+        &#39;-n&#39;, &#39;--no-recurse&#39;,
+        action=&#39;store_true&#39;, help=&#39;Do not walk directories&#39;)
+    parser_run.add_argument(
+        &#39;-d&#39;, &#39;--debug&#39;,
+        action=&#39;store_true&#39;, help=&#39;Run in debug mode&#39;)
+    parser_run.add_argument(
+        &#39;-ff&#39;, &#39;--fail-fast&#39;,
+        action=&#39;store_true&#39;, help=&#39;Fail suite if at least one test fails&#39;)
+    parser_run.add_argument(
+        &#39;-nl&#39;, &#39;--no-log&#39;,
+        action=&#39;store_true&#39;, help=&#39;Disable logging&#39;)
+    parser_run.add_argument(
+        &#39;-ne&#39;, &#39;--no-log-echo&#39;,
+        action=&#39;store_true&#39;, help=&#39;If set, log calls will not be echoed to STDOUT&#39;)
+    parser_run.add_argument(
+        &#39;-ld&#39;, &#39;--log-dir&#39;,
+        type=str, help=&#39;Log base directory&#39;)
+    parser_run.add_argument(
+        &#39;-ll&#39;, &#39;--log-level&#39;,
+        type=int, help=&#39;Python `logging` log level (&#39;
+                       &#39;CRITICAL = 50, &#39;
+                       &#39;ERROR = 40, &#39;
+                       &#39;WARNING = 30, &#39;
+                       &#39;INFO = 20, &#39;
+                       &#39;DEBUG = 10, &#39;
+                       &#39;NOTSET = 0, default level is INFO)&#39;)
+    parser_run.add_argument(
+        &#39;-lf&#39;, &#39;--log-format&#39;,
+        type=str, help=f&#39;Log format string, default is %{config.spec.cli_config.log_formatter}&#39;)
+    parser_run.add_argument(
+        &#39;-g&#39;, &#39;--group-by&#39;,
+        type=str, help=&#39;Log directories grouping: &#39;
+                       f&#39;&lt;{config.spec.cli_config.group_device}|&#39;
+                       f&#39;{config.spec.cli_config.group_group}&gt;&#39;)
+    parser_run.add_argument(
+        &#39;-wi&#39;, &#39;--what-if&#39;,
+        type=str, help=&#39;Collects the tests but does not run them &#39;
+                       &#39;and produces a list of paths or IDs that have been &#39;
+                       &#39;collected for the run. Use &#39;
+                       f&#39;&lt;{config.spec.cli_config.whatif_paths}|&#39;
+                       f&#39;{config.spec.cli_config.whatif_ids}&gt; &#39;
+                       &#39;to modify the output behavior of the what-if flag.&#39;
+    )
+
+    args = parser.parse_args()
+
+    if args.docs:
+        docs()
+        return 0
+
+    if args.file:
+        config.file = args.file
+
+    if args.spec_config:
+        config.spec_path = args.spec_config
+    config.__post_init__()
+
+    if args.log_dir:
+        config.log_dir = args.log_dir
+    if args.group_by:
+        config.group_by = args.group_by
+    if args.log_level:
+        config.log_level = args.log_level
+    if args.log_format:
+        config.log_format = args.log_format
+    if args.what_if:
+        config.what_if = args.what_if
+
+    loader, kalash_trigger = make_loader_and_trigger_object(
+        config
+    )
+
+    _, return_code = run_test_suite(loader, kalash_trigger)
+
+    close_all()
+
+    return return_code</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="kalash.run.failfast"><code class="name flex">
+<span>def <span class="ident">failfast</span></span>(<span>method)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def failfast(method):
+    @wraps(method)
+    def inner(self, *args, **kw):
+        if getattr(self, &#39;failfast&#39;, False):
+            self.stop()
+        return method(self, *args, **kw)
+    return inner</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.get_ts"><code class="name flex">
+<span>def <span class="ident">get_ts</span></span>(<span>name='', format='%Y%m%d%H%M%S', sep='-')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Attaches a formatted timestamp to a name passed
+as the first argument. Utility function used in test
+templates.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>name to add <code>"-timestamp"</code> to</dd>
+<dt><strong><code>format</code></strong> :&ensp;<code>str</code></dt>
+<dd><code>strftime</code> format string</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>When called with e.g. <code>"Something"</code> at
+9 AM 2020.02.14, it will return a string like
+<code>"Something-20200214090000"</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_ts(name=&#39;&#39;, format=&#34;%Y%m%d%H%M%S&#34;, sep=&#39;-&#39;):
+    &#34;&#34;&#34;
+    Attaches a formatted timestamp to a name passed
+    as the first argument. Utility function used in test
+    templates.
+
+    Args:
+        name (str): name to add `&#34;-timestamp&#34;` to
+        format (str): `strftime` format string
+
+    Returns:
+        When called with e.g. `&#34;Something&#34;` at
+        9 AM 2020.02.14, it will return a string like
+        `&#34;Something-20200214090000&#34;`
+    &#34;&#34;&#34;
+    return name + sep + datetime.datetime.now().strftime(format)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="kalash.run.MetaLoader"><code class="flex name class">
+<span>class <span class="ident">MetaLoader</span></span>
+<span>(</span><span>yaml_path: str = None, trigger: Optional[<a title="kalash.config.Trigger" href="config.html#kalash.config.Trigger">Trigger</a>] = None, local=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This class is responsible for loading tests according to various criteria
+and returning them wrapped in a TestSuite</p>
+<p>Custom <code>TestLoader</code> for Kalash. This provides consistency
+between running local and remote tests.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>yaml_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>for backwards compatibility with Kalash YAML files,
+set instantly to the <code>config_file_path</code> value</dd>
+<dt><strong><code>trigger</code></strong> :&ensp;<code>Optional[Trigger]</code></dt>
+<dd><code>Trigger</code> instance providing the
+entire configuration model or <code>None</code> if the test is run
+in a local context</dd>
+<dt><strong><code>local</code></strong> :&ensp;<code>bool</code></dt>
+<dd>if True, run only this test even when <code>Trigger</code>
+or <code>yaml_path</code> is provided when in local context</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MetaLoader(TestLoader):
+
+    def __init__(
+        self,
+        yaml_path: str = None,
+        trigger: Optional[Trigger] = None,
+        local=True
+    ):
+        &#34;&#34;&#34;
+        Custom `TestLoader` for Kalash. This provides consistency
+        between running local and remote tests.
+
+        Args:
+            yaml_path (str): for backwards compatibility with Kalash YAML files,
+                set instantly to the `config_file_path` value
+            trigger (Optional[Trigger]): `Trigger` instance providing the
+                entire configuration model or `None` if the test is run
+                in a local context
+            local (bool): if True, run only this test even when `Trigger`
+                or `yaml_path` is provided when in local context
+        &#34;&#34;&#34;
+        if yaml_path and not trigger:
+            self._kalash_trigger = Trigger()
+            self._kalash_trigger.cli_config.file = yaml_path
+        elif yaml_path and trigger:
+            self._kalash_trigger.cli_config.file = yaml_path
+        elif not yaml_path and trigger:
+            self._kalash_trigger = trigger
+        else:
+            self._kalash_trigger = Trigger()
+        self._local = local
+        self.suite = unittest.TestSuite()
+
+    @property
+    def trigger(self) -&gt; Trigger:
+        &#34;&#34;&#34;Typesafe handler of `KalashYamlObj`.
+        Throws an Exception if the YAML object
+        hasn&#39;t been parsed correctly.
+        &#34;&#34;&#34;
+        if not self._kalash_trigger:
+            raise Exception(
+                &#34;No `Trigger` on this `MetaLoader` instance&#34;
+            )
+        else:
+            return self._kalash_trigger
+
+    def loadTestsFromKalashYaml(self) -&gt; CollectorArtifact:
+        &#34;&#34;&#34;Loads tests from associated YAML or `Trigger`&#34;&#34;&#34;
+        whatif_names: PathOrIdForWhatIf = []
+        for a in prepare_suite(
+            self.trigger
+        ):
+            one_suite, one_whatif_names = a
+            self.suite.addTests(one_suite)
+            whatif_names.extend(one_whatif_names)
+        return self.suite, list(set(whatif_names))
+
+    def loadTestsFromModule(self, module, *args, pattern=None, **kws):
+
+        def tests_generator(suite: unittest.TestSuite):
+            &#34;&#34;&#34;
+            Recursive test generator for unittest.TestSuite
+            (because a suite can contain other suites recursively).
+
+            Args:
+                suite (unittest.TestSuite): tests suite to pull tests from
+
+            Yields:
+                unittest test functions
+            &#34;&#34;&#34;
+            for test in suite:
+                if not type(test) is unittest.TestSuite:
+                    yield test
+                else:
+                    for t in tests_generator(test):
+                        yield t
+
+        if self.trigger.cli_config.file:
+            # parse YAML if provided
+            self._kalash_trigger = Trigger.infer_trigger(
+                self.trigger.cli_config
+            )
+
+        if self._local and self.trigger.cli_config.file:
+            # if YAML exists and isolated mode is on, make sure values from YAML can be injected
+            for test_idx, test_conf in enumerate(self.trigger.tests):
+                # find whether any block declares path that pertains to this module config
+                # or if the module is placed in any directory that should inherit config
+                from pathlib import Path
+                if test_conf.path:
+                    if type(test_conf.path) is str:
+                        path = Path(test_conf.path)
+                    elif type(test_conf.path) is list:
+                        path = Path(test_conf.path[0])
+                    else:
+                        path = Path(str(test_conf.path))
+                else:
+                    path = Path(&#39;.&#39;)
+                files = [os.path.abspath(str(f)) for f in path.glob(&#34;**/*&#34;)]
+                for file in files:
+                    if os.path.normcase(os.path.abspath(module.__file__)) == os.path.normcase(file):
+                        self.suite.addTests([
+                            suite for suite, _ in prepare_suite(
+                                self.trigger
+                            )
+                        ])
+        elif self.trigger.cli_config.file and not self._local:
+            # if not running in isolated mode and the YAML is provided, run all tests
+            # that are declared in the YAML
+            self.loadTestsFromKalashYaml()
+        else:
+            tests, _ = _collect_test_case_from_module(module, None)
+            # if no YAML provided just add tests from the current module to the suite
+            for test in tests_generator(tests):
+                # suite is defined globally
+                self.suite.addTest(test)
+        return self.suite
+
+    def _smuggle_fixture_module(self, is_setup: bool):
+        cfg_section: Config = self.trigger.config
+        if cfg_section:
+            relpath_to_script = cfg_section.setup if is_setup else cfg_section.teardown
+            if relpath_to_script:
+                p = os.path.abspath(relpath_to_script)
+                smuggle(p)
+
+    def one_time_setup(self):
+        &#34;&#34;&#34;Runs One-time-setup script&#34;&#34;&#34;
+        self._smuggle_fixture_module(True)
+
+    def one_time_teardown(self):
+        &#34;&#34;&#34;Runs One-time-teardown script&#34;&#34;&#34;
+        self._smuggle_fixture_module(False)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>unittest.loader.TestLoader</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="kalash.run.MetaLoader.trigger"><code class="name">var <span class="ident">trigger</span> : <a title="kalash.config.Trigger" href="config.html#kalash.config.Trigger">Trigger</a></code></dt>
+<dd>
+<div class="desc"><p>Typesafe handler of <code>KalashYamlObj</code>.
+Throws an Exception if the YAML object
+hasn't been parsed correctly.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def trigger(self) -&gt; Trigger:
+    &#34;&#34;&#34;Typesafe handler of `KalashYamlObj`.
+    Throws an Exception if the YAML object
+    hasn&#39;t been parsed correctly.
+    &#34;&#34;&#34;
+    if not self._kalash_trigger:
+        raise Exception(
+            &#34;No `Trigger` on this `MetaLoader` instance&#34;
+        )
+    else:
+        return self._kalash_trigger</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.run.MetaLoader.loadTestsFromKalashYaml"><code class="name flex">
+<span>def <span class="ident">loadTestsFromKalashYaml</span></span>(<span>self) ‑> Tuple[unittest.suite.TestSuite, List[str]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads tests from associated YAML or <code>Trigger</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def loadTestsFromKalashYaml(self) -&gt; CollectorArtifact:
+    &#34;&#34;&#34;Loads tests from associated YAML or `Trigger`&#34;&#34;&#34;
+    whatif_names: PathOrIdForWhatIf = []
+    for a in prepare_suite(
+        self.trigger
+    ):
+        one_suite, one_whatif_names = a
+        self.suite.addTests(one_suite)
+        whatif_names.extend(one_whatif_names)
+    return self.suite, list(set(whatif_names))</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.MetaLoader.loadTestsFromModule"><code class="name flex">
+<span>def <span class="ident">loadTestsFromModule</span></span>(<span>self, module, *args, pattern=None, **kws)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a suite of all test cases contained in the given module</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def loadTestsFromModule(self, module, *args, pattern=None, **kws):
+
+    def tests_generator(suite: unittest.TestSuite):
+        &#34;&#34;&#34;
+        Recursive test generator for unittest.TestSuite
+        (because a suite can contain other suites recursively).
+
+        Args:
+            suite (unittest.TestSuite): tests suite to pull tests from
+
+        Yields:
+            unittest test functions
+        &#34;&#34;&#34;
+        for test in suite:
+            if not type(test) is unittest.TestSuite:
+                yield test
+            else:
+                for t in tests_generator(test):
+                    yield t
+
+    if self.trigger.cli_config.file:
+        # parse YAML if provided
+        self._kalash_trigger = Trigger.infer_trigger(
+            self.trigger.cli_config
+        )
+
+    if self._local and self.trigger.cli_config.file:
+        # if YAML exists and isolated mode is on, make sure values from YAML can be injected
+        for test_idx, test_conf in enumerate(self.trigger.tests):
+            # find whether any block declares path that pertains to this module config
+            # or if the module is placed in any directory that should inherit config
+            from pathlib import Path
+            if test_conf.path:
+                if type(test_conf.path) is str:
+                    path = Path(test_conf.path)
+                elif type(test_conf.path) is list:
+                    path = Path(test_conf.path[0])
+                else:
+                    path = Path(str(test_conf.path))
+            else:
+                path = Path(&#39;.&#39;)
+            files = [os.path.abspath(str(f)) for f in path.glob(&#34;**/*&#34;)]
+            for file in files:
+                if os.path.normcase(os.path.abspath(module.__file__)) == os.path.normcase(file):
+                    self.suite.addTests([
+                        suite for suite, _ in prepare_suite(
+                            self.trigger
+                        )
+                    ])
+    elif self.trigger.cli_config.file and not self._local:
+        # if not running in isolated mode and the YAML is provided, run all tests
+        # that are declared in the YAML
+        self.loadTestsFromKalashYaml()
+    else:
+        tests, _ = _collect_test_case_from_module(module, None)
+        # if no YAML provided just add tests from the current module to the suite
+        for test in tests_generator(tests):
+            # suite is defined globally
+            self.suite.addTest(test)
+    return self.suite</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.MetaLoader.one_time_setup"><code class="name flex">
+<span>def <span class="ident">one_time_setup</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Runs One-time-setup script</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def one_time_setup(self):
+    &#34;&#34;&#34;Runs One-time-setup script&#34;&#34;&#34;
+    self._smuggle_fixture_module(True)</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.MetaLoader.one_time_teardown"><code class="name flex">
+<span>def <span class="ident">one_time_teardown</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Runs One-time-teardown script</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def one_time_teardown(self):
+    &#34;&#34;&#34;Runs One-time-teardown script&#34;&#34;&#34;
+    self._smuggle_fixture_module(False)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.run.TestCase"><code class="flex name class">
+<span>class <span class="ident">TestCase</span></span>
+<span>(</span><span>methodName: str, id: str, meta: <a title="kalash.config.Meta" href="config.html#kalash.config.Meta">Meta</a>, trigger: Optional[<a title="kalash.config.Trigger" href="config.html#kalash.config.Trigger">Trigger</a>])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lightweight <code>unittest.TestCase</code> wrapper.</p>
+<p>When declaring your own tests you're supposed to
+inherit from this class and treat it pretty much
+the same as a good old-fashioned <code>unittest.TestCase</code>.</p>
+<p>For example:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+META_START
+id: test_something_12345
+META_END
+&quot;&quot;&quot;
+
+from kalash.run import main, TestCase, MetaLoader
+
+
+class TestSomething(TestCase):
+    test_something(self):
+        self.assertTrue(True)
+
+
+if __name__ == '__main__'
+    main(testLoader=MetaLoader())
+</code></pre>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>methodName</code></strong> :&ensp;<code>str</code></dt>
+<dd>test method</dd>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>test ID from the metadata tag</dd>
+<dt><strong><code>trigger</code></strong> :&ensp;<code>Trigger</code></dt>
+<dd><code>Trigger</code> instance</dd>
+</dl>
+<p>Create an instance of the class that will use the named test
+method when executed. Raises a ValueError if the instance does
+not have a method with the specified name.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TestCase(unittest.TestCase):
+    &#34;&#34;&#34;
+    Lightweight `unittest.TestCase` wrapper.
+
+    When declaring your own tests you&#39;re supposed to
+    inherit from this class and treat it pretty much
+    the same as a good old-fashioned `unittest.TestCase`.
+
+    For example:
+
+    ```python
+    \&#34;\&#34;\&#34;
+    META_START
+    id: test_something_12345
+    META_END
+    \&#34;\&#34;\&#34;
+
+    from kalash.run import main, TestCase, MetaLoader
+
+
+    class TestSomething(TestCase):
+        test_something(self):
+            self.assertTrue(True)
+
+
+    if __name__ == &#39;__main__&#39;
+        main(testLoader=MetaLoader())
+    ```
+
+    Args:
+        methodName (str): test method
+        id (str): test ID from the metadata tag
+        trigger (Trigger): `Trigger` instance
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        methodName: str,
+        id: str,
+        meta: Meta,
+        trigger: Optional[Trigger]
+    ) -&gt; None:
+        super().__init__(methodName=methodName)
+        cli_config = trigger.cli_config if trigger else CliConfig()
+        self._id = id
+        self.log_base_path = cli_config.log_dir if cli_config else None
+        self.groupby = cli_config.group_by if cli_config else None
+        self.no_log_echo = cli_config.no_log_echo if cli_config else None
+        self.meta = meta
+        self.trigger = trigger
+
+        # inject logger:
+        if cli_config:
+            if not cli_config.no_log:
+                self.logger = get(
+                    id,
+                    self.__class__.__name__,
+                    self.meta,
+                    cli_config
+                )
+            else:
+                # create dummy non-functional logger on the spot when
+                # running with `log=False`
+                self.logger = logging.getLogger(self.__class__.__name__)
+                # close and clear all handlers that sb could have opened
+                # by accident
+                for h in self.logger.handlers:
+                    h.close()
+                self.logger.handlers = []
+
+    def allow_when(self, allowed_parameters_config_property: str, parameter_on_test_case: str):
+        &#34;&#34;&#34;When running with a custom configuration class, you can use this
+        method to tell your test case to not be skipped on some runtime filter.
+        This is useful mostly when using Kalash with `parameterized`.
+
+        Consider the following example:
+        ```python
+        class TestAdvancedFiltering1(TestCase):
+            @parameterized.expand([&#39;lincombo&#39;, &#39;cancombo&#39;])
+            def test_1(self, name):
+                self.allow_when(&#39;run_only_with&#39;, name)
+                print(f&#34;Running for {name}&#34;)
+        ```
+
+        If at runtime the config object contains a `run_only_with=[&#39;cancombo&#39;]`
+        value, the test will only be triggered for `cancombo`.
+
+        Args:
+            allowed_parameters_config_property (str): property name on the
+                `config` section of the `Trigger` instance containing the
+                skip/allow (must be a `List`).
+            parameter_on_test_case (str): parameter value to find in the
+                allowed list, coming from the test case
+        &#34;&#34;&#34;
+        if self.trigger:
+            run_with: Optional[List[str]] = self.trigger.config.get(
+                allowed_parameters_config_property)
+            if run_with:
+                if parameter_on_test_case in run_with:
+                    return
+                else:
+                    import inspect
+                    caller = inspect.stack()[1].function
+                    self.skipTest(f&#34;{parameter_on_test_case} made test function {caller} skip&#34;)
+
+    def __del__(self):
+        if hasattr(self, &#39;logger&#39;):
+            close(self.logger)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>unittest.case.TestCase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.run.TestCase.allow_when"><code class="name flex">
+<span>def <span class="ident">allow_when</span></span>(<span>self, allowed_parameters_config_property: str, parameter_on_test_case: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>When running with a custom configuration class, you can use this
+method to tell your test case to not be skipped on some runtime filter.
+This is useful mostly when using Kalash with <code><a title="kalash.run.parameterized" href="#kalash.run.parameterized">parameterized</a></code>.</p>
+<p>Consider the following example:</p>
+<pre><code class="language-python">class TestAdvancedFiltering1(TestCase):
+    @parameterized.expand(['lincombo', 'cancombo'])
+    def test_1(self, name):
+        self.allow_when('run_only_with', name)
+        print(f&quot;Running for {name}&quot;)
+</code></pre>
+<p>If at runtime the config object contains a <code>run_only_with=['cancombo']</code>
+value, the test will only be triggered for <code>cancombo</code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>allowed_parameters_config_property</code></strong> :&ensp;<code>str</code></dt>
+<dd>property name on the
+<code>config</code> section of the <code>Trigger</code> instance containing the
+skip/allow (must be a <code>List</code>).</dd>
+<dt><strong><code>parameter_on_test_case</code></strong> :&ensp;<code>str</code></dt>
+<dd>parameter value to find in the
+allowed list, coming from the test case</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def allow_when(self, allowed_parameters_config_property: str, parameter_on_test_case: str):
+    &#34;&#34;&#34;When running with a custom configuration class, you can use this
+    method to tell your test case to not be skipped on some runtime filter.
+    This is useful mostly when using Kalash with `parameterized`.
+
+    Consider the following example:
+    ```python
+    class TestAdvancedFiltering1(TestCase):
+        @parameterized.expand([&#39;lincombo&#39;, &#39;cancombo&#39;])
+        def test_1(self, name):
+            self.allow_when(&#39;run_only_with&#39;, name)
+            print(f&#34;Running for {name}&#34;)
+    ```
+
+    If at runtime the config object contains a `run_only_with=[&#39;cancombo&#39;]`
+    value, the test will only be triggered for `cancombo`.
+
+    Args:
+        allowed_parameters_config_property (str): property name on the
+            `config` section of the `Trigger` instance containing the
+            skip/allow (must be a `List`).
+        parameter_on_test_case (str): parameter value to find in the
+            allowed list, coming from the test case
+    &#34;&#34;&#34;
+    if self.trigger:
+        run_with: Optional[List[str]] = self.trigger.config.get(
+            allowed_parameters_config_property)
+        if run_with:
+            if parameter_on_test_case in run_with:
+                return
+            else:
+                import inspect
+                caller = inspect.stack()[1].function
+                self.skipTest(f&#34;{parameter_on_test_case} made test function {caller} skip&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.run.TestProgram"><code class="flex name class">
+<span>class <span class="ident">TestProgram</span></span>
+<span>(</span><span>module='__main__', defaultTest=None, argv=None, testRunner=None, testLoader=&lt;unittest.loader.TestLoader object&gt;, exit=True, verbosity=1, failfast=None, catchbreak=None, buffer=None, warnings=None, *, tb_locals=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A command-line program that runs a set of tests; this is primarily
+for making test modules conveniently executable.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TestProgram(object):
+    &#34;&#34;&#34;A command-line program that runs a set of tests; this is primarily
+       for making test modules conveniently executable.
+    &#34;&#34;&#34;
+    # defaults for testing
+    module=None
+    verbosity = 1
+    failfast = catchbreak = buffer = progName = warnings = testNamePatterns = None
+    _discovery_parser = None
+
+    def __init__(self, module=&#39;__main__&#39;, defaultTest=None, argv=None,
+                    testRunner=None, testLoader=loader.defaultTestLoader,
+                    exit=True, verbosity=1, failfast=None, catchbreak=None,
+                    buffer=None, warnings=None, *, tb_locals=False):
+        if isinstance(module, str):
+            self.module = __import__(module)
+            for part in module.split(&#39;.&#39;)[1:]:
+                self.module = getattr(self.module, part)
+        else:
+            self.module = module
+        if argv is None:
+            argv = sys.argv
+
+        self.exit = exit
+        self.failfast = failfast
+        self.catchbreak = catchbreak
+        self.verbosity = verbosity
+        self.buffer = buffer
+        self.tb_locals = tb_locals
+        if warnings is None and not sys.warnoptions:
+            # even if DeprecationWarnings are ignored by default
+            # print them anyway unless other warnings settings are
+            # specified by the warnings arg or the -W python flag
+            self.warnings = &#39;default&#39;
+        else:
+            # here self.warnings is set either to the value passed
+            # to the warnings args or to None.
+            # If the user didn&#39;t pass a value self.warnings will
+            # be None. This means that the behavior is unchanged
+            # and depends on the values passed to -W.
+            self.warnings = warnings
+        self.defaultTest = defaultTest
+        self.testRunner = testRunner
+        self.testLoader = testLoader
+        self.progName = os.path.basename(argv[0])
+        self.parseArgs(argv)
+        self.runTests()
+
+    def usageExit(self, msg=None):
+        if msg:
+            print(msg)
+        if self._discovery_parser is None:
+            self._initArgParsers()
+        self._print_help()
+        sys.exit(2)
+
+    def _print_help(self, *args, **kwargs):
+        if self.module is None:
+            print(self._main_parser.format_help())
+            print(MAIN_EXAMPLES % {&#39;prog&#39;: self.progName})
+            self._discovery_parser.print_help()
+        else:
+            print(self._main_parser.format_help())
+            print(MODULE_EXAMPLES % {&#39;prog&#39;: self.progName})
+
+    def parseArgs(self, argv):
+        self._initArgParsers()
+        if self.module is None:
+            if len(argv) &gt; 1 and argv[1].lower() == &#39;discover&#39;:
+                self._do_discovery(argv[2:])
+                return
+            self._main_parser.parse_args(argv[1:], self)
+            if not self.tests:
+                # this allows &#34;python -m unittest -v&#34; to still work for
+                # test discovery.
+                self._do_discovery([])
+                return
+        else:
+            self._main_parser.parse_args(argv[1:], self)
+
+        if self.tests:
+            self.testNames = _convert_names(self.tests)
+            if __name__ == &#39;__main__&#39;:
+                # to support python -m unittest ...
+                self.module = None
+        elif self.defaultTest is None:
+            # createTests will load tests from self.module
+            self.testNames = None
+        elif isinstance(self.defaultTest, str):
+            self.testNames = (self.defaultTest,)
+        else:
+            self.testNames = list(self.defaultTest)
+        self.createTests()
+
+    def createTests(self, from_discovery=False, Loader=None):
+        if self.testNamePatterns:
+            self.testLoader.testNamePatterns = self.testNamePatterns
+        if from_discovery:
+            loader = self.testLoader if Loader is None else Loader()
+            self.test = loader.discover(self.start, self.pattern, self.top)
+        elif self.testNames is None:
+            self.test = self.testLoader.loadTestsFromModule(self.module)
+        else:
+            self.test = self.testLoader.loadTestsFromNames(self.testNames,
+                                                           self.module)
+
+    def _initArgParsers(self):
+        parent_parser = self._getParentArgParser()
+        self._main_parser = self._getMainArgParser(parent_parser)
+        self._discovery_parser = self._getDiscoveryArgParser(parent_parser)
+
+    def _getParentArgParser(self):
+        parser = argparse.ArgumentParser(add_help=False)
+
+        parser.add_argument(&#39;-v&#39;, &#39;--verbose&#39;, dest=&#39;verbosity&#39;,
+                            action=&#39;store_const&#39;, const=2,
+                            help=&#39;Verbose output&#39;)
+        parser.add_argument(&#39;-q&#39;, &#39;--quiet&#39;, dest=&#39;verbosity&#39;,
+                            action=&#39;store_const&#39;, const=0,
+                            help=&#39;Quiet output&#39;)
+        parser.add_argument(&#39;--locals&#39;, dest=&#39;tb_locals&#39;,
+                            action=&#39;store_true&#39;,
+                            help=&#39;Show local variables in tracebacks&#39;)
+        if self.failfast is None:
+            parser.add_argument(&#39;-f&#39;, &#39;--failfast&#39;, dest=&#39;failfast&#39;,
+                                action=&#39;store_true&#39;,
+                                help=&#39;Stop on first fail or error&#39;)
+            self.failfast = False
+        if self.catchbreak is None:
+            parser.add_argument(&#39;-c&#39;, &#39;--catch&#39;, dest=&#39;catchbreak&#39;,
+                                action=&#39;store_true&#39;,
+                                help=&#39;Catch Ctrl-C and display results so far&#39;)
+            self.catchbreak = False
+        if self.buffer is None:
+            parser.add_argument(&#39;-b&#39;, &#39;--buffer&#39;, dest=&#39;buffer&#39;,
+                                action=&#39;store_true&#39;,
+                                help=&#39;Buffer stdout and stderr during tests&#39;)
+            self.buffer = False
+        if self.testNamePatterns is None:
+            parser.add_argument(&#39;-k&#39;, dest=&#39;testNamePatterns&#39;,
+                                action=&#39;append&#39;, type=_convert_select_pattern,
+                                help=&#39;Only run tests which match the given substring&#39;)
+            self.testNamePatterns = []
+
+        return parser
+
+    def _getMainArgParser(self, parent):
+        parser = argparse.ArgumentParser(parents=[parent])
+        parser.prog = self.progName
+        parser.print_help = self._print_help
+
+        parser.add_argument(&#39;tests&#39;, nargs=&#39;*&#39;,
+                            help=&#39;a list of any number of test modules, &#39;
+                            &#39;classes and test methods.&#39;)
+
+        return parser
+
+    def _getDiscoveryArgParser(self, parent):
+        parser = argparse.ArgumentParser(parents=[parent])
+        parser.prog = &#39;%s discover&#39; % self.progName
+        parser.epilog = (&#39;For test discovery all test modules must be &#39;
+                         &#39;importable from the top level directory of the &#39;
+                         &#39;project.&#39;)
+
+        parser.add_argument(&#39;-s&#39;, &#39;--start-directory&#39;, dest=&#39;start&#39;,
+                            help=&#34;Directory to start discovery (&#39;.&#39; default)&#34;)
+        parser.add_argument(&#39;-p&#39;, &#39;--pattern&#39;, dest=&#39;pattern&#39;,
+                            help=&#34;Pattern to match tests (&#39;test*.py&#39; default)&#34;)
+        parser.add_argument(&#39;-t&#39;, &#39;--top-level-directory&#39;, dest=&#39;top&#39;,
+                            help=&#39;Top level directory of project (defaults to &#39;
+                                 &#39;start directory)&#39;)
+        for arg in (&#39;start&#39;, &#39;pattern&#39;, &#39;top&#39;):
+            parser.add_argument(arg, nargs=&#39;?&#39;,
+                                default=argparse.SUPPRESS,
+                                help=argparse.SUPPRESS)
+
+        return parser
+
+    def _do_discovery(self, argv, Loader=None):
+        self.start = &#39;.&#39;
+        self.pattern = &#39;test*.py&#39;
+        self.top = None
+        if argv is not None:
+            # handle command line args for test discovery
+            if self._discovery_parser is None:
+                # for testing
+                self._initArgParsers()
+            self._discovery_parser.parse_args(argv, self)
+
+        self.createTests(from_discovery=True, Loader=Loader)
+
+    def runTests(self):
+        if self.catchbreak:
+            installHandler()
+        if self.testRunner is None:
+            self.testRunner = runner.TextTestRunner
+        if isinstance(self.testRunner, type):
+            try:
+                try:
+                    testRunner = self.testRunner(verbosity=self.verbosity,
+                                                 failfast=self.failfast,
+                                                 buffer=self.buffer,
+                                                 warnings=self.warnings,
+                                                 tb_locals=self.tb_locals)
+                except TypeError:
+                    # didn&#39;t accept the tb_locals argument
+                    testRunner = self.testRunner(verbosity=self.verbosity,
+                                                 failfast=self.failfast,
+                                                 buffer=self.buffer,
+                                                 warnings=self.warnings)
+            except TypeError:
+                # didn&#39;t accept the verbosity, buffer or failfast arguments
+                testRunner = self.testRunner()
+        else:
+            # it is assumed to be a TestRunner instance
+            testRunner = self.testRunner
+        self.result = testRunner.run(self.test)
+        if self.exit:
+            sys.exit(not self.result.wasSuccessful())</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>xmlrunner.runner.XMLTestProgram</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.run.TestProgram.buffer"><code class="name">var <span class="ident">buffer</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.catchbreak"><code class="name">var <span class="ident">catchbreak</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.failfast"><code class="name">var <span class="ident">failfast</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.module"><code class="name">var <span class="ident">module</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.progName"><code class="name">var <span class="ident">progName</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.testNamePatterns"><code class="name">var <span class="ident">testNamePatterns</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.verbosity"><code class="name">var <span class="ident">verbosity</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.warnings"><code class="name">var <span class="ident">warnings</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.run.TestProgram.createTests"><code class="name flex">
+<span>def <span class="ident">createTests</span></span>(<span>self, from_discovery=False, Loader=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def createTests(self, from_discovery=False, Loader=None):
+    if self.testNamePatterns:
+        self.testLoader.testNamePatterns = self.testNamePatterns
+    if from_discovery:
+        loader = self.testLoader if Loader is None else Loader()
+        self.test = loader.discover(self.start, self.pattern, self.top)
+    elif self.testNames is None:
+        self.test = self.testLoader.loadTestsFromModule(self.module)
+    else:
+        self.test = self.testLoader.loadTestsFromNames(self.testNames,
+                                                       self.module)</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestProgram.parseArgs"><code class="name flex">
+<span>def <span class="ident">parseArgs</span></span>(<span>self, argv)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parseArgs(self, argv):
+    self._initArgParsers()
+    if self.module is None:
+        if len(argv) &gt; 1 and argv[1].lower() == &#39;discover&#39;:
+            self._do_discovery(argv[2:])
+            return
+        self._main_parser.parse_args(argv[1:], self)
+        if not self.tests:
+            # this allows &#34;python -m unittest -v&#34; to still work for
+            # test discovery.
+            self._do_discovery([])
+            return
+    else:
+        self._main_parser.parse_args(argv[1:], self)
+
+    if self.tests:
+        self.testNames = _convert_names(self.tests)
+        if __name__ == &#39;__main__&#39;:
+            # to support python -m unittest ...
+            self.module = None
+    elif self.defaultTest is None:
+        # createTests will load tests from self.module
+        self.testNames = None
+    elif isinstance(self.defaultTest, str):
+        self.testNames = (self.defaultTest,)
+    else:
+        self.testNames = list(self.defaultTest)
+    self.createTests()</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestProgram.runTests"><code class="name flex">
+<span>def <span class="ident">runTests</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def runTests(self):
+    if self.catchbreak:
+        installHandler()
+    if self.testRunner is None:
+        self.testRunner = runner.TextTestRunner
+    if isinstance(self.testRunner, type):
+        try:
+            try:
+                testRunner = self.testRunner(verbosity=self.verbosity,
+                                             failfast=self.failfast,
+                                             buffer=self.buffer,
+                                             warnings=self.warnings,
+                                             tb_locals=self.tb_locals)
+            except TypeError:
+                # didn&#39;t accept the tb_locals argument
+                testRunner = self.testRunner(verbosity=self.verbosity,
+                                             failfast=self.failfast,
+                                             buffer=self.buffer,
+                                             warnings=self.warnings)
+        except TypeError:
+            # didn&#39;t accept the verbosity, buffer or failfast arguments
+            testRunner = self.testRunner()
+    else:
+        # it is assumed to be a TestRunner instance
+        testRunner = self.testRunner
+    self.result = testRunner.run(self.test)
+    if self.exit:
+        sys.exit(not self.result.wasSuccessful())</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestProgram.usageExit"><code class="name flex">
+<span>def <span class="ident">usageExit</span></span>(<span>self, msg=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def usageExit(self, msg=None):
+    if msg:
+        print(msg)
+    if self._discovery_parser is None:
+        self._initArgParsers()
+    self._print_help()
+    sys.exit(2)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.run.TestProgram"><code class="flex name class">
+<span>class <span class="ident">main</span></span>
+<span>(</span><span>module='__main__', defaultTest=None, argv=None, testRunner=None, testLoader=&lt;unittest.loader.TestLoader object&gt;, exit=True, verbosity=1, failfast=None, catchbreak=None, buffer=None, warnings=None, *, tb_locals=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A command-line program that runs a set of tests; this is primarily
+for making test modules conveniently executable.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TestProgram(object):
+    &#34;&#34;&#34;A command-line program that runs a set of tests; this is primarily
+       for making test modules conveniently executable.
+    &#34;&#34;&#34;
+    # defaults for testing
+    module=None
+    verbosity = 1
+    failfast = catchbreak = buffer = progName = warnings = testNamePatterns = None
+    _discovery_parser = None
+
+    def __init__(self, module=&#39;__main__&#39;, defaultTest=None, argv=None,
+                    testRunner=None, testLoader=loader.defaultTestLoader,
+                    exit=True, verbosity=1, failfast=None, catchbreak=None,
+                    buffer=None, warnings=None, *, tb_locals=False):
+        if isinstance(module, str):
+            self.module = __import__(module)
+            for part in module.split(&#39;.&#39;)[1:]:
+                self.module = getattr(self.module, part)
+        else:
+            self.module = module
+        if argv is None:
+            argv = sys.argv
+
+        self.exit = exit
+        self.failfast = failfast
+        self.catchbreak = catchbreak
+        self.verbosity = verbosity
+        self.buffer = buffer
+        self.tb_locals = tb_locals
+        if warnings is None and not sys.warnoptions:
+            # even if DeprecationWarnings are ignored by default
+            # print them anyway unless other warnings settings are
+            # specified by the warnings arg or the -W python flag
+            self.warnings = &#39;default&#39;
+        else:
+            # here self.warnings is set either to the value passed
+            # to the warnings args or to None.
+            # If the user didn&#39;t pass a value self.warnings will
+            # be None. This means that the behavior is unchanged
+            # and depends on the values passed to -W.
+            self.warnings = warnings
+        self.defaultTest = defaultTest
+        self.testRunner = testRunner
+        self.testLoader = testLoader
+        self.progName = os.path.basename(argv[0])
+        self.parseArgs(argv)
+        self.runTests()
+
+    def usageExit(self, msg=None):
+        if msg:
+            print(msg)
+        if self._discovery_parser is None:
+            self._initArgParsers()
+        self._print_help()
+        sys.exit(2)
+
+    def _print_help(self, *args, **kwargs):
+        if self.module is None:
+            print(self._main_parser.format_help())
+            print(MAIN_EXAMPLES % {&#39;prog&#39;: self.progName})
+            self._discovery_parser.print_help()
+        else:
+            print(self._main_parser.format_help())
+            print(MODULE_EXAMPLES % {&#39;prog&#39;: self.progName})
+
+    def parseArgs(self, argv):
+        self._initArgParsers()
+        if self.module is None:
+            if len(argv) &gt; 1 and argv[1].lower() == &#39;discover&#39;:
+                self._do_discovery(argv[2:])
+                return
+            self._main_parser.parse_args(argv[1:], self)
+            if not self.tests:
+                # this allows &#34;python -m unittest -v&#34; to still work for
+                # test discovery.
+                self._do_discovery([])
+                return
+        else:
+            self._main_parser.parse_args(argv[1:], self)
+
+        if self.tests:
+            self.testNames = _convert_names(self.tests)
+            if __name__ == &#39;__main__&#39;:
+                # to support python -m unittest ...
+                self.module = None
+        elif self.defaultTest is None:
+            # createTests will load tests from self.module
+            self.testNames = None
+        elif isinstance(self.defaultTest, str):
+            self.testNames = (self.defaultTest,)
+        else:
+            self.testNames = list(self.defaultTest)
+        self.createTests()
+
+    def createTests(self, from_discovery=False, Loader=None):
+        if self.testNamePatterns:
+            self.testLoader.testNamePatterns = self.testNamePatterns
+        if from_discovery:
+            loader = self.testLoader if Loader is None else Loader()
+            self.test = loader.discover(self.start, self.pattern, self.top)
+        elif self.testNames is None:
+            self.test = self.testLoader.loadTestsFromModule(self.module)
+        else:
+            self.test = self.testLoader.loadTestsFromNames(self.testNames,
+                                                           self.module)
+
+    def _initArgParsers(self):
+        parent_parser = self._getParentArgParser()
+        self._main_parser = self._getMainArgParser(parent_parser)
+        self._discovery_parser = self._getDiscoveryArgParser(parent_parser)
+
+    def _getParentArgParser(self):
+        parser = argparse.ArgumentParser(add_help=False)
+
+        parser.add_argument(&#39;-v&#39;, &#39;--verbose&#39;, dest=&#39;verbosity&#39;,
+                            action=&#39;store_const&#39;, const=2,
+                            help=&#39;Verbose output&#39;)
+        parser.add_argument(&#39;-q&#39;, &#39;--quiet&#39;, dest=&#39;verbosity&#39;,
+                            action=&#39;store_const&#39;, const=0,
+                            help=&#39;Quiet output&#39;)
+        parser.add_argument(&#39;--locals&#39;, dest=&#39;tb_locals&#39;,
+                            action=&#39;store_true&#39;,
+                            help=&#39;Show local variables in tracebacks&#39;)
+        if self.failfast is None:
+            parser.add_argument(&#39;-f&#39;, &#39;--failfast&#39;, dest=&#39;failfast&#39;,
+                                action=&#39;store_true&#39;,
+                                help=&#39;Stop on first fail or error&#39;)
+            self.failfast = False
+        if self.catchbreak is None:
+            parser.add_argument(&#39;-c&#39;, &#39;--catch&#39;, dest=&#39;catchbreak&#39;,
+                                action=&#39;store_true&#39;,
+                                help=&#39;Catch Ctrl-C and display results so far&#39;)
+            self.catchbreak = False
+        if self.buffer is None:
+            parser.add_argument(&#39;-b&#39;, &#39;--buffer&#39;, dest=&#39;buffer&#39;,
+                                action=&#39;store_true&#39;,
+                                help=&#39;Buffer stdout and stderr during tests&#39;)
+            self.buffer = False
+        if self.testNamePatterns is None:
+            parser.add_argument(&#39;-k&#39;, dest=&#39;testNamePatterns&#39;,
+                                action=&#39;append&#39;, type=_convert_select_pattern,
+                                help=&#39;Only run tests which match the given substring&#39;)
+            self.testNamePatterns = []
+
+        return parser
+
+    def _getMainArgParser(self, parent):
+        parser = argparse.ArgumentParser(parents=[parent])
+        parser.prog = self.progName
+        parser.print_help = self._print_help
+
+        parser.add_argument(&#39;tests&#39;, nargs=&#39;*&#39;,
+                            help=&#39;a list of any number of test modules, &#39;
+                            &#39;classes and test methods.&#39;)
+
+        return parser
+
+    def _getDiscoveryArgParser(self, parent):
+        parser = argparse.ArgumentParser(parents=[parent])
+        parser.prog = &#39;%s discover&#39; % self.progName
+        parser.epilog = (&#39;For test discovery all test modules must be &#39;
+                         &#39;importable from the top level directory of the &#39;
+                         &#39;project.&#39;)
+
+        parser.add_argument(&#39;-s&#39;, &#39;--start-directory&#39;, dest=&#39;start&#39;,
+                            help=&#34;Directory to start discovery (&#39;.&#39; default)&#34;)
+        parser.add_argument(&#39;-p&#39;, &#39;--pattern&#39;, dest=&#39;pattern&#39;,
+                            help=&#34;Pattern to match tests (&#39;test*.py&#39; default)&#34;)
+        parser.add_argument(&#39;-t&#39;, &#39;--top-level-directory&#39;, dest=&#39;top&#39;,
+                            help=&#39;Top level directory of project (defaults to &#39;
+                                 &#39;start directory)&#39;)
+        for arg in (&#39;start&#39;, &#39;pattern&#39;, &#39;top&#39;):
+            parser.add_argument(arg, nargs=&#39;?&#39;,
+                                default=argparse.SUPPRESS,
+                                help=argparse.SUPPRESS)
+
+        return parser
+
+    def _do_discovery(self, argv, Loader=None):
+        self.start = &#39;.&#39;
+        self.pattern = &#39;test*.py&#39;
+        self.top = None
+        if argv is not None:
+            # handle command line args for test discovery
+            if self._discovery_parser is None:
+                # for testing
+                self._initArgParsers()
+            self._discovery_parser.parse_args(argv, self)
+
+        self.createTests(from_discovery=True, Loader=Loader)
+
+    def runTests(self):
+        if self.catchbreak:
+            installHandler()
+        if self.testRunner is None:
+            self.testRunner = runner.TextTestRunner
+        if isinstance(self.testRunner, type):
+            try:
+                try:
+                    testRunner = self.testRunner(verbosity=self.verbosity,
+                                                 failfast=self.failfast,
+                                                 buffer=self.buffer,
+                                                 warnings=self.warnings,
+                                                 tb_locals=self.tb_locals)
+                except TypeError:
+                    # didn&#39;t accept the tb_locals argument
+                    testRunner = self.testRunner(verbosity=self.verbosity,
+                                                 failfast=self.failfast,
+                                                 buffer=self.buffer,
+                                                 warnings=self.warnings)
+            except TypeError:
+                # didn&#39;t accept the verbosity, buffer or failfast arguments
+                testRunner = self.testRunner()
+        else:
+            # it is assumed to be a TestRunner instance
+            testRunner = self.testRunner
+        self.result = testRunner.run(self.test)
+        if self.exit:
+            sys.exit(not self.result.wasSuccessful())</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>xmlrunner.runner.XMLTestProgram</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.run.TestProgram.buffer"><code class="name">var <span class="ident">buffer</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.catchbreak"><code class="name">var <span class="ident">catchbreak</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.failfast"><code class="name">var <span class="ident">failfast</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.module"><code class="name">var <span class="ident">module</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.progName"><code class="name">var <span class="ident">progName</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.testNamePatterns"><code class="name">var <span class="ident">testNamePatterns</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.verbosity"><code class="name">var <span class="ident">verbosity</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.run.TestProgram.warnings"><code class="name">var <span class="ident">warnings</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.run.TestProgram.createTests"><code class="name flex">
+<span>def <span class="ident">createTests</span></span>(<span>self, from_discovery=False, Loader=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def createTests(self, from_discovery=False, Loader=None):
+    if self.testNamePatterns:
+        self.testLoader.testNamePatterns = self.testNamePatterns
+    if from_discovery:
+        loader = self.testLoader if Loader is None else Loader()
+        self.test = loader.discover(self.start, self.pattern, self.top)
+    elif self.testNames is None:
+        self.test = self.testLoader.loadTestsFromModule(self.module)
+    else:
+        self.test = self.testLoader.loadTestsFromNames(self.testNames,
+                                                       self.module)</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestProgram.parseArgs"><code class="name flex">
+<span>def <span class="ident">parseArgs</span></span>(<span>self, argv)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parseArgs(self, argv):
+    self._initArgParsers()
+    if self.module is None:
+        if len(argv) &gt; 1 and argv[1].lower() == &#39;discover&#39;:
+            self._do_discovery(argv[2:])
+            return
+        self._main_parser.parse_args(argv[1:], self)
+        if not self.tests:
+            # this allows &#34;python -m unittest -v&#34; to still work for
+            # test discovery.
+            self._do_discovery([])
+            return
+    else:
+        self._main_parser.parse_args(argv[1:], self)
+
+    if self.tests:
+        self.testNames = _convert_names(self.tests)
+        if __name__ == &#39;__main__&#39;:
+            # to support python -m unittest ...
+            self.module = None
+    elif self.defaultTest is None:
+        # createTests will load tests from self.module
+        self.testNames = None
+    elif isinstance(self.defaultTest, str):
+        self.testNames = (self.defaultTest,)
+    else:
+        self.testNames = list(self.defaultTest)
+    self.createTests()</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestProgram.runTests"><code class="name flex">
+<span>def <span class="ident">runTests</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def runTests(self):
+    if self.catchbreak:
+        installHandler()
+    if self.testRunner is None:
+        self.testRunner = runner.TextTestRunner
+    if isinstance(self.testRunner, type):
+        try:
+            try:
+                testRunner = self.testRunner(verbosity=self.verbosity,
+                                             failfast=self.failfast,
+                                             buffer=self.buffer,
+                                             warnings=self.warnings,
+                                             tb_locals=self.tb_locals)
+            except TypeError:
+                # didn&#39;t accept the tb_locals argument
+                testRunner = self.testRunner(verbosity=self.verbosity,
+                                             failfast=self.failfast,
+                                             buffer=self.buffer,
+                                             warnings=self.warnings)
+        except TypeError:
+            # didn&#39;t accept the verbosity, buffer or failfast arguments
+            testRunner = self.testRunner()
+    else:
+        # it is assumed to be a TestRunner instance
+        testRunner = self.testRunner
+    self.result = testRunner.run(self.test)
+    if self.exit:
+        sys.exit(not self.result.wasSuccessful())</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestProgram.usageExit"><code class="name flex">
+<span>def <span class="ident">usageExit</span></span>(<span>self, msg=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def usageExit(self, msg=None):
+    if msg:
+        print(msg)
+    if self._discovery_parser is None:
+        self._initArgParsers()
+    self._print_help()
+    sys.exit(2)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.run.TestResult"><code class="flex name class">
+<span>class <span class="ident">TestResult</span></span>
+<span>(</span><span>stream=None, descriptions=None, verbosity=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Holder for test result information.</p>
+<p>Test results are automatically managed by the TestCase and TestSuite
+classes, and do not need to be explicitly manipulated by writers of tests.</p>
+<p>Each instance holds the total number of tests run, and collections of
+failures and errors that occurred among those test runs. The collections
+contain tuples of (testcase, exceptioninfo), where exceptioninfo is the
+formatted traceback of the error that occurred.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TestResult(object):
+    &#34;&#34;&#34;Holder for test result information.
+
+    Test results are automatically managed by the TestCase and TestSuite
+    classes, and do not need to be explicitly manipulated by writers of tests.
+
+    Each instance holds the total number of tests run, and collections of
+    failures and errors that occurred among those test runs. The collections
+    contain tuples of (testcase, exceptioninfo), where exceptioninfo is the
+    formatted traceback of the error that occurred.
+    &#34;&#34;&#34;
+    _previousTestClass = None
+    _testRunEntered = False
+    _moduleSetUpFailed = False
+    def __init__(self, stream=None, descriptions=None, verbosity=None):
+        self.failfast = False
+        self.failures = []
+        self.errors = []
+        self.testsRun = 0
+        self.skipped = []
+        self.expectedFailures = []
+        self.unexpectedSuccesses = []
+        self.shouldStop = False
+        self.buffer = False
+        self.tb_locals = False
+        self._stdout_buffer = None
+        self._stderr_buffer = None
+        self._original_stdout = sys.stdout
+        self._original_stderr = sys.stderr
+        self._mirrorOutput = False
+
+    def printErrors(self):
+        &#34;Called by TestRunner after test run&#34;
+
+    def startTest(self, test):
+        &#34;Called when the given test is about to be run&#34;
+        self.testsRun += 1
+        self._mirrorOutput = False
+        self._setupStdout()
+
+    def _setupStdout(self):
+        if self.buffer:
+            if self._stderr_buffer is None:
+                self._stderr_buffer = io.StringIO()
+                self._stdout_buffer = io.StringIO()
+            sys.stdout = self._stdout_buffer
+            sys.stderr = self._stderr_buffer
+
+    def startTestRun(self):
+        &#34;&#34;&#34;Called once before any tests are executed.
+
+        See startTest for a method called before each test.
+        &#34;&#34;&#34;
+
+    def stopTest(self, test):
+        &#34;&#34;&#34;Called when the given test has been run&#34;&#34;&#34;
+        self._restoreStdout()
+        self._mirrorOutput = False
+
+    def _restoreStdout(self):
+        if self.buffer:
+            if self._mirrorOutput:
+                output = sys.stdout.getvalue()
+                error = sys.stderr.getvalue()
+                if output:
+                    if not output.endswith(&#39;\n&#39;):
+                        output += &#39;\n&#39;
+                    self._original_stdout.write(STDOUT_LINE % output)
+                if error:
+                    if not error.endswith(&#39;\n&#39;):
+                        error += &#39;\n&#39;
+                    self._original_stderr.write(STDERR_LINE % error)
+
+            sys.stdout = self._original_stdout
+            sys.stderr = self._original_stderr
+            self._stdout_buffer.seek(0)
+            self._stdout_buffer.truncate()
+            self._stderr_buffer.seek(0)
+            self._stderr_buffer.truncate()
+
+    def stopTestRun(self):
+        &#34;&#34;&#34;Called once after all tests are executed.
+
+        See stopTest for a method called after each test.
+        &#34;&#34;&#34;
+
+    @failfast
+    def addError(self, test, err):
+        &#34;&#34;&#34;Called when an error has occurred. &#39;err&#39; is a tuple of values as
+        returned by sys.exc_info().
+        &#34;&#34;&#34;
+        self.errors.append((test, self._exc_info_to_string(err, test)))
+        self._mirrorOutput = True
+
+    @failfast
+    def addFailure(self, test, err):
+        &#34;&#34;&#34;Called when an error has occurred. &#39;err&#39; is a tuple of values as
+        returned by sys.exc_info().&#34;&#34;&#34;
+        self.failures.append((test, self._exc_info_to_string(err, test)))
+        self._mirrorOutput = True
+
+    def addSubTest(self, test, subtest, err):
+        &#34;&#34;&#34;Called at the end of a subtest.
+        &#39;err&#39; is None if the subtest ended successfully, otherwise it&#39;s a
+        tuple of values as returned by sys.exc_info().
+        &#34;&#34;&#34;
+        # By default, we don&#39;t do anything with successful subtests, but
+        # more sophisticated test results might want to record them.
+        if err is not None:
+            if getattr(self, &#39;failfast&#39;, False):
+                self.stop()
+            if issubclass(err[0], test.failureException):
+                errors = self.failures
+            else:
+                errors = self.errors
+            errors.append((subtest, self._exc_info_to_string(err, test)))
+            self._mirrorOutput = True
+
+    def addSuccess(self, test):
+        &#34;Called when a test has completed successfully&#34;
+        pass
+
+    def addSkip(self, test, reason):
+        &#34;&#34;&#34;Called when a test is skipped.&#34;&#34;&#34;
+        self.skipped.append((test, reason))
+
+    def addExpectedFailure(self, test, err):
+        &#34;&#34;&#34;Called when an expected failure/error occurred.&#34;&#34;&#34;
+        self.expectedFailures.append(
+            (test, self._exc_info_to_string(err, test)))
+
+    @failfast
+    def addUnexpectedSuccess(self, test):
+        &#34;&#34;&#34;Called when a test was expected to fail, but succeed.&#34;&#34;&#34;
+        self.unexpectedSuccesses.append(test)
+
+    def wasSuccessful(self):
+        &#34;&#34;&#34;Tells whether or not this result was a success.&#34;&#34;&#34;
+        # The hasattr check is for test_result&#39;s OldResult test.  That
+        # way this method works on objects that lack the attribute.
+        # (where would such result intances come from? old stored pickles?)
+        return ((len(self.failures) == len(self.errors) == 0) and
+                (not hasattr(self, &#39;unexpectedSuccesses&#39;) or
+                 len(self.unexpectedSuccesses) == 0))
+
+    def stop(self):
+        &#34;&#34;&#34;Indicates that the tests should be aborted.&#34;&#34;&#34;
+        self.shouldStop = True
+
+    def _exc_info_to_string(self, err, test):
+        &#34;&#34;&#34;Converts a sys.exc_info()-style tuple of values into a string.&#34;&#34;&#34;
+        exctype, value, tb = err
+        # Skip test runner traceback levels
+        while tb and self._is_relevant_tb_level(tb):
+            tb = tb.tb_next
+
+        if exctype is test.failureException:
+            # Skip assert*() traceback levels
+            length = self._count_relevant_tb_levels(tb)
+        else:
+            length = None
+        tb_e = traceback.TracebackException(
+            exctype, value, tb, limit=length, capture_locals=self.tb_locals)
+        msgLines = list(tb_e.format())
+
+        if self.buffer:
+            output = sys.stdout.getvalue()
+            error = sys.stderr.getvalue()
+            if output:
+                if not output.endswith(&#39;\n&#39;):
+                    output += &#39;\n&#39;
+                msgLines.append(STDOUT_LINE % output)
+            if error:
+                if not error.endswith(&#39;\n&#39;):
+                    error += &#39;\n&#39;
+                msgLines.append(STDERR_LINE % error)
+        return &#39;&#39;.join(msgLines)
+
+
+    def _is_relevant_tb_level(self, tb):
+        return &#39;__unittest&#39; in tb.tb_frame.f_globals
+
+    def _count_relevant_tb_levels(self, tb):
+        length = 0
+        while tb and not self._is_relevant_tb_level(tb):
+            length += 1
+            tb = tb.tb_next
+        return length
+
+    def __repr__(self):
+        return (&#34;&lt;%s run=%i errors=%i failures=%i&gt;&#34; %
+               (util.strclass(self.__class__), self.testsRun, len(self.errors),
+                len(self.failures)))</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>unittest.runner.TextTestResult</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.run.TestResult.addError"><code class="name flex">
+<span>def <span class="ident">addError</span></span>(<span>self, test, err)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when an error has occurred. 'err' is a tuple of values as
+returned by sys.exc_info().</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@failfast
+def addError(self, test, err):
+    &#34;&#34;&#34;Called when an error has occurred. &#39;err&#39; is a tuple of values as
+    returned by sys.exc_info().
+    &#34;&#34;&#34;
+    self.errors.append((test, self._exc_info_to_string(err, test)))
+    self._mirrorOutput = True</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.addExpectedFailure"><code class="name flex">
+<span>def <span class="ident">addExpectedFailure</span></span>(<span>self, test, err)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when an expected failure/error occurred.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addExpectedFailure(self, test, err):
+    &#34;&#34;&#34;Called when an expected failure/error occurred.&#34;&#34;&#34;
+    self.expectedFailures.append(
+        (test, self._exc_info_to_string(err, test)))</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.addFailure"><code class="name flex">
+<span>def <span class="ident">addFailure</span></span>(<span>self, test, err)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when an error has occurred. 'err' is a tuple of values as
+returned by sys.exc_info().</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@failfast
+def addFailure(self, test, err):
+    &#34;&#34;&#34;Called when an error has occurred. &#39;err&#39; is a tuple of values as
+    returned by sys.exc_info().&#34;&#34;&#34;
+    self.failures.append((test, self._exc_info_to_string(err, test)))
+    self._mirrorOutput = True</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.addSkip"><code class="name flex">
+<span>def <span class="ident">addSkip</span></span>(<span>self, test, reason)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when a test is skipped.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addSkip(self, test, reason):
+    &#34;&#34;&#34;Called when a test is skipped.&#34;&#34;&#34;
+    self.skipped.append((test, reason))</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.addSubTest"><code class="name flex">
+<span>def <span class="ident">addSubTest</span></span>(<span>self, test, subtest, err)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called at the end of a subtest.
+'err' is None if the subtest ended successfully, otherwise it's a
+tuple of values as returned by sys.exc_info().</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addSubTest(self, test, subtest, err):
+    &#34;&#34;&#34;Called at the end of a subtest.
+    &#39;err&#39; is None if the subtest ended successfully, otherwise it&#39;s a
+    tuple of values as returned by sys.exc_info().
+    &#34;&#34;&#34;
+    # By default, we don&#39;t do anything with successful subtests, but
+    # more sophisticated test results might want to record them.
+    if err is not None:
+        if getattr(self, &#39;failfast&#39;, False):
+            self.stop()
+        if issubclass(err[0], test.failureException):
+            errors = self.failures
+        else:
+            errors = self.errors
+        errors.append((subtest, self._exc_info_to_string(err, test)))
+        self._mirrorOutput = True</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.addSuccess"><code class="name flex">
+<span>def <span class="ident">addSuccess</span></span>(<span>self, test)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when a test has completed successfully</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addSuccess(self, test):
+    &#34;Called when a test has completed successfully&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.addUnexpectedSuccess"><code class="name flex">
+<span>def <span class="ident">addUnexpectedSuccess</span></span>(<span>self, test)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when a test was expected to fail, but succeed.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@failfast
+def addUnexpectedSuccess(self, test):
+    &#34;&#34;&#34;Called when a test was expected to fail, but succeed.&#34;&#34;&#34;
+    self.unexpectedSuccesses.append(test)</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.printErrors"><code class="name flex">
+<span>def <span class="ident">printErrors</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called by TestRunner after test run</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def printErrors(self):
+    &#34;Called by TestRunner after test run&#34;</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.startTest"><code class="name flex">
+<span>def <span class="ident">startTest</span></span>(<span>self, test)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when the given test is about to be run</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def startTest(self, test):
+    &#34;Called when the given test is about to be run&#34;
+    self.testsRun += 1
+    self._mirrorOutput = False
+    self._setupStdout()</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.startTestRun"><code class="name flex">
+<span>def <span class="ident">startTestRun</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called once before any tests are executed.</p>
+<p>See startTest for a method called before each test.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def startTestRun(self):
+    &#34;&#34;&#34;Called once before any tests are executed.
+
+    See startTest for a method called before each test.
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.stop"><code class="name flex">
+<span>def <span class="ident">stop</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Indicates that the tests should be aborted.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop(self):
+    &#34;&#34;&#34;Indicates that the tests should be aborted.&#34;&#34;&#34;
+    self.shouldStop = True</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.stopTest"><code class="name flex">
+<span>def <span class="ident">stopTest</span></span>(<span>self, test)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called when the given test has been run</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stopTest(self, test):
+    &#34;&#34;&#34;Called when the given test has been run&#34;&#34;&#34;
+    self._restoreStdout()
+    self._mirrorOutput = False</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.stopTestRun"><code class="name flex">
+<span>def <span class="ident">stopTestRun</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called once after all tests are executed.</p>
+<p>See stopTest for a method called after each test.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stopTestRun(self):
+    &#34;&#34;&#34;Called once after all tests are executed.
+
+    See stopTest for a method called after each test.
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.TestResult.wasSuccessful"><code class="name flex">
+<span>def <span class="ident">wasSuccessful</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tells whether or not this result was a success.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def wasSuccessful(self):
+    &#34;&#34;&#34;Tells whether or not this result was a success.&#34;&#34;&#34;
+    # The hasattr check is for test_result&#39;s OldResult test.  That
+    # way this method works on objects that lack the attribute.
+    # (where would such result intances come from? old stored pickles?)
+    return ((len(self.failures) == len(self.errors) == 0) and
+            (not hasattr(self, &#39;unexpectedSuccesses&#39;) or
+             len(self.unexpectedSuccesses) == 0))</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.run.TextTestRunner"><code class="flex name class">
+<span>class <span class="ident">TextTestRunner</span></span>
+<span>(</span><span>stream=None, descriptions=True, verbosity=1, failfast=False, buffer=False, resultclass=None, warnings=None, *, tb_locals=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A test runner class that displays results in textual form.</p>
+<p>It prints out the names of tests as they are run, errors as they
+occur, and a summary of the results at the end of the test run.</p>
+<p>Construct a TextTestRunner.</p>
+<p>Subclasses should accept **kwargs to ensure compatibility as the
+interface changes.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TextTestRunner(object):
+    &#34;&#34;&#34;A test runner class that displays results in textual form.
+
+    It prints out the names of tests as they are run, errors as they
+    occur, and a summary of the results at the end of the test run.
+    &#34;&#34;&#34;
+    resultclass = TextTestResult
+
+    def __init__(self, stream=None, descriptions=True, verbosity=1,
+                 failfast=False, buffer=False, resultclass=None, warnings=None,
+                 *, tb_locals=False):
+        &#34;&#34;&#34;Construct a TextTestRunner.
+
+        Subclasses should accept **kwargs to ensure compatibility as the
+        interface changes.
+        &#34;&#34;&#34;
+        if stream is None:
+            stream = sys.stderr
+        self.stream = _WritelnDecorator(stream)
+        self.descriptions = descriptions
+        self.verbosity = verbosity
+        self.failfast = failfast
+        self.buffer = buffer
+        self.tb_locals = tb_locals
+        self.warnings = warnings
+        if resultclass is not None:
+            self.resultclass = resultclass
+
+    def _makeResult(self):
+        return self.resultclass(self.stream, self.descriptions, self.verbosity)
+
+    def run(self, test):
+        &#34;Run the given test case or test suite.&#34;
+        result = self._makeResult()
+        registerResult(result)
+        result.failfast = self.failfast
+        result.buffer = self.buffer
+        result.tb_locals = self.tb_locals
+        with warnings.catch_warnings():
+            if self.warnings:
+                # if self.warnings is set, use it to filter all the warnings
+                warnings.simplefilter(self.warnings)
+                # if the filter is &#39;default&#39; or &#39;always&#39;, special-case the
+                # warnings from the deprecated unittest methods to show them
+                # no more than once per module, because they can be fairly
+                # noisy.  The -Wd and -Wa flags can be used to bypass this
+                # only when self.warnings is None.
+                if self.warnings in [&#39;default&#39;, &#39;always&#39;]:
+                    warnings.filterwarnings(&#39;module&#39;,
+                            category=DeprecationWarning,
+                            message=r&#39;Please use assert\w+ instead.&#39;)
+            startTime = time.perf_counter()
+            startTestRun = getattr(result, &#39;startTestRun&#39;, None)
+            if startTestRun is not None:
+                startTestRun()
+            try:
+                test(result)
+            finally:
+                stopTestRun = getattr(result, &#39;stopTestRun&#39;, None)
+                if stopTestRun is not None:
+                    stopTestRun()
+            stopTime = time.perf_counter()
+        timeTaken = stopTime - startTime
+        result.printErrors()
+        if hasattr(result, &#39;separator2&#39;):
+            self.stream.writeln(result.separator2)
+        run = result.testsRun
+        self.stream.writeln(&#34;Ran %d test%s in %.3fs&#34; %
+                            (run, run != 1 and &#34;s&#34; or &#34;&#34;, timeTaken))
+        self.stream.writeln()
+
+        expectedFails = unexpectedSuccesses = skipped = 0
+        try:
+            results = map(len, (result.expectedFailures,
+                                result.unexpectedSuccesses,
+                                result.skipped))
+        except AttributeError:
+            pass
+        else:
+            expectedFails, unexpectedSuccesses, skipped = results
+
+        infos = []
+        if not result.wasSuccessful():
+            self.stream.write(&#34;FAILED&#34;)
+            failed, errored = len(result.failures), len(result.errors)
+            if failed:
+                infos.append(&#34;failures=%d&#34; % failed)
+            if errored:
+                infos.append(&#34;errors=%d&#34; % errored)
+        else:
+            self.stream.write(&#34;OK&#34;)
+        if skipped:
+            infos.append(&#34;skipped=%d&#34; % skipped)
+        if expectedFails:
+            infos.append(&#34;expected failures=%d&#34; % expectedFails)
+        if unexpectedSuccesses:
+            infos.append(&#34;unexpected successes=%d&#34; % unexpectedSuccesses)
+        if infos:
+            self.stream.writeln(&#34; (%s)&#34; % (&#34;, &#34;.join(infos),))
+        else:
+            self.stream.write(&#34;\n&#34;)
+        return result</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>xmlrunner.runner.XMLTestRunner</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.run.TextTestRunner.resultclass"><code class="name">var <span class="ident">resultclass</span></code></dt>
+<dd>
+<div class="desc"><p>A test result class that can print formatted text results to a stream.</p>
+<p>Used by TextTestRunner.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.run.TextTestRunner.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self, test)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Run the given test case or test suite.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self, test):
+    &#34;Run the given test case or test suite.&#34;
+    result = self._makeResult()
+    registerResult(result)
+    result.failfast = self.failfast
+    result.buffer = self.buffer
+    result.tb_locals = self.tb_locals
+    with warnings.catch_warnings():
+        if self.warnings:
+            # if self.warnings is set, use it to filter all the warnings
+            warnings.simplefilter(self.warnings)
+            # if the filter is &#39;default&#39; or &#39;always&#39;, special-case the
+            # warnings from the deprecated unittest methods to show them
+            # no more than once per module, because they can be fairly
+            # noisy.  The -Wd and -Wa flags can be used to bypass this
+            # only when self.warnings is None.
+            if self.warnings in [&#39;default&#39;, &#39;always&#39;]:
+                warnings.filterwarnings(&#39;module&#39;,
+                        category=DeprecationWarning,
+                        message=r&#39;Please use assert\w+ instead.&#39;)
+        startTime = time.perf_counter()
+        startTestRun = getattr(result, &#39;startTestRun&#39;, None)
+        if startTestRun is not None:
+            startTestRun()
+        try:
+            test(result)
+        finally:
+            stopTestRun = getattr(result, &#39;stopTestRun&#39;, None)
+            if stopTestRun is not None:
+                stopTestRun()
+        stopTime = time.perf_counter()
+    timeTaken = stopTime - startTime
+    result.printErrors()
+    if hasattr(result, &#39;separator2&#39;):
+        self.stream.writeln(result.separator2)
+    run = result.testsRun
+    self.stream.writeln(&#34;Ran %d test%s in %.3fs&#34; %
+                        (run, run != 1 and &#34;s&#34; or &#34;&#34;, timeTaken))
+    self.stream.writeln()
+
+    expectedFails = unexpectedSuccesses = skipped = 0
+    try:
+        results = map(len, (result.expectedFailures,
+                            result.unexpectedSuccesses,
+                            result.skipped))
+    except AttributeError:
+        pass
+    else:
+        expectedFails, unexpectedSuccesses, skipped = results
+
+    infos = []
+    if not result.wasSuccessful():
+        self.stream.write(&#34;FAILED&#34;)
+        failed, errored = len(result.failures), len(result.errors)
+        if failed:
+            infos.append(&#34;failures=%d&#34; % failed)
+        if errored:
+            infos.append(&#34;errors=%d&#34; % errored)
+    else:
+        self.stream.write(&#34;OK&#34;)
+    if skipped:
+        infos.append(&#34;skipped=%d&#34; % skipped)
+    if expectedFails:
+        infos.append(&#34;expected failures=%d&#34; % expectedFails)
+    if unexpectedSuccesses:
+        infos.append(&#34;unexpected successes=%d&#34; % unexpectedSuccesses)
+    if infos:
+        self.stream.writeln(&#34; (%s)&#34; % (&#34;, &#34;.join(infos),))
+    else:
+        self.stream.write(&#34;\n&#34;)
+    return result</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.run.parameterized"><code class="flex name class">
+<span>class <span class="ident">parameterized</span></span>
+<span>(</span><span>input, doc_func=None, skip_on_empty=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Parameterize a test case::</p>
+<p>class TestInt(object):
+@parameterized([
+("A", 10),
+("F", 15),
+param("10", 42, base=42)
+])
+def test_int(self, input, expected, base=16):
+actual = int(input, base=base)
+assert_equal(actual, expected)</p>
+<p>@parameterized([
+(2, 3, 5)
+(3, 5, 8),
+])
+def test_add(a, b, expected):
+assert_equal(a + b, expected)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class parameterized(object):
+    &#34;&#34;&#34; Parameterize a test case::
+
+            class TestInt(object):
+                @parameterized([
+                    (&#34;A&#34;, 10),
+                    (&#34;F&#34;, 15),
+                    param(&#34;10&#34;, 42, base=42)
+                ])
+                def test_int(self, input, expected, base=16):
+                    actual = int(input, base=base)
+                    assert_equal(actual, expected)
+
+            @parameterized([
+                (2, 3, 5)
+                (3, 5, 8),
+            ])
+            def test_add(a, b, expected):
+                assert_equal(a + b, expected)
+        &#34;&#34;&#34;
+
+    def __init__(self, input, doc_func=None, skip_on_empty=False):
+        self.get_input = self.input_as_callable(input)
+        self.doc_func = doc_func or default_doc_func
+        self.skip_on_empty = skip_on_empty
+
+    def __call__(self, test_func):
+        self.assert_not_in_testcase_subclass()
+
+        @wraps(test_func)
+        def wrapper(test_self=None):
+            test_cls = test_self and type(test_self)
+            if test_self is not None:
+                if issubclass(test_cls, InstanceType):
+                    raise TypeError((
+                        &#34;@parameterized can&#39;t be used with old-style classes, but &#34;
+                        &#34;%r has an old-style class. Consider using a new-style &#34;
+                        &#34;class, or &#39;@parameterized.expand&#39; &#34;
+                        &#34;(see http://stackoverflow.com/q/54867/71522 for more &#34;
+                        &#34;information on old-style classes).&#34;
+                    ) %(test_self, ))
+
+            original_doc = wrapper.__doc__
+            for num, args in enumerate(wrapper.parameterized_input):
+                p = param.from_decorator(args)
+                unbound_func, nose_tuple = self.param_as_nose_tuple(test_self, test_func, num, p)
+                try:
+                    wrapper.__doc__ = nose_tuple[0].__doc__
+                    # Nose uses `getattr(instance, test_func.__name__)` to get
+                    # a method bound to the test instance (as opposed to a
+                    # method bound to the instance of the class created when
+                    # tests were being enumerated). Set a value here to make
+                    # sure nose can get the correct test method.
+                    if test_self is not None:
+                        setattr(test_cls, test_func.__name__, unbound_func)
+                    yield nose_tuple
+                finally:
+                    if test_self is not None:
+                        delattr(test_cls, test_func.__name__)
+                    wrapper.__doc__ = original_doc
+
+        input = self.get_input()
+        if not input:
+            if not self.skip_on_empty:
+                raise ValueError(
+                    &#34;Parameters iterable is empty (hint: use &#34;
+                    &#34;`parameterized([], skip_on_empty=True)` to skip &#34;
+                    &#34;this test when the input is empty)&#34;
+                )
+            wrapper = wraps(test_func)(skip_on_empty_helper)
+
+        wrapper.parameterized_input = input
+        wrapper.parameterized_func = test_func
+        test_func.__name__ = &#34;_parameterized_original_%s&#34; %(test_func.__name__, )
+
+        return wrapper
+
+    def param_as_nose_tuple(self, test_self, func, num, p):
+        nose_func = wraps(func)(lambda *args: func(*args[:-1], **args[-1]))
+        nose_func.__doc__ = self.doc_func(func, num, p)
+        # Track the unbound function because we need to setattr the unbound
+        # function onto the class for nose to work (see comments above), and
+        # Python 3 doesn&#39;t let us pull the function out of a bound method.
+        unbound_func = nose_func
+        if test_self is not None:
+            # Under nose on Py2 we need to return an unbound method to make
+            # sure that the `self` in the method is properly shared with the
+            # `self` used in `setUp` and `tearDown`. But only there. Everyone
+            # else needs a bound method.
+            func_self = (
+                None if PY2 and detect_runner() == &#34;nose&#34; else
+                test_self
+            )
+            nose_func = make_method(nose_func, func_self, type(test_self))
+        return unbound_func, (nose_func, ) + p.args + (p.kwargs or {}, )
+
+    def assert_not_in_testcase_subclass(self):
+        parent_classes = self._terrible_magic_get_defining_classes()
+        if any(issubclass(cls, TestCase) for cls in parent_classes):
+            raise Exception(&#34;Warning: &#39;@parameterized&#39; tests won&#39;t work &#34;
+                            &#34;inside subclasses of &#39;TestCase&#39; - use &#34;
+                            &#34;&#39;@parameterized.expand&#39; instead.&#34;)
+
+    def _terrible_magic_get_defining_classes(self):
+        &#34;&#34;&#34; Returns the set of parent classes of the class currently being defined.
+            Will likely only work if called from the ``parameterized`` decorator.
+            This function is entirely @brandon_rhodes&#39;s fault, as he suggested
+            the implementation: http://stackoverflow.com/a/8793684/71522
+            &#34;&#34;&#34;
+        stack = inspect.stack()
+        if len(stack) &lt;= 4:
+            return []
+        frame = stack[4]
+        code_context = frame[4] and frame[4][0].strip()
+        if not (code_context and code_context.startswith(&#34;class &#34;)):
+            return []
+        _, _, parents = code_context.partition(&#34;(&#34;)
+        parents, _, _ = parents.partition(&#34;)&#34;)
+        return eval(&#34;[&#34; + parents + &#34;]&#34;, frame[0].f_globals, frame[0].f_locals)
+
+    @classmethod
+    def input_as_callable(cls, input):
+        if callable(input):
+            return lambda: cls.check_input_values(input())
+        input_values = cls.check_input_values(input)
+        return lambda: input_values
+
+    @classmethod
+    def check_input_values(cls, input_values):
+        # Explicitly convery non-list inputs to a list so that:
+        # 1. A helpful exception will be raised if they aren&#39;t iterable, and
+        # 2. Generators are unwrapped exactly once (otherwise `nosetests
+        #    --processes=n` has issues; see:
+        #    https://github.com/wolever/nose-parameterized/pull/31)
+        if not isinstance(input_values, list):
+            input_values = list(input_values)
+        return [ param.from_decorator(p) for p in input_values ]
+
+    @classmethod
+    def expand(cls, input, name_func=None, doc_func=None, skip_on_empty=False,
+               **legacy):
+        &#34;&#34;&#34; A &#34;brute force&#34; method of parameterizing test cases. Creates new
+            test cases and injects them into the namespace that the wrapped
+            function is being defined in. Useful for parameterizing tests in
+            subclasses of &#39;UnitTest&#39;, where Nose test generators don&#39;t work.
+
+            &gt;&gt;&gt; @parameterized.expand([(&#34;foo&#34;, 1, 2)])
+            ... def test_add1(name, input, expected):
+            ...     actual = add1(input)
+            ...     assert_equal(actual, expected)
+            ...
+            &gt;&gt;&gt; locals()
+            ... &#39;test_add1_foo_0&#39;: &lt;function ...&gt; ...
+            &gt;&gt;&gt;
+            &#34;&#34;&#34;
+
+        if &#34;testcase_func_name&#34; in legacy:
+            warnings.warn(&#34;testcase_func_name= is deprecated; use name_func=&#34;,
+                          DeprecationWarning, stacklevel=2)
+            if not name_func:
+                name_func = legacy[&#34;testcase_func_name&#34;]
+
+        if &#34;testcase_func_doc&#34; in legacy:
+            warnings.warn(&#34;testcase_func_doc= is deprecated; use doc_func=&#34;,
+                          DeprecationWarning, stacklevel=2)
+            if not doc_func:
+                doc_func = legacy[&#34;testcase_func_doc&#34;]
+
+        doc_func = doc_func or default_doc_func
+        name_func = name_func or default_name_func
+
+        def parameterized_expand_wrapper(f, instance=None):
+            frame_locals = inspect.currentframe().f_back.f_locals
+
+            parameters = cls.input_as_callable(input)()
+
+            if not parameters:
+                if not skip_on_empty:
+                    raise ValueError(
+                        &#34;Parameters iterable is empty (hint: use &#34;
+                        &#34;`parameterized.expand([], skip_on_empty=True)` to skip &#34;
+                        &#34;this test when the input is empty)&#34;
+                    )
+                return wraps(f)(skip_on_empty_helper)
+
+            digits = len(str(len(parameters) - 1))
+            for num, p in enumerate(parameters):
+                name = name_func(f, &#34;{num:0&gt;{digits}}&#34;.format(digits=digits, num=num), p)
+                # If the original function has patches applied by &#39;mock.patch&#39;,
+                # re-construct all patches on the just former decoration layer
+                # of param_as_standalone_func so as not to share
+                # patch objects between new functions
+                nf = reapply_patches_if_need(f)
+                frame_locals[name] = cls.param_as_standalone_func(p, nf, name)
+                frame_locals[name].__doc__ = doc_func(f, num, p)
+
+            # Delete original patches to prevent new function from evaluating
+            # original patching object as well as re-constructed patches.
+            delete_patches_if_need(f)
+
+            f.__test__ = False
+        return parameterized_expand_wrapper
+
+    @classmethod
+    def param_as_standalone_func(cls, p, func, name):
+        @wraps(func)
+        def standalone_func(*a):
+            return func(*(a + p.args), **p.kwargs)
+        standalone_func.__name__ = name
+
+        # place_as is used by py.test to determine what source file should be
+        # used for this test.
+        standalone_func.place_as = func
+
+        # Remove __wrapped__ because py.test will try to look at __wrapped__
+        # to determine which parameters should be used with this test case,
+        # and obviously we don&#39;t need it to do any parameterization.
+        try:
+            del standalone_func.__wrapped__
+        except AttributeError:
+            pass
+        return standalone_func
+
+    @classmethod
+    def to_safe_name(cls, s):
+        return str(re.sub(&#34;[^a-zA-Z0-9_]+&#34;, &#34;_&#34;, s))</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="kalash.run.parameterized.check_input_values"><code class="name flex">
+<span>def <span class="ident">check_input_values</span></span>(<span>input_values)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def check_input_values(cls, input_values):
+    # Explicitly convery non-list inputs to a list so that:
+    # 1. A helpful exception will be raised if they aren&#39;t iterable, and
+    # 2. Generators are unwrapped exactly once (otherwise `nosetests
+    #    --processes=n` has issues; see:
+    #    https://github.com/wolever/nose-parameterized/pull/31)
+    if not isinstance(input_values, list):
+        input_values = list(input_values)
+    return [ param.from_decorator(p) for p in input_values ]</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.parameterized.expand"><code class="name flex">
+<span>def <span class="ident">expand</span></span>(<span>input, name_func=None, doc_func=None, skip_on_empty=False, **legacy)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A "brute force" method of parameterizing test cases. Creates new
+test cases and injects them into the namespace that the wrapped
+function is being defined in. Useful for parameterizing tests in
+subclasses of 'UnitTest', where Nose test generators don't work.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; @parameterized.expand([(&quot;foo&quot;, 1, 2)])
+... def test_add1(name, input, expected):
+...     actual = add1(input)
+...     assert_equal(actual, expected)
+...
+&gt;&gt;&gt; locals()
+... 'test_add1_foo_0': &lt;function ...&gt; ...
+&gt;&gt;&gt;
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def expand(cls, input, name_func=None, doc_func=None, skip_on_empty=False,
+           **legacy):
+    &#34;&#34;&#34; A &#34;brute force&#34; method of parameterizing test cases. Creates new
+        test cases and injects them into the namespace that the wrapped
+        function is being defined in. Useful for parameterizing tests in
+        subclasses of &#39;UnitTest&#39;, where Nose test generators don&#39;t work.
+
+        &gt;&gt;&gt; @parameterized.expand([(&#34;foo&#34;, 1, 2)])
+        ... def test_add1(name, input, expected):
+        ...     actual = add1(input)
+        ...     assert_equal(actual, expected)
+        ...
+        &gt;&gt;&gt; locals()
+        ... &#39;test_add1_foo_0&#39;: &lt;function ...&gt; ...
+        &gt;&gt;&gt;
+        &#34;&#34;&#34;
+
+    if &#34;testcase_func_name&#34; in legacy:
+        warnings.warn(&#34;testcase_func_name= is deprecated; use name_func=&#34;,
+                      DeprecationWarning, stacklevel=2)
+        if not name_func:
+            name_func = legacy[&#34;testcase_func_name&#34;]
+
+    if &#34;testcase_func_doc&#34; in legacy:
+        warnings.warn(&#34;testcase_func_doc= is deprecated; use doc_func=&#34;,
+                      DeprecationWarning, stacklevel=2)
+        if not doc_func:
+            doc_func = legacy[&#34;testcase_func_doc&#34;]
+
+    doc_func = doc_func or default_doc_func
+    name_func = name_func or default_name_func
+
+    def parameterized_expand_wrapper(f, instance=None):
+        frame_locals = inspect.currentframe().f_back.f_locals
+
+        parameters = cls.input_as_callable(input)()
+
+        if not parameters:
+            if not skip_on_empty:
+                raise ValueError(
+                    &#34;Parameters iterable is empty (hint: use &#34;
+                    &#34;`parameterized.expand([], skip_on_empty=True)` to skip &#34;
+                    &#34;this test when the input is empty)&#34;
+                )
+            return wraps(f)(skip_on_empty_helper)
+
+        digits = len(str(len(parameters) - 1))
+        for num, p in enumerate(parameters):
+            name = name_func(f, &#34;{num:0&gt;{digits}}&#34;.format(digits=digits, num=num), p)
+            # If the original function has patches applied by &#39;mock.patch&#39;,
+            # re-construct all patches on the just former decoration layer
+            # of param_as_standalone_func so as not to share
+            # patch objects between new functions
+            nf = reapply_patches_if_need(f)
+            frame_locals[name] = cls.param_as_standalone_func(p, nf, name)
+            frame_locals[name].__doc__ = doc_func(f, num, p)
+
+        # Delete original patches to prevent new function from evaluating
+        # original patching object as well as re-constructed patches.
+        delete_patches_if_need(f)
+
+        f.__test__ = False
+    return parameterized_expand_wrapper</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.parameterized.input_as_callable"><code class="name flex">
+<span>def <span class="ident">input_as_callable</span></span>(<span>input)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def input_as_callable(cls, input):
+    if callable(input):
+        return lambda: cls.check_input_values(input())
+    input_values = cls.check_input_values(input)
+    return lambda: input_values</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.parameterized.param_as_standalone_func"><code class="name flex">
+<span>def <span class="ident">param_as_standalone_func</span></span>(<span>p, func, name)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def param_as_standalone_func(cls, p, func, name):
+    @wraps(func)
+    def standalone_func(*a):
+        return func(*(a + p.args), **p.kwargs)
+    standalone_func.__name__ = name
+
+    # place_as is used by py.test to determine what source file should be
+    # used for this test.
+    standalone_func.place_as = func
+
+    # Remove __wrapped__ because py.test will try to look at __wrapped__
+    # to determine which parameters should be used with this test case,
+    # and obviously we don&#39;t need it to do any parameterization.
+    try:
+        del standalone_func.__wrapped__
+    except AttributeError:
+        pass
+    return standalone_func</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.parameterized.to_safe_name"><code class="name flex">
+<span>def <span class="ident">to_safe_name</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def to_safe_name(cls, s):
+    return str(re.sub(&#34;[^a-zA-Z0-9_]+&#34;, &#34;_&#34;, s))</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.run.parameterized.assert_not_in_testcase_subclass"><code class="name flex">
+<span>def <span class="ident">assert_not_in_testcase_subclass</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def assert_not_in_testcase_subclass(self):
+    parent_classes = self._terrible_magic_get_defining_classes()
+    if any(issubclass(cls, TestCase) for cls in parent_classes):
+        raise Exception(&#34;Warning: &#39;@parameterized&#39; tests won&#39;t work &#34;
+                        &#34;inside subclasses of &#39;TestCase&#39; - use &#34;
+                        &#34;&#39;@parameterized.expand&#39; instead.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="kalash.run.parameterized.param_as_nose_tuple"><code class="name flex">
+<span>def <span class="ident">param_as_nose_tuple</span></span>(<span>self, test_self, func, num, p)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def param_as_nose_tuple(self, test_self, func, num, p):
+    nose_func = wraps(func)(lambda *args: func(*args[:-1], **args[-1]))
+    nose_func.__doc__ = self.doc_func(func, num, p)
+    # Track the unbound function because we need to setattr the unbound
+    # function onto the class for nose to work (see comments above), and
+    # Python 3 doesn&#39;t let us pull the function out of a bound method.
+    unbound_func = nose_func
+    if test_self is not None:
+        # Under nose on Py2 we need to return an unbound method to make
+        # sure that the `self` in the method is properly shared with the
+        # `self` used in `setUp` and `tearDown`. But only there. Everyone
+        # else needs a bound method.
+        func_self = (
+            None if PY2 and detect_runner() == &#34;nose&#34; else
+            test_self
+        )
+        nose_func = make_method(nose_func, func_self, type(test_self))
+    return unbound_func, (nose_func, ) + p.args + (p.kwargs or {}, )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="kalash" href="index.html">kalash</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="kalash.run.failfast" href="#kalash.run.failfast">failfast</a></code></li>
+<li><code><a title="kalash.run.get_ts" href="#kalash.run.get_ts">get_ts</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="kalash.run.MetaLoader" href="#kalash.run.MetaLoader">MetaLoader</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.run.MetaLoader.loadTestsFromKalashYaml" href="#kalash.run.MetaLoader.loadTestsFromKalashYaml">loadTestsFromKalashYaml</a></code></li>
+<li><code><a title="kalash.run.MetaLoader.loadTestsFromModule" href="#kalash.run.MetaLoader.loadTestsFromModule">loadTestsFromModule</a></code></li>
+<li><code><a title="kalash.run.MetaLoader.one_time_setup" href="#kalash.run.MetaLoader.one_time_setup">one_time_setup</a></code></li>
+<li><code><a title="kalash.run.MetaLoader.one_time_teardown" href="#kalash.run.MetaLoader.one_time_teardown">one_time_teardown</a></code></li>
+<li><code><a title="kalash.run.MetaLoader.trigger" href="#kalash.run.MetaLoader.trigger">trigger</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.run.TestCase" href="#kalash.run.TestCase">TestCase</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.run.TestCase.allow_when" href="#kalash.run.TestCase.allow_when">allow_when</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.run.TestProgram" href="#kalash.run.TestProgram">TestProgram</a></code></h4>
+<ul class="two-column">
+<li><code><a title="kalash.run.TestProgram.buffer" href="#kalash.run.TestProgram.buffer">buffer</a></code></li>
+<li><code><a title="kalash.run.TestProgram.catchbreak" href="#kalash.run.TestProgram.catchbreak">catchbreak</a></code></li>
+<li><code><a title="kalash.run.TestProgram.createTests" href="#kalash.run.TestProgram.createTests">createTests</a></code></li>
+<li><code><a title="kalash.run.TestProgram.failfast" href="#kalash.run.TestProgram.failfast">failfast</a></code></li>
+<li><code><a title="kalash.run.TestProgram.module" href="#kalash.run.TestProgram.module">module</a></code></li>
+<li><code><a title="kalash.run.TestProgram.parseArgs" href="#kalash.run.TestProgram.parseArgs">parseArgs</a></code></li>
+<li><code><a title="kalash.run.TestProgram.progName" href="#kalash.run.TestProgram.progName">progName</a></code></li>
+<li><code><a title="kalash.run.TestProgram.runTests" href="#kalash.run.TestProgram.runTests">runTests</a></code></li>
+<li><code><a title="kalash.run.TestProgram.testNamePatterns" href="#kalash.run.TestProgram.testNamePatterns">testNamePatterns</a></code></li>
+<li><code><a title="kalash.run.TestProgram.usageExit" href="#kalash.run.TestProgram.usageExit">usageExit</a></code></li>
+<li><code><a title="kalash.run.TestProgram.verbosity" href="#kalash.run.TestProgram.verbosity">verbosity</a></code></li>
+<li><code><a title="kalash.run.TestProgram.warnings" href="#kalash.run.TestProgram.warnings">warnings</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.run.TestProgram" href="#kalash.run.TestProgram">TestProgram</a></code></h4>
+<ul class="two-column">
+<li><code><a title="kalash.run.TestProgram.buffer" href="#kalash.run.TestProgram.buffer">buffer</a></code></li>
+<li><code><a title="kalash.run.TestProgram.catchbreak" href="#kalash.run.TestProgram.catchbreak">catchbreak</a></code></li>
+<li><code><a title="kalash.run.TestProgram.createTests" href="#kalash.run.TestProgram.createTests">createTests</a></code></li>
+<li><code><a title="kalash.run.TestProgram.failfast" href="#kalash.run.TestProgram.failfast">failfast</a></code></li>
+<li><code><a title="kalash.run.TestProgram.module" href="#kalash.run.TestProgram.module">module</a></code></li>
+<li><code><a title="kalash.run.TestProgram.parseArgs" href="#kalash.run.TestProgram.parseArgs">parseArgs</a></code></li>
+<li><code><a title="kalash.run.TestProgram.progName" href="#kalash.run.TestProgram.progName">progName</a></code></li>
+<li><code><a title="kalash.run.TestProgram.runTests" href="#kalash.run.TestProgram.runTests">runTests</a></code></li>
+<li><code><a title="kalash.run.TestProgram.testNamePatterns" href="#kalash.run.TestProgram.testNamePatterns">testNamePatterns</a></code></li>
+<li><code><a title="kalash.run.TestProgram.usageExit" href="#kalash.run.TestProgram.usageExit">usageExit</a></code></li>
+<li><code><a title="kalash.run.TestProgram.verbosity" href="#kalash.run.TestProgram.verbosity">verbosity</a></code></li>
+<li><code><a title="kalash.run.TestProgram.warnings" href="#kalash.run.TestProgram.warnings">warnings</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.run.TestResult" href="#kalash.run.TestResult">TestResult</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.run.TestResult.addError" href="#kalash.run.TestResult.addError">addError</a></code></li>
+<li><code><a title="kalash.run.TestResult.addExpectedFailure" href="#kalash.run.TestResult.addExpectedFailure">addExpectedFailure</a></code></li>
+<li><code><a title="kalash.run.TestResult.addFailure" href="#kalash.run.TestResult.addFailure">addFailure</a></code></li>
+<li><code><a title="kalash.run.TestResult.addSkip" href="#kalash.run.TestResult.addSkip">addSkip</a></code></li>
+<li><code><a title="kalash.run.TestResult.addSubTest" href="#kalash.run.TestResult.addSubTest">addSubTest</a></code></li>
+<li><code><a title="kalash.run.TestResult.addSuccess" href="#kalash.run.TestResult.addSuccess">addSuccess</a></code></li>
+<li><code><a title="kalash.run.TestResult.addUnexpectedSuccess" href="#kalash.run.TestResult.addUnexpectedSuccess">addUnexpectedSuccess</a></code></li>
+<li><code><a title="kalash.run.TestResult.printErrors" href="#kalash.run.TestResult.printErrors">printErrors</a></code></li>
+<li><code><a title="kalash.run.TestResult.startTest" href="#kalash.run.TestResult.startTest">startTest</a></code></li>
+<li><code><a title="kalash.run.TestResult.startTestRun" href="#kalash.run.TestResult.startTestRun">startTestRun</a></code></li>
+<li><code><a title="kalash.run.TestResult.stop" href="#kalash.run.TestResult.stop">stop</a></code></li>
+<li><code><a title="kalash.run.TestResult.stopTest" href="#kalash.run.TestResult.stopTest">stopTest</a></code></li>
+<li><code><a title="kalash.run.TestResult.stopTestRun" href="#kalash.run.TestResult.stopTestRun">stopTestRun</a></code></li>
+<li><code><a title="kalash.run.TestResult.wasSuccessful" href="#kalash.run.TestResult.wasSuccessful">wasSuccessful</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.run.TextTestRunner" href="#kalash.run.TextTestRunner">TextTestRunner</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.run.TextTestRunner.resultclass" href="#kalash.run.TextTestRunner.resultclass">resultclass</a></code></li>
+<li><code><a title="kalash.run.TextTestRunner.run" href="#kalash.run.TextTestRunner.run">run</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.run.parameterized" href="#kalash.run.parameterized">parameterized</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.run.parameterized.assert_not_in_testcase_subclass" href="#kalash.run.parameterized.assert_not_in_testcase_subclass">assert_not_in_testcase_subclass</a></code></li>
+<li><code><a title="kalash.run.parameterized.check_input_values" href="#kalash.run.parameterized.check_input_values">check_input_values</a></code></li>
+<li><code><a title="kalash.run.parameterized.expand" href="#kalash.run.parameterized.expand">expand</a></code></li>
+<li><code><a title="kalash.run.parameterized.input_as_callable" href="#kalash.run.parameterized.input_as_callable">input_as_callable</a></code></li>
+<li><code><a title="kalash.run.parameterized.param_as_nose_tuple" href="#kalash.run.parameterized.param_as_nose_tuple">param_as_nose_tuple</a></code></li>
+<li><code><a title="kalash.run.parameterized.param_as_standalone_func" href="#kalash.run.parameterized.param_as_standalone_func">param_as_standalone_func</a></code></li>
+<li><code><a title="kalash.run.parameterized.to_safe_name" href="#kalash.run.parameterized.to_safe_name">to_safe_name</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: kalash
+Version: 4.0.0
+Summary: Test runner made for scalable automation based on standard `unittest` Python module
+Home-page: https://github.com/Technica-Engineering/kalash
+Author: Product Testing Technica Engineering GmbH
+Author-email: krzysztof.czarnecki@technica-engineering.de
+License: GPLv3
+Keywords: automation,testing,systems,devices
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: pyyaml
+Requires-Dist: argparse
+Requires-Dist: unittest-xml-reporting
+Requires-Dist: parameterized
+Requires-Dist: toolz
+Requires-Dist: dataclasses-jsonschema
+Provides-Extra: dev
+Requires-Dist: pdoc3 ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: setuptools ; extra == 'dev'
+Requires-Dist: autopep8 ; extra == 'dev'
+
+<img src="kalash/res/kalash2.svg" alt="logo" width="50" style="display: block;margin-left: auto;margin-right: auto;"/>
+
+![Test Workflow](https://github.com/Technica-Engineering/kalash/actions/workflows/test-workflow.yaml/badge.svg)
+
+[![codecov](https://codecov.io/gh/Technica-Engineering/kalash/branch/master/graph/badge.svg?token=D6KS2QVG6D)](https://codecov.io/gh/Technica-Engineering/kalash)
+
+# Kalash
+
+Kalash is a simple test runner built for large-scale test automation which relies on a simple YAML-based configuration or Python file configuration.
+
+## Why Kalash
+
+Kalash decouples the work of a QA Engineer from the need to manage automation server jobs. It makes running tests in local and automated contexts easy and pleasurable with comprehensible YAML or Python file configuration approach.
+
+[Read more...](./kalash/doc/features.md)
+
+## Installation
+
+Run `pip install kalash` command.
+
+This will install the latest stable version of Kalash. Of course having Python and `pip` working is a prerequisite.
+
+Alternatively you can install this package in development mode after cloning with `pip install -e '.[dev]'` command.
+
+## Usage
+
+Please refer to the [documentation](./kalash/doc/basic_usage.md) within this repository.
+
+For full code documentation please go [here]() or run `kalash --docs` - this should display a web browser window with the contents of the documentation bundled within the Python package.
+
+## Contributing
+
+Please read carefully our [contribution guidelines](./kalash/doc/contributing.md) before contributing to this project.
+
+## Credits
+
+Made with love by Technica Engineering GmbH Product Testing team:
+
+- [Krzysztof Czarnecki](https://github.com/kjczarne)
+- Pablo Prol
+- Shane Butler
+
+Special thanks to our friends who made this open-source release possible:
+
+- Thanh Pham
+- Arantxa Fernandez
+- Guillermo Castanera
+- Daniel Barreiro
+
+

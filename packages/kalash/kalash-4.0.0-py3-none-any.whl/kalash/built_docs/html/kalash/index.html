@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>kalash API documentation</title>
+<meta name="description" content="&lt;img src=&#34;../res/kalash2.svg&#34; alt=&#34;logo&#34; width=&#34;200&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt; …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>kalash</code></h1>
+</header>
+<section id="section-intro">
+<p><img src="../res/kalash2.svg" alt="logo" width="200" style="display: block;margin-left: auto;margin-right: auto;"/></p>
+<p>Kalash is a test runner made originally for hardware test
+automation at <a href="https://technica-engineering.de/en/">Technica Engineering GmbH</a>. 🚀</p>
+<h1 id="features">Features</h1>
+<h2 id="what-you-can-do-with-kalash">What <strong>you</strong> can do with Kalash</h2>
+<ul>
+<li>Run Software or Hardware tests in an automated context as well as locally:<ul>
+<li>As singular Python Scripts</li>
+<li>As test suites defined in a simple declarative <a href="#yaml-config-file-specification">YAML</a> file or more flexible <a href="#python-config-file-specification">Python configuration files</a></li>
+<li>In <a href="#why-use-kalash">isolation</a> from lower-level automation server job configuration (e.g. you don't need to manage Jenkins to change the definition of a test suite to be triggered by a job)</li>
+</ul>
+</li>
+<li><a href="#yaml-config-file-specification">Filter</a> test cases by way more than just a name, defining rich, complex test suites</li>
+<li>Document metadata for your test cases in a manner that is <a href="#creating-test-cases">both human-readable and machine-readable</a></li>
+<li>Generate <a href="#reports">standard XML XUnit reports</a></li>
+<li>Log whatever happens within the test cases on a <a href="#logging">per-test-case level of granularity</a></li>
+<li><a href="#accessing-configuration-from-within-test-cases">Parameterize</a> test cases easily</li>
+<li>Perform <a href="#hypothetical-runs">hypothetical runs</a></li>
+</ul>
+<p>Read <a href="#why-use-kalash">Why Use Kalash</a> to get a more comprehenisve overview of the system.</p>
+<h2 id="notable-features-available">Notable Features Available</h2>
+<ul>
+<li><a href="#yaml-config-file-specification">Filtering</a> by metadata tags</li>
+<li><a href="#python-config-file-specification">Python</a> or <a href="#yaml-config-file-specification">YAML</a> declarative-style configuration files for test suites</li>
+<li><a href="#setup-and-teardown">Setup and Teardown</a> scripts are supported</li>
+<li><code>--no-recurse</code> option</li>
+<li><code>--fail-fast</code> option</li>
+<li>Each test case has its own <a href="#logging">logger</a></li>
+<li><code>--what-if</code> option</li>
+<li><a href="#logging">Logger configuration</a> via CLI</li>
+<li><a href="#accessing-configuration-from-within-test-cases">Dynamic parametrization</a> of the test cases</li>
+</ul>
+<h2 id="notable-features-planned">Notable Features Planned</h2>
+<ul>
+<li>Log files grouping based on arbitrary metadata tags</li>
+<li>Stable last-result filtering</li>
+<li>JIRA integration - loading metadata automatically from JIRA tickets</li>
+</ul>
+<h1 id="basic-usage">Basic Usage</h1>
+<h2 id="before-installation">Before installation</h2>
+<p>We require <strong>Python 3.7 or higher version</strong> to be installed on your system before Kalash can be installed.</p>
+<p>Describing how to get Python working is out of the scope of our documentation.</p>
+<h2 id="installation">Installation</h2>
+<p>Simply run <code>pip install <a title="kalash" href="#kalash">kalash</a></code>.</p>
+<p>Note: for this to work <code>pip</code> needs to be in your <code>PATH</code>.</p>
+<h2 id="why-use-kalash">Why use Kalash</h2>
+<p>Kalash was originally created as a lightweight wrapper around a <code>unittest.TestCase</code> that insulates QA Engineers from the necessity of managing automation services like Jenkins and increasing security and stability of a running automation service instance.</p>
+<p>Simply put, we've created this because we didn't want to give admin access over Jenkins to all our QA Engineers to reduce risk of some important jobs being clobbered. 😀</p>
+<p>Kalash has grown out to include a number of amazing features:</p>
+<ul>
+<li>built-in logger on the <code>TestCase</code> class</li>
+<li>runtime access to runner's configuration enabling new parametrization strategies</li>
+<li>ability to filter test cases against specific values outlined in the metadata tag</li>
+<li>ability to define complex test suites in declarative YAML or Python configuration files to modify runtime collection of tests</li>
+<li>ability to inspect hypothetical test suites that <em>would</em> run were the tests to be triggered</li>
+</ul>
+<h3 id="the-system">The system</h3>
+<p>Kalash is originally intended for an automation system defined as:</p>
+<p><img src="../res/kalash_flow.svg" alt="logo"/></p>
+<p>What do you need to do to use it for test automation?</p>
+<ol>
+<li>You create a YAML and name it as you want. You put that file in the <code>yamls</code> folder in a test repository. We recommend to name the YAML file after the job name. If you want a <code>json</code> create a JSON. It will work as well.</li>
+<li>You contact IT so they can create an automated job for you. Or create a CI job on your own if you're not working in a team.</li>
+<li>Once you have a job created any updates you make to the YAML file will affect the test collection you've specified.</li>
+</ol>
+<h2 id="creating-a-test-suite">Creating a test suite</h2>
+<p>A suite is defined by a singular configuration file. The file may be:</p>
+<ul>
+<li><code>.py</code> file - should contain exactly one <code><a title="kalash.config.Trigger" href="config.html#kalash.config.Trigger">Trigger</a></code> instance</li>
+<li><code>.yaml</code> file - should follow a specification described in <a href="#yaml-config-file-specification">yaml specification</a></li>
+</ul>
+<p>Kalash will collect only test cases following a rigid template.</p>
+<h3 id="creating-test-cases">Creating test cases</h3>
+<p>Each test should be based on the following test template:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+META_START
+---
+id: 999999002_99-Blah_9-Whatever
+META_END
+&quot;&quot;&quot;
+
+from kalash.run import MetaLoader, TestCase, main
+
+import os
+
+
+class TestSomething(TestCase):
+
+    def test_1(self, name):
+        print(f&quot;Running for {name}&quot;)
+
+
+if __name__ == '__main__':
+    main(testLoader=MetaLoader())
+
+</code></pre>
+<p>This is the most minimal test template specifying a metadata section and a slightly modified wrapped <code>unittest.TestCase</code> class with additional features.</p>
+<p>A more built-out example would be:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+META_START
+---
+id: 999999002_99-Blah_9-Whatever              # ID of the test
+use_cases:                              # JIRA ticket names of the related use cases
+  - FearFactory                               # Example JIRA ticket name
+workbenches:                                  # Workbench where the test is meant to be run
+  - Gojira                                    # Example workbench
+devices:                                      # Resources to run with
+  - cancombo
+  - lincombo
+META_END
+&quot;&quot;&quot;
+
+from kalash.run import MetaLoader, TestCase, main, parameterized
+
+
+class TestAdvancedFiltering1(TestCase):
+
+    @parameterized.expand(['lincombo', 'cancombo'])
+    def test_1(self, name):
+        self.allow_when('run_only_with', name)
+        print(f&quot;Running for {name}&quot;)
+
+
+if __name__ == '__main__':
+    main(testLoader=MetaLoader())
+
+</code></pre>
+<h3 id="running-the-tests">Running the tests</h3>
+<p>To trigger a particular test suite you may run <code>kalash run -f ./path/to/config.py</code> and if you need more configuration options run <code>kalash --help</code>.</p>
+<h3 id="reports">Reports</h3>
+<p>By default test reports will be written to the current working directory, unless overridden by the <code>report</code> key in the <code><a title="kalash.config" href="config.html">kalash.config</a></code> section (see: <a href="#yaml-config-file-specification">yaml specification</a>).</p>
+<p>The reports produced by Kalash are standard XML XUnit reports that can be parsed and displayed by a treasure trove of open-source applications.</p>
+<h3 id="logging">Logging</h3>
+<p>Every test case has a built-in logger that gets destroyed as soon as the test is complete. You can access it via <code>self.logger</code> on the <code>TestCase</code> class. For example:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+META_START
+---
+id: 999999001_99-Blah_9-Whatever
+META_END
+&quot;&quot;&quot;
+
+from kalash.run import MetaLoader, TestCase, main
+
+
+class TestLogger1(TestCase):
+
+    def test_1(self):
+        self.logger.info(&quot;hello1&quot;)
+
+
+if __name__ == '__main__':
+    main(testLoader=MetaLoader())
+
+</code></pre>
+<h4 id="logger-configuration">Logger configuration</h4>
+<p>The logger can be configured using the following CLI switches:</p>
+<ul>
+<li><code>--log-dir</code> - base directory for logs</li>
+<li><code>--log-level</code> - Python's <code>logging</code> library log verbosity</li>
+<li><code>--log-format</code> - Python's <code>logging</code> library formatter string</li>
+<li><code>--group-by</code> - grouping log files by metadata tags</li>
+</ul>
+<p>By default logs are written to a <code>logs</code> folder in the current working directory. Each test case gets its separate folder and log files contained within start with a timestamp.</p>
+<p>If <code>--group-by</code> is used, those test case folders are grouped by any specified property from the metadata tag. For example <code>--group-by devices</code> will group test cases by the <code>devices</code> key. If <code>devices</code> is a single string e.g. <code>"cancombo"</code> the log tree will be <code>"logs/cancombo/TestCaseID/123456789_TestCaseID"</code>. If <code>devices</code> is a list, e.g. <code>["cancombo", "lincombo"]</code>, the log tree will be <code>"logs/cancombo_lincombo/TestCaseID/123456789_TestCaseID"</code>.</p>
+<h3 id="json-schema">JSON Schema</h3>
+<p>You can make use of a JSON schema to make writing your YAML or JSON files a little easier. The schema is located <a href="https://raw.githubusercontent.com/Technica-Engineering/kalash/master/kalash/spec.schema.json">here</a>.</p>
+<h4 id="example-schema-setup-vscode">Example schema setup - VSCode</h4>
+<p>Every editor handles JSON schemas a little differently. Here is an example on how to configure Visual Studio Code.</p>
+<ol>
+<li>Open Settings (Ctrl+Shift+P and type in settings) as JSON.</li>
+<li>
+<p>Modify or add <code>"yaml.schemas"</code> like this:</p>
+<p><code>json
+"yaml.schemas": {
+"https://raw.githubusercontent.com/Technica-Engineering/kalash/feature/7-8-schemas-and-json/kalash/spec.schema.json": "*.k.yaml"
+},</code></p>
+</li>
+<li>
+<p>Name Kalash YAML files with <code>.k.yaml</code> extension. When you open such file, the schema will be automatically loaded and will suggest what keys are allowed in the YAML file.</p>
+</li>
+</ol>
+<p>If you are using JSON files instead, you could do this:</p>
+<ol>
+<li>Open Settings (Ctrl+Shift+P and type in settings) as JSON.</li>
+<li>
+<p>Modify or add <code>"json.schemas"</code> like this:</p>
+<p><code>json
+"json.schemas": {
+"https://raw.githubusercontent.com/Technica-Engineering/kalash/feature/7-8-schemas-and-json/kalash/spec.schema.json": "*.k.json"
+},</code></p>
+</li>
+<li>
+<p>Name Kalash JSON files with <code>.k.json</code> extension. When you open such file, the schema will be automatically loaded and will suggest what keys are allowed in the JSON file.</p>
+</li>
+</ol>
+<h1 id="integration-with-ci-vendors">Integration with CI vendors</h1>
+<p>Kalash is vendor-independent. That is, there is literally no difference whether you want to use Jenkins or GitLab CI, or anything else. Here's an example of usage with Jenkins:</p>
+<pre><code class="language-groovy">stage (&quot;Call kalash runner&quot;){
+    steps{
+        bat '''CALL conda.bat activate some_env
+                kalash run -f &quot;.kalash.yaml&quot;
+            '''
+    }
+}
+</code></pre>
+<p>What's happenning there? If you add this to your Jenkinsfile in tests repository and add a <code>".kalash.yaml"</code> file, <code><a title="kalash" href="#kalash">kalash</a></code> will use that file (<code>kalash run -f ".kalash.yaml"</code> command) and run specified tests with specified configuration. With Jenkins it's best to use Anaconda3 or Miniconda3 and you need to use a Python environment which has <code><a title="kalash" href="#kalash">kalash</a></code> installed.</p>
+<p>In practice every <code>".kalash.yaml"</code> file will translate to a single specific job that will have a corresponding <code>Jenkinsfile</code>. The reason we split <code><a title="kalash" href="#kalash">kalash</a></code> away from Jenkins is to allow the QA engineers to specify test configuration themselves without meddling into CI server pipeline, where it's way easier to break stuff and the file looks way more daunting to even understand.</p>
+<p>For example: <code>Jenkinsfile</code>s may be created in a <code>jenkinsfiles</code> folder in each test repository and <code>yamls</code> folder wilcouldl contain the YAMLs managed by QA engineers. In Jenkins, use SCM checkout and specify the path to correct <code>Jenkinsfile</code> that maps to a given job requested by QA engineers.</p>
+<h1 id="yaml-config-file-specification">YAML Config File Specification</h1>
+<h2 id="example-yaml-simple">Example YAML (simple)</h2>
+<p>A conventional metadata tag in a test template looks like this:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+META_START
+---
+id: 000000003_12_0_1234-SomethingElse 
+use_cases:
+  - Some Jira ticket
+workbenches:
+  - BloodhoundGang
+META_END
+
+Below the META_END tag you can write any additional comments you need
+for your test case.
+&quot;&quot;&quot;
+</code></pre>
+<p>It's always placed at the top of the test case file.</p>
+<p>Imagine it's saved under <code>test_something.py</code>. The simplest way to run the test case using Kalash would be:</p>
+<ol>
+<li>
+<p>Create a <code>something.yaml</code> file with the following contents:</p>
+<p><code>yaml
+tests:
+- path: './test_something.py'</code></p>
+</li>
+<li>
+<p>Run <code>kalash run -f ./something.yaml</code>.</p>
+</li>
+</ol>
+<h2 id="config-section">Config section</h2>
+<p>The configuration file is split into two components: <code>tests</code> and <code><a title="kalash.config" href="config.html">kalash.config</a></code>.</p>
+<ul>
+<li><code>tests</code> - this section defines <strong>solely the test collection process</strong>.</li>
+<li><code><a title="kalash.config" href="config.html">kalash.config</a></code> - this section **modifies runtime behavior of the test cases.</li>
+</ul>
+<p><code><a title="kalash.config" href="config.html">kalash.config</a></code> section is optional.</p>
+<h2 id="advanced-features">Advanced features</h2>
+<p>Read <a href="#base-directory-resolution-in-config-files">advanced configuration options</a> to learn more about the more advanced configuration options using the YAML file.</p>
+<h2 id="example-yaml-complex">Example YAML (complex)</h2>
+<pre><code class="language-yaml">tests:
+  - path: '$(WorkDir)/tests/test_scripts'
+    id:
+      - '000000003_12_0_1234-SomethingElse'
+    setup: '$(ThisFile)/../tests/test_scripts/setup_teardown/setup_files/setup.py'
+    teardown: '$(WorkDir)/tests/test_scripts/setup_teardown/setup_files/teardown.py'
+config:
+  report: './kalash_reports'
+</code></pre>
+<h2 id="full-api-specification">Full API specification</h2>
+<p>The allowed up-to date values for the YAML specification are outlined in the documentation of the <a href="#kalash.config.Spec"><code>Spec</code> class</a>.</p>
+<h1 id="python-config-file-specification">Python Config File Specification</h1>
+<p>Python configuration files follow the same pattern as the YAML configuration files, albeit in Python code. It's best to explain it with an example:</p>
+<pre><code class="language-python">from kalash.config import CliConfig, Config, Trigger, Test
+from kalash.run import run
+
+t = Trigger(
+    tests=[
+        Test(
+            path='./tests/some_directory'
+        )
+    ],
+    config=Config(report='report-dir')
+)
+
+if __name__ == &quot;__main__&quot;:
+    run(t)
+
+</code></pre>
+<p>The entrypoint <code><a title="kalash.run" href="run.html">kalash.run</a></code> accepts a <code>Trigger</code> instance which is a direct equivalent of a YAML configuration file. A <code>Trigger</code> object consists of:</p>
+<ul>
+<li><code>tests</code> - a list of <code>Test</code> objects responsible for test collection configuration</li>
+<li><code><a title="kalash.config" href="config.html">kalash.config</a></code> - a <code>Config</code> object that modifies runtime parameters</li>
+</ul>
+<h2 id="extending-specification">Extending specification</h2>
+<p>You can inherit from the original <code>Test</code> and <code>Config</code> classes to extend the configuration:</p>
+<pre><code class="language-python">from typing import Any, Dict, List
+from kalash.config import CliConfig, Config, Trigger, Test, dataclass, field
+from kalash.run import run
+
+
+@dataclass
+class CustomConfig(Config):
+    run_only_with: List[str] = field(default_factory=list)
+
+
+t = Trigger(
+    tests=[
+        Test(
+            path='./tests/test_scripts/python_instead_of_yaml'
+        )
+    ],
+    config=CustomConfig(run_only_with=['cancombo'])
+)
+
+if __name__ == &quot;__main__&quot;:
+    run(t)
+
+</code></pre>
+<p>One caveat here is that <strong>you must provide default values</strong> for each new attribute on a customized class. That's because the default classes already have sensible defaults baked in and you cannot place attributes without default values after attributes with default values.</p>
+<h2 id="running-tests-with-a-python-config">Running tests with a Python config</h2>
+<p>Because this is a Python file you can either run it directly or still use Kalash CLI to trigger your tests.</p>
+<h3 id="running-with-kalash-cli">Running with Kalash CLI</h3>
+<p>Simply put: <code>kalash run -f ./path/to/config.py</code>.</p>
+<h3 id="runing-directly-with-python">Runing directly with Python</h3>
+<p>If the <code>__main__</code> clause is present in the file you may just trigger the script with Python, e.g. <code>python ./path/to/config.py</code>.</p>
+<p>The difference is that when you run this as a Python script you will not be able to provide additional CLI flags on the command line. But you may choose to feed them in directly within the configuration file:</p>
+<pre><code class="language-python">from kalash.config import CliConfig, Config, Trigger, Test
+from kalash.run import run
+
+t = Trigger(
+    tests=[
+        Test(
+            path='./tests/some_directory'
+        )
+    ],
+    config=Config(report='report-dir')
+)
+
+if __name__ == &quot;__main__&quot;:
+    run(t, CliConfig(log_dir='logs'))
+
+</code></pre>
+<p>Note:</p>
+<ul>
+<li>The <strong>python config is a better choice when you want to preserve CLI configuration</strong> for all future runs.</li>
+<li>The <strong><code>CliConfig</code> specified in the file will be overridden if you run this with <code><a title="kalash" href="#kalash">kalash</a></code> CLI command</strong>.</li>
+</ul>
+<h1 id="advanced-configuration-and-usage">Advanced Configuration and Usage</h1>
+<h2 id="base-directory-resolution-in-config-files">Base directory resolution in config files</h2>
+<p>By default an expression like <code>path: './test_something.py'</code> defaults to working directory: it will <strong>look for paths relative to where <code><a title="kalash" href="#kalash">kalash</a></code> command is run</strong>. For convenience we expose the following directory resolution options:</p>
+<ul>
+<li><code>$(WorkDir)</code> - same behavior as <code>.</code>, relative to working directory.</li>
+<li><code>$(ThisFile)</code> - relative to the location of the configuration file itself.</li>
+</ul>
+<h2 id="setup-and-teardown">Setup and teardown</h2>
+<p>On top of the standard <code>setUp</code> and <code>tearDown</code> methods we offer <code>setup</code> and <code>teardown</code> script mappings. For example:</p>
+<pre><code class="language-yaml">tests:
+  - path: '$(WorkDir)/tests/test_scripts'
+    setup: '$(ThisFile)/../tests/test_scripts/setup_teardown/setup_files/setup.py'
+    teardown: '$(WorkDir)/tests/test_scripts/setup_teardown/setup_files/teardown.py'
+config:
+  report: './kalash_reports'
+  setup: '$(ThisFile)/../tests/test_scripts/setup_teardown/setup_files/setup.py'
+  teardown: '$(WorkDir)/tests/test_scripts/setup_teardown/setup_files/teardown.py'
+</code></pre>
+<p>The two flavors can be explained as follows:</p>
+<ul>
+<li>If the <code>setup</code>/<code>teardown</code> step is under a <code>Test</code> element (under <code>tests</code> in the YAML config) it runs once before/after the complete collection of tests from a <code>Test</code> element.</li>
+<li>If the <code>setup</code>/<code>teardown</code> step is under a <code>Config</code> element (under <code><a title="kalash.config" href="config.html">kalash.config</a></code> in the YAML config) it runs once before/after the complete collection of tests from the entire run.</li>
+</ul>
+<h2 id="accessing-configuration-from-within-test-cases">Accessing configuration from within test cases</h2>
+<p>To allow dynamic parametrization we expose the following pattern:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+META_START
+---
+id: 999999002_99-Blah_9-Whatever
+META_END
+&quot;&quot;&quot;
+
+from kalash.run import MetaLoader, TestCase, main, parameterized
+
+import os
+
+
+class TestAdvancedFiltering1(TestCase):
+
+    @parameterized.expand(['lincombo', 'cancombo'])
+    def test_1(self, name):
+        self.allow_when('run_only_with', name)
+        print(f&quot;Running for {name}&quot;)
+
+
+if __name__ == '__main__':
+    main(testLoader=MetaLoader())
+
+</code></pre>
+<p><code>@parameterized.expand</code> is essentially unchanged, coming from the original <code>parameterized</code> Python library. <code>self.allow_when</code> queries the <code><a title="kalash.config" href="config.html">kalash.config</a></code> section of the used configuration file with <code>run_only_with</code> and checks whether <code>name</code> is within the list of the <code>run_only_with</code> tags. Any configuration options can be filtered in this way, even <code>report</code>.</p>
+<p><code>self.allow_when</code> will only allow a parameterized test case to be triggered when the condition is met. If the file is run locally (triggered as a Python script, not via Kalash), the call will simply be ignored (since there is no config being provided in such a situation).</p>
+<h3 id="accessing-configuration-directly">Accessing configuration directly</h3>
+<p>The <code>TestCase</code> class exposes <code>trigger</code> property which lets you directly refer to the test case configuration elements:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+META_START
+---
+id: 999999002_99-Blah_9-Whatever
+META_END
+&quot;&quot;&quot;
+
+from kalash.run import MetaLoader, TestCase, main, parameterized
+
+
+class TestSomething(TestCase):
+
+    def test_1(self, name):
+        if self.trigger:
+            if self.trigger.config:
+                # prints the `config` section
+                print(self.trigger.config)
+
+
+if __name__ == '__main__':
+    main(testLoader=MetaLoader())
+
+</code></pre>
+<p>The name <code>trigger</code> comes from the name of the class used in <a href="#python-config-file-specification">Python configuration files</a>.</p>
+<h2 id="hypothetical-runs">Hypothetical runs</h2>
+<p>If you wish to see what tests Kalash would run if it were to be triggered use the <code>--what-if</code> flag.</p>
+<ul>
+<li><code>kalash run -f some.yaml --what-if paths</code> - list all collected test paths</li>
+<li><code>kalash run -f some.yaml --what-if ids</code> - list all collected test ids</li>
+</ul>
+<h1 id="contributing">Contributing</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>All you need to develop for this project is to <code>pip install nox</code>.</p>
+<p><code>nox</code> is a build and test automation driver for Python development that will automatically prepare your environment for testing.</p>
+<h2 id="contributing-process">Contributing - process 🖋</h2>
+<p>Before submitting a pull request you must make sure that the CI pipeline passes all tests. The simplest way to contribute is thus:</p>
+<ol>
+<li>Read the <a href="#processes-and-conventions">Processes and conventions section</a>.</li>
+<li>Fork this repo.</li>
+<li>Install Kalash in develop mode: <code>pip install -e '.[dev]'</code>.</li>
+<li>Implement tests for your change (Test-Driven Development).</li>
+<li>Implement your change.</li>
+<li>If you have modified the user-facing data model (e.g. <code>Trigger</code>, <code>Test</code> or <code>Meta</code> classes), make sure to regenerate the JSON schema (<code>nox -e json_schema</code>).</li>
+<li>Run tests locally using <code>nox -e test</code>.</li>
+<li>Check whether your tests have satisfactory coverage: Run <code>coverage html</code> after triggering the tests and check <code>htmlcov/index.html</code>. Our minimum target coverage is 85%.</li>
+<li>Run <code>flake8</code> at the root of this repository and correct any code-style deviations.</li>
+<li>Document the change.</li>
+<li>Update the <code>CHANGELOG</code>. Use the <a href="https://keepachangelog.com/en/1.0.0/">correct</a> style guidelines for the changelog.</li>
+<li>Push code to your fork.</li>
+<li>Run the CI pipeline (will run tests, code quality checks).</li>
+<li>Create a pull request to the <strong><code>master</code> branch</strong>.</li>
+</ol>
+<p>New releases are prepared periodically by checking out a stable <code>master</code> branch. When the release is published documentation is built and a new package will be created and published in PyPI. <strong>Maintainers creating releases should heed to change the version tag in <code>setup.cfg</code></strong>.</p>
+<h2 id="processes-and-conventions">Processes and Conventions 👮‍♀️</h2>
+<p>We use a slightly modified GitFlow practice in our development:</p>
+<ol>
+<li>Each change/issue should have its own branch named after the issue ID, for instance:<ul>
+<li><code>chore/2-git-hooks-setup</code></li>
+<li><code>fix/123-some-bug</code></li>
+<li><code>feature/456-some-feature</code>
+The part we really care about is whatever you place before the slash and should contain one of the well known Git keywords:<ul>
+<li><code>chore</code></li>
+<li><code>fix</code></li>
+<li><code>feature</code></li>
+<li><code>doc</code></li>
+<li><code>refactor</code></li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Each commit should start with the aforementioned keywords, e.g. <code>chore: updating version tag</code>.</li>
+<li>There is one protected branch: <code>master</code>.</li>
+<li>When creating a pull request you should <strong>create a pull request for <code>master</code> branch</strong>. Nobody is permitted to merge broken and untested code to <code>master</code>.</li>
+</ol>
+<h2 id="code-quality">Code quality 💯</h2>
+<p>Few things to heed:</p>
+<ul>
+<li><strong>If <code>flake8</code> tells you your code is crap, fix it before creating a pull request</strong>. We want this project to have high code quality standards. The pipeline will check it for you, so if it doesn't pass you will have to correct yourself before proceeding. 😄</li>
+<li><strong>Use type hints</strong>. Seriosusly. Code that takes little care of the types will be rejected right away. We know Python is dynamically typed but we don't like it. It seems like a pain in the neck in the beginning but spend a month with type hints and you'll never go back. It's much easier to catch nasty bugs when you use them.</li>
+<li><strong>Create tests</strong>. Generally, small fixes <em>might</em> be accepted without tests, usually when we're dealing with something that's blatantly obvious. But you should always prefer to create tests for your changes and test locally before creating a pull request.</li>
+<li><strong>Use a good editor or an IDE</strong>. You should aim for no red squiggly lines, be it in VSCode or PyCharm, doesn't matter. But be sure that if one of the maintainers pulls your change and sees red squiggly lines, you will need to correct your changes accordingly before anything can be merged.</li>
+<li>If you're using <strong>type aliases</strong> consider adding them in <code>"config.py"</code> and documenting them in the <code>__doc__</code> attribute. <code>"config.py"</code> contains the base data model for Kalash, we want to keep it that way so that it's easy to reason about type dependencies. <strong>Type aliases are recommended</strong> because if whenever you decide you need a different type, you only need to change one line (unless the type is incompatible). 😀</li>
+</ul>
+<h1 id="credits">Credits</h1>
+<p>Made with love by Technica Engineering GmbH Product Testing team:</p>
+<ul>
+<li><a href="https://github.com/kjczarne">Krzysztof Czarnecki</a></li>
+<li>Pablo Prol</li>
+<li>Shane Butler</li>
+</ul>
+<p>Special thanks to our friends who made this open-source release possible:</p>
+<ul>
+<li>Thanh Pham</li>
+<li>Arantxa Fernandez</li>
+<li>Guillermo Castanera</li>
+<li>Daniel Barreiro</li>
+</ul>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+.. include:: ./pdoc/header.md
+
+.. include:: ./pdoc/features.md
+.. include:: ./pdoc/basic_usage.md
+.. include:: ./pdoc/automation_servers.md
+.. include:: ./pdoc/yaml_spec.md
+.. include:: ./pdoc/python_spec.md
+.. include:: ./pdoc/advanced_config.md
+.. include:: ./pdoc/contributing.md
+.. include:: ./pdoc/trailer.md
+&#34;&#34;&#34;
+
+__version__ = &#34;4.0.0&#34;</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="kalash.collectors" href="collectors.html">kalash.collectors</a></code></dt>
+<dd>
+<div class="desc"><p>This module contains lowest-level test collection strategies
+for a particular version of a test template …</p></div>
+</dd>
+<dt><code class="name"><a title="kalash.config" href="config.html">kalash.config</a></code></dt>
+<dd>
+<div class="desc"><p>Module containing the entire configuration data model for Kalash …</p></div>
+</dd>
+<dt><code class="name"><a title="kalash.filter" href="filter.html">kalash.filter</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.kalash_test_loader" href="kalash_test_loader.html">kalash.kalash_test_loader</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.last_result_filter" href="last_result_filter.html">kalash.last_result_filter</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.log" href="log.html">kalash.log</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.metaparser" href="metaparser.html">kalash.metaparser</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.run" href="run.html">kalash.run</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.smuggle" href="smuggle.html">kalash.smuggle</a></code></dt>
+<dd>
+<div class="desc"><p>Adapted from: <a href="https://pypi.org/project/smuggle/">https://pypi.org/project/smuggle/</a> with minor changes
+related to path handling.</p></div>
+</dd>
+<dt><code class="name"><a title="kalash.spec" href="spec.html">kalash.spec</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.test_case" href="test_case.html">kalash.test_case</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.testutils" href="testutils.html">kalash.testutils</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="kalash.utils" href="utils.html">kalash.utils</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#features">Features</a><ul>
+<li><a href="#what-you-can-do-with-kalash">What you can do with Kalash</a></li>
+<li><a href="#notable-features-available">Notable Features Available</a></li>
+<li><a href="#notable-features-planned">Notable Features Planned</a></li>
+</ul>
+</li>
+<li><a href="#basic-usage">Basic Usage</a><ul>
+<li><a href="#before-installation">Before installation</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#why-use-kalash">Why use Kalash</a><ul>
+<li><a href="#the-system">The system</a></li>
+</ul>
+</li>
+<li><a href="#creating-a-test-suite">Creating a test suite</a><ul>
+<li><a href="#creating-test-cases">Creating test cases</a></li>
+<li><a href="#running-the-tests">Running the tests</a></li>
+<li><a href="#reports">Reports</a></li>
+<li><a href="#logging">Logging</a><ul>
+<li><a href="#logger-configuration">Logger configuration</a></li>
+</ul>
+</li>
+<li><a href="#json-schema">JSON Schema</a><ul>
+<li><a href="#example-schema-setup-vscode">Example schema setup - VSCode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#integration-with-ci-vendors">Integration with CI vendors</a></li>
+<li><a href="#yaml-config-file-specification">YAML Config File Specification</a><ul>
+<li><a href="#example-yaml-simple">Example YAML (simple)</a></li>
+<li><a href="#config-section">Config section</a></li>
+<li><a href="#advanced-features">Advanced features</a></li>
+<li><a href="#example-yaml-complex">Example YAML (complex)</a></li>
+<li><a href="#full-api-specification">Full API specification</a></li>
+</ul>
+</li>
+<li><a href="#python-config-file-specification">Python Config File Specification</a><ul>
+<li><a href="#extending-specification">Extending specification</a></li>
+<li><a href="#running-tests-with-a-python-config">Running tests with a Python config</a><ul>
+<li><a href="#running-with-kalash-cli">Running with Kalash CLI</a></li>
+<li><a href="#runing-directly-with-python">Runing directly with Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#advanced-configuration-and-usage">Advanced Configuration and Usage</a><ul>
+<li><a href="#base-directory-resolution-in-config-files">Base directory resolution in config files</a></li>
+<li><a href="#setup-and-teardown">Setup and teardown</a></li>
+<li><a href="#accessing-configuration-from-within-test-cases">Accessing configuration from within test cases</a><ul>
+<li><a href="#accessing-configuration-directly">Accessing configuration directly</a></li>
+</ul>
+</li>
+<li><a href="#hypothetical-runs">Hypothetical runs</a></li>
+</ul>
+</li>
+<li><a href="#contributing">Contributing</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#contributing-process">Contributing - process 🖋</a></li>
+<li><a href="#processes-and-conventions">Processes and Conventions 👮‍♀️</a></li>
+<li><a href="#code-quality">Code quality 💯</a></li>
+</ul>
+</li>
+<li><a href="#credits">Credits</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="kalash.collectors" href="collectors.html">kalash.collectors</a></code></li>
+<li><code><a title="kalash.config" href="config.html">kalash.config</a></code></li>
+<li><code><a title="kalash.filter" href="filter.html">kalash.filter</a></code></li>
+<li><code><a title="kalash.kalash_test_loader" href="kalash_test_loader.html">kalash.kalash_test_loader</a></code></li>
+<li><code><a title="kalash.last_result_filter" href="last_result_filter.html">kalash.last_result_filter</a></code></li>
+<li><code><a title="kalash.log" href="log.html">kalash.log</a></code></li>
+<li><code><a title="kalash.metaparser" href="metaparser.html">kalash.metaparser</a></code></li>
+<li><code><a title="kalash.run" href="run.html">kalash.run</a></code></li>
+<li><code><a title="kalash.smuggle" href="smuggle.html">kalash.smuggle</a></code></li>
+<li><code><a title="kalash.spec" href="spec.html">kalash.spec</a></code></li>
+<li><code><a title="kalash.test_case" href="test_case.html">kalash.test_case</a></code></li>
+<li><code><a title="kalash.testutils" href="testutils.html">kalash.testutils</a></code></li>
+<li><code><a title="kalash.utils" href="utils.html">kalash.utils</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

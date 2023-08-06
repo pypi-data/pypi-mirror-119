@@ -1,0 +1,1604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>kalash.config API documentation</title>
+<meta name="description" content="Module containing the entire configuration data model for Kalash …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>kalash.config</code></h1>
+</header>
+<section id="section-intro">
+<p>Module containing the entire configuration data model for Kalash</p>
+<p>Type Aliases:</p>
+<ul>
+<li><code>TestPath</code> = <code>str</code></li>
+<li><code>AuxiliaryPath</code> = <code>str</code></li>
+<li><code>UseCase</code> = <code>str</code></li>
+<li><code>LastResult</code> = <code>str</code></li>
+<li><code>TestId</code> = <code>str</code></li>
+<li><code>Workbench</code> = <code>str</code></li>
+<li><code>Device</code> = <code>str</code></li>
+<li><code>Suite</code> = <code>str</code></li>
+<li><code>FunctionalityItem</code> = <code>str</code></li>
+<li><code>Toggle</code> = <code>bool</code></li>
+<li><code>KalashYamlObj</code> = <code>Dict[str, Any]</code></li>
+<li><code>ArbitraryYamlObj</code> = <code>Dict[str, Any]</code></li>
+<li><code>ConstructorArgsTuple</code> = <code>Tuple[Any, &hellip;]</code></li>
+<li><code>TestModule</code> = <code>ModuleType</code></li>
+<li><code>TemplateVersion</code> = <code>str</code></li>
+<li>
+<p><code>OneOrList</code> = <code>Union[List[T], T]</code></p>
+</li>
+<li>
+<p><code>PathOrIdForWhatIf</code> = <code>List[str]</code></p>
+</li>
+<li><code>CollectorArtifact</code> = <code>Tuple[unittest.TestSuite, PathOrIdForWhatIf]</code></li>
+<li><code>Collector</code> = <code>Callable[[TestPath, <a title="kalash.config.Trigger" href="#kalash.config.Trigger">Trigger</a>], CollectorArtifact]</code></li>
+</ul>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from __future__ import annotations
+
+__doc__ = &#34;&#34;&#34;&#34;&#34;&#34;
+
+from collections import defaultdict
+from types import ModuleType
+from typing import Any, Callable, Dict, List, Optional, Tuple, TypeVar, Union
+from dataclasses import dataclass, field
+from toolz import pipe
+from dataclasses_jsonschema import JsonSchemaMixin
+
+import unittest
+import logging
+import os
+import yaml
+import inspect
+
+from .smuggle import smuggle
+from .spec import Spec
+
+T = TypeVar(&#39;T&#39;)
+TestPath = str
+AuxiliaryPath = str
+UseCase = str
+LastResult = str
+TestId = str
+Workbench = str
+Device = str
+Suite = str
+FunctionalityItem = str
+Toggle = bool
+KalashYamlObj = Dict[str, Any]
+ArbitraryYamlObj = Dict[str, Any]
+ConstructorArgsTuple = Tuple[Any, ...]
+TestModule = ModuleType
+TemplateVersion = str
+OneOrList = Union[List[T], T]
+
+# Please document type aliases below:
+
+__doc__ += &#34;&#34;&#34;
+Module containing the entire configuration data model for Kalash
+
+Type Aliases:
+
+* `TestPath` = `str`
+* `AuxiliaryPath` = `str`
+* `UseCase` = `str`
+* `LastResult` = `str`
+* `TestId` = `str`
+* `Workbench` = `str`
+* `Device` = `str`
+* `Suite` = `str`
+* `FunctionalityItem` = `str`
+* `Toggle` = `bool`
+* `KalashYamlObj` = `Dict[str, Any]`
+* `ArbitraryYamlObj` = `Dict[str, Any]`
+* `ConstructorArgsTuple` = `Tuple[Any, ...]`
+* `TestModule` = `ModuleType`
+* `TemplateVersion` = `str`
+* `OneOrList` = `Union[List[T], T]`
+&#34;&#34;&#34;
+
+
+@dataclass
+class CliConfig:
+    &#34;&#34;&#34;A class collecting all CLI options fed into
+    the application. The instance is created by the
+    main function and used downstream in the call stack.
+
+    Args:
+        file (Optional[str]): config filename (YAML or Python file)
+        log_dir (str): base directory for log files
+        group_by (Optional[str]): group logs by a particular property
+            from the metadata tag
+        no_recurse (bool): don&#39;t recurse into subfolders when scanning
+            for tests to run
+        debug (bool): run in debug mode
+        no_log (bool): suppress logging
+        no_log_echo (bool): suppress log echoing to STDOUT
+        spec_path (str): custom YAML/Meta specification path, the file
+            should be in YAML format
+        log_level (int): `logging` module log level
+        log_format (str): formatter string for `logging` module logger
+        what_if (Optional[str]): either &#39;ids&#39; or &#39;paths&#39;, prints hypothetical
+            list of IDs or paths of collected tests instead of running the
+            actual tests, useful for debugging and designing test suites
+        fail_fast (bool): if `True` the test suite won&#39;t be continued if
+            at least one of the tests that have been collected and triggered
+            has failed
+    &#34;&#34;&#34;
+    file:        Optional[str] = None
+    # if not running in CLI context we initialize reasonable defaults:
+    log_dir:     str           = &#39;.&#39;
+    group_by:    Optional[str] = None
+    no_recurse:  bool          = False
+    debug:       bool          = False
+    no_log:      bool          = False
+    no_log_echo: bool          = False
+    spec_path:   str           = &#39;spec.yaml&#39;
+    log_level:   int           = logging.INFO
+    log_format:  str           = &#39;%(message)s&#39;
+    what_if:     Optional[str] = None
+    fail_fast:   bool          = False
+
+    def __post_init__(self):
+        spec_abspath = os.path.join(os.path.dirname(__file__), self.spec_path)
+        self.spec = Spec.load_spec(spec_abspath)
+        self.log_format = self.spec.cli_config.log_formatter
+
+
+class classproperty(object):
+    &#34;&#34;&#34;https://stackoverflow.com/a/13624858
+    Only Python 3.9 allows stacking `@classmethod`
+    and `@property` decorators to obtain static
+    properties. We use this decorator as a workaround
+    since we wish to support 3.7+ for quite a while.
+    &#34;&#34;&#34;
+    def __init__(self, fget):
+        self.fget = fget
+
+    def __get__(self, owner_self, owner_cls):
+        return self.fget(owner_cls)
+
+
+@dataclass
+class SharedMetaElements:
+    &#34;&#34;&#34;Collects Metadata-modifying methods with `CliConfig` instance
+    providing a parameter closure. Most methods here are related
+    to built-in interpolation of patterns like `$(WorkDir)`.
+    &#34;&#34;&#34;
+
+    cli_config: CliConfig
+
+    def _interpolate_workdir(self, ipt: str) -&gt; str:
+        &#34;&#34;&#34;Interpolates CWD variable. This variable is used to
+        resolve paths within Kalash YAML relative to the current
+        working directory. Equivalent to using the dotted file path.
+
+        Args:
+            ipt (str): input string to interpolate
+            yaml_abspath (str): path to the Kalash YAML file.
+
+        Returns: interpolated string
+        &#34;&#34;&#34;
+        return os.path.normpath(
+            ipt.replace(
+                self.cli_config.spec.test.interp_cwd, os.getcwd()
+            )
+        )
+
+    def _interpolate_this_file(self, ipt: str, yaml_abspath: str) -&gt; str:
+        &#34;&#34;&#34;Interpolates THIS_FILE variable. THIS_FILE is used to resolve
+        paths within Kalash YAML relative to the YAML file itself.
+
+        Args:
+            ipt (str): input string to interpolate
+            yaml_abspath (str): path to the Kalash YAML file
+                or the `.py` configuration file
+
+        Returns: interpolated string
+        &#34;&#34;&#34;
+        return os.path.normpath(
+            ipt.replace(
+                self.cli_config.spec.test.interp_this_file,
+                os.path.dirname(yaml_abspath)
+            )
+        )
+
+    def _interpolate_all(self, ipt: Union[str, None], yaml_abspath: str) -&gt; Union[str, None]:
+        &#34;&#34;&#34;Interpolates all variable values using a toolz.pipe
+
+        Args:
+            ipt (str): input string to interpolate
+            yaml_abspath (str): path to the Kalash YAML file
+                or the `.py` configuration file
+
+        Returns: interpolated string
+        &#34;&#34;&#34;
+        if ipt:
+            return pipe(
+                self._interpolate_this_file(ipt, yaml_abspath),
+                self._interpolate_workdir
+            )
+        return ipt
+
+    def resolve_interpolables(self, o: object, yaml_abspath: str):
+        for k, v in o.__dict__.items():
+            if type(v) is str:
+                setattr(o, k, self._interpolate_all(v, yaml_abspath))
+
+
+@dataclass
+class Base:
+    &#34;&#34;&#34;Base config class. `Meta`, `Config` and `Test`
+    inherit from this minimal pseudo-abstract base class.
+    &#34;&#34;&#34;
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Base:
+        raise NotImplementedError(&#34;Base class methods should be overridden&#34;)
+
+    def get(self, argname: str):
+        &#34;&#34;&#34;`getattr` alias for those who wish to use this
+        from within the `TestCase` class.
+        &#34;&#34;&#34;
+        return getattr(self, argname, None)
+
+
+@dataclass
+class Meta(Base, JsonSchemaMixin):
+    &#34;&#34;&#34;Provides a specification outline for the Metadata tag
+    in test templates.
+
+    Args:
+        id (Optional[TestId]): unique test ID
+        version (Optional[TemplateVersion]): template version
+        use_cases (Optional[OneOrList[UseCase]]): one or more
+            use case IDs (preferably from a task tracking system
+            like Jira) that a particular test refers to
+        workbenches (Optional[OneOrList[Workbench]]): one or more
+            physical workbenches where the test should be triggered
+        devices (Optional[OneOrList[Device]]): one or more device
+            categories for which this test has been implemented
+        suites (Optional[OneOrList[Suite]]): one or more arbitrary
+            suite tags (should be used only if remaining tags don&#39;t
+            provide enough possibilities to describe the context of
+            the test script)
+        functionality (Optional[OneOrList[FunctionalityItem]]): one
+            or more functionality descriptors for the test script
+    &#34;&#34;&#34;
+    id:            Optional[TestId] = None
+    version:       Optional[TemplateVersion] = None
+    use_cases:     Optional[OneOrList[UseCase]] = None
+    workbenches:   Optional[OneOrList[Workbench]] = None
+    devices:       Optional[OneOrList[Device]] = None
+    suites:        Optional[OneOrList[Suite]] = None
+    functionality: Optional[OneOrList[FunctionalityItem]] = None
+    cli_config:    CliConfig = CliConfig()
+
+    def __post_init__(self):
+        frame = inspect.stack()[1]
+        module = inspect.getmodule(frame[0])
+        if module:
+            module_path = os.path.abspath(module.__file__)
+            SharedMetaElements(self.cli_config).resolve_interpolables(self, module_path)
+
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Meta:
+        block_spec = cli_config.spec.test
+        meta_spec = cli_config.spec.meta
+        params = dict(
+            id=yaml_obj.get(block_spec.id, None),
+            version=yaml_obj.get(meta_spec.template_version, None),
+            use_cases=yaml_obj.get(meta_spec.related_usecase, None),
+            workbenches=yaml_obj.get(meta_spec.workbench, None),
+            devices=yaml_obj.get(block_spec.devices, None),
+            suites=yaml_obj.get(block_spec.suites, None),
+            functionality=yaml_obj.get(block_spec.functionality, None)
+        )
+        return Meta(
+            **params
+        )
+
+
+@dataclass
+class Test(Meta, JsonSchemaMixin):
+    &#34;&#34;&#34;Provides a specification outline for a single category
+    of tests that should be collected, e.g. by path, ID or any
+    other parameter inherited from `Meta`.
+
+    Args:
+        path (Optional[OneOrList[TestPath]]): path to a test
+            directory or a single test path
+        id (Optional[OneOrList[TestId]]): one or more IDs to
+            filter for
+        no_recurse (Optional[Toggle]): if `True`, subfolders
+            will not be searched for tests, intended for use with
+            the `path` parameter
+        last_result (Optional[LastResult]): if `OK` then filters
+            out only the tests that have passed in the last run,
+            if `NOK` then it only filters out those tests that
+            have failed in the last run
+        setup (Optional[AuxiliaryPath]): path to a setup script;
+            runs once at the start of the test category run
+        teardown (Optional[AuxiliaryPath]): path to a teardown
+            script; runs once at the end of the test category
+            run
+    &#34;&#34;&#34;
+    path:          Optional[OneOrList[TestPath]] = None
+    id:            Optional[OneOrList[TestId]] = None
+    no_recurse:    Optional[Toggle] = None
+    last_result:   Optional[LastResult] = None
+    setup:         Optional[AuxiliaryPath] = None
+    teardown:      Optional[AuxiliaryPath] = None
+    cli_config:    CliConfig = CliConfig()
+
+    def __post_init__(self):
+        frame = inspect.stack()[1]
+        module = inspect.getmodule(frame[0])
+        if module:
+            module_path = os.path.abspath(module.__file__)
+            SharedMetaElements(self.cli_config).resolve_interpolables(self, module_path)
+
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Test:
+        &#34;&#34;&#34;Loads `Test` blocks from a YAML object.&#34;&#34;&#34;
+
+        block_spec = cli_config.spec.test
+        base_class_instance = super().from_yaml_obj(yaml_obj, cli_config)
+        return Test(
+            path=yaml_obj.get(block_spec.path, None),
+            no_recurse=yaml_obj.get(block_spec.no_recurse, None),
+            last_result=yaml_obj.get(block_spec.last_result, None),
+            setup=yaml_obj.get(block_spec.setup_script, None),
+            teardown=yaml_obj.get(block_spec.teardown_script, None),
+            **base_class_instance.__dict__
+        )
+
+    @classproperty
+    def _non_filters(cls):
+        # ID is listed as non-filter beacuse it&#39;s handled
+        # differently. A `Test` definition can filter for
+        # multiple IDs. A `Meta` definition can only have
+        # one ID (1 ID == 1 test case). Hence ID is handled
+        # separately in the `apply_filters` function using
+        # `match_id` helper
+        return [&#39;setup&#39;, &#39;teardown&#39;, &#39;path&#39;, &#39;id&#39;]
+
+
+@dataclass
+class Config(Base, JsonSchemaMixin):
+    &#34;&#34;&#34;Provides a specification outline for the runtime
+    parameters. Where `Test` defines what tests to collect,
+    this class defines global parameters determining how
+    to run tests.
+
+    Args:
+        report (str): directory path where reports will
+            be stored in XML format
+        setup (Optional[AuxiliaryPath]): path to a setup script;
+            runs once at the start of the complete run
+        teardown (Optional[AuxiliaryPath]): path to a teardown
+            script; runs once at the end of the complete run
+    &#34;&#34;&#34;
+    report: str = &#39;./kalash_reports&#39;
+    setup: Optional[AuxiliaryPath] = None
+    teardown: Optional[AuxiliaryPath] = None
+    cli_config: CliConfig = CliConfig()
+
+    def __post_init__(self):
+        SharedMetaElements(self.cli_config).resolve_interpolables(self, __file__)
+
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: Optional[ArbitraryYamlObj], cli_config: CliConfig) -&gt; Config:
+        &#34;&#34;&#34;Loads `Test` blocks from a YAML object.&#34;&#34;&#34;
+        config_spec = cli_config.spec.config
+        if yaml_obj:
+            return Config(
+                yaml_obj.get(config_spec.report, None),
+                yaml_obj.get(config_spec.one_time_setup_script, None),
+                yaml_obj.get(config_spec.one_time_teardown_script, None)
+            )
+        else:
+            return Config()
+
+
+@dataclass
+class Trigger(JsonSchemaMixin):
+    &#34;&#34;&#34;Main configuration class collecting all information for
+    a test run, passed down throughout the whole call stack.
+
+    Args:
+        tests (List[Test]): list of `Test` categories, each
+            describing a sliver of a test suite that shares certain
+            test collection parameters
+        config (Config): a `Config` object defining parameters
+            telling Kalash *how* to run the tests
+        cli_config (CliConfig): a `CliConfig` object representing
+            command-line parameters used to trigger the test run
+            modifying behavior of certain aspects of the application
+            like logging or triggering speculative runs instead of
+            real runs
+    &#34;&#34;&#34;
+    tests:  List[Test] = field(default_factory=list)
+    config: Config     = field(default_factory=lambda: Config())
+    cli_config: CliConfig = field(default_factory=lambda: CliConfig())
+
+    @classmethod
+    def from_file(cls, file_path: str, cli_config: CliConfig):
+        &#34;&#34;&#34;Creates a `Trigger` instance from a YAML or JSON file.&#34;&#34;&#34;
+        with open(file_path, &#39;r&#39;) as f:
+            yaml_obj: ArbitraryYamlObj = defaultdict(lambda: None, yaml.safe_load(f))
+        list_blocks: List[ArbitraryYamlObj] = \
+            yaml_obj[cli_config.spec.test.tests]
+        cfg_section: ArbitraryYamlObj = yaml_obj[cli_config.spec.config.cfg]
+        tests = [Test.from_yaml_obj(i, cli_config) for i in list_blocks]
+        config = Config.from_yaml_obj(cfg_section, cli_config)
+        return Trigger(tests, config, cli_config)
+
+    def _resolve_interpolables(self, path: str):
+        sm = SharedMetaElements(self.cli_config)
+        for test in self.tests:
+            sm.resolve_interpolables(test, path)
+        sm.resolve_interpolables(self.config, path)
+
+    @classmethod
+    def infer_trigger(cls, cli_config: CliConfig, default_path: str = &#39;.kalash.yaml&#39;):
+        &#34;&#34;&#34;Creates the Trigger instance from a YAML file or
+        a Python file.
+
+        Args:
+            path (str): path to the configuration file.
+
+        Returns: `Tests` object
+        &#34;&#34;&#34;
+        path = cli_config.file if cli_config.file else default_path
+        if path.endswith(&#39;.yaml&#39;) or path.endswith(&#39;.json&#39;):
+            t = cls()
+            t = Trigger.from_file(os.path.abspath(path), cli_config)
+            t._resolve_interpolables(path)
+            return t
+        else:
+            module = smuggle(os.path.abspath(path))
+            for _, v in module.__dict__.items():
+                if type(v) is cls:
+                    v._resolve_interpolables(path)
+                    return v
+            else:
+                raise ValueError(
+                    f&#34;No {cls.__name__} instance found in file {path}&#34;
+                )
+
+
+PathOrIdForWhatIf = List[str]
+CollectorArtifact = Tuple[unittest.TestSuite, PathOrIdForWhatIf]  # can be a list of IDs or paths
+                                                                  # or a full test suite
+Collector = Callable[[TestPath, Trigger], CollectorArtifact]
+
+__doc__ += &#34;&#34;&#34;
+* `PathOrIdForWhatIf` = `List[str]`
+* `CollectorArtifact` = `Tuple[unittest.TestSuite, PathOrIdForWhatIf]`
+* `Collector` = `Callable[[TestPath, Trigger], CollectorArtifact]`
+&#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="kalash.config.Base"><code class="flex name class">
+<span>class <span class="ident">Base</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Base config class. <code><a title="kalash.config.Meta" href="#kalash.config.Meta">Meta</a></code>, <code><a title="kalash.config.Config" href="#kalash.config.Config">Config</a></code> and <code><a title="kalash.config.Test" href="#kalash.config.Test">Test</a></code>
+inherit from this minimal pseudo-abstract base class.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Base:
+    &#34;&#34;&#34;Base config class. `Meta`, `Config` and `Test`
+    inherit from this minimal pseudo-abstract base class.
+    &#34;&#34;&#34;
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Base:
+        raise NotImplementedError(&#34;Base class methods should be overridden&#34;)
+
+    def get(self, argname: str):
+        &#34;&#34;&#34;`getattr` alias for those who wish to use this
+        from within the `TestCase` class.
+        &#34;&#34;&#34;
+        return getattr(self, argname, None)</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="kalash.config.Config" href="#kalash.config.Config">Config</a></li>
+<li><a title="kalash.config.Meta" href="#kalash.config.Meta">Meta</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="kalash.config.Base.from_yaml_obj"><code class="name flex">
+<span>def <span class="ident">from_yaml_obj</span></span>(<span>yaml_obj: ArbitraryYamlObj, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a>) ‑> <a title="kalash.config.Base" href="#kalash.config.Base">Base</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Base:
+    raise NotImplementedError(&#34;Base class methods should be overridden&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.config.Base.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self, argname: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>getattr</code> alias for those who wish to use this
+from within the <code>TestCase</code> class.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get(self, argname: str):
+    &#34;&#34;&#34;`getattr` alias for those who wish to use this
+    from within the `TestCase` class.
+    &#34;&#34;&#34;
+    return getattr(self, argname, None)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.config.CliConfig"><code class="flex name class">
+<span>class <span class="ident">CliConfig</span></span>
+<span>(</span><span>file: Optional[str] = None, log_dir: str = '.', group_by: Optional[str] = None, no_recurse: bool = False, debug: bool = False, no_log: bool = False, no_log_echo: bool = False, spec_path: str = 'spec.yaml', log_level: int = 20, log_format: str = '%(message)s', what_if: Optional[str] = None, fail_fast: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class collecting all CLI options fed into
+the application. The instance is created by the
+main function and used downstream in the call stack.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>config filename (YAML or Python file)</dd>
+<dt><strong><code>log_dir</code></strong> :&ensp;<code>str</code></dt>
+<dd>base directory for log files</dd>
+<dt><strong><code>group_by</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>group logs by a particular property
+from the metadata tag</dd>
+<dt><strong><code>no_recurse</code></strong> :&ensp;<code>bool</code></dt>
+<dd>don't recurse into subfolders when scanning
+for tests to run</dd>
+<dt><strong><code>debug</code></strong> :&ensp;<code>bool</code></dt>
+<dd>run in debug mode</dd>
+<dt><strong><code>no_log</code></strong> :&ensp;<code>bool</code></dt>
+<dd>suppress logging</dd>
+<dt><strong><code>no_log_echo</code></strong> :&ensp;<code>bool</code></dt>
+<dd>suppress log echoing to STDOUT</dd>
+<dt><strong><code>spec_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>custom YAML/Meta specification path, the file
+should be in YAML format</dd>
+<dt><strong><code>log_level</code></strong> :&ensp;<code>int</code></dt>
+<dd><code>logging</code> module log level</dd>
+<dt><strong><code>log_format</code></strong> :&ensp;<code>str</code></dt>
+<dd>formatter string for <code>logging</code> module logger</dd>
+<dt><strong><code>what_if</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>either 'ids' or 'paths', prints hypothetical
+list of IDs or paths of collected tests instead of running the
+actual tests, useful for debugging and designing test suites</dd>
+<dt><strong><code>fail_fast</code></strong> :&ensp;<code>bool</code></dt>
+<dd>if <code>True</code> the test suite won't be continued if
+at least one of the tests that have been collected and triggered
+has failed</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CliConfig:
+    &#34;&#34;&#34;A class collecting all CLI options fed into
+    the application. The instance is created by the
+    main function and used downstream in the call stack.
+
+    Args:
+        file (Optional[str]): config filename (YAML or Python file)
+        log_dir (str): base directory for log files
+        group_by (Optional[str]): group logs by a particular property
+            from the metadata tag
+        no_recurse (bool): don&#39;t recurse into subfolders when scanning
+            for tests to run
+        debug (bool): run in debug mode
+        no_log (bool): suppress logging
+        no_log_echo (bool): suppress log echoing to STDOUT
+        spec_path (str): custom YAML/Meta specification path, the file
+            should be in YAML format
+        log_level (int): `logging` module log level
+        log_format (str): formatter string for `logging` module logger
+        what_if (Optional[str]): either &#39;ids&#39; or &#39;paths&#39;, prints hypothetical
+            list of IDs or paths of collected tests instead of running the
+            actual tests, useful for debugging and designing test suites
+        fail_fast (bool): if `True` the test suite won&#39;t be continued if
+            at least one of the tests that have been collected and triggered
+            has failed
+    &#34;&#34;&#34;
+    file:        Optional[str] = None
+    # if not running in CLI context we initialize reasonable defaults:
+    log_dir:     str           = &#39;.&#39;
+    group_by:    Optional[str] = None
+    no_recurse:  bool          = False
+    debug:       bool          = False
+    no_log:      bool          = False
+    no_log_echo: bool          = False
+    spec_path:   str           = &#39;spec.yaml&#39;
+    log_level:   int           = logging.INFO
+    log_format:  str           = &#39;%(message)s&#39;
+    what_if:     Optional[str] = None
+    fail_fast:   bool          = False
+
+    def __post_init__(self):
+        spec_abspath = os.path.join(os.path.dirname(__file__), self.spec_path)
+        self.spec = Spec.load_spec(spec_abspath)
+        self.log_format = self.spec.cli_config.log_formatter</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.config.CliConfig.debug"><code class="name">var <span class="ident">debug</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.fail_fast"><code class="name">var <span class="ident">fail_fast</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.file"><code class="name">var <span class="ident">file</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.group_by"><code class="name">var <span class="ident">group_by</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.log_dir"><code class="name">var <span class="ident">log_dir</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.log_format"><code class="name">var <span class="ident">log_format</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.log_level"><code class="name">var <span class="ident">log_level</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.no_log"><code class="name">var <span class="ident">no_log</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.no_log_echo"><code class="name">var <span class="ident">no_log_echo</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.no_recurse"><code class="name">var <span class="ident">no_recurse</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.spec_path"><code class="name">var <span class="ident">spec_path</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.CliConfig.what_if"><code class="name">var <span class="ident">what_if</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.config.Config"><code class="flex name class">
+<span>class <span class="ident">Config</span></span>
+<span>(</span><span>report: str = './kalash_reports', setup: Optional[AuxiliaryPath] = None, teardown: Optional[AuxiliaryPath] = None, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a> = CliConfig(file=None, log_dir='.', group_by=None, no_recurse=False, debug=False, no_log=False, no_log_echo=False, spec_path='spec.yaml', log_level=20, log_format='%(message)s', what_if=None, fail_fast=False))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Provides a specification outline for the runtime
+parameters. Where <code><a title="kalash.config.Test" href="#kalash.config.Test">Test</a></code> defines what tests to collect,
+this class defines global parameters determining how
+to run tests.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>report</code></strong> :&ensp;<code>str</code></dt>
+<dd>directory path where reports will
+be stored in XML format</dd>
+<dt><strong><code>setup</code></strong> :&ensp;<code>Optional[AuxiliaryPath]</code></dt>
+<dd>path to a setup script;
+runs once at the start of the complete run</dd>
+<dt><strong><code>teardown</code></strong> :&ensp;<code>Optional[AuxiliaryPath]</code></dt>
+<dd>path to a teardown
+script; runs once at the end of the complete run</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Config(Base, JsonSchemaMixin):
+    &#34;&#34;&#34;Provides a specification outline for the runtime
+    parameters. Where `Test` defines what tests to collect,
+    this class defines global parameters determining how
+    to run tests.
+
+    Args:
+        report (str): directory path where reports will
+            be stored in XML format
+        setup (Optional[AuxiliaryPath]): path to a setup script;
+            runs once at the start of the complete run
+        teardown (Optional[AuxiliaryPath]): path to a teardown
+            script; runs once at the end of the complete run
+    &#34;&#34;&#34;
+    report: str = &#39;./kalash_reports&#39;
+    setup: Optional[AuxiliaryPath] = None
+    teardown: Optional[AuxiliaryPath] = None
+    cli_config: CliConfig = CliConfig()
+
+    def __post_init__(self):
+        SharedMetaElements(self.cli_config).resolve_interpolables(self, __file__)
+
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: Optional[ArbitraryYamlObj], cli_config: CliConfig) -&gt; Config:
+        &#34;&#34;&#34;Loads `Test` blocks from a YAML object.&#34;&#34;&#34;
+        config_spec = cli_config.spec.config
+        if yaml_obj:
+            return Config(
+                yaml_obj.get(config_spec.report, None),
+                yaml_obj.get(config_spec.one_time_setup_script, None),
+                yaml_obj.get(config_spec.one_time_teardown_script, None)
+            )
+        else:
+            return Config()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="kalash.config.Base" href="#kalash.config.Base">Base</a></li>
+<li>dataclasses_jsonschema.JsonSchemaMixin</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.config.Config.cli_config"><code class="name">var <span class="ident">cli_config</span> : <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Config.report"><code class="name">var <span class="ident">report</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Config.setup"><code class="name">var <span class="ident">setup</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Config.teardown"><code class="name">var <span class="ident">teardown</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="kalash.config.Config.from_yaml_obj"><code class="name flex">
+<span>def <span class="ident">from_yaml_obj</span></span>(<span>yaml_obj: Optional[ArbitraryYamlObj], cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a>) ‑> <a title="kalash.config.Config" href="#kalash.config.Config">Config</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads <code><a title="kalash.config.Test" href="#kalash.config.Test">Test</a></code> blocks from a YAML object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def from_yaml_obj(cls, yaml_obj: Optional[ArbitraryYamlObj], cli_config: CliConfig) -&gt; Config:
+    &#34;&#34;&#34;Loads `Test` blocks from a YAML object.&#34;&#34;&#34;
+    config_spec = cli_config.spec.config
+    if yaml_obj:
+        return Config(
+            yaml_obj.get(config_spec.report, None),
+            yaml_obj.get(config_spec.one_time_setup_script, None),
+            yaml_obj.get(config_spec.one_time_teardown_script, None)
+        )
+    else:
+        return Config()</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="kalash.config.Base" href="#kalash.config.Base">Base</a></b></code>:
+<ul class="hlist">
+<li><code><a title="kalash.config.Base.get" href="#kalash.config.Base.get">get</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="kalash.config.Meta"><code class="flex name class">
+<span>class <span class="ident">Meta</span></span>
+<span>(</span><span>id: Optional[TestId] = None, version: Optional[TemplateVersion] = None, use_cases: Optional[OneOrList[UseCase]] = None, workbenches: Optional[OneOrList[Workbench]] = None, devices: Optional[OneOrList[Device]] = None, suites: Optional[OneOrList[Suite]] = None, functionality: Optional[OneOrList[FunctionalityItem]] = None, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a> = CliConfig(file=None, log_dir='.', group_by=None, no_recurse=False, debug=False, no_log=False, no_log_echo=False, spec_path='spec.yaml', log_level=20, log_format='%(message)s', what_if=None, fail_fast=False))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Provides a specification outline for the Metadata tag
+in test templates.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>Optional[TestId]</code></dt>
+<dd>unique test ID</dd>
+<dt><strong><code>version</code></strong> :&ensp;<code>Optional[TemplateVersion]</code></dt>
+<dd>template version</dd>
+<dt><strong><code>use_cases</code></strong> :&ensp;<code>Optional[OneOrList[UseCase]]</code></dt>
+<dd>one or more
+use case IDs (preferably from a task tracking system
+like Jira) that a particular test refers to</dd>
+<dt><strong><code>workbenches</code></strong> :&ensp;<code>Optional[OneOrList[Workbench]]</code></dt>
+<dd>one or more
+physical workbenches where the test should be triggered</dd>
+<dt><strong><code>devices</code></strong> :&ensp;<code>Optional[OneOrList[Device]]</code></dt>
+<dd>one or more device
+categories for which this test has been implemented</dd>
+<dt><strong><code>suites</code></strong> :&ensp;<code>Optional[OneOrList[Suite]]</code></dt>
+<dd>one or more arbitrary
+suite tags (should be used only if remaining tags don't
+provide enough possibilities to describe the context of
+the test script)</dd>
+<dt><strong><code>functionality</code></strong> :&ensp;<code>Optional[OneOrList[FunctionalityItem]]</code></dt>
+<dd>one
+or more functionality descriptors for the test script</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Meta(Base, JsonSchemaMixin):
+    &#34;&#34;&#34;Provides a specification outline for the Metadata tag
+    in test templates.
+
+    Args:
+        id (Optional[TestId]): unique test ID
+        version (Optional[TemplateVersion]): template version
+        use_cases (Optional[OneOrList[UseCase]]): one or more
+            use case IDs (preferably from a task tracking system
+            like Jira) that a particular test refers to
+        workbenches (Optional[OneOrList[Workbench]]): one or more
+            physical workbenches where the test should be triggered
+        devices (Optional[OneOrList[Device]]): one or more device
+            categories for which this test has been implemented
+        suites (Optional[OneOrList[Suite]]): one or more arbitrary
+            suite tags (should be used only if remaining tags don&#39;t
+            provide enough possibilities to describe the context of
+            the test script)
+        functionality (Optional[OneOrList[FunctionalityItem]]): one
+            or more functionality descriptors for the test script
+    &#34;&#34;&#34;
+    id:            Optional[TestId] = None
+    version:       Optional[TemplateVersion] = None
+    use_cases:     Optional[OneOrList[UseCase]] = None
+    workbenches:   Optional[OneOrList[Workbench]] = None
+    devices:       Optional[OneOrList[Device]] = None
+    suites:        Optional[OneOrList[Suite]] = None
+    functionality: Optional[OneOrList[FunctionalityItem]] = None
+    cli_config:    CliConfig = CliConfig()
+
+    def __post_init__(self):
+        frame = inspect.stack()[1]
+        module = inspect.getmodule(frame[0])
+        if module:
+            module_path = os.path.abspath(module.__file__)
+            SharedMetaElements(self.cli_config).resolve_interpolables(self, module_path)
+
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Meta:
+        block_spec = cli_config.spec.test
+        meta_spec = cli_config.spec.meta
+        params = dict(
+            id=yaml_obj.get(block_spec.id, None),
+            version=yaml_obj.get(meta_spec.template_version, None),
+            use_cases=yaml_obj.get(meta_spec.related_usecase, None),
+            workbenches=yaml_obj.get(meta_spec.workbench, None),
+            devices=yaml_obj.get(block_spec.devices, None),
+            suites=yaml_obj.get(block_spec.suites, None),
+            functionality=yaml_obj.get(block_spec.functionality, None)
+        )
+        return Meta(
+            **params
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="kalash.config.Base" href="#kalash.config.Base">Base</a></li>
+<li>dataclasses_jsonschema.JsonSchemaMixin</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="kalash.config.Test" href="#kalash.config.Test">Test</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.config.Meta.cli_config"><code class="name">var <span class="ident">cli_config</span> : <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Meta.devices"><code class="name">var <span class="ident">devices</span> : Union[str, List[str], None]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Meta.functionality"><code class="name">var <span class="ident">functionality</span> : Union[str, List[str], None]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Meta.id"><code class="name">var <span class="ident">id</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Meta.suites"><code class="name">var <span class="ident">suites</span> : Union[str, List[str], None]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Meta.use_cases"><code class="name">var <span class="ident">use_cases</span> : Union[str, List[str], None]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Meta.version"><code class="name">var <span class="ident">version</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Meta.workbenches"><code class="name">var <span class="ident">workbenches</span> : Union[str, List[str], None]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="kalash.config.Meta.from_yaml_obj"><code class="name flex">
+<span>def <span class="ident">from_yaml_obj</span></span>(<span>yaml_obj: ArbitraryYamlObj, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a>) ‑> <a title="kalash.config.Meta" href="#kalash.config.Meta">Meta</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Meta:
+    block_spec = cli_config.spec.test
+    meta_spec = cli_config.spec.meta
+    params = dict(
+        id=yaml_obj.get(block_spec.id, None),
+        version=yaml_obj.get(meta_spec.template_version, None),
+        use_cases=yaml_obj.get(meta_spec.related_usecase, None),
+        workbenches=yaml_obj.get(meta_spec.workbench, None),
+        devices=yaml_obj.get(block_spec.devices, None),
+        suites=yaml_obj.get(block_spec.suites, None),
+        functionality=yaml_obj.get(block_spec.functionality, None)
+    )
+    return Meta(
+        **params
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="kalash.config.Base" href="#kalash.config.Base">Base</a></b></code>:
+<ul class="hlist">
+<li><code><a title="kalash.config.Base.get" href="#kalash.config.Base.get">get</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="kalash.config.SharedMetaElements"><code class="flex name class">
+<span>class <span class="ident">SharedMetaElements</span></span>
+<span>(</span><span>cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Collects Metadata-modifying methods with <code><a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code> instance
+providing a parameter closure. Most methods here are related
+to built-in interpolation of patterns like <code>$(WorkDir)</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SharedMetaElements:
+    &#34;&#34;&#34;Collects Metadata-modifying methods with `CliConfig` instance
+    providing a parameter closure. Most methods here are related
+    to built-in interpolation of patterns like `$(WorkDir)`.
+    &#34;&#34;&#34;
+
+    cli_config: CliConfig
+
+    def _interpolate_workdir(self, ipt: str) -&gt; str:
+        &#34;&#34;&#34;Interpolates CWD variable. This variable is used to
+        resolve paths within Kalash YAML relative to the current
+        working directory. Equivalent to using the dotted file path.
+
+        Args:
+            ipt (str): input string to interpolate
+            yaml_abspath (str): path to the Kalash YAML file.
+
+        Returns: interpolated string
+        &#34;&#34;&#34;
+        return os.path.normpath(
+            ipt.replace(
+                self.cli_config.spec.test.interp_cwd, os.getcwd()
+            )
+        )
+
+    def _interpolate_this_file(self, ipt: str, yaml_abspath: str) -&gt; str:
+        &#34;&#34;&#34;Interpolates THIS_FILE variable. THIS_FILE is used to resolve
+        paths within Kalash YAML relative to the YAML file itself.
+
+        Args:
+            ipt (str): input string to interpolate
+            yaml_abspath (str): path to the Kalash YAML file
+                or the `.py` configuration file
+
+        Returns: interpolated string
+        &#34;&#34;&#34;
+        return os.path.normpath(
+            ipt.replace(
+                self.cli_config.spec.test.interp_this_file,
+                os.path.dirname(yaml_abspath)
+            )
+        )
+
+    def _interpolate_all(self, ipt: Union[str, None], yaml_abspath: str) -&gt; Union[str, None]:
+        &#34;&#34;&#34;Interpolates all variable values using a toolz.pipe
+
+        Args:
+            ipt (str): input string to interpolate
+            yaml_abspath (str): path to the Kalash YAML file
+                or the `.py` configuration file
+
+        Returns: interpolated string
+        &#34;&#34;&#34;
+        if ipt:
+            return pipe(
+                self._interpolate_this_file(ipt, yaml_abspath),
+                self._interpolate_workdir
+            )
+        return ipt
+
+    def resolve_interpolables(self, o: object, yaml_abspath: str):
+        for k, v in o.__dict__.items():
+            if type(v) is str:
+                setattr(o, k, self._interpolate_all(v, yaml_abspath))</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.config.SharedMetaElements.cli_config"><code class="name">var <span class="ident">cli_config</span> : <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="kalash.config.SharedMetaElements.resolve_interpolables"><code class="name flex">
+<span>def <span class="ident">resolve_interpolables</span></span>(<span>self, o: object, yaml_abspath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resolve_interpolables(self, o: object, yaml_abspath: str):
+    for k, v in o.__dict__.items():
+        if type(v) is str:
+            setattr(o, k, self._interpolate_all(v, yaml_abspath))</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.config.Test"><code class="flex name class">
+<span>class <span class="ident">Test</span></span>
+<span>(</span><span>id: Optional[OneOrList[TestId]] = None, version: Optional[TemplateVersion] = None, use_cases: Optional[OneOrList[UseCase]] = None, workbenches: Optional[OneOrList[Workbench]] = None, devices: Optional[OneOrList[Device]] = None, suites: Optional[OneOrList[Suite]] = None, functionality: Optional[OneOrList[FunctionalityItem]] = None, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a> = CliConfig(file=None, log_dir='.', group_by=None, no_recurse=False, debug=False, no_log=False, no_log_echo=False, spec_path='spec.yaml', log_level=20, log_format='%(message)s', what_if=None, fail_fast=False), path: Optional[OneOrList[TestPath]] = None, no_recurse: Optional[Toggle] = None, last_result: Optional[LastResult] = None, setup: Optional[AuxiliaryPath] = None, teardown: Optional[AuxiliaryPath] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Provides a specification outline for a single category
+of tests that should be collected, e.g. by path, ID or any
+other parameter inherited from <code><a title="kalash.config.Meta" href="#kalash.config.Meta">Meta</a></code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>Optional[OneOrList[TestPath]]</code></dt>
+<dd>path to a test
+directory or a single test path</dd>
+<dt><strong><code>id</code></strong> :&ensp;<code>Optional[OneOrList[TestId]]</code></dt>
+<dd>one or more IDs to
+filter for</dd>
+<dt><strong><code>no_recurse</code></strong> :&ensp;<code>Optional[Toggle]</code></dt>
+<dd>if <code>True</code>, subfolders
+will not be searched for tests, intended for use with
+the <code>path</code> parameter</dd>
+<dt><strong><code>last_result</code></strong> :&ensp;<code>Optional[LastResult]</code></dt>
+<dd>if <code>OK</code> then filters
+out only the tests that have passed in the last run,
+if <code>NOK</code> then it only filters out those tests that
+have failed in the last run</dd>
+<dt><strong><code>setup</code></strong> :&ensp;<code>Optional[AuxiliaryPath]</code></dt>
+<dd>path to a setup script;
+runs once at the start of the test category run</dd>
+<dt><strong><code>teardown</code></strong> :&ensp;<code>Optional[AuxiliaryPath]</code></dt>
+<dd>path to a teardown
+script; runs once at the end of the test category
+run</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Test(Meta, JsonSchemaMixin):
+    &#34;&#34;&#34;Provides a specification outline for a single category
+    of tests that should be collected, e.g. by path, ID or any
+    other parameter inherited from `Meta`.
+
+    Args:
+        path (Optional[OneOrList[TestPath]]): path to a test
+            directory or a single test path
+        id (Optional[OneOrList[TestId]]): one or more IDs to
+            filter for
+        no_recurse (Optional[Toggle]): if `True`, subfolders
+            will not be searched for tests, intended for use with
+            the `path` parameter
+        last_result (Optional[LastResult]): if `OK` then filters
+            out only the tests that have passed in the last run,
+            if `NOK` then it only filters out those tests that
+            have failed in the last run
+        setup (Optional[AuxiliaryPath]): path to a setup script;
+            runs once at the start of the test category run
+        teardown (Optional[AuxiliaryPath]): path to a teardown
+            script; runs once at the end of the test category
+            run
+    &#34;&#34;&#34;
+    path:          Optional[OneOrList[TestPath]] = None
+    id:            Optional[OneOrList[TestId]] = None
+    no_recurse:    Optional[Toggle] = None
+    last_result:   Optional[LastResult] = None
+    setup:         Optional[AuxiliaryPath] = None
+    teardown:      Optional[AuxiliaryPath] = None
+    cli_config:    CliConfig = CliConfig()
+
+    def __post_init__(self):
+        frame = inspect.stack()[1]
+        module = inspect.getmodule(frame[0])
+        if module:
+            module_path = os.path.abspath(module.__file__)
+            SharedMetaElements(self.cli_config).resolve_interpolables(self, module_path)
+
+    @classmethod
+    def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Test:
+        &#34;&#34;&#34;Loads `Test` blocks from a YAML object.&#34;&#34;&#34;
+
+        block_spec = cli_config.spec.test
+        base_class_instance = super().from_yaml_obj(yaml_obj, cli_config)
+        return Test(
+            path=yaml_obj.get(block_spec.path, None),
+            no_recurse=yaml_obj.get(block_spec.no_recurse, None),
+            last_result=yaml_obj.get(block_spec.last_result, None),
+            setup=yaml_obj.get(block_spec.setup_script, None),
+            teardown=yaml_obj.get(block_spec.teardown_script, None),
+            **base_class_instance.__dict__
+        )
+
+    @classproperty
+    def _non_filters(cls):
+        # ID is listed as non-filter beacuse it&#39;s handled
+        # differently. A `Test` definition can filter for
+        # multiple IDs. A `Meta` definition can only have
+        # one ID (1 ID == 1 test case). Hence ID is handled
+        # separately in the `apply_filters` function using
+        # `match_id` helper
+        return [&#39;setup&#39;, &#39;teardown&#39;, &#39;path&#39;, &#39;id&#39;]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="kalash.config.Meta" href="#kalash.config.Meta">Meta</a></li>
+<li><a title="kalash.config.Base" href="#kalash.config.Base">Base</a></li>
+<li>dataclasses_jsonschema.JsonSchemaMixin</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.config.Test.cli_config"><code class="name">var <span class="ident">cli_config</span> : <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Test.id"><code class="name">var <span class="ident">id</span> : Union[str, List[str], None]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Test.last_result"><code class="name">var <span class="ident">last_result</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Test.no_recurse"><code class="name">var <span class="ident">no_recurse</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Test.path"><code class="name">var <span class="ident">path</span> : Union[str, List[str], None]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Test.setup"><code class="name">var <span class="ident">setup</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Test.teardown"><code class="name">var <span class="ident">teardown</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="kalash.config.Test.from_yaml_obj"><code class="name flex">
+<span>def <span class="ident">from_yaml_obj</span></span>(<span>yaml_obj: ArbitraryYamlObj, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a>) ‑> <a title="kalash.config.Test" href="#kalash.config.Test">Test</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads <code><a title="kalash.config.Test" href="#kalash.config.Test">Test</a></code> blocks from a YAML object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def from_yaml_obj(cls, yaml_obj: ArbitraryYamlObj, cli_config: CliConfig) -&gt; Test:
+    &#34;&#34;&#34;Loads `Test` blocks from a YAML object.&#34;&#34;&#34;
+
+    block_spec = cli_config.spec.test
+    base_class_instance = super().from_yaml_obj(yaml_obj, cli_config)
+    return Test(
+        path=yaml_obj.get(block_spec.path, None),
+        no_recurse=yaml_obj.get(block_spec.no_recurse, None),
+        last_result=yaml_obj.get(block_spec.last_result, None),
+        setup=yaml_obj.get(block_spec.setup_script, None),
+        teardown=yaml_obj.get(block_spec.teardown_script, None),
+        **base_class_instance.__dict__
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="kalash.config.Meta" href="#kalash.config.Meta">Meta</a></b></code>:
+<ul class="hlist">
+<li><code><a title="kalash.config.Meta.get" href="#kalash.config.Base.get">get</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="kalash.config.Trigger"><code class="flex name class">
+<span>class <span class="ident">Trigger</span></span>
+<span>(</span><span>tests: List[<a title="kalash.config.Test" href="#kalash.config.Test">Test</a>] = &lt;factory&gt;, config: <a title="kalash.config.Config" href="#kalash.config.Config">Config</a> = &lt;factory&gt;, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a> = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main configuration class collecting all information for
+a test run, passed down throughout the whole call stack.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tests</code></strong> :&ensp;<code>List[<a title="kalash.config.Test" href="#kalash.config.Test">Test</a>]</code></dt>
+<dd>list of <code><a title="kalash.config.Test" href="#kalash.config.Test">Test</a></code> categories, each
+describing a sliver of a test suite that shares certain
+test collection parameters</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code><a title="kalash.config.Config" href="#kalash.config.Config">Config</a></code></dt>
+<dd>a <code><a title="kalash.config.Config" href="#kalash.config.Config">Config</a></code> object defining parameters
+telling Kalash <em>how</em> to run the tests</dd>
+<dt><strong><code>cli_config</code></strong> :&ensp;<code><a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code></dt>
+<dd>a <code><a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code> object representing
+command-line parameters used to trigger the test run
+modifying behavior of certain aspects of the application
+like logging or triggering speculative runs instead of
+real runs</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Trigger(JsonSchemaMixin):
+    &#34;&#34;&#34;Main configuration class collecting all information for
+    a test run, passed down throughout the whole call stack.
+
+    Args:
+        tests (List[Test]): list of `Test` categories, each
+            describing a sliver of a test suite that shares certain
+            test collection parameters
+        config (Config): a `Config` object defining parameters
+            telling Kalash *how* to run the tests
+        cli_config (CliConfig): a `CliConfig` object representing
+            command-line parameters used to trigger the test run
+            modifying behavior of certain aspects of the application
+            like logging or triggering speculative runs instead of
+            real runs
+    &#34;&#34;&#34;
+    tests:  List[Test] = field(default_factory=list)
+    config: Config     = field(default_factory=lambda: Config())
+    cli_config: CliConfig = field(default_factory=lambda: CliConfig())
+
+    @classmethod
+    def from_file(cls, file_path: str, cli_config: CliConfig):
+        &#34;&#34;&#34;Creates a `Trigger` instance from a YAML or JSON file.&#34;&#34;&#34;
+        with open(file_path, &#39;r&#39;) as f:
+            yaml_obj: ArbitraryYamlObj = defaultdict(lambda: None, yaml.safe_load(f))
+        list_blocks: List[ArbitraryYamlObj] = \
+            yaml_obj[cli_config.spec.test.tests]
+        cfg_section: ArbitraryYamlObj = yaml_obj[cli_config.spec.config.cfg]
+        tests = [Test.from_yaml_obj(i, cli_config) for i in list_blocks]
+        config = Config.from_yaml_obj(cfg_section, cli_config)
+        return Trigger(tests, config, cli_config)
+
+    def _resolve_interpolables(self, path: str):
+        sm = SharedMetaElements(self.cli_config)
+        for test in self.tests:
+            sm.resolve_interpolables(test, path)
+        sm.resolve_interpolables(self.config, path)
+
+    @classmethod
+    def infer_trigger(cls, cli_config: CliConfig, default_path: str = &#39;.kalash.yaml&#39;):
+        &#34;&#34;&#34;Creates the Trigger instance from a YAML file or
+        a Python file.
+
+        Args:
+            path (str): path to the configuration file.
+
+        Returns: `Tests` object
+        &#34;&#34;&#34;
+        path = cli_config.file if cli_config.file else default_path
+        if path.endswith(&#39;.yaml&#39;) or path.endswith(&#39;.json&#39;):
+            t = cls()
+            t = Trigger.from_file(os.path.abspath(path), cli_config)
+            t._resolve_interpolables(path)
+            return t
+        else:
+            module = smuggle(os.path.abspath(path))
+            for _, v in module.__dict__.items():
+                if type(v) is cls:
+                    v._resolve_interpolables(path)
+                    return v
+            else:
+                raise ValueError(
+                    f&#34;No {cls.__name__} instance found in file {path}&#34;
+                )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>dataclasses_jsonschema.JsonSchemaMixin</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="kalash.config.Trigger.cli_config"><code class="name">var <span class="ident">cli_config</span> : <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Trigger.config"><code class="name">var <span class="ident">config</span> : <a title="kalash.config.Config" href="#kalash.config.Config">Config</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="kalash.config.Trigger.tests"><code class="name">var <span class="ident">tests</span> : List[<a title="kalash.config.Test" href="#kalash.config.Test">Test</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="kalash.config.Trigger.from_file"><code class="name flex">
+<span>def <span class="ident">from_file</span></span>(<span>file_path: str, cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a <code><a title="kalash.config.Trigger" href="#kalash.config.Trigger">Trigger</a></code> instance from a YAML or JSON file.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def from_file(cls, file_path: str, cli_config: CliConfig):
+    &#34;&#34;&#34;Creates a `Trigger` instance from a YAML or JSON file.&#34;&#34;&#34;
+    with open(file_path, &#39;r&#39;) as f:
+        yaml_obj: ArbitraryYamlObj = defaultdict(lambda: None, yaml.safe_load(f))
+    list_blocks: List[ArbitraryYamlObj] = \
+        yaml_obj[cli_config.spec.test.tests]
+    cfg_section: ArbitraryYamlObj = yaml_obj[cli_config.spec.config.cfg]
+    tests = [Test.from_yaml_obj(i, cli_config) for i in list_blocks]
+    config = Config.from_yaml_obj(cfg_section, cli_config)
+    return Trigger(tests, config, cli_config)</code></pre>
+</details>
+</dd>
+<dt id="kalash.config.Trigger.infer_trigger"><code class="name flex">
+<span>def <span class="ident">infer_trigger</span></span>(<span>cli_config: <a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a>, default_path: str = '.kalash.yaml')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates the Trigger instance from a YAML file or
+a Python file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>path to the configuration file.</dd>
+</dl>
+<p>Returns: <code>Tests</code> object</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def infer_trigger(cls, cli_config: CliConfig, default_path: str = &#39;.kalash.yaml&#39;):
+    &#34;&#34;&#34;Creates the Trigger instance from a YAML file or
+    a Python file.
+
+    Args:
+        path (str): path to the configuration file.
+
+    Returns: `Tests` object
+    &#34;&#34;&#34;
+    path = cli_config.file if cli_config.file else default_path
+    if path.endswith(&#39;.yaml&#39;) or path.endswith(&#39;.json&#39;):
+        t = cls()
+        t = Trigger.from_file(os.path.abspath(path), cli_config)
+        t._resolve_interpolables(path)
+        return t
+    else:
+        module = smuggle(os.path.abspath(path))
+        for _, v in module.__dict__.items():
+            if type(v) is cls:
+                v._resolve_interpolables(path)
+                return v
+        else:
+            raise ValueError(
+                f&#34;No {cls.__name__} instance found in file {path}&#34;
+            )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="kalash.config.classproperty"><code class="flex name class">
+<span>class <span class="ident">classproperty</span></span>
+<span>(</span><span>fget)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><a href="https://stackoverflow.com/a/13624858">https://stackoverflow.com/a/13624858</a>
+Only Python 3.9 allows stacking <code>@classmethod</code>
+and <code>@property</code> decorators to obtain static
+properties. We use this decorator as a workaround
+since we wish to support 3.7+ for quite a while.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class classproperty(object):
+    &#34;&#34;&#34;https://stackoverflow.com/a/13624858
+    Only Python 3.9 allows stacking `@classmethod`
+    and `@property` decorators to obtain static
+    properties. We use this decorator as a workaround
+    since we wish to support 3.7+ for quite a while.
+    &#34;&#34;&#34;
+    def __init__(self, fget):
+        self.fget = fget
+
+    def __get__(self, owner_self, owner_cls):
+        return self.fget(owner_cls)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="kalash" href="index.html">kalash</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="kalash.config.Base" href="#kalash.config.Base">Base</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.config.Base.from_yaml_obj" href="#kalash.config.Base.from_yaml_obj">from_yaml_obj</a></code></li>
+<li><code><a title="kalash.config.Base.get" href="#kalash.config.Base.get">get</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.config.CliConfig" href="#kalash.config.CliConfig">CliConfig</a></code></h4>
+<ul class="two-column">
+<li><code><a title="kalash.config.CliConfig.debug" href="#kalash.config.CliConfig.debug">debug</a></code></li>
+<li><code><a title="kalash.config.CliConfig.fail_fast" href="#kalash.config.CliConfig.fail_fast">fail_fast</a></code></li>
+<li><code><a title="kalash.config.CliConfig.file" href="#kalash.config.CliConfig.file">file</a></code></li>
+<li><code><a title="kalash.config.CliConfig.group_by" href="#kalash.config.CliConfig.group_by">group_by</a></code></li>
+<li><code><a title="kalash.config.CliConfig.log_dir" href="#kalash.config.CliConfig.log_dir">log_dir</a></code></li>
+<li><code><a title="kalash.config.CliConfig.log_format" href="#kalash.config.CliConfig.log_format">log_format</a></code></li>
+<li><code><a title="kalash.config.CliConfig.log_level" href="#kalash.config.CliConfig.log_level">log_level</a></code></li>
+<li><code><a title="kalash.config.CliConfig.no_log" href="#kalash.config.CliConfig.no_log">no_log</a></code></li>
+<li><code><a title="kalash.config.CliConfig.no_log_echo" href="#kalash.config.CliConfig.no_log_echo">no_log_echo</a></code></li>
+<li><code><a title="kalash.config.CliConfig.no_recurse" href="#kalash.config.CliConfig.no_recurse">no_recurse</a></code></li>
+<li><code><a title="kalash.config.CliConfig.spec_path" href="#kalash.config.CliConfig.spec_path">spec_path</a></code></li>
+<li><code><a title="kalash.config.CliConfig.what_if" href="#kalash.config.CliConfig.what_if">what_if</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.config.Config" href="#kalash.config.Config">Config</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.config.Config.cli_config" href="#kalash.config.Config.cli_config">cli_config</a></code></li>
+<li><code><a title="kalash.config.Config.from_yaml_obj" href="#kalash.config.Config.from_yaml_obj">from_yaml_obj</a></code></li>
+<li><code><a title="kalash.config.Config.report" href="#kalash.config.Config.report">report</a></code></li>
+<li><code><a title="kalash.config.Config.setup" href="#kalash.config.Config.setup">setup</a></code></li>
+<li><code><a title="kalash.config.Config.teardown" href="#kalash.config.Config.teardown">teardown</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.config.Meta" href="#kalash.config.Meta">Meta</a></code></h4>
+<ul class="two-column">
+<li><code><a title="kalash.config.Meta.cli_config" href="#kalash.config.Meta.cli_config">cli_config</a></code></li>
+<li><code><a title="kalash.config.Meta.devices" href="#kalash.config.Meta.devices">devices</a></code></li>
+<li><code><a title="kalash.config.Meta.from_yaml_obj" href="#kalash.config.Meta.from_yaml_obj">from_yaml_obj</a></code></li>
+<li><code><a title="kalash.config.Meta.functionality" href="#kalash.config.Meta.functionality">functionality</a></code></li>
+<li><code><a title="kalash.config.Meta.id" href="#kalash.config.Meta.id">id</a></code></li>
+<li><code><a title="kalash.config.Meta.suites" href="#kalash.config.Meta.suites">suites</a></code></li>
+<li><code><a title="kalash.config.Meta.use_cases" href="#kalash.config.Meta.use_cases">use_cases</a></code></li>
+<li><code><a title="kalash.config.Meta.version" href="#kalash.config.Meta.version">version</a></code></li>
+<li><code><a title="kalash.config.Meta.workbenches" href="#kalash.config.Meta.workbenches">workbenches</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.config.SharedMetaElements" href="#kalash.config.SharedMetaElements">SharedMetaElements</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.config.SharedMetaElements.cli_config" href="#kalash.config.SharedMetaElements.cli_config">cli_config</a></code></li>
+<li><code><a title="kalash.config.SharedMetaElements.resolve_interpolables" href="#kalash.config.SharedMetaElements.resolve_interpolables">resolve_interpolables</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.config.Test" href="#kalash.config.Test">Test</a></code></h4>
+<ul class="two-column">
+<li><code><a title="kalash.config.Test.cli_config" href="#kalash.config.Test.cli_config">cli_config</a></code></li>
+<li><code><a title="kalash.config.Test.from_yaml_obj" href="#kalash.config.Test.from_yaml_obj">from_yaml_obj</a></code></li>
+<li><code><a title="kalash.config.Test.id" href="#kalash.config.Test.id">id</a></code></li>
+<li><code><a title="kalash.config.Test.last_result" href="#kalash.config.Test.last_result">last_result</a></code></li>
+<li><code><a title="kalash.config.Test.no_recurse" href="#kalash.config.Test.no_recurse">no_recurse</a></code></li>
+<li><code><a title="kalash.config.Test.path" href="#kalash.config.Test.path">path</a></code></li>
+<li><code><a title="kalash.config.Test.setup" href="#kalash.config.Test.setup">setup</a></code></li>
+<li><code><a title="kalash.config.Test.teardown" href="#kalash.config.Test.teardown">teardown</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.config.Trigger" href="#kalash.config.Trigger">Trigger</a></code></h4>
+<ul class="">
+<li><code><a title="kalash.config.Trigger.cli_config" href="#kalash.config.Trigger.cli_config">cli_config</a></code></li>
+<li><code><a title="kalash.config.Trigger.config" href="#kalash.config.Trigger.config">config</a></code></li>
+<li><code><a title="kalash.config.Trigger.from_file" href="#kalash.config.Trigger.from_file">from_file</a></code></li>
+<li><code><a title="kalash.config.Trigger.infer_trigger" href="#kalash.config.Trigger.infer_trigger">infer_trigger</a></code></li>
+<li><code><a title="kalash.config.Trigger.tests" href="#kalash.config.Trigger.tests">tests</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="kalash.config.classproperty" href="#kalash.config.classproperty">classproperty</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

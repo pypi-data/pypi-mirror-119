@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>kalash.metaparser API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>kalash.metaparser</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from typing import Any, Dict, List, Optional, Union
+
+import yaml
+import ast
+import re
+
+from collections.abc import Iterable
+from functools import reduce
+
+from .config import CliConfig, OneOrList, TestModule, TestPath
+
+
+def iterable_or_scalar(item: OneOrList[Any]):
+    &#34;&#34;&#34;
+    Simple helper function that wraps scalars into
+    a list.
+
+    Args:
+        item (OneOrList[Any]): an item that can be
+            either a singular value (scalar) or an
+            iterator
+
+    Returns:
+        `item` or `[item]` if item is a scalar
+    &#34;&#34;&#34;
+    if item:  # make sure None is not included
+        # selected values can be either scalars or arrays:
+        if isinstance(item, Iterable) and not isinstance(item, str):
+            return item
+        else:
+            # just wrap in a list if it&#39;s not iterable
+            return [item]
+
+
+def __trim_yaml(yaml_meta_section: str, cli_config: CliConfig):
+    # since we allow additional comments in the original meta docstring
+    # and users can write whatever they need in that section outside of the
+    # meta block, we need to make sure we trim the YAML section properly
+    tts = cli_config.spec.meta.tts
+    tte = cli_config.spec.meta.tte
+    idx_start = yaml_meta_section.find(tts) + len(tts)
+    idx_end = yaml_meta_section.find(tte)
+    trimmed_yaml = yaml_meta_section[idx_start: idx_end]
+    return trimmed_yaml
+
+
+def extract_meta_from_test_script_ast(
+    test_script_path: str,
+    cli_config: CliConfig
+) -&gt; str:
+    &#34;&#34;&#34;Extracts YAML metadata tag as string from
+    a given test path.
+
+    Args:
+        test_script (str): script path
+        cli_config (CliConfig): `CliConfig` instance
+
+    Returns:
+        Trimmed YAML section as string (parsable by `pyyaml`)
+    &#34;&#34;&#34;
+
+    def _find_meta_in_ast(node: ast.stmt) -&gt; Optional[str]:
+        &#34;&#34;&#34;Typesafe walk of the AST tree
+        to make linters and lanugage servers
+        happy.
+        &#34;&#34;&#34;
+        if type(node) is ast.Expr:
+            ast_const = node.value
+            if type(ast_const) is ast.Constant \
+                    or type(ast_const) is ast.Str:
+                yaml_meta_section = ast_const.s
+                return yaml_meta_section
+
+    # parse the yaml data of the file
+    with open(test_script_path) as f:
+        read_file = f.read()
+    parsed_file_ast = ast.parse(read_file)
+    # the metadata is expected to be the first expression in the file
+    yaml_meta_section = &#39;&#39;
+    try:
+        ast_0_element = parsed_file_ast.body[0]
+        yaml_meta_section = _find_meta_in_ast(ast_0_element)
+    except (AttributeError, IndexError):
+        # &#34;Falling back to searching the AST tree&#34;
+        for node in parsed_file_ast.body:
+            yaml_meta_section = _find_meta_in_ast(node)
+    if not yaml_meta_section:
+        raise Exception(
+            f&#34;No YAML meta section in {test_script_path} &#34;
+            &#34;has been found.&#34;
+        )
+    return __trim_yaml(yaml_meta_section, cli_config)
+
+
+def extract_meta_from_test_module(test: TestModule, cli_config: CliConfig):
+    &#34;&#34;&#34;Extracts YAML metadata tag as string from
+    a given `TestModule` instance.
+
+    Args:
+        test (TestModule): test module
+        cli_config (CliConfig): `CliConfig` instance
+
+    Returns:
+        Trimmed YAML section as string (parsable by `pyyaml`)
+    &#34;&#34;&#34;
+    if hasattr(test, &#39;__doc__&#39;) and test.__doc__:
+        yaml_meta_section = __trim_yaml(test.__doc__, cli_config)
+        if yaml_meta_section:
+            return yaml_meta_section
+    return None
+
+
+def parse_metadata_section(
+    test_script: Union[TestPath, TestModule],
+    cli_config: CliConfig
+) -&gt; Dict[str, Any]:
+    &#34;&#34;&#34;Extracts YAML metadata tag from
+    a given test path or module and
+    reworks it into a dictionary.
+
+    Args:
+        test_script (Union[TestPath, TestModule]): script path
+            or test module
+        cli_config (CliConfig): `CliConfig` instance
+
+    Returns:
+        A dictionary corresponding to the original YAML
+            metadata tag.
+    &#34;&#34;&#34;
+    if type(test_script) is TestPath:
+        try:
+            trimmed_yaml = extract_meta_from_test_script_ast(test_script, cli_config)
+        except Exception:
+            return dict()  # silently skip files that do not declare a metadata section
+    elif type(test_script) is TestModule:
+        trimmed_yaml = extract_meta_from_test_module(test_script, cli_config)
+    else:
+        raise TypeError(
+            &#34;Metadata should only be parsed from a test module (path or module object)&#34;
+        )
+    # check if the file contains yaml data, if not, discard it
+    if trimmed_yaml:
+        try:
+            yaml_data = yaml.full_load(trimmed_yaml)
+            return yaml_data
+        except Exception:
+            return dict()
+    return dict()
+
+
+def match_id(test_id: Optional[str], patterns: Optional[Union[str, List[str]]]) -&gt; bool:
+    &#34;&#34;&#34;
+    Checks the explicit name IDs (or RegEx patterns) coming
+    from the main YAML/Python configuration file
+    against a given test ID.
+
+    Args:
+        test_id (str): a test ID
+        patterns: single RegEx pattern or a list
+            of patterns to match against
+
+    Returns:
+        `True` if any of the patterns matched the query ID
+    &#34;&#34;&#34;
+    if not test_id:
+        # if the ID is `None` ignore filtering
+        # and return `True`
+        return True
+    source_of_truth = []
+    patterns_iter = iterable_or_scalar(patterns)
+    if not patterns_iter:
+        # if there are no patterns, the filter should ignore
+        # filtering by pattern and thus return True
+        return True
+    for pattern in patterns_iter:
+        expected = pattern
+        actual = test_id
+        if re.match(expected, actual):
+            source_of_truth.append(True)
+        else:
+            source_of_truth.append(False)
+    # if any of the pattern matched the return value will be True
+    return reduce(lambda x, y: x or y, source_of_truth)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="kalash.metaparser.extract_meta_from_test_module"><code class="name flex">
+<span>def <span class="ident">extract_meta_from_test_module</span></span>(<span>test: module, cli_config: <a title="kalash.config.CliConfig" href="config.html#kalash.config.CliConfig">CliConfig</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extracts YAML metadata tag as string from
+a given <code>TestModule</code> instance.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>test</code></strong> :&ensp;<code>TestModule</code></dt>
+<dd>test module</dd>
+<dt><strong><code>cli_config</code></strong> :&ensp;<code>CliConfig</code></dt>
+<dd><code>CliConfig</code> instance</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Trimmed YAML section as string (parsable by <code>pyyaml</code>)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_meta_from_test_module(test: TestModule, cli_config: CliConfig):
+    &#34;&#34;&#34;Extracts YAML metadata tag as string from
+    a given `TestModule` instance.
+
+    Args:
+        test (TestModule): test module
+        cli_config (CliConfig): `CliConfig` instance
+
+    Returns:
+        Trimmed YAML section as string (parsable by `pyyaml`)
+    &#34;&#34;&#34;
+    if hasattr(test, &#39;__doc__&#39;) and test.__doc__:
+        yaml_meta_section = __trim_yaml(test.__doc__, cli_config)
+        if yaml_meta_section:
+            return yaml_meta_section
+    return None</code></pre>
+</details>
+</dd>
+<dt id="kalash.metaparser.extract_meta_from_test_script_ast"><code class="name flex">
+<span>def <span class="ident">extract_meta_from_test_script_ast</span></span>(<span>test_script_path: str, cli_config: <a title="kalash.config.CliConfig" href="config.html#kalash.config.CliConfig">CliConfig</a>) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extracts YAML metadata tag as string from
+a given test path.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>test_script</code></strong> :&ensp;<code>str</code></dt>
+<dd>script path</dd>
+<dt><strong><code>cli_config</code></strong> :&ensp;<code>CliConfig</code></dt>
+<dd><code>CliConfig</code> instance</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Trimmed YAML section as string (parsable by <code>pyyaml</code>)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_meta_from_test_script_ast(
+    test_script_path: str,
+    cli_config: CliConfig
+) -&gt; str:
+    &#34;&#34;&#34;Extracts YAML metadata tag as string from
+    a given test path.
+
+    Args:
+        test_script (str): script path
+        cli_config (CliConfig): `CliConfig` instance
+
+    Returns:
+        Trimmed YAML section as string (parsable by `pyyaml`)
+    &#34;&#34;&#34;
+
+    def _find_meta_in_ast(node: ast.stmt) -&gt; Optional[str]:
+        &#34;&#34;&#34;Typesafe walk of the AST tree
+        to make linters and lanugage servers
+        happy.
+        &#34;&#34;&#34;
+        if type(node) is ast.Expr:
+            ast_const = node.value
+            if type(ast_const) is ast.Constant \
+                    or type(ast_const) is ast.Str:
+                yaml_meta_section = ast_const.s
+                return yaml_meta_section
+
+    # parse the yaml data of the file
+    with open(test_script_path) as f:
+        read_file = f.read()
+    parsed_file_ast = ast.parse(read_file)
+    # the metadata is expected to be the first expression in the file
+    yaml_meta_section = &#39;&#39;
+    try:
+        ast_0_element = parsed_file_ast.body[0]
+        yaml_meta_section = _find_meta_in_ast(ast_0_element)
+    except (AttributeError, IndexError):
+        # &#34;Falling back to searching the AST tree&#34;
+        for node in parsed_file_ast.body:
+            yaml_meta_section = _find_meta_in_ast(node)
+    if not yaml_meta_section:
+        raise Exception(
+            f&#34;No YAML meta section in {test_script_path} &#34;
+            &#34;has been found.&#34;
+        )
+    return __trim_yaml(yaml_meta_section, cli_config)</code></pre>
+</details>
+</dd>
+<dt id="kalash.metaparser.iterable_or_scalar"><code class="name flex">
+<span>def <span class="ident">iterable_or_scalar</span></span>(<span>item: Union[List[Any], Any])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Simple helper function that wraps scalars into
+a list.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>item</code></strong> :&ensp;<code>OneOrList[Any]</code></dt>
+<dd>an item that can be
+either a singular value (scalar) or an
+iterator</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>item</code> or <code>[item]</code> if item is a scalar</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def iterable_or_scalar(item: OneOrList[Any]):
+    &#34;&#34;&#34;
+    Simple helper function that wraps scalars into
+    a list.
+
+    Args:
+        item (OneOrList[Any]): an item that can be
+            either a singular value (scalar) or an
+            iterator
+
+    Returns:
+        `item` or `[item]` if item is a scalar
+    &#34;&#34;&#34;
+    if item:  # make sure None is not included
+        # selected values can be either scalars or arrays:
+        if isinstance(item, Iterable) and not isinstance(item, str):
+            return item
+        else:
+            # just wrap in a list if it&#39;s not iterable
+            return [item]</code></pre>
+</details>
+</dd>
+<dt id="kalash.metaparser.match_id"><code class="name flex">
+<span>def <span class="ident">match_id</span></span>(<span>test_id: Optional[str], patterns: Union[str, List[str], None]) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks the explicit name IDs (or RegEx patterns) coming
+from the main YAML/Python configuration file
+against a given test ID.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>test_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>a test ID</dd>
+<dt><strong><code>patterns</code></strong></dt>
+<dd>single RegEx pattern or a list
+of patterns to match against</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>True</code> if any of the patterns matched the query ID</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def match_id(test_id: Optional[str], patterns: Optional[Union[str, List[str]]]) -&gt; bool:
+    &#34;&#34;&#34;
+    Checks the explicit name IDs (or RegEx patterns) coming
+    from the main YAML/Python configuration file
+    against a given test ID.
+
+    Args:
+        test_id (str): a test ID
+        patterns: single RegEx pattern or a list
+            of patterns to match against
+
+    Returns:
+        `True` if any of the patterns matched the query ID
+    &#34;&#34;&#34;
+    if not test_id:
+        # if the ID is `None` ignore filtering
+        # and return `True`
+        return True
+    source_of_truth = []
+    patterns_iter = iterable_or_scalar(patterns)
+    if not patterns_iter:
+        # if there are no patterns, the filter should ignore
+        # filtering by pattern and thus return True
+        return True
+    for pattern in patterns_iter:
+        expected = pattern
+        actual = test_id
+        if re.match(expected, actual):
+            source_of_truth.append(True)
+        else:
+            source_of_truth.append(False)
+    # if any of the pattern matched the return value will be True
+    return reduce(lambda x, y: x or y, source_of_truth)</code></pre>
+</details>
+</dd>
+<dt id="kalash.metaparser.parse_metadata_section"><code class="name flex">
+<span>def <span class="ident">parse_metadata_section</span></span>(<span>test_script: Union[str, module], cli_config: <a title="kalash.config.CliConfig" href="config.html#kalash.config.CliConfig">CliConfig</a>) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extracts YAML metadata tag from
+a given test path or module and
+reworks it into a dictionary.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>test_script</code></strong> :&ensp;<code>Union[TestPath, TestModule]</code></dt>
+<dd>script path
+or test module</dd>
+<dt><strong><code>cli_config</code></strong> :&ensp;<code>CliConfig</code></dt>
+<dd><code>CliConfig</code> instance</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A dictionary corresponding to the original YAML
+metadata tag.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_metadata_section(
+    test_script: Union[TestPath, TestModule],
+    cli_config: CliConfig
+) -&gt; Dict[str, Any]:
+    &#34;&#34;&#34;Extracts YAML metadata tag from
+    a given test path or module and
+    reworks it into a dictionary.
+
+    Args:
+        test_script (Union[TestPath, TestModule]): script path
+            or test module
+        cli_config (CliConfig): `CliConfig` instance
+
+    Returns:
+        A dictionary corresponding to the original YAML
+            metadata tag.
+    &#34;&#34;&#34;
+    if type(test_script) is TestPath:
+        try:
+            trimmed_yaml = extract_meta_from_test_script_ast(test_script, cli_config)
+        except Exception:
+            return dict()  # silently skip files that do not declare a metadata section
+    elif type(test_script) is TestModule:
+        trimmed_yaml = extract_meta_from_test_module(test_script, cli_config)
+    else:
+        raise TypeError(
+            &#34;Metadata should only be parsed from a test module (path or module object)&#34;
+        )
+    # check if the file contains yaml data, if not, discard it
+    if trimmed_yaml:
+        try:
+            yaml_data = yaml.full_load(trimmed_yaml)
+            return yaml_data
+        except Exception:
+            return dict()
+    return dict()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="kalash" href="index.html">kalash</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="kalash.metaparser.extract_meta_from_test_module" href="#kalash.metaparser.extract_meta_from_test_module">extract_meta_from_test_module</a></code></li>
+<li><code><a title="kalash.metaparser.extract_meta_from_test_script_ast" href="#kalash.metaparser.extract_meta_from_test_script_ast">extract_meta_from_test_script_ast</a></code></li>
+<li><code><a title="kalash.metaparser.iterable_or_scalar" href="#kalash.metaparser.iterable_or_scalar">iterable_or_scalar</a></code></li>
+<li><code><a title="kalash.metaparser.match_id" href="#kalash.metaparser.match_id">match_id</a></code></li>
+<li><code><a title="kalash.metaparser.parse_metadata_section" href="#kalash.metaparser.parse_metadata_section">parse_metadata_section</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

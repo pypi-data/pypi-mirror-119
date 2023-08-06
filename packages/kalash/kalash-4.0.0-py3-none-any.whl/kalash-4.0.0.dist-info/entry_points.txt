@@ -1,0 +1,3 @@
+[console_scripts]
+kalash = kalash.run:main_cli
+
