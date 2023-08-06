@@ -1,0 +1,13 @@
+
+[test]
+black
+codecov
+coverage
+flake8
+gitchangelog
+ipdb
+isort
+mkdocs
+mypy
+pytest
+pytest-cov
