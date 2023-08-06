@@ -1,0 +1,10 @@
+veriteos/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+veriteos/client.py,sha256=7TXDwXxNkuYFqf53E5yLRjbWY4oxQbTzo-cERV2jDxI,2327
+veriteos/counter.py,sha256=rvV5s0frEDOGahjfjUaQL1y7vn90IMPtHpK7SvekS-0,313
+veriteos/utils.py,sha256=4ZewMPTKxVGay44PNvDPJLrelsxBcocGrrqFTTTN0ZQ,1203
+veriteos/validation.py,sha256=uNmMBya_nttP8uxIz5fqQfUmrrODJ8_YQUybmYY9ins,1127
+veriteos-0.1.6.dist-info/LICENSE.md,sha256=f8aNsdTw28mEw-Sl-hHQXJq-y7Tz_EZtKOMQSMBNQ0E,1070
+veriteos-0.1.6.dist-info/METADATA,sha256=zpNjZkLZtel4vQDFgwOx75w5kDqaDxyMUikOxhgZjFM,501
+veriteos-0.1.6.dist-info/WHEEL,sha256=p46_5Uhzqz6AzeSosiOnxK-zmFja1i22CrQCjmYe8ec,92
+veriteos-0.1.6.dist-info/top_level.txt,sha256=ZNRhJQtfwsILWtPbbWOpNBJrJSVLQu8K34knzsM5fG8,9
+veriteos-0.1.6.dist-info/RECORD,,
