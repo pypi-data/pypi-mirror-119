@@ -1,0 +1,12 @@
+MANIFEST.in
+README.txt
+sem.pyd
+setup.py
+coxem/__init__.py
+coxem/spam.pyd
+coxem.egg-info/PKG-INFO
+coxem.egg-info/SOURCES.txt
+coxem.egg-info/dependency_links.txt
+coxem.egg-info/top_level.txt
+coxem/kairos/__init__.py
+coxem/kairos/attribute.py
