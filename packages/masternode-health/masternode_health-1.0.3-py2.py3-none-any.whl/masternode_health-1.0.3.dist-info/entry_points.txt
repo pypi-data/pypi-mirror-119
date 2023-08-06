@@ -1,0 +1,3 @@
+[console_scripts]
+masternode-health = masternode_health.monitor:main
+
