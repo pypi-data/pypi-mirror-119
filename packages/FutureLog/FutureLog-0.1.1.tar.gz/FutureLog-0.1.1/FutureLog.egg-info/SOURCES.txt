@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+FutureLog.egg-info/PKG-INFO
+FutureLog.egg-info/SOURCES.txt
+FutureLog.egg-info/dependency_links.txt
+FutureLog.egg-info/top_level.txt
+futurelog/__init__.py
+futurelog/logger.py
+requirements/base.txt
+requirements/tests.txt
