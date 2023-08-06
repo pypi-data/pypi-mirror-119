@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: pixie-python
+Version: 0.1.1
+Summary: Python bindings for Pixie, a full-featured 2D graphics library
+Home-page: https://github.com/treeform/pixie-python
+Author: Andre von Houck
+Author-email: starplant@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6.0
