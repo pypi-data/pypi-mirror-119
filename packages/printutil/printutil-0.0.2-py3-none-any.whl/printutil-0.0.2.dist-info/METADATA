@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: printutil
+Version: 0.0.2
+Summary: Print with color easily and other cool stuff.
+Home-page: https://github.com/Rambovic45/BetterPrints
+Author: Rambovic45
+Author-email: <author@mail.com>
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Rambovic45/BetterPrints/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PrintUtil
+
+GitHub
+
