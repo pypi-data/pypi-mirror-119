@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: piecelength
+Version: 1.0
+Summary: '.torrent' metafile ideal piecelength for small file size calculator.
+Home-page: UNKNOWN
+Author: alexpdev
+Author-email: alexpdev@protonmail.com
+License: BSD
+Keywords: bittorrent,metafiles
+Platform: UNKNOWN
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: BSD License
+License-File: LICENSE
+
+# Python Piece Length
+
+Calculate ideal piece length for .torrent files.
+
+
