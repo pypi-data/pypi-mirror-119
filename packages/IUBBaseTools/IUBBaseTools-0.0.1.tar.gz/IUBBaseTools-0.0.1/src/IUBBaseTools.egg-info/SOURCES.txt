@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/IUBBaseTools/ApiHandler.py
+src/IUBBaseTools/FtpUploader.py
+src/IUBBaseTools/IUBConfiguration.py
+src/IUBBaseTools/Locker.py
+src/IUBBaseTools/TorrentHandler.py
+src/IUBBaseTools/UploadDb.py
+src/IUBBaseTools/__init__.py
+src/IUBBaseTools.egg-info/PKG-INFO
+src/IUBBaseTools.egg-info/SOURCES.txt
+src/IUBBaseTools.egg-info/dependency_links.txt
+src/IUBBaseTools.egg-info/top_level.txt
