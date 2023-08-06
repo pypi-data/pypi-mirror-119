@@ -1,0 +1,10 @@
+mailreceiver_webthing/__init__.py,sha256=qeOS-dPQ4e53r08jANM76s8N5WR_SB1yG2YHDe7SmGo,2820
+mailreceiver_webthing/app.py,sha256=mfGmmO5Vo6_KuIBCuqGv4CxrNIqtzY0MqInZqUv7A1o,5695
+mailreceiver_webthing/mail_receiver_webthing.py,sha256=Y0xvaIgf69q5J2iPvSFkuHowK4BQOJm6_orp2SCo-Os,4036
+mailreceiver_webthing/mailserver.py,sha256=o45xfK9S5OfXQv4gmd95uygR5-cPaGZ0uMXN5g83PmM,10105
+mailreceiver_webthing-0.1.7.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+mailreceiver_webthing-0.1.7.dist-info/METADATA,sha256=l8P8Fc_rkkZti_z31qT6zz2dMmoDQD9i7xkG142PNek,3656
+mailreceiver_webthing-0.1.7.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+mailreceiver_webthing-0.1.7.dist-info/entry_points.txt,sha256=hJUIf4z3IB1PXGThy2voLI7oEM-FqnnIqHVUcw1eM-s,61
+mailreceiver_webthing-0.1.7.dist-info/top_level.txt,sha256=chOC-0lttfB9ZHyRsn_UbIj8VdqRYpKbUcQJT4XJYDI,22
+mailreceiver_webthing-0.1.7.dist-info/RECORD,,
