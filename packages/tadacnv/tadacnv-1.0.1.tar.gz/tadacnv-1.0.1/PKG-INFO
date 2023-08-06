@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: tadacnv
+Version: 1.0.1
+Summary: Annotation of TADs and CNVs
+Home-page: https://github.com/jakob-he/TADA
+Author: Jakob Hertzberg
+Author-email: hertzber@molgen.mpg.de
+License: UNKNOWN
+Keywords: CNV Pathogencity Annotation TADs
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+License-File: LICENSE
+
+This package allows to annotate CNVs with annotations expressing their functional impact. Based on the functional annotation, a classifier can be trained and used to prioritze CNVs.
+
