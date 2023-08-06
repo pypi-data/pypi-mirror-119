@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: urdu-digit
+Version: 0.0.0
+Summary: Converts English digits to Urdu digits.
+Home-page: https://www.techtum.dev
+Author: siphr
+Author-email: pypi@techtum.dev
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+#Urdu Digit
+
+A package to help convert digits from their English equivalent to their Urdu equivalent.
+
+
+#Details
+
+Simply, this package relies on unicode conversion between the 2 languages.
+
+
+#Usage
+
+import urdu_digit as ud
+
+&#35; to just GET the conversion of, for e.g: 2;
+
+ud.get(2)
+
+&#35; OUTPPUT: (2, '۲', '0x6f2')
+
+&#35; to PRINT the conversion of, for e.g: 7:
+
+ud.view(7)
+
+&#35; OUTPPUT: (7, '۷', '0x6f7')
+#Output
+
+
+
+
