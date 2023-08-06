@@ -1,0 +1,350 @@
+Metadata-Version: 2.1
+Name: templ8
+Version: 3.0.0
+Summary: A powerful, extensible templating engine.
+Home-page: https://github.com/JoelLefkowitz/templ8
+Author: Joel Lefkowitz
+Author-email: joellefkowitz@hotmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/JoelLefkowitz/templ8/issues
+Project-URL: CI, https://github.com/JoelLefkowitz/templ8/actions
+Project-URL: Documentation, https://templ8.readthedocs.io/en/latest/
+Project-URL: Source Code, https://github.com/JoelLefkowitz/templ8
+Description: # Templ8
+        
+        A powerful, extensible templating engine.
+        
+        ## Status
+        
+        | Source     | Shields                                                                                                                                       |
+        | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+        | Project    | ![release][release_shield] ![license][license_shield] ![lines][lines_shield] ![languages][languages_shield]                                   |
+        | Health     | ![readthedocs][readthedocs_shield] ![github_review][github_review_shield] ![codacy][codacy_shield] ![codacy_coverage][codacy_coverage_shield] |
+        | Publishers | ![pypi][pypi_shield] ![pypi_downloads][pypi_downloads_shield]                                                                                 |
+        | Repository | ![issues][issues_shield] ![issues_closed][issues_closed_shield] ![pulls][pulls_shield] ![pulls_closed][pulls_closed_shield]                   |
+        | Activity   | ![contributors][contributors_shield] ![monthly_commits][monthly_commits_shield] ![last_commit][last_commit_shield]                            |
+        
+        ## Installing
+        
+        ```bash
+        pip install templ8
+        ```
+        
+        ## Usage
+        
+        ```bash
+        Templ8 3.0.0
+        
+        optional arguments:
+          -h, --help             show this help message and exit.
+          --output               output directory.
+          --settings-file        input file path.
+          --dry-run              don't make any changes.
+          --silent               don't output any logs.
+          --debug                output debug logs.
+          --clear-top-level      remove top level files.
+          --logical-grouping     flatten render context.
+          --skip-core-templates  skip core templates.
+          --collection-sources   where to look for collections.
+          --collections          collection names.
+          --includes             path names to include.
+          --excludes             path names to exclude.
+          --loader-paths         where to look for Jinja includes.
+          --render-context       jinja context variables.
+        ```
+        
+        ### Settings file
+        
+        You can specify which collections of templates to generate in a yaml file:
+        
+        **`.template.yml`**
+        
+        ```yml
+        output_dir: .
+        
+        collections:
+          - common
+        
+        render_context:
+          name: templ8
+          description: A powerful, extensible templating engine.
+        ```
+        
+        ### Output files
+        
+        The engine will generate a project and Jinja templates will be populated with the given render context variables.
+        
+        **`README.md`**
+        
+        ```md
+        # Templ8
+        
+        A powerful, extensible templating engine.
+        ```
+        
+        ## Motivation
+        
+        It's simple to write custom Jinja templates but to be able to use them across projects we need:
+        
+        - Render context values that can be set in a config file.
+        - Default variables for each collection of templates.
+        - A way to include and exclude paths.
+        - A Mechanism for renaming folders according to the target project.
+        - Initialization scripts that we can define for each collection.
+        
+        Templ8 aims to provide a maintainable templating engine supporting all these necessary features.
+        
+        ### Example
+        
+        ```bash
+        /
+        └── example
+            ├── metadata.json
+            ├── README.md.j2
+            └── src
+                └── main.py
+        ```
+        
+        We can write a collection's metadata:
+        
+        **`metadata.json`**
+        
+        ```json
+        {
+          "name": "example",
+          "default_variables": {
+            "version": "0.1.0"
+          },
+          "renames": [
+            {
+              "segment": "src",
+              "token": "package_name"
+            }
+          ],
+          "initializations": [
+            {
+              "cmd": "echo Hello World!",
+              "cwd": "."
+            }
+          ]
+        }
+        ```
+        
+        And some templates for the collection:
+        
+        **`README.md.j2`**
+        
+        ```j2
+        # {{ verbose_name | default( name | title_case ) }}
+        ```
+        
+        In any place we want to use our collection we can write a settings file:
+        
+        **`.template.yml`**
+        
+        ```yml
+        output: .
+        
+        collections:
+          - example
+        
+        collections_sources:
+          - ... # path to example collection
+        
+        render_context:
+          name: example
+          package_name: example_package
+        ```
+        
+        Templ8 will generate:
+        
+        ```bash
+        /
+        └── output
+            ├── README.md
+            └── example_package
+                └── main.py
+        ```
+        
+        **`README.md`**
+        
+        ```j2
+        # Example
+        ```
+        
+        ## Community maintained collections
+        
+        ```bash
+        /
+        ...
+        └── core
+            ├── common
+            ├── packages
+            |   ├── cpp
+            |   ├── csharp
+            |   ├── java
+            |   ├── javascript
+            |   ├── purescript
+            |   ├── python
+            |   └── typescript
+            ├── microservices
+            |   ├── blazor
+            |   ├── angular
+            |   ├── django
+            |   ├── flask
+            |   ├── halogen
+            |   ├── react
+            |   ├── spring
+            |   └── vue
+            └── deployments
+                ├── ansible
+                └── terraform
+        ```
+        
+        ## Additional features
+        
+        - By default we look for a settings file at .template.yml or .templ8.yml.
+        
+        - Template schemas and rename tokens are parsed ahead of time to check for missing render context before stating a templating run.
+        
+        - Custom loader_paths for Jinja 'includes' directives can be specified.
+        
+        - Top level files can be set to be cleared.
+        
+        - Render context can be sub grouped. The logical_grouping option causes render context to be flattened a level before parsing.
+        
+        ```yml
+        loader_paths: List[str] # Loader paths for Jinja inclusion tags.
+        collection_source: List[str] # Custom collection source paths.
+        clear_top_level: bool # Clear top level files.
+        logical_grouping: bool # Logical input sub-grouping.
+        ```
+        
+        ## Structure
+        
+        To control the amount of state in play classes are only used to instantiate data containers. Methods are separated out as freely accessible services.
+        
+        This breaks apart monolithic classes and makes the project easier to test.
+        
+        ## Tests
+        
+        To run unit and e2e tests:
+        
+        ```bash
+        grunt test
+        ```
+        
+        ## Documentation
+        
+        This repository's documentation is hosted on [readthedocs][readthedocs].
+        
+        ## Tooling
+        
+        To run linters:
+        
+        ```bash
+        grunt lint
+        ```
+        
+        To run formatters:
+        
+        ```bash
+        grunt format
+        ```
+        
+        ## Continuous integration
+        
+        This repository uses github actions to lint and test each commit. Formatting tasks and writing/generating documentation must be done before committing new code.
+        
+        ## Versioning
+        
+        This repository adheres to semantic versioning standards.
+        For more information on semantic versioning visit [SemVer][semver].
+        
+        Bump2version is used to version and tag changes.
+        For example:
+        
+        ```bash
+        bump2version patch
+        ```
+        
+        ## Changelog
+        
+        Please read this repository's [CHANGELOG](CHANGELOG.md) for details on changes that have been made.
+        
+        ## Contributing
+        
+        Please read this repository's guidelines on [contributing](CONTRIBUTING.md) for details on the process for submitting pull requests. Moreover, our [code of conduct](CODE_OF_CONDUCT.md) declares our collaboration standards.
+        
+        ## Contributors
+        
+        - **Joel Lefkowitz** - _Initial work_ - [Joel Lefkowitz][author]
+        
+        [![Buy Me A Coffee][coffee_button]][coffee]
+        
+        ## Remarks
+        
+        Lots of love to the open source community!
+        
+        ![Be kind][be_kind]
+        
+        <!-- Public links -->
+        
+        [semver]: http://semver.org/
+        [be_kind]: https://media.giphy.com/media/osAcIGTSyeovPq6Xph/giphy.gif
+        [coffee]: https://www.buymeacoffee.com/joellefkowitz
+        [coffee_button]: https://cdn.buymeacoffee.com/buttons/default-blue.png
+        [readthedocs]: https://templ8.readthedocs.io/en/latest/
+        
+        <!-- Acknowledgments -->
+        
+        [author]: https://github.com/joellefkowitz
+        
+        <!-- Project shields -->
+        
+        [release_shield]: https://img.shields.io/github/v/tag/joellefkowitz/templ8
+        [license_shield]: https://img.shields.io/github/license/joellefkowitz/templ8
+        [lines_shield]: https://img.shields.io/tokei/lines/github/joellefkowitz/templ8
+        [languages_shield]: https://img.shields.io/github/languages/count/joellefkowitz/templ8
+        
+        <!-- Health shields -->
+        
+        [readthedocs_shield]: https://img.shields.io/readthedocs/templ8
+        [github_review_shield]: https://img.shields.io/github/workflow/status/JoelLefkowitz/templ8/Review
+        [codacy_shield]: https://img.shields.io/codacy/grade/f407d8c4db8c4b83877bca0543aba744
+        [codacy_coverage_shield]: https://img.shields.io/codacy/coverage/f407d8c4db8c4b83877bca0543aba744
+        
+        <!-- Publishers shields -->
+        
+        [pypi_shield]: https://img.shields.io/pypi/v/templ8
+        [pypi_downloads_shield]: https://img.shields.io/pypi/dm/templ8
+        
+        <!-- Repository shields -->
+        
+        [issues_shield]: https://img.shields.io/github/issues/joellefkowitz/templ8
+        [issues_closed_shield]: https://img.shields.io/github/issues-closed/joellefkowitz/templ8
+        [pulls_shield]: https://img.shields.io/github/issues-pr/joellefkowitz/templ8
+        [pulls_closed_shield]: https://img.shields.io/github/issues-pr-closed/joellefkowitz/templ8
+        
+        <!-- Activity shields -->
+        
+        [contributors_shield]: https://img.shields.io/github/contributors/joellefkowitz/templ8
+        [monthly_commits_shield]: https://img.shields.io/github/commit-activity/m/joellefkowitz/templ8
+        [last_commit_shield]: https://img.shields.io/github/last-commit/joellefkowitz/templ8
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >= 3.6
+Description-Content-Type: text/markdown
+Provides-Extra: formatters
+Provides-Extra: release
+Provides-Extra: linters
+Provides-Extra: tests
+Provides-Extra: all
