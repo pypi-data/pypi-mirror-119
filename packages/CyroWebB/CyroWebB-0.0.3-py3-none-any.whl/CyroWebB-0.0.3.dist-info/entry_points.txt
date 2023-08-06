@@ -1,0 +1,3 @@
+[console_scripts]
+CyroWebB = CyroWebB.Production.__init__:Run
+
