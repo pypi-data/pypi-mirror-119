@@ -1,0 +1,15 @@
+LICENSE.txt
+setup.cfg
+setup.py
+petit_python_publipost_connector/__init__.py
+petit_python_publipost_connector/datastructure.py
+petit_python_publipost_connector/server_provider.py
+petit_python_publipost_connector/template_db.py
+petit_python_publipost_connector/utils.py
+petit_python_publipost_connector.egg-info/PKG-INFO
+petit_python_publipost_connector.egg-info/SOURCES.txt
+petit_python_publipost_connector.egg-info/dependency_links.txt
+petit_python_publipost_connector.egg-info/requires.txt
+petit_python_publipost_connector.egg-info/top_level.txt
+petit_python_publipost_connector/engine/__init__.py
+petit_python_publipost_connector/engine/engine.py
