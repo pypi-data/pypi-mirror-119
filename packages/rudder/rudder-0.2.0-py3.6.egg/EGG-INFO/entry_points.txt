@@ -1,0 +1,3 @@
+[console_scripts]
+rudder = rudder.__main__:main
+

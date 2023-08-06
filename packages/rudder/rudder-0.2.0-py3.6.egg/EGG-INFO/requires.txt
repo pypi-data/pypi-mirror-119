@@ -1,0 +1,4 @@
+paramiko
+fire
+pypsrp
+pyyaml
