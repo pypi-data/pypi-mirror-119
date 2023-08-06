@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: HALsn
+Version: 0.0.2
+Summary: Host for SharkNinja BDP Python APIs
+Home-page: UNKNOWN
+Author: Mikhail Hyde
+Author-email: <hyde.mikhail@gmail.com>
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
