@@ -1,0 +1,8 @@
+edgecom/__init__.py,sha256=26UWatnbm6ZIwQMuu9NNzQ0IW1ACO4Oe9caModuTpWM,4
+edgecom/edge_sdk.py,sha256=swid0N2wDfZlxChr-xh4qP7p8Nhjjqsms6PTGrOEnxo,35
+mysdk/__init__.py,sha256=26UWatnbm6ZIwQMuu9NNzQ0IW1ACO4Oe9caModuTpWM,4
+mysdk/edge_sdk.py,sha256=swid0N2wDfZlxChr-xh4qP7p8Nhjjqsms6PTGrOEnxo,35
+sineva_edge_sdk-1.1.dist-info/METADATA,sha256=-tY1-ZUYbLMT38bzk4A6CYnn417FqIYPRkV52JIKE7E,224
+sineva_edge_sdk-1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+sineva_edge_sdk-1.1.dist-info/top_level.txt,sha256=Y4wSKYcx8dyxA_sM1575IXM6lKHGfGHjUGa8xYOcT-w,8
+sineva_edge_sdk-1.1.dist-info/RECORD,,
