@@ -1,0 +1,9 @@
+README.md
+setup.py
+simeeg/__init__.py
+simeeg/simeeg.py
+simeeg.egg-info/PKG-INFO
+simeeg.egg-info/SOURCES.txt
+simeeg.egg-info/dependency_links.txt
+simeeg.egg-info/requires.txt
+simeeg.egg-info/top_level.txt
