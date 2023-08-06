@@ -1,0 +1,7 @@
+configobj
+
+[dev]
+mock
+pytest
+pytest-runfailed
+pytest-timeout
