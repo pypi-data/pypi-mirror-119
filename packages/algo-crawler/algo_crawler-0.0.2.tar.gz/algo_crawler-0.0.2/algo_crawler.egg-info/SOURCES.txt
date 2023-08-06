@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+algo_crawler/__init__.py
+algo_crawler/__main__.py
+algo_crawler/exception.py
+algo_crawler/model.py
+algo_crawler/test.py
+algo_crawler.egg-info/PKG-INFO
+algo_crawler.egg-info/SOURCES.txt
+algo_crawler.egg-info/dependency_links.txt
+algo_crawler.egg-info/requires.txt
+algo_crawler.egg-info/top_level.txt
