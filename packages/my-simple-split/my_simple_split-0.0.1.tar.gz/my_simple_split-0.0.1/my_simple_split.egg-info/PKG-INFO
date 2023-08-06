@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: my-simple-split
+Version: 0.0.1
+Summary: A very basic splitter
+Home-page: UNKNOWN
+Author: Yaryk Dyhanov
+Author-email: duhanov2003@gmail.com
+License: MIT
+Description: This is a very simple calculator that takes two numbers and either add, subtract, multiply or divide them.
+        
+        
+        
+        Change Log
+        ==========
+        
+        0.0.1 (19/04/2020)
+        -------------------
+        - First Release
+Keywords: split
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
