@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+PrettyWrappers/__init__.py
+PrettyWrappers/prettywrappers.py
+PrettyWrappers.egg-info/PKG-INFO
+PrettyWrappers.egg-info/SOURCES.txt
+PrettyWrappers.egg-info/dependency_links.txt
+PrettyWrappers.egg-info/top_level.txt
