@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: down-notifier
+Version: 0.1.1
+Summary: Send notification when your website is down.
+Home-page: https://github.com/pegov/down-notifier
+License: MIT
+Author: pegov
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiogram (>=2.14.3)
+Requires-Dist: aiohttp (>=3.7.4)
+Project-URL: Repository, https://github.com/pegov/down-notifier
+Description-Content-Type: text/markdown
+
+# Down notifier
+
+## Usage
+
+```bash
+python -m down-notifier <config.json>
+```
+
+Example json config in "examples" folder.
+
+```python
+from down_notifier import Checker, Site
+from down_notifier.channel import TelegramChannel
+
+channel = TelegramChannel(
+  name="channel_name",
+  message="{} - {}",
+  token="token",
+  chats=["chat_id_1", "chat_id_2"],
+)
+site = Site(
+  name="site_name",
+  url="http://example.com",
+  status_code=200,
+  timeout=60,
+  channels=[channel],
+)
+checker = Checker([site])
+
+checker.start_loop()
+```
+
