@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: pymyenergi
+Version: 0.0.14
+Summary: Python library and CLI for communicating with myenergi API.
+Home-page: https://github.com/cjne/pymyenergi
+Author: Johan Isaksson
+Author-email: johan@generatorhallen.se
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
