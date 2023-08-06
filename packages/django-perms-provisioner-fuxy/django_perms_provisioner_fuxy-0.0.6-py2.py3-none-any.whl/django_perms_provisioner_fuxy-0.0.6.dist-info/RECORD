@@ -1,0 +1,11 @@
+django_perms_provisioner_fuxy/__init__.py,sha256=QiiYsv0kcJaB8wCWyT-FnI2b6be87HA-CrrIUn8LQhg,22
+django_perms_provisioner_fuxy/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_perms_provisioner_fuxy/management/schemas.py,sha256=KGI565-4GhqnsHg13io1PMB-JsGu0jSZaZiEAUnk3GY,771
+django_perms_provisioner_fuxy/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_perms_provisioner_fuxy/management/commands/dumpperms.py,sha256=aswSHjElYW-roufVMfKyjIiMFaIPZaelIWjUMAMg0-s,2571
+django_perms_provisioner_fuxy/management/commands/loadperms.py,sha256=QJYbtrof1c4oQO4Rj_hVT7YkZOc3v-w5v6uQtKKPdKU,6389
+django_perms_provisioner_fuxy-0.0.6.dist-info/LICENSE,sha256=mqG6rp0X0F8o_UZUt2RREDwYhnlTrj88Oy7GKe4h4bM,1079
+django_perms_provisioner_fuxy-0.0.6.dist-info/METADATA,sha256=4qlph7y59WLlXUykSTr8LpdyKdtIrrWQgQa7UpVxuMM,3929
+django_perms_provisioner_fuxy-0.0.6.dist-info/WHEEL,sha256=Z-nyYpwrcSqxfdux5Mbn_DQ525iP7J2DG3JgGvOYyTQ,110
+django_perms_provisioner_fuxy-0.0.6.dist-info/top_level.txt,sha256=sKjrg3eRUD7VoTCV-hy83tLB2Znm1rS3fcRupckxKYo,30
+django_perms_provisioner_fuxy-0.0.6.dist-info/RECORD,,
