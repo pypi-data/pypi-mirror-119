@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+poem_parser/__init__.py
+poem_parser/__main__.py
+poem_parser/__version__.py
+poem_parser/_parser.py
+poem_parser.egg-info/PKG-INFO
+poem_parser.egg-info/SOURCES.txt
+poem_parser.egg-info/dependency_links.txt
+poem_parser.egg-info/requires.txt
+poem_parser.egg-info/top_level.txt
