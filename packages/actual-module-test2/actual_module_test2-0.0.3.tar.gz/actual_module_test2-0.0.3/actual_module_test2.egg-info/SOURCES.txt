@@ -1,0 +1,6 @@
+README.md
+setup.py
+actual_module_test2.egg-info/PKG-INFO
+actual_module_test2.egg-info/SOURCES.txt
+actual_module_test2.egg-info/dependency_links.txt
+actual_module_test2.egg-info/top_level.txt
