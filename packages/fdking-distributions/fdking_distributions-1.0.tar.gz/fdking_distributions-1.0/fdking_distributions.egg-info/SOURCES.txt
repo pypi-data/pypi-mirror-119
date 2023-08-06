@@ -1,0 +1,11 @@
+setup.py
+fdking_distributions/BinomialDistribution.py
+fdking_distributions/GaussianDistribution.py
+fdking_distributions/GeneralDistribution.py
+fdking_distributions/__init__.py
+fdking_distributions.egg-info/PKG-INFO
+fdking_distributions.egg-info/SOURCES.txt
+fdking_distributions.egg-info/dependency_links.txt
+fdking_distributions.egg-info/not-zip-safe
+fdking_distributions.egg-info/top_level.txt
+test/test.py
