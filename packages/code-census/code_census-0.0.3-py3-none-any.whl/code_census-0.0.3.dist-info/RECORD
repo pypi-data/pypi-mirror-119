@@ -1,0 +1,10 @@
+alembic/README,sha256=MVlc9TYmr57RbhXET6QxgyCcwWP7w-vLkEsirENqiIQ,38
+alembic/env.py,sha256=zz6eh1O8q3iSXEhRMmUe3WnTx6TZhRBqqV3VOMfo4BU,2231
+alembic/script.py.mako,sha256=8_xgA-gm_OhehnO7CiIijWgnm00ZlszEHtIHrAYFJl0,494
+alembic/versions/cc7054b42c18_add_initial_tables.py,sha256=zRb3xK_p5iNPtNOxEfGwtOjglLBmjLIRcKp16wjSPQI,2578
+alembic.ini,sha256=HfkqB7_CFK6TPlNznOPlJ80-PD4FUDU7KWlfLbjVdJU,2117
+code_census-0.0.3.dist-info/entry_points.txt,sha256=xgGx6NCi4Yt8agIkz5lsfKMqnrUkFAW3vBkBiWUtCb0,78
+code_census-0.0.3.dist-info/LICENSE,sha256=8m7DnVqMQm9pKvgRehK_Uw1l3kALjKwEkBqgbMkMdSo,1067
+code_census-0.0.3.dist-info/WHEEL,sha256=SrtnPGVTMeYWttls9xnWA01eUhCZ3ufFdJUYb1J3r-U,83
+code_census-0.0.3.dist-info/METADATA,sha256=qBeji_F9f08WEBwmpJB-GZrnRAXIb3PYQ0-I9PeZ5Kk,717
+code_census-0.0.3.dist-info/RECORD,,
