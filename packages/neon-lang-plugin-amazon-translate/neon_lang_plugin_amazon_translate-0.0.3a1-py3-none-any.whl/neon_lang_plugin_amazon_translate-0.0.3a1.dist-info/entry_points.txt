@@ -1,0 +1,6 @@
+[neon.plugin.lang.detect]
+amazontranslate_detection_plug = neon_lang_plugin_amazon_translate:AmazonDetector
+
+[neon.plugin.lang.translate]
+amazontranslate_plug = neon_lang_plugin_amazon_translate:AmazonTranslator
+

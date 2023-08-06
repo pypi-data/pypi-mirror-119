@@ -1,0 +1,1 @@
+neon_lang_plugin_amazon_translate
