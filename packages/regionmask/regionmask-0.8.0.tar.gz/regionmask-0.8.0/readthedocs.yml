@@ -1,0 +1,17 @@
+# Read the Docs configuration file
+# https://docs.readthedocs.io/en/stable/config-file/v2.html
+
+# Required
+version: 2
+
+# build documentation in the docs directory with Sphinx
+sphinx:
+  configuration: docs/conf.py
+
+build:
+    image: latest
+
+conda:
+    environment: ci/requirements/docs.yml
+
+formats: []
