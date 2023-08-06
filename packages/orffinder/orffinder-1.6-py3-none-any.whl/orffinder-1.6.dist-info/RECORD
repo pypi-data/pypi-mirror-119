@@ -1,0 +1,11 @@
+cline_tools/__init__.py,sha256=k8wMU9KGK6kkJ6rut0cgWYWe6uFprEQpjfeF7aCNaKY,23
+orffinder/__init__.py,sha256=k8wMU9KGK6kkJ6rut0cgWYWe6uFprEQpjfeF7aCNaKY,23
+orffinder/orffinder.py,sha256=sg6TZo_yg1kvkpgG9q5FkAecoWdzd-nkHONKZZHC-BA,7405
+orffinder-1.6.data/scripts/orffinder-to-gff3,sha256=L24gWRO7Q-aKForCr55GmuOH02ZbXrumjekKNmzXZTE,2267
+orffinder-1.6.data/scripts/orffinder-to-gtf,sha256=yZt5tkvTPvzYSQWDjeE1QdVt2jikuYfaJcoA7Gt_aBE,2253
+orffinder-1.6.data/scripts/orffinder-to-sequence,sha256=ItVrWw3mTIDs-EHbLwfJuiWefPbC2BHrGe_sRb6PurU,2486
+orffinder-1.6.dist-info/LICENSE,sha256=uC42Ks3pG35DY8ke1B70NC6J2Z4yI-BzSzz5-BbuyIs,1069
+orffinder-1.6.dist-info/METADATA,sha256=Bmx9cfsnt8V8NUsERGV469Uxt-ul7590pQtgUlbjTZY,3973
+orffinder-1.6.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+orffinder-1.6.dist-info/top_level.txt,sha256=V4GSd9UbNLJAvUh2gnFzJHf9GUrWHe1txv6pYRk98DQ,22
+orffinder-1.6.dist-info/RECORD,,
