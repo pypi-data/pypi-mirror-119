@@ -1,0 +1,7 @@
+copy
+datetime
+multiprocessing
+pymongo[srv]
+queue
+threading
+urllib

@@ -1,0 +1,7 @@
+README.md
+setup.py
+django_connect_mongo.egg-info/PKG-INFO
+django_connect_mongo.egg-info/SOURCES.txt
+django_connect_mongo.egg-info/dependency_links.txt
+django_connect_mongo.egg-info/requires.txt
+django_connect_mongo.egg-info/top_level.txt
