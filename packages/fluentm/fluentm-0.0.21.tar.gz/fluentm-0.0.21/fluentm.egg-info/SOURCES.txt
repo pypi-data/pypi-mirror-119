@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+fluentm/__init__.py
+fluentm/entities.py
+fluentm/renderer.py
+fluentm.egg-info/PKG-INFO
+fluentm.egg-info/SOURCES.txt
+fluentm.egg-info/dependency_links.txt
+fluentm.egg-info/requires.txt
+fluentm.egg-info/top_level.txt
+fluentm/templates/report.html
