@@ -1,0 +1,148 @@
+Metadata-Version: 2.1
+Name: ra-flatfile-importer
+Version: 0.1.2
+Summary: Flatfile importer for OS2mo/LoRa
+Home-page: https://magenta.dk/
+License: MPL-2.0
+Keywords: os2mo,lora
+Author: Magenta
+Author-email: info@magenta.dk
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: click (>=7.1.2,<8.0.0)
+Requires-Dist: pydantic (>=1.8.2,<2.0.0)
+Requires-Dist: ra-utils (>=0.4.0,<0.5.0)
+Requires-Dist: raclients (>=0.4.3,<0.5.0)
+Requires-Dist: ramodels (>=2.1.1,<3.0.0)
+Requires-Dist: tqdm (>=4.60.0,<5.0.0)
+Project-URL: Repository, https://git.magenta.dk/rammearkitektur/ra-flatfile-importer
+Description-Content-Type: text/markdown
+
+<!--
+SPDX-FileCopyrightText: 2021 Magenta ApS <https://magenta.dk>
+SPDX-License-Identifier: MPL-2.0
+-->
+
+
+# RA Flatfile importer
+
+OS2mo/LoRa flatfile importer.
+
+## Build
+```
+docker build . -t ra-flatfile-importer
+```
+Which yields:
+```
+...
+Successfully built ...
+Successfully tagged ra-flatfile-importer:latest
+```
+After which you can run:
+```
+docker run --rm ra-flatfile-importer
+```
+Which yields:
+```
+Usage: flatfile_importer.py [OPTIONS] COMMAND [ARGS]...
+
+  Flatfile importer.
+
+    Used to validate and load flatfile data (JSON) into OS2mo/LoRa.
+
+  Options:
+    --help  Show this message and exit.
+
+  Commands:
+    lora  Lora Flatfile importer.
+    mo    OS2mo Flatfile importer.
+```
+
+## Usage
+The primary usage of the tool is to upload flat-files to LoRa / OS2mo.
+```
+docker run --rm ra-flatfile-importer lora upload < lora.json
+docker run --rm ra-flatfile-importer mo upload < mo.json
+```
+
+The tool can generate dummy files to test out this functionality:
+```
+docker run --rm ra-flatfile-importer lora generate --name "Aarhus Kommune" > lora.json
+docker run --rm ra-flatfile-importer mo generate --name "Aarhus Kommune" > mo.json
+```
+These test files should be uploadable to Lora/MO and produce a valid MO instance.
+
+
+The tool has various other commands too, such as producing the validation schema for the flat file format:
+```
+docker run --rm ra-flatfile-importer lora schema --indent 4
+```
+Which yields:
+```
+{
+    "title": "LoraFlatFileFormatModel",
+    "description": "Flatfile format for LoRa.\n\nMinimal valid example is {}.",
+    "type": "object",
+    "properties": {
+        "facetter": {
+           ...
+        },
+        ...
+    }
+}
+```
+Or for validating whether a file is invalid:
+```
+docker run --rm ra-flatfile-importer lora validate < lora.json
+```
+
+## Versioning
+This project uses [Semantic Versioning](https://semver.org/) with the following strategy:
+- MAJOR: Incompatible changes to existing commandline interface
+- MINOR: Backwards compatible updates to commandline interface
+- PATCH: Backwards compatible bug fixes
+
+The fileformat is versioned directly, and the version is exported in the file itself.
+
+<!--
+## Getting Started
+
+TODO: README section missing!
+
+### Prerequisites
+
+
+TODO: README section missing!
+
+### Installing
+
+TODO: README section missing!
+
+## Running the tests
+
+TODO: README section missing!
+
+## Deployment
+
+TODO: README section missing!
+
+## Built With
+
+TODO: README section missing!
+
+## Authors
+
+Magenta ApS <https://magenta.dk>
+
+TODO: README section missing!
+-->
+## License
+- This project: [MPL-2.0](MPL-2.0.txt)
+- Dependencies:
+  - pydantic: [MIT](MIT.txt)
+
+This project uses [REUSE](https://reuse.software) for licensing. All licenses can be found in the [LICENSES folder](LICENSES/) of the project.
+
