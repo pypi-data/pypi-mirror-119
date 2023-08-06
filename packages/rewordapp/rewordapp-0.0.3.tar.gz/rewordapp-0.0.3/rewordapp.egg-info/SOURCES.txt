@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+rewordapp/__init__.py
+rewordapp/__main__.py
+rewordapp/application.py
+rewordapp/config.py
+rewordapp/main.py
+rewordapp.egg-info/PKG-INFO
+rewordapp.egg-info/SOURCES.txt
+rewordapp.egg-info/dependency_links.txt
+rewordapp.egg-info/entry_points.txt
+rewordapp.egg-info/top_level.txt
