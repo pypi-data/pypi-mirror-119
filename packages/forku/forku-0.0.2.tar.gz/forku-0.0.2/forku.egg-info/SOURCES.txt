@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+forku/__init__.py
+forku/__main__.py
+forku.egg-info/PKG-INFO
+forku.egg-info/SOURCES.txt
+forku.egg-info/dependency_links.txt
+forku.egg-info/top_level.txt
