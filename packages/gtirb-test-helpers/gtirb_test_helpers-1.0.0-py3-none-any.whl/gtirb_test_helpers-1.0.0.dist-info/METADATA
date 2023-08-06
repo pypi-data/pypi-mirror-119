@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: gtirb-test-helpers
+Version: 1.0.0
+Summary: Utilities for creating GTIRB IR in tests
+Home-page: https://github.com/grammatech/gtirb-test-helpers
+Author: GrammaTech
+Author-email: gtirb@grammatech.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: gtirb (>=1.10.3)
+
+# gtirb-test-helpers
+
+Provides helper functions to make creating GTIRB IR in tests easier and more
+concise.
+
+## Copyright and Acknowledgments
+
+Copyright (C) 2021 GrammaTech, Inc.
+
+This code is licensed under the MIT license. See the LICENSE file in
+the project root for license terms.
+
+This project is sponsored by the Office of Naval Research, One Liberty
+Center, 875 N. Randolph Street, Arlington, VA 22203 under contract #
+N68335-17-C-0700.  The content of the information does not necessarily
+reflect the position or policy of the Government and no official
+endorsement should be inferred.
+
+
