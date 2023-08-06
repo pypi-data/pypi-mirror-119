@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: gitamite
+Version: 1.1.0
+Summary: This is GITAM library for Moodle and Glearn.
+Home-page: https://github.com/innovation-center-gitam-hyd/gitamite-library
+Author: Sumanth Perambuduri
+Author-email: sumanthpera3@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: requests
+Requires-Dist: beautifulsoup4
+
+This library can fetch data from Moodle and Glearn like upcoming activities and assignment 
+submissions.
+
