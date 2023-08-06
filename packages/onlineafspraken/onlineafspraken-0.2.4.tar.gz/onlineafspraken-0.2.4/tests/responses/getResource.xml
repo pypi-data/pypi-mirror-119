@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Status>
+        <APIVersion>1.0</APIVersion>
+        <Date>2021-07-15 20:22:33</Date>
+        <Timestamp>1626373353</Timestamp>
+        <Status>success</Status>
+    </Status>
+    <Resource>
+        <Id>621</Id>
+        <Name>Servicedesk medewerker 1</Name>
+        <Code></Code>
+        <Description></Description>
+        <Phone></Phone>
+        <MobilePhone></MobilePhone>
+        <Email></Email>
+        <Status>1</Status>
+        <Label>1</Label>
+    </Resource>
+</Response>

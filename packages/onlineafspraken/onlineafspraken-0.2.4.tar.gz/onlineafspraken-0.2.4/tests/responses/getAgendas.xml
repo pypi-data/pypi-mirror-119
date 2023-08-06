@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Status>
+        <APIVersion>1.0</APIVersion>
+        <Date>2021-07-15 20:05:00</Date>
+        <Timestamp>1626372300</Timestamp>
+        <Status>success</Status>
+    </Status>
+    <Objects>
+        <Agenda>
+            <Id>270</Id>
+            <Name>Test 1</Name>
+            <DateFormat>D d/m/Y</DateFormat>
+            <TimeFormat>H:i</TimeFormat>
+            <AlignGrid>5</AlignGrid>
+            <IsDefault>1</IsDefault>
+        </Agenda>
+        <Agenda>
+            <Id>271</Id>
+            <Name>Test 2</Name>
+            <DateFormat>D d/m/Y</DateFormat>
+            <TimeFormat>H:i</TimeFormat>
+            <AlignGrid>5</AlignGrid>
+            <IsDefault>1</IsDefault>
+        </Agenda>
+        <Agenda>
+            <Id>272</Id>
+            <Name>Test 3</Name>
+            <DateFormat>D d/m/Y</DateFormat>
+            <TimeFormat>H:i</TimeFormat>
+            <AlignGrid>5</AlignGrid>
+            <IsDefault>1</IsDefault>
+        </Agenda>
+    </Objects>
+</Response>
