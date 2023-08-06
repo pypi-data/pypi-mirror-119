@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.py
+src/ol_openedx_logging/__init__.py
+src/ol_openedx_logging/app.py
+src/ol_openedx_logging.egg-info/PKG-INFO
+src/ol_openedx_logging.egg-info/SOURCES.txt
+src/ol_openedx_logging.egg-info/dependency_links.txt
+src/ol_openedx_logging.egg-info/entry_points.txt
+src/ol_openedx_logging.egg-info/namespace_packages.txt
+src/ol_openedx_logging.egg-info/requires.txt
+src/ol_openedx_logging.egg-info/top_level.txt
+src/ol_openedx_logging/settings/__init__.py
+src/ol_openedx_logging/settings/production.py
