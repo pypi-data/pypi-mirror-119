@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/avmath/__init__.py
+src/avmath/geo.py
+src/avmath.egg-info/PKG-INFO
+src/avmath.egg-info/SOURCES.txt
+src/avmath.egg-info/dependency_links.txt
+src/avmath.egg-info/top_level.txt
