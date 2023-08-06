@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: envoy.base.utils
+Version: 0.0.8
+Summary: "A collection of utils used in Envoy proxy's CI"
+Home-page: https://github.com/envoyproxy/pytooling/tree/main/envoy.base.utils
+Author: Ryan Northey
+Author-email: ryan@synca.io
+Maintainer: Ryan Northey
+Maintainer-email: ryan@synca.io
+License: Apache Software License 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.5
+Requires-Dist: abstracts
+Requires-Dist: pyyaml
+Requires-Dist: trycast
+Provides-Extra: lint
+Requires-Dist: flake8 ; extra == 'lint'
+Provides-Extra: publish
+Requires-Dist: wheel ; extra == 'publish'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-asyncio ; extra == 'test'
+Requires-Dist: pytest-coverage ; extra == 'test'
+Requires-Dist: pytest-patches ; extra == 'test'
+Provides-Extra: types
+Requires-Dist: mypy ; extra == 'types'
+Requires-Dist: types-pyyaml ; extra == 'types'
+
+
+envoy.base.utils
+================
+
+Base utilities for Envoy proxy's CI
+
+
