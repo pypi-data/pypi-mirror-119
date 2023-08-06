@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: detadict
+Version: 0.1.0
+Summary: Python dict with Deta backend
+Home-page: https://github.com/ilhomidin/detadict
+License: MIT
+Keywords: deta,dict
+Author: ilhomidin
+Author-email: itilhomidin@yandex.com
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: deta (>=1.0.0,<2.0.0)
+Project-URL: Repository, https://github.com/ilhomidin/detadict
+Description-Content-Type: text/markdown
+
+# detadict
+
+__Goal:__ create dictionary that fully compatible with native python dictionary interface.
+
+__Example:__
+```python
+from detadict import detadict
+
+users = detadict()
+users["John"] = {
+  "id": 1,
+  "sex": "male"
+}
+users["Katy"] = {
+  "id": 2,
+  "sex": "female"
+}
+```
+
+__Requirements:__
+
+🤦‍♂️ All you need to do is set the environment variable `DETA_PROJECT_KEY` with the Deta project key.
+
+__Currently not supported__:
+
+- Update of mutable values
+
+```python
+users["John"]["sex"] = "female"
+print(users["John"])  # {"id": 1, "sex": "male"}
+```
+
+- `copy` and `setdefault` methods
+
+```python
+# raise NotImplementedError
+users.copy()
+users.setdefault("Bob", {})
+```
+
+__Installing__:
+```bash
+pip install detadict
+```
+
