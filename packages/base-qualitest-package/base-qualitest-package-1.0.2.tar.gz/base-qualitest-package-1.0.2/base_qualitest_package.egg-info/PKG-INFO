@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: base-qualitest-package
+Version: 1.0.2
+Summary: Qualitest package automation infrastructure kit tools for GUI and API tests
+Home-page: https://upload.pypi.org/legacy/
+Author: Yossi & Moshe
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+This package is an automation infrastructure kit tool for GUI and API tests.
+This package made by Qualitest-Group
+
+Package Capabilities:
+1. selenium e2e base - initiate driver, basic actions, proxy server, and more
+2. API base - validation options, wrapper for API's requests [get, post, put, patch, delete]
+3. shared utilities - run tests in parallel, DB connections, JSON actions, and more
+4. unit tests - test for every function for saving the infrastructure accuracy 
+
+
+In our next versions:
+- API Protocols capabilities, schema test validation by API's requests
+- develop a mobile e2e base - initiate driver, basic actions, proxy server
+- adding GUI report and wrapper any function in the package
+- code-less automation framework for web, mobile, and API platforms
+This package is an automation infrastructure kit tool for GUI and API tests. This package made by Qualitest-Group
+
+Package Capabilities:
+selenium e2e base - initiate driver, basic actions, proxy server, and more
+API base - validation options, wrapper for API's requests [get, post, put, patch, delete]
+shared utilities - run tests in parallel, DB connections, JSON actions, and more
+unit tests - test for every function for saving the infrastructure accuracy
+
+In our next versions:
+API Protocols capabilities, schema test validation by API's requests
+develop a mobile e2e base - initiate driver, basic actions, proxy server
+adding GUI report and wrapper any function in the package
+code-less automation framework for web, mobile, and API platforms
+
+Example diagram:
+
+This is an example showing the relationship between the packages.
+Driver (Selenium) and Test(Pytest/Unitest) share 1 to many relationship -> 1 Driver can run multiple tests.
+
+![ScreenShot](Python_framework.png)
+
