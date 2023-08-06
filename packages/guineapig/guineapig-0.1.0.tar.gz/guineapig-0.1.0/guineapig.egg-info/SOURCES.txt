@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+setup.py
+guineapig/__init__.py
+guineapig/main.py
+guineapig/prompt.py
+guineapig/utils.py
+guineapig.egg-info/PKG-INFO
+guineapig.egg-info/SOURCES.txt
+guineapig.egg-info/dependency_links.txt
+guineapig.egg-info/entry_points.txt
+guineapig.egg-info/requires.txt
+guineapig.egg-info/top_level.txt

@@ -1,0 +1,4 @@
+click
+mysql-connector-python
+protobuf
+six
