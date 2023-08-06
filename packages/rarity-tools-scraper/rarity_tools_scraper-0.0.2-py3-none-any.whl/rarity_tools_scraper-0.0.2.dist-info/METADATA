@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: rarity-tools-scraper
+Version: 0.0.2
+Summary: UNKNOWN
+Home-page: https://github.com/quantumlyy/rarity-tools-scraper-py
+Author: Nejc Drobnič
+Author-email: yo@quantumly.dev
+License: BSD-3-Clause
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: cssselect (==1.1.0)
+Requires-Dist: dataclasses-json (==0.5.5)
+Requires-Dist: fake-useragent (==0.1.11)
+Requires-Dist: lxml (==4.6.3)
+Requires-Dist: pytz (==2021.1)
+Requires-Dist: requests (==2.26.0)
+Requires-Dist: typing (==3.7.4.3)
+
+UNKNOWN
+
