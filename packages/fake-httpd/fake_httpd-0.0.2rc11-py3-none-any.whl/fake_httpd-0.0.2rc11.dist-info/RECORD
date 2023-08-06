@@ -1,0 +1,15 @@
+fake_httpd/__init__.py,sha256=IxrDl2xcVDSPC3Nkj8vqzlEJ9Heu84v5n-12ry-wfXk,1090
+fake_httpd/config.py,sha256=L5Svtn751oZ-EQSzafH-MTPzccnT8joAll1bnW2pccs,3560
+fake_httpd/main.py,sha256=BeSizsDSg9bsQveyFWT2P0zrFXPM66Qf0_6DLqS022E,15330
+fake_httpd/request.py,sha256=DB3cZOmT7akOJ8EdRV3S5QJRLgz2MUlAp7s61ROkrGQ,4385
+fake_httpd/version.py,sha256=lGTv1pGjLDmzT0EEKInQ-QhYYZPSI93MSAZsZqi1fas,316
+fake_httpd/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fake_httpd/tests/test_config.py,sha256=ENjzLYTMliXrL8mjWyAbaSDTE65rQQaKwnNAZD3-8go,1304
+fake_httpd/tests/test_request.py,sha256=EIwQlK_rmtrWrSCIPoZcDZtGS7nC_WLmDY7x1gop2QY,2898
+fake_httpd-0.0.2rc11.dist-info/COPYING,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+fake_httpd-0.0.2rc11.dist-info/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+fake_httpd-0.0.2rc11.dist-info/METADATA,sha256=Po7Rdt4h18KiB31FyC9vsPmBweV_Ryc0Ia222tUHHFw,966
+fake_httpd-0.0.2rc11.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+fake_httpd-0.0.2rc11.dist-info/entry_points.txt,sha256=bCVJOSfMfpi_sq1zJFzFpLSXGRF0iqk9S4MzhbsNKY0,48
+fake_httpd-0.0.2rc11.dist-info/top_level.txt,sha256=0scOlCRTxTgK8etKEiOe_CD6vz127WtoaGq2eCbG6ss,11
+fake_httpd-0.0.2rc11.dist-info/RECORD,,
