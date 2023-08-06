@@ -1,0 +1,3 @@
+[console_scripts]
+premark = premark.cli:premark
+
