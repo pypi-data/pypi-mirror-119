@@ -1,0 +1,4 @@
+marshmallow
+starlette
+starlette-apispec
+smart7-orm
