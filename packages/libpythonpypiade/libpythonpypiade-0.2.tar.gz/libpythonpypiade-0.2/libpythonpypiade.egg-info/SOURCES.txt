@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+libpythonpypiade/__init__.py
+libpythonpypiade/github_api.py
+libpythonpypiade.egg-info/PKG-INFO
+libpythonpypiade.egg-info/SOURCES.txt
+libpythonpypiade.egg-info/dependency_links.txt
+libpythonpypiade.egg-info/not-zip-safe
+libpythonpypiade.egg-info/requires.txt
+libpythonpypiade.egg-info/top_level.txt
