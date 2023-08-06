@@ -1,0 +1,16 @@
+anna>=0.4.1
+injector==0.12.1
+ionics
+numpy>=1.18
+pandas
+pyhocon
+rx<3.0
+scipy
+six
+
+[GUI]
+PyQt5
+matplotlib>=3.2
+
+[Obstacles]
+trimesh[easy]
