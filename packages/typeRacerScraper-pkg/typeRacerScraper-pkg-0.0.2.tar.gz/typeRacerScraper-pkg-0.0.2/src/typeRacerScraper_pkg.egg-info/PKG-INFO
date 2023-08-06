@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: typeRacerScraper-pkg
+Version: 0.0.2
+Summary: A small package that allows users to scrape date from typeracer
+Home-page: https://github.com/Mohammad-Kheir/TypeRacerScraper
+Author: Mohammad Kheir
+Author-email: kheir.mirza@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Typeracer scraper
+
+This is a simple example package. You can use
+[Github-flavored Markdown](https://github.com/Mohammad-Kheir/TypeRacerScraper)
+given a user id and a number of scores it will return list of scores.
+
+
