@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: simpleSound
+Version: 1.0.0rc0
+Summary: A very very very simple sound playing library for windows.
+Home-page: https://github.com/nekumelon/simpleSound
+Author: nekumelon
+Author-email: nekumelon@gmail.com
+License: MIT
+Description: README.md
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
