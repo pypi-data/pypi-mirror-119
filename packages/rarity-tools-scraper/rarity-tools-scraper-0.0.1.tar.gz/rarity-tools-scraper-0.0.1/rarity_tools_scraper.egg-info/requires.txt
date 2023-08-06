@@ -1,0 +1,7 @@
+cssselect==1.1.0
+dataclasses-json==0.5.5
+fake-useragent==0.1.11
+lxml==4.6.3
+pytz==2021.1
+requests==2.26.0
+typing==3.7.4.3
