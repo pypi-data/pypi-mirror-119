@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: pylint-exception-var-name-plugin
+Version: 0.1.2
+Summary: Plugin for pylint which allows to define and check variable name for exception
+Home-page: https://github.com/winmasta
+License: MIT
+Keywords: pylint,exception,lint
+Author: Konstantin Shestakov
+Author-email: winmasta@yandex.ru
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 4 - Beta 
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Requires-Dist: pylint
+Project-URL: Repository, https://github.com/winmasta
+Description-Content-Type: text/markdown
+
+## Plugin for pylint which allows defining and checking variable name for exception (like `e` or `exc` or other)
+
+Install:
+```bash
+pip install pylint-exception-var-name-plugin
+```
+
+Usage:
+```bash
+pylint --load-plugins exception_var_name FILES_TO_CHECK
+```
+
+`ALLOWED_VAR_NAME` default is `e`. Can be set in command line:
+```bash
+pylint --load-plugins exception_var_name ALLOWED_VAR_NAME FILES_TO_CHECK
+```
+or in pylint config file (`pylintrc`)
+```bash
+exception-var-name=ALLOWED_VAR_NAME
+```
