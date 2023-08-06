@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+setup.cfg
+data/dict-fr-Wordscapes
+dict_fr_Wordscapes.egg-info/PKG-INFO
+dict_fr_Wordscapes.egg-info/SOURCES.txt
+dict_fr_Wordscapes.egg-info/dependency_links.txt
+dict_fr_Wordscapes.egg-info/top_level.txt
