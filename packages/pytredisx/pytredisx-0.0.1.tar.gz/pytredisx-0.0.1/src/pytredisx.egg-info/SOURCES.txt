@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+src/pytredisx.egg-info/PKG-INFO
+src/pytredisx.egg-info/SOURCES.txt
+src/pytredisx.egg-info/dependency_links.txt
+src/pytredisx.egg-info/top_level.txt
