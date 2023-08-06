@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: spikeinterface-gui
+Version: 0.0.0
+Summary: GUI for spikeinterface objects
+Home-page: https://github.com/SpikeInterface/spikeinterface-gui
+Author: Samuel Garcia
+Author-email: sam.garcia.die@gmail.com
+License: UNKNOWN
+Description: # spikeinterface-gui
+        GUI for spikeinterface objects withoput copy
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
