@@ -1,0 +1,3 @@
+smartify==0.0.2
+termplot==0.0.2
+tqdm
