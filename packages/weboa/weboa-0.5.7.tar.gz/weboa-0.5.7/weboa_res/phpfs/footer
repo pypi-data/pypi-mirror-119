@@ -1,0 +1,33 @@
+<footer>
+	
+</footer>
+<script type="text/javascript">
+    function LogOutSuc () {
+        window.location.href = "/";
+    }
+
+    function nvgpost(what, data, fcallback) {
+        fetch(what,
+            {
+                method: 'POST',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                body: data
+            }).then( x => {
+            return x.json();
+        }).then( y => {
+            fcallback(y);
+        });
+    }
+
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+            navigator.serviceWorker
+            .register("/serviceWorker.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
+        })
+    }
+
+</script>
+<script src="/js/script.js?<?=$CACHE;?>"></script>

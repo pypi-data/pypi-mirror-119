@@ -1,0 +1,11 @@
+pillow
+ply
+six
+lesscpy
+libsass
+coverage
+coverage-enable-subprocess
+pre-commit
+pytest
+werkzeug>=0.9
+requests
