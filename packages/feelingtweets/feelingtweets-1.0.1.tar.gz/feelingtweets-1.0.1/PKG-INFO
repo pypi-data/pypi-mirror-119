@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: feelingtweets
+Version: 1.0.1
+Summary: A dsitributed modules to collect/clean/translate and analize with Rule-based methods (Texblob and VADER)
+Home-page: https://github.com/dev-willcode/feelingtweets
+Author: Willy Carreño
+Author-email: dev.willct@gmail.com
+License: MIT
+Download-URL: https://github.com/dev-willcode/feelingtweets/archive/refs/tags/v1.0.1.tar.gz
+Keywords: Sentimental,Analysis,Textblob,VADER,PNL
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Education
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.6.0
+License-File: LICENSE
+
+UNKNOWN
+
