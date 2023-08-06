@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: PyVersionNumber
+Version: 1.0.0
+Summary: A small library for handling and comparing Semantic Version Numbers 
+Home-page: https://github.com/CPSuperstore/PyVersionNumber
+Author: CPSuperstore
+Author-email: cpsuperstoreinc@gmail.com
+License: MIT
+Download-URL: https://github.com/CPSuperstore/PyVersionNumber/archive/refs/tags/v1.0.0.tar.gz
+Description: UNKNOWN
+Keywords: SEMANTIC,VERSION,NUMBER,VERSIONING,MAJOR,MINOR,PATCH
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Version Control
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Natural Language :: English
