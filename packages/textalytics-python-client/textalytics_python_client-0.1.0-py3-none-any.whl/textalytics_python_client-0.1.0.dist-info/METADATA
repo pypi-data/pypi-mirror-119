@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: textalytics-python-client
+Version: 0.1.0
+Summary: python client to interface with textalytics hosted nlp
+License: MIT
+Author: Manoj Bharadwaj
+Author-email: manoj@cloudcosmos.tech
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests (>=2.26.0,<3.0.0)
+Requires-Dist: textalytics-core (>=0.1.1,<0.2.0)
