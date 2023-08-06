@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: translatetool
+Version: 1.0.1
+Summary: A Papago Translate module.
+Home-page: https://github.com/jaewoolee82/translatetool
+Author: Jaewoo Lee
+Author-email: jaewoolee82@kakao.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3
