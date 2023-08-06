@@ -1,0 +1,11 @@
+README.md
+setup.py
+collect_pack/__init__.py
+collect_pack/__main__.py
+collect_pack.egg-info/PKG-INFO
+collect_pack.egg-info/SOURCES.txt
+collect_pack.egg-info/dependency_links.txt
+collect_pack.egg-info/requires.txt
+collect_pack.egg-info/top_level.txt
+collect_pack/pack/__init__.py
+collect_pack/pack/collect_framework.py
