@@ -1,0 +1,12 @@
+tgstk/CGAL-vc140-mt-4.12-I-900.dll,sha256=r80PkM5SV1xRNLlUsuA_u64Bd5Dh5qzrtFa1tSl9vVA,123904
+tgstk/CGAL_ImageIO-vc140-mt-4.12-I-900.dll,sha256=RtWkL8V-0xC8hGEVFv9CDCb_q6o3pKoojBaswtpKJ4A,105984
+tgstk/__init__.py,sha256=0yZGnQn5iw9Q57jendyLdwkVwLPMM1XWQskHJ7b8br0,10
+tgstk/_tgstk.pyd,sha256=edRO7CUsaYJNP1KHzVO5fxaEFC7wF-rh4ZU_RzgNoT0,1134592
+tgstk/libgmp-10.dll,sha256=_sQ8sYzg7Ipd1q0dt0V0cWcxDMuStaz_DURaizAT8Ak,543027
+tgstk/libmpfr-4.dll,sha256=CbO4aLlkM5kfwVycWub5pExi0uIRlBEEQmB5Fzke2Sc,436011
+tgstk/tgstk.py,sha256=h4dOnLJi-cUdN_3hC0SbYS88yGK6vz6cx3AuOh0Vs6c,5763
+tgstk-0.0.2.dist-info/LICENSE.txt,sha256=gcuuhKKc5-dwvyvHsXjlC9oM6N5gZ6umYbC8ewW1Yvg,35821
+tgstk-0.0.2.dist-info/METADATA,sha256=90aGm2lgq1QBwb81wy3jw9bAdGkH42pJTo4rSySVSzU,535
+tgstk-0.0.2.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+tgstk-0.0.2.dist-info/top_level.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+tgstk-0.0.2.dist-info/RECORD,,
