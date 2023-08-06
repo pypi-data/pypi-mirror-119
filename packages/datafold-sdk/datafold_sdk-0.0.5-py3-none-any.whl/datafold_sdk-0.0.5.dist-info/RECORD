@@ -1,0 +1,17 @@
+datafold/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+datafold/version.py,sha256=S7u1lbuWmM3A3ajykBialmPoJUK6Jg-WmNqM-9OZFdk,22
+datafold/cli/__init__.py,sha256=Gk0jlVjjm2sKdc89C64-nLqZp6pYUHInV2TjBgiHFDQ,1250
+datafold/cli/context.py,sha256=Qyyd215w-4NfhIXbbmFOeguxlSzqp5y3uNPH2GRk4Do,166
+datafold/cli/exceptions.py,sha256=rkSGCedWYfmYew_sIDSTXfQ47-HFChfhlPVIRNDGgMw,47
+datafold/cli/dbt/__init__.py,sha256=GnBJDmuzNnuW4wsA3nhiXez8t3xwYWUKzDTDv1qx4p0,3013
+datafold/sdk/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+datafold/sdk/exceptions.py,sha256=-8ag2TRJO0F5iMBK_numgyYw8Att6rsiHgUM_J-zfx0,48
+datafold/sdk/utils.py,sha256=qCJvUsTuu_f1ttgKISTdAsLoiMtbYYauE2bogm8GtR8,1546
+datafold/sdk/ci/__init__.py,sha256=so0UqS9A0NRy7BDOSSTx7FPL2Bst2CF38uCu2UNpmZM,1841
+datafold/sdk/dbt/__init__.py,sha256=PykiKKEv0vx71kOOdTX2YKUucu0vcDzbCWt3f9TibF8,5147
+datafold_sdk-0.0.5.dist-info/LICENSE,sha256=iHzgYnei-dnBU7MZvlWDsrVRoxAyNRNjpN4Qenk8FhY,1061
+datafold_sdk-0.0.5.dist-info/METADATA,sha256=Q7rpbza8DMAmgvoCG1xO9UyEaJqhP7SeroCgoSoQOK4,2091
+datafold_sdk-0.0.5.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+datafold_sdk-0.0.5.dist-info/entry_points.txt,sha256=xoeB4_a86Za1aurN0RIYesOUrOMIdFzjcWK8I0TQDTM,69
+datafold_sdk-0.0.5.dist-info/top_level.txt,sha256=xVUm2siF1-JI2hFd-gREpAxfVmqkFlDoZD2DPdfJrso,9
+datafold_sdk-0.0.5.dist-info/RECORD,,
