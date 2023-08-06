@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "jpaddressparser"
+version = "0.1.0"
+description = "Parser for Japanese Addresses"
+authors = ["Du Shiqiao <lucidfrontier.45@gmail.com>"]
+license = "Apache"
+
+[tool.poetry.dependencies]
+python = ">=3.7,<4"
+jaconv = "^0.3"
+marisa-trie = "^0.7.7"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+black = "^21.8b0"
+pytest-cov = "^2.12.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: jpaddressparser
+Version: 0.1.0
+Summary: Parser for Japanese Addresses
+License: Apache
+Author: Du Shiqiao
+Author-email: lucidfrontier.45@gmail.com
+Requires-Python: >=3.7,<4
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: jaconv (>=0.3,<0.4)
+Requires-Dist: marisa-trie (>=0.7.7,<0.8.0)
+Requires-Dist: requests (>=2.26.0,<3.0.0)
