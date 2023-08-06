@@ -1,0 +1,12 @@
+structlog_sentry_logger/__init__.py,sha256=auCvwoFnbhfajEUf3wCp1kK_fh90baO7MThCbIPG9T0,6834
+structlog_sentry_logger/_config.py,sha256=u5XnbXaT3RcGSYaMRm6iZ9WgtuAUdH2w_XRjWyUObSQ,9168
+structlog_sentry_logger/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+structlog_sentry_logger/structlog_sentry.py,sha256=ylmyIXTfwS_hozyR69S0UiE3nWhBSQ9gJ36sZ1_-iPw,6753
+cd18218b3b897eb456ba__mypyc.cpython-38-x86_64-linux-gnu.so,sha256=mYZVMN6vg6Nk7lRFNYV3F6KlCgVQwb_A45DSsCGY79M,791856
+structlog_sentry_logger/_config.cpython-38-x86_64-linux-gnu.so,sha256=-tqyqBnyoJqR4Pdy_dTkFN2XxowZzv2QVs4cW7vadyo,35336
+structlog_sentry_logger/__init__.cpython-38-x86_64-linux-gnu.so,sha256=yklc_PLNVQgR8G4Kw4qpgWfMy6FHDXDZx2grro5NQec,35360
+structlog_sentry_logger/structlog_sentry.cpython-38-x86_64-linux-gnu.so,sha256=zc4lSM5puJtr5-7LSoXdVBBMvgtcVmRbMXY-tlpcSis,35400
+structlog_sentry_logger-0.9.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+structlog_sentry_logger-0.9.1.dist-info/WHEEL,sha256=KULuV3KXFMfVyB3NYEoc0lD7aS_Qh_Yn0-b4Q8A3UHA,103
+structlog_sentry_logger-0.9.1.dist-info/METADATA,sha256=W0LmTCFjKi3MkNABjIm61FkKKjbekDLkT4cH_6SgOkg,18127
+structlog_sentry_logger-0.9.1.dist-info/RECORD,,
