@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: py-secretserver
+Version: 0.0.1
+Summary: Package to interact and automate against Secret Server REST API
+Home-page: https://github.com/thycotic-ps/py_secretserver
+Author: Shawn Melton
+Author-email: shawn.melton@thycotic.com
+License: UNKNOWN
+Project-URL: Documentation, https://github.com/thycotic-ps/py_secretserver
+Project-URL: Bug Reports, https://github.com/thycotic-ps/py_secretserver/issues
+Project-URL: Source Code, https://github.com/thycotic-ps/py_secretserver
+Description: # Python Secret Server Package
+        
+        [![PyPI package](https://img.shields.io/badge/pip%20install-py-secretserver-brightgreen)](https://pypi.org/project/py-secretserver/)
+        [![version number](https://img.shields.io/pypi/v/py-secretserver?color=green&label=version)](https://github.com/thycotic-ps/py_secretserver/releases)
+        [![Actions Status](https://github.com/tomchen/example_pypi_package/workflows/Test/badge.svg)](https://github.com/thycotic-ps/py_secretserver/actions)
+        
+        Python package for interacting and automating with Secret Server's REST API
+        
+        🚧 Under construction 🚧
+        
+Keywords: secretserver,restapi,automate,security,secret,secrets
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
