@@ -1,0 +1,21 @@
+[run]
+include =
+  covimerage/*
+  tests/*
+  */lib/python*/site-packages/covimerage/*
+  */pypy*/site-packages/covimerage/*
+  *\Lib\site-packages\covimerage\*
+branch = true
+# Wrong warning caused by include used in [report] (Coveragepy 4.4.2)
+# Ref: https://bitbucket.org/ned/coveragepy/issues/621
+disable_warnings = include-ignored
+parallel = true
+
+[report]
+show_missing = true
+
+[paths]
+source = covimerage/
+  */lib/python*/site-packages/covimerage/
+  */pypy*/site-packages/covimerage/
+  *\Lib\site-packages\covimerage\
