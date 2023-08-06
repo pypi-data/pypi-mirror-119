@@ -1,0 +1,4 @@
+flask
+tqdm
+flask-compress
+boto3
