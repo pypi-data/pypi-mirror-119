@@ -1,0 +1,10 @@
+README.md
+setup.py
+magic_identify.egg-info/PKG-INFO
+magic_identify.egg-info/SOURCES.txt
+magic_identify.egg-info/dependency_links.txt
+magic_identify.egg-info/entry_points.txt
+magic_identify.egg-info/top_level.txt
+magicidentify/__init__.py
+magicidentify/tools/__init__.py
+magicidentify/tools/magicidentifycli.py
