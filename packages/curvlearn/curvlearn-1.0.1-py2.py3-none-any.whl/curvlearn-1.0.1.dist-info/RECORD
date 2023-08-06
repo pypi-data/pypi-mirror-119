@@ -1,0 +1,17 @@
+curvlearn/README.md,sha256=Xvtmk3WWbXc8fAowHyYsdT0R6Khc4TCaiOzyVvg4P2w,711
+curvlearn/__init__.py,sha256=OFNpAzcfD_MUv4wZJivy0z_L0_0__2nJ6axyAMPeFaI,684
+curvlearn/manifolds/__init__.py,sha256=9KdypM3zwGmmllxGZl7uYEVp7QxTPSn3SuaYViBSq2o,876
+curvlearn/manifolds/euclidean.py,sha256=__tHP3B3vk7PS0D-P6IPp8kcJSo73FR7LaAwgDZ5O9c,6639
+curvlearn/manifolds/geometry.py,sha256=BoyZk_BT8gNJ57lcK3banANfT2x291OB_Pqs39HZkmw,7348
+curvlearn/manifolds/manifold.py,sha256=Vh-x1Mkg7RvHtNHiwMZxyQnma0qVP58vf6hphCbiOIg,9942
+curvlearn/manifolds/math.py,sha256=iZDvuvhu-Wa2U-bbkgpZmvknVupkGhfgl8oFx_KjdQI,7676
+curvlearn/manifolds/product.py,sha256=ZvZTHJNGGBhcl7zn3v5-re48YTrylUkvqZBT9qBzVhM,30106
+curvlearn/manifolds/stereographic.py,sha256=BioEJDWaJquS45bWT3F_HcafT7JkUfp8v5wIWvklG7o,16012
+curvlearn/optimizers/__init__.py,sha256=IHV4jfjDgREjCzqIiAnkSbHri_1uZXbKNq4--_Pl-4k,824
+curvlearn/optimizers/radagrad.py,sha256=DMgzctP6aGRXXR5IQ5WDHSHkHruzgskoSuCzFzZkt3g,5225
+curvlearn/optimizers/radam.py,sha256=UT964eKyd_jBtkWdsJoPZsXcBcldMBIIqUWRjM5K9aU,7552
+curvlearn/optimizers/rsgd.py,sha256=8NZNdrvZ1LONzgBaHr9D_SoQy2oVWwdMN9DXFCEGCjM,3859
+curvlearn-1.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+curvlearn-1.0.1.dist-info/WHEEL,sha256=Ow4b_3PGmHzGIDyu_Dwdg883aXgmJzTvH-ILWI0h-NU,87
+curvlearn-1.0.1.dist-info/METADATA,sha256=rPr7jnFTVzTZeozRms3ncjIfRHEwWqi7vdluwnJEVqE,738
+curvlearn-1.0.1.dist-info/RECORD,,
