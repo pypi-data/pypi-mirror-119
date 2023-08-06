@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: topn
+Version: 0.0.1
+Summary: This package boosts a group-wise nlargest sort
+Home-page: https://github.com/ParticularMiner/topn
+Author: Particular Miner
+Author-email: particularminer@fake.com
+License: MIT
+Download-URL: https://github.com/ParticularMiner/topn/archive/refs/tags/v0.0.1.tar.gz
+Description: # topn
+        
+        Utility function for `string_grouper`
+        
+        ## Short Description
+        
+        ```python
+        def awesome_topn(r, c, d, ntop, use_threads=False, n_jobs=1):
+            """
+            r, c, and d are 1D numpy arrays all of the same length N. 
+            This function will return arrays rn, cn, and dn of length n <= N such
+            that the set of triples {(rn[i], cn[i], dn[i]) : 0 < i < n} is a subset of 
+            {(r[j], c[j], d[j]) : 0 < j < N} and that for every distinct value 
+            x = rn[i], dn[i] is among the first ntop existing largest d[j]'s whose 
+            r[j] = x.
+        
+            Input:
+                r and c: two 1D integer arrays of the same length
+                d: 1D array of single or double precision floating point type of the
+                same length as r or c
+                ntop maximum number of maximum d's returned
+                use_threads: use multi-thread or not
+                n_jobs: number of threads, must be >= 1
+        
+            Output:
+                (rn, cn, dn) where rn, cn, dn are all arrays as described above.
+            """
+        ```
+Keywords: nlargest scipy cython
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
