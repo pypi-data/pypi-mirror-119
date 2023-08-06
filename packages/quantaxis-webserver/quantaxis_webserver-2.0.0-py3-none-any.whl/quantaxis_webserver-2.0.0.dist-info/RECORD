@@ -1,0 +1,15 @@
+QAWebServer/QA_Web.py,sha256=voYzVv1R0URpe4XTPvHF-wpILp0mDayUx7bO0WFXRMM,3806
+QAWebServer/__init__.py,sha256=teQNFa5w8Wu9Ely_vxrLYqh49EBd0Ga6RrpNoUWu_xU,1255
+QAWebServer/basehandles.py,sha256=U9s2W9M4UvZOTpvKdCXG82CBZFn4iMDkrNErWm_-0Tk,3706
+QAWebServer/commandhandler.py,sha256=krFAS9jUKPltFjsfHyljI5cpFN8DSG-tgRhChQXbfqY,3111
+QAWebServer/filehandler.py,sha256=r0gtZXA-5HhGaXxOza3MtBeWhOVZcJkSgDvhuZWVwcs,2283
+QAWebServer/schedulehandler.py,sha256=XgLTCQo0BdaWWgZwBlOLGHZd25gi8d2k48vhgyoNkBg,2690
+QAWebServer/userhandles.py,sha256=cUx3BgO_1kZ5lGPG57aoAZlxnodEy6Dduyo2RKrKFSM,9791
+QAWebServer/util.py,sha256=96QBHGl3glnnDHefolO817YdU-bdTKrdAET_oNhZCOM,1247
+quantaxis_webserver-2.0.0.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+quantaxis_webserver-2.0.0.dist-info/METADATA,sha256=VlRJrGrZy3pzxKS6XedIvqzUBNlgMjAh3l22AjZEriU,632
+quantaxis_webserver-2.0.0.dist-info/WHEEL,sha256=EVRjI69F5qVjm_YgqcTXPnTAv3BfSUr0WVAHuSP3Xoo,92
+quantaxis_webserver-2.0.0.dist-info/entry_points.txt,sha256=ZuFKMxsg0b0QW3pCR1WmD-Huynqy6jRVhr0QVih2hTg,65
+quantaxis_webserver-2.0.0.dist-info/top_level.txt,sha256=gKn3fExJmzUzZCLsTypR9IDMEggfP7PsXfgP8Bva8Hs,12
+quantaxis_webserver-2.0.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+quantaxis_webserver-2.0.0.dist-info/RECORD,,
