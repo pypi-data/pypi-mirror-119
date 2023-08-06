@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+pdrle/__init__.py
+pdrle.egg-info/PKG-INFO
+pdrle.egg-info/SOURCES.txt
+pdrle.egg-info/dependency_links.txt
+pdrle.egg-info/requires.txt
+pdrle.egg-info/top_level.txt

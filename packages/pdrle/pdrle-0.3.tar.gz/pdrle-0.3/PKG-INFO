@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: pdrle
+Version: 0.3
+Summary: python package for run length encoding on pandas Series
+Home-page: https://github.com/darshanbaral/pyrle
+Author: Darshan Baral
+Author-email: darshanbaral@gmail.com
+License: MIT
+Download-URL: https://github.com/darshanbaral/pdrle/archive/refs/tags/0.3.tar.gz
+Description: UNKNOWN
+Platform: UNKNOWN
