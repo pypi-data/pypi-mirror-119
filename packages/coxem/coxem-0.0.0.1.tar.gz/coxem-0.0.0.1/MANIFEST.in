@@ -1,0 +1,6 @@
+
+
+include *.txt
+include *.pyd
+
+recursive-include coxem *.pyd
