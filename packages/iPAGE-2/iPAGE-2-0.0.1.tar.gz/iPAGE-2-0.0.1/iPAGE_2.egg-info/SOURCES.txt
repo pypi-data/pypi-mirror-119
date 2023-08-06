@@ -1,0 +1,17 @@
+README.md
+setup.py
+bin/iPAGE2
+iPAGE2/MI.py
+iPAGE2/__init__.py
+iPAGE2/body.py
+iPAGE2/filter_db.py
+iPAGE2/heatmap.py
+iPAGE2/ipage2.py
+iPAGE2/preprocess.py
+iPAGE2/stat_ipage.py
+iPAGE_2.egg-info/.DS_Store
+iPAGE_2.egg-info/PKG-INFO
+iPAGE_2.egg-info/SOURCES.txt
+iPAGE_2.egg-info/dependency_links.txt
+iPAGE_2.egg-info/requires.txt
+iPAGE_2.egg-info/top_level.txt

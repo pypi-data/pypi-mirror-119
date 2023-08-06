@@ -1,0 +1,8 @@
+pybiomart
+statsmodels
+scipy
+argparse
+numpy
+pandas
+matplotlib
+numba>=0.50.1
