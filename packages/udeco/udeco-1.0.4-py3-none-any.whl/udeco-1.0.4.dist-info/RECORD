@@ -1,0 +1,11 @@
+udeco/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+udeco/FileExtensionChecker/FileExtensionChecker.py,sha256=yNzgzY_tcCzTW9C4qJDUxrrB0j26lv_572CUFvKHp_Q,2494
+udeco/FileExtensionChecker/__init__.py,sha256=h9YKCxMRIY-DK-Ys1O-rzk35zNXdR7LIIHucB6x0ZDk,139
+udeco/FunctionAnnotationChecker/FunctionAnnotationChecker.py,sha256=EIqUm2C8bO4Np-YRw3dvXI_6IxMmSPP3v6SYFAL8Pxg,2621
+udeco/FunctionAnnotationChecker/__init__.py,sha256=a4eHsqthla9sr01DsM9YcRzj4NynfH5AKx0EFEdXYds,251
+udeco/TimeRecorder/TimeRecorder.py,sha256=eCX6eGtSRNPeP_ophkna98yKtqGJWHX5xffTX0Is3Ew,1013
+udeco/TimeRecorder/__init__.py,sha256=2pgoupA0jBkl-sgWvSgWZLr2Y1sOQEvdM8CmgC8s6NY,31
+udeco-1.0.4.dist-info/METADATA,sha256=VugxOo3wLjE6Gtco6Y2l1h8ee6S155VspAgbj-QOz1g,173
+udeco-1.0.4.dist-info/RECORD,,
+udeco-1.0.4.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+udeco-1.0.4.dist-info/top_level.txt,sha256=KZ9z2aP4K6ODSKAU0MAu-E7OrJib7gaW0b7-sorvKbs,6
