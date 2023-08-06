@@ -1,0 +1,9 @@
+django_models_redis_cache/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_models_redis_cache/cache.py,sha256=RAOCG7pNq4y_JNFMzaaZOJ_7DGN0HZivhHSAeEMJJOI,17435
+django_models_redis_cache/core.py,sha256=hMoHkFQHu7sAUD3s_ylFCnSQ3VTt_fRC4EtZh1p_I9Q,50255
+django_models_redis_cache/tests/default_usage.py,sha256=PZ8hAHgOBov4vg86zHDE6MhlwJHTBPIihuTMPwvW9K4,4204
+django_models_redis_cache/utils.py,sha256=yUPT-CIBIcXyMVsSprXkPMCJ3bYa1HuKuAH_Jx5sRBg,2394
+django_models_redis_cache-1.7.5.dist-info/LICENSE,sha256=fbQYsi8reRqzJXWOemWUXskCjfGG4h94NastUhjhP4A,1088
+django_models_redis_cache-1.7.5.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+django_models_redis_cache-1.7.5.dist-info/METADATA,sha256=QCSzrY-yalQMTsLanTHX8LQJ_E2-qM5KFJneUMePiJY,10223
+django_models_redis_cache-1.7.5.dist-info/RECORD,,
