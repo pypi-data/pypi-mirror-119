@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+Readme.md
+pyproject.toml
+setup.py
+src/depinj/__init__.py
+src/depinj/depinj.py
+src/depinj.egg-info/PKG-INFO
+src/depinj.egg-info/SOURCES.txt
+src/depinj.egg-info/dependency_links.txt
+src/depinj.egg-info/top_level.txt
