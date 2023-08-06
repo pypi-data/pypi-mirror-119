@@ -1,0 +1,10 @@
+fapy/__init__.py,sha256=6wF0xC-OGH_m1D70C6N6yRoN_5nPL4eGf9lw58_piyM,55
+fapy/apis.py,sha256=Uh86dxAFpKNvBHoCuPGhC0zMyqVzeyPcJlZrF0Kx4kg,505
+fapy/checkers.py,sha256=LVHO4v5ps79tq3BlBIZvZ1b3iAy5NrvJPjh-B8wS8AE,3109
+fapy/net.py,sha256=kq6zIaCHyXkJaZvBXnelSkyOmQovRtXHHImouXmTOE0,2644
+fapy/stalk.py,sha256=EvRxK5ogIwi2WzVnLOJFPzItUfph4H6EFtyWRNM7pi4,1833
+fapy/utils.py,sha256=USkO9kUzX1Et4mFk2UL_x3wmQXKh4wJgxDIpSRyOqt4,2505
+fapy-0.1.8.dist-info/METADATA,sha256=LVUyPEYQP1dfV-yqlkFu0e9-KlqBfKqKXuEfj0rZVZs,215
+fapy-0.1.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+fapy-0.1.8.dist-info/top_level.txt,sha256=-zXltpFFL4niW4W9QldGOK7qCWDlhRlmTgIPxjQiHNE,5
+fapy-0.1.8.dist-info/RECORD,,
