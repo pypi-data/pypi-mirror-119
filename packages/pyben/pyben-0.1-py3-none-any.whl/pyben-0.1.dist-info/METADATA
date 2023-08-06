@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: pyben
+Version: 0.1
+Summary: Small library for encoding/decoding bencode data. Pyben Enables fast and easy encoding and decoding of bencoded data.
+Home-page: https://github.com/alexpdev/pyben
+Author: alexpdev
+Author-email: alexpdev@protonmail.com
+License: GNU LGPL V3
+Project-URL: Source Code, https://github.com/alexpdev/pyben
+Keywords: library,bencode,bittorrent,encodings
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+License-File: LICENSE
+
+# Pyben
+
+Small library for encoding/decoding bencode data.
+Pyben Enables fast and easy encoding and decoding of bencoded data.
+
+![PyBen][./assets/pyben.png]
+
+![GitHub repo size](https://img.shields.io/github/repo-size/alexpdev/pyben)
+![GitHub contributors](https://img.shields.io/github/license/alexpdev/pyben)
+![GitHub stars](https://img.shields.io/badge/rating-99-green)
+
+## Prerequisites
+
+* Python3 installed and enabled
+
+## Installing PyBen
+
+To install PyBen, follow these steps:
+
+Using pip:
+
+```bash
+pip install pyben
+```
+
+Using git:
+
+```cmd
+git clone https://github.com/alexpdev/pyben.git
+```
+
+## Using PyBen
+
+The API is intentionally designed to mimic Python's json module.
+
+```python
+>>> fd = "path/to/file"
+>>> data = {"item1": ["item2", 3, [4], {5: "item6"}]}
+>>> encoded = pyben.dumps(data)
+>>> encoded
+b'd5:item1l5:item2i3eli4eedi5e5:item6eee'
+>>> decoded = pybem.loads(encoded)
+{'item1': ['item2', 3, [4], {5: 'item6'}]}
+```
+
+One key difference is that the 'load' and 'dump' methods accept as arguments,
+string paths or path objects as well as open iobuffer.
+
+For Example this:
+
+```python
+>> with open("encoded.file", "wb") as fd:
+...    pyben.dump(data, fd)
+>> with open("encoded.file", "rb") as fd:
+...    decoded = pyben.load(fd)
+```
+
+is the same as doing following.
+
+```python
+>>> pyben.dump(data, "encoded.file")
+>>> decoded = pyben.load("encoded.file")
+```
+
+The full API includes many other functions and classes as well.
+See docs for more full API.
+
+## License
+
+This project uses the following license: GNU LGPL v3
+
+
