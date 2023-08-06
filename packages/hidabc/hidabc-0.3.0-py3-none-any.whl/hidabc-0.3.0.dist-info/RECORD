@@ -1,0 +1,6 @@
+hidabc/pyusb.py,sha256=fOIHLfJS804-sNbSHO3kCCEZKK8bmuvK2eY1pkKoybc,2968
+hidabc/hidraw.py,sha256=WhKFpnZQ9gdltZPGWU4m0w_sYlMOKlP4Q2vBlUjwvpA,1721
+hidabc/__init__.py,sha256=rIaOoBmrETZ9qdPRj3blpPNqDOcdkNW0PZQqPREOL70,3390
+hidabc-0.3.0.dist-info/METADATA,sha256=accLqGBzAR_FV9ko5iwXD_zek1TBhL9KvNWK1h4V-_M,2823
+hidabc-0.3.0.dist-info/WHEEL,sha256=w8rrM3j30TB9sW0tsDebITJSmFF6ABYBQIZJsiNF2Bc,85
+hidabc-0.3.0.dist-info/RECORD,,
