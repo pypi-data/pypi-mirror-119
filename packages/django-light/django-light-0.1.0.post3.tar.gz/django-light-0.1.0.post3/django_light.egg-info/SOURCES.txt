@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+django_light/__init__.py
+django_light.egg-info/PKG-INFO
+django_light.egg-info/SOURCES.txt
+django_light.egg-info/dependency_links.txt
+django_light.egg-info/top_level.txt
+django_light/static/django_light/django_light.css
+django_light/templates/admin/base.html
