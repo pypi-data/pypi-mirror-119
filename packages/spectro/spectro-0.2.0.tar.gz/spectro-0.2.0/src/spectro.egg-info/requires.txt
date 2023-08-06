@@ -1,0 +1,6 @@
+matplotlib
+mutagen
+numpy
+pydub
+rich
+scipy

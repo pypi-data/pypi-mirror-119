@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/spectro/__init__.py
+src/spectro/_main.py
+src/spectro/cli.py
+src/spectro.egg-info/PKG-INFO
+src/spectro.egg-info/SOURCES.txt
+src/spectro.egg-info/dependency_links.txt
+src/spectro.egg-info/entry_points.txt
+src/spectro.egg-info/requires.txt
+src/spectro.egg-info/top_level.txt
