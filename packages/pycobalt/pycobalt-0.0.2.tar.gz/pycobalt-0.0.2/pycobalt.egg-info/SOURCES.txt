@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+pycobalt/__init__.py
+pycobalt.egg-info/PKG-INFO
+pycobalt.egg-info/SOURCES.txt
+pycobalt.egg-info/dependency_links.txt
+pycobalt.egg-info/top_level.txt
