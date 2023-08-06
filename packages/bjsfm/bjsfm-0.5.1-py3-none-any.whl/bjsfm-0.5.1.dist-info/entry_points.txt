@@ -1,0 +1,3 @@
+[console_scripts]
+bjsfm = bjsfm.__main__:main
+
