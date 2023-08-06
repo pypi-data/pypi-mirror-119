@@ -1,0 +1,10 @@
+setup.py
+wwtest_distributions/Binomialdistribution.py
+wwtest_distributions/Gaussiandistribution.py
+wwtest_distributions/Generaldistribution.py
+wwtest_distributions/__init__.py
+wwtest_distributions.egg-info/PKG-INFO
+wwtest_distributions.egg-info/SOURCES.txt
+wwtest_distributions.egg-info/dependency_links.txt
+wwtest_distributions.egg-info/not-zip-safe
+wwtest_distributions.egg-info/top_level.txt
