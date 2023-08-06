@@ -1,0 +1,7 @@
+LICENSE
+pyproject.toml
+setup.py
+endaq_ide.egg-info/PKG-INFO
+endaq_ide.egg-info/SOURCES.txt
+endaq_ide.egg-info/dependency_links.txt
+endaq_ide.egg-info/top_level.txt
