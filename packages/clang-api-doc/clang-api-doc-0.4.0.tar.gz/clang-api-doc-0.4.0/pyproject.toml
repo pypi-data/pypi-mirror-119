@@ -1,0 +1,48 @@
+[build-system]
+requires = ['poetry']
+
+[tool.black]
+line-length = 88
+
+[tool.pylint.messages_control]
+disable = [
+    "duplicate-code",
+    "line-too-long",
+    "too-few-public-methods",
+    "too-many-ancestors",
+    "too-many-arguments",
+    "too-many-branches",
+    "too-many-instance-attributes",
+    "too-many-lines",
+    "too-many-locals",
+    "too-many-return-statements",
+    "too-many-statements",
+    "no-member"
+]
+
+[tool.poetry]
+name = "clang-api-doc"
+version = "0.4.0"
+description = "Automatically generate API documentation for C language dialects"
+authors = ["Gideon Müller <gpmueller@outlook.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/gpmueller/clang-api-doc"
+keywords = ["api", "automatic", "documentation"]
+packages = [ { include = "clang_api_doc", from = "." } ]
+
+[tool.poetry.scripts]
+clang-api-doc = 'clang_api_doc.cli:main'
+
+[tool.poetry.dependencies]
+python = "^3.6"
+clang = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.7"
+sphinx = "^1.7"
+pylint = "^2.1"
+coverage = "^4.5"
+codecov = "^2.0"
+libclang = "*"
+black = "*"
