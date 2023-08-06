@@ -1,0 +1,184 @@
+#!python
+
+import pandas as pd
+import numpy as np
+import matplotlib.pylab as plt
+from icecream import ic
+import math, time
+
+plt.rcParams['figure.figsize'] = (16, 9)
+plt.style.use('fast')
+
+from keras.models import Sequential
+from keras.layers import Dense,Activation,Flatten
+from sklearn.preprocessing import MinMaxScaler
+
+
+class Predictor:
+    df = None
+    PASOS = 5
+
+    def __init__(self):
+        pass
+
+    def setData(self, data):
+        jsonDataFile = open('jsondata.json', 'w')
+        jsonDataFile.write(data);
+        jsonDataFile.close()
+
+        self._readData()
+
+    def _readData(self):
+        #Primero se  carga e archivo csv ccon las fechas y unidades a pronosticar
+        start_time = time.time()
+        self.df = pd.read_json('jsondata.json',  convert_dates=[0])
+        print(df.head())
+
+    def _visualize_loss(self, history, title):
+        loss = history.history["loss"]
+        val_loss = history.history["val_loss"]
+        epochs = range(len(loss))
+        plt.figure()
+        plt.plot(epochs, loss, "b", label="Training loss")
+        plt.plot(epochs, val_loss, "r", label="Validation loss")
+        plt.title(title)
+        plt.xlabel("Epochs")
+        plt.ylabel("Loss")
+        plt.legend()
+        plt.show()
+
+    def _series_to_supervised(self, data, n_in=1, n_out=1, dropnan=True):
+        n_vars = 1 if type(data) is list else data.shape[1]
+        ic(n_vars)
+        df = pd.DataFrame(data)
+        cols, names = list(), list()
+        # input sequence (t-n, ... t-1)
+        for i in range(n_in, 0, -1):
+            cols.append(df.shift(i))
+            names += [('var%d(t-%d)' % (j+1, i)) for j in range(n_vars)]
+        # forecast sequence (t, t+1, ... t+n)
+        for i in range(0, n_out):
+            cols.append(df.shift(-i))
+            if i == 0:
+                names += [('var%d(t)' % (j+1)) for j in range(n_vars)]
+            else:
+                names += [('var%d(t+%d)' % (j+1, i)) for j in range(n_vars)]
+        # put it all together
+        agg = pd.concat(cols, axis=1)
+        agg.columns = names
+        # drop rows with NaN values
+        if dropnan:
+            agg.dropna(inplace=True)
+        return agg
+
+    def _crear_modeloFF(self):
+        model = Sequential() 
+        #1 capa oculta con 7 neuronas (este valor lo escogí yo, pero se puede variar)
+        model.add(Dense(self.PASOS, input_shape=(1,self.PASOS),activation='tanh'))
+        model.add(Flatten())
+        #La salida será 1 sola neurona. Como función de activación utilizamos tangente hiperbólica puesto que utilizaremos valores entre -1 y 1.
+        model.add(Dense(1, activation='tanh'))
+        model.compile(loss='mean_absolute_error',optimizer='Adam',metrics=["mse"])
+        # model.summary()
+        return model
+
+    def _agregarNuevoValor(self, x_test, nuevoValor):
+        for i in range(x_test.shape[2]-1):
+            x_test[0][0][i] = x_test[0][0][i+1]
+        x_test[0][0][x_test.shape[2]-1]=nuevoValor
+        return x_test
+
+
+    def process(self, f_inicial, f_final):
+        start_time = time.time()
+        meses = self.df.resample('M').mean()
+        meses2 =self.df.resample('M').mean()
+        for i in range(len(meses)):
+            if(i>0):
+                if math.isnan(meses[i]):
+                    meses[i] = meses[i-1]
+
+        values = self.df.values
+
+        # ensure all data is float
+        values = values.astype('float32')
+        # normalize features
+        scaler = MinMaxScaler(feature_range=(-1, 1))
+        values = values.reshape(-1, 1) # esto lo hacemos porque tenemos 1 sola dimension
+        scaled = scaler.fit_transform(values)
+        # Usaremos como como set de entrenamineto entradas las columnas encabezadas como var1(t-7) a (t-1) y nuestra salida (lo que sería el valor “Y” de la función) será el var1(t) -la última columna-.
+        reframed = self._series_to_supervised(scaled, self.PASOS, 1)
+        # print(reframed.head())
+        # a = input('s')
+        #CREAMOS LA RED NEURONAL
+
+        # split into train and test sets
+        values = reframed.values
+        n_train_meses = 36 - (6+self.PASOS)
+        train = values[:n_train_meses, :]
+
+        test = values[n_train_meses:, :]
+        # print(test)
+        # split into input and outputs
+        x_train, y_train = train[:, :-1], train[:, -1]
+        x_val, y_val = test[:, :-1], test[:, -1]
+        # reshape input to be 3D [samples, timesteps, features]
+        x_train = x_train.reshape((x_train.shape[0], 1, x_train.shape[1]))
+        x_val = x_val.reshape((x_val.shape[0], 1, x_val.shape[1]))
+
+        EPOCHS=40
+
+        model = self.crear_modeloFF()
+
+        history = model.fit(x_train,y_train,epochs=EPOCHS,validation_data=(x_val,y_val),batch_size=2)
+        results=model.predict(x_val)
+        # plt.scatter(range(len(y_val)),y_val,c='g')
+        # plt.scatter(range(len(results)),results,c='r')
+        # plt.title('validate')
+        # plt.show()
+
+        ultimosMeses = df[f_inicial:f_final]
+        # print(ultimosMeses)
+
+        values = ultimosMeses.values
+        values = values.astype('float32')
+        # values = np.log10(values)
+        # normalize features
+        values=values.reshape(-1, 1) # esto lo hacemos porque tenemos 1 sola dimension
+        scaled = scaler.fit_transform(values)
+        reframed = self._series_to_supervised(scaled, self.PASOS, 1)
+        reframed.drop(reframed.columns[[self.PASOS]], axis=1, inplace=True)
+        # print(reframed.head(7))
+
+        values = reframed.values
+        x_test = values[6:, :]
+        x_test = x_test.reshape((x_test.shape[0], 1, x_test.shape[1]))
+
+        results=[]
+        for i in range(2):
+            parcial=model.predict(x_test)
+            results.append(parcial[0])
+            print(x_test)
+            x_test=self._agregarNuevoValor(x_test,parcial[0])
+
+        ### Muestra grafica de loss vs epoch
+        # print(visualize_loss(history, "Training and Validation Loss"))
+
+        adimen = [x for x in results]    
+        inverted = scaler.inverse_transform(adimen)
+
+        prediccion1SemanaDiciembre = pd.DataFrame(inverted)
+        # prediccion1SemanaDiciembre.columns = ['pronostico']
+        # prediccion1SemanaDiciembre.plot()
+        # prediccion1SemanaDiciembre.to_csv('pronostico.csv')
+        # plt.show()
+
+        print("######################################")
+
+        # print(pow(10,prediccion1SemanaDiciembre.values[0]))
+        # print(pow(10,prediccion1SemanaDiciembre.values[1]))
+        end_time = time.time()
+        total_time = end_time - start_time
+        res = "{},{},{}".format(str(prediccion1SemanaDiciembre.values[0][0]), str(prediccion1SemanaDiciembre.values[1][0]), str(total_time))
+
+        return res
