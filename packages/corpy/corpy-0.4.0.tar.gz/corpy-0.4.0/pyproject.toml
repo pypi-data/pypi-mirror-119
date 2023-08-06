@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "corpy"
+version = "0.4.0"
+description = "Tools for processing language data."
+
+authors = ["David Lukes <dafydd.lukes@gmail.com>"]
+license = "GPL-3.0+"
+
+repository = "https://github.com/dlukes/corpy"
+readme = "README.rst"
+keywords = ["corpus", "linguistics", "NLP"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+# regex is versioned using calver plus it sticks to the API of stdlib's re
+# module, so whichever latest version is fine
+regex = "*"
+lazy = "^1.4"
+lxml = "^4.6.1"
+wordcloud = "^1.8.1"
+"ufal.morphodita" = "^1.10"
+"ufal.udpipe" = "^1.2"
+numpy = "^1.16"
+click = "^7.0"
+
+[tool.poetry.dev-dependencies]
+ipython = "*"
+ipdb = "*"
+pytest = "*"
+furo = {version = "*", allow-prereleases = true}
+twine = "*"
+Sphinx = "^4.1.2"
+
+[tool.poetry.scripts]
+xc = "corpy.scripts.xc:main"
+zip-verticals = "corpy.scripts.zip_verticals:main"
+
+[tool.pytest.ini_options]
+addopts = '--quiet --doctest-modules --doctest-glob="*.rst"'
+filterwarnings = ['ignore:::^corpy\.?']
+
+[build-system]
+requires = ["poetry>=1"]
+build-backend = "poetry.masonry.api"
