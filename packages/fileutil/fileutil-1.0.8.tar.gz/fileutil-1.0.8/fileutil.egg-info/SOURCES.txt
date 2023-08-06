@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+license.txt
+setup.py
+fileutil/__init__.py
+fileutil/common.py
+fileutil/filereader.py
+fileutil/filesplit.py
+fileutil/filetransform.py
+fileutil/fileunion.py
+fileutil.egg-info/PKG-INFO
+fileutil.egg-info/SOURCES.txt
+fileutil.egg-info/dependency_links.txt
+fileutil.egg-info/top_level.txt
