@@ -1,0 +1,12 @@
+halib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+halib/csvfile.py,sha256=Q3lB1regEUo6pSKw3AT-R8SyL7CPgPXiMQFXyUTRoTs,796
+halib/filesys.py,sha256=cYpGtgqg5r6fIFb-ievyhP-Vxd9vRQQhyRN2rMKhIOQ,2241
+halib/jsonfile.py,sha256=sY-DQYujWPxJt43u-YD-mOrNP1X0es_KTRpqiP61frs,231
+halib/listop.py,sha256=8nV0bUjryGmBQLTXoUEEa_5FFpCdpoEfjm5T9QdfR_o,91
+halib/textfile.py,sha256=zVDGBsjQ4py1P4DYh0BqBMs2Ww0JdP4Sle5Sc3kaDwY,398
+halib/videofile.py,sha256=WXUdTEV5M9Y59jD85_-xilD5lUuu6bYxxuGD18QNLVk,1657
+halib-0.0.9.dist-info/LICENSE.txt,sha256=qZssdna4aETiR8znYsShUjidu-U4jUT9Q-EWNlZ9yBQ,1100
+halib-0.0.9.dist-info/METADATA,sha256=p-hM5hNeSFlSxxepmIga6EZY1b6Xsx-ubyC7h_mMtTc,466
+halib-0.0.9.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+halib-0.0.9.dist-info/top_level.txt,sha256=7AD6PLaQTreE0Fn44mdZsoHBe_Zdd7GUmjsWPyQ7I-k,6
+halib-0.0.9.dist-info/RECORD,,
