@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+license_header_check/__init__.py
+license_header_check/__main__.py
+license_header_check/version.py
+license_header_check.egg-info/PKG-INFO
+license_header_check.egg-info/SOURCES.txt
+license_header_check.egg-info/dependency_links.txt
+license_header_check.egg-info/entry_points.txt
+license_header_check.egg-info/top_level.txt
