@@ -1,0 +1,3 @@
+[console_scripts]
+hive-nuclei = hive_nuclei.cli:main
+
