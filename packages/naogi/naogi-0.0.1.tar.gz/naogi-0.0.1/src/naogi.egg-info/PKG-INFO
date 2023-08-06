@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: naogi
+Version: 0.0.1
+Summary: Abstract class for Naogi ML deployment
+Home-page: https://github.com/Naogi/naogi_model
+Author: Evgeny Breykin
+Author-email: zbrejkin@yandex.ru
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Naogi/naogi_model/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# naogi_model
+

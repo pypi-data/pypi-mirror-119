@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+src/naogi/__init__.py
+src/naogi.egg-info/PKG-INFO
+src/naogi.egg-info/SOURCES.txt
+src/naogi.egg-info/dependency_links.txt
+src/naogi.egg-info/top_level.txt
