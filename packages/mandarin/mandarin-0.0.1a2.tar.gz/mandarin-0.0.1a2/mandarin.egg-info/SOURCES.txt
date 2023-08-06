@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+mandarin/__init__.py
+mandarin/ast.py
+mandarin/core.py
+mandarin/elements.py
+mandarin/parser.py
+mandarin.egg-info/PKG-INFO
+mandarin.egg-info/SOURCES.txt
+mandarin.egg-info/dependency_links.txt
+mandarin.egg-info/top_level.txt
