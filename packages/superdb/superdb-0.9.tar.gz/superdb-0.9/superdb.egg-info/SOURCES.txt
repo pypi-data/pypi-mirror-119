@@ -1,0 +1,4 @@
+superdb.egg-info/PKG-INFO
+superdb.egg-info/SOURCES.txt
+superdb.egg-info/dependency_links.txt
+superdb.egg-info/top_level.txt
