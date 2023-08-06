@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: terminal-quest
+Version: 1.2
+Summary: Cute little puzzle for teaching basic command line usage
+Home-page: https://bitbucket.org/bubioinformaticshub/terminal_quest/overview
+Author: Adam Labadorf
+Author-email: labadorf@bu.edu
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Python: >=2.6, >=3
+Requires-Dist: future
+Requires-Dist: fabulous
+Requires-Dist: pillow
+
+UNKNOWN
+
+
