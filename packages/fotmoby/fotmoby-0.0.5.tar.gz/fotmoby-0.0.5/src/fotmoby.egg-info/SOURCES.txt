@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/FotMoby/FotMoby.py
+src/FotMoby/__init__.py
+src/fotmoby.egg-info/PKG-INFO
+src/fotmoby.egg-info/SOURCES.txt
+src/fotmoby.egg-info/dependency_links.txt
+src/fotmoby.egg-info/top_level.txt

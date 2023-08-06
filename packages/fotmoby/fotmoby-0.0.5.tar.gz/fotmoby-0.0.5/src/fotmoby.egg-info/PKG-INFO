@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: fotmoby
+Version: 0.0.5
+Summary: An unofficial FotMob API wrapper for python
+Home-page: https://github.com/venkatramanareddy/fotmoby
+Author: Venkat Ramana Reddy
+Author-email: venkat_ramana@outlook.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/venkatramanareddy/fotmoby/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# fotmoby
+
+An unofficial FotMob API wrapper for python
+
+## Installation
+
+``` bash
+pip install fotmoby
+```
+
+## Example usage
+
+``` py
+from FotMoby import FotMoby as fm
+
+r_league = fm.getLeague()
+print(r_league.json())
+```
+
