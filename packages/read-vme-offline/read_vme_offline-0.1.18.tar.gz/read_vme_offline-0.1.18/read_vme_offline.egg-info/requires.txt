@@ -1,0 +1,7 @@
+fire
+pympler
+pylatex
+h5py
+root_numpy
+tabulate
+tables
