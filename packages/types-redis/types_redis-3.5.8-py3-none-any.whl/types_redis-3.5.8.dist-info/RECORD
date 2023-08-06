@@ -1,0 +1,11 @@
+redis-stubs/METADATA.toml,sha256=L5Sdelj54u1wO-kPswarWAPy3gce8RBujb5zL6RAUmc,45
+redis-stubs/__init__.pyi,sha256=pNlwX9y10ONwvlK1yzT9MMA6hQx06nW8u1qHrVpMmEE,829
+redis-stubs/client.pyi,sha256=zC4NjVsfaPcC4aWqvQYiJtBRdvPU7EP53C4wP_87S-U,54584
+redis-stubs/connection.pyi,sha256=g7ehr1hn3pKbtJRxhDOIh5yqWDtbmUOj4ED11ZU0U5A,5537
+redis-stubs/exceptions.pyi,sha256=okeH1vevUd80oUaOla72tYjD2d7r0P4tCbWd-hrdX0c,759
+redis-stubs/lock.pyi,sha256=yMAv5dGoqPXYZFFeS4sX85roEp7SqGiodj6KGC7kzVo,1301
+redis-stubs/utils.pyi,sha256=oZ9dBjw1NFKAvC6Npi4zZPERqBziFKld5QoyIcLxFaE,716
+types_redis-3.5.8.dist-info/METADATA,sha256=5y7T-0YKMTwjRlezCXZQegolGBMANLkMfnZrNe-U6c8,842
+types_redis-3.5.8.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+types_redis-3.5.8.dist-info/top_level.txt,sha256=DPTCglbKd5Ukj-aI96M29mo-nH6pX77SVjau8D7w5BA,12
+types_redis-3.5.8.dist-info/RECORD,,
