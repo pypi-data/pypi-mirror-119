@@ -1,0 +1,12 @@
+manganelo/__init__.py,sha256=Fyw1QH4fOJtMROFnMHs1KQQbfm2FIt4LZuvRlOlEXL4,318
+manganelo/chapterdownload.py,sha256=MhAiMsEJCYK2qpo1-41BCoziva_aiiAQjxaAG5EO2mc,1498
+manganelo/errors.py,sha256=NuzSBuxOY_-PlVBcus_cAE-iUQ3Zr-j6uw9GPjsNBS4,91
+manganelo/siterequests.py,sha256=AL8SSS-k3TUL2hW0JS8pGqYB7kcPzZtg1q9-cnjQsaY,788
+manganelo/storypage.py,sha256=MCu4h1PZ3VAkHLfHogYptjEHk1OLTew8zXjCD_Ed6bg,2945
+manganelo/storysearch.py,sha256=ta4LQ8c0O64Jsqr5pGpOT--Ci835R_RmVzoJFQrv-eA,1888
+manganelo/utils.py,sha256=mZKsd9lJAzQCBkYbwAAltlhrqzN-DQdzwGBKcr4aVuM,792
+manganelo-1.19.0.dist-info/LICENSE.txt,sha256=z6pLz9GNVAooBO7HvAPH_4VDDBCbHJdU3Zr2o39XW4g,1077
+manganelo-1.19.0.dist-info/METADATA,sha256=C6fYmOQiQtx5a4QnulFgejhc9RzAEXfGTI0gyOY3jqw,1899
+manganelo-1.19.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+manganelo-1.19.0.dist-info/top_level.txt,sha256=MDLAO5yI4SFPc8enpIJvbH33cBDV6qyOlKz2eTEM9lY,10
+manganelo-1.19.0.dist-info/RECORD,,
