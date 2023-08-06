@@ -1,0 +1,3 @@
+[console_scripts]
+tknote = tknote.__main__:main
+
