@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="es">
+
+<head>
+<style>
+.seccion {
+	margin-bottom: 1em;
+	font-family: monospace;
+}
+.seccion-coro {
+	font-weight: bold;
+}
+.seccion-puente {
+	font-style: italic;
+}
+</style>
+
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<title>{% titulo %}</title>
+</head>
+<body>
+	<div class="container">
+		<div class="columns">
+			<div class="column is-half is-offset-one-quarter">	
+			{% bloque %}
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

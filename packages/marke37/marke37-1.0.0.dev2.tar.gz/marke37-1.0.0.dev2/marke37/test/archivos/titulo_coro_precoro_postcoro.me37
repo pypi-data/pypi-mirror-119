@@ -1,0 +1,14 @@
+Coro, precoro, postcoro
+=======================
+
+##Precoro 1
+Precoro 2
+Precoro 3##
+
+**Coro 1
+Coro 2**
+
+$$Postcoro 1
+Postcoro 2
+Postcoro 3
+Postcoro 4$$
