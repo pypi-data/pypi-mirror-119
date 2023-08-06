@@ -1,0 +1,4 @@
+nltk==3.6.2
+beautifulsoup4==4.9.3
+pyspellchecker==0.6.2
+deep-translator==1.5.4
