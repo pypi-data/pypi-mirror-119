@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: YYYTools
+Version: 0.1.4
+Summary: UNKNOWN
+Home-page: http://github.com/FFTYYY/YTools
+Author: Yang Yongyi
+Author-email: yongyiyang17@fudan.edu.cn
+License: MIT
+Description: # Tools
+        
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
