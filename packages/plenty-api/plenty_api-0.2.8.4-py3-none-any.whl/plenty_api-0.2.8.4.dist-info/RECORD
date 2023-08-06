@@ -1,0 +1,9 @@
+plenty_api/__init__.py,sha256=nkyDrmyYRR1YJyDYjYKWWgGt-Efr1lyToOS7myAqUmo,1067
+plenty_api/api.py,sha256=JeiFCZlZHGPZi07n8m21Gyk0t3-cngjh7w5Aq5KVgu0,58470
+plenty_api/constants.py,sha256=-jNTAh6h_e3Ahq27nYMGgKtN_0kaQQ6N7VNIfm11kzA,9155
+plenty_api/keyring.py,sha256=OaPR6t3_M9cpTbJi_SfIAjxMdkghsc3PWZVbkHQJNYg,750
+plenty_api/utils.py,sha256=2wVN6t0MFe_Vlc-SZZIQmTDc3E29yakxq22IaRAp_hE,27238
+plenty_api-0.2.8.4.dist-info/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+plenty_api-0.2.8.4.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+plenty_api-0.2.8.4.dist-info/METADATA,sha256=mI471nUFwvmUhYrVQYkp4uGaLD8qJN2Bv0i5QMP6MI0,2814
+plenty_api-0.2.8.4.dist-info/RECORD,,
