@@ -1,0 +1,126 @@
+Metadata-Version: 2.1
+Name: django-advance-dumpdata
+Version: 0.0.2
+Summary: Django Manage Command; Output the contents of the database as a fixture of the given format,filter and more features 
+Home-page: https://github.com/EhsanSafir/django_dumpdata_advance
+Author: Ehsan Safir , Sayed Farid Qattali
+Author-email: EhsanSafir@outlook.com , eng.faridqattali@gmail.com 
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 2.2
+Classifier: Framework :: Django :: 3.0
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: Django (>=2.2)
+
+Django Advance Dumpdata
+===================
+
+Django Manage Command like  ``dumpdata`` but with have more feature to  Output the contents of the database from given fields of a model
+and filter that data using standard Django lookups for filtering.
+data  can be export with divers format like json,xml,yaml.exported structure is compatible with Django ``dumpdata`` structure which
+allows you to use standard ``loaddata`` command for import.
+
+Installation
+------------
+
+To get the latest stable release from PyPi
+
+.. code-block:: bash
+
+    pip install django-dumpdata-advance
+
+
+Add ``dumpdata_advance`` to your ``INSTALLED_APPS``
+
+.. code-block:: python
+
+    INSTALLED_APPS = (
+        ...,
+        "django_dumpdata_advance",
+    )
+
+Usage
+-----
+
+Export data:
+
+ .. code-block:: bash
+
+    ./manage.py  dumpdata_advance app_name.model_name --fields=field1,field2 > dump_file.json
+
+
+Import data:
+
+ .. code-block:: bash
+
+    ./manage.py loaddata dump_file.json
+
+
+How to use filters? If you not familiar take a look at Django Field
+lookups - https://docs.djangoproject.com/en/3.0/topics/db/queries/#field-lookups
+
+ .. code-block:: bash
+
+    ./manage.py  dumpdata_advance app_name.model_name --fields=field1 --filter=name__icontains=django
+
+    ./manage.py  dumpdata_advance app_name.model_name --fields=field1 --filter=name__icontains=django,pk__gt=300
+
+Set order by:
+
+.. code-block:: bash
+
+    ./manage.py dumpdata_advance app_name.model_name --fields=field1,field2 --order=field2,field2
+
+Export all fields:
+
+.. code-block:: bash
+
+    ./manage.py dumpdata_advance app_name.model_name --fields=*
+
+
+Exclude custom fields:
+
+.. code-block:: bash
+
+    ./manage.py dumpdata_advance app_name.model_name --exclude_fields=name
+
+
+
+Limit number of exported records:
+
+.. code-block:: bash
+
+    ./manage.py dumpdata_advance app_name.model_name --fields=* --limit=10
+
+
+Export full file URL:
+
+.. code-block:: bash
+
+    ./manage.py dumpdata_advance app_name.model_name --fields=image --full_url=image
+
+
+Export from another database than 'default':
+
+.. code-block:: bash
+
+    ./manage.py dumpdata_advance app_name.model_name --database=other_database
+
