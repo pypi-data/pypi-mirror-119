@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: neuro-admin-client
+Version: 21.9.10
+Summary: UNKNOWN
+Home-page: https://github.com/neuro-inc/neuro-admin-client
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.8
+Requires-Dist: aiohttp (>=3.7)
+
+UNKNOWN
+
+
