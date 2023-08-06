@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: nystrompca
+Version: 1.0.0
+Summary: Kernel PCA with the Nyström method
+Home-page: https://github.com/fredhallgren/nystrompca
+Author: Fredrik Hallgren
+Author-email: fredrik.hallgren@ucl.ac.uk
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: numpy (>=0.9)
+Requires-Dist: scipy (>=1.2.1)
+Requires-Dist: pandas (>=0.20)
+Requires-Dist: scikit-learn (>=0.19)
+Requires-Dist: matplotlib (>=3.0)
+Requires-Dist: seaborn (>=0.8)
+
+This package implements an efficient non-linear PCA by combining kernel PCA with the Nyström randomized subsampling method, as well as a confidence bound on the accuracy of the method. 
+
