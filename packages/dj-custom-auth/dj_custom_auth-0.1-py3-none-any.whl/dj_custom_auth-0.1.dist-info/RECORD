@@ -1,0 +1,15 @@
+auth_user/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+auth_user/admin.py,sha256=Gh656x6i5ZD7wC0cYRUsiqp3FH4zVSMjn42Vv6NAKLg,492
+auth_user/apps.py,sha256=a76lLs8MdIycrkCfZ3gK1Dwr7BpDmCrjKQrwd_BWmT0,459
+auth_user/models.py,sha256=F3-dGK2rWZxZwN4cUGsQJuxfpgANZ9l57VTKof34VZY,2157
+auth_user/serializers.py,sha256=yhp8M1Rwu2TKTmFUNl9iZaMi0Tlu1uS5XOiL1-waeQ8,2300
+auth_user/tests.py,sha256=2uDafv3Ns6f7Vy1ekUtgYxCZEi1KRyesZDTAFhYcX-E,63
+auth_user/urls.py,sha256=T8JUKSgm0XOYloHt_I0Yiyjs7GqRFwTUg6H32WCGRT8,180
+auth_user/views.py,sha256=9cwD4c_0qSO2uJHHRO5y6IpRS3wCdK-ZnAGiHNyvieo,186
+auth_user/migrations/0001_initial.py,sha256=IMa2SH0jjGGAJ-DacyjtLZVEU_6W9azUwMyVFDJ5Vhw,5210
+auth_user/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dj_custom_auth-0.1.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dj_custom_auth-0.1.dist-info/METADATA,sha256=V2Yh0XUK3DFpVw8RMd0MpmlPytuaeTi9dsrptuVGQYQ,1726
+dj_custom_auth-0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+dj_custom_auth-0.1.dist-info/top_level.txt,sha256=jG9a-A2KZINpwikLc29ksEU4Dw_R1uYsOoODXRSIlkw,10
+dj_custom_auth-0.1.dist-info/RECORD,,
