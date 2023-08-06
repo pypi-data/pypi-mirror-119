@@ -1,0 +1,14 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+album2video/PathTool.py
+album2video/__init__.py
+album2video/__main__.py
+album2video/config.py
+album2video.egg-info/PKG-INFO
+album2video.egg-info/SOURCES.txt
+album2video.egg-info/dependency_links.txt
+album2video.egg-info/entry_points.txt
+album2video.egg-info/requires.txt
+album2video.egg-info/top_level.txt

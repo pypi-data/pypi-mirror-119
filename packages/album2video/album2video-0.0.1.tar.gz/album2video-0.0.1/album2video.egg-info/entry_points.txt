@@ -1,0 +1,3 @@
+[console_scripts]
+album2video = album2video.__main__:main
+
