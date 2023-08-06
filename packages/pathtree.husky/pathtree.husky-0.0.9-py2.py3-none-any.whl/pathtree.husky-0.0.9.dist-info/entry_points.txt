@@ -1,0 +1,3 @@
+[console_scripts]
+pathtree = pathtree.main:main
+
