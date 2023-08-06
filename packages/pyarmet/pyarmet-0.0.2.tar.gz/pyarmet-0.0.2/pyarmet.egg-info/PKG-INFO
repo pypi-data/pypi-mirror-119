@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pyarmet
+Version: 0.0.2
+Summary: PyArmet: This is a package for performing federated learning computations
+Home-page: https://www.devron.ai/products
+Author: Sidhartha Roy, Eddie de Leon, Shashank Pathak
+Author-email: sidhartha@devron.ai
+License: Devron
+Description: # armet-sklearn
+        This SDK includes the packages for performing traditional machine learning in federated settings.
+        
+        The aventail-sklearn package will be called from the satellite app and the CA app to build and deploy models. This code also includes functionality for creating kubeflow pipelines and federated cohort monitoring using mlflow
+        
+Keywords: python,armet,sklearn,federated learning
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6.*
+Description-Content-Type: text/markdown

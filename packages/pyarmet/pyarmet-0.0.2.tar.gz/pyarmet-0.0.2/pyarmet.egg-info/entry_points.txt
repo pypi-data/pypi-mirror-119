@@ -1,0 +1,3 @@
+[console_scripts]
+armet = armet.entry_points:main
+
