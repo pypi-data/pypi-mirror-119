@@ -1,0 +1,15 @@
+argparse
+appdirs
+base58
+ecdsa
+colander
+cryptnoxpy
+lazy-import
+pytz
+requests
+tabulate
+stdiomask
+web3
+
+[:platform_system == "Windows"]
+winrt
