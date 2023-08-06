@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+placeholder/__init__.py
+placeholder/partials.c
+placeholder/py.typed
+placeholder.egg-info/PKG-INFO
+placeholder.egg-info/SOURCES.txt
+placeholder.egg-info/dependency_links.txt
+placeholder.egg-info/not-zip-safe
+placeholder.egg-info/top_level.txt
