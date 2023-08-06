@@ -1,0 +1,10 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+./literate_dataclasses.py
+literate_dataclasses.egg-info/PKG-INFO
+literate_dataclasses.egg-info/SOURCES.txt
+literate_dataclasses.egg-info/dependency_links.txt
+literate_dataclasses.egg-info/requires.txt
+literate_dataclasses.egg-info/top_level.txt
