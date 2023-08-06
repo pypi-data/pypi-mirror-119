@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: rpbtool
+Version: 0.0.1
+Summary: Tools that commonly used throught my career
+Home-page: UNKNOWN
+Author: rpb
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: mne
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pickle
+
+Tools that commonly used throught my career
+
+
