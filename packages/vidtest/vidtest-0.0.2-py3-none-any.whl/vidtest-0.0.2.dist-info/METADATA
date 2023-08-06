@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: vidtest
+Version: 0.0.2
+Summary: test test test
+Home-page: UNKNOWN
+Author: me
+Author-email: <mail@example.com>
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: time
+Requires-Dist: webbrowser
+
+
+TEST TEST TEST
+
