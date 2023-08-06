@@ -1,0 +1,17 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+lona_chartjs/__init__.py
+lona_chartjs/widgets.py
+lona_chartjs.egg-info/PKG-INFO
+lona_chartjs.egg-info/SOURCES.txt
+lona_chartjs.egg-info/dependency_links.txt
+lona_chartjs.egg-info/top_level.txt
+lona_chartjs/static/chart.esm.js
+lona_chartjs/static/chart.js
+lona_chartjs/static/chart.min.js
+lona_chartjs/static/chartjs-widgets.js
+lona_chartjs/static/helpers.esm.js
+lona_chartjs/static/chunks/helpers.segment.js
