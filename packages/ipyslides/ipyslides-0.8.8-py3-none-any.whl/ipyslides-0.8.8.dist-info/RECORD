@@ -1,0 +1,11 @@
+ipyslides/__init__.py,sha256=C3kPk74sf7uqEtVzFNk7P1QyzM2K4zL4U5eqKyI1dBs,2023
+ipyslides/_demo.py,sha256=lEEnEXChl3DRosEu6lnJJyL3i7TtCiHPHxbkMpLWv0A,4699
+ipyslides/core.py,sha256=mwvd6yOf5bo0WyZMsd1J5mCUwnMQ9SusY0nB0wch2wU,22905
+ipyslides/data_variables.py,sha256=TcKbwO-3Uj05Oeb8TZtM0kQME0ZG3QR3X8F-0FlunOs,16708
+ipyslides/objs_formatter.py,sha256=-Gi7toAUNaDEEvsedC-aGBIbL1wnrXv793U41lx1n-8,3020
+ipyslides/utils.py,sha256=R8OGbwhQ0sf2xANMm1SGOJPiookOGbnsYRrNSt6v3dw,8501
+ipyslides-0.8.8.dist-info/LICENSE,sha256=mTMccfjXj_nIfHY8H0Wfa8oSIo744MKuYbFcwM2fpQM,1090
+ipyslides-0.8.8.dist-info/METADATA,sha256=BsLbldquSIoPqH2RCgC2I266dzGEGk7y_RqAEAPrAgI,5851
+ipyslides-0.8.8.dist-info/WHEEL,sha256=YUYzQ6UQdoqxXjimOitTqynltBCkwY6qlTfTh2IzqQU,97
+ipyslides-0.8.8.dist-info/top_level.txt,sha256=9DteZe_DYu3FvWSyxL19fA5Co9tbYN522fgNhoBSpSU,10
+ipyslides-0.8.8.dist-info/RECORD,,
