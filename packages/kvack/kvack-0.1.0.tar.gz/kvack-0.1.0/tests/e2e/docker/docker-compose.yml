@@ -1,0 +1,7 @@
+services:
+  shell:
+    image: python:3.9-buster
+    entrypoint: /code/tests/e2e/docker/entrypoint.sh
+    volumes:
+      - ../../../:/code
+      - ./output:/output
