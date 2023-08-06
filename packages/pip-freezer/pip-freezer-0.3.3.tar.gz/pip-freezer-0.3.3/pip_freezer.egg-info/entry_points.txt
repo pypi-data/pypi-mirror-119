@@ -1,0 +1,4 @@
+[console_scripts]
+pipfreezer = pipfreezer.pipfreezer:run
+pipfreezer-upgrade = pipfreezer.pipfreezer:upgrade
+
