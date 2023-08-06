@@ -1,0 +1,10 @@
+glfw/GLFW.py,sha256=90rvRuT-_Q1JsEI9VzXFWxifCJ1q5wiJKUDTFD_1CNE,17235
+glfw/__init__.py,sha256=0j384GhPZaBchvi4coUm0PDohKysas79Tm1rR3Xzv1A,108491
+glfw/library.py,sha256=hw2_szpT6NGnQxPoMDgLbIsQUuXSEIhqCtqRmLx2xtI,6731
+glfw/wayland/libglfw.so,sha256=dH2hz9zBncGpdLn9jSuzlqGJDuCeE22_N0lgWv0uGFI,372496
+glfw/x11/libglfw.so,sha256=tROMb_eWJBLmQyyVcx0fUlcMMuqY7i9MVW5zQ6GcfS8,366952
+glfw-2.2.0.dist-info/LICENSE.txt,sha256=g-Z1p3FOsB2x7XXO3PNJq53ZYweC-BwIFhy1jMZ8oco,1085
+glfw-2.2.0.dist-info/METADATA,sha256=V3ymZzZwQV-prT4xbrfeKoRsJknCce9ich7sNri7N0I,4329
+glfw-2.2.0.dist-info/WHEEL,sha256=uqhTDz6ufUfBbtQ5l7sSfU59umN8pHEgi6HLaXWGrb8,516
+glfw-2.2.0.dist-info/top_level.txt,sha256=n6GNY584FzIdaCsyFH_mQw_kXzRH9bZ9wYb8VvDeT3k,5
+glfw-2.2.0.dist-info/RECORD,,
