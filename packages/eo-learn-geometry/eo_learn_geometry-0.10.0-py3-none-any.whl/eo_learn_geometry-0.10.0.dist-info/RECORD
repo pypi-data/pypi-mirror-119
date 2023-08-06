@@ -1,0 +1,11 @@
+eolearn/__init__.py,sha256=jv2YF__bseklT3OWEzlqJ5qE24c4aWd5F4r0TTjOrWQ,65
+eolearn/geometry/__init__.py,sha256=0o_GmhxPcPeBdisyhNAX8MqIjq44bZnUPjpKAQmKts0,548
+eolearn/geometry/morphology.py,sha256=bDk4VupJFN8L4AYTSA0tBK73JR2Funh0l6Wa7n6MNPQ,2515
+eolearn/geometry/sampling.py,sha256=SzHpnKOCQzJTvxIyBytQBkUjrEsawM59Rgm0CRLV_sQ,17987
+eolearn/geometry/superpixel.py,sha256=06cj6VADTrQ0vTWEGgr3xTCYlmkK3wl0I0o8BktryHE,6923
+eolearn/geometry/transformations.py,sha256=EarIgD1W2kZGBruB4Dk3nB7aGAnlekvnw5GiI6Ti5hw,22809
+eo_learn_geometry-0.10.0.dist-info/LICENSE,sha256=tBcdTbkneUu8yIJQISjcVf32Jmnzf1dDGKqIvVOvyBA,1602
+eo_learn_geometry-0.10.0.dist-info/METADATA,sha256=SPb-V6eDDNuLP7J1EwFMzBQ42iDPBi0LkKQ505ejbZA,798
+eo_learn_geometry-0.10.0.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+eo_learn_geometry-0.10.0.dist-info/top_level.txt,sha256=6ntE_4gIIRW3Yydg59WWgQRdwufG2Z0aUjGnrFxlSVU,8
+eo_learn_geometry-0.10.0.dist-info/RECORD,,
