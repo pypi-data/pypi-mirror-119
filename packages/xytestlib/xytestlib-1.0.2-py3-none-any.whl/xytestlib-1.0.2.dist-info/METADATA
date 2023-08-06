@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: xytestlib
+Version: 1.0.2
+Summary: 打印顶级测试代码
+Home-page: https://github.com/wangshunzi/Python_code
+Author: Xy
+Author-email: 1500671508@qq.com
+License: MIT
+Platform: UNKNOWN
+License-File: LICENSE.txt
+
+虽然说我的苦不是很牛逼，但是，我的描述文档很牛逼，会让人觉着我的库也很牛逼
+
+Why Should I Use This?
+=======================
+
+**加粗**
+
+*斜体*
+
+``this is my code``
+
+# python setup.py check -r -s 检查rst语法是否出错
+
