@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: steamid-oidc
+Version: 0.1.0
+Summary: SteamId OIDC implementation for python-social-auth
+Home-page: UNKNOWN
+Author: Minh Le
+Author-email: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: social-auth-core
+
+UNKNOWN
+
+
