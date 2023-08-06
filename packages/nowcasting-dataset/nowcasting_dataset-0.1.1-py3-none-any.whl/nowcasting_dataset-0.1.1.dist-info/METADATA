@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: nowcasting-dataset
+Version: 0.1.1
+Summary: Nowcasting Dataset
+Home-page: UNKNOWN
+Author: Jack Kelly, Peter Dudfield, Jacob Bieker
+Author-email: info@openclimatefix.org
+License: MIT
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: zarr
+Requires-Dist: xarray
+Requires-Dist: ipykernel
+Requires-Dist: h5netcdf
+Requires-Dist: gcsfs
+Requires-Dist: scikit-image
+Requires-Dist: torch
+Requires-Dist: pytorch-lightning
+Requires-Dist: dask
+Requires-Dist: pvlib
+Requires-Dist: pyproj
+Requires-Dist: flake8
+Requires-Dist: jedi
+Requires-Dist: mypy
+Requires-Dist: tables
+Requires-Dist: boto3
+Requires-Dist: moto
+Requires-Dist: neptune-client
+Requires-Dist: pydantic
+Requires-Dist: pytest-cov
+Requires-Dist: plotly
+
+UNKNOWN
+
