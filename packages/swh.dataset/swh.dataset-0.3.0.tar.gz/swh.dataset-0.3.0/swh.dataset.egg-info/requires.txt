@@ -1,0 +1,15 @@
+boto3
+click
+tqdm
+pyorc
+plyvel
+swh.core[http]>=0.3
+swh.journal
+swh.model>=1.0.0
+swh.storage
+
+[testing]
+pytest
+types-python-dateutil
+types-pyyaml
+types-requests
