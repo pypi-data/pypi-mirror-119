@@ -1,0 +1,10 @@
+jetblack_graphql_types/__init__.py,sha256=TlVP8zvDc80U07uyu8ig_5dTlGWKjoRSRVpRhLDpS2g,284
+jetblack_graphql_types/datetime_type.py,sha256=TJ7S3IphfQ9kyLkgEkPfDPutS5-HxhAvg-QKIuaImEk,2079
+jetblack_graphql_types/duration_type.py,sha256=Bdc4LUfKcvDMJjWyFr7Rqk3bq_FF8HZRv6WeKEQYWCg,2089
+jetblack_graphql_types/json_type.py,sha256=UGPoxHAWrHksCaN2ivjcFDuHmOKFrNGHSM4-QEtN0_8,1562
+jetblack_graphql_types/long_type.py,sha256=BiBauldMvCS84_UpIpDQw9PsOz3FhImoerwagzBXGyU,2838
+jetblack_graphql_types/py.typed,sha256=qrkHrYJvGoZpU2BpVLNxJB44LlhqVSKyYOwD_L_1m3s,10
+jetblack_graphql_types-0.2.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+jetblack_graphql_types-0.2.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+jetblack_graphql_types-0.2.0.dist-info/METADATA,sha256=rTcaj2R-39BZ0BrPBgsg2_y36pEb2pB6vxarSsCsB0o,815
+jetblack_graphql_types-0.2.0.dist-info/RECORD,,
