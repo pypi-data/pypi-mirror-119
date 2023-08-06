@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+FastDataTime/Dtime.py
+FastDataTime/OStime.py
+FastDataTime/__init__.py
+FastDataTime/programtime.py
+FastDataTime.egg-info/PKG-INFO
+FastDataTime.egg-info/SOURCES.txt
+FastDataTime.egg-info/dependency_links.txt
+FastDataTime.egg-info/requires.txt
+FastDataTime.egg-info/top_level.txt

@@ -1,0 +1,242 @@
+Metadata-Version: 2.1
+Name: FastDataTime
+Version: 0.0.8
+Summary: 一个基于其他模块，快速执行时间处理的模块|A module that performs time processing quickly based on other modules
+Home-page: https://codechina.csdn.net/qq_53280175/fastdatatime
+Author: PYmili
+Author-email: mc2005wj@163.com
+Maintainer: PYmili
+Maintainer-email: mc2005wj@163.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# FastDataTime 时间处理包 | Fastdatatime time processing package
+
+使用方法在作者的第三方仓库中，可以自行查看
+The usage method is in the author's third-party warehouse and can be used by yourself
+
+[codechina.csdn 教程链接|Tutorial links](https://codechina.csdn.net/qq_53280175/fastdatatime)
+
+
+FastDataTime 只是一个简单的时间处理库，可以快速输出时间。
+
+FastDataTime It is just a simple time processing library, which can output time quickly.
+
+联系方式|contact information：qq:2097632843 邮件|e-mail:mc2005wj@163.com
+                使用方法
+
+导入库|Import library： from FastDataTime import OStime
+
+或|or from FastDataTime import *
+
+讲解OStime函数|Explain the 'OStime' function : OStime(time_a) time_a:有很多值|time_ a: There are many values.
+
+示例|Example：
+
+from FastDataTime import OStime as OS
+
+OS.OStime('help')
+
+结果|result:
+
+各命令 对应各显示时间 如下：
+
+==============================================================
+
+1.nyr 获取当前年月日 使用方法：OStime('nyr')
+
+2.12xs 获取当前12小时形式的时间 使用方法：OStime('12xs')
+
+3.24xs24小时形式的时间 使用方法：OStime('24xs')
+
+4.jh 获取当前年月日时分秒的时间 使用方法：OStime('jh')
+
+5.m 获取当前时间的秒，为数字输出 使用方法：OStime('m')
+
+6.f 获取当前时间的分，为数字输出 使用方法：OStime('f')
+
+7.s 获取当前时间的时，为数字输出 使用方法：OStime('s')
+
+8.r 获取当前时间的日期，为数字输出 使用方法：OStime('r')
+
+9.y 获取当前时间的月，为数字输出 使用方法：OStime('y')
+
+10.n 获取当前时间的年，为数字输出 使用方法：OStime('n')
+
+11.GMT-8-Time_MS 获取GMT-8毫秒时间，数字输出 使用方法：OStime('GMT-8-Time_MS') 时间间隔1000ms"
+
+12.Running_time 获取程序运行时间（有误差），数字输出 使用方法：OStime('Running_time')
+
+13.stamp 获取时间戳
+
+14.ctime Wed Sep
+
+讲解Dtime函数
+
+导入： from FastDataTime import 
+
+示例：
+
+from FastDataTime import Dtime
+
+Dtime.run_time()#获取时间不断系统输出
+
+number 等于 数字和浮点数 属于输出时间间隔
+
+Dtime.run_time('number')
+
+如： Dtime.run_time('0.1')#每0.1毫秒输出系统时间
+
+
+讲解programtime函数
+
+导入：from FastDataTime import
+
+
+示例：
+
+from FastDataTime import programtime as pr
+
+pr.get_program('it' )
+
+
+
+参数：get_program(com, get_stmt, get_number, re, get_print) 
+
+com: 命令 有 'it','at'两个命令。 
+
+命令：'it' 获取程序运行时间，可添加次数。
+
+在'it'命令下参数:  get_stmt: 要计算程序变量名。 get_number: 计算次数
+
+如：
+
+get_program('it', xxx, '5')# xxx代表变量名,5代表运行次数
+
+在'at'命令下参数： get_stmt: 要计算程序变量名。 re:计算重复次数。 get_number:要计算的次数。
+
+如：
+
+get_program('at', xxx, '2', '5')# xxx代表变量名，2代表重复次数,5代表运行次数。
+
+
+剩余待完善............................................
+
+
+#############################################################
+
+PYmili
+
+联系我
+
+QQ:2097632843
+
+邮件:mc2005wj@163.com
+
+版本：0.0.5
+
+
+
+The display time corresponding to each command is as follows:
+
+==============================================================
+
+1.nyr get the current month, year and day usage: ostime ('nyr ')
+
+2.12xs get the current 12 hour time usage: OStime('12xs')
+
+3.24xs 24-hour time usage: OStime('24xs')
+
+4. jh obtain the time of the current month, day, hour, minute and second. Usage: OStime('jh')
+
+5. m obtain the second of the current time, which is digital output. Usage: OStime('m')
+
+6. f obtain the minute of the current time, which is digital output. Usage: OStime('f')
+
+7. s when obtaining the current time, it is digital output. Usage: OStime('s')
+
+8. r get the date of the current time, which is digital output. Usage: OStime('r')
+
+9. y obtain the month of the current time, which is the digital output. Usage: OStime('y')
+
+10. n get the year of the current time, which is the digital output usage method: OStime('n')
+
+11.GMT-8-Time_MS obtains GMT-8 ms time, and the digital output method is OStime('GMT-8-Time_MS') interval 1000ms
+
+12.Running_time to obtain the running time of the program (with error). How to use digital output: OStime('Running_time')
+
+13.stamp Get timestamp
+
+14.ctime Wed Sep
+
+Explain dtime function
+
+Import: from fastdatatime import
+
+Example:
+
+from FastDataTime import Dtime
+
+Dtime.run_time() # get the time constant system output
+
+Number equals numbers and floating-point numbers, belonging to the output interval
+
+Dtime.run_time('number')
+
+For example: dtime.run_Time ('0.1') # output system time every 0.1 ms
+
+Explain the programtime function
+
+Import: from fastdatatime import
+
+Example:
+
+from FastDataTime import programtime as pr
+
+pr.get_ program('it')
+
+Parameter: get_program(com, get_stmt, get_number, re, get_print)
+
+COM: the command has two commands, 'it' and 'at'.
+
+Command: 'it' gets the program running time and can be added times.
+
+Parameters under the 'it' command: get_ Stmt: the name of the program variable to be evaluated. get_ Number: number of calculations
+
+For example:
+
+get_ Program ('it', XXX,'5') # XXX represents the variable name and 5 represents the number of runs
+
+Parameters under the 'at' command: get_ Stmt: the name of the program variable to be evaluated. Re: calculate the number of repetitions. get_ Number: the number of times to calculate.
+
+For example:
+
+get_ Program ('at', XXX, '2', '5') # XXX represents the variable name, 2 represents the number of repetitions, and 5 represents the number of run
+
+Remaining to be improved
+
+######################################################################
+
+PYmili
+
+Contact me
+
+		QQ:2097632843
+
+		ail: mc2005wj@163.com
+
+Version: 0.0.5
+
