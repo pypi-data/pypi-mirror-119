@@ -1,0 +1,14 @@
+tokenizer/Abbrev.conf,sha256=ENGq2IST_EcvYoWnwoFneZvMcdq14mnIV7nReNPFiP8,47187
+tokenizer/__init__.py,sha256=z3D6s1aSJvOgUfNE1FbZNeCYiq-d_Bi0L2BFcjDVHTQ,2513
+tokenizer/abbrev.py,sha256=As-aCiPzFlEyt8_R_d2banXRDLCUzgBky8mmGLsN-cA,13324
+tokenizer/definitions.py,sha256=rZQ8grJqmYr64gi7LykMYXgph6m43Jrp7lezZvIJ9jg,27627
+tokenizer/main.py,sha256=B-WghLRZOiN2hq8tWgjO2nNF-7IOXRHr2qwA3kBmr-o,9412
+tokenizer/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tokenizer/tokenizer.py,sha256=MUnMNPDyauXpPKgw9D9blcCMBUXk2rqLG4Dzn5WXHQE,123559
+tokenizer/version.py,sha256=MPSbkJS_-QSkLK7sMlFXFf5iWlbcSL18Dj2ZiMCtS9c,22
+tokenizer-3.3.0.dist-info/LICENSE,sha256=-u_BeZHQsghRb_H0Vjxh_H4eNlwlFccdmrAUxAll-70,1113
+tokenizer-3.3.0.dist-info/METADATA,sha256=CdlgJ8Hkl-7J19kgamwrqNoqygXFnfI2B5bvtGH2p5U,41829
+tokenizer-3.3.0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+tokenizer-3.3.0.dist-info/entry_points.txt,sha256=s7KNrYxagbA7cWdv_B61r1piiOxsMGiGzDtmb5gsSXE,50
+tokenizer-3.3.0.dist-info/top_level.txt,sha256=ODlQeKqMCvFle4_HiPNY1X5fX-qZyM3ABBmOPG__vnE,10
+tokenizer-3.3.0.dist-info/RECORD,,
