@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: HolmesIV
+Version: 2021.9.8a1
+Summary: mycroft-core packaged as a library you can rely on
+Home-page: https://github.com/HelloChatterbox/HolmesIV
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: audio-backend
+Provides-Extra: mark1
+Provides-Extra: stt
+Provides-Extra: tts
+Provides-Extra: skills_minimal
+Provides-Extra: skills
+Provides-Extra: default_skills
+Provides-Extra: enclosure
+Provides-Extra: bus
+Provides-Extra: all
+Provides-Extra: mycroft
+License-File: LICENSE.md
+
+UNKNOWN
+
