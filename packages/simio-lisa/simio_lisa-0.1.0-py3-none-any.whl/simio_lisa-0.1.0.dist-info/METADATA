@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: simio-lisa
+Version: 0.1.0
+Summary: Beautiful Simio
+Home-page: https://github.com/mielgosez/simio_lisa
+Author: Jose Mielgo
+Author-email: mielgosez@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/mielgosez/simio_lisa/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+
+# simio-lisa
+Python package with visualization tools for Simio models saved as .simproj
+
+
