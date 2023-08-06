@@ -1,0 +1,4 @@
+pyshtools>=4.7.1
+sympy<=1.7
+cmcrameri
+jupyter
