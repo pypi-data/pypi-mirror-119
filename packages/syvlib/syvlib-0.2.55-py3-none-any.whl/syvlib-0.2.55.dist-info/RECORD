@@ -1,0 +1,11 @@
+syvlib/__init__.py,sha256=GZhTJ2WZiYeXfXvfcsKNiVsmmsiaQAAAPBtzQCfmRlU,111
+syvlib/codec.py,sha256=_CH7Il92YFTqKSiWgsDF3pzslVwD00kew5LqzUeKpv8,1556
+syvlib/cycle.py,sha256=JbgRW7kA6WqP4vejSP-F5hmPf-MXDg9WUfdm2f4Djhw,5400
+syvlib/drop.py,sha256=m3fWmAd8hjzMsHXDt9mKHPq_S3zdWfR6b5xKUtOa6N4,142
+syvlib/session.py,sha256=kw07cW1ev8pGg_7GT9Sdkp--_v8m1uZDAnOIIUJY__M,1873
+syvlib-0.2.55.dist-info/LICENSE.md,sha256=M7wm1EmMGDtwPRdg7kW4d00h1uAXjKOT3HFScYQMeiE,34916
+syvlib-0.2.55.dist-info/METADATA,sha256=y5UFytn7GIK1Mv-OAi40MhWRQP6fmGmBVT_6o0qpHZM,1621
+syvlib-0.2.55.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+syvlib-0.2.55.dist-info/top_level.txt,sha256=ALPaXAnDMR8Jr1wCUNwBZi1p4QhvSsqyeyb4uDBQlww,7
+syvlib-0.2.55.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+syvlib-0.2.55.dist-info/RECORD,,
