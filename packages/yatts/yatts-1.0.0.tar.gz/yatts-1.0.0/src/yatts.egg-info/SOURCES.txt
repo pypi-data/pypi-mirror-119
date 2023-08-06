@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+img/4bit_color_palette.png
+img/8bit_color_palette.png
+img/8bit_examples.png
+img/add_remove_examples.png
+src/test_yatts.py
+src/yatts.py
+src/yatts_examples.py
+src/yatts.egg-info/PKG-INFO
+src/yatts.egg-info/SOURCES.txt
+src/yatts.egg-info/dependency_links.txt
+src/yatts.egg-info/top_level.txt
