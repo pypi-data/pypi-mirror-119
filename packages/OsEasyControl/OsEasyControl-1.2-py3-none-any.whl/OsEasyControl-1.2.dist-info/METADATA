@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: OsEasyControl
+Version: 1.2
+Summary: Easy to use cmd in py
+Home-page: UNKNOWN
+Author: 자색치즈고구마
+Author-email: s.potato0530@gmail.com
+License: UNKNOWN
+Keywords: OsEasyControl
+Platform: UNKNOWN
+Requires-Python: >=3.3
+
+1.2 ver_command list
+nt / next_text
+멈춘후 화면 정리
+rs / reset_screen
+화면 기본값으로 되돌리기
+to / trun_off
+컴퓨터 종료
+toit / turn_off_in_time()
+()안의 시간(초) 후에 종료
+rc / restart_computer
+컴퓨터 재기동
+rcit / restart_computer_in_time()
+()안의 시간(초) 후에 재기동
+bs / blue_screen
+블루스크린 발동
+cp / check_ping
+cp('사이트 이름') 형식으로 입력, 핑 확인 가능
+cpc / check_ping_count
+cpc('사이트 이름', 핑 확인 횟수) 형식으로 입력
+nt / new_tab
+새로운 cmd 탭
+ver
+버전 확인
+
