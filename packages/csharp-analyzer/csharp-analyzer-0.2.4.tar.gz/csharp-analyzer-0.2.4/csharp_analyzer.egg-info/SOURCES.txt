@@ -1,0 +1,14 @@
+LICENCE
+README.md
+setup.py
+csharp_analyzer/__init__.py
+csharp_analyzer/attribute.py
+csharp_analyzer/class_.py
+csharp_analyzer/file.py
+csharp_analyzer/method.py
+csharp_analyzer/namespace.py
+csharp_analyzer/property.py
+csharp_analyzer.egg-info/PKG-INFO
+csharp_analyzer.egg-info/SOURCES.txt
+csharp_analyzer.egg-info/dependency_links.txt
+csharp_analyzer.egg-info/top_level.txt

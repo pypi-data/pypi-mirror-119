@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: csharp-analyzer
+Version: 0.2.4
+Summary: This package can help you to smash and present C# code into OOP style
+Home-page: https://github.com/luc1f-a/csharp-analyzer
+Author: Daniil Antonov
+Author-email: danil.antonov.05@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9.5
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+This package smash C# code into blocks
+
