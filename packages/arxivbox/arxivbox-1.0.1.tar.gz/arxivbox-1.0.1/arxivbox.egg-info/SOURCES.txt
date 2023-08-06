@@ -1,0 +1,9 @@
+setup.py
+arxivbox/__init__.py
+arxivbox/__main__.py
+arxivbox/arxivbox.py
+arxivbox.egg-info/PKG-INFO
+arxivbox.egg-info/SOURCES.txt
+arxivbox.egg-info/dependency_links.txt
+arxivbox.egg-info/requires.txt
+arxivbox.egg-info/top_level.txt
