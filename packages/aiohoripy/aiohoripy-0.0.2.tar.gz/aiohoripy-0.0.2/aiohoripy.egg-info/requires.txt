@@ -1,0 +1,7 @@
+aiohttp
+async-timeout
+typing-extensions
+multidict
+attrs
+yarl
+chardet

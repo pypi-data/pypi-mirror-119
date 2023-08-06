@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: aiohoripy
+Version: 0.0.2
+Summary: An asynchronous Python Wrapper for Hori-API
+Home-page: https://github.com/lvlahraam/aiohoripy
+Author: lvlahraam
+License: MIT
+Description: # This is a asynchronous wrapper for Hori-API named `aiohoripy`
+        
+        ## The way you use it it's so simple:
+        ```py
+        import aiohoripy
+        # or 
+        from aiohoripy import sfw, nsfw
+        
+        import discord
+        from discord.ext import commands
+        
+        bot = commands.Bot(command_prefix="prefix", intents=discord.Intents.all())
+        
+        @bot.event
+        async def on_ready():
+            print("I'm ready")
+        
+        @bot.command()
+        async def waifu(ctx):
+            image = await sfw(tag="waifu")
+            # or
+            image = await nsfw(tag="waifu")
+            await ctx.send(image)
+        
+        bot.run("TOKEN")
+        ```
+        The tags are the same as the tags that the api gives
+        
+        sfw tags are: `["all", "husbando", "waifu"]`
+        
+        nsfw tags are: `["ass", "ecchi", "ero", "hentai", "maid", "milf", "oppai", "oral", "paizuri", "selfies", "uniform"]`
+        
+        The output that` `image`` gives is the same as the json results in the API
+        
+        and you can get them with:
+        
+        `image["code", "is_over18", "tag_id", "tag_name", "file", "url"]`
+        
+        # Made by lvlahraam#8435
+        
+Keywords: python,api,discord,http,anime,hori
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Internet :: WWW/HTTP :: Session
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Typing :: Typed
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
