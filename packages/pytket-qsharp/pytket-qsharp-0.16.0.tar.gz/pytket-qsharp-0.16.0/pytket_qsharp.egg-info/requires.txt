@@ -1,0 +1,3 @@
+pytket==0.14.0
+qsharp~=0.18.2107
+qsharp-core~=0.18.2107
