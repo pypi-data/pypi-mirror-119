@@ -1,0 +1,3 @@
+[console_scripts]
+py4envi = py4envi.__main__:main
+
