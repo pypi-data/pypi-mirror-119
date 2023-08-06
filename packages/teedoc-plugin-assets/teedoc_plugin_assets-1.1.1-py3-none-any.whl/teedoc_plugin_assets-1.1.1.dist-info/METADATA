@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: teedoc-plugin-assets
+Version: 1.1.1
+Summary: assets plugin for teedoc to add css and js assets to pages or other custom items to pages
+Home-page: https://github.com/teedoc/teedoc
+Author: Neucrack
+Author-email: CZD666666@gmail.com
+License: MIT
+Keywords: assets css js teedoc plugin
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+
+teedoc-plugin-assets
+====
+
+
+Add css and js items(/files) to pages or other custom items to pages
+
+
+`site_config.json`:
+
+```json
+{
+    "route": {
+            "assets": {
+                "/static/": "static",
+            },
+        },
+    "plugins": {
+        "teedoc-plugin-assets":{
+            "from": "pypi",
+            "config": {
+                "header_items": [
+                    "/static/css/custom.css",
+                    "<meta name=\"plugin-assets\" content=\"example meta item\">"
+                ],
+                "footer_items": [
+                    "/static/css/custom.js"
+                ],
+                "env":{
+                    "main_color": "#000000"
+                }
+            }
+        },
+    }
+}
+```
+
+`custom.css`:
+
+```css
+a {
+    color: ${main_color}
+}
+```
+
+
+
+
+
+
