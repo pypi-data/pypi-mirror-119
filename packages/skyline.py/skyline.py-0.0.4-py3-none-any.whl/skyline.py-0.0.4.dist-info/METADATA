@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: skyline.py
+Version: 0.0.4
+Summary: Interacts with the Skyline Bots API
+Home-page: UNKNOWN
+Author: Yoshiboi18303 (Brice Coley)
+Author-email: <yoshiboi18303.t@gmail.com>
+License: UNKNOWN
+Keywords: python,skyline,spyapi,skyline api,api,skyline bots
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp (>=3.7.4)
+
+
+# skyline.py
+A Python Package used to interact with the [Skyline Bots](https://skylinebots.ml/) API
+
+**This package is still in development, bugs may be present!**
+
+---
+
+# Features
+The Features of `skyline.py` are the following:
+
+- Posting Server Count
+- Posting Uptime (coming soon!)
+- And even more!
+
+---
+
+# Installing
+You can install skyline.py by installing Python then running `pip install skyline.py` in your terminal.
+
+---
+
+# Feature Examples
+Here are all the examples for the different features of skyline.py!
+
+---
+
+## Posting Server Count
+```python
+import skyline
+import discord
+from skyline import psc
+from discord.ext import commands
+
+client = commands.Bot(command_prefix="!")
+
+"""
+
+  psc takes in the following arguments:
+
+  1. Your discord.py client (any)
+  2. Your client's ID (string)
+  3. The API Key for your bot (string)
+
+"""
+psc(client, "80954809548095480989", "insert-your-api-key-here")
+
+client.run("token")
+```
+
+---
+
+# Support
+Here are all the ways you can get support with this package!
+
+- ### Join the [Support Server](https://discord.gg/ygK56KaxHC)
+- ### [Email](mailto:<yoshiboi18303.t@gmail.com>) the author
+
+---
+
