@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: QWebSite
+Version: 0.3a2
+Summary: QWebSite
+Home-page: https://github.com/QPT-Family/QWebSiteOptimizer
+Author: GT-ZhangAcer
+Author-email: zhangacer@foxmail.com
+License: LGPL
+Platform: UNKNOWN
+Requires-Python: >3.5
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: ping3
+
+UNKNOWN
+
