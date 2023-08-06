@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: edx-zoom
+Version: 2.0.1
+Summary: This XBlock implements the LTI interface for Zoom video conferencing.
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+License-File: LICENSE
+License-File: NOTICE
+Requires-Dist: lti-consumer-xblock
+Requires-Dist: django
+Requires-Dist: edx-opaque-keys
+
+UNKNOWN
+
