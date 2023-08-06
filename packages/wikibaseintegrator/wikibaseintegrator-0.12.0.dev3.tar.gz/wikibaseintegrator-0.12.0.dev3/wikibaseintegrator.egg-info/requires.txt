@@ -1,0 +1,9 @@
+simplejson
+requests
+mwoauth
+backoff
+oauthlib
+
+[dev]
+pytest
+pytest-cov
