@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "jetblack-graphql-types"
+version = "0.2.0"
+description = "Serialization for JSON and XML using typing"
+repository = "https://github.com/rob-blackbourn/jetblack-graphql-types"
+authors = ["Rob Blackbourn <rob.blackbourn@gmail.com>"]
+keywords = ['serialization', 'jetblack', 'json', 'xml', 'typing']
+license = "Apache-2.0"
+readme = "README.md"
+packages = [
+  { include = "jetblack_graphql_types" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+jetblack-iso8601 = "^1.0"
+graphql-core = "^3.1.6"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.5"
+mypy = "^0.910"
+pylint = "^2.10"
+pytest = "^5.4"
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.masonry.api"
