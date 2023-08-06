@@ -1,0 +1,7 @@
+README.rst
+setup.py
+s22rgb/__init__.py
+s22rgb.egg-info/PKG-INFO
+s22rgb.egg-info/SOURCES.txt
+s22rgb.egg-info/dependency_links.txt
+s22rgb.egg-info/top_level.txt
