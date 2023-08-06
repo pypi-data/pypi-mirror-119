@@ -1,0 +1,3 @@
+[console_scripts]
+scumprogrammer = scumprogrammer:main_app
+
