@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: xdutools
+Version: 0.0.1a3
+Summary: 西电相关工具和 CLI
+Home-page: https://github.com/shoorday/xdutools
+License: MIT
+Keywords: XDU,Spider
+Author: shoor
+Author-email: shoorday@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Provides-Extra: all
+Provides-Extra: cli
+Requires-Dist: asyncclick (>=8.0.1.3,<9.0.0.0); extra == "all" or extra == "cli"
+Requires-Dist: beautifulsoup4 (>=4.10.0,<5.0.0)
+Requires-Dist: colorama (>=0.4.4,<0.5.0); extra == "all"
+Requires-Dist: httpx (>=0.19.0,<0.20.0)
+Requires-Dist: pycryptodome (>=3.10.1,<4.0.0)
+Project-URL: Repository, https://github.com/shoorday/xdutools
