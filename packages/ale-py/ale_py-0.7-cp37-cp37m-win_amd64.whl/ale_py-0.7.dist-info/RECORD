@@ -1,0 +1,17 @@
+ale_py/SDL2.dll,sha256=e4muxNB79fffz0z-GRKl6GaB680C_zu56InyjWWDb88,1299968
+ale_py/__init__.py,sha256=oH1Ew6wu0ZMvbVu4nFaWIL7XGnAAZ2eV-N7rYD8qVpE,1763
+ale_py/_ale_py.cp37-win_amd64.pyd,sha256=nZA7jCzXqLNPNITUpSmuG7o16q6LaeY2iaWg7kXHWu8,1446400
+ale_py/zlib1.dll,sha256=3fkDw0m-ibPKLxctfegyj-wxnFUlEVOn6eumpC6mnME,87040
+ale_py/gym/__init__.py,sha256=J1pq9H1vbmu_aiarSjWHYnIsZJgTNvYw2Q9jGRj3dA8,428
+ale_py/gym/environment.py,sha256=4u1WidreByRzSlWp09FbL81nIMC-moNvvuwNmVjd9iM,14046
+ale_py/gym/utils.py,sha256=f4Idyg86epYAeAIpU46g76kxw0UAohNqeV-zX7ZKrwg,6016
+ale_py/roms/__init__.py,sha256=sB95QAmM-mPo89y9kAB740pQJdEYCDa_nmuWGkBMO40,1649
+ale_py/roms/utils.py,sha256=rYa9MYjk7xoALrybVwnxiBuqWwgLRHiDXByG3aQj7Is,3439
+ale_py/scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ale_py/scripts/import_roms.py,sha256=4VDgpd66Z-6_kNaGU2Yfch2ceEQEPN6IHxrR2VDt2uI,2214
+ale_py-0.7.dist-info/LICENSE.md,sha256=92OmsgJwdh4b72EOZ92_V1YCcD3vLnpyHMzXoJ6PZ24,18240
+ale_py-0.7.dist-info/METADATA,sha256=zhmonsoQt4ZRcio3Ng-rUcb8zpsOj-Hb1gJZpJunKCY,7703
+ale_py-0.7.dist-info/WHEEL,sha256=OmDKD3JmZjhMu_YdpkiJDfFL1rf8n9nexhWCGhSBGVE,101
+ale_py-0.7.dist-info/entry_points.txt,sha256=FWzjpKG4zFMgXvaQc6eWSy4X_x0__0XL3gcFruk_7JA,69
+ale_py-0.7.dist-info/top_level.txt,sha256=CjHTcYlCUfmSaCGbLLpKEKIY5hZteuawsHZy3TWVyNk,7
+ale_py-0.7.dist-info/RECORD,,
