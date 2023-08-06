@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+namedtuple_maker/__init__.py
+namedtuple_maker/namedtuple_maker.py
+namedtuple_maker.egg-info/PKG-INFO
+namedtuple_maker.egg-info/SOURCES.txt
+namedtuple_maker.egg-info/dependency_links.txt
+namedtuple_maker.egg-info/top_level.txt
