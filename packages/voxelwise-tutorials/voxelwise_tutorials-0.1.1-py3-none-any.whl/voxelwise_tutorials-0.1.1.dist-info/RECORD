@@ -1,0 +1,16 @@
+voxelwise_tutorials/__init__.py,sha256=ls1camlIoMxEZz9gSkZ1OJo-MXqHWwKPtdPbZJmwp7E,22
+voxelwise_tutorials/delayer.py,sha256=Xt1UoALKd0YMCsUAgHT5E5hNZdbDmYQ2fQhEih0udSw,3480
+voxelwise_tutorials/io.py,sha256=bxrD-1yPmEPnBpUHk6SKV5kXuWVN6P7bQklh5cjRdso,8080
+voxelwise_tutorials/progress_bar.py,sha256=mNfE29MxBYsJugWwhQ_2PPrONeVWsQn1QukV6Q-BK04,5697
+voxelwise_tutorials/utils.py,sha256=8t3vjXvbyI9F9lDTORjkosT3u29A7dZs0B44RXiBBak,2794
+voxelwise_tutorials/viz.py,sha256=vezre5rj2wOSBuJSpBJf7tmH0gmq72aOQRw5Ty4hEzc,17455
+voxelwise_tutorials/wordnet.py,sha256=GUw9odYOlUq0LGXKErnQ-7gqaGr8IqpJM17iuomyBEA,16552
+voxelwise_tutorials/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+voxelwise_tutorials/tests/test_delayer.py,sha256=W4ElTBBV_GAgix5cUCbQEwzo7Z8Xbk7I9wEt-r0xzZ8,1299
+voxelwise_tutorials/tests/test_mappers.py,sha256=Jx1w9YRdHbZYyn-A2-tnyv0Q0uzA2iT06ctK-hAzJX8,1909
+voxelwise_tutorials/tests/test_utils.py,sha256=THG8PP8uZofZHj7vmPO5hg6Qtd-u5_30y2mruCcR5jM,715
+voxelwise_tutorials-0.1.1.dist-info/LICENSE.md,sha256=XiWcpYBcX5t5ONb68YN1aReBhL7oiNc8VTPA3WY-BW4,1534
+voxelwise_tutorials-0.1.1.dist-info/METADATA,sha256=UTUWJGOkc015mcd2vSfNw_7bRfvOnvSBbOLIbTa-Ngc,4140
+voxelwise_tutorials-0.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+voxelwise_tutorials-0.1.1.dist-info/top_level.txt,sha256=scsCG6PV3NQs4JN9eTssXJrah6noqBeyxHnk_dFdsi0,20
+voxelwise_tutorials-0.1.1.dist-info/RECORD,,
