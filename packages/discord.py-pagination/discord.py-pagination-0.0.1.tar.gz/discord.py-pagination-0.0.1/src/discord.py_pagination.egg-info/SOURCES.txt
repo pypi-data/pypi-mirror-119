@@ -1,0 +1,7 @@
+README.md
+setup.py
+src/Paginator.py
+src/discord.py_pagination.egg-info/PKG-INFO
+src/discord.py_pagination.egg-info/SOURCES.txt
+src/discord.py_pagination.egg-info/dependency_links.txt
+src/discord.py_pagination.egg-info/top_level.txt
