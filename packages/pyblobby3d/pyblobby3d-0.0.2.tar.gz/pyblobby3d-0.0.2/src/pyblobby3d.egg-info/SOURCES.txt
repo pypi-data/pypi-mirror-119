@@ -1,0 +1,15 @@
+pyproject.toml
+setup.cfg
+src/pyblobby3d/__init__.py
+src/pyblobby3d/b3dcomp.py
+src/pyblobby3d/b3dplot.py
+src/pyblobby3d/const.py
+src/pyblobby3d/meta.py
+src/pyblobby3d/moments.py
+src/pyblobby3d/post_blobby3d.py
+src/pyblobby3d/pre_blobby3d.py
+src/pyblobby3d.egg-info/PKG-INFO
+src/pyblobby3d.egg-info/SOURCES.txt
+src/pyblobby3d.egg-info/dependency_links.txt
+src/pyblobby3d.egg-info/requires.txt
+src/pyblobby3d.egg-info/top_level.txt
