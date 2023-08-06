@@ -1,0 +1,9 @@
+Pillow
+fastcore
+numpy
+packaging
+pandas
+pip
+tk
+
+[dev]
