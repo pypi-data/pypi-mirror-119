@@ -1,0 +1,11 @@
+sqlitemanager/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sqlitemanager/database.py,sha256=yMBOoASzO4h9iKRXIsaW9X6NeWjvo34TYXyLnFArdo8,16097
+sqlitemanager/handler.py,sha256=7Dmj0aXBq0Euq25vg_bK8lQ8ufAV5m2AKhuy9yVYzZw,18063
+sqlitemanager/helpers.py,sha256=91SU7a1JA70QBBf0wUDA8sL-HYVYE64610tJrey3aZw,1875
+sqlitemanager/mainwindow.py,sha256=9QmoIqOa9_psN-PW9cBBKX0Qp1oYpk8tnhPiBOn52Io,17725
+sqlitemanager/widgets.py,sha256=0Xt4HeuZRm-DLkiaftCeel-1ZU5DuI30zA9-Ce7KEIc,13802
+sqlitemanager-0.5.3.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+sqlitemanager-0.5.3.dist-info/METADATA,sha256=qB9nCVusqqAROoJqTmDAeiF3A6wLJqwjVfJWTZbs18c,2201
+sqlitemanager-0.5.3.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+sqlitemanager-0.5.3.dist-info/top_level.txt,sha256=VCfAG2vIMM973k044xInooO0g0bq_EIX2-4zyAEKZ78,14
+sqlitemanager-0.5.3.dist-info/RECORD,,
