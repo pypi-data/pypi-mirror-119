@@ -1,0 +1,10 @@
+piuma/__init__.py,sha256=nAaIsv9VkBo2r8gcMK8tDm85i_ipHRNGmGJ1j4wjjaQ,75
+piuma/__version__.py,sha256=5SgGjThsHu_ITn8V83BvCziqCwxdXxTQqcC3KQMHPfM,22
+piuma/piuma.py,sha256=oEt_gdXmgf6GE71JlUiNcOu3lk3fNzSlokrmpRNtI18,5187
+piuma/storage/__init__.py,sha256=fPoOBCutHw9nif1abZZGX8CUKGqbJBFzwHaCsnw7eoI,96
+piuma/storage/storage.py,sha256=IdttVFVIcMxaQ2u4JdTg1CBUbZrfh-ZCD-MTlkWM2Yk,3993
+piuma-1.1.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+piuma-1.1.2.dist-info/METADATA,sha256=U2AkOnXXPiRMmAaZMCf3UdtWCDGF72XfFJxsiMsvgv4,2242
+piuma-1.1.2.dist-info/WHEEL,sha256=Ph_z28wTcU7HnQwSQ6yCQ-zkcGK4h4ehDfP8b6UoHVE,92
+piuma-1.1.2.dist-info/top_level.txt,sha256=tE7Jb6Lzl6-x6Z51Z0fK8NFKwf35S7yoTD4w3ugkhhQ,6
+piuma-1.1.2.dist-info/RECORD,,
