@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+fugue_fe/__init__.py
+fugue_fe/dummy.py
+fugue_fe.egg-info/PKG-INFO
+fugue_fe.egg-info/SOURCES.txt
+fugue_fe.egg-info/dependency_links.txt
+fugue_fe.egg-info/requires.txt
+fugue_fe.egg-info/top_level.txt
+fugue_fe_version/__init__.py
+tests/__init__.py
+tests/fugue_fe/__init__.py
+tests/fugue_fe/test_dummy.py
