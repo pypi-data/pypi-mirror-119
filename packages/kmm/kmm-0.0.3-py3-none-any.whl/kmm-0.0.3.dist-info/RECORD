@@ -1,0 +1,13 @@
+kmm/__init__.py,sha256=pMDrc6c_yzC6nxf1VJe0evKjG0NjWj9pTRolZE-2YD8,351
+kmm/camera_positions.py,sha256=m2rhAW-r75QXQc_bRZB1lAEJOCbxbtQDSY2WJ8oR8p8,2166
+kmm/geodetic.py,sha256=o4YuzyXIjJ0JCVVVdp-3LsNgRqUTqf62mFIwOtlgpkI,817
+kmm/kmm.py,sha256=mM0sO16G_dDUkt4_cvDfdVAMyNU0HLRl7xuvWsTn4RY,800
+kmm/kmm2.py,sha256=AqWQTN7E6JTe_gMJ0M7bABzB1famqcUwMo-WcKihOYM,1462
+kmm/position_adjustment.py,sha256=uHMglbHB2G-P2X2HDoop1ouR0StBSgmRz_9Pxw4ddhE,91
+kmm/read_raw.py,sha256=RV-R_-Zto5PLYrEXcWkeIsUAkqsH3DW725_KGJGG3UQ,337
+kmm/read_sync_adjust.py,sha256=7_saVSUzACUmdP3xcuxZ-9L4eNtiE_nH9nSv0Somxuc,1233
+kmm/sync_frame_index.py,sha256=0OLW6FxbRwFlOPjXvaWy6-eTcuMnp-0CIrRUkCRVqIo,1051
+kmm-0.0.3.dist-info/LICENSE,sha256=XudxEgNioG8Dg7nVU3iAyWJ3RvkdeQdTblakew3WOuA,90835
+kmm-0.0.3.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+kmm-0.0.3.dist-info/METADATA,sha256=O9YalMcie3b0dmjBjJ5BVgIXD_URQU6bUbE2XnszT2k,538
+kmm-0.0.3.dist-info/RECORD,,
