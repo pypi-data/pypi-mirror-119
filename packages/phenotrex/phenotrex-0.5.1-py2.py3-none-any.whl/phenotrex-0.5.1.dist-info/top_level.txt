@@ -1,0 +1,6 @@
+dist
+docs
+phenotrex
+requirements
+tests
+travis
