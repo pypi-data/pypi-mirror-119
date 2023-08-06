@@ -1,0 +1,1 @@
+recursive-include tracardi_mongodb_connector/model *
