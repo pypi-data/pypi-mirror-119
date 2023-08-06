@@ -1,0 +1,13 @@
+LINECNCE.txt
+MANIFEST.in
+README.md
+setup.py
+voice_comm/__init__.py
+voice_comm/errors.py
+voice_comm/utils.py
+voice_comm/voice_comm.py
+voice_comm.egg-info/PKG-INFO
+voice_comm.egg-info/SOURCES.txt
+voice_comm.egg-info/dependency_links.txt
+voice_comm.egg-info/requires.txt
+voice_comm.egg-info/top_level.txt
