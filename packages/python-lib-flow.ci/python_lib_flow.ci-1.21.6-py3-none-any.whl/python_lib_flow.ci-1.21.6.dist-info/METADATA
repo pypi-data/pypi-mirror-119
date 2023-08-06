@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: python-lib-flow.ci
+Version: 1.21.6
+Summary: flow.ci python open api lib
+Home-page: https://github.com/flowci
+Author: Yang Guo
+Author-email: 32008001@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# python-lib
+
+open api python lib for plugin
+
+- `pipenv install requests`
+
+Update related image and lib
+
+- [Agent Dockerfile](https://github.com/FlowCI/flow-agent-x/blob/master/Dockerfile)
+- [Pyenv Dockerfile](https://github.com/FlowCI/images/blob/master/pyenv/Dockerfile)
+- [Plugin runtime Dockerfile](https://github.com/FlowCI/images/blob/master/plugin-runtime/Dockerfile)
+
+
