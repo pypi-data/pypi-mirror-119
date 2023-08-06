@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: fsdtorch
+Version: 0.1.2
+Summary: Face shape detector in pytorch that works with pretrained networks
+License: MIT
+Author: Alper
+Author-email: itsc0508@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: gdown (>=3.13.0,<4.0.0)
+Requires-Dist: onnx (>=1.10.1,<2.0.0)
+Requires-Dist: onnxruntime-gpu (>=1.8.1,<2.0.0)
+Requires-Dist: opencv-contrib-python (>=4.5.3,<5.0.0)
