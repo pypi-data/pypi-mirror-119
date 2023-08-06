@@ -1,0 +1,9 @@
+
+[build]
+bump2version
+twine
+wheel
+
+[tests]
+pytest
+pytest-mypy
