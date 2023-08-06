@@ -1,0 +1,12 @@
+biosimulators_xpp/__init__.py,sha256=Ir2zoxRijxbcsiEJxu2GwM0zyHF1ZEZcPA-PuWyjV9s,786
+biosimulators_xpp/__main__.py,sha256=TSgjBpyeWuunacp3OfyW8ohCDRmTZ5PW1ot4i6A3GCc,677
+biosimulators_xpp/_version.py,sha256=7EgDv-timUu06OY6bkABnaoin_WSpRfqEKwS3w4SJZ4,22
+biosimulators_xpp/core.py,sha256=twHqfz9rXurANaWy_TfMfh58Zx1U8Ztf-C4RVIAd_Ak,9377
+biosimulators_xpp/data_model.py,sha256=h02BhEIOsiXS67p1DEdyx1jB2_x9MFUjIfnMaQweqcw,11304
+biosimulators_xpp/utils.py,sha256=JJ7h2CAKhNn1Y5a34jyMpS0tdDXS6QPOGTlHGTwoAvM,13059
+biosimulators_xpp-0.0.7.dist-info/LICENSE,sha256=TXS9OfZfmF1dUckyYqUnvGbeWNrUcrD4aSzR0v4Kp8o,1110
+biosimulators_xpp-0.0.7.dist-info/METADATA,sha256=U8pLcPtaP00ZrkO_yD-BhXUQ8B5q0jUyRPvCiD6I6B4,4982
+biosimulators_xpp-0.0.7.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+biosimulators_xpp-0.0.7.dist-info/entry_points.txt,sha256=5nZvC-7D7hdwXhGh2GkVk9deTXJrLAY8N2Q2M4vkQAU,71
+biosimulators_xpp-0.0.7.dist-info/top_level.txt,sha256=ES_1CwIFDsYqh4Pf7Tc_g8ZDIsm9_DtM_nXvg-7CeBk,18
+biosimulators_xpp-0.0.7.dist-info/RECORD,,
