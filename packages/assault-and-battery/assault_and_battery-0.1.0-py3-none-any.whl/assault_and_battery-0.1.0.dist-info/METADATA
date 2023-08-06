@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: assault-and-battery
+Version: 0.1.0
+Summary: A battery discharge curve calculator slash torture test.
+License: AGPL-3.0-or-later
+Author: Stavros Korokithakis
+Author-email: hi@stavros.io
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: matplotlib (>=3.4.3,<4.0.0)
+Requires-Dist: pyserial (>=3.5,<4.0)
