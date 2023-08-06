@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+salesdredge/__init__.py
+salesdredge/__main__.py
+salesdredge.egg-info/PKG-INFO
+salesdredge.egg-info/SOURCES.txt
+salesdredge.egg-info/dependency_links.txt
+salesdredge.egg-info/entry_points.txt
+salesdredge.egg-info/top_level.txt
