@@ -1,0 +1,9 @@
+README.md
+setup.py
+gain_with_hashi/__init__.py
+gain_with_hashi/hello.py
+gain_with_hashi.egg-info/PKG-INFO
+gain_with_hashi.egg-info/SOURCES.txt
+gain_with_hashi.egg-info/dependency_links.txt
+gain_with_hashi.egg-info/requires.txt
+gain_with_hashi.egg-info/top_level.txt
