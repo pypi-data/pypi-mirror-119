@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+lastfm/__init__.py
+lastfm/cli.py
+lastfm_to_sqlite.egg-info/PKG-INFO
+lastfm_to_sqlite.egg-info/SOURCES.txt
+lastfm_to_sqlite.egg-info/dependency_links.txt
+lastfm_to_sqlite.egg-info/entry_points.txt
+lastfm_to_sqlite.egg-info/requires.txt
+lastfm_to_sqlite.egg-info/top_level.txt

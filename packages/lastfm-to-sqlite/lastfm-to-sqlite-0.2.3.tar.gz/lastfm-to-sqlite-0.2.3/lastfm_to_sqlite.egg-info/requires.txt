@@ -1,0 +1,9 @@
+requests
+sqlite-utils
+
+[docs]
+sphinx
+sphinx-rtd-theme
+
+[test]
+pytest

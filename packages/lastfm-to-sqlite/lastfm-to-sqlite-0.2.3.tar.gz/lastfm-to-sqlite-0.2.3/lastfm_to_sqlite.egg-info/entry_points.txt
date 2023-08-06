@@ -1,0 +1,3 @@
+[console_scripts]
+lastfm = lastfm.cli:cli
+
