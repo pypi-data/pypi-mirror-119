@@ -1,0 +1,20 @@
+peewee>3
+aio-databases>=0.3.8
+
+[:python_version < "3.8"]
+cached_property
+
+[mysql]
+aio-databases[aiomysql]
+
+[postgresql]
+aio-databases[aiopg]
+
+[sqlite]
+aio-databases[aiosqlite]
+
+[tests]
+aio-databases[aiomysql,aiopg,aiosqlite]
+pytest
+pytest-aio
+pytest-mypy
