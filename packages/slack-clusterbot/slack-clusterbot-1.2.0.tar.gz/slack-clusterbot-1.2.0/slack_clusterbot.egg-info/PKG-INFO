@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: slack-clusterbot
+Version: 1.2.0
+Summary: Send messages from your Python scripts to Slack.
+Home-page: https://github.com/sprekelerlab/slack-clusterbot
+Author: Denis Alevi
+Author-email: mail@denisalevi.com
+License: UNKNOWN
+Description: This package sends messages as ``ClusterBot`` from your Python scripts to your Slack workspace. Instructions on how to set up `ClusterBot` on Slack can be found [here](https://github.com/sprekelerlab/slack-clusterbot/wiki/Installation).
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
