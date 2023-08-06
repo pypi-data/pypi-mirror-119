@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: taimin-learn
+Version: 0.0.dev0
+Summary: A set of useless modules for machine learning
+Home-page: UNKNOWN
+Maintainer: Taimin Zhang
+Maintainer-email: zhangtaimin1992@gmail.com
+License: MIT
+Description: # taimin-learn
+        A useless machine learning package
+        
+Platform: UNKNOWN
+Requires-Python: >=3.7

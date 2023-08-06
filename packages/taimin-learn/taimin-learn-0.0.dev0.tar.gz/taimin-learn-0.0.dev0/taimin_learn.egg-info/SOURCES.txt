@@ -1,0 +1,7 @@
+README.md
+setup.py
+taimin_learn.egg-info/PKG-INFO
+taimin_learn.egg-info/SOURCES.txt
+taimin_learn.egg-info/dependency_links.txt
+taimin_learn.egg-info/requires.txt
+taimin_learn.egg-info/top_level.txt
