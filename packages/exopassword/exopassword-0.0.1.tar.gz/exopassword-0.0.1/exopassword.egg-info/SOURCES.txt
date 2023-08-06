@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+exo/__init__.py
+exo/exocore.py
+exopassword.egg-info/PKG-INFO
+exopassword.egg-info/SOURCES.txt
+exopassword.egg-info/dependency_links.txt
+exopassword.egg-info/requires.txt
+exopassword.egg-info/top_level.txt
