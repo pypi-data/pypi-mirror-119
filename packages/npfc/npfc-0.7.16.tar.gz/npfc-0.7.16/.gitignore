@@ -1,0 +1,13 @@
+dist/
+**/__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.eggs/
+*.egg-info/
+tests/tmp/*
+docs/build/*
+./snakemake/*
+docs/build/*
+node_modules/
+**/nodes_modules/**
+bin/package-lock.json
