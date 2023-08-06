@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: main-gas-pipeline
+Version: 0.0.0.2
+Summary: Main gas pipeline calculator
+Home-page: https://github.com/Buzovskiy/main-gas-pipeline/releases/tag/v0.0.0.2
+Author: Buzovskyi Vitaliiy
+Author-email: buzovskiy.v@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![Documentation Status](https://readthedocs.org/projects/main-gas-pipeline/badge/?version=latest)](https://main-gas-pipeline.readthedocs.io/en/latest/?badge=latest)
+
+# Main gas pipelines calculations
+
+A program for thermal and hydraulic calculation of a gas pipeline section between 
+two compressor stations of a main gas pipeline is presented.  
+The purpose of the calculation is to determine the pressure and temperature of the gas at the end of the section.
+
+
+
