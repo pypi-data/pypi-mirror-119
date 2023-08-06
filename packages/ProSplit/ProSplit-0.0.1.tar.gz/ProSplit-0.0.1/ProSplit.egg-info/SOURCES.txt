@@ -1,0 +1,7 @@
+setup.py
+ProSplit.egg-info/PKG-INFO
+ProSplit.egg-info/SOURCES.txt
+ProSplit.egg-info/dependency_links.txt
+ProSplit.egg-info/top_level.txt
+program/__init__.py
+program/split.py

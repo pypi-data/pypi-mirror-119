@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ProSplit
+Version: 0.0.1
+Summary: Streaming video data via networks
+Home-page: UNKNOWN
+Author: NeuralNine (Dyhanov Yaroslav)
+Author-email: <duhanov2003@gmail.com>
+License: UNKNOWN
+Description: somt like that
+Keywords: python,video,stream,video stream,camera stream,sockets
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
