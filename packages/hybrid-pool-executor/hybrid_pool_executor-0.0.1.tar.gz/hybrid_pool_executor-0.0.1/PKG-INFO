@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: hybrid_pool_executor
+Version: 0.0.1
+Summary: Pool executor supporting thread, process and async.
+Home-page: https://github.com/leavers/hybrid-pool-executor
+Author: Leavers
+Author-email: leavers930@gmail.com
+License: MIT
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+HybridPoolExecutor is a parallel executor that supports thead, process and async three operating models at the same time.
+
+Example:
+
+.. code-block:: python
+
+    import asyncio
+    import time
+    import random
+
+    from hybrid_pool_executor import HybridPoolExecutor
+
+
+    def func1():
+        print('func1 starts')
+        time.sleep(random.randint(1, 4))
+        print('func1 ends')
+        return 1
+
+
+    def func2():
+        print('func2 starts')
+        time.sleep(random.randint(1, 4))
+        print('func2 ends')
+        return 2
+
+
+    async def func3():
+        print('func3 starts')
+        await asyncio.sleep(random.randint(1, 4))
+        print('func3 ends')
+        return 3
+
+
+    def test_run():
+        pool = HybridPoolExecutor()
+        future1 = pool.submit(func1)  # run in a thread
+        future2 = pool.submit(func2, mode='process')  # run in a process
+        future3 = pool.submit(func3)  # run as a coroutine
+
+
+    if __name__ == '__main__':
+        test_run()
+
+
+
