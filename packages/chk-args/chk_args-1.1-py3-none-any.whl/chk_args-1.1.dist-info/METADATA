@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: chk-args
+Version: 1.1
+Summary: アノテーションチェッカー
+Home-page: https://github.com/kurages/python_annotations_checker
+Author: kurages
+Author-email: kurages.dev@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/kurages/python_annotations_checker/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# アノテーションチェッカー
+
+## 概要
+```
+Pythonのアノテーションを参考に関数の引数チェックを行います。
+PEP484等に準じ書いてるつもりです。
+```
+
+## 問題点
+> Note that this PEP still explicitly does NOT prevent other uses of annotations, nor does it require (or forbid) any particular processing of annotations, even when they conform to this specification. 
+[引用元](https://www.python.org/dev/peps/pep-0484/#abstract)
+
+現在禁止してるので警告に変更するべきかもしれない
+
+## 使用方法
+```py
+from chk_args import chk_args
+
+@chk_args
+def example(arg_1:int):
+	return arg_1
+
+example(5)
+#result->5
+
+example("a")
+#result->TypeError("The type of argument (arg_1) is int.")
+
+```
+
+
+
