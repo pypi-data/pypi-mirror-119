@@ -1,0 +1,8 @@
+asterisk_doorphone/__init__.py,sha256=0zidg99GTqFiqY10l3V_l2vXAXsCSSvlKZFoC9GJLsE,109
+asterisk_doorphone/assign_buttons.py,sha256=bmPTIipL3JRbkTG0VJfZMdCRmjuiUWpIo3uPZd45VOE,1251
+asterisk_doorphone/asterisk_ami.py,sha256=BZcdMWkRFIY20-Fo3sfeW-o2UcqFnmfVnG6g53tsMWY,3595
+asterisk_doorphone/configure.py,sha256=Gh957mUw3PvC9NfYZL2GsAo2pYinwtsWs8ccUkSZYYo,1254
+asterisk_doorphone/usb_keyboard.py,sha256=H6c0pwdRH3uSOPHdi5mBEr5754iobe4Mrc_3pOg0ijA,4171
+asterisk_doorphone-0.1.3.dist-info/WHEEL,sha256=2adPsdwavOXlr3i4h108dwQdqKgJbVa5zTEEuD11F08,99
+asterisk_doorphone-0.1.3.dist-info/METADATA,sha256=7TeugrrkVqSh54CFQjW4UZEi87WNlVZEdcBiUt5wyUc,471
+asterisk_doorphone-0.1.3.dist-info/RECORD,,
