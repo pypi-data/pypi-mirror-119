@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: lab-orchestrator-ws-proxy
+Version: 0.0.2
+Summary: A Proxy for KubeVirts VNC Websockets. Uses JWT Tokens for Authentication and to transfer data.
+Home-page: https://github.com/LabOrchestrator/WebsocketProxy
+Author: Marco Schlicht
+Author-email: git@privacymail.dev
+License: Mozilla Public License 2.0 (MPL 2.0)
+Project-URL: Bug Tracker, https://github.com/LabOrchestrator/WebsocketProxy/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Websocket Proxy Lib
+
+Library that contains a Proxy for KubeVirts VNC Websockets. It uses JWT Tokens for Authentication and to transfer data.
+
+
