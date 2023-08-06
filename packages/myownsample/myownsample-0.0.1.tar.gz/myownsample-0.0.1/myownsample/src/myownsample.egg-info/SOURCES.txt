@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+myownsample/src/myownsample.py
+myownsample/src/myownsample.egg-info/PKG-INFO
+myownsample/src/myownsample.egg-info/SOURCES.txt
+myownsample/src/myownsample.egg-info/dependency_links.txt
+myownsample/src/myownsample.egg-info/top_level.txt
