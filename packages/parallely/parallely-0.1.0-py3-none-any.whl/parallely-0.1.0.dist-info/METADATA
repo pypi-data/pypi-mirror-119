@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: parallely
+Version: 0.1.0
+Summary: 
+Author: Mikkel Vilstrup
+Author-email: mikkel@vilstrup.dk
+Requires-Python: >=3.7.1,<3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: asyncio (>=3.4.3,<4.0.0)
+Requires-Dist: nest-asyncio (>=1.5.1,<2.0.0)
+Requires-Dist: pathos (>=0.2.8,<0.3.0)

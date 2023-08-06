@@ -1,0 +1,9 @@
+parallely/__init__.py,sha256=D3ArF8uRg6hVCq6Y9-gMKc7WbXAGx2O-CAhzgHDHwHY,143
+parallely/base.py,sha256=VWX7qztRFUi14KyoLiLMQOnPnznLgMFfy9fO7JeZU2o,418
+parallely/coroutines.py,sha256=9qfq8aXPfmdocKmBxG82iRwQT60LhzuwWUvvQ_bUBzE,2388
+parallely/processes.py,sha256=lsuztVlkDHPB-YQ_1njqTTe0HoH-IBL8wnfLp7sKkfI,1240
+parallely/threads.py,sha256=jEJLv36tt4V4cEBPgGhIgT95ogy_fShgnpX6Djz0iuY,890
+parallely/utils.py,sha256=73NJnTRTO3pLVvCDpVegfIx6mugQ-hV_e43atRZ6NoA,1032
+parallely-0.1.0.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+parallely-0.1.0.dist-info/METADATA,sha256=XWk_qDJhW7V-dnj6bsC4Ykk9gI8utSacFKSLJAWFdB0,423
+parallely-0.1.0.dist-info/RECORD,,
