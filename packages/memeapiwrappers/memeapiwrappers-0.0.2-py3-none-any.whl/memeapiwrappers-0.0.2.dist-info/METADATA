@@ -1,0 +1,80 @@
+Metadata-Version: 2.1
+Name: memeapiwrappers
+Version: 0.0.2
+Summary: A big api wrapper which wrappers most of the funny apis :)
+Home-page: https://github.com/ProjectsWithPython/memeapiwrappers
+Author: Haider Ali
+Author-email: ali075398@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/ProjectsWithPython/memeapiwrappers/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+### memeapiwrappers
+
+*What is this wrapper for?*
+
+
+*Its a api wrapper, which has meme images, chuck norris jokes and much more coming in future*
+
+
+*Ok great How do I use it*
+
+
+**In `memeapiwrappers` we have two types of functions `async` and `sync`. We recommand you using `async` so it doesnt block your code because its an api request.**
+
+
+**YOU NEED `aiohttp` for this package, make sure you install it**
+
+
+*Ok ok, where are the examples**
+
+
+*Lets get started with `async` first*
+
+
+```py
+import asyncio
+from meme.main import async_get_meme
+async def main():
+    very_funny_meme = await async_get_meme() # Two optional args
+    print(very_funny_meme)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+```
+
+
+**Chuck Norris Example**
+
+
+```py
+import asyncio
+from chucknorris.main import async_get_chuck_norris_joke
+async def main():
+    very_funny_meme = await async_get_chuck_norris_joke() # Two optional args
+    print(very_funny_meme)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+```
+
+
+**Now the `sync` functions**
+
+
+```py
+from meme.main import get_meme
+print(get_meme()) # Optional args
+```
+
+```py
+from chucknorris.main import get_chuck_norris_joke
+print(get_chuck_norris_joke()) # Optional args
+```
+
