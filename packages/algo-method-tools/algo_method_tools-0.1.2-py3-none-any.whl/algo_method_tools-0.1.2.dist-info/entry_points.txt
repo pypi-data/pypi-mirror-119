@@ -1,0 +1,3 @@
+[console_scripts]
+algo-tools=algo_method_tools.main:main
+
