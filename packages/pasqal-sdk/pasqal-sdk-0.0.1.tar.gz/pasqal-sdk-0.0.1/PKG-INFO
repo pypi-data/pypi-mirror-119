@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pasqal-sdk
+Version: 0.0.1
+Summary: Software development kit for Pasqal cloud platform.
+Home-page: https://github.com/pasqal-io/cloud-sdk
+Maintainer: Pasqal Cloud Services
+Maintainer-email: pcs@pasqal.io
+License: Apache 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7.0
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# Cloud SDK
+
+SDK to be used to access Pasqal Cloud Services.
+
+
