@@ -1,0 +1,2 @@
+nb_log
+fabric2==2.6.0

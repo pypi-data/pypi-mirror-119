@@ -1,0 +1,12 @@
+README.md
+setup.py
+auto_run_on_remote/__init__.py
+auto_run_on_remote/paramiko_util.py
+auto_run_on_remote/remote_config.py
+auto_run_on_remote/run_script_on_remote_server.py
+auto_run_on_remote/set_config.py
+auto_run_on_remote.egg-info/PKG-INFO
+auto_run_on_remote.egg-info/SOURCES.txt
+auto_run_on_remote.egg-info/dependency_links.txt
+auto_run_on_remote.egg-info/requires.txt
+auto_run_on_remote.egg-info/top_level.txt
