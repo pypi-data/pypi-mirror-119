@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: anime-reference
+Version: 0.0.9
+Summary: A reference package for all things anime.
+Home-page: https://github.com/Matt711/anime_reference
+Author: Matt Murray
+Author-email: matthewmurray711@gmail.com
+License: MIT
+Keywords: fandom anime,manga,data mining,anime,anime reference,manga reference
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: beautifulsoup4 (==4.9.3)
+Requires-Dist: requests (==2.25.1)
+Requires-Dist: pandas (==1.2.4)
+Requires-Dist: lxml (==4.6.3)
+Requires-Dist: html5lib (==1.1)
+
+# anime_reference
+
+## Installing
+### Via `pip`
+I wrote this library to quickly get summaries from my favourite anime episodes. Hopefully, you find it easy to use.
+Install using the following command:
+
+```
+pip install anime-reference
+```
+
+### Via GitHub
+Alternatively, you can just clone this repo and import the libraries at your own discretion.
+
+### Documentation
+Currently, the package can get per episode summaries for a few anime titles.
+The package will be expanding to include more and other content as well, but this is a start.
+
+For full details on the Documentation please refer to the [documentation](https://github.com/Matt711/anime_reference/blob/master/Documentation.md).
+
+
