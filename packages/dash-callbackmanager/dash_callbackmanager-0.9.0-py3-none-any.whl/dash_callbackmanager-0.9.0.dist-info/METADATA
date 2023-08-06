@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: dash-callbackmanager
+Version: 0.9.0
+Summary: Dash callback manager, group callbacks easier within code.
+Home-page: https://github.com/envelop-risk/dash-callbackmanager
+License: MIT
+Keywords: dash,callback manager
+Author: Matt Seymour
+Author-email: matt@envelop-risk.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: dash (<3.0.0)
+Project-URL: Repository, https://github.com/envelop-risk/dash-callbackmanager

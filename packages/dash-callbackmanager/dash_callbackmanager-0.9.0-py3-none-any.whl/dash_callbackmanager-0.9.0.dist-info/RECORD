@@ -1,0 +1,7 @@
+dash_callbackmanager/__init__.py,sha256=O8zDstp_WRvVCPfMTsUGFrUEvqS-V1QyPNBbO8khjRE,37
+dash_callbackmanager/manager.py,sha256=N8SC4Qb2N1UrHHQooGlFcfkWscRzXcuNz4H7Snqu3IU,1784
+dash_callbackmanager/tests/test_callbackmanager.py,sha256=j6kH9fwfMDj3traLaZ04SPockGUrHsXA1bfkuZJUweg,1312
+dash_callbackmanager-0.9.0.dist-info/LICENSE,sha256=3iTIQIsbdg6iOHUItxHNssEYAHNk0sR0waCqwmdNF6Q,1079
+dash_callbackmanager-0.9.0.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+dash_callbackmanager-0.9.0.dist-info/METADATA,sha256=sTJRmmTpjYRVwE-P-2IEPyZCIE-kmpNUxbP7AHSCcuQ,705
+dash_callbackmanager-0.9.0.dist-info/RECORD,,
