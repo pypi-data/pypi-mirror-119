@@ -1,0 +1,17 @@
+pyextension/__init__.py,sha256=p5wK8OmIdikVjyxHWq-BuqN23S45JY-gDZ7ChICCMNY,41711
+pyextension/math.py,sha256=jxR2E8WXMt6k5GHptknDm4F6nTYDUOQoMYNzkcXqYYA,11443
+pyextension/password.py,sha256=lXxiGdpstchXF_e6fMYR0idClPJ5oQmpnbeQhd3L9c8,4968
+pyextension/word.py,sha256=vv3F1fKO9ylzfZLkddU25U5qanGWuwSfbnT4YBoEChw,4259
+pyextension/word_bank/__init__.py,sha256=HwyYPXIDUtWdQkjbrohimG1zGs-L1sVRaK3C2MwD3QQ,5532
+tkextension/__init__.py,sha256=Zh_8isZ5c2SyfLF9KTybX0_LM8luk-TfBF0fWjh44xs,10665
+tkextension/blackboard.py,sha256=jqPEkpgSb2WMzvBXeyXeB_bRLcx0id4oYGqso0CAswc,2317
+tkextension/system.py,sha256=gC8JNNGS6CBz_MdqOSPBFmAFvS_nGTCFQnL-swqxdnw,1077
+tkextension/timer.py,sha256=v6EW-_kyqboHROyivWb4OxOuhGPAOIaJQIsP4taXUks,3257
+tkextension/tix.py,sha256=xI__mU2NfXIumx4d61Kn72bDRwc8MWeVlG69ZQxQRFQ,10278
+tkextension/ttk.py,sha256=ggdY8KJ8RPSQt7h7x-7ioYOwv4m2YV5iXfPqd3DRJ6M,4180
+tkextension/turtle.py,sha256=n31p9GZGcYTEaQpVQWYHCrvD_SKCgK_v98Xb-iYSTkE,1897
+Python_Extension-1.3.3.dist-info/LICENSE,sha256=50IZvaOpf8Wo3qEFwm2YRB6cymsGsHkh1ixeY9JCPgQ,667
+Python_Extension-1.3.3.dist-info/METADATA,sha256=T5RFRgXSJs2iY2skoz476KkbS3JGkMEQ-o3P2gAHpgc,899
+Python_Extension-1.3.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+Python_Extension-1.3.3.dist-info/top_level.txt,sha256=sE1epWn5SGGxShDmAiN0skSe0tnakCe1nez2pLSZt2I,24
+Python_Extension-1.3.3.dist-info/RECORD,,
