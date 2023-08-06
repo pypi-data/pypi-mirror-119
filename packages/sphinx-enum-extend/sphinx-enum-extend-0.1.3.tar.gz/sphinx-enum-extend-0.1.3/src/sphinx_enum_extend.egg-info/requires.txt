@@ -1,0 +1,1 @@
+enum-extend>=0.1.1

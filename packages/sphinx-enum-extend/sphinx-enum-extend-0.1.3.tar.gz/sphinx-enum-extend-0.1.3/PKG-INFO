@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: sphinx-enum-extend
+Version: 0.1.3
+Summary: Spinx plugin for documenting enum-extend.AutoEnum
+Home-page: https://github.com/Amourspirit/python-sphinx-enum-extend
+Author: :Barry-Thomas-Paul: Moss
+Author-email: bigbytetech@gmail.com
+License: MIT
+Keywords: python,enum,autoenum,sphinx,sphinx-extension,enum-docstring,enum-extend
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.4.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Sphinx Enum-extend extension
+
+Sphinx Extension for [AutoEnum][2] that allows for auto-documenting python enums.
+
+Extends [autodoc][1] in a way that allows
+for auto generation docs derived from [AutoEnum][2] class.
+
+## Docs
+
+Read the docs [here](https://python-sphinx-enum-extend.readthedocs.io/en/main/)
+
+## Installation
+
+### CONDA
+
+sphinx-enum-extend on [Anaconda](https://anaconda.org/conda-forge/sphinx-enum-extend)
+
+```bash
+conda install -c conda-forge sphinx-enum-extend
+```
+
+### PIP
+
+sphinx-enum-extend on [PyPI](https://pypi.org/project/sphinx-enum-extend/)
+
+```bash
+pip install sphinx-enum-extend
+```
+
+[1]: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
+[2]: https://python-enum-extend.readthedocs.io/en/master/class/AutoEnum.html
+
+
