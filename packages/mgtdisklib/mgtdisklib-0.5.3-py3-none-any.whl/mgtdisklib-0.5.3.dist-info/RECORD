@@ -1,0 +1,14 @@
+mgtdisklib/Disk.py,sha256=o0DSPqAu-9XWm11Sa3xvUmU_QiyO9mnxu7d6VKNBnGc,8309
+mgtdisklib/File.py,sha256=C4O3bV4n5SGzm11cU9dq-ho0MQvMyDP-j-NeFkAw9IE,17161
+mgtdisklib/Image.py,sha256=iaLvKgmzVi9UrxF_3hqrrWP4Sgf4SUQWH6B9g-8kfO0,3957
+mgtdisklib/__init__.py,sha256=PvOdioyKHeGOBVyH6SXJOjNk_m_PkzPvtTcL19lpays,137
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/runtests.py,sha256=ZADQUCKmwEpAEd1dUUi6QlFTFdt1qrVMmdbXyodYJCg,202
+tests/test_disk.py,sha256=IbxTv2P4yaz3gCwh05iIBTnTN5yVhaIltxXW7O4slwI,13231
+tests/test_file.py,sha256=qk9wnqnCynfadFOsfYHb47QTvYzrSPdI6zyWliwcBNs,55186
+tests/test_image.py,sha256=YrdnrrZuUKKsGRPTIT19dYY7XU3LTkNEc5JsgkALSbw,8805
+mgtdisklib-0.5.3.dist-info/License.txt,sha256=0ulIB-04K_ynn26ouxZ3Ab2zm9V3brlt-EgJUCTMMQ0,1102
+mgtdisklib-0.5.3.dist-info/METADATA,sha256=Wj8NSylD4Zj7U0oWBIN2LH2z0HfBpQ1N0L9Z38W5MuA,7919
+mgtdisklib-0.5.3.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+mgtdisklib-0.5.3.dist-info/top_level.txt,sha256=lb1FvcUjC8ZXBwDWd6h7QIlkqZu9qj9MfNSJlEHwzEA,17
+mgtdisklib-0.5.3.dist-info/RECORD,,
