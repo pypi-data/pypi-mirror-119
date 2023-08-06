@@ -1,0 +1,3 @@
+[console_scripts]
+me37 = marke37.convertidor_marke37:main
+

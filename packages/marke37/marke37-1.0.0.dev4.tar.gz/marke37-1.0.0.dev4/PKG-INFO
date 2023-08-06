@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: marke37
+Version: 1.0.0.dev4
+Summary: Un convertidor de letras en formato me37 a HTML, Markdown, y otros formatos.
+Home-page: https://github.com/ramoscarlos/marke37
+Author: Carlos Ramos
+Author-email: carlos@ramoscarlos.com
+License: MIT
+Description: Un convertidor de letras en formato me37 a HTML, Markdown, y otros formatos.
+Platform: UNKNOWN
