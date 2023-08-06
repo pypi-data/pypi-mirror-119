@@ -1,0 +1,3 @@
+[console_scripts]
+eks_node_migrator.py = eksmigrator.cli:main
+
