@@ -1,0 +1,4 @@
+arrow
+pymysql
+google-cloud-storage
+google-cloud-bigquery
