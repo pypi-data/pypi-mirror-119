@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: file_registry
+Version: 0.0.8
+Summary: File management scripts
+Home-page: https://github.com/obozkanucla/file_registry
+Author: O. Burak Ozkan
+Author-email: oburako@gmail.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/pypa/sampleproject/issues
+Project-URL: Funding, https://donate.pypi.org
+Project-URL: Say Thanks!, http://saythanks.io/to/example
+Project-URL: Source, https://github.com/pypa/sampleproject/
+Keywords: sample,setuptools,development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6, <4
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: test
+License-File: LICENSE
+
+# File Registry
+version 0.0.5
+addad pandas as a requirement
+version 0.0.3
+added wordanalysis for __init__
+
+version 0.0.2
+added rootpath for __init__
+
+version 0.0.1
+Basic version 
+
+This is a simple example package. You can use
+[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+to write your content.
+
