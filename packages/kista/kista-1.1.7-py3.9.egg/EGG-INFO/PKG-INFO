@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: kista
+Version: 1.1.7
+Summary: miscellaneous stuff, old norse for bag
+Home-page: https://github.com/circleclick-labs/kista
+Author: Joel Ward
+Author-email: jmward+python@gmail.com
+License: MIT
+Description: # kista
+        kista (old norse for bag)
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
