@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+structprop/__init__.py
+structprop.egg-info/PKG-INFO
+structprop.egg-info/SOURCES.txt
+structprop.egg-info/dependency_links.txt
+structprop.egg-info/requires.txt
+structprop.egg-info/top_level.txt
