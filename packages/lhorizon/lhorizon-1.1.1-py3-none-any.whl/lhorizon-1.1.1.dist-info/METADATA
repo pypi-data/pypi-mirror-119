@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: lhorizon
+Version: 1.1.1
+Summary: lhorizon helps you things in the solar system
+Home-page: https://github.com/millionconcepts/lhorizon.git
+Author: Million Concepts
+Author-email: mstclair@millionconcepts.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.9
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: more-itertools
+Requires-Dist: requests
+Requires-Dist: pandas
+Provides-Extra: benchmarks
+Requires-Dist: memory-profiler ; extra == 'benchmarks'
+Requires-Dist: pympler ; extra == 'benchmarks'
+Requires-Dist: astroquery ; extra == 'benchmarks'
+Provides-Extra: examples
+Requires-Dist: jupyter ; extra == 'examples'
+Provides-Extra: target
+Requires-Dist: spiceypy ; extra == 'target'
+Requires-Dist: sympy ; extra == 'target'
+Provides-Extra: tests
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: pytest-mock ; extra == 'tests'
+Requires-Dist: pytest-cov ; extra == 'tests'
+
+UNKNOWN
+
