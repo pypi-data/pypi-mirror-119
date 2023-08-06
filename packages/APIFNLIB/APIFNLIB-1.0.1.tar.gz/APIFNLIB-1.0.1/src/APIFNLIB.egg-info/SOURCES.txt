@@ -1,0 +1,8 @@
+LICENCE.txt
+README.md
+setup.py
+src/APIFNLIB/__init__.py
+src/APIFNLIB.egg-info/PKG-INFO
+src/APIFNLIB.egg-info/SOURCES.txt
+src/APIFNLIB.egg-info/dependency_links.txt
+src/APIFNLIB.egg-info/top_level.txt
