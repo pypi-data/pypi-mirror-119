@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+setup.py
+fauxgrad/__init__.py
+fauxgrad/nn.py
+fauxgrad/optim.py
+fauxgrad/utils.py
+fauxgrad/value.py
+fauxgrad.egg-info/PKG-INFO
+fauxgrad.egg-info/SOURCES.txt
+fauxgrad.egg-info/dependency_links.txt
+fauxgrad.egg-info/not-zip-safe
+fauxgrad.egg-info/requires.txt
+fauxgrad.egg-info/top_level.txt
+test/test_nn.py
+test/test_value.py

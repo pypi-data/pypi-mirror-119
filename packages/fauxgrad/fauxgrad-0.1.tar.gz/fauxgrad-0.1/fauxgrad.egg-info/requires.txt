@@ -1,0 +1,7 @@
+micrograd
+pytest
+matplotlib
+numpy
+networkx
+sklearn
+ipython>=7.21.0

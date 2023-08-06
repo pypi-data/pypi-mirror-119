@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: fauxgrad
+Version: 0.1
+Summary: A walkthrough of a small engine for automatic differentiation
+Home-page: http://github.com/ksanjeevan/fauxgrad
+Author: Kiran Sanjeevan Cabeza
+Author-email: ksanjeevancabeza@gmail.com
+License: MIT
+Keywords: autodiff automatic differentiation python
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# *fauxgrad*
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/12011058/132263990-4463a85e-a2ef-4b18-b1fb-e9f4ffc831b1.png" width="550px"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/ksanjeevan/fauxgrad/actions/workflows/unit.yaml/badge.svg" />
+
+<a href="https://colab.research.google.com/github/ksanjeevan/fauxgrad/blob/master/fauxgrad_walkthrough.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+</p>
+
+-----------------------------------------
+
+
+### Install
+
+```
+pip install git+https://github.com/ksanjeevan/fauxgrad.git
+```
+
+
