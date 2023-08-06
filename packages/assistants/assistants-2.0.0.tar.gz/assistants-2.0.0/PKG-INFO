@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: assistants
+Version: 2.0.0
+Summary: Reporting assistants for scouts
+Home-page: https://github.com/the-scouts/assistants
+Author: Adam Turner
+License: MIT
+Keywords: reporting,assistants,scouts
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Provides-Extra: compass
+License-File: LICENSE
+
+# assistants
+
+The ***assistants*** project aims to provide useful reporting tools for scouts.
+
+## Where to get it
+
+The source code for the project is hosted on GitHub at
+[the-scouts/assistants](https://github.com/the-scouts/assistants)
+
+## Dependencies
+
+- [pandas](https://github.com/pandas-dev/pandas/) - for data wrangling
+- [pyarrow](https://github.com/apache/arrow/tree/master/python/) - for fast on-disk storage
+- [openpyxl](https://foss.heptapod.net/openpyxl/openpyxl/) - for writing to excel workbooks
+- [compass-interface-core](https://github.com/the-scouts/compass-interface-core/) - for integrating with Compass
+
+## License
+
+***assistants*** is naturally
+[open source](https://github.com/the-scouts/assistants) and is
+licensed under the **[MIT license](https://choosealicense.com/licenses/mit/)**.
+
+

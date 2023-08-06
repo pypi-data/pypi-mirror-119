@@ -1,0 +1,338 @@
+﻿Role,DELMGRGOVSUP,Appt Process,AAC,Refs,Commissioner Approval,Committee / Council,Transition Process,Mod 1,Trustee Intro,Mod 2,Mod 3,Mod 4,Wood Badge,Sect WB,Mgr WB,Disclosure Req,First Aid,Safety,Safeguarding,GDPR,Review,Prereq 4 Full,Membership
+Section Leader - Beavers,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Assistant Section Leader - Beavers,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Section Assistant - Beavers,DEL,1,1,1,1,0,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,Associate Member
+Section Leader - Cubs,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Assistant Section Leader - Cubs,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Section Assistant - Cubs,DEL,1,1,1,1,0,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,Associate Member
+Section Leader - Scouts,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Assistant Section Leader - Scouts,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Section Assistant - Scouts,DEL,1,1,1,1,0,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,Associate Member
+Section Leader - Explorers,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Assistant Section Leader - Explorers,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Section Assistant - Explorers,DEL,1,1,1,1,0,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,Associate Member
+Section Leader - Explorer Scout Young Leaders,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Assistant Section Leader - Explorer Scout Young Leaders,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,Member
+Unit Leader,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,0,1,Member
+Assistant Unit Leader,DEL,1,1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,0,1,Member
+International Service Team Member,DEL,0,0,0,0,0,1,1,0,1,0,1,0,0,0,1,0,1,1,1,0,1,Member
+Group Scout Leader,MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Group Scout Leader (Scotland),MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Acting Group Scout Leader,MGR,0,0,0,0,0,1,1,1,1,0,1,0,0,0,1,0,1,1,1,0,0,Member
+District Commissioner,MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Acting District Commissioner,MGR,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Member
+District Commissioner (Scotland),MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Explorer Scout Commissioner,MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Acting District Explorer Scout Commissioner,MGR,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Member
+District Explorer Scout Commissioner (Scotland),MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Scout Network Commissioner,MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Scout Network Commissioner (Scotland),MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Acting County Commissioner,MGR,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Member
+Bailiwick Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Island Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Acting Area Commissioner,MGR,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Member
+Regional Commissioner (Scotland),MGR,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Acting Regional Commissioner (Scotland),MGR,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Member
+Regional Commissioner,MGR,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Acting Regional Commissioner,MGR,0,0,0,0,0,1,1,0,1,0,1,0,0,0,1,0,1,1,1,0,1,Member
+Chief Commissioner,MGR,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Chief Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Chief Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Chief Commissioner (Branch),MGR,4,0,0,1,0,1,1,0,0,0,0,1,1,0,1,1,1,1,0,1,0,Member
+Chief Scout,MGR,4,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,Member
+UK Chief Commissioner,MGR,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Group Chair,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Group Deputy Chair,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Group Secretary,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Group Treasurer,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Group Executive Member,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Member
+Group Sub-Committee Member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Chair,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+District Deputy Chair,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Secretary,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+District Treasurer,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+District Executive Member,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Appointments Chair,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+District Appointments Secretary,GOV,3,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+District Assistant Appointments Secretary,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+District Appointment Advisory Committee Member,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Sub-Committee Member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Chair,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Area Chair,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Regional Chair (Scotland),GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+County Deputy Chair,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Area Deputy Chair,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Regional (Scotland) Deputy Chair,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+County Secretary,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Area Secretary,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Regional (Scotland) Secretary,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+County Treasurer,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Area Treasurer,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Regional (Scotland) Treasurer,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+County Executive Member,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Area Executive Member,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+County Sub-Committee Member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Sub-Committee Member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Region (Scotland) Sub-Committee Member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Appointments Chair,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Appointments Secretary,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Assistant Appointments Secretary,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Appointment Advisory Committee member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Appointments Chair,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Appointments Secretary,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Assistant Appointments Secretary,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Appointment Advisory Committee Member,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Elected Regional Executive Member (Scotland),GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Regional Appointments Chair (Scotland),GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Regional Appointments Secretary (Scotland),GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Regional Appointments Advisory Committee Member (Scotland),GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Country Chair,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Deputy Country Chair,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Country Treasurer,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Country Executive Committee Member,GOV,2,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Country Sub-Committee Member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Country Appointments Chair,GOV,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Country Appointments Secretary,GOV,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Country Appointment Advisory Committee Member,GOV,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Chair of the UK Board,GOV,4,0,0,1,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Vice Chair of the UK Board,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+TSA Secretary,GOV,3,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,None
+TSA Treasurer,GOV,4,0,0,1,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Elected Member of UK Board,GOV,4,0,0,1,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Appointed Member of the UK Board,GOV,4,0,0,1,0,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+Co-opted Member of the UK Board,GOV,3,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,Member
+UK HQ Appointments Chair,GOV,3,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Member
+UK HQ Appointments Secretary,GOV,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+UK HQ Appointment Advisory Committee Member,GOV,3,0,0,0,1,2,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Committee Chair,GOV,3,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Member
+Committee member,GOV,3,0,0,0,1,2,1,1,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Deputy Group Scout Leader,SUP,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy District Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy District Commissioner (Scotland),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy County Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Area Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Regional Commissioner (Scotland),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Chief Commissioner (Country),SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Chief Commissioner (Country),SUP,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Chief Commissioner (Country),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Commissioner Wales - Programme,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Commissioner Wales - Programme,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Commissioner Wales - Perception,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Commissioner Wales - Projects,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Commissioner Wales - Inclusion,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Commissioner Wales - People,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy UK Chief Commissioner,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+UK Commissioner,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+International Commissioner,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Branches Commissioner,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Branches Commissioner,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Volunteer Head,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Programme Sponsor,SUP,4,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Project Lead,SUP,4,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+POW Member,SUP,4,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Group Skills Instructor,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+District Skills Instructor,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+District Nights Away Adviser,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Nights Away Adviser,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Assistant County Commissioner - Activities,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Area Commissioner - Activities,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Regional Adviser - Activities,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+County Manager of the Activity Permit Scheme,SUP,1,1,1,1,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Manager of the Activity Permit Scheme,SUP,1,1,1,1,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Region (Scotland) Manager of the Activity Permit Scheme,SUP,1,1,1,1,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Supporter of the Nights Away Permit Scheme,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Supporter of the Nights Away Permit Scheme,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Regional (Scotland) Supporter of the Nights Away Permit Scheme,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Assessor,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Area Assessor,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Regional Assessor (Scotland),SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+County Skills Instructor,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Area Skills Instructor,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Northern Ireland Commissioner - Activities,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Northern Ireland Manager of the Activity Permit Scheme,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Country Assessor,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,1,0,Associate Member
+Group Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+District Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Badge Secretary,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Explorer Scout Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+District Awards Advisory Group Member,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Award Certificate Recipient,SUP,3,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+County Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Badge Secretary,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Region (Scotland) Badge Secretary,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Queens Scout Award Coordinator,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Queens Scout Award Coordinator,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Award Certificate Recipient,SUP,3,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Area Award Certificate Recipient,SUP,3,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Regional Administrator (Scotland),SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Awards Advisory Group Member,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Awards Advisory Group Member,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Region (Scotland) Awards Advisory Group Member,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Regional Administrator,SUP,0,0,0,0,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+HQ Administrator,SUP,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Social Media Administrator,SUP,4,0,0,1,0,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Large Events Administrator,SUP,4,0,0,1,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Group Supporter,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Supporter,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Supporter,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Supporter,SUP,3,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Regional Supporter,SUP,1,1,1,1,0,3,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Country Volunteer,SUP,1,1,1,1,0,3,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+HQ Volunteer,SUP,4,0,0,1,0,3,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+District Training Adviser,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+District Training Adviser,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Assistant District Commissioner (Adult Training),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Training Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Training Administrator (Scotland),SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Training Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,1,1,Member
+Area Training Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,1,1,Member
+Assistant Regional Commissioner (Adult Training),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy County Training Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,1,1,Member
+Deputy Area Training Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,1,1,Member
+Local Training Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,0,1,1,1,1,1,1,Member
+Trainer,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Training Adviser,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Regional Training Adviser (Scotland),SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Local Training Administrator,SUP,1,1,1,1,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Training Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Area Training Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Region (Scotland) Training Administrator,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+Assistant Regional Commissioner,SUP,0,0,0,0,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Training Support Manager - England,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scotland Commissioner (Adult Training),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Northern Ireland Commissioner (Adult Support),SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Commissioner Wales Adult Training,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Group Adviser,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+District Adviser,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+County Adviser,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Area Adviser,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Regional Adviser (Scotland),SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Country Adviser,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Assistant District Commissioner - Beaver Section Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant District Commissioner - Cub Section Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant District Commissioner - Scout Section Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant District Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant County Commissioner - Beaver Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Area Commissioner - Beaver Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant County Commissioner - Cub Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Area Commissioner - Cub Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant County Commissioner - Scout Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Area Commissioner - Scout Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant County Commissioner - Explorer Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Area Commissioner - Explorer Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Regional Commissioner (Scotland) - Explorer Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Regional Commissioner (Scotland) - Network Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant County Commissioner - Network Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Area Commissioner - Scout Network Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant County Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant County Commissioner - International,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Area Commissioner - International,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Regional Commissioner Growth (Scotland),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Regional Commissioner,SUP,0,0,0,0,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Country Commissioner - Beaver Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Country Commissioner - Cub Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Country Commissioner - Scout Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Country Commissioner - Explorer Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Country Commissioner - Network Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Country Commissioner - Inclusion,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Country Commissioner - International,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scotland Commissioner (Section),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scotland Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Assistant District Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+District Centre Manager,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+County Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Assistant County Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+County Centre Manager,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Area Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Assistant Area Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Area Centre Manager,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Regional (Scotland) Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Assistant Regional (Scotland) Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Regional (Scotland) Centre Manager,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+NI Commissioner - Crawfordsburn,SUP,3,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Country Camp Warden,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Country Centre Manager,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Group Chaplain,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+District Chaplain,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+County Chaplain,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Area Chaplain,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Regional (Scotland) Chaplain,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Country Chaplain,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Country Chaplain,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Group Communications Manager,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+District Communications Manager,SUP,3,0,0,0,1,2,1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,Associate Member
+County Communications Manager,SUP,1,1,1,1,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Member
+Area Communications Manager,SUP,1,1,1,1,0,2,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Member
+Assistant Regional Commissioner Communications (Scotland),SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Contingent Leader,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Contingent Leader,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Contingent Management Team Member,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Contingent Support Team Member,SUP,4,0,0,1,0,1,1,0,1,0,1,0,0,0,1,0,1,1,1,1,1,Member
+District Leader - Beaver Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Leader - Cub Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Leader - Scout Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Leader - Explorer Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+District Leader,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Leader - Beaver Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Leader - Beaver Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Leader - Cub Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Leader - Cub Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Leader - Scout Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Leader - Cub Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Leader - Explorer Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Leader - Explorer Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Leader - Network Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Leader - Network Support,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Leader,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Group President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Group Vice President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+District President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+District Vice President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+County President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+County Vice President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Area President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Area Vice President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Regional President (Scotland),SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Regional Vice President (Scotland),SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+Country President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Member
+Country Vice President,SUP,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Associate Member
+President,SUP,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Member
+Vice President,SUP,4,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Member
+Safeguarding Awareness Co-ordinator,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Member
+Safety Co-ordinator,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,Associate Member
+Scout Active Support Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scout Active Support Co‑ordinator,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Scout Active Support Member,SUP,0,0,0,0,0,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Scout Active Support Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scout Active Support Co‑ordinator,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Scout Active Support Member,SUP,0,0,0,0,0,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Scout Active Support Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scout Active Support Co‑ordinator,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Scout Active Support Member,SUP,0,0,0,0,0,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Scout Active Support Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scout Active Support Manager,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scout Active Support Co-ordinator,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Scout Active Support Co-ordinator,SUP,1,1,1,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Scout Active Support member,SUP,0,0,0,0,0,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+Scout Active Support Manager,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scout Active Support Co-ordinator,SUP,4,0,0,1,0,1,1,0,0,0,0,0,0,0,1,0,1,1,1,1,0,Associate Member
+Scout Active Support member,SUP,0,0,0,0,0,2,1,0,0,0,0,0,0,0,1,0,1,1,1,0,0,Associate Member
+District Youth Commissioner,SUP,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy District Youth Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant District Commissioner (Youth Involvement),SUP,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+County Youth Commissioner,SUP,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy County Youth Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Area Youth Commissioner,SUP,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Area Youth Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Assistant Regional Commissioner (Youth Involvement),SUP,1,1,1,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Country Youth Commissioner,SUP,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy Country Youth Commissioner,SUP,1,1,1,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Scotland Commissioner (Youth Involvement),SUP,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+UK Youth Commissioner,SUP,4,0,0,1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+Deputy UK Youth Commissioner,SUP,4,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,Member
+zzzz DUMMY ROLE WITH NO REQUIREMENTS zzzz,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,None
