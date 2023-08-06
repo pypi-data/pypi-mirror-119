@@ -1,0 +1,10 @@
+bbx/VERSION,sha256=f70hDr7BH2WpcZDvkAeVxLjaOAWvP1objR0nJVaykso,5
+bbx/__init__.py,sha256=u7EJeiqqiSCVzGkd9zyvDKLvFblfjTG7SoRlAkaItc0,412
+bbx/boxes.py,sha256=5c482Fj9eqZdgduh7402EofeA5uuAPU324WjTK5qg-E,6603
+bbx/ops.py,sha256=3n_2ASLwnLGJo36ejj6LsaeaTJK2AFUYzaqv1QHOA1c,6312
+bbx-1.1.0.dist-info/AUTHORS,sha256=R-NdfYk19zYc_udOJdmtS7mHFac1I0h4wFEKyueGJtQ,39
+bbx-1.1.0.dist-info/LICENSE,sha256=3biB_fr0rDQH_AB3bV5ARRPCZcobQ2lBqrl5HL4v4u8,1070
+bbx-1.1.0.dist-info/METADATA,sha256=59Ag-IcAPKySjLG7fTaDqqlmkffukAMMQzwYzX2reGU,2165
+bbx-1.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+bbx-1.1.0.dist-info/top_level.txt,sha256=E7iKdRziYNGmULUy12t-G4n2Ul9DenwxxZ7RiuoK97Y,4
+bbx-1.1.0.dist-info/RECORD,,
