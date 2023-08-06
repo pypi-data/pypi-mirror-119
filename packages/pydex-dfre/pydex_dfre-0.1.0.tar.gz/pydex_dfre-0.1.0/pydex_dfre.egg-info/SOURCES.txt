@@ -1,0 +1,13 @@
+README.rst
+setup.cfg
+setup.py
+pydex_dfre/__init__.py
+pydex_dfre/cli.py
+pydex_dfre/pydex_dfre.py
+pydex_dfre.egg-info/PKG-INFO
+pydex_dfre.egg-info/SOURCES.txt
+pydex_dfre.egg-info/dependency_links.txt
+pydex_dfre.egg-info/entry_points.txt
+pydex_dfre.egg-info/not-zip-safe
+pydex_dfre.egg-info/requires.txt
+pydex_dfre.egg-info/top_level.txt
