@@ -1,0 +1,16 @@
+scrapealong/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scrapealong/base.py,sha256=vOvgvggDw7WSeCV4Lh6LWAZHA4VdFYdZ_iJzk_bsn74,6885
+scrapealong/common.py,sha256=AkCx1-wTVch4AzH_AfIMWrP2-V6Lex2S0LjO9epfLE0,501
+scrapealong/core.py,sha256=DBaqo8Oxe7zzriXbYj7hSwC0xie4MnGJs2c9RN6Ge4A,565
+scrapealong/fetch.py,sha256=U2JGs4owg63CtX9t8Qtg11r04ifSqS3O50a171jx0KI,4380
+scrapealong/froxyWrapper.py,sha256=UskSQjwl2Jx3ZFHfluHZBAijY8T7Jr3Cq6LEZZbfTrY,2828
+scrapealong/helpers.py,sha256=nzAv79DBtfFSjmMWGmhlPuGBjZVbJrnyg5VZBSke78A,3005
+scrapealong/models.py,sha256=22GhJJJOQaRpoj1Tszeeyu10zDC-I9ecYR7zOmqdFAU,2234
+scrapealong/proxyscrapeWrapper.py,sha256=AluULa0G555-LE_KZvgXzIPNuwhvlbj4ETLq7IvJ34Y,2491
+scrapealong/settings.py,sha256=3E8ygfykgX8QUpcFYsyn0u3LZZu6lvptEsPFnZRFWGI,934
+scrapealong/settings_private.py,sha256=Ek6G9WMuDSuMPBF77aOZ5EHMzDiPX5myfaXkwev3Zh4,163
+scrapealong-0.1.6.dist-info/LICENSE,sha256=OCdc90Uub4CQkqnV_0MXEd9hhp8Mr0_VxaaKmaGioHk,34539
+scrapealong-0.1.6.dist-info/METADATA,sha256=F4t9m5ls8jdiRKIJY79bZH0FvyokE4dzKWd6sdkrtU0,1320
+scrapealong-0.1.6.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+scrapealong-0.1.6.dist-info/top_level.txt,sha256=3zYUdETTj7wJxZwwdBVIU68RHzLZqgDpjXpYhDc7Qh0,12
+scrapealong-0.1.6.dist-info/RECORD,,

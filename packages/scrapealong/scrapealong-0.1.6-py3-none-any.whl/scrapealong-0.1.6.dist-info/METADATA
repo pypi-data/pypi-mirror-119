@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: scrapealong
+Version: 0.1.6
+Summary: Library for scraping data from web sites with async flavour
+Home-page: https://github.com/manuelep/scrapealong2
+Author: Manuele Pesenti
+Author-email: manuele@inventati.org
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/manuelep/scrapealong2/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp
+Requires-Dist: bs4
+Requires-Dist: price-parser
+Requires-Dist: pyppeteer
+Requires-Dist: nest-asyncio
+Requires-Dist: diskcache
+Requires-Dist: mptools (>=1.0.7)
+
+# Scrape-A-Long
+
+Library for scraping data from web sites with async flavour
+
+## Install
+
+```sh
+pip install scrapealong
+```
+
+## System requirements
+
+Download the [Geckodriver release](https://github.com/mozilla/geckodriver/releases)
+that better fit to your selenium version following and adapting instrucion you can
+find [here](https://realpython.com/modern-web-automation-with-python-and-selenium/).
+
+## References
+
+* [Home](https://pypi.org/project/scrapealong/0.1.0/)
+* [Source](https://github.com/manuelep/scrapealong2)
+
+
