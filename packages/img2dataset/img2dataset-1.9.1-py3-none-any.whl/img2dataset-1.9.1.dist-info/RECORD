@@ -1,0 +1,10 @@
+img2dataset/__init__.py,sha256=WIUMvl2AIQ8xjkTh3HIR6XV1HpkG5_BaqqS0mNcUggQ,103
+img2dataset/downloader.py,sha256=o117qafoPVJGrG-LMRKwYJaJp5G4IwLBUpjzHxaA9-k,13824
+img2dataset/logging_utils.py,sha256=tqSpdlIDOEn3lS1b9aXs1pV80BRLJtA4GfVAp4yI3ao,5132
+img2dataset-1.9.1.data/data/README.md,sha256=e8YeQhp8VINUp1bf4zs5i0QBZFU9jbWEZQdBMt9DjGI,9703
+img2dataset-1.9.1.dist-info/LICENSE,sha256=kQ7Sg07ctsEZeQxAgGGT8tsbjz8G5o_kY8ToEkxWfjE,1072
+img2dataset-1.9.1.dist-info/METADATA,sha256=1KLEoy6O4YItGpY7eNLSBLZkelGd8tq7Rlzywl5B7zw,10592
+img2dataset-1.9.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+img2dataset-1.9.1.dist-info/entry_points.txt,sha256=Io2Taw9IWbI9q6ifd7rlWuJxTXDBMoNZdsI3-lpqBlE,50
+img2dataset-1.9.1.dist-info/top_level.txt,sha256=KsqvZBbOY_zffikhqPWGjj61dw5NEbvND06COxxwNEg,12
+img2dataset-1.9.1.dist-info/RECORD,,
