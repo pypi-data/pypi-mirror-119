@@ -1,0 +1,5 @@
+awswrangler
+bokeh
+loguru
+numpy
+pandas
