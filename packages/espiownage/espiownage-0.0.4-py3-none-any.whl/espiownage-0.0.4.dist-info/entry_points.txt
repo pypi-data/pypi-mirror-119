@@ -1,0 +1,3 @@
+[console_scripts]
+ellipse_editor = espiownage.ellipse_editor:ellipse_editor
+
