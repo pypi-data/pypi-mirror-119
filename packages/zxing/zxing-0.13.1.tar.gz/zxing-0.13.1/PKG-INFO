@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: zxing
+Version: 0.13.1
+Summary: Wrapper for decoding/reading barcodes with ZXing (Zebra Crossing) library
+Home-page: https://github.com/dlenski/python-zxing
+Author: Daniel Lenski
+Author-email: dlenski@gmail.com
+License: LGPL v3 or later
+Description: More information: https://github.com/dlenski/python-zxing
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Topic :: Multimedia :: Graphics :: Capture
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Classifier: Topic :: Software Development :: Libraries :: Java Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
