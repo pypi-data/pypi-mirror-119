@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: roaring-landmask
+Version: 0.2.4
+Summary: A fast and limited-memory structure with a landmask based on GSHHG for
+	determing whether a point on Earth is on land or in the ocean
+Home-Page: https://github.com/gauteh/roaring-landmask
+Author: Gaute Hope <eg@gaute.vetsj.com>
+Author-email: Gaute Hope <eg@gaute.vetsj.com>
+License: MIT
+Project-URL: Source Code, https://github.com/gauteh/roaring-landmask
