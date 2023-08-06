@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pyffstream
+Version: 0.0.1.dev1
+Summary: pyffstream.
+Keywords: ffmpeg,streaming,srt
+Author-email: pyffstream@gably.net
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python
+Requires-Dist: platformdirs >=2.1.0
+Requires-Dist: rich
+Requires-Dist: requests
+Requires-Dist: flit ; extra == "dev"
+Requires-Dist: tox ; extra == "dev"
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: isort ; extra == "dev"
+Provides-Extra: dev
+
+## Installation
+
+Todo
+
