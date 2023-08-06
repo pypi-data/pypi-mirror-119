@@ -1,0 +1,3 @@
+[plover.command]
+clear_trans_state = plover_clr_trans_state:clear_state
+
