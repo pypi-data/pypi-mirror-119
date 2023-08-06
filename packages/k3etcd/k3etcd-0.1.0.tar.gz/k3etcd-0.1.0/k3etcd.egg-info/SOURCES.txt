@@ -1,0 +1,10 @@
+setup.py
+k3etcd/__init__.py
+k3etcd/client.py
+k3etcd/setup.py
+k3etcd/synopsis.py
+k3etcd.egg-info/PKG-INFO
+k3etcd.egg-info/SOURCES.txt
+k3etcd.egg-info/dependency_links.txt
+k3etcd.egg-info/requires.txt
+k3etcd.egg-info/top_level.txt
