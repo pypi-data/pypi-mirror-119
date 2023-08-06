@@ -1,0 +1,6 @@
+recursive-include src *.i *.py *.cxx
+recursive-include utils *
+recursive-include libexiv2* *
+recursive-include examples *
+
+include CHANGELOG.txt LICENSE
