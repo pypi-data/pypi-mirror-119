@@ -1,0 +1,11 @@
+mumin/__init__.py,sha256=gtH7gxXz_kLumwDzhLVxXAVY1fb_yxpY_sYqDZvzAzE,474
+mumin/article.py,sha256=7olAh0oGy84lGoLYmNAZ19_8CsD8NhGjS7MtCv869fo,2267
+mumin/dataset.py,sha256=OIKo67gDhgx4CYXVWimyYQ_TptlLCZH6mql_0guna1E,81592
+mumin/dgl.py,sha256=z51XdUIIA7uLPhVDwnydakH45Qj4TN-wB_tk-KUVnjM,7528
+mumin/image.py,sha256=mS3jmXyuSxRk6kq3Rn9l_Oo3-1mVNxp20seY4Y7ttlY,1575
+mumin/twitter.py,sha256=tFawEcKLRgT3-zAMWQy8Hqi82dLgW5Wi2kIK4LSW5Do,8931
+mumin-0.1.2.dist-info/LICENSE,sha256=3oE1zIl18MWKxvXP5l0iLwpvM1r1Yzl23stJ7-Zxhvw,1064
+mumin-0.1.2.dist-info/METADATA,sha256=MqQkA8MOQMD80zmgBU8iO6jOhv6ZqMt8G_dtQRRIccM,4633
+mumin-0.1.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+mumin-0.1.2.dist-info/top_level.txt,sha256=fFrz5J5xfeyXN_PXrU949F6J6MOLSuTaUfyt6JLDs9k,6
+mumin-0.1.2.dist-info/RECORD,,
