@@ -1,0 +1,10 @@
+frozendict>=1.2
+google-auth>=1.31.0
+mock>=4.0.3
+Pillow>=8.3.1
+protobuf>=3.14.0
+pytz>=2021.1
+requests>=2.25.1
+ruamel.yaml<0.16,>=0.15
+six>=1.15.0
+urllib3<2,>=1.26.2
