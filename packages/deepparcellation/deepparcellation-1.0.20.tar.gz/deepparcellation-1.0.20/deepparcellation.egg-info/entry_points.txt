@@ -1,0 +1,3 @@
+[console_scripts]
+deepparcellation = deepparcellation.entry:main
+
