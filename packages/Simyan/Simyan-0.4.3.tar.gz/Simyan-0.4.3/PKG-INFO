@@ -1,0 +1,95 @@
+Metadata-Version: 2.1
+Name: simyan
+Version: 0.4.3
+Summary: A Python wrapper for the Comicvine API.
+Home-page: https://github.com/Buried-In-Code/Simyan
+License: MIT
+Keywords: comics,comic,metadata
+Author: Buried-In-Code
+Author-email: 6057651+Buried-In-Code@users.noreply.github.com
+Maintainer: Buried-In-Code
+Maintainer-email: 6057651+Buried-In-Code@users.noreply.github.com
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Internet
+Classifier: Typing :: Typed
+Requires-Dist: marshmallow (>=3.13.0,<4.0.0)
+Requires-Dist: ratelimit (>=2.2.1,<3.0.0)
+Requires-Dist: requests (>=2.26.0,<3.0.0)
+Project-URL: Issue Tracker, https://github.com/Buried-In-Code/Simyan/issues
+Project-URL: Repository, https://github.com/Buried-In-Code/Simyan
+Description-Content-Type: text/markdown
+
+# Simyan
+
+[![PyPI - Python](https://img.shields.io/pypi/pyversions/Simyan.svg?logo=Python&label=Python-Versions&style=flat-square)](https://pypi.python.org/pypi/Simyan/)
+[![PyPI - Status](https://img.shields.io/pypi/status/Simyan.svg?logo=PyPI&label=Status&style=flat-square)](https://pypi.python.org/pypi/Simyan/)
+[![PyPI - Version](https://img.shields.io/pypi/v/Simyan.svg?logo=PyPI&label=Version&style=flat-square)](https://pypi.python.org/pypi/Simyan/)
+[![PyPI - License](https://img.shields.io/pypi/l/Simyan.svg?logo=PyPI&label=License&style=flat-square)](https://opensource.org/licenses/MIT)
+
+[![Github - Contributors](https://img.shields.io/github/contributors/Buried-In-Code/Simyan.svg?logo=Github&label=Contributors&style=flat-square)](https://github.com/Buried-In-Code/Simyan/graphs/contributors)
+[![Github Action - Code Analysis](https://img.shields.io/github/workflow/status/Buried-In-Code/Simyan/Code-Analysis?logo=Github-Actions&label=Code-Analysis&style=flat-square)](https://github.com/Buried-In-Code/Simyan/actions/workflows/code-analysis.yaml)
+[![Github Action - Tox Testing](https://img.shields.io/github/workflow/status/Buried-In-Code/Simyan/Tox-Testing?logo=Github-Actions&label=Tox-Tests&style=flat-square)](https://github.com/Buried-In-Code/Simyan/actions/workflows/tox-testing.yaml)
+
+[![Code Style - Black](https://img.shields.io/badge/Code%20Style-Black-000000.svg?style=flat-square)](https://github.com/psf/black)
+
+A [Python](https://www.python.org/) wrapper for the [Comicvine](https://comicvine.gamespot.com/api/) API.
+
+## Installation
+
+### PyPI
+
+```bash
+$ pip install Simyan
+```
+
+## Example Usage
+
+```python
+from Simyan import api
+# Your config/secrets
+from config import comicvine_api_key
+
+session = api(api_key=comicvine_api_key)
+
+# Search for Publisher
+results = session.publisher_list(params={'filter': 'name:DC Comics'})
+for publisher in results:
+    print(f"{publisher.id} | {publisher.name} - {publisher.site_url}")
+
+# Get details for a Volume
+result = session.volume(_id=26266)
+print(result.summary)
+```
+
+*There is a cache option to limit required calls to API*
+
+```python
+from Simyan import api, SqliteCache
+# Your config/secrets
+from config import comicvine_api_key
+
+session = api(api_key=comicvine_api_key, cache=SqliteCache())
+
+# Get details for an Issue
+result = session.issue(_id=189810)
+print(f"{result.volume.name} #{result.number}")
+print(result.description)
+```
+
+## Socials
+
+Big thanks to [Mokkari](https://github.com/bpepple/mokkari) for the inspiration and template for this project.
+
+[![Social - Discord](https://img.shields.io/discord/618581423070117932.svg?logo=Discord&label=The-DEV-Environment&style=flat-square&colorB=7289da)](https://discord.gg/nqGMeGg)
