@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+matrix3/__init__.py
+matrix3/cool_matrix.py
+matrix3/matrix.py
+matrix_py3.egg-info/PKG-INFO
+matrix_py3.egg-info/SOURCES.txt
+matrix_py3.egg-info/dependency_links.txt
+matrix_py3.egg-info/entry_points.txt
+matrix_py3.egg-info/requires.txt
+matrix_py3.egg-info/top_level.txt
