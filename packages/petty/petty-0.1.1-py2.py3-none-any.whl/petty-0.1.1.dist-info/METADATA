@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: petty
+Version: 0.1.1
+Summary: methods that often use
+Home-page: https://gitee.com/kin9-0rz/petty
+Author: King Orz
+Author-email: king_orz@hotmail.com
+License: MIT license
+Keywords: petty
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.5
+Requires-Dist: Click (>=7.0)
+Requires-Dist: rich
+Requires-Dist: pandas
+
+=====
+petty
+=====
+
+
+.. image:: https://img.shields.io/pypi/v/petty.svg
+        :target: https://pypi.python.org/pypi/petty
+
+.. image:: https://readthedocs.org/projects/petty/badge/?version=latest
+        :target: https://petty.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+.. image:: https://img.shields.io/pypi/l/petty?color=green
+        :alt: PyPI - License
+
+methods that often use
+
+
