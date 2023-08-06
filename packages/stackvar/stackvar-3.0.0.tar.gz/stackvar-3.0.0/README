@@ -1,0 +1,117 @@
+stackvar
+========
+
+Dispatch function’s parameters through the callstack omitting arguments
+on intermediary functions.
+
+Installing
+----------
+
+https://pypi.org/project/stackvar/
+
+::
+
+   pip install -U stackvar
+
+Example
+-------
+
+.. code:: python
+
+   import stackvar
+
+   def test_stackvar():
+       # sending within a context
+       with stackvar.send(send_email, email='rsanchez@example.com'):
+           foo()
+       # Use default value
+       send_email()
+       # pass specific value
+       send_email('jerry@example.com')
+
+   def foo():
+       # intermediary function
+       bar()
+
+   def bar():
+       # intermediary function
+       send_email()
+
+   @stackvar.receive()
+   def send_email(email: stackvar.Variable = 'morty@example.com'):
+       print(f'Sending email to={email}')
+
+   if __name__ == '__main__':
+       test_stackvar()
+
+Will output
+
+::
+
+   Sending email to=rsanchez@example.com
+   Sending email to=morty@example.com
+   Sending email to=jerry@example.com
+
+Cheatsheet
+----------
+
+.. code:: python
+
+   import stackvar
+   import uuid
+
+   def cheat_sheet_doc():
+       # Using namespace (recommended method)
+       my_namespace = stackvar.Namespace(uuid.uuid4())
+       @stackvar.receive(my_namespace)
+       def send_email(email: stackvar.Variable = 'morty@example.com'):
+           print(f'Sending email to={email}')
+       with stackvar.send(my_namespace, email='rsanchez@example.com'):
+           send_email()
+    
+       # Automatic namespace (solved from function)
+       @stackvar.receive()
+       def send_email2(email: stackvar.Variable = 'morty@example.com'):
+           print(f'Sending email to={email}')
+       with stackvar.send(send_email2, email='rsanchez@example.com'):
+           send_email2()
+    
+       # Without decorator
+       ns_uuid2 = stackvar.Namespace(uuid.uuid4())
+       def send_email_nodecorator():
+           email1 = ns_uuid2.email1
+           # setting default value for a variable
+           email2 = getattr(ns_uuid2, 'email2', 'jerry@example.com')
+           print(f'Sending email1 to={email1} and {email2}')
+           # another fancier way to set a default
+           email2 = stackvar.get(ns_uuid2, email2='summer@example.com')
+           print(f'Sending email1 to={email1} and {email2}')
+       with stackvar.send(ns_uuid2, email1='rsanchez@example.com'):
+           send_email_nodecorator()
+    
+       # No default values
+       ns_uuid3 = stackvar.Namespace(uuid.uuid4())
+       @stackvar.receive(ns_uuid3)
+       def send_no_default(email1: stackvar.Variable, email2: stackvar.Variable):
+           print(f'Sending={email1} and {email2}')
+       with stackvar.send(ns_uuid3,
+                          email1='rsanchez@example.com',
+                          email2='summer@example.com'):
+           send_no_default()
+
+       # Using Factory for mutable values
+       ns_uuid4 = stackvar.Namespace(uuid.uuid4())
+       @stackvar.receive(ns_uuid4)
+       def send_factory(email_list: stackvar.Factory = list):
+           email_list.append('squanchy@example.com')
+           print(f'Sending to={email_list}')
+       with stackvar.send(ns_uuid4):
+           send_factory()
+
+   if __name__ == '__main__':
+       cheat_sheet_doc()
+
+More docs
+---------
+
+Check examples at https://gitlab.com/joaduo/stackvar/-/tree/main/tests
