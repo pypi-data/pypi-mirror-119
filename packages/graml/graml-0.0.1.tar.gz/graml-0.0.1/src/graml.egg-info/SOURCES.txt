@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/graml/__init__.py
+src/graml/main.py
+src/graml.egg-info/PKG-INFO
+src/graml.egg-info/SOURCES.txt
+src/graml.egg-info/dependency_links.txt
+src/graml.egg-info/top_level.txt
