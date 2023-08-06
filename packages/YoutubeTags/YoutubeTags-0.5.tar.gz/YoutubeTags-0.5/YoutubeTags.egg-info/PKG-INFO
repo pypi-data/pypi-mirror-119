@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: YoutubeTags
+Version: 0.5
+Summary: Simple Python Library to Extract YouTube Video Tags without Youtube API
+Home-page: https://github.com/bughunter0/YoutubeTags
+Author: Nuhman Pk
+Author-email: nuhmanpk7@gmail.com
+License: MIT
+Description: # YoutubeTags
+        Python Library to Extract youtube video Tags without Youtube API
+        
+         
+        ## Installation
+        
+        ```python
+        pip install YoutubeTags
+        
+        ```
+        ## Example
+        ```python
+        import YoutubeTags
+        findtags = videotags("https://youtu.be/HhHzCfrqsoE")
+        print(findtags)
+        ```
+        
+        LICENSED under MIT License
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
