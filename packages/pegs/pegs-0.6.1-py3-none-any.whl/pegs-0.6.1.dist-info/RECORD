@@ -1,0 +1,15 @@
+pegs/__init__.py,sha256=dNrT1KvmAOG7dlt1hrkz_NmifjrDrO4TbpNymXNlrRI,186
+pegs/bedtools.py,sha256=2GXsNgSvpNm6LOFF1axx3VsPIHHZRBfT2jSB-iFZen4,4242
+pegs/cli.py,sha256=Jk39543JN4eTa1N48jxOAaOYY1W0QNsmOmffvq4VOk4,13976
+pegs/intervals.py,sha256=uq8CL7gp_pQ4-O_pnUIJtVW-hoVwp-ATSzvLTXnCvEo,3013
+pegs/outputs.py,sha256=rI82xVHzqKTjKzwL-QX0zDOhINuff-AE0oNMwJIIKco,16805
+pegs/pegs.py,sha256=4sIywgilCPDAd3HIbiKwl34AB9i3TxVT8oEAnO-I8Is,16113
+pegs/utils.py,sha256=dth8LfP_bYYQFU2EvxIl942rOVooajH5R73G44UVQ6o,3749
+pegs-0.6.1.data/data/pegs-0.6.1/refGene_hg38_120719_intervals.bed,sha256=BoCczwPUfzAMkyMiZ7WUydQSslgdYQr3L34xiSYZu6U,885922
+pegs-0.6.1.data/data/pegs-0.6.1/refGene_mm10_120719_intervals.bed,sha256=RaCjkdKTkekzsdkGIsUpqKesBXvr315HQ8M3tuxsRDk,781449
+pegs-0.6.1.dist-info/LICENSE,sha256=MTXaoK5WA73ZUwM5RkImvPqwd49avs0FlTsM2USe6ok,1484
+pegs-0.6.1.dist-info/METADATA,sha256=2nd-eSXWmSMZHASTYcS2pfRaG703SklQ_28Y7UghHWQ,6475
+pegs-0.6.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+pegs-0.6.1.dist-info/entry_points.txt,sha256=ONR-sXVV2b-pBr_BQGJYEEb7jyAH4pR1d5H_pD-I1pk,87
+pegs-0.6.1.dist-info/top_level.txt,sha256=x2IyQPYt7LXftM3ezcuxXmNpoSPv0UvzdYy0ujqkedg,5
+pegs-0.6.1.dist-info/RECORD,,
