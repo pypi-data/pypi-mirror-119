@@ -1,0 +1,4 @@
+NuMPI>=0.1.2
+SurfaceTopography>=0.90.0
+muFFT>=0.10.0
+numpy>=1.11.0
