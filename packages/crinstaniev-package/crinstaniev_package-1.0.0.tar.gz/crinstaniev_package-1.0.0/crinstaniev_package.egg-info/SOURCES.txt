@@ -1,0 +1,7 @@
+README.md
+setup.py
+crinstaniev_package.egg-info/PKG-INFO
+crinstaniev_package.egg-info/SOURCES.txt
+crinstaniev_package.egg-info/dependency_links.txt
+crinstaniev_package.egg-info/requires.txt
+crinstaniev_package.egg-info/top_level.txt
