@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+qualysclient/_endpoints/__init__.py
+qualysclient/_endpoints/_ep_assets.py
+qualysclient/_endpoints/_ep_compliance.py
+qualysclient/_endpoints/_ep_reports.py
+qualysclient/_endpoints/_ep_session.py
+qualysclient/_endpoints/endpoint.py
+qualysclient/qualysclient.egg-info/PKG-INFO
+qualysclient/qualysclient.egg-info/SOURCES.txt
+qualysclient/qualysclient.egg-info/dependency_links.txt
+qualysclient/qualysclient.egg-info/requires.txt
+qualysclient/qualysclient.egg-info/top_level.txt
