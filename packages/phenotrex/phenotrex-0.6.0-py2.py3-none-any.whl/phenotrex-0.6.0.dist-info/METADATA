@@ -1,0 +1,104 @@
+Metadata-Version: 2.1
+Name: phenotrex
+Version: 0.6.0
+Summary: Microbial Phenotype Prediction
+Home-page: https://github.com/univieCUBE/phenotrex
+Author: Lukas Lüftinger
+Author-email: lukas.lueftinger@outlook.com
+License: MIT license
+Keywords: phenotrex
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/x-rst
+Requires-Dist: scikit-learn (<=0.23.2,>=0.22)
+Requires-Dist: numpy (>=1.15)
+Requires-Dist: matplotlib (>=3.1.3)
+Requires-Dist: xgboost (<=1.3,>=1.0.1)
+Requires-Dist: shap (<0.36,>=0.34)
+Requires-Dist: click (>=7.0)
+Requires-Dist: biopython (<=1.77,>=1.74)
+Requires-Dist: tqdm (>=4.26.0)
+Requires-Dist: pandas (>=1.0)
+Provides-Extra: fasta
+Requires-Dist: deepnog (==1.2.2) ; extra == 'fasta'
+Requires-Dist: ete3 ; extra == 'fasta'
+
+
+phenotrex
+=========
+
+
+.. image:: https://badge.fury.io/py/phenotrex.svg
+   :target: https://pypi.python.org/pypi/phenotrex
+   :alt: PyPI
+
+.. image:: https://codecov.io/gh/univieCUBE/phenotrex/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/univieCUBE/phenotrex
+   :alt: Codecov
+
+.. image:: https://img.shields.io/lgtm/grade/python/g/LokiLuciferase/phenotrex.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/LokiLuciferase/phenotrex/context:python
+   :alt: Code Quality
+
+.. image:: https://travis-ci.com/univieCUBE/phenotrex.svg?branch=master
+   :target: https://travis-ci.com/univieCUBE/phenotrex
+   :alt: Travis CI
+
+.. image:: https://ci.appveyor.com/api/projects/status/iursmhw1wocfgpua?svg=true
+   :target: https://ci.appveyor.com/project/VarIr/phenotrex
+   :alt: AppVeyor CI
+
+.. image:: https://readthedocs.org/projects/phenotrex/badge/?version=latest
+   :target: https://phenotrex.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+
+End-to-end Microbial Phenotypic Trait Prediction.
+
+Installation
+------------
+
+.. code-block::
+
+    $ pip install phenotrex[fasta]
+
+Usage
+-----
+
+Phenotrex is a component of the `PhenDB`_ web server, which performs phenotypic trait prediction on
+user-uploaded metagenomic bins. To try out phenotrex with PhenDB's pre-trained and curated set of
+trait models, genomes may thus simply be `submitted to PhenDB`_.
+
+Basic Usage
+~~~~~~~~~~~
+To use a trained phenotrex model ``MY_TRAIT.pkl`` for prediction of a phenotypic trait with a
+given genome ``genome.fna``:
+
+.. code-block::
+
+    $ phenotrex predict --classifier MY_TRAIT.pkl genome.fna > predictions.tsv
+
+
+This yields a tabular file containing a prediction regarding the presence of the trait (YES or NO),
+as well as a confidence value the model ascribes to this prediction, ranging from 0.5 to 1.0.
+
+Advanced Usage
+~~~~~~~~~~~~~~
+For training, evaluation and explanation of phenotrex models on user data, please refer to the
+full usage tutorial `here`_.
+
+.. _PhenDB: https://www.phendb.org/
+.. _submitted to PhenDB: https://phen.csb.univie.ac.at/phendb/
+.. _here: https://phenotrex.readthedocs.io/en/latest/usage.html
+
+
+=======
+History
+=======
+
+
+
