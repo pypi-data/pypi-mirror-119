@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: dq_whistler
+Version: 0.0.1a1
+Summary: A comprehensive library for data quality checks
+Home-page: https://github.com/nareshbab/dq_whistler
+Author: Naresh Kumar
+Author-email: nareshbabral@gmail.com
+License: MIT
+Download-URL: https://github.com/nareshbab/dq_whistler/archive/refs/tags/v0.0.1-alpha.tar.gz
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+UNKNOWN
+
