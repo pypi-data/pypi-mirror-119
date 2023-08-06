@@ -1,0 +1,4 @@
+meutils
+gooey
+lac
+paddleocr
