@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: tapad-dgx
+Version: 0.0.0
+Summary: Machine learning pipelines
+Home-page: UNKNOWN
+Author: DGX team
+Author-email: dgx@tapad.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: ==3.7.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# DGX
+
+Machine learning pipelines for identity
+
+
+
