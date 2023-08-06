@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: robotframework-OpenShiftCLI
+Version: 1.0.0
+Summary: Robotframework for OpenShift interactions via CLI
+Home-page: https://github.com/red-hat-data-services/robotframework-OpenShiftCLI
+Author: Vasu Kulkarni
+Author-email: vasu@redhat.com
+License: Apache License 2.0
+Keywords: robotframework openshift cli
+Platform: any
+License-File: LICENSE
+
+This test library provides  keywords to interact with
+Openshift Cluster and perform various operations.
+
