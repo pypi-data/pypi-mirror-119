@@ -1,0 +1,4 @@
+
+      [console_scripts]
+      jrnlsh=jrnlsh:run_cli
+      
