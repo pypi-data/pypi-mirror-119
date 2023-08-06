@@ -1,0 +1,14 @@
+<video id="video_{{ widget.name }}" class="webcampicture_video" style="display: none" width="{{ widget.attrs.width}}" height="{{ widget.attrs.height}}"></video>
+<canvas id="canvas_{{ widget.name }}" style="display: none" width="{{ widget.attrs.width}}" height="{{ widget.attrs.height}}"></canvas>
+<img id="picture_preview_{{ widget.name }}" class="webcamcapture_preview" style="display: none" width="{{ widget.attrs.width}}" height="{{ widget.attrs.height}}">
+<input type="hidden" class="{{ widget.attrs.class }}" name="{{ widget.name }}" id="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(event) {
+    {% if widget.value %}
+        new Webcam("{{ widget.name }}", "{{ widget.value }}", {{ widget.attrs.width }}, {{ widget.attrs.height }});
+    {% else %}
+        new Webcam("{{ widget.name }}", null, {{ widget.attrs.width }}, {{ widget.attrs.height }});
+    {% endif %}
+});
+</script>
