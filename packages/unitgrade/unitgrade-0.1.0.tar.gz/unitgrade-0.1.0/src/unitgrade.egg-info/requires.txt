@@ -1,0 +1,6 @@
+numpy
+tabulate
+tqdm
+pyfiglet
+colorama
+coverage
