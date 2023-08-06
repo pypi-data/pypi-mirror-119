@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+onnxcli/__init__.py
+onnxcli.egg-info/PKG-INFO
+onnxcli.egg-info/SOURCES.txt
+onnxcli.egg-info/dependency_links.txt
+onnxcli.egg-info/requires.txt
+onnxcli.egg-info/top_level.txt
