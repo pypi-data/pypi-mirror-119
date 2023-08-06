@@ -1,0 +1,11 @@
+cordra/__init__.py,sha256=QOkYEsR41A9YHxyl-T2HGr1bAFjH7g9kfgTjTMaSLu4,1207
+cordra/cordraClient.py,sha256=pnIXB2gNig4K10CswgrWtv5G0aBwsgr2rloHwXYtLIk,4287
+cordra/cordraMethods.py,sha256=YpJcOJRYNgiZIhdSfBiIHSxmLZnA7Ke0_88ynEkg3h4,10116
+cordra/cordraObject.py,sha256=Yc1QdaAYviiJn7pw9KQxg3YVdFr_QgNmsRIWOTC98K0,1098
+cordra/dataset.py,sha256=WFKAmLvLpZ3HMkrDJzpu6TrqquI3Qne6F5qq_2J8VYw,1593
+cordra/utils.py,sha256=yC4wdqh9fOmN1gO7ypg8512LI4Z2h-V2iB-AcDRU4Xw,1246
+CordraPy_RDF-0.4.0.dist-info/LICENSE.md,sha256=uhH8ieoQ418ppa63BIsSm3FCi0yutoM94W1SYE7oWvw,1628
+CordraPy_RDF-0.4.0.dist-info/METADATA,sha256=ncKDvLVQb1b4fv3hVAioCI5wMwezORu1vv6iqtiefJ8,402
+CordraPy_RDF-0.4.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+CordraPy_RDF-0.4.0.dist-info/top_level.txt,sha256=IkSLH7gHDXaTGQjDcSm_9wU6JCNuWKU-ZoR-A_kWJ4g,7
+CordraPy_RDF-0.4.0.dist-info/RECORD,,
