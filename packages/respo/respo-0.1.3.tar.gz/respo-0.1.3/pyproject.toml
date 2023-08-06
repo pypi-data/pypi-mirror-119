@@ -1,0 +1,66 @@
+[tool.poetry]
+name = "respo"
+version = "0.1.3"
+description = "File based RBAC in Python made easy"
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/rafsaf/respo"
+documentation = "https://respo.rafsaf.pl"
+repository = "https://github.com/rafsaf/respo"
+authors = ["rafsaf <rafal.safin@rafsaf.pl>"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Typing :: Typed",
+]
+[tool.poetry.dependencies]
+python = "^3.6.1"
+pydantic = "^1.8.2"
+PyYAML = "^5.4.1"
+typer = "^0.4.0"
+colorama = "^0.4.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+coverage = {extras = ["toml"], version = "^5.5"}
+isort = "^5.9.3"
+black = "^20.7b0"
+mkdocs-material = "^7.2.5"
+pymdown-extensions = "^8.2"
+markdown-include = "^0.6.0"
+flake8 = "^3.9.2"
+fastapi = "^0.68.1"
+uvicorn = "^0.15.0"
+requests = "^2.26.0"
+
+[tool.coverage.run]
+source = [
+    "respo",
+    "docs"
+]
+omit = [
+    "**__init__.py**"
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v"
+
+
+[tool.poetry.scripts]
+respo = "respo.typer:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
