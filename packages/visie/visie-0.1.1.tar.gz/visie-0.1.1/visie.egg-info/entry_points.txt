@@ -1,0 +1,3 @@
+[console_scripts]
+visie = visie.__main__:main
+

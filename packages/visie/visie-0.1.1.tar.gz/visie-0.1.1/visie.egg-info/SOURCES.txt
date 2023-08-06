@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+test/test_parser.py
+test/test_visie.py
+visie/__init__.py
+visie/__main__.py
+visie/parser.py
+visie/variants.py
+visie/visie.py
+visie.egg-info/PKG-INFO
+visie.egg-info/SOURCES.txt
+visie.egg-info/dependency_links.txt
+visie.egg-info/entry_points.txt
+visie.egg-info/requires.txt
+visie.egg-info/top_level.txt
