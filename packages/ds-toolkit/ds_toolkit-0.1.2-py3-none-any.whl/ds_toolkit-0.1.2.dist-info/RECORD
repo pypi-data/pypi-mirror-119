@@ -1,0 +1,15 @@
+ds_toolkit/__init__.py,sha256=mdp2CftfqYbdKtP-eWv1z7rAUycYv6X1ntXSMUf8Kss,22
+ds_toolkit/arrays.py,sha256=1yMwy3u9FOafbT3r7QR3ByojkFyXPMIRuqMqAJduf9A,1056
+ds_toolkit/bplist.py,sha256=FlXIeuJdD2MLnzo1MudZNn-KFMcLq5gQKSCgJuuCobY,758
+ds_toolkit/files.py,sha256=wrBjLWq4bub-fPBNscmhGwnNkoQ8sOwKTC8DUZVY6LY,7726
+ds_toolkit/internet.py,sha256=bLEEyn-1rH7lxdpaPPPtNgmjf3mLYsLVfEZxivOMIIU,2014
+ds_toolkit/json_helpers.py,sha256=2_w6zXkS79nGMoDGl6liut4bZvnG0LQ6tKFkFr4TkSk,2164
+ds_toolkit/logger.py,sha256=_Q38Y0LUc9hWT8reBdd3Qb047mNjSrLjdBPolF4Nuk0,587
+ds_toolkit/progress_bar.py,sha256=R0gwlJTgSoHJwzORR5ygHN5wUuG2zQLWeQvnZ7iXX6E,711
+ds_toolkit/text.py,sha256=vQeA4Sb1BBvKaNBBb14_bQFchkls2C-oRmzWnltz3DA,338
+ds_toolkit/time.py,sha256=FATCkgCRHip9mbAESGzqHcmfb4tcikEqEylpV55Vcrk,3396
+ds_toolkit/zip.py,sha256=XGZf_qU4Nh-V3JZ4XREJSLPm4e6NLx73gzAEbt3ri4U,2105
+ds_toolkit-0.1.2.dist-info/LICENSE,sha256=7IHDIyq8FVcin_phV8wCizaZS35YVFIZp2rpKhbHk9w,1068
+ds_toolkit-0.1.2.dist-info/WHEEL,sha256=N0LZrBtofpkS5mJXgVHTCEy52Sam4D6PHQWC8HnMeTs,83
+ds_toolkit-0.1.2.dist-info/METADATA,sha256=jKx_vKx5sCFdvu7ECx8dTLouiSzs7BO5Cj2sU6pRE5U,1118
+ds_toolkit-0.1.2.dist-info/RECORD,,
