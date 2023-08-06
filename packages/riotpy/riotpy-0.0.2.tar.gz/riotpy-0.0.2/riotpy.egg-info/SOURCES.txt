@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+riotpy.egg-info/PKG-INFO
+riotpy.egg-info/SOURCES.txt
+riotpy.egg-info/dependency_links.txt
+riotpy.egg-info/requires.txt
+riotpy.egg-info/top_level.txt
