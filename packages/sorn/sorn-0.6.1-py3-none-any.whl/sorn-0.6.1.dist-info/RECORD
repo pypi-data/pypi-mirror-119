@@ -1,0 +1,10 @@
+sorn/__init__.py,sha256=7iAJkQFf0D_7Z4WkYwfCugzpdfFJz6vrjB3QSeMSqi4,187
+sorn/sorn.py,sha256=f3XMsx4NfqK2rLgwUHmhZx7Vw2DGwNwOC3kYY5DuK0o,39452
+sorn/test_sorn.py,sha256=fKflw64KAA46nm37EhQQNMKnYq9m8vuTQfPZuvwcREY,6236
+sorn/utils.py,sha256=4saYTzwiuVdOkajZIa93A9T9Q48Js2VWvGRMwF4jrXo,36709
+sorn-0.6.1.data/data/LICENSE.md,sha256=oVN-wEEQ3YYnbO-eQn8xW9VBX1j_sOslhNJ-1McTrIc,1104
+sorn-0.6.1.dist-info/LICENSE.md,sha256=oVN-wEEQ3YYnbO-eQn8xW9VBX1j_sOslhNJ-1McTrIc,1104
+sorn-0.6.1.dist-info/METADATA,sha256=8gNrCXW5NeWSgaJD_vGKMO7hQBfLfIW-Rg3vG75RYXA,7013
+sorn-0.6.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+sorn-0.6.1.dist-info/top_level.txt,sha256=cwmZrvA4ht4FuBlo4_T_XXr6Y4PEi5Lg0JOLopykReo,5
+sorn-0.6.1.dist-info/RECORD,,
