@@ -1,0 +1,8 @@
+LICENSE.md
+README.rst
+setup.py
+himod.egg-info/PKG-INFO
+himod.egg-info/SOURCES.txt
+himod.egg-info/dependency_links.txt
+himod.egg-info/top_level.txt
+src/hello_from_C.c
