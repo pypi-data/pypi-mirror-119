@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+ultrasplit/src/ultrasplit.py
+ultrasplit/src/ultrasplit.egg-info/PKG-INFO
+ultrasplit/src/ultrasplit.egg-info/SOURCES.txt
+ultrasplit/src/ultrasplit.egg-info/dependency_links.txt
+ultrasplit/src/ultrasplit.egg-info/top_level.txt
