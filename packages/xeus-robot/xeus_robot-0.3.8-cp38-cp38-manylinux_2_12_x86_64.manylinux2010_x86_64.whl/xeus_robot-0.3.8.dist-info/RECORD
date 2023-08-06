@@ -1,0 +1,12 @@
+xrobot_launcher.py,sha256=B-_Eij8uDu7k1FjPnn8se0qIPX9gpa0GHnOIPVbhSv8,395
+xrobot/xrobot_extension.cpython-38-x86_64-linux-gnu.so,sha256=tXr5w0rf1mtIcyi8pcEYDYCVzbc5NEj7T8mWHq8Ygi0,5218584
+xrobot/__init__.py,sha256=78BBoDLxbRbfn4OsKfskhPHileg8teJR4uJVFXlhCnw,37
+xeus_robot-0.3.8.data/data/share/jupyter/kernels/xrobot/kernel.json,sha256=8ZZ5ISNUjvN6lGC4dBgVx_Hx3JrLxirMzE6SHWLwxHk,266
+xeus_robot-0.3.8.data/data/share/jupyter/kernels/xrobot/kernel.js,sha256=OLqfxRkHRaOw-seQezU9IUH5bAhmjZ_8CNJQaUwF9GI,22658
+xeus_robot-0.3.8.data/data/share/jupyter/kernels/xrobot/logo-32x32.png,sha256=JLjEWDaPoEV_JXmzSuRhbmeP6cWHrODqXUTwqZqPWDI,642
+xeus_robot-0.3.8.data/data/share/jupyter/kernels/xrobot/logo-64x64.png,sha256=aCeFdZFOfd-O39sFiM0SfQ5nKK2ep_CICpcSaclupGc,1137
+xeus_robot-0.3.8.dist-info/RECORD,,
+xeus_robot-0.3.8.dist-info/METADATA,sha256=waUyAlGV-2Az7sZzHKLzo7cCyAdF-RDsPMQNeCjK6ng,455
+xeus_robot-0.3.8.dist-info/LICENSE,sha256=WvdF-7mGwDyzMvBMaZQHGbNiSAlWm1n4fhmQyyvB_MM,1552
+xeus_robot-0.3.8.dist-info/WHEEL,sha256=MnJ4gdit_2nVGKlGImT2QE9qvVAGgrOvPRC1n6x-9Tg,142
+xeus_robot-0.3.8.dist-info/top_level.txt,sha256=eCayGuYoAWEttG3xSrfLGMUf19rYUfsBTEquzT-eWNk,23
