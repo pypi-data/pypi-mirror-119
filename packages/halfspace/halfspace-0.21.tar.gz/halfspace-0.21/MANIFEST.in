@@ -1,0 +1,4 @@
+include images/*
+include halfspace/images/*.png
+include halfspace/fonts/inter/*.ttf
+include halfspace/fonts/playfair/*.ttf
