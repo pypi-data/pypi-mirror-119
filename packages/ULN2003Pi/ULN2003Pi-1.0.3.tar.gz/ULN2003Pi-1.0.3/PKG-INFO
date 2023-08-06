@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: ULN2003Pi
+Version: 1.0.3
+Summary: Package to control a ULN2003 driver for a 28BYJ-48 (or any unipolar) stepper motor on a Raspberry Pi
+Home-page: UNKNOWN
+Author: Ryan Parker
+Author-email: rap71@cam.ac.uk
+License: MIT
+Description: UNKNOWN
+Keywords: ULN2003,28BYJ-48,Stepper,Motor,Stepper-motor,Stepper motor
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
