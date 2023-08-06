@@ -1,0 +1,3 @@
+pycryptodome
+secure-cookie
+brotli
