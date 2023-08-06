@@ -1,0 +1,7 @@
+README.md
+setup.py
+BaseCore/__init__.py
+BaseCore.egg-info/PKG-INFO
+BaseCore.egg-info/SOURCES.txt
+BaseCore.egg-info/dependency_links.txt
+BaseCore.egg-info/top_level.txt
