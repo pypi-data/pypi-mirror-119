@@ -1,0 +1,17 @@
+pyballistics/__init__.py,sha256=75gmis5cZsiNeANqTIj9Ax0Z59Aw4HaGkLUDKs1guWA,224
+pyballistics/gpowders_si.csv,sha256=RDC-FMrZaqKoTSE8Jv2bAd-izYd70UnLvPOBX5eUWPg,16034
+pyballistics/lagrange.cp38-win_amd64.pyd,sha256=xQoHaFWFL5CUsLC1GpRKDkzXzNhk2Emt89nA3Ryq610,299520
+pyballistics/lagrange.pxd,sha256=MXWLa0Fc2juOpiMsDnBfCLV31Mz9maH2J2CqKBaqepk,1404
+pyballistics/lagrange.pyx,sha256=CPf69aCsD9055D_455cO7h-MzxLuA2RaT4O6W5Lss6Y,28834
+pyballistics/options.py,sha256=p7DnEOJx_AFYzAaGwdTrLQftCWBLznW9Ld9UtFlKwQI,29574
+pyballistics/termalconduct.cp38-win_amd64.pyd,sha256=CZCaev4ePlVqce6iuhaMZxleYi34zq4S0dYadbU6mqg,227328
+pyballistics/termalconduct.pxd,sha256=-CZtqqSKVURwb5fFNdWwvKmJQ6m38C3qOweznoHxjOg,864
+pyballistics/termalconduct.pyx,sha256=yYgLaa4QEb88BAVHYf1H_rOdfAkNjDNrzDiqACx5Hf8,6241
+pyballistics/termo.cp38-win_amd64.pyd,sha256=p38rLk74Ro5LmhhvJiSCiJr7cBrewWqikGx9dRSG67U,243200
+pyballistics/termo.pxd,sha256=rLD5H10ay4CP0rpAj-bfS9CPf-11CSGThDkGflNNPEo,2222
+pyballistics/termo.pyx,sha256=xRfj-af9oIF_QuLY8bgBoHTnPrsEHqAXT2-YTYif50k,26501
+pyballistics-1.1.0.dist-info/LICENSE.txt,sha256=Lx6xksMLUEZorTP0wcAcFLYNVeAIF4QgNswNM0XwP_8,1094
+pyballistics-1.1.0.dist-info/METADATA,sha256=ccfEhEV7RHtYueH0n_fXrL7Tta_keOif1jPZhqaI44k,32603
+pyballistics-1.1.0.dist-info/WHEEL,sha256=9MdUI0OzwjYaHl3jWlKFDIJ5MFBPjwppNgWNtexntqg,105
+pyballistics-1.1.0.dist-info/top_level.txt,sha256=8M9IWdHjYz3f1yYadCqMacWlYkr1HjZRxDS2lv-rEzY,13
+pyballistics-1.1.0.dist-info/RECORD,,
