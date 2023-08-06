@@ -1,0 +1,15 @@
+pygl_tetrix/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pygl_tetrix/__main__.py,sha256=0WBAu_1sIkQI42UvWqq1LfmOhnu58ckIFxDVUhIo6lg,2049
+pygl_tetrix/colors.py,sha256=dG4pGLXTdrqViuB_4lE2xzC_HDi5NhJJJx-fbr8Pm6s,870
+pygl_tetrix/controller.py,sha256=sHDGPdGxtyQHuv-saPuA9J6iTjEKlybJ-JEi6LUFLQI,2087
+pygl_tetrix/grid.py,sha256=UxZSQ1rXhe6lFmY5kNAwWEB9w_zYrPaQsjerWrW2Ytg,1926
+pygl_tetrix/labels.py,sha256=0gBDNJ4daX1FSL8i3maqkCvrEylwFGkX7vDUsV2ouH0,401
+pygl_tetrix/piece.py,sha256=yxuGp5Wycm_8uRdXIGxJ5VrWqGRIAwTaImcJTZx3qb8,2791
+pygl_tetrix/ptypes.py,sha256=3vrYOOP2zhwO9kTQIzZ4dQTltr37j2Qvo3CbAtZmMnE,825
+pygl_tetrix/square.py,sha256=X6da2yu3FTaBpo7lMiPKaFBWnlsk7jJkafP6cQ4NHZQ,3429
+pygl_tetrix/trxconst.py,sha256=cIlgnj6GbtgF3EmGC5Zu0YxMTjySQ20ZSmgygn__xvo,272
+PyGL_Tetrix-0.0.1.dist-info/LICENSE,sha256=HDbMJ7oItmxTn3jVtZFi6jUFAHovset5jzAPUderjOc,1073
+PyGL_Tetrix-0.0.1.dist-info/METADATA,sha256=qLI2DUOVAB5OUItpu0pBQ9UVN_Nb62ln2vFDruTQGw0,1472
+PyGL_Tetrix-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+PyGL_Tetrix-0.0.1.dist-info/top_level.txt,sha256=YDFW_XRMH24WLNYyr1y2k98ThYcefaQ7l4svf73rau0,12
+PyGL_Tetrix-0.0.1.dist-info/RECORD,,
