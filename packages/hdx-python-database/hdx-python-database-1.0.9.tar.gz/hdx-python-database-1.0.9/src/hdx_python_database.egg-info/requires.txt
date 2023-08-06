@@ -1,0 +1,5 @@
+hdx-python-utilities>=3.0.2
+sshtunnel
+
+[postgres]
+psycopg2-binary
