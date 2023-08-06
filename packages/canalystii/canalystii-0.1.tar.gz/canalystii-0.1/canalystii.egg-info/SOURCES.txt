@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+canalystii/__init__.py
+canalystii/device.py
+canalystii/protocol.py
+canalystii.egg-info/PKG-INFO
+canalystii.egg-info/SOURCES.txt
+canalystii.egg-info/dependency_links.txt
+canalystii.egg-info/requires.txt
+canalystii.egg-info/top_level.txt
