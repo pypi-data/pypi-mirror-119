@@ -1,0 +1,10 @@
+Django>=2.2
+
+[dev]
+bumpversion<1,>=0.5.3
+wheel
+twine
+pep8
+
+[lint]
+pep8

@@ -1,0 +1,4 @@
+include LICENSE
+include README.rst
+recursive-include volt/static *
+recursive-include volt/templates *
