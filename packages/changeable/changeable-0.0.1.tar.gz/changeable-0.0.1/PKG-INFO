@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: changeable
+Version: 0.0.1
+Summary: Data transforms for object detection.
+Home-page: https://github.com/yatengLG/Changeable
+Author: yatengLG
+Author-email: yatenglg@qq.com
+License: MIT Licence
+Description: Data transforms for object detection base on pytorch.
+Keywords: pip,changeable
+Platform: any
