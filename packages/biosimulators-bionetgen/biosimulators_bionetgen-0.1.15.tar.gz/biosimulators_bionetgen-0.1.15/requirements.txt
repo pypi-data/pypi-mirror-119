@@ -1,0 +1,3 @@
+biosimulators_utils[bngl,logging] >= 0.1.118
+kisao
+pandas

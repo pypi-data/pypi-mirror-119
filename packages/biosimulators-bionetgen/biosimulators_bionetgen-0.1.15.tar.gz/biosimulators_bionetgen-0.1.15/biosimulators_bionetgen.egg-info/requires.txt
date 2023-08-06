@@ -1,0 +1,17 @@
+biosimulators_utils[bngl,logging]>=0.1.118
+kisao
+pandas
+
+[all]
+biosimulators_utils[containers]
+numpy
+pytest
+python_dateutil
+
+[docs]
+
+[tests]
+biosimulators_utils[containers]
+numpy
+pytest
+python_dateutil
