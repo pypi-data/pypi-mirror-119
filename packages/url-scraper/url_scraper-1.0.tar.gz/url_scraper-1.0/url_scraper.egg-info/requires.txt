@@ -1,0 +1,7 @@
+mpi4py>=2.0
+numpy
+selenium
+pandas
+beautifulsoup4
+requests
+sys
