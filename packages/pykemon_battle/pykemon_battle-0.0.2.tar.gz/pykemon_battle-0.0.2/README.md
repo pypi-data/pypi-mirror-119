@@ -1,0 +1,1 @@
+# A library that attempts to build a text-based Pokémon battling system
