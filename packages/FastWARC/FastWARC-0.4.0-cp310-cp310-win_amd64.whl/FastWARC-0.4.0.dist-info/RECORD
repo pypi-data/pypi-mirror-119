@@ -1,0 +1,10 @@
+fastwarc/__init__.py,sha256=rfJfYAOTDvYrIJFTYKFtIakc1EbjRxSExQoHD8-2wVo,767
+fastwarc/cli.py,sha256=4u0vTreISzdUTtrUp5TjsQ-L68rMPavWTP37GOkuxgc,14298
+fastwarc/stream_io.cp310-win_amd64.pyd,sha256=swgCLs26rcRBsVLyql36euy7IIufk9jN50991lfoewQ,112128
+fastwarc/tools.cp310-win_amd64.pyd,sha256=C8K1E1sZgIaRtu9cWD5T14ONFcPUKpI-9QAaV-1ehtw,114688
+fastwarc/warc.cp310-win_amd64.pyd,sha256=JdX5WPvbfzH_nnZbSV368fYSPgLZlh_J7rSsX2b9LWs,248320
+FastWARC-0.4.0.dist-info/METADATA,sha256=_rUEl3HjidOCQm7reuicEiNmPlaH9caeqZMxrZ6ZRAU,2171
+FastWARC-0.4.0.dist-info/WHEEL,sha256=XLhL6_LGbcSb6E23Xy6hQ7SBsl9Luvz0KHWMAPovEWA,102
+FastWARC-0.4.0.dist-info/entry_points.txt,sha256=IW6T7e-kb8Wr7Jd1g3u6zzG5TRVPDbGb0izYCSPZQvY,48
+FastWARC-0.4.0.dist-info/top_level.txt,sha256=kd2NdQA_61TyRclx6gmvrHOEiEqZh8LDqGMxfmsOEDw,9
+FastWARC-0.4.0.dist-info/RECORD,,
