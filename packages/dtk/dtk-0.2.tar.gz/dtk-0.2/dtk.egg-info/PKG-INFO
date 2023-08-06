@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: dtk
+Version: 0.2
+Summary: Dino's library for machine learning and other things
+Home-page: https://github.com/DinoMan/dino-tk.git
+Author: Dino Vougioukas
+Author-email: dinovgk@gmail.com
+License: MIT
+Download-URL: https://github.com/DinoMan/dino-tk/archive/refs/tags/v0.2.tar.gz
+Description: UNKNOWN
+Keywords: machine-learning,toolkit,file operations
+Platform: UNKNOWN
