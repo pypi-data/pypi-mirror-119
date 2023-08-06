@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+Jigglypuff/__init__.py
+Jigglypuff.egg-info/PKG-INFO
+Jigglypuff.egg-info/SOURCES.txt
+Jigglypuff.egg-info/dependency_links.txt
+Jigglypuff.egg-info/not-zip-safe
+Jigglypuff.egg-info/top_level.txt
