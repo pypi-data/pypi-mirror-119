@@ -1,0 +1,8 @@
+tqdm>=4.19.5
+configparser>=3.5.0
+six
+concurrent-log-handler
+pywin32
+
+[:python_version=="2.6"]
+argparse>=1.1
