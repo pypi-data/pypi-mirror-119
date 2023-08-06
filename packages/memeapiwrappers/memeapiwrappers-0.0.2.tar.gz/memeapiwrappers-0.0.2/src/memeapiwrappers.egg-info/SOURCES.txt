@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/chucknorris/__init__.py
+src/chucknorris/main.py
+src/meme/__init__.py
+src/meme/main.py
+src/memeapiwrappers.egg-info/PKG-INFO
+src/memeapiwrappers.egg-info/SOURCES.txt
+src/memeapiwrappers.egg-info/dependency_links.txt
+src/memeapiwrappers.egg-info/top_level.txt
