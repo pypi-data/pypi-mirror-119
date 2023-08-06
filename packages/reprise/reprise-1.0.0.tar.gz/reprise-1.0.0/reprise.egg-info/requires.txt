@@ -1,0 +1,14 @@
+torch>=1.6
+gym
+pyscreenshot
+
+[docs]
+sphinx>=1.4
+sphinx_rtd_theme
+numpydoc
+easydev==0.9.35
+
+[tests]
+pylint
+pytest
+pycodestyle
