@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: CyroWebB
+Version: 0.0.3
+Summary: Backend Framework To Go Together With CyroWebF Frontend Framework.
+Home-page: https://github.com/CyroCoders/CyroWebB
+Author: CyroCoders
+Author-email: pypi@cyrocoders.ml
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/CyroCoders/CyroWebB/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+UNKNOWN
+
