@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: amqp_framework
+Version: 0.1.1
+Summary: Awesome producers and consumers powered by aio_pika.
+Home-page: https://github.com/aobcvr/amqp_framework
+Author: aobcvr
+Author-email: aobcvr@gmail.com
+License: MIT
+Description: # amqp_framework
+        
+        Awesome producers and consumers powered by aio_pika
+        
+        ### Installation
+        
+        ```bash
+        pip install amqp-framework
+        ```
+        
+        ### Example usage
+        
+        - https://github.com/aobcvr/rpg_quest_accounts
+        
+        ### License
+        
+        [MIT](https://en.wikipedia.org/wiki/MIT_License)
+        
+        ### TODO:
+        
+        - [ ] Documentation
+        - [ ] Examples folder
+        
+Keywords: amqp aio_pika
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Provides-Extra: dev

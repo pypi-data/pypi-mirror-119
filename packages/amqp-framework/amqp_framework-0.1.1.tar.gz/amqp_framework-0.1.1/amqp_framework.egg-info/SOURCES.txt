@@ -1,0 +1,14 @@
+README.md
+setup.py
+amqp_framework/__init__.py
+amqp_framework/abstract_consumer.py
+amqp_framework/helpers.py
+amqp_framework/http_status.py
+amqp_framework/producer.py
+amqp_framework/request.py
+amqp_framework/response.py
+amqp_framework.egg-info/PKG-INFO
+amqp_framework.egg-info/SOURCES.txt
+amqp_framework.egg-info/dependency_links.txt
+amqp_framework.egg-info/requires.txt
+amqp_framework.egg-info/top_level.txt
