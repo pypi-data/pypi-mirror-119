@@ -1,0 +1,12 @@
+xrft/__init__.py,sha256=6zJNaUIjL4ywi2sR_8bHuzr1D41zYoouWhP8_xHcMDk,149
+xrft/_version.py,sha256=2BAga5TA6cZ8T5bagASpm2-LmVkPP224p49fGgUy4po,24
+xrft/detrend.py,sha256=gkJ0q-E3nMErnKUFNQo3QyfLzXLwVsDq7ijdqH-uBLk,3004
+xrft/xrft.py,sha256=8mTpkgOVP6u29UhD_tXtVsMvcdpteCgEtWb3glzBuu4,44135
+xrft/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+xrft/tests/test_detrend.py,sha256=4LRsALBCg5vS0K7fLJokbJEcdLMOVk_tZt33NKhEQO4,3990
+xrft/tests/test_xrft.py,sha256=TtmMMot48y2v0sQSM64LZdJSm30_wRy_tu59GL_upi4,45224
+xrft-0.3.1rc0.dist-info/LICENSE,sha256=VTjOjJLNntzH045tAQG_A3C31Cohnk6KY5UatXJvpTE,1103
+xrft-0.3.1rc0.dist-info/METADATA,sha256=6-asuLIQRNM7-_mEGNuViT5i3EqeYRrS3Dfmqn9Vr8w,3916
+xrft-0.3.1rc0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+xrft-0.3.1rc0.dist-info/top_level.txt,sha256=dVtmAH5PHsJqv1kCMBSPA1Uj2mE7scLwUtvp4Of9Bnk,5
+xrft-0.3.1rc0.dist-info/RECORD,,
