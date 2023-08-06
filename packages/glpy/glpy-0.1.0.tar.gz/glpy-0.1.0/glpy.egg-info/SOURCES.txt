@@ -1,0 +1,8 @@
+README.md
+setup.py
+glpy/__init__.py
+glpy/main.py
+glpy.egg-info/PKG-INFO
+glpy.egg-info/SOURCES.txt
+glpy.egg-info/dependency_links.txt
+glpy.egg-info/top_level.txt
