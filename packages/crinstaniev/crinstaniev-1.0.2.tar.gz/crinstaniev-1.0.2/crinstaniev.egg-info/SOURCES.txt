@@ -1,0 +1,10 @@
+README.md
+setup.py
+crinstaniev/__init__.py
+crinstaniev.egg-info/PKG-INFO
+crinstaniev.egg-info/SOURCES.txt
+crinstaniev.egg-info/dependency_links.txt
+crinstaniev.egg-info/requires.txt
+crinstaniev.egg-info/top_level.txt
+crinstaniev/mammals/__init__.py
+crinstaniev/mammals/dog.py
