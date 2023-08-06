@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: HappySearch
+Version: 0.0.1
+Summary: HappySearch
+Home-page: UNKNOWN
+Author: SujithSouryaYedida
+Author-email: sujithsourya.yedida@gmail.com
+License: UNKNOWN
+Keywords: pySearch,py,search,python tutorial,SujithSouryaYedida
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+This is a package used to make searches by giving them the urlWe need to simply need to install this package and simply sayprint(pySearch.search("give a url"))Then you can run the code and can see the website.Developed by Sujith Sourya Yedida
+
