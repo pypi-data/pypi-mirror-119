@@ -1,0 +1,4 @@
+lxml
+Pillow
+requests
+validators

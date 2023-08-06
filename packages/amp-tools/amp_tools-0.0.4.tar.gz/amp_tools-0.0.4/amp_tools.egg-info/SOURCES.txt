@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+amp_tools/__init__.py
+amp_tools/constants.py
+amp_tools/utils.py
+amp_tools.egg-info/PKG-INFO
+amp_tools.egg-info/SOURCES.txt
+amp_tools.egg-info/dependency_links.txt
+amp_tools.egg-info/requires.txt
+amp_tools.egg-info/top_level.txt
+amp_tools/tests/__init__.py
+amp_tools/tests/test_transform_html_to_amp_class.py
+amp_tools/tests/utils.py
