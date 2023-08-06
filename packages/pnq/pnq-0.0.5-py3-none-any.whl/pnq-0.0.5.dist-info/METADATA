@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: pnq
+Version: 0.0.5
+Summary: 
+License: MIT
+Author: sasano8
+Author-email: y-sasahara@ys-method.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# pnq
+PNQ is a Python implementation like Language Integrated Query (LINQ).
+
+# Requirement
+
+- Python 3.7+
+
+# Installation
+
+``` shell
+pip install pnq
+```
+
+# Getting started
+
+
+# Setup
+
+
