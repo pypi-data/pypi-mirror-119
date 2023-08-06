@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: parkinglot
+Version: 0.0.19
+Summary: ParkingLot is a Python service imitating a parking lot like system.
+Home-page: UNKNOWN
+Author: PsychoRover
+License: UNKNOWN
+Description: The service indicates rather a vehicle allowed or not allowed to enter the parking lot.
+Keywords: python,parking,lot,moon,parkinglot
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
