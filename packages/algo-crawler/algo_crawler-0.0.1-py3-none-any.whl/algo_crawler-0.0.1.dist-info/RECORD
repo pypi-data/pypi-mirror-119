@@ -1,0 +1,10 @@
+algo_crawler/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+algo_crawler/__main__.py,sha256=YwE8sLjNCGjGy8tNDS0s-7qUQ29aWoSwecZl5qOHSJ8,878
+algo_crawler/exception.py,sha256=VrfTGJNevJmTiVa9u5nSqTbVCH0r8S7_xxgu2T5R-08,237
+algo_crawler/model.py,sha256=V6kf3nVHNqcA2XFOrmKkw9BQp1OPml86SXGHDzfOUo0,6113
+algo_crawler/test.py,sha256=VRCD_McIxCdrpasEkAOgal6jVKOe-Kubq4CsGg3Pid8,1921
+algo_crawler-0.0.1.dist-info/LICENSE,sha256=T2CI0PlS0irlOXIDcgtNQvzhX6OKxI4JIbOnDozCstg,1096
+algo_crawler-0.0.1.dist-info/METADATA,sha256=h5w8k1HT9Rt0l9qtijab7Ci2RpSOf0bRnjpC9grwpkg,2167
+algo_crawler-0.0.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+algo_crawler-0.0.1.dist-info/top_level.txt,sha256=00O8Xw8-vGh_Fyd1g-MvRO_-uw1Mlf9oxUR8R65MeD4,13
+algo_crawler-0.0.1.dist-info/RECORD,,
