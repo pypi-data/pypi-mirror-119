@@ -1,0 +1,8 @@
+include examples/*
+include src/ThaiPersonalCardExtract/datasets/*
+include src/ThaiPersonalCardExtract/datasets/identity_card/*
+include src/ThaiPersonalCardExtract/datasets/driving_license/*
+include src/ThaiPersonalCardExtract/datasets/thai_government_lottery/*
+include LICENSE.txt
+include README.md
+include requirements.txt
