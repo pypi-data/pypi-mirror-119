@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+distributions_udac_javi/Binomialdistribution.py
+distributions_udac_javi/Gaussiandistribution.py
+distributions_udac_javi/Generaldistribution.py
+distributions_udac_javi/__init__.py
+distributions_udac_javi.egg-info/PKG-INFO
+distributions_udac_javi.egg-info/SOURCES.txt
+distributions_udac_javi.egg-info/dependency_links.txt
+distributions_udac_javi.egg-info/not-zip-safe
+distributions_udac_javi.egg-info/top_level.txt
