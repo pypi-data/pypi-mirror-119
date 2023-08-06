@@ -1,0 +1,16 @@
+Flask
+PyExecJS
+aria2p
+click==7.1.2
+click_aliases==1.0.1
+colorama~=0.4.3
+npyscreen==4.10.5
+pyperclip~=1.8.1
+requests~=2.25.1
+rsa==4.0
+ruamel.base==1.0.0
+ruamel.yaml
+treelib==1.6.1
+
+[:platform_system == "Windows"]
+windows-curses
