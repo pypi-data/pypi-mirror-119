@@ -1,0 +1,124 @@
+#!/bin/bash
+
+# This script is used for wrapping the commit process so that nearly everything
+# can be done with one command.
+
+################################## GLOBALS #####################################
+
+WD="/home/gally/Projects/NPFC/src"
+upgraded="false"
+install="false"
+update_docs="false"
+remote_compil_dir="/home/users/josemanuel.gally/npfc"
+
+################################ FUNCTIONS #####################################
+
+upgrade_version() {
+    upgrade='unset'
+    change_version='unset'
+
+    while true; do
+
+        read -p "Upgrade version? [y/N]: " upgrade
+        upgrade=$(echo $upgrade | tr '[:upper:]' '[:lower:]')
+        if [[ $upgrade = '' || $upgrade = 'n' ]]; then
+            new_version=$curr_version
+            break
+        elif [[ $upgrade = 'y' ]]; then
+            idx_distribution=$(echo $curr_version | cut -d. -f1)
+            idx_version=$(echo $curr_version | cut -d. -f2)
+            idx_release=$(echo $curr_version | cut -d. -f3 | cut -d- -f1)
+            while [[ $change_version != '' && $change_version != 'n' ]]; do
+                upgrade=''
+                read -p "Upgrade to new major release [y/N]: " change_version
+                change_version=$(echo $change_version | tr '[:upper:]' '[:lower:]')
+                if [[ $change_version = '' || $change_version = 'n' ]]; then
+                    # just upgrade release
+                    idx_release=$[ idx_release + 1]
+                elif  [[ $change_version = 'y' ]]; then
+                    idx_release=0
+                    idx_version=$[ idx_version + 1]
+                fi
+                new_version="$idx_distribution.$idx_version.$idx_release"
+                git tag $new_version
+                upgraded="true"
+                # exit nested loop
+                break 2
+            done
+        fi
+    done
+    # update setup.py
+    sed -i "s/    version=.*/    version='${new_version}',/g" setup.py
+}
+
+############################### PARSE ARGUMENTS ################################
+while getopts ":id" opt; do #
+    case $opt in
+        i) install="true";;
+        d) update_docs="true";;
+        \?) echo "Invalid option: -$OPTARG" >&2 ; exit 1;;
+        :)  echo "Option -$OPTARG requires an argument." >&2 ; exit 1;;
+    esac
+done
+
+################################### BEGIN ######################################
+# init
+curr_version=$(git describe --tags)
+cd $WD
+
+# add changes
+git add $WD
+
+# run commitizen prompt
+npx git-cz
+
+# display current git tag
+echo -e "\nCurrent version is: '$curr_version'\n"
+
+# upgrade version
+upgrade_version
+
+echo -e "\nCurrent version is now: '$new_version'\n"
+
+# install library
+if [[ $install = 'true' ]]; then
+    # uninstall previous version
+    echo -e "\nUninstalling previous version\n"
+    pip uninstall -y npfc
+    # find out package name
+    package="npfc-${new_version}.tar.gz"
+    echo -e "\nInstalling package '$package'\n"
+    # create archive
+    python setup.py sdist
+    # install archive
+    cd dist
+    pip install $package
+    cd ..
+fi
+
+#################################### DOCS ######################################
+if [[ $update_docs = 'true' ]]; then
+    echo -e "\nRegenerating the docs...\n"
+
+    # pyreverse
+    echo -e "Computing class and import hierarchy with pyreverse..."
+    # 2 dot files: packages and classes
+    pyreverse -my -A -p npfc npfc/
+    # packages
+    grep -v '\"0\"' packages_npfc.dot > packages_npfc.dot.tmp
+    dot packages_npfc.dot.tmp -Tsvg > docs/source/_images/packages_npfc.svg
+    rm packages_npfc.dot packages_npfc.dot.tmp
+    # classes
+    dot classes_npfc.dot -Tsvg > docs/source/_images/classes_npfc.svg
+    rm classes_npfc.dot
+
+    # sphinx
+    echo -e "Creating the docs with sphinx..."
+    cd docs
+    make html
+    cd ..
+fi
+
+################################### END ########################################
+# exit code
+exit 0

@@ -1,0 +1,672 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>npfc.utils &mdash; npfc 0.7.12-11-g0395543e documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> npfc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.12-11-g0395543e
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../duplicate.html">duplicate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../draw.html">draw</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filter.html">filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fragment_search.html">fragment_search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fragment_combination.html">fragment_combination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fragment_combination_graph.html">fragment_combination_graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fragment_combination_point.html">fragment_combination_point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../load.html">load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebook.html">notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../save.html">save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../standardize.html">standardize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">npfc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>npfc.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for npfc.utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module utils</span>
+<span class="sd">================</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># standard</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">signal</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="c1"># data handling</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="c1"># typing</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">AllChem</span> <span class="k">as</span> <span class="n">Chem</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem</span> <span class="kn">import</span> <span class="n">Mol</span>
+<span class="c1"># chemoinformatics</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+
+<span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GLOBALS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #</span>
+
+
+<span class="c1"># allowed suffixes</span>
+<span class="n">EXTS_INPUT</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;.sdf&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;.sdf&#39;</span><span class="p">,</span> <span class="s1">&#39;.gz&#39;</span><span class="p">],</span>
+              <span class="p">[</span><span class="s1">&#39;.csv&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;.gz&#39;</span><span class="p">],</span>
+              <span class="p">[</span><span class="s1">&#39;.log&#39;</span><span class="p">],</span>  <span class="c1"># for loading formatted log files</span>
+              <span class="p">[</span><span class="s1">&#39;.hdf&#39;</span><span class="p">],</span>
+              <span class="p">[</span><span class="s1">&#39;.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;.gz&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;.model&#39;</span><span class="p">,</span> <span class="s1">&#39;.gz&#39;</span><span class="p">]</span>  <span class="c1"># model files for computing sa and np scores</span>
+              <span class="p">]</span>  <span class="c1"># , [&#39;.feather&#39;]]  # tests with feather work but not in production, dig into that later</span>
+
+<span class="n">EXTS_CONFIG</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;.json&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;.mplstyle&#39;</span><span class="p">]]</span>
+
+<span class="c1"># types</span>
+<span class="n">Number</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+<span class="n">Output_files</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]</span>
+
+
+<span class="c1"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #</span>
+
+
+<div class="viewcode-block" id="get_file_format"><a class="viewcode-back" href="../../utils.html#npfc.utils.get_file_format">[docs]</a><span class="k">def</span> <span class="nf">get_file_format</span><span class="p">(</span><span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Deduce how the file should be parsed based on its suffixes.</span>
+
+<span class="sd">    Only compressions for one single file with initial extension still visibile</span>
+<span class="sd">    work (see example below).</span>
+
+<span class="sd">    &gt;&gt;&gt; from pathlib import Path</span>
+<span class="sd">    &gt;&gt;&gt; from npfc import utils</span>
+<span class="sd">    &gt;&gt;&gt; utils.get_file_format(Path(&#39;file.csv.gz&#39;).suffixes)</span>
+<span class="sd">    &gt;&gt;&gt; # returns (&#39;CSV&#39;, &#39;gzip&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; utils.get_file_format(Path(&#39;file.sdf&#39;).suffixes)</span>
+<span class="sd">    &gt;&gt;&gt; # returns (&#39;SDF&#39;, None)</span>
+
+<span class="sd">    :param suffixes: suffixes of a file</span>
+<span class="sd">    :return: a tuple with syntax (format, compression)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">suffixes</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span><span class="o">.</span><span class="n">suffixes</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Input file Suffixes are: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">suffixes</span><span class="p">)</span>
+    <span class="c1"># is the file an archive?</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">suffixes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">compression</span> <span class="o">=</span> <span class="n">suffixes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;File is an archive with compression=</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">compression</span><span class="p">)</span>
+        <span class="c1"># special case for gzip so .gz files can be read directly with pandas</span>
+        <span class="k">if</span> <span class="n">compression</span> <span class="o">==</span> <span class="s1">&#39;.gz&#39;</span><span class="p">:</span>
+            <span class="n">compression</span> <span class="o">=</span> <span class="s1">&#39;gzip&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Error! Unexpected value for compression suffix: &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">compression</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">compression</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># return format and compression</span>
+    <span class="k">if</span> <span class="n">suffixes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;.sdf&#39;</span><span class="p">,</span> <span class="s1">&#39;.mol&#39;</span><span class="p">,</span> <span class="s1">&#39;.sd&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;SDF&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">suffixes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.csv&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;CSV&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">suffixes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;.hdf&#39;</span><span class="p">,</span> <span class="s1">&#39;hf5&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;HDF&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">suffixes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.feather&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;FEATHER&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="check_arg_bool"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_bool">[docs]</a><span class="k">def</span> <span class="nf">check_arg_bool</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the value is indeed a boolean, raise a TypeError otherwise.</span>
+
+<span class="sd">    :param value: the argument to test</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Expected a boolean but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead (</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="parse_argparse_boolstring"><a class="viewcode-back" href="../../utils.html#npfc.utils.parse_argparse_boolstring">[docs]</a><span class="k">def</span> <span class="nf">parse_argparse_boolstring</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True or False given the provided string. If the string is actually not a boolean, raise a TypeError.</span>
+
+<span class="sd">    :param value: the argument to test</span>
+<span class="sd">    :return: the parsed boolean as type bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Could not parse provided boolean string (</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="check_arg_positive_number"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_positive_number">[docs]</a><span class="k">def</span> <span class="nf">check_arg_positive_number</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the value is indeed a positive number (&gt;0), raise a TypeError otherwise.</span>
+
+<span class="sd">    :param value: the argument to test</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;value is </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="c1"># possible value for Number is None if argument is left unset</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="c1"># if not None, then looks what it is</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Number</span><span class="o">.</span><span class="n">__args__</span><span class="p">):</span>  <span class="c1"># might be a hack but Union object is not compatible with isinstance</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Expected a positive number but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead (</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Expected a positive number but got </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="check_arg_input_file"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_input_file">[docs]</a><span class="k">def</span> <span class="nf">check_arg_input_file</span><span class="p">(</span><span class="n">input_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the input_file exists, raise an error otherwise.</span>
+
+<span class="sd">    :param input_file: the input file</span>
+<span class="sd">    :param input_format: the expected format of the input file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path_input_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">path_input_file</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Input file could not be found at &#39;</span><span class="si">{</span><span class="n">input_file</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">path_input_file</span><span class="o">.</span><span class="n">suffixes</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXTS_INPUT</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Unexpected &#39;</span><span class="si">{</span><span class="n">path_input_file</span><span class="o">.</span><span class="n">suffixes</span><span class="si">}</span><span class="s2">&#39; for input format.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="check_arg_input_dir"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_input_dir">[docs]</a><span class="k">def</span> <span class="nf">check_arg_input_dir</span><span class="p">(</span><span class="n">input_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the input_dir exists.</span>
+
+<span class="sd">    :param input_dir: the output directory</span>
+<span class="sd">    :return: True if the directory exists.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># output_format</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">p</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Input dir could not be found at &#39;</span><span class="si">{</span><span class="n">input_dir</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="check_arg_output_file"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_output_file">[docs]</a><span class="k">def</span> <span class="nf">check_arg_output_file</span><span class="p">(</span><span class="n">output_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">create_parent_dir</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the output_file has the expected format (deduced from the file extension).</span>
+
+<span class="sd">    If the parent directory of the output file does not exist, it has to either be created or fail the check.</span>
+
+<span class="sd">    :param output_file: the output file</span>
+<span class="sd">    :param create_parent_dir: create the output file&#39;s parent folder in case it does not exist</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># output_format</span>
+    <span class="n">path_output_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">path_output_file</span><span class="o">.</span><span class="n">suffixes</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXTS_INPUT</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Unexpected value &#39;</span><span class="si">{</span><span class="n">path_output_file</span><span class="o">.</span><span class="n">suffixes</span><span class="si">}</span><span class="s2">&#39; for output format.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create_parent_dir</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">path_output_file</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">create_parent_dir</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output_dir could not be found at &#39;</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">&#39;, attempting to create it.&quot;</span><span class="p">)</span>
+            <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Output_dir could not be found at &#39;</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="check_arg_output_plot"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_output_plot">[docs]</a><span class="k">def</span> <span class="nf">check_arg_output_plot</span><span class="p">(</span><span class="n">output_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">create_parent_dir</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the output_plot has the expected format (deduced from the file extension).</span>
+
+<span class="sd">    Accepted extensions are: svg and png.</span>
+
+<span class="sd">    If the parent directory of the output file does not exist, it has to either be created or fail the check.</span>
+
+<span class="sd">    :param output_file: the output file</span>
+<span class="sd">    :param create_parent_dir: create the output file&#39;s parent folder in case it does not exist</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># output_format</span>
+    <span class="n">path_output_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">path_output_file</span><span class="o">.</span><span class="n">suffixes</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[[</span><span class="s1">&#39;.svg&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;.png&#39;</span><span class="p">]]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Unexpected value &#39;</span><span class="si">{</span><span class="n">path_output_file</span><span class="o">.</span><span class="n">suffixes</span><span class="si">}</span><span class="s2">&#39; for output plot.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create_parent_dir</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">path_output_file</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">create_parent_dir</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output_dir could not be found at &#39;</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">&#39;, attempting to create it.&quot;</span><span class="p">)</span>
+            <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Output_dir could not be found at &#39;</span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="check_arg_output_dir"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_output_dir">[docs]</a><span class="k">def</span> <span class="nf">check_arg_output_dir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the output_dir can exist.</span>
+
+<span class="sd">    If the parent directory of the output dir does not exist, it has to either be created or fail the check.</span>
+
+<span class="sd">    :param output_dir: the output directory</span>
+<span class="sd">    :param create_parent_dir: create the output file&#39;s parent folder in case it does not exist</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># output_format</span>
+    <span class="n">path_output_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">path_output_file</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">path_output_file</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="check_arg_config_file"><a class="viewcode-back" href="../../utils.html#npfc.utils.check_arg_config_file">[docs]</a><span class="k">def</span> <span class="nf">check_arg_config_file</span><span class="p">(</span><span class="n">config_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return True of the config_file exists, raise an error otherwise.</span>
+
+<span class="sd">    :param input_file: the input file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">config_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">path_config_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path_config_file</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Input file could not be found at &#39;</span><span class="si">{</span><span class="n">config_file</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">path_config_file</span><span class="o">.</span><span class="n">suffixes</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXTS_CONFIG</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error! Unexpected &#39;</span><span class="si">{</span><span class="n">path_config_file</span><span class="o">.</span><span class="n">suffixes</span><span class="si">}</span><span class="s2">&#39; for config format.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="k">def</span> <span class="nf">_configure_logger</span><span class="p">(</span><span class="n">log_level</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">logger_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">reset_handlers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">logging</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Configure the logging in a centralized way. This is useful for scripts mostly.</span>
+
+<span class="sd">    :param log_level: the logging level to use, accepted values are: CRITICAL, ERROR, WARNING, INFO, DEBUG.</span>
+<span class="sd">    :param logger_name: specify a name for the logger. If none, __name__ is used. If within a loop, better speficy a logger name, as logging messages would otherwise stack.</span>
+<span class="sd">    :param log_file: if specified, the logging messages will be written to the corresponding file, in addition to stdout.</span>
+<span class="sd">    :return: a logger object that can be reset</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">reset_handlers</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">handlers</span><span class="p">[:]:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">removeHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">logger_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">logger_name</span> <span class="o">=</span> <span class="vm">__name__</span>
+    <span class="c1"># define level with DEBUG instead of logging.DEBUG or numbers</span>
+    <span class="n">numeric_level</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">logging</span><span class="p">,</span> <span class="n">log_level</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">numeric_level</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Invalid log level: </span><span class="si">{</span><span class="n">log_level</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># create the logger</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">logger_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">numeric_level</span><span class="p">)</span>
+    <span class="c1"># define format</span>
+    <span class="k">if</span> <span class="n">log_level</span> <span class="o">==</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">:</span>
+        <span class="n">format_string</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> -- </span><span class="si">%(levelname)s</span><span class="s2"> -- </span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> -- </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">format_string</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> -- </span><span class="si">%(levelname)s</span><span class="s2"> -- </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">log_format</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="n">format_string</span><span class="p">)</span>
+
+    <span class="c1"># Creating and adding the console handler</span>
+    <span class="n">console_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+    <span class="n">console_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">log_format</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
+
+    <span class="c1"># Creating and adding the file handler</span>
+    <span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">logger_name</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">log_format</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+
+    <span class="c1"># avoid tons of duplicated log messages when executing code from modules</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">propagate</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">logger</span>
+
+
+<div class="viewcode-block" id="encode_object"><a class="viewcode-back" href="../../utils.html#npfc.utils.encode_object">[docs]</a><span class="k">def</span> <span class="nf">encode_object</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert an object to a base64 string.</span>
+
+<span class="sd">    :param element: an object to encode</span>
+<span class="sd">    :return: an base64 string upon success, None otherwise</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">element</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="decode_object"><a class="viewcode-back" href="../../utils.html#npfc.utils.decode_object">[docs]</a><span class="k">def</span> <span class="nf">decode_object</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert a base64 string to an object.</span>
+
+<span class="sd">    :param string: a base64 string encoding an object</span>
+<span class="sd">    :return: an object upon success, None otherwise</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="encode_mol"><a class="viewcode-back" href="../../utils.html#npfc.utils.encode_mol">[docs]</a><span class="k">def</span> <span class="nf">encode_mol</span><span class="p">(</span><span class="n">mol</span><span class="p">:</span> <span class="n">Mol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert a molecule to a base64 string.</span>
+
+<span class="sd">    :param mol: the input molecule</span>
+<span class="sd">    :return: the molecule in base64</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">ToBinary</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="decode_mol"><a class="viewcode-back" href="../../utils.html#npfc.utils.decode_mol">[docs]</a><span class="k">def</span> <span class="nf">decode_mol</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mol</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert a string to a RDKit Mol object.</span>
+
+<span class="sd">    :param string: a string with a Mol object in bytes with a base64 string representation</span>
+<span class="sd">    :return: a Mol object upon success, None otherwise</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Mol</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="encode_mol_smiles"><a class="viewcode-back" href="../../utils.html#npfc.utils.encode_mol_smiles">[docs]</a><span class="k">def</span> <span class="nf">encode_mol_smiles</span><span class="p">(</span><span class="n">mol</span><span class="p">:</span> <span class="n">Mol</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert a mol to a Smiles.</span>
+
+<span class="sd">    :param string: a string with a Mol object in bytes with a base64 string representation</span>
+<span class="sd">    :return: a str object upon success, None otherwise</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="decode_mol_smiles"><a class="viewcode-back" href="../../utils.html#npfc.utils.decode_mol_smiles">[docs]</a><span class="k">def</span> <span class="nf">decode_mol_smiles</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mol</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Convert a Smiles to a Mol.</span>
+
+<span class="sd">    :param string: a string with a Mol object in bytes with a base64 string representation</span>
+<span class="sd">    :return: a Mol object upon success, None otherwise</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="get_shortest_path_between_frags"><a class="viewcode-back" href="../../utils.html#npfc.utils.get_shortest_path_between_frags">[docs]</a><span class="k">def</span> <span class="nf">get_shortest_path_between_frags</span><span class="p">(</span><span class="n">mol</span><span class="p">:</span> <span class="n">Mol</span><span class="p">,</span> <span class="n">aidxf1</span><span class="p">:</span> <span class="nb">set</span><span class="p">,</span> <span class="n">aidxf2</span><span class="p">:</span> <span class="nb">set</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Return the shortest path within a molecule between two fragments defined by atom indices.</span>
+<span class="sd">    First and last atom indices are part of respectively fragment 1 and fragment 2, so they should not</span>
+<span class="sd">    be considered when estimating the distance between fragments.</span>
+
+<span class="sd">    (i.e. distance = len(shortest_path) - 2)</span>
+
+<span class="sd">    :param mol: The input molecule.</span>
+<span class="sd">    :param aidxf1: the atom indices of the first fragment found in the molecule</span>
+<span class="sd">    :param aidxf2: the atom indices of the second fragment found in the molecule</span>
+<span class="sd">    :return: the atom indices of the shortest path between both fragments. The first index is the attachment point from fragment 1 whereas the last index is the attachment point from fragment 2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 1/ compute every pairwise atom combination between both fragments</span>
+    <span class="n">pairwise_combinations</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">aidxf1</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">aidxf2</span><span class="p">))</span>
+    <span class="c1"># 2/ for each of those, compute the shortest path possible</span>
+    <span class="n">pairwise_combinations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pairwise_combinations</span><span class="p">)</span>
+    <span class="n">all_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">GetShortestPath</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">pc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">pc</span> <span class="ow">in</span> <span class="n">pairwise_combinations</span><span class="p">]</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Looking for the shortest path shortest path among these:&quot;</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Path (</span><span class="si">%s</span><span class="s2">): </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_paths</span><span class="p">)]</span>
+    <span class="c1"># 3/ return one of the shortest pathes</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_paths</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="fuse_rings"><a class="viewcode-back" href="../../utils.html#npfc.utils.fuse_rings">[docs]</a><span class="k">def</span> <span class="nf">fuse_rings</span><span class="p">(</span><span class="n">rings</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check for atom indices in common between rings to aggregate them into fused rings.</span>
+
+<span class="sd">    :param rings: the ring atoms as provided by the RDKit function mol.GetRingInfo().AtomRings() (iteratble of iteratable of atom indices).</span>
+<span class="sd">    :return: the fused ring atoms (list of lists of atom indices)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># condition to exit from recursive fusion of ring atom indices</span>
+    <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+        <span class="n">fused_rings</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">num_rings</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rings</span><span class="p">)</span>
+        <span class="c1"># pairwise check for common atoms between rings</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rings</span><span class="p">):</span>
+            <span class="c1"># define a core</span>
+            <span class="n">fused_ring</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">rings</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_rings</span><span class="p">):</span>
+                <span class="c1"># detect if ring is fused</span>
+                <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">rings</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">rings</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+                    <span class="c1"># add fused ring to our rign atom list</span>
+                    <span class="n">fused_ring</span> <span class="o">=</span> <span class="n">fused_ring</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">rings</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="c1"># either lone or fused ring, first check if not already in fused_rings</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">fused_ring</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fused_rings</span><span class="p">]):</span>
+                <span class="k">continue</span>
+            <span class="n">fused_rings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">fused_ring</span><span class="p">))</span>
+        <span class="n">rings</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fused_rings</span><span class="p">)</span>
+        <span class="c1"># there are no rings to fuse anymore</span>
+        <span class="k">if</span> <span class="n">num_rings</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">rings</span><span class="p">):</span>
+            <span class="n">done</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="n">rings</span></div>
+
+
+<div class="viewcode-block" id="timeout"><a class="viewcode-back" href="../../utils.html#npfc.utils.timeout">[docs]</a><span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">timeout</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function is used within a with statement:</span>
+
+<span class="sd">    &gt;&gt;&gt; with timeout(5):</span>
+<span class="sd">    &gt;&gt;&gt;    do something</span>
+
+<span class="sd">    If the code block execution time exceeds the time threshold, a TimeoutError is raised.</span>
+
+<span class="sd">    :param time: time in seconds allowd to the code block before aborting its execution</span>
+
+<span class="sd">    References</span>
+
+<span class="sd">        - https://www.jujens.eu/posts/en/2018/Jun/02/python-timeout-function/</span>
+<span class="sd">        - https://docs.python.org/3/library/contextlib.html</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># register a function to raise a TimeoutError on the signal.</span>
+    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="n">raise_timeout</span><span class="p">)</span>
+    <span class="c1"># schedule the signal to be sent after time</span>
+    <span class="n">signal</span><span class="o">.</span><span class="n">alarm</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="c1"># run the code block within the with statement</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span>
+    <span class="k">except</span> <span class="ne">TimeoutError</span><span class="p">:</span>
+        <span class="k">pass</span>  <span class="c1"># exit the with statement</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="c1"># unregister the signal so it won&#39;t be triggered if the timeout is not reached</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIG_IGN</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="raise_timeout"><a class="viewcode-back" href="../../utils.html#npfc.utils.raise_timeout">[docs]</a><span class="k">def</span> <span class="nf">raise_timeout</span><span class="p">(</span><span class="n">signum</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function to actually raise the TimeoutError when the time has come.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">raise</span> <span class="ne">TimeoutError</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, Dr. Jose-Manuel Gally.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
