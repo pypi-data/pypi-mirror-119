@@ -1,0 +1,3 @@
+[console_scripts]
+blec = blec._main:_main
+
