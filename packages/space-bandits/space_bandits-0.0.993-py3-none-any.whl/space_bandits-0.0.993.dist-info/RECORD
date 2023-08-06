@@ -1,0 +1,13 @@
+space_bandits/__init__.py,sha256=caZy8lon9by9uRfUYN_3UyaO4Kpu3Y7Yes8XpbmDIHo,606
+space_bandits/bandit_algorithm.py,sha256=wcW6EWRL9Fbbmyv_Hbb2_jMNhSYFWCH9DDNIoQHsuBI,3740
+space_bandits/bayesian_nn.py,sha256=oVzJp7Zj1beqf9iFFAS6bLZDqZ6k3zO6SPytk7mpkB0,463
+space_bandits/contextual_dataset.py,sha256=H6IVN_oUm5m5ZPHK4ihaMrYwR4U5vWilJanc_uyXOBI,9692
+space_bandits/linear.py,sha256=m2uiiW8lMscVdFX3eQCEBuYwUL7oNq35DemUUtZKFLQ,10082
+space_bandits/neural_bandit_model.py,sha256=Q0fEP0ZWEtdmHRymsVTLPsibB404e-391FahuO68m_k,5573
+space_bandits/neural_linear.py,sha256=qx5Ucj-LB8k0S43Q2RKIfURTbqnYSzTZwmB3nPIo8PI,15597
+space_bandits/toy_problem.py,sha256=xQfTNQlcFjWCCez9LmLeLkovxXzx2OrpZgSMTdikF0I,6357
+space_bandits-0.0.993.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+space_bandits-0.0.993.dist-info/METADATA,sha256=EJ2GTkTsOgofWQmegQ1r1yWbGo1sl_GKGMZ-14Wy_UI,728
+space_bandits-0.0.993.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+space_bandits-0.0.993.dist-info/top_level.txt,sha256=Cw_uNnYi3tHugKrFyeWJSQk0nSQHqB550EvOCBI19U8,14
+space_bandits-0.0.993.dist-info/RECORD,,
