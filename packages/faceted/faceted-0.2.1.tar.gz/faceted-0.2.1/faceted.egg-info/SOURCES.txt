@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+faceted/__init__.py
+faceted/_version.py
+faceted/faceted.py
+faceted.egg-info/PKG-INFO
+faceted.egg-info/SOURCES.txt
+faceted.egg-info/dependency_links.txt
+faceted.egg-info/requires.txt
+faceted.egg-info/top_level.txt
+faceted/tests/__init__.py
+faceted/tests/test_faceted.py
