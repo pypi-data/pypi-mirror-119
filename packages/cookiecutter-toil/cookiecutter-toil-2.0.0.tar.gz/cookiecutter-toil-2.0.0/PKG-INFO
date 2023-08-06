@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: cookiecutter-toil
+Version: 2.0.0
+Summary: 🍪 A cookiecutter for the creation of toil pipelines.
+Home-page: https://github.com/papaemmelab/cookiecutter-toil
+Author: Juan S. Medina, Juan E. Arango
+License: BSD
+Keywords: cookiecutter,toil
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+Provides-Extra: test
+License-File: LICENSE
+
+📘 learn more about this project on [GitHub](https://github.com/papaemmelab/cookiecutter-toil)!
+
