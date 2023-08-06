@@ -1,0 +1,12 @@
+README.md
+setup.py
+gdnb/__init__.py
+gdnb/dataset.py
+gdnb/ising_sim.py
+gdnb/model.py
+gdnb/utils.py
+gdnb.egg-info/PKG-INFO
+gdnb.egg-info/SOURCES.txt
+gdnb.egg-info/dependency_links.txt
+gdnb.egg-info/requires.txt
+gdnb.egg-info/top_level.txt

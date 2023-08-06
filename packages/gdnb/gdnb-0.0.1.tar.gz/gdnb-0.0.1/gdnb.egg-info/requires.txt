@@ -1,0 +1,5 @@
+tqdm
+seaborn
+matplotlib
+numpy
+scipy
