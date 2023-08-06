@@ -1,0 +1,15 @@
+iPAGE2/MI.py,sha256=6CLITWbgO_Wm_UN2effMyKWPcKi1sIIkNlhcoJocSxA,5567
+iPAGE2/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+iPAGE2/body.py,sha256=069uzX0Pm-UEy-uVOhy0_D4CDqBu4ZAKGUIFOfOK2tc,7571
+iPAGE2/filter_db.py,sha256=7xVGJ0FYewNJfVucoDK2HaL1a9Px1LhHFqZRS0hgj-I,1598
+iPAGE2/heatmap.py,sha256=A69lQ3aeVfBbCwXIx9VIgDKTowBBuzc-rTCArr0figA,3586
+iPAGE2/ipage2.py,sha256=tI9kILlMRcQq6bUQxVAu3cGqkWdBfP1cQ52iOBeAhc4,4089
+iPAGE2/preprocess.py,sha256=kvvKSqHo_yWkj5HhT_40fT3W6dWZCjKuqAEO0rJgM7A,8925
+iPAGE2/stat_ipage.py,sha256=-6UBDGRjGyHCUaSQ1nRhiZ61RVyrJCgms7fUMJJzbsw,2426
+iPAGE_2-0.0.1.data/scripts/iPAGE2,sha256=00G1qPl1gXEJNaVsxEoSOKV3WrPdofmHPpJRpc6hB7A,6950
+iPAGE_2-0.0.1.dist-info/.DS_Store,sha256=1lFlJ5EFymdzGAUAaI30vcaaLHt3F1LwpG7xILf9jsM,6148
+iPAGE_2-0.0.1.dist-info/LICENSE,sha256=fTLMdDFTFVqIR4fup0xXVar5Toh_Kyy6rEzVQ-JKfgE,1068
+iPAGE_2-0.0.1.dist-info/METADATA,sha256=GfqHA5HGetI3MN2rkLxJJiKCKZtznGJhVLk3wD9TYns,10683
+iPAGE_2-0.0.1.dist-info/WHEEL,sha256=EVRjI69F5qVjm_YgqcTXPnTAv3BfSUr0WVAHuSP3Xoo,92
+iPAGE_2-0.0.1.dist-info/top_level.txt,sha256=hHvZqvIPrhROjgIODjesoQNgZG5vUM48lAKF9KO1mho,7
+iPAGE_2-0.0.1.dist-info/RECORD,,

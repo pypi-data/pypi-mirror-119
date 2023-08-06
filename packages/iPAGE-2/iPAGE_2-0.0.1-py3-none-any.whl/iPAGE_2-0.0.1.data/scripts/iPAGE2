@@ -1,0 +1,125 @@
+#!python
+
+
+from iPAGE2.ipage2 import process_annotation, read_expression_file, run
+import sys
+import argparse
+import os
+import pandas as pd
+
+
+if __name__ == '__main__':
+    input_ = sys.argv[1:]
+
+    if input_ == []:
+        print('ERROR: Provided no arguments \nTerminating')
+        sys.exit()
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-annotation_dir', '--annotation_dir', type=str, default='./',
+                        help='The folder where processed annotations are stored or should be stored')
+
+    parser.add_argument('-preprocess', '--preprocess', action="store_true",
+                        help='Preprocess annotation')
+    parser.add_argument('-annotation', '--annotation', type=str,
+                        help='''If preprocess is called then annotation should specify the name of the file
+                        with gene annotations, otherwise simply provide the name of the preprocessed annotation''')
+    parser.add_argument('-pathway_names', '--pathway_names', type=str,
+                        help='Aliases for gene set names from gene annotation, provide only if preprocess is called')
+    parser.add_argument('-istable', '--annotation_is_table', action="store_true",
+                        help='Specifies if annotation is in table format')
+    parser.add_argument('-filter_annotation', '--filter_annotation', action="store_true",
+                        help='Filter redundant gene sets when processing annotation')
+    parser.add_argument('-g', '--first_element_is_gene', action="store_true",
+                        help='The first element in each row is a gene name')
+    parser.add_argument('-length', '--min_pathway_length', type=int, default=20,
+                        help='The minimal pathway length')
+    parser.add_argument('-fs', '--filter_stringency', type=float, default=0.2,
+                        help='Measure of pathways\' similarity')
+    parser.add_argument('-a_sep', '--annotation_separator', type=str, default='\t',
+                        help='The separator in annotation file')
+    #
+    #
+    parser.add_argument('-e', '--expression_file', type=str,
+                        help='The name of the expression file')
+    parser.add_argument('-e_sep', '--separator_in_expression_file', type=str, default='\t',
+                        help='The separator in expression file')
+    parser.add_argument('-e_col', '--expression_column', type=str, default='1',
+                        help='''Number of the column in the expression file with values, can be a number, 
+                        a comma delimited list of numbers. If \'all\' specified then all columns are used''')
+
+    parser.add_argument('-ann_ft', '--annotation_format', type=str, default='ensg',
+                        help='The annotation gene format (ensg, enst, gs, refseq, entrez, ext)')
+    parser.add_argument('-e_ft', '--expression_format', type=str, default='ensg',
+                        help='The expression file gene format (ensg, enst, gs, refseq, entrez, ext)')
+    parser.add_argument('-sp', '--species', type=str, default='human',
+                        help='Adds a column with rbp\'s expression (human, mouse)')
+
+    parser.add_argument('-e_bins', '--expression_bins', type=int, default=10,
+                        help='The number of the expression bins')
+    parser.add_argument('-a_bins', '--abundance_bins', type=int, default=3,
+                        help='The number of bins in the sum profile')
+    parser.add_argument('-heatmap_bins', '--heatmap_bins', type=int, default=15,
+                        help='The number of the bins in the heatmap')
+
+    parser.add_argument('-max_draw', '--max_draw_output', type=int, default=20,
+                        help='The number of rows to be presented on the heatmap')
+    parser.add_argument('-reg', '--regulator', action="store_true",
+                        help='Adds a column with regulator\'s expression to the heatmap')
+
+    parser.add_argument('-func', '--function', type=str, default='cmi',
+                        help='Add information function to use (cmi, mi)')
+    parser.add_argument('-alpha', '--alpha', type=float, default=0.01,
+                        help='Alpha threshold for hypothesis testing')
+    parser.add_argument('-shuffles', '--shuffles', type=int, default=1000,
+                            help='The number of shuffles when testing conditional mutual information')
+
+    parser.add_argument('-mtm', '--multipletest_method', type=str, default='None',
+                                help='Specifies which multiple hypothesis testing correction should be used')
+
+    parser.add_argument('-filter_results', '--filter_results', action="store_true",
+                                help='Specifies whether the pathways in the output should be filtered for redundancy')
+
+    parser.add_argument('-redundancy_ratio', '--redundancy_ratio', type=float, default=0.1,
+                                help='The threshold ratio of redundancy between pathways in the output')
+
+
+    parser.add_argument('-o', '--output_name', type=str,
+                        help='The name of the output file')
+
+    args = parser.parse_args(input_)
+
+
+    annotation_name = args.annotation.split('/')[-1].split('.')[0]
+    if args.preprocess:
+        process_annotation(args.annotation, args.annotation_is_table, args.annotation_separator,
+                           args.pathway_names, args.first_element_is_gene,
+                           args.filter_annotation, args.filter_stringency, args.min_pathway_length,
+                           args.annotation_dir, annotation_name)
+
+
+    if args.expression_file:
+
+        if args.expression_column == 'all':
+            expression_columns = list(range(1, pd.read_csv(args.expression_file, sep=sep).shape[1]))
+        else:
+            expression_columns = list((int(el) for el in args.expression_column.split(',')))
+
+        if args.output_name:
+            output_name_template = args.output_name
+        else:
+            output_name_template = os.path.join('output_ipage', args.expression_file.split('/')[-1].split('.')[0])
+
+        for expression_column in expression_columns:
+            output_name = output_name_template + ('.' + str(expression_column) if len(expression_columns) > 1 else '')
+
+            de_genes, de_profile = read_expression_file(args.expression_file, sep=args.separator_in_expression_file,
+                                                        id_column=0, de_column=expression_column)
+
+            run(de_genes, de_profile, annotation_name, args.annotation_dir, output_name,
+                  args.expression_format, args.annotation_format, args.species, False,
+                  args.expression_bins, args.abundance_bins, args.function, args.alpha, args.shuffles,
+                  args.multipletest_method, args.max_draw_output, False, args.heatmap_bins, args.regulator,
+                  filter_redundant=args.filter_results, redundancy_ratio=args.redundancy_ratio)
+
