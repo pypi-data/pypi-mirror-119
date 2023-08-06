@@ -1,0 +1,8 @@
+k3etcd/__init__.py,sha256=793AzvDQ8pN8FGZN2unYiuOlxPxGfuimwVDR1EsMNkw,1458
+k3etcd/client.py,sha256=1skwPRanZjL4obBbhfNAj2zo7EbIgnFMo4TSiYIPwgQ,50353
+k3etcd/setup.py,sha256=uDx5RF5lvKhD-dGIZnPJUOa80VqLQYaAkDkMSLpLpDY,5192
+k3etcd/synopsis.py,sha256=raLbpcx1cg73Ujb46nVpP6zVEhixMNdqUzgp7Fymo-g,3035
+k3etcd-0.1.0.dist-info/METADATA,sha256=dqYPZS3qlZkBEns4r86ZIAcik2uxEBSctencSh_h0P8,4852
+k3etcd-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+k3etcd-0.1.0.dist-info/top_level.txt,sha256=XZ9Rhm1M9R7FgtF137AGOvhaSUasVBFtPgN957ttV0Y,7
+k3etcd-0.1.0.dist-info/RECORD,,
