@@ -1,0 +1,8 @@
+README.rst
+setup.py
+django_media_cleaner/__init__.py
+django_media_cleaner/code.py
+django_media_cleaner.egg-info/PKG-INFO
+django_media_cleaner.egg-info/SOURCES.txt
+django_media_cleaner.egg-info/dependency_links.txt
+django_media_cleaner.egg-info/top_level.txt

@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: django-media-cleaner
+Version: 0.1.0
+Summary: Searches and removes unused media files.
+Home-page: https://github.com/un1t/django-media-cleaner
+Author: Ilya Shalyapin
+Author-email: ishalyapin@gmail.com
+License: MIT License
+Download-URL: https://github.com/un1t/django-media-cleaner/tarball/master
+Description: Django Media Cleaner
+        ********************
+        
+        Searches and removes unused media files.
+        
+        
+        Installation
+        ------------
+        
+        1.  Install
+        
+        .. code-block::
+        
+            pip install django-media-cleaner
+        
+        
+        2.  Add to ``settings.py``
+        
+        .. code-block:: python
+        
+            INSTALLED_APPS = (
+                ...
+                'django_media_cleaner',
+                ...
+            )
+        
+        
+        Usage
+        -----
+        
+        To find all unused media files, run command:
+        
+        .. code-block::
+        
+            ./manage.py find_unused_media
+        
+        To remove them:
+        
+        .. code-block::
+        
+            ./manage.py find_unused_media --delete
+        
+Keywords: django
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Utilities
+Requires: python (>=3.8)
+Requires: django (>=3.2)
+Description-Content-Type: text/x-rst
