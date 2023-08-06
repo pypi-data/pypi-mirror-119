@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+growatt/__init__.py
+growatt/__main__.py
+growatt.egg-info/PKG-INFO
+growatt.egg-info/SOURCES.txt
+growatt.egg-info/dependency_links.txt
+growatt.egg-info/requires.txt
+growatt.egg-info/top_level.txt
