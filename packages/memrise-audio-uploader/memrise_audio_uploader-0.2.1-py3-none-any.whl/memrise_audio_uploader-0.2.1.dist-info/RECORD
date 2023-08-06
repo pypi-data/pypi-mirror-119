@@ -1,0 +1,13 @@
+memrise_audio_uploader/__init__.py,sha256=xsAXQzvho_a8en83g0f35_Qe5pAwrKdgIvk8C8m6iIM,97
+memrise_audio_uploader/__main__.py,sha256=ZiT9jZXkZRfvwCUfJDxJqQj2lu6KJRzr9xQ2QSfOq9c,477
+memrise_audio_uploader/cli.py,sha256=NEJc4MrtdVq98MFvHPD8c2N_SHf2zLFhVqvRFMGTAjg,5119
+memrise_audio_uploader/lib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+memrise_audio_uploader/lib/memrise/__init__.py,sha256=7jUPXqRfqNvOSFVXW1TTTfYDb_RhoIdRucXGbqlTntM,109
+memrise_audio_uploader/lib/memrise/client.py,sha256=cUsJPV-2e901ml0Kky_CEuCNC0elWxzQpaDGMKtxycQ,9240
+memrise_audio_uploader/lib/memrise/exceptions.py,sha256=FMSujCFyrpViaGQ_zc7QMMBusv9ay2l-OY6xpWv8oAU,369
+memrise_audio_uploader/lib/memrise/models.py,sha256=423AWqBd87_bcpxhHAeO_QxZoh1LvY2BIIWaMc4aR6g,1296
+memrise_audio_uploader/lib/synthesizator.py,sha256=1DPS4uvhw0zHT9EDD7TyXOhi5kdf9nc4zcXIMY7lg-A,1667
+memrise_audio_uploader-0.2.1.dist-info/LICENSE,sha256=KiDuF2bPwyd50H6pm8qyTGB22QtWBbST_wwXziPkDvY,1084
+memrise_audio_uploader-0.2.1.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+memrise_audio_uploader-0.2.1.dist-info/METADATA,sha256=B1xynJdcMfYM5SvyhzTIWA8jrdlgD0TvdCRa1CGTL-U,2434
+memrise_audio_uploader-0.2.1.dist-info/RECORD,,
