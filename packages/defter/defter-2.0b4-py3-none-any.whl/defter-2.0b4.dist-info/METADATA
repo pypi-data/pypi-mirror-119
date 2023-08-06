@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: defter
+Version: 2.0b4
+Summary: Project Defter App
+Home-page: https://github.com/BarryWangQwQ/defter
+Author: BarryWang
+Author-email: StarBarry777@qq.com
+License: UNKNOWN
+Keywords: defter,gui,python,html,javascript,electron
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: bottle
+Requires-Dist: bottle-websocket
+Requires-Dist: future
+Requires-Dist: pyparsing
+Requires-Dist: whichcraft
+Requires-Dist: transcrypt
+Requires-Dist: orjson
+Provides-Extra: jinja2
+Requires-Dist: jinja2 (>=2.10) ; extra == 'jinja2'
+
+# **Project Defter App**
+
+> **"Defter, easier and quicker to develop your GUI Apps using Python in the built-in browser."**
+
+> MIT License
+
+> Copyright (c) 2021 BarryWang
+
+> Author's GitHub: https://github.com/BarryWangQwQ
+
+> Defter URL: https://github.com/BarryWangQwQ/defter
+
+> README: https://github.com/BarryWangQwQ/Defter/blob/main/README.md
+

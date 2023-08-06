@@ -1,0 +1,6 @@
+[console_scripts]
+defter = defter.feature.cli:main
+defter-accelerator = defter.feature.accelerator:main
+defter-frontendc = defter.feature.frontendc:main
+defter-packager = defter.backend.__main__:main
+
