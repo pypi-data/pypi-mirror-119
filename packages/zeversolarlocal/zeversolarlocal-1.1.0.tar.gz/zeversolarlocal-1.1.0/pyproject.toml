@@ -1,0 +1,35 @@
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=2,<3"]
+
+[tool.flit.metadata]
+author = "Sander Teunissen"
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+description-file = "README.md"
+home-page = "https://github.com/sander76/zeversolarlocal"
+keywords = "solar,async,energy"
+module = "zeversolarlocal"
+requires = ["httpx"]
+requires-python = ">=3.7"
+[tool.flit.metadata.requires-extra]
+dev = ["pylint", "nox", "pytest-cov", "coverage[toml]>=5.0.3", "pre-commit"]
+test = ["pytest", "pytest-asyncio", "pytest-mock"]
+
+[tool.mypy]
+disallow_incomplete_defs = true
+follow_imports = "silent"
+ignore_missing_imports = true
+show_column_numbers = true
+
+[tool.pytest.ini_options]
+addopts = "--cov zeversolarlocal --cov-report xml:cov.xml --cov-report term-missing -vv"
+testpaths = ["tests"]
+
+[tool.isort]
+profile = "black"
+src_paths = ["tests", "zeversolarlocal"]
