@@ -1,0 +1,2 @@
+sliplib>=0.6.2
+crccheck>=1.0
