@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+kalshi/__init__.py
+kalshi/session.py
+kalshi.egg-info/PKG-INFO
+kalshi.egg-info/SOURCES.txt
+kalshi.egg-info/dependency_links.txt
+kalshi.egg-info/requires.txt
+kalshi.egg-info/top_level.txt
+kalshi.egg-info/zip-safe

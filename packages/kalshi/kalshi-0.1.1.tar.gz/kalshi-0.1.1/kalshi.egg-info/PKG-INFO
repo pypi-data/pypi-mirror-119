@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: kalshi
+Version: 0.1.1
+Summary: Library for accessing Kalshi API
+Home-page: https://github.com/mlucy/kalshi_py
+Author: Michael Lucy
+Author-email: michaelglucy@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3
