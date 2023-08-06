@@ -1,0 +1,9 @@
+sentencesimilarity/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sentencesimilarity/sentences_similarity.py,sha256=rKhdxpkXqrMCEbgSFLbkcesc6yzdErqO1bN6E1-bViQ,3243
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_sentences_similarity.py,sha256=0OyCdltg146hc_tco3kc49Um98SFYoQlUrk8GpLepFc,372
+sentencesimilarity-0.1.0.dist-info/LICENSE.txt,sha256=BEoTHYzi8i2x68rFF7UsjinOR27EafNgBSmL6ppyvOw,1046
+sentencesimilarity-0.1.0.dist-info/METADATA,sha256=54BTZ5Xg1-AMcK-Otw8BB0QYRs8klUKclKOtjzWiL3k,423
+sentencesimilarity-0.1.0.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+sentencesimilarity-0.1.0.dist-info/top_level.txt,sha256=92qXJB-JRTqVgvoAEa7zm-jbPAXCCh9dLCRsFuISnRE,25
+sentencesimilarity-0.1.0.dist-info/RECORD,,
