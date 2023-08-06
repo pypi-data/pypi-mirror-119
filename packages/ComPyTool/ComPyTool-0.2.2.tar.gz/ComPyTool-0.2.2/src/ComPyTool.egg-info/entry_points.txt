@@ -1,0 +1,3 @@
+[console_scripts]
+ComPy = src.ComPyTool.__main__:main
+
