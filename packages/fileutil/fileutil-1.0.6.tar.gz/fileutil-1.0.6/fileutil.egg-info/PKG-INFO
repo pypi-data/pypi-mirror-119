@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: fileutil
+Version: 1.0.6
+Summary: a very very simple fileutil
+Home-page: UNKNOWN
+Author: linle
+Author-email: linle861021@163.com
+License: MIT
+Description: file read union split tools
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
