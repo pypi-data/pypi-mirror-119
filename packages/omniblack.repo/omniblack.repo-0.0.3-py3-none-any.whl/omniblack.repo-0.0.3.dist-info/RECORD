@@ -1,0 +1,10 @@
+README.md,sha256=rhOEsNyZBZ-UkoQRQFnZOUMLivGq0zJIaOWoGSJSraw,79
+omniblack/repo/__init__.py,sha256=yuqFR94-0eqc7ANpupHZ9eSLidng3pCQDZStfzHH-iQ,227
+omniblack/repo/base_package.py,sha256=6Aaa0iqzH3uinore7--sGwsGdSeE2TQ2llk6fIgFQuc,8683
+omniblack/repo/model/package_config.yaml,sha256=TWOaq5poYjHc-GCqbpzXf_oyFuGRZc-vqiYiWmRg7VY,2083
+omniblack/repo/model.py,sha256=IFvdIFoXzERPa6SseT_3VNzjiQDjJR2vVNuEPfdpRUw,268
+omniblack/repo/package_group.py,sha256=oCGDf9mBkJxuQcMSXU-Gy1WDOxb5ghEnLVtPWvlYH5o,818
+omniblack.repo-0.0.3.dist-info/LICENSE.md,sha256=rYWNU8rgXu2VMezUxGdECAOs_-NMad57iOA6_8W2ob0,34283
+omniblack.repo-0.0.3.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+omniblack.repo-0.0.3.dist-info/METADATA,sha256=qnSHaTHoVZ4XAOH3Qogf4vg69RRkPS1MUsZmrFeCRE4,700
+omniblack.repo-0.0.3.dist-info/RECORD,,
