@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: dask-remote-jobqueue
+Version: 0.4.8
+Summary: Remote jobqueu implementation for DASK: create a scheduler on a remote job queue cluster
+Home-page: http://github.com/dodas-ts/dask-remote-jobqueue
+Author: D. Ciangottini, D. Spiga, M. Tracolli,
+Author-email: dciangot@cern.ch
+License: MIT
+Description: <!--
+         Copyright (c) 2021 dciangot
+        
+         This software is released under the MIT License.
+         https://opensource.org/licenses/MIT
+        -->
+        
+Keywords: Interactive,Dask,Distributed
+Platform: Linux
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
