@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: avilla-onebot
+Version: 0.0.7
+Summary: 
+License: MIT
+Author: GreyElaina
+Author-email: GreyElaina@outlook.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: avilla-core (>=0.0.12,<0.0.13)
