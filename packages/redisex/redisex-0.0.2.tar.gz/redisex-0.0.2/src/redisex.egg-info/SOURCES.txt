@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+src/redisex.egg-info/PKG-INFO
+src/redisex.egg-info/SOURCES.txt
+src/redisex.egg-info/dependency_links.txt
+src/redisex.egg-info/top_level.txt
