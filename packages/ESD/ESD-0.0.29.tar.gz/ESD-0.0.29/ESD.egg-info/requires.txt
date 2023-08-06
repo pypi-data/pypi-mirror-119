@@ -1,0 +1,10 @@
+colorlog
+aiodns
+aiohttp
+async-timeout
+requests
+backoff
+dnspython
+pysocks
+tqdm
+colorama
