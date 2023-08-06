@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/tepimport/__init__.py
+src/tepimport/download.py
+src/tepimport/tepimport.py
+src/tepimport.egg-info/PKG-INFO
+src/tepimport.egg-info/SOURCES.txt
+src/tepimport.egg-info/dependency_links.txt
+src/tepimport.egg-info/requires.txt
+src/tepimport.egg-info/top_level.txt
