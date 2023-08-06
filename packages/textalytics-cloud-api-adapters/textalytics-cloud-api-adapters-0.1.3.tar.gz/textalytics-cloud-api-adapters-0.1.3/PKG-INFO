@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: textalytics-cloud-api-adapters
+Version: 0.1.3
+Summary: textalytics adapters for various cloud apis
+License: MIT
+Author: Manoj Bharadwaj
+Author-email: manoj@cloudcosmos.tech
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: azure-ai-textanalytics (>=5.1.0,<6.0.0)
+Requires-Dist: boto3 (>=1.18.40,<2.0.0)
+Requires-Dist: google-cloud-language (>=2.2.2,<3.0.0)
+Requires-Dist: pydantic (>=1.8.2,<2.0.0)
+Requires-Dist: textalytics-core (>=0.1.1,<0.2.0)
+Requires-Dist: textalytics-python-client (>=0.1.0,<0.2.0)
