@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ticker-analysis
+Version: 0.0.1
+Summary: Open source library that calculates technical indicators for any ticker available on yahoo finance
+Home-page: UNKNOWN
+Author: Andre Ceschia
+Author-email: andre.ceschia04@gmail.com
+License: UNKNOWN
+Keywords: python,finance,technical indicators,macd,bollinger bands,stocks,moving average,technical analysis
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: yfinance
+
+UNKNOWN
+
+
