@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: purePyStatistics
+Version: 0.1.6
+Summary: Basic Functions for Statistics
+Home-page: https://github.com/chisaku-dev/pyDataStats
+Author: Isaac To
+Author-email: isaacto3890@gmail.com
+License: MIT
+Download-URL: https://github.com/chisaku-dev/pyDataStats/archive/refs/tags/0.1.6.tar.gz
+Description: UNKNOWN
+Keywords: statistics,data,probability
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
