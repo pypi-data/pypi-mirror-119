@@ -1,0 +1,3 @@
+include *.txt *.png
+recursive-include explainaboard/tasks/* *.aspects *.json
+recursive-include fig *.png
