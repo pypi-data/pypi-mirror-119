@@ -1,0 +1,11 @@
+dotenv
+sqlalchemy
+pandas
+pandas
+yaml
+pykeepass
+sshtunnel
+numpy
+termcolor2
+docker
+pymongo
