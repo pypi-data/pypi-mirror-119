@@ -1,0 +1,10 @@
+click
+importlib_resources
+importlib-metadata
+numpy
+pyyaml
+openai
+pyperclip
+prompt_toolkit
+tabulate
+rich
