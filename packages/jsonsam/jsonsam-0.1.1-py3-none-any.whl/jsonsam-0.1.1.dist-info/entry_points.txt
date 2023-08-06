@@ -1,0 +1,4 @@
+[console_scripts]
+jsonsam=jsonsam.jsonsam:main
+randdict=jsonsam.randdict:main
+
