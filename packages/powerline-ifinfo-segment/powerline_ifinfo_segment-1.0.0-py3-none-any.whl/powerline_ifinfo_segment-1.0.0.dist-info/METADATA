@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: powerline-ifinfo-segment
+Version: 1.0.0
+Summary: Network Inteface Information Segment for Powerline
+Home-page: https://github.com/schanzel/powerline-ifinfo-segment
+Author: Benjamin Schanzel
+Author-email: b.schanzel@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/schanzel/powerline-ifinfo-segment/tarball/v1.0.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ~=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ifcfg
+
+# powerline-ifinfo-segment
+
+A Powerline Segment to Display Network Interface Infos
+
+
