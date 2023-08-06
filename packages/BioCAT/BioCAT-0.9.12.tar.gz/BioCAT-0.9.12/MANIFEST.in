@@ -1,0 +1,3 @@
+include BioCAT/data/*
+include BioCAT/external/*
+include BioCAT/HMM/*
