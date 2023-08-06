@@ -1,0 +1,3 @@
+[console_scripts]
+spectro = spectro.cli:main
+
