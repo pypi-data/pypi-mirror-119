@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pydroneapi
+Version: 0.1.0
+Summary: Helper scripts to manage Drone API operations
+Home-page: https://github.com/bellyjay1005/pydroneci
+Author: Jelili Adebello
+Author-email: jeliliadebello@gmail.com
+License: MIT
+Download-URL: https://github.com/bellyjay1005/pydroneci/archive/refs/tags/v0.1.0.tar.gz
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+A DRONE CI - Python helper scripts to manage API interactions and operations.
+

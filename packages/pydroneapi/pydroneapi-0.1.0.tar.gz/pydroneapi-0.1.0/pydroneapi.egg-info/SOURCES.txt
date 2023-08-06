@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+pydroneapi/__init__.py
+pydroneapi/main.py
+pydroneapi.egg-info/PKG-INFO
+pydroneapi.egg-info/SOURCES.txt
+pydroneapi.egg-info/dependency_links.txt
+pydroneapi.egg-info/requires.txt
+pydroneapi.egg-info/top_level.txt
