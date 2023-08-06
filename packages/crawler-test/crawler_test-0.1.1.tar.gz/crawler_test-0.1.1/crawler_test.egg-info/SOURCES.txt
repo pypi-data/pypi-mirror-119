@@ -1,0 +1,7 @@
+setup.py
+crawler/__init__.py
+crawler_test.egg-info/PKG-INFO
+crawler_test.egg-info/SOURCES.txt
+crawler_test.egg-info/dependency_links.txt
+crawler_test.egg-info/requires.txt
+crawler_test.egg-info/top_level.txt
