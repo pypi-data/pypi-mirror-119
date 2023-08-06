@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/Ftsa/__init__.py
+src/Ftsa/ftsworker.py
+src/Ftsa.egg-info/PKG-INFO
+src/Ftsa.egg-info/SOURCES.txt
+src/Ftsa.egg-info/dependency_links.txt
+src/Ftsa.egg-info/top_level.txt
