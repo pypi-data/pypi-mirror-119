@@ -1,0 +1,11 @@
+nanobuild/__init__.py,sha256=CBliVzK3QA4Bj0bK4IVqWoy2dWc5C6nj_dq_zKiHa-s,243
+nanobuild/builder.py,sha256=KDEePlCaPzlZt_BgtM1S79aNocaeTz6mHKd-eqzI9RI,3213
+nanobuild/environment.py,sha256=2UaGI_gedW400uvrtCJd5OSN7otuy95kEBX1HMU_4DQ,6039
+nanobuild/main.py,sha256=e8VQxiP6rkARvttfUE2PFKgrFfPNdFo2uoDRfAIr_cE,3175
+nanobuild/target.py,sha256=-GuWaTmtJRUpfaF1m7Zc8dz_1LCvifQ65U-DbiZ1efI,339
+nanobuild/utility.py,sha256=hM4J-U3xpW_kr-tOMLjFhpGfhAW5mw5rUwiQpBPOpWQ,988
+nanobuild-0.1.3.dist-info/LICENSE,sha256=gac01rQhHJkFNqQGTOaYWOAuXmJNxOhC3a8BG7RLumw,1072
+nanobuild-0.1.3.dist-info/METADATA,sha256=zU4-RRTAEkHkNpO1kCD7iYEe3pyb864R9p4odle8Yf0,5486
+nanobuild-0.1.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+nanobuild-0.1.3.dist-info/top_level.txt,sha256=A5wd2Xg_ZhJxa-sYxWexOHTS5zf4CmtPhyMJ1l3RtgY,10
+nanobuild-0.1.3.dist-info/RECORD,,
