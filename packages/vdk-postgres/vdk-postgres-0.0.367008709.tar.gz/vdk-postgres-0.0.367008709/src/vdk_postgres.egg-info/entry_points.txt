@@ -1,0 +1,3 @@
+[vdk.plugin.run]
+vdk-postgres = taurus.vdk.postgres_plugin
+

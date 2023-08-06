@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/taurus/vdk/postgres_connection.py
+src/taurus/vdk/postgres_plugin.py
+src/vdk_postgres.egg-info/PKG-INFO
+src/vdk_postgres.egg-info/SOURCES.txt
+src/vdk_postgres.egg-info/dependency_links.txt
+src/vdk_postgres.egg-info/entry_points.txt
+src/vdk_postgres.egg-info/requires.txt
+src/vdk_postgres.egg-info/top_level.txt
