@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+Shreck.egg-info/PKG-INFO
+Shreck.egg-info/SOURCES.txt
+Shreck.egg-info/dependency_links.txt
+Shreck.egg-info/not-zip-safe
+Shreck.egg-info/top_level.txt
+dist_alx/Binomialdistribution.py
+dist_alx/Gaussiandistribution.py
+dist_alx/Generaldistribution.py
+dist_alx/__init__.py
+dist_alx/shrex.py
