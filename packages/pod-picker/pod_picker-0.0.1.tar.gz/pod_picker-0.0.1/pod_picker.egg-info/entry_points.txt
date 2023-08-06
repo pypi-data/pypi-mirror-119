@@ -1,0 +1,3 @@
+[console_scripts]
+demo_print = pod_picker:demo_print
+
