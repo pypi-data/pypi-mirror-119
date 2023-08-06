@@ -1,0 +1,13 @@
+_: !import
+  - from models import linear
+  - from pyro.distributions import Uniform
+conditioning:
+  obs: !pt linear_data.pt
+model: !Stochastic
+  - !py:linear
+  - x: !py:torch.linspace [0, 1, 101]
+    a: !py:Uniform [-10., 10]
+    b: !py:Uniform [0., 20.]
+    err: !tensor 1
+guide:
+  - cls: MultivariateNormalSamplingGroup
