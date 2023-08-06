@@ -1,0 +1,11 @@
+pypi_seed/__init__.py,sha256=U4TXwbF76uKaiDupmmbedHVujuZE38LJ8t2oHXZR6wY,206
+pypi_seed/argsparser.py,sha256=dVJhtQYfJKh6NsGr99-8sQfdIyTuheSd-a5pLtT0FYQ,2586
+pypi_seed/generator.py,sha256=m1M0_mqI0hbXwIy7gv1HZH8fme6XuzHIZK8pegDgjfs,1805
+pypi_seed/main.py,sha256=Q8_T1bIqmbgREXo7TpYC42972PC2ISoPpJ5DUNx4N2o,446
+pypi_seed/template.py,sha256=155BkH40wSekvYqDgayXhVYdOY1nh3fr10GrWjYnKO4,1694
+pypi_seed-1.0.3.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pypi_seed-1.0.3.dist-info/METADATA,sha256=aJ0ZrcA8QF8P-mdvcYLSd8_mfXNCy6orl5t8c4QixyY,1118
+pypi_seed-1.0.3.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+pypi_seed-1.0.3.dist-info/entry_points.txt,sha256=CCE4x7hIXNH3sUCA9hGaQInDXjqfyAdOJhcTH_euSJk,79
+pypi_seed-1.0.3.dist-info/top_level.txt,sha256=X4h_lx8isnbiqAyFZp-Wj7AH4k14byXQnd-t--xWGDQ,10
+pypi_seed-1.0.3.dist-info/RECORD,,
