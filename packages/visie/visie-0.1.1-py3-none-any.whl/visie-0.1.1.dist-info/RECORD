@@ -1,0 +1,11 @@
+visie/__init__.py,sha256=9-o9DQyA53-VMRKzgLRAs59TllGNRX-QSPHmXYjj5RE,21
+visie/__main__.py,sha256=R3EM-fjZh2OZ1jQVWx9vzPGsfXwIoKUvKqmxBp9kmSY,3891
+visie/parser.py,sha256=wpOs2eZ-kFf0AxdrG9knIvQpWXmEFuqXJAsSeITEL5Q,5160
+visie/variants.py,sha256=fWtlJuWZIE16_zK5igejUUfZ2D4MLOVABgTBezZIpKk,1930
+visie/visie.py,sha256=KNGlnD-BttNvIzR0m8281qaNARI7xBL9K-3rRliZmpk,8520
+visie-0.1.1.dist-info/LICENSE,sha256=TfPDBt3ar0uv_f9cqCDMZ5rIzW3CY8anRRd4PkL6ejs,34522
+visie-0.1.1.dist-info/METADATA,sha256=gCXEb2Q0ejilhQ6_RMwQiD47IIrPFuC9ca298eqvZig,3325
+visie-0.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+visie-0.1.1.dist-info/entry_points.txt,sha256=QK8jGesTkNwsobqjdalCBcJWZ14oukDirLcndAwYpM4,47
+visie-0.1.1.dist-info/top_level.txt,sha256=Gl3RJvd-2dQQYr6Rx57BOFcd_nVKV_lwukqvbsCWRRM,6
+visie-0.1.1.dist-info/RECORD,,
