@@ -1,0 +1,27 @@
+Metadata-Version: 1.0
+Name: r00imena
+Version: 0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Andrey Ivanov
+Author-email: r00ft1h@gmail.com
+License: MIT
+Description: Example Project
+        ===============
+        This is an example project that is used to demonstrate how to publish
+        Python packages on PyPI. 
+        
+        Installing
+        ============
+        
+        .. code-block:: bash
+        
+            pip install r00imena
+        
+        Usage
+        =====
+        
+        .. code-block:: bash
+        
+            UNKNOWN
+Platform: UNKNOWN
