@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+click
+lxml
+boto3
+cython
+owlready2
+rdflib
+wikibaseintegrator==0.11.0
+bs4
+pyyaml
+pydantic
+disease-normalizer
