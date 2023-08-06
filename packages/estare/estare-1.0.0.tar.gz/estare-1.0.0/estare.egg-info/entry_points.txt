@@ -1,0 +1,3 @@
+[console_scripts]
+estare = estare.__main__:main
+
