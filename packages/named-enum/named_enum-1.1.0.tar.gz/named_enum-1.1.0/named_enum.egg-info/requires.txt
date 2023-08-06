@@ -1,0 +1,4 @@
+
+[docs]
+sphinx~=3.3
+sphinx_rtd_theme~=0.5
