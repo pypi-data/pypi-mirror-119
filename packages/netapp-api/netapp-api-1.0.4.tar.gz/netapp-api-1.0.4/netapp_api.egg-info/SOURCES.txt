@@ -1,0 +1,11 @@
+README.md
+setup.py
+bin/ontap_tool
+netapp/__init__.py
+netapp/api.py
+netapp/vocabulary.py
+netapp_api.egg-info/PKG-INFO
+netapp_api.egg-info/SOURCES.txt
+netapp_api.egg-info/dependency_links.txt
+netapp_api.egg-info/requires.txt
+netapp_api.egg-info/top_level.txt
