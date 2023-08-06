@@ -1,0 +1,16 @@
+kotsu/__init__.py,sha256=8tZeOYxLgQmKzuLt9P0AY3BwQ3vtFNE8sT-a46o_UUs,107
+kotsu/_version.py,sha256=J2e1_LL1Cviyw_se7T38r1JW9dXwizUG-ZFfehwRLNI,498
+kotsu/registration.py,sha256=7c_3lL44wrvmWBMJLwbgzQj8DItcfzIxiKPrDoHZ5Lo,5149
+kotsu/run.py,sha256=L9sT0TxmOtYNPNjWPJBDf-0O07oaSWgn8huUKEkMlws,2679
+kotsu/store.py,sha256=7fwYqDelKV1TwhqKghhbNeC6ScVApmGOKKTG28wcuc0,537
+kotsu/typing.py,sha256=xvc-BvqU_o88KcnKkenTe0Spe_DU9S3VLG3dMh2x2EM,1456
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_end_to_end.py,sha256=WiolJiGjQ-GEXUR3qVn-CEMqhq1bvE93Dy6g047vj1s,2039
+tests/test_registration.py,sha256=us3iXKLN_e0Kc4Yyc1yMDgYAjLgWVKpSgLboyBYDeXI,2520
+tests/test_run.py,sha256=ym4nowS2jPx7CgPD3kNsbhgralOVF1vPRbBrxOjb4ps,2960
+tests/test_store.py,sha256=c1QO6ArLroLaa18UW8pfgpqxjJVPUUpNFoNKq9MS6Ic,627
+kotsu-0.1.0.dist-info/LICENSE.txt,sha256=8H9nRFgzgQf1VZaRMz1IeGITLyTWeM_nMMcNboAWNQs,1077
+kotsu-0.1.0.dist-info/METADATA,sha256=BCrnjSR1nw1R0zi6OsFVxD6StqSk6b422WDGBHdQePU,4810
+kotsu-0.1.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+kotsu-0.1.0.dist-info/top_level.txt,sha256=j9c3IlfaVE-xcchUM0DGZusSLzdbng5JJ2Tt1V7tZu4,12
+kotsu-0.1.0.dist-info/RECORD,,
