@@ -1,0 +1,13 @@
+Resiliparse-0.4.2.dist-info/RECORD,,
+Resiliparse-0.4.2.dist-info/WHEEL,sha256=7vkJ3ZnexegyTUl8grQkOVww_TVBMjxMIgcotcWEQj4,110
+Resiliparse-0.4.2.dist-info/top_level.txt,sha256=iwOzBXN0My7I-RCfTJKD4IrJage9Z8lzzfMsOUJ62HU,12
+Resiliparse-0.4.2.dist-info/METADATA,sha256=uCfBrZO4yaN03sazzf7PA7UbeUmFieV47slQ8WycB0c,1904
+resiliparse/__init__.py,sha256=atGmpZoAgIja6HdW4SDRRJkKr143Zucm6Zg0-W1OdcE,580
+resiliparse/itertools.cpython-39-darwin.so,sha256=qM1UrKYoJwSWAGp_zhnWAZupuf8zdIFdaQPvJazeVao,101128
+resiliparse/process_guard.cpython-39-darwin.so,sha256=CUGtDHtgWx8i7m7aKHct16D7ZLi6YER_QDHkDXJ5qvg,194872
+resiliparse/parse/http.cpython-39-darwin.so,sha256=9dRgfWorZ1HMt1PnlQYsRxQg-Fe2Gg881IwFGG0U1pI,72184
+resiliparse/parse/__init__.py,sha256=wnfc_rW8YRoMMYaEnQrKnMwMBSo-3EI6ADuafOsHl-E,781
+resiliparse/parse/encoding.cpython-39-darwin.so,sha256=RIXrtNWL3xOCJ9Qkbo6bUxXrm6qirZxAmDj8wtVWzS4,372848
+resiliparse/parse/cli.py,sha256=l3c7lby4g5q0vRTbFCXkeJ6jfFtHOrj6dim9zAob1MU,5513
+resiliparse/parse/html.cpython-39-darwin.so,sha256=vgaHLknz73kIlTHXX3RG83KRYZtjtPBydN2qbnHnksQ,432976
+resiliparse/.dylibs/liblexbor.2.1.0.dylib,sha256=HnkZgi3EZcDZb3eGpJGkWQIQURSjgRLR7u7SfQju8UU,5281840
