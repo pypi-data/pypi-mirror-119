@@ -1,0 +1,8 @@
+vscp_python_send_heartbeat-1.0.0.data/data/script-sample-config/config.ini,sha256=4wr4c-YJnfKKq5ClX6CofCZnakiXC_aG35papyIbgzw,872
+vscp_python_send_heartbeat-1.0.0.data/scripts/send-mqtt-heartbeat.py,sha256=VA6UPSDR1hhmO7QEA-5KqN-eJG4Jvi4Dt34PvsHk6FA,10148
+vscp_python_send_heartbeat-1.0.0.data/scripts/send-vscp-heartbeat.py,sha256=areXhoIPUGoWAQfoehcUV6himuR1sSOScWPz95PX6kw,8858
+vscp_python_send_heartbeat-1.0.0.dist-info/LICENSE,sha256=OTCzwVh1xpxJShzI9wVvrgj53a1oqthr-L6X4eFo_2c,1068
+vscp_python_send_heartbeat-1.0.0.dist-info/METADATA,sha256=NlTrBWuVuGs4_57LmHqeWEYcIMmQb_NnQxofSVvUsEk,9076
+vscp_python_send_heartbeat-1.0.0.dist-info/WHEEL,sha256=kGT74LWyRUZrL4VgLh6_g12IeVl_9u9ZVhadrgXZUEY,110
+vscp_python_send_heartbeat-1.0.0.dist-info/top_level.txt,sha256=zUlPTfkeQS4ORp59BIgjmwkxIZ6RvDcyOfPwJE-B3w4,33
+vscp_python_send_heartbeat-1.0.0.dist-info/RECORD,,
