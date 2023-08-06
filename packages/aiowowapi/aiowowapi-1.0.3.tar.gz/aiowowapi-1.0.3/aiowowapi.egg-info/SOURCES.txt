@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+setup.py
+aiowowapi/__init__.py
+aiowowapi/api.py
+aiowowapi/regions.py
+aiowowapi/wowapi.py
+aiowowapi.egg-info/PKG-INFO
+aiowowapi.egg-info/SOURCES.txt
+aiowowapi.egg-info/dependency_links.txt
+aiowowapi.egg-info/requires.txt
+aiowowapi.egg-info/top_level.txt
+aiowowapi/retail/__init__.py
+aiowowapi/retail/game_data.py
+aiowowapi/retail/profile.py
+aiowowapi/retail/retail.py
