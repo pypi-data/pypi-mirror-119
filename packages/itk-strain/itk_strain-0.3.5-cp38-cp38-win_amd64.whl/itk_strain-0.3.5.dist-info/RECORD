@@ -1,0 +1,11 @@
+itk/StrainPython.py,sha256=sUn-Hvr8NqGWEfoS3z52CVb7ZAoL6aXIPD1tgzL1S5k,2527
+itk/_StrainPython.pyd,sha256=DAZvyKDG1D_5rYJooWLT97sddguGBXSZLO9pdGd1A2I,1924608
+itk/itkStrainImageFilterPython.py,sha256=FiUN8raYNXDPxpcwYRjgIPIgU3IARfYJrS5Rpch3H50,52207
+itk/itkTransformToStrainFilterPython.py,sha256=a5dVTTb_1PFYyUVBayP90rTeBEVdSfrSksJ28A7cY6A,70623
+itk/Configuration/StrainConfig.py,sha256=GYu3hLPCywB3zay-gZMRSUqcLa6jhu88vU_g2P-pWGY,6037
+itk/Configuration/Strain_snake_case.py,sha256=C9onjN2rcx1Yo2sWc1f8vpGFho4JrR1BxXsHQ51wRtI,105
+itk_strain-0.3.5.dist-info/LICENSE,sha256=Pd-b5cKP4n2tFDpdx27qJSIq0d1ok0oEcGTlbtL6QMU,11560
+itk_strain-0.3.5.dist-info/METADATA,sha256=-24HAGTWrkX8QDUOW0WBhkE99Aell4ncpxP1wuRuiho,1856
+itk_strain-0.3.5.dist-info/WHEEL,sha256=NY3UGhex5YPbdHhL1VJVLwxoIwKgweDPDrq4a9lMdeE,93
+itk_strain-0.3.5.dist-info/top_level.txt,sha256=K3Bo2NX2FvAd7ExrYg0rKrdBucaB6n6elW5QBc_g8FA,4
+itk_strain-0.3.5.dist-info/RECORD,,
