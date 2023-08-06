@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+pypi_requirements.txt
+pyproject.toml
+setup.py
+embeddinghub/__init__.py
+embeddinghub/client.py
+embeddinghub/embedding_store_pb2.py
+embeddinghub/embedding_store_pb2_grpc.py
+embeddinghub/offlinehub.py
+embeddinghub/repl.py
+embeddinghub.egg-info/PKG-INFO
+embeddinghub.egg-info/SOURCES.txt
+embeddinghub.egg-info/dependency_links.txt
+embeddinghub.egg-info/requires.txt
+embeddinghub.egg-info/top_level.txt
