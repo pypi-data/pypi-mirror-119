@@ -1,0 +1,13 @@
+asgineer/__init__.py,sha256=sNzo1AzQ0THGLZ9sAAHotWjS_ismFekFgsu5Ounx3BI,460
+asgineer/_app.py,sha256=sSHZIotiow3DaSJBq_tRHY3hu0_NyF99lNodGgRD8y8,9516
+asgineer/_compat.py,sha256=QzJAYsDoTPMnAw5ebpyjcoYWxV1uV5iUiHJsfna1qy4,920
+asgineer/_request.py,sha256=s3sfR0CE6URN8ddHZJd4KBAd-HSEHOJMTSNt3VTZ5A4,16749
+asgineer/_run.py,sha256=-ersOWlUL-M-8T4DNvoM-ev5y7LKvQ2cC6_bJj7N_j8,2969
+asgineer/testutils.py,sha256=FoIKWsT91YfwkIY6_yDZXE_QxLhoNqTdlgMeTTwhJWI,20231
+asgineer/utils.py,sha256=N7KQRNr4ow704IIdpk5QC7Xmdp9iYZb3-N_8zskZZZM,5725
+asgineer-0.8.1.dist-info/LICENSE,sha256=934UOBxN5aRPA4FxD32E1Hpz8N5ITVGLKtLt8KsRcPE,1321
+asgineer-0.8.1.dist-info/METADATA,sha256=MDO1ZOzbwvEDUxLQ08obGKw-bOU0qfFX-cmeSJE-8E8,921
+asgineer-0.8.1.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+asgineer-0.8.1.dist-info/top_level.txt,sha256=UYKSokkXWGGw-pg_P8d-SRWtpu23jCKu2rJL_Uzb-Ow,9
+asgineer-0.8.1.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+asgineer-0.8.1.dist-info/RECORD,,
