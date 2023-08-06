@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: duplidele
+Version: 2.3.0
+Summary: The Duplidele can delete duplicate sentence from your sentence
+Home-page: https://github.com/taotaotao3/duplidele
+Author: Takao Morita
+Author-email: tmolita077@gmail.com
+License: MIT
+Keywords: duplicate,delete,sentence
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: Janome (==0.3.10)
+
+When you want to delete duplicate sentence from your sentence, Please use duplidele.The first argument is the target sentence, the second argument is the minimum number of characters for the duplicate target, and the third argument is the total number of characters within the entire sentence.
+
+
