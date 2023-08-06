@@ -1,0 +1,14 @@
+pygl_astroids/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pygl_astroids/__main__.py,sha256=CaI8te_DcG3dt2PyG0EM32oLTLzNaJtAQ-jQ6vc7LZ8,1942
+pygl_astroids/asteroid.py,sha256=Ng30f20pZ63Gp-i3iIBvA0hbBFDZdfUgl6ouZf1sIcM,3716
+pygl_astroids/bullet.py,sha256=XX_VxNcvbGq48ayNQMwWHHsT6_ezQ-jwblE_J_beJC8,2330
+pygl_astroids/globaldefs.py,sha256=M84aKeKFvD_3cPBk8jUqaCghwTRIyd5AhjcHhEt8kk0,851
+pygl_astroids/globalvars.py,sha256=gbMmqveKL5B6QS39B9_AaxL6GlZ4qLABa5l3TMPkqJc,490
+pygl_astroids/labels.py,sha256=YrUZG9t5igca1Qq7IdhbAcV8Y5PSkFkElz87FD0Xqr8,715
+pygl_astroids/player.py,sha256=s8hhhHdmAExxQYAjYtZkAakoYvQyn2UqPTB0UL75wCg,6306
+pygl_astroids/vector.py,sha256=1Tg_sLwAeOeGsOeA0bRtlj0TV4Q6scMy8jAcOEqHAe8,3040
+PyGL_Astroids-0.0.3.dist-info/LICENSE,sha256=HDbMJ7oItmxTn3jVtZFi6jUFAHovset5jzAPUderjOc,1073
+PyGL_Astroids-0.0.3.dist-info/METADATA,sha256=xeO6mn1O2buajmE_SZFrZeTOGmCAW-_U6zsaSB8wMiY,1239
+PyGL_Astroids-0.0.3.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+PyGL_Astroids-0.0.3.dist-info/top_level.txt,sha256=PJwfY7LRCgb3MJAKqROXVlvMVdjDZLfqvvWOdex2v60,14
+PyGL_Astroids-0.0.3.dist-info/RECORD,,
