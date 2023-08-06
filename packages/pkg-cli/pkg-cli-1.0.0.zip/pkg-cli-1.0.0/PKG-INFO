@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pkg-cli
+Version: 1.0.0
+Summary: Create Packages and Publish them to PyPi
+Home-page: https://github.com/githashem/pkg-cli
+Author: Hashem
+Author-email: PersonalHashem@gmail.com
+License: MIT
+Keywords: pypi,package,pkg-cli,pkg
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![pypi version]](https://pypi.org/project/pkg-cli/)
+[![pypi license]](https://github.com/githashem/pkg-cli/blob/main/LICENSE)
+
+
+<!-- MarkDown Links -->
+[pypi version]: https://img.shields.io/pypi/v/pkg-cli?color=blue&style=flat-square
+[pypi license]: https://img.shields.io/pypi/l/pkg-cli?color=blue&style=flat-square
+
+
