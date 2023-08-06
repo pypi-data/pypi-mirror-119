@@ -1,0 +1,10 @@
+PackageVersionsUpload.py
+README.md
+setup.py
+PackageVersionsUpload/PackageVersionsUpload.py
+PackageVersionsUpload/__init__.py
+PackageVersionsUpload.egg-info/PKG-INFO
+PackageVersionsUpload.egg-info/SOURCES.txt
+PackageVersionsUpload.egg-info/dependency_links.txt
+PackageVersionsUpload.egg-info/requires.txt
+PackageVersionsUpload.egg-info/top_level.txt
