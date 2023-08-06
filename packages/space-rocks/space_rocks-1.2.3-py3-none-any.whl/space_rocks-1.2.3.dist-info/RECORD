@@ -1,0 +1,13 @@
+rocks/__init__.py,sha256=zdtSHjkZT6LbdVeBzCpIt5LoqcGq1Rpi2g1GkH6BV40,916
+rocks/cli.py,sha256=ZesqCwYPOmbqC5Yz-Ed9bJCDCLaOuhl0Yn6S8gxV76Q,6700
+rocks/core.py,sha256=ZU7F7n3wt5CnPb6wr6x5Xo04L3AhDj7P90iAMA5K14g,21123
+rocks/datacloud.py,sha256=iVxBNqu_iOU0uTpED-YDJe4ZVe6Yxo9P12xesbFC99k,23526
+rocks/plots.py,sha256=OlYtMIAQ87VZpd2ZpGshlzIXJQg-58ld1oKpcXzZcwI,9064
+rocks/resolve.py,sha256=-ip7HdXKwWJf-39eLHbUNk3g0DF7hMMAevxq-NXgv-A,9311
+rocks/ssodnet.py,sha256=6FucHYY8VztRl_9IBsr4MIeo4udP9jdpBsIGsDTARjE,8991
+rocks/utils.py,sha256=EDWXR1a1RYNtjg77YqMtJa9YF6E5etB-lsK_xtiCCh0,12473
+space_rocks-1.2.3.dist-info/entry_points.txt,sha256=Fvmxv7qxS2ci9rFw6t0apjpArZm8SnvLrXqdLZn6yvQ,45
+space_rocks-1.2.3.dist-info/LICENSE,sha256=bYwlkz3WCC3gsjHr6h5vWUDDUVGb2v8dmrdDRavqfx0,1067
+space_rocks-1.2.3.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+space_rocks-1.2.3.dist-info/METADATA,sha256=r_aJARnaLEvo_oHdPkXTMLihFsNy9nbhDjw1m5Y_Rqs,2175
+space_rocks-1.2.3.dist-info/RECORD,,
