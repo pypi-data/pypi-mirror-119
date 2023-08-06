@@ -1,0 +1,3 @@
+[console_scripts]
+sway-dynamic-names = sway_dynamic_names.__main__:main
+
