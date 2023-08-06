@@ -1,0 +1,16 @@
+pip
+packaging
+fastai>=2.5.2
+scikit-learn>=0.24.2
+scipy>=1.5
+sktime>=0.7.0
+PyWavelets>=1.1.1
+numba<0.54,>=0.53
+pyts>=0.11.0
+imbalanced-learn>=0.8.0
+tsfresh>=0.18.0
+torch-optimizer>=0.1.0
+torch<1.10,>=1.7.0
+
+[dev]
+nbdev<2,>=1.0.22
