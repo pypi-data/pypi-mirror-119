@@ -1,0 +1,7 @@
+setup.py
+NgroktoDuckDNS.egg-info/PKG-INFO
+NgroktoDuckDNS.egg-info/SOURCES.txt
+NgroktoDuckDNS.egg-info/dependency_links.txt
+NgroktoDuckDNS.egg-info/entry_points.txt
+NgroktoDuckDNS.egg-info/requires.txt
+NgroktoDuckDNS.egg-info/top_level.txt
