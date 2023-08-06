@@ -1,0 +1,9 @@
+README.md
+setup.py
+jupyter_lib.egg-info/PKG-INFO
+jupyter_lib.egg-info/SOURCES.txt
+jupyter_lib.egg-info/dependency_links.txt
+jupyter_lib.egg-info/top_level.txt
+modules/__init__.py
+modules/helper_func.py
+modules/plot.py
