@@ -1,0 +1,13 @@
+README.md
+setup.py
+datasette_app_support/__init__.py
+datasette_app_support.egg-info/PKG-INFO
+datasette_app_support.egg-info/SOURCES.txt
+datasette_app_support.egg-info/dependency_links.txt
+datasette_app_support.egg-info/entry_points.txt
+datasette_app_support.egg-info/requires.txt
+datasette_app_support.egg-info/top_level.txt
+datasette_app_support/static/sticky-footer.css
+datasette_app_support/templates/_table-table-plugin_directory-plugins.html
+datasette_app_support/templates/database.html
+datasette_app_support/templates/table-plugin_directory-plugins.html
