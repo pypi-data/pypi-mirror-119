@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/EventTimer/EventTimer.py
+src/EventTimer/__init__.py
+src/EventTimer/lib/Color.py
+src/EventTimer/lib/Functions.py
+src/EventTimer/lib/Globals.py
+src/EventTimer/lib/__init__.py
+src/event_timer.egg-info/PKG-INFO
+src/event_timer.egg-info/SOURCES.txt
+src/event_timer.egg-info/dependency_links.txt
+src/event_timer.egg-info/entry_points.txt
+src/event_timer.egg-info/requires.txt
+src/event_timer.egg-info/top_level.txt

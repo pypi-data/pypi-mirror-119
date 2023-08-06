@@ -1,0 +1,3 @@
+[console_scripts]
+EventTimer = EventTimer.EventTimer:main
+
