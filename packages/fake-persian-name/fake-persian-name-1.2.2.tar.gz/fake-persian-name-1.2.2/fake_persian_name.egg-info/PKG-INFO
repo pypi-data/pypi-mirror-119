@@ -1,0 +1,115 @@
+Metadata-Version: 2.1
+Name: fake-persian-name
+Version: 1.2.2
+Summary: A small Python library to generate fake Persian name.
+Home-page: https://github.com/ErfanRht/fake-persian-name
+Author: Erfan Rahmati
+Author-email: ErfanRht2005@gmail.com
+License: MIT
+Download-URL: https://github.com/ErfanRht/fake-persian-name/blob/master/dist/fake-persian-name-1.2.2.tar.gz
+Project-URL: Documentation, https://pypi.org/project/fake-persian-name/
+Project-URL: Source, https://github.com/ErfanRht/fake-persian-name/
+Keywords: fake,persian,name,persian name,fake name,fake persian name
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# fake-persian-name
+
+A small Python library to generate fake Persian name.
+
+## Install
+
+<ul>
+
+```
+pip install fake_persian_name
+```
+
+OR:
+
+```
+pip3 install fake_persian_name
+```
+
+</ul>
+
+## Import
+
+<ul>
+
+```python
+from fake_persian_name import fake_name as fpn
+```
+
+</ul>
+
+</ul>
+
+## Use
+
+<ul>
+To generate a random Persian name:
+
+```python
+name = fpn.generate_name("random")
+```
+
+To generate a boy Persian name:
+
+```python
+name = fpn.generate_name("male")
+```
+
+To generate a girl Persian name:
+
+```python
+name = fpn.generate_name("female")
+```
+
+</ul>
+
+## Example
+
+<ul>
+
+```python
+from fake_persian_name import fake_name as fpn
+
+random_name = fpn.generate_name("random")
+girl_name = fpn.generate_name("female")
+boy_name = fpn.generate_name("male")
+
+print("random_name: "+random_name)
+print("girl_name: "+girl_name)
+print("boy_name: "+boy_name)
+```
+
+</ul>
+
+## Issues
+
+Please file any issues, bugs or feature request [here](https://github.com/ErfanRht/fake-persian-name/issues).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/ErfanRht/fake-persian-name/blob/master/LICENSE.txt)
+
+## Author
+
+This Python library is developed by [Erfan Rahmati](https://github.com/ErfanRht).
+
+
