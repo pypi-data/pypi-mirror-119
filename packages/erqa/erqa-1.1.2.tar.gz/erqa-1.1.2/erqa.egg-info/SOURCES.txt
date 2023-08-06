@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+erqa/__init__.py
+erqa/__main__.py
+erqa/erqa.py
+erqa.egg-info/PKG-INFO
+erqa.egg-info/SOURCES.txt
+erqa.egg-info/dependency_links.txt
+erqa.egg-info/requires.txt
+erqa.egg-info/top_level.txt
