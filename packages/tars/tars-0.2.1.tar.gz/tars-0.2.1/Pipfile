@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "*"
+requests = "*"
+pykrakenapi = "*"
+krakenex = "*"
+matplotlib = "*"
+torch = "*"
+darts = "*"
+holidays = "*"
+seaborn = "*"
+scipy = "*"
+ta = "*"
+python-telegram-bot = "*"
+prophet = "*"
+tars = "*"
+
+[dev-packages]
+jupyterlab = "*"
+twine = "*"
+build = "*"
+bump2version = "*"
+
+[requires]
+python_version = "3.8"
