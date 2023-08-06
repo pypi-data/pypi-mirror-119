@@ -1,0 +1,8 @@
+aiohttp
+bs4
+price-parser
+pyppeteer
+nest_asyncio
+diskcache
+mptools>=1.0.7
+selenium
