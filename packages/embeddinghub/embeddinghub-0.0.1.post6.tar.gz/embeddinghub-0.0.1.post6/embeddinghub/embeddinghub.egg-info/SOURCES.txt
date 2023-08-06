@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+pypi_requirements.txt
+pyproject.toml
+setup.py
+embeddinghub/embeddinghub.egg-info/PKG-INFO
+embeddinghub/embeddinghub.egg-info/SOURCES.txt
+embeddinghub/embeddinghub.egg-info/dependency_links.txt
+embeddinghub/embeddinghub.egg-info/requires.txt
+embeddinghub/embeddinghub.egg-info/top_level.txt
