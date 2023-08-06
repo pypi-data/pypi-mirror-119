@@ -1,0 +1,1 @@
+Tracardi Plugin to connect Tracardi to MySql database

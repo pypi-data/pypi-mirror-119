@@ -1,0 +1,17 @@
+.gitignore
+LICENSE.md
+MANIFEST.in
+README.md
+build.sh
+build_setup.sh
+requirements.txt
+setup.py
+test/manual/plugin_test.py
+tracardi_mysql_connector/plugin.py
+tracardi_mysql_connector.egg-info/PKG-INFO
+tracardi_mysql_connector.egg-info/SOURCES.txt
+tracardi_mysql_connector.egg-info/dependency_links.txt
+tracardi_mysql_connector.egg-info/requires.txt
+tracardi_mysql_connector.egg-info/top_level.txt
+tracardi_mysql_connector/model/configuration.py
+tracardi_mysql_connector/model/connection.py
