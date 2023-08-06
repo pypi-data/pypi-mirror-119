@@ -1,0 +1,10 @@
+mutalyzer_backtranslate/__init__.py,sha256=Z62yBEVDYQfN7v0__RJQav6w4LLgf74JfheIe9uJcPo,731
+mutalyzer_backtranslate/backtranslate.py,sha256=FOR7uZ2pB8yDCwxt9niFK_XfrGVMoLjqca9taE3udgw,4229
+mutalyzer_backtranslate/cli.py,sha256=UywYSk5-L6ZfUCr3EX4MlkqDF54q_484Wl5rUnDEgSo,5597
+mutalyzer_backtranslate/util.py,sha256=XU-qsKCTIJtwIgNsJK6WhDbq010Q1VHrysSaQumbre8,970
+mutalyzer_backtranslate-0.1.4.dist-info/LICENSE.md,sha256=J4T4NledPKoahg_FOFiCRgkZBx1Rnb5zosR2YXO3-VM,1076
+mutalyzer_backtranslate-0.1.4.dist-info/METADATA,sha256=nedN1_PPRhu3Ds_jOqVdifAHatEvF8Zl74xVfFC2r-U,3388
+mutalyzer_backtranslate-0.1.4.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+mutalyzer_backtranslate-0.1.4.dist-info/entry_points.txt,sha256=BnMtgPhplrxPoHM8vGbtvBddDLQCVS8vVpX0KoyzUl0,68
+mutalyzer_backtranslate-0.1.4.dist-info/top_level.txt,sha256=fk6nY0uWUPKtteZHCYIbnaZ2HyVfpLQEH7UBCXI_pnE,24
+mutalyzer_backtranslate-0.1.4.dist-info/RECORD,,
