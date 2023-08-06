@@ -1,0 +1,9 @@
+atc/__init__.py,sha256=PqZBTSFykhTzG1Z4yEQR9ddaowXtsTcsd_q1KPReB5w,205
+atc/config_master.py,sha256=zgDzTkdoeftoQGSM04D3VTKwVau98mBMxiEPLG38kcA,8009
+atc/singleton.py,sha256=Ph13Ph5_JMNiIqELqUxCUt8-tN_IBUs1hiQ1TJDXRTs,362
+atc/spark.py,sha256=RcnH6QZxDlVaqB7xm4QIK_3XbYTTboQ3BtbPpCfppLc,1811
+atc_dataplatform-0.1.5.dist-info/LICENSE,sha256=VY9zO5XfXClo4FFdZAcNFAm31etJXAYjbcvsSM29ano,1064
+atc_dataplatform-0.1.5.dist-info/METADATA,sha256=_GxD2t05EoRLLf7no5vciQ5XWedX4tWw1keRVa__sRw,1899
+atc_dataplatform-0.1.5.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+atc_dataplatform-0.1.5.dist-info/top_level.txt,sha256=Us-O5l3SKKwLwP0n1n4U3LwsogYnbzXTtbgm5RCXQIM,4
+atc_dataplatform-0.1.5.dist-info/RECORD,,
