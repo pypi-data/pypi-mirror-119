@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/nestees/__init__.py
+src/nestees/fieldpath.py
+src/nestees/nestees.py
+src/nestees.egg-info/PKG-INFO
+src/nestees.egg-info/SOURCES.txt
+src/nestees.egg-info/dependency_links.txt
+src/nestees.egg-info/top_level.txt
