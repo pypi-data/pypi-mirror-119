@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: gitlab-kanban-report
+Version: 1.1
+Summary: Lib to create reports by kanban
+Home-page: https://gitlab.com/victorhdcoelho/gitlab-kaban-report
+Author: Victor Coelho
+Author-email: victorhdcoelho@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: PySimpleGUI
+Requires-Dist: tqdm
+Requires-Dist: rsa
+Requires-Dist: dataclasses
+Requires-Dist: requests
+
+# gitlab-kaban-report
+
+Projeto para criar formulários a partir do quadro do kanban do próprio gitlab
+
+

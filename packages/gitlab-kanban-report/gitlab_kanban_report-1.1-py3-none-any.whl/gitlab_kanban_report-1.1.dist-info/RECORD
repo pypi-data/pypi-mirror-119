@@ -1,0 +1,12 @@
+gitlab_kaban_report/__init__.py,sha256=pJfK1KdbL-PGh2Z9NYmxJIUEe7Tt1oKEs7pYme6bVNk,60
+gitlab_kaban_report/api_interface.py,sha256=ETutkHoEyNh6RC4DoVOg-pxKDh5Yj3t-KFn_9JiijAs,6956
+gitlab_kaban_report/constants.py,sha256=SDfcviV7lNiLmHQQXmRHsrAOMIwIdAOqAdqsyviheiE,100
+gitlab_kaban_report/encrypt.py,sha256=YwQIQINNzMMIzxw6-d5uyW1TPUaUvtRxreRIuTateuM,1251
+gitlab_kaban_report/logo.py,sha256=jSnZw5P6y52GMU6zR6A_3lA_LAQiv1WvffCG3rEmEH4,24152
+gitlab_kaban_report/main_interface.py,sha256=flGMqvqmmxskEZPJyttY8pNYRzw36NQzd07rw9sOeNA,3520
+gitlab_kanban_report-1.1.data/scripts/gitlab_report,sha256=5n-mF4wiT9fxiAHX9uhu5gLglwcnNNOKuzifJx4GXVE,102
+gitlab_kanban_report-1.1.dist-info/LICENSE.txt,sha256=ceC9ZJOV9H6CtQDcYmHOS46NA3dHJ_WD4J9blH513pc,1081
+gitlab_kanban_report-1.1.dist-info/METADATA,sha256=8kZf7TTGKUXPd7DA3AqV1Aw-znGVke8saQwnf4eJYvw,722
+gitlab_kanban_report-1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+gitlab_kanban_report-1.1.dist-info/top_level.txt,sha256=MsySh8AT_pVNGUPYVkyg3MDIua-bekAMs8vymeuSlKg,20
+gitlab_kanban_report-1.1.dist-info/RECORD,,
