@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+spector/__init__.py
+spector/matrix.py
+spector/py.typed
+spector/vector.cpp
+spector/vector.pyx
+spector.egg-info/PKG-INFO
+spector.egg-info/SOURCES.txt
+spector.egg-info/dependency_links.txt
+spector.egg-info/not-zip-safe
+spector.egg-info/requires.txt
+spector.egg-info/top_level.txt
