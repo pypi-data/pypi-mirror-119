@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: googooli
+Version: 0.1.3
+Summary: test
+Home-page: UNKNOWN
+Author: Kouros
+Author-email: kouros.basiri@gmail.con
+License: UNKNOWN
+Keywords: test
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development
+Requires-Python: >=3.6
+
+UNKNOWN
+
+
