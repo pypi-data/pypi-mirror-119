@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+pycoinmarketcap/__init__.py
+pycoinmarketcap/coinmarketcap.py
+pycoinmarketcap/errors.py
+pycoinmarketcap/response.py
+pycoinmarketcap.egg-info/PKG-INFO
+pycoinmarketcap.egg-info/SOURCES.txt
+pycoinmarketcap.egg-info/dependency_links.txt
+pycoinmarketcap.egg-info/requires.txt
+pycoinmarketcap.egg-info/top_level.txt
+pycoinmarketcap/data/__init__.py
+pycoinmarketcap/data/cryptocurrency.py
