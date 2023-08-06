@@ -1,0 +1,7 @@
+god_like/__init__.py,sha256=ShJWA20Crj1_MHNG85woEs_Q0n75VfDhqXT5oEm0pto,208
+god_like/godlike.py,sha256=p7kpTcHjtrLKsKqlyjKz3JRymEHo2ZibRxo9vaAsH0Y,6418
+god_like/request.py,sha256=-8Thbaw9o8wilWwy1UpfdMI7jP38kWgRJpL6ZTMARtg,8728
+god_like/response.py,sha256=FhZTlyf4EGg2VCXeiDv-JOy8xLjOpLuH3R8EWT1VQ1Y,7282
+god_like-1.0.1.dist-info/WHEEL,sha256=V7iVckP-GYreevsTDnv1eAinQt_aArwnAxmnP0gygBY,83
+god_like-1.0.1.dist-info/METADATA,sha256=84PC0Nl_1VpkhakpLUHChpOZeNqwo-Dnk3aXKtslg1Y,1532
+god_like-1.0.1.dist-info/RECORD,,
