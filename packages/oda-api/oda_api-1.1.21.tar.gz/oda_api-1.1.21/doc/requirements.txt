@@ -1,0 +1,8 @@
+#sphinx-bootstrap-theme
+furo
+sphinx-automodapi
+nbsphinx
+numpydoc
+matplotlib
+simplejson
+IPython
