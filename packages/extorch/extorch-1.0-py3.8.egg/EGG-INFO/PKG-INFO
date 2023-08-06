@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: extorch
+Version: 1.0
+Summary: An useful extension library of PyTorch.
+Home-page: https://github.com/A-LinCui/Extorch
+Author: Junbo Zhao
+Author-email: zhaojunbo2012@sina.cn
+License: MIT License
+Description: ![](https://img.shields.io/badge/version-1.0.0-yellow)
+        ## Extorch: An useful extension library of PyTorch.
+        
+Keywords: PyTorch
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Description-Content-Type: text/markdown
