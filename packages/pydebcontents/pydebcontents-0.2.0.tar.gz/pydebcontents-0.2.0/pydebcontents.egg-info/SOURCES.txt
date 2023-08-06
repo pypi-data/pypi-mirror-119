@@ -1,0 +1,12 @@
+py-apt-file
+setup.py
+pydebcontents/__init__.py
+pydebcontents/cli.py
+pydebcontents/contents_dict.py
+pydebcontents/contents_file.py
+pydebcontents/py.typed
+pydebcontents.egg-info/PKG-INFO
+pydebcontents.egg-info/SOURCES.txt
+pydebcontents.egg-info/dependency_links.txt
+pydebcontents.egg-info/requires.txt
+pydebcontents.egg-info/top_level.txt
