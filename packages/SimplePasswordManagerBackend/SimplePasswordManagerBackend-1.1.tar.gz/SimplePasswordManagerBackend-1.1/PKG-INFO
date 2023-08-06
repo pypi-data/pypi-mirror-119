@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: SimplePasswordManagerBackend
+Version: 1.1
+Summary: Simple password manager backend
+Home-page: https://github.com/The-Coding-Jungle/SimplePasswordManagerBackend
+Author: Het Daftary
+Author-email: hetdaftary@gmail.com
+License: MIT
+Download-URL: https://github.com/The-Coding-Jungle/SimplePasswordManagerBackend/archive/refs/tags/1.1.tar.gz
+Description: UNKNOWN
+Keywords: SOME,MEANINGFULL,KEYWORDS
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
