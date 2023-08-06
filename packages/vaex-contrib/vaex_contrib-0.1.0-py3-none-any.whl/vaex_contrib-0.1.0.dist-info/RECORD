@@ -1,0 +1,10 @@
+vaex/contrib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vaex/contrib/_version.py,sha256=_Dwh4fHS_6IKEoo5EWD_Zg_kK88i1sQ4YqyQ7EgbW9k,52
+vaex/contrib/io/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vaex/contrib/io/gbq.py,sha256=zDAuvOhczdStF3IJk247DmTWDZDlPhXVzWBolEfkbbg,8678
+vaex/contrib/io/gbq_test.py,sha256=UfSM0URGf9fcwm7u_AABdhfuICwDWJ5ccubMDcwWs7w,1596
+vaex_contrib-0.1.0.dist-info/LICENSE.txt,sha256=qWgV4LtOkoyrFPtR6C4nf-cwwY16YrGiTH8IsQW6W9Y,1087
+vaex_contrib-0.1.0.dist-info/METADATA,sha256=YH0tArbFr-kvbHxT4ERauYOIEX7Qglp-remRGzNm2RY,365
+vaex_contrib-0.1.0.dist-info/WHEEL,sha256=p46_5Uhzqz6AzeSosiOnxK-zmFja1i22CrQCjmYe8ec,92
+vaex_contrib-0.1.0.dist-info/top_level.txt,sha256=BTcHbKEpfXqVlITrjFEtm95UDejFyYXslGl9YUqTIpc,5
+vaex_contrib-0.1.0.dist-info/RECORD,,
