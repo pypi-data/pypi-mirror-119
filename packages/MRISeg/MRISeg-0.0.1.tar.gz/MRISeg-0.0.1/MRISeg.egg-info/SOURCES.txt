@@ -1,0 +1,12 @@
+LICENSE
+README.txt
+pyproject.toml
+setup.py
+MRISeg/MRISeg.py
+MRISeg/__init__.py
+MRISeg.egg-info/PKG-INFO
+MRISeg.egg-info/SOURCES.txt
+MRISeg.egg-info/dependency_links.txt
+MRISeg.egg-info/entry_points.txt
+MRISeg.egg-info/requires.txt
+MRISeg.egg-info/top_level.txt
