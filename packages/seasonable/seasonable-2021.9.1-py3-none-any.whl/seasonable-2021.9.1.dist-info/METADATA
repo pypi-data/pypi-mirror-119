@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: seasonable
+Version: 2021.9.1
+Summary: API abstractions
+Home-page: UNKNOWN
+License: BSD 3-Clause License
+Platform: UNKNOWN
+Provides-Extra: doc
+Requires-Dist: sphinx ; extra == 'doc'
+Provides-Extra: lint
+Requires-Dist: black ; extra == 'lint'
+Requires-Dist: mypy ; extra == 'lint'
+Requires-Dist: flake8 ; extra == 'lint'
+Requires-Dist: pylint ; extra == 'lint'
+Provides-Extra: test
+Requires-Dist: coverage ; extra == 'test'
+Requires-Dist: virtue ; extra == 'test'
+
+Seasonable
+==========
+
+APIs for all kinds of web services.
+
+**Note:**
+The
+:code:`examples`
+and
+:code:`tests`
+subpackages are not officially part of the API.
+
+
