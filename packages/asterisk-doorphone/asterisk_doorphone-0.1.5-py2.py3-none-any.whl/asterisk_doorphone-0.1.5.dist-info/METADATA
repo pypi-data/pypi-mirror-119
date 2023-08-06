@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: asterisk_doorphone
+Version: 0.1.5
+Summary: asterisk-doorphone
+Author-email: Jonatan Garbuyo <jonatangarbuyo@gmail.com>
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: evdev==1.4.0
+Requires-Dist: pick==1.0.0
+
+# asterisk-doorphone
+A Python package for an Asterisk based building doorphone.
+
+The usb_keyboard module permits to use a PC USB keyboard as keyboard of a building doorphone.
+
+
