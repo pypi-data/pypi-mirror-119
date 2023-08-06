@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+src/dgx/__init__.py
+src/tapad_dgx.egg-info/PKG-INFO
+src/tapad_dgx.egg-info/SOURCES.txt
+src/tapad_dgx.egg-info/dependency_links.txt
+src/tapad_dgx.egg-info/top_level.txt
