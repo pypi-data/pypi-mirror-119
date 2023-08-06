@@ -1,0 +1,80 @@
+Metadata-Version: 2.1
+Name: noober
+Version: 0.0.1
+Summary: A Simple Library for Beginners and Advance Users a like, to make writing scripts a bit easier
+Home-page: https://github.com/newtoallofthis123/noober
+Author: NoobScience
+Author-email: noobscience123@gmail.com
+License: MIT
+Project-URL: Author WebSite, https://newtoallofthis123.github.io/About
+Project-URL: Bug Tracker, https://github.com/newtoallofthis123/noober/issues
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyperclip
+Requires-Dist: requests
+
+# Noober
+
+A Simple Library for Beginners and Advance Users a like, to make writing scripts a bit easier
+
+## About
+
+Noober is a simple library which aims to make writing scripts a bit easier.
+
+Noober provides functions which make writing stuff like 
+- A Yes or No input
+- A prompt 
+- A prompt with options
+- Show Time and Date
+- Notify on Windows (using [win10toast](https://pypi.org/project/win10toast/))
+- Shorten Using [tinyurl](https://tinyurl.com) without api
+- Show Splash Screen
+- More in Future
+
+## Installation
+
+1. [Pypi]()
+``` shell
+pip install noober
+```
+
+2. Local 
+``` shell
+# Clone the Repository
+git clone https://github.com/newtoallofthis123/noober.git
+
+# Change the Directory
+cd noober
+
+# Install Requirements
+pip install requirements.txt
+```
+
+## For Usage, See [Usage.md](https://github.com/newtoallofthis123/noober/USAGE.md)
+
+<b>Example Usage</b>
+
+``` python
+from noober import Prompt, Splash
+
+Splash("Hi", "Content", icon="no", duration=1)
+
+user_input = Prompt("Enter User Input: ", strict="yes", input_type="str")
+
+print(user_input)
+
+```
+
+## Contribute
+
+If you have a feature you would like to add, please consider contributing to the project. 
+
+This project is aimed at making script writting a bit easier for everyone.
+
+Any help would be appreciated
+
