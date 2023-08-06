@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+BioSequences.egg-info/PKG-INFO
+BioSequences.egg-info/SOURCES.txt
+BioSequences.egg-info/dependency_links.txt
+BioSequences.egg-info/top_level.txt
+bioseq/__init__.py
+bioseq/_sequence.py
+bioseq/_sequence.pyi
+bioseq/config.py
+bioseq/utils.py
+bioseq/utils.pyi
+bioseq/algorithm/algorithm.c
+bioseq/algorithm/algorithmmodule.c
+bioseq/algorithm/algorithm.h
