@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: icloudbypass-awesomekid
+Version: 0.0.1
+Summary: The one and only, iCloud bypass! [setup.py version]
+Home-page: https://therickroll.com
+Author: AwesomeKid
+Author-email: rohanshri66@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://therickroll.com
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# The iCloud Bypass!
+
+It's 3 lines!
+
+```
+from iCloudBypass import iCloudBypasser
+pass = iCloudBypasser(2222, 44)
+pass.Bypasser()
+```
+
+it's dead easy!
+try it out now with
+`pip install icloudbypass`
+
