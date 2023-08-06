@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: telemetry-parser
+Version: 0.1.4
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Author: Adrian <adrian.eddy@gmail.com>
+Author-email: Adrian <adrian.eddy@gmail.com>
+License: MPL-2.0
+Requires-Python: >=3.6
+Project-URL: homepage, https://github.com/AdrianEddy/telemetry-parser
