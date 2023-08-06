@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: ams_a
+Version: 0.0.1
+Summary: hello!
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# Hello
+this is an example project demonstarting how to publish Python module to PyPI.
+## installation
+run the following to install:
+>>>pip3 install hello
+## Usage
+form hello import hello
+# Generate "hello"
+hello()
+# Generate 'hello from ajay'
+
+

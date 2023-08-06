@@ -1,0 +1,8 @@
+LICENSE.txt
+README.md
+setup.py
+src/hello.py
+src/ams_a.egg-info/PKG-INFO
+src/ams_a.egg-info/SOURCES.txt
+src/ams_a.egg-info/dependency_links.txt
+src/ams_a.egg-info/top_level.txt
