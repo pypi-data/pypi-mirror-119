@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: aizoo
+Version: 2021.9.14.16.27.59
+Summary: ai tools
+Home-page: https://github.com/Jie-Yuan/aizoo
+Author: Betterme
+Author-email: yuanjie@example.com
+License: MIT license
+Keywords: aizoo
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: meutils
+
+<h1 align = "center">:rocket: aizoo :rocket:</h1>
+
+---
+
+
+![image](https://img.shields.io/pypi/v/aizoo.svg)
+
+![image](https://img.shields.io/travis/Jie-Yuan/aizoo.svg)
+
+![image](https://readthedocs.org/projects/aizoo/badge/?version=latest)
+
+
+
+
+
+# Features
+---
+* TODO
+
+封装 lazypredict
+
+
+=======
+History
+=======
+
+0.0.0 (2021-09-04)
+------------------
+
+* First release on PyPI.
+
+
