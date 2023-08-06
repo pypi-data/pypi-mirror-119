@@ -1,0 +1,15 @@
+mqrdr/__init__.py,sha256=RIp671uV1qJMm4TfdJgDf5enbY29U8gDh6laMWDpLvA,189
+mqrdr/accounts.py,sha256=k5P5uIHXB2K54LFskXcc1SiixM-6kegEfAxwo3hnbgw,2468
+mqrdr/articles.py,sha256=t_T3w9eSOs8HR6iJrXP00dgJcoC8eeCG6_bZqchRyq0,7605
+mqrdr/authors.py,sha256=4O-FYJyZfW3SrqaOiX0ICmSx6eitvFqlwvqj8jPz5uI,1095
+mqrdr/file_utils.py,sha256=2imLXnAaFY-l9Ap8ZvcXysSAAXKXEOXYtwd4SNz5dMw,2656
+mqrdr/groups.py,sha256=7HCfAq7VUUZVT7eSbgNqCFH5UTdAatxbUpL9KsVneu4,1086
+mqrdr/projects.py,sha256=njLZk3gCa7dY7CqSRWspQyqKB2VY6o-ZCYWw_Mwdf1s,12056
+mqrdr/settings.py,sha256=ctC1bwX7kkU1URMUz7uG8cWDJAAyZ79TehcctkX1zc8,81
+mqrdr/utils.py,sha256=QuIhK94srkyYOv_T9OfcPKd8FSJan1Iam5Hd12u3hIE,1208
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mqrdr-0.3.1.dist-info/METADATA,sha256=jivnLZ_Mubz_p7Tg4HrE8WmTgyZDewKAPsU1QmyW5ro,724
+mqrdr-0.3.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+mqrdr-0.3.1.dist-info/top_level.txt,sha256=8HU46z0caw648oVgRUBQnqMs0opslj4jGeN1QmdXcpo,12
+mqrdr-0.3.1.dist-info/RECORD,,
