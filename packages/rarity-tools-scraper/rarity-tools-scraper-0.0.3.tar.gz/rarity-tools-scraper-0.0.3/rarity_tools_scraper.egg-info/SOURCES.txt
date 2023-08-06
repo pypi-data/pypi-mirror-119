@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+Pipfile
+Pipfile.lock
+setup.py
+rarity_tools_scraper/__init__.py
+rarity_tools_scraper/collections.py
+rarity_tools_scraper/data.py
+rarity_tools_scraper/projects.py
+rarity_tools_scraper.egg-info/PKG-INFO
+rarity_tools_scraper.egg-info/SOURCES.txt
+rarity_tools_scraper.egg-info/dependency_links.txt
+rarity_tools_scraper.egg-info/requires.txt
+rarity_tools_scraper.egg-info/top_level.txt
