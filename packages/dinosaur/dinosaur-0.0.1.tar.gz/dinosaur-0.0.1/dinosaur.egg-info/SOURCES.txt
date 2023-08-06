@@ -1,0 +1,7 @@
+setup.py
+dinosaur/__init__.py
+dinosaur/test.py
+dinosaur.egg-info/PKG-INFO
+dinosaur.egg-info/SOURCES.txt
+dinosaur.egg-info/dependency_links.txt
+dinosaur.egg-info/top_level.txt
