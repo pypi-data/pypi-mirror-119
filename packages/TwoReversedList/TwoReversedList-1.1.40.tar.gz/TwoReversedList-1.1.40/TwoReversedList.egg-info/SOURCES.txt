@@ -1,0 +1,7 @@
+setup.py
+TwoReversedList/TwoReversedList.py
+TwoReversedList/__init__.py
+TwoReversedList.egg-info/PKG-INFO
+TwoReversedList.egg-info/SOURCES.txt
+TwoReversedList.egg-info/dependency_links.txt
+TwoReversedList.egg-info/top_level.txt
