@@ -1,0 +1,10 @@
+shopee_crawler/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shopee_crawler/crawler.py,sha256=0Z-DYFmp2VfZA_EP6TP-gU6uEm1Omgq1i42mqyNQA-A,112
+shopee_crawler/toolkit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shopee_crawler/toolkit/crawl_by_cat_url.py,sha256=v39lqyXKvbfXpnrAMhGkqev0YaKb6ovLbb7HHXJ6A_M,4063
+shopee_crawler/toolkit/crawl_by_shop_url.py,sha256=xGHEdxG71WOWal4uEC1CqiqYtdRauH5jxQ45joLLois,3947
+shopee_crawler/toolkit/curl.py,sha256=vOhf67Q5hJWNsUml66rRQyLzFTuEPWbjOdSPi6th69U,979
+shopee_crawler_pkg_lthoangg-0.1.1.dist-info/METADATA,sha256=YZkzx-bJPy5t6sK6HA00lGgIyc9CpYxS9pxuEvuWy4M,997
+shopee_crawler_pkg_lthoangg-0.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+shopee_crawler_pkg_lthoangg-0.1.1.dist-info/top_level.txt,sha256=Epr7_P1ETPGHaLr5V1n1OzdYIeya9YpJTzekehtAA-c,15
+shopee_crawler_pkg_lthoangg-0.1.1.dist-info/RECORD,,
