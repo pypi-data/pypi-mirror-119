@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+interactive_script.egg-info/PKG-INFO
+interactive_script.egg-info/SOURCES.txt
+interactive_script.egg-info/dependency_links.txt
+interactive_script.egg-info/top_level.txt
