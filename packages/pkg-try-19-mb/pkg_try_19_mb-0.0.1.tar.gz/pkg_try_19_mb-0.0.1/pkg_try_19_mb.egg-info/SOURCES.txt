@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+pkg_try_19_mb/__init__.py
+pkg_try_19_mb/preprocess.py
+pkg_try_19_mb.egg-info/PKG-INFO
+pkg_try_19_mb.egg-info/SOURCES.txt
+pkg_try_19_mb.egg-info/dependency_links.txt
+pkg_try_19_mb.egg-info/entry_points.txt
+pkg_try_19_mb.egg-info/requires.txt
+pkg_try_19_mb.egg-info/top_level.txt
