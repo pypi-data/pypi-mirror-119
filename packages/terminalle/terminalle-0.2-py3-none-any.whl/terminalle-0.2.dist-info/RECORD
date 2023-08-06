@@ -1,0 +1,14 @@
+terminalle/__init__.py,sha256=0nmw-Di_UBISyyzjraYveSV9niRuT9LHO8ws8KlqphE,119
+terminalle/__main__.py,sha256=Z_pa6pxeeun1AL4sP2VrKy7Hu0knnt11vfDagdypTq4,4022
+terminalle/auto.py,sha256=AJLyV61-53OWUCxyMbECPNm0b8yGEHnst3jQiOhVS3Y,4268
+terminalle/org.gnome.Terminalle.service,sha256=lIcppgmok6HRHaKdgt7MdTGp-m4bVdFQ4scdudvS9QQ,78
+terminalle/settings.py,sha256=yDx5lG5gCVa-CbiLQCNdBgTHLojOmSVPQYFTYcOIb8A,5131
+terminalle/terminalle.desktop,sha256=ameqIx4sayn1ZanEmMQ6OFf86oZnqFMPKNVfyTJvnzM,139
+terminalle/terminalle.py,sha256=YYg7enUAjGsoJp44MgK49L566ZD1Id_8W13gh38HEc4,5776
+terminalle-0.2.data/data/share/man/man1/terminalle.1,sha256=asZrpdC7MPhnHKWzITa-0hH98cmVetqzHT51N-V-OK8,1942
+terminalle-0.2.dist-info/LICENSE,sha256=L0jAQxb2ldu7oeiLXfETtZOpEalmEOjTPZ3kGxcuNMI,1067
+terminalle-0.2.dist-info/METADATA,sha256=Jzngi89Ma1IN47ZWqUSMZAV3vory0JxjYPJ5I3l3Of8,5739
+terminalle-0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+terminalle-0.2.dist-info/entry_points.txt,sha256=nIak0VFFt2SV3H3T_1JXizreszZec9FLfFWI5zWPGc4,57
+terminalle-0.2.dist-info/top_level.txt,sha256=4KunbBBCtg8QnoN9dH7KDZ4XCnb_fT4rhByJes-SNfU,11
+terminalle-0.2.dist-info/RECORD,,
