@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: YTThumb
+Version: 1.2.0
+Summary: A youtube video link or id to video thumbnail python package.
+Home-page: https://github.com/FayasNoushad/Youtube-Video-Thumbnail
+Author: FayasNoushad
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# Youtube-Video-Thumbnail
+
+A youtube video link or id to video thumbnail python package.
+
+---
+
+```
+Made with Python3
+(C) @FayasNoushad
+Copyright permission under MIT License
+License -> https://github.com/FayasNoushad/Youtube-Video-Thumbnail/blob/main/LICENSE
+```
+
+---
+
+## Installation
+
+```
+pip3 install ytthumb
+```
+
+---
+
+## Usage
+
+```python
+import ytthumb
+
+ytthumb.thumbnail("https://youtu.be/rokGy0huYEA")
+```
+
+---
+
+## Credits
+
+- [Fayas Noushad](https://github.com/FayasNoushad)
+
+
