@@ -1,0 +1,11 @@
+mspell/__init__.py,sha256=QvN2sgLDk_V4qfvE5zzup5oybn3O8aiPQx2JAmoa_CM,102
+mspell/group_speller.py,sha256=exBiCxE4bHYPFpu6Gk1cqZy5hW3usiBeC_7vnq5o_wI,5707
+mspell/spell_base.py,sha256=Femc0purqyjfwJWxiO5a_BE2Kq6oui_Cuc9vWD5LfEs,2880
+mspell/speller.py,sha256=Bx-CMW14DfCaLxs2EMkVnKKYJ4NX6lKwyqs6pO4DLTM,4692
+mspell/unspeller.py,sha256=9B9QtnDt3sYjQwBD4D1tav6nRwjV7Yp9a8WS3By-gMM,4014
+mspell/utils.py,sha256=DQ7kU73YMfjXDE9cA0P_M7J6ODsOmI3EzBjRvVMbSGs,2525
+mspell-0.0.2.dist-info/LICENSE,sha256=jfS28o3HN-zkf2VBjjgLEMtnw0MWoYk7v87Gis0i1TE,1071
+mspell-0.0.2.dist-info/METADATA,sha256=mezpCnp9m_WA2pT77zpdOLfBflm0FB1-WrEZ6DXgFsY,1231
+mspell-0.0.2.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+mspell-0.0.2.dist-info/top_level.txt,sha256=4NXGmJQqrqVb7YnPoQyMw8kbXnGlHBDPYQvKF2CE5oo,7
+mspell-0.0.2.dist-info/RECORD,,
