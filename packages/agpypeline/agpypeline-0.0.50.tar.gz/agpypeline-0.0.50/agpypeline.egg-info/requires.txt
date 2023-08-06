@@ -1,0 +1,13 @@
+setuptools==50.0.1
+numpy
+influxdb
+requests>=2.21.0
+python-dateutil
+utm
+matplotlib
+Pillow
+scipy
+piexif
+cryptography
+pyyaml
+pygdal==3.0.4.*
