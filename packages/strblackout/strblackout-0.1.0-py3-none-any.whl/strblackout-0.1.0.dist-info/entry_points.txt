@@ -1,0 +1,3 @@
+[console_scripts]
+strblackout = strblackout.__main__:main
+
