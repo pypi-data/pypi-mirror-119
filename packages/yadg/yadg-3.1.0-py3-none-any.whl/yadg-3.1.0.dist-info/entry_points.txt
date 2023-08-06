@@ -1,0 +1,5 @@
+[console_scripts]
+dg2json = yadg.dg2json:main
+dg2png = yadg.dg2png:main
+yadg = yadg.yadg:main
+

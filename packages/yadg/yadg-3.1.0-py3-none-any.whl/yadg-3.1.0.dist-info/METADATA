@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: yadg
+Version: 3.1.0
+Summary: Yet Another DataGram
+Home-page: https://github.com/PeterKraus/yadg
+Author: Peter Kraus
+Author-email: peter@tondon.de
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/PeterKraus/yadg/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: uncertainties
+Requires-Dist: peakutils
+
+# yadg: Yet Another DataGram
+Set of tools to process instrument data. Given a `schema`, **yadg** will process  
+the files and folders specified and produce a `datagram`, which can be further   
+consumed by other utilities in this repo.
+
+
