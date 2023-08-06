@@ -1,0 +1,7 @@
+_dlib_pybind11.cpython-37m-x86_64-linux-gnu.so,sha256=Sz42bxSUWnqv6tPoI3hSvNVvD1u2y5NoBQhEUIvrbyc,12885504
+dlib/__init__.py,sha256=ddevct4OIxSFArNn-N_Bn4WM7p7dCtmD4pXmNjQJlrk,805
+hmcsdlib_gpu-19.22.99.dist-info/LICENSE.txt,sha256=jYKRyvHO4m0jrPPrZ8n5otWPHGgbFqT76Mv7njwLWps,1337
+hmcsdlib_gpu-19.22.99.dist-info/METADATA,sha256=GW9jQd0K175QHoAMxgTZS9zdX8418x-ytherYI7e3dY,1411
+hmcsdlib_gpu-19.22.99.dist-info/WHEEL,sha256=f7P6z0Dw9BaMW8tOX1QV9QgI5xUJsD3jCwAxmDG4-E0,104
+hmcsdlib_gpu-19.22.99.dist-info/top_level.txt,sha256=YlPTFGFSVvLz81p6HYDNqxTUr3We6NCIOoigvmBElAc,20
+hmcsdlib_gpu-19.22.99.dist-info/RECORD,,
