@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+abhaypdf.egg-info/PKG-INFO
+abhaypdf.egg-info/SOURCES.txt
+abhaypdf.egg-info/dependency_links.txt
+abhaypdf.egg-info/top_level.txt
