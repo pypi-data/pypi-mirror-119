@@ -1,0 +1,8 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=BhkUB44dHU7ac1MhSiQkEz486SZLtR6x-vOjgmGZHuI,888
+tests/test_cookiecutter_generation.py,sha256=YvgSMObrzcSnq5LML1rXr2vBVT4DXY3SLNiiSJ77We4,3405
+cookiecutter_toil-2.0.0.dist-info/LICENSE,sha256=hxxeyPNWIxNIfBwruIv81ACSBxBe4gi2LsW6u3C8Q-A,1083
+cookiecutter_toil-2.0.0.dist-info/METADATA,sha256=zKaVlQ-UGtf5vBJORDJOMEN-uj3MMVC9kASgBNptOB0,928
+cookiecutter_toil-2.0.0.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+cookiecutter_toil-2.0.0.dist-info/top_level.txt,sha256=EdW7283x-lr_cbuivW8Ij7ANAP-ZJ9sLtILQseEPxXg,6
+cookiecutter_toil-2.0.0.dist-info/RECORD,,
