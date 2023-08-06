@@ -1,0 +1,70 @@
+{#-
+This file was automatically generated - do not edit
+-#}
+{% set class = "" %}
+
+<nav id="ob_nav">
+    <div id="ob_nav_sub" class="md-tabs md-tabs__inner md-grid">
+      <ul>
+          {% for nav_item in nav %}
+          {% include "partials/tabs-item.html" %}
+          {% endfor %}
+
+          {% set ns = namespace(iterated=false) %}
+
+          {% for nav_item in nav %}
+          {% if nav_item.title == "小白玩转OB" or nav_item.title == "OceanBase 大赛"  %}
+          {% set ns.iterated = true %}
+          {% endif %}
+          {% endfor %}
+
+          {% if ns.iterated == true %}
+          <li class="ob_nav_subList">
+              <a href="#" class="md-tabs__link">培训</a>
+              <div class="ob_nav_subListShow">
+                  <ul class="ob_nav_subUl">
+                      {% for nav_item in nav %}
+                      {% if nav_item.title == "小白玩转OB" or nav_item.title == "OceanBase 大赛"  %}
+                      {% set title = title | d(nav_item.title) %}
+                      {% set nav_item = nav_item.children | first %}
+                      <li>
+                          <a href="{{ nav_item.url | url }}" class="md-tabs__link">
+                              {{ title }}
+                          </a>
+                      </li>
+                      {% endif %}
+                      {% endfor %}
+                  </ul>
+              </div>
+          </li>
+          {% endif %}
+
+          <li><a href="https://open.oceanbase.com/docs/oceanbase-community-video/videos/V3.1.0/learn-more-about-oceanbase-community-edition" class="md-tabs__link">视频中心</a></li>
+          <li class="ob_nav_subList">
+              <a href="https://open.oceanbase.com/community/contribution" class="md-tabs__link">社区</a>
+              <div class="ob_nav_subListShow">
+                  <ul class="ob_nav_subUl">
+                      <li><a href="https://open.oceanbase.com/community/contribution" class="md-tabs__link">社区贡献</a></li>
+                      <li><a href="https://open.oceanbase.com/community/organization" class="md-tabs__link">社区组织</a></li>
+                      <li><a href="https://open.oceanbase.com/community/activities" class="md-tabs__link">社区活动</a></li>
+                      <li><a href="https://open.oceanbase.com/community/exchange" class="md-tabs__link">社区交流</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li class="ob_nav_subList">
+              <a href="https://open.oceanbase.com/security/leak" class="md-tabs__link">安全</a>
+              <div class="ob_nav_subListShow">
+                  <ul class="ob_nav_subUl">
+                      <li><a href="https://open.oceanbase.com/security/leak" class="md-tabs__link">悬赏计划</a></li>
+                      <li><a href="https://open.oceanbase.com/security/notice" class="md-tabs__link">安全公告</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li><a href="https://open.oceanbase.com/articles" class="md-tabs__link">博客</a></li>
+          <li><a href="https://open.oceanbase.com/softwareCenter/community" class="md-tabs__link">下载</a></li>
+          <li><a href="https://open.oceanbase.com/answer" class="md-tabs__link">问答</a></li>
+
+      </ul>
+    </div>
+</nav>
+
