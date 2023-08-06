@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/nclearn/__init__.py
+src/nclearn/dl.py
+src/nclearn/example.py
+src/nclearn/ml.py
+src/nclearn.egg-info/PKG-INFO
+src/nclearn.egg-info/SOURCES.txt
+src/nclearn.egg-info/dependency_links.txt
+src/nclearn.egg-info/top_level.txt
