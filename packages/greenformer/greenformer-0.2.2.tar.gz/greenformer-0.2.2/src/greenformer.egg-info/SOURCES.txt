@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/greenformer/__init__.py
+src/greenformer/auto_fact.py
+src/greenformer/lr_module.py
+src/greenformer/version.py
+src/greenformer.egg-info/PKG-INFO
+src/greenformer.egg-info/SOURCES.txt
+src/greenformer.egg-info/dependency_links.txt
+src/greenformer.egg-info/requires.txt
+src/greenformer.egg-info/top_level.txt
