@@ -1,0 +1,3 @@
+include *.txt
+recursive-include bwmd *.py
+recursive-include test *.py
